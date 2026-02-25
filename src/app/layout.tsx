@@ -5,7 +5,7 @@ import { Footer } from "@/components/footer";
 
 export const metadata: Metadata = {
   title: "UNTI — Serviços de Tecnologia",
-  description: "Novo site institucional da UNTI em Next.js"
+  description: "Site institucional da UNTI com foco em serviços de tecnologia, plataformas web e integrações."
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
