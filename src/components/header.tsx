@@ -1,4 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
+import logo from "@/assets/logo-unti-digital.png";
 
 const links = [
   ["/servicos", "Serviços"],
@@ -14,8 +16,15 @@ export function Header() {
   return (
     <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-        <Link href="/" className="text-lg font-bold text-brand-700">
-          UNTI
+        <Link href="/" className="flex items-center gap-2" aria-label="UNTI Digital - Início">
+          <Image
+            src={logo}
+            alt="UNTI Digital"
+            width={180}
+            height={180}
+            className="h-10 w-auto"
+            priority
+          />
         </Link>
         <nav className="hidden gap-4 text-sm md:flex">
           {links.map(([href, label]) => (
