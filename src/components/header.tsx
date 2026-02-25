@@ -16,7 +16,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-        <Link href="/" className="flex items-center gap-2" aria-label="UNTI Digital - Início">
+        <Link href="/" className="flex items-center gap-3" aria-label="UNTI Digital - Início">
           <Image
             src={logo}
             alt="UNTI Digital"
@@ -25,6 +25,7 @@ export function Header() {
             className="h-10 w-auto"
             priority
           />
+          <span className="text-base font-semibold tracking-tight text-slate-900">UNTI Digital</span>
         </Link>
         <nav className="hidden gap-4 text-sm md:flex">
           {links.map(([href, label]) => (
