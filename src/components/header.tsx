@@ -3,12 +3,12 @@ import Link from "next/link";
 import logoHorizontal from "@/assets/logo horizontal.svg";
 
 const links = [
-  ["/servicos", "Serviços"],
+  ["/servicos", "ServiÃ§os"],
   ["/cases", "Cases"],
   ["/clientes", "Clientes"],
   ["/blog", "Blog"],
   ["/parceiros", "Parceiros"],
-  ["/integracoes", "Integrações"],
+  ["/integracoes", "IntegraÃ§Ãµes"],
   ["/contato", "Contato"]
 ] as const;
 
@@ -16,7 +16,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-        <Link href="/" className="flex items-center" aria-label="UNTI Digital - Início">
+        <Link href="/" className="flex items-center" aria-label="UNTI Digital - InÃ­cio">
           <Image
             src={logoHorizontal}
             alt="UNTI Digital"
