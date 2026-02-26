@@ -14,24 +14,23 @@ const links = [
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/90 backdrop-blur">
+    <header className="sticky top-0 z-20 border-b border-unti-border bg-unti-surface/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
         <Link href="/" className="flex items-center" aria-label="UNTI Digital - Início">
-          <Image
-            src={logoHorizontal}
-            alt="UNTI Digital"
-            width={180}
-            height={180}
-            className="h-10 w-auto"
-            priority
-          />
+          <Image src={logoHorizontal} alt="UNTI Digital" width={180} height={48} className="h-10 w-auto" priority />
         </Link>
-        <nav className="hidden gap-4 text-sm md:flex">
+        <nav className="hidden items-center gap-4 text-sm md:flex">
           {links.map(([href, label]) => (
-            <Link key={href} href={href} className="text-slate-600 hover:text-slate-900">
+            <Link key={href} href={href} className="text-unti-muted hover:text-unti-dark transition-colors">
               {label}
             </Link>
           ))}
+          <Link
+            href="/contato"
+            className="rounded-md bg-unti-primary px-4 py-2 font-semibold text-white shadow-sm transition-colors hover:bg-unti-accent"
+          >
+            Falar com especialista
+          </Link>
         </nav>
       </div>
     </header>

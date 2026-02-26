@@ -63,7 +63,7 @@ export function LeadModal() {
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="rounded-md bg-brand-500 px-4 py-2 text-sm font-semibold text-white hover:bg-brand-700"
+        className="rounded-md bg-unti-primary px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-unti-accent"
       >
         Falar no WhatsApp
       </button>
@@ -94,7 +94,7 @@ export function LeadModal() {
                     onChange={(event) =>
                       setState((prev) => ({ ...prev, [key]: event.target.value }))
                     }
-                    className="w-full rounded-md border border-slate-300 px-3 py-2 outline-none ring-brand-500 focus:ring"
+                    className="w-full rounded-md border border-unti-border px-3 py-2 outline-none ring-unti-primary focus:ring"
                   />
                 </label>
               ))}
@@ -108,7 +108,7 @@ export function LeadModal() {
               <button
                 type="submit"
                 disabled={!canSubmit || sending}
-                className="w-full rounded-md bg-brand-500 px-4 py-2 font-semibold text-white disabled:opacity-50"
+                className="w-full rounded-md bg-unti-primary px-4 py-2 font-semibold text-white transition-colors hover:bg-unti-accent disabled:opacity-50"
               >
                 {sending ? "Enviando..." : "Enviar e abrir WhatsApp"}
               </button>
