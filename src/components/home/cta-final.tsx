@@ -1,14 +1,16 @@
 export function CtaFinal() {
   return (
     <section className="section">
-      <div className="rounded-2xl bg-unti-accent p-8 text-white shadow-lg">
-        <h3 className="text-2xl font-semibold">Daqui a 1 ano você vai desejar ter começado hoje.</h3>
-        <p className="mt-2 text-white/85">
+      <div className="rounded-2xl border border-unti-border bg-white p-8 text-center">
+        <h3 className="text-2xl font-semibold text-unti-dark">DAQUI 1 ANO VOCÊ VAI DESEJAR TER COMEÇADO HOJE</h3>
+        <p className="mt-2 text-unti-muted">
           Vamos juntos tirar o projeto do papel com previsibilidade e entrega contínua.
         </p>
-        <button className="mt-6 rounded-md bg-white px-4 py-2 text-sm font-semibold text-unti-accent transition-colors hover:bg-unti-primarySoft">
-          Solicitar uma reunião
-        </button>
+        <div className="mt-6 flex justify-center">
+          <button className="rounded-md bg-unti-cta px-4 py-2 text-sm font-semibold text-white transition-colors hover:brightness-95">
+            Solicite uma reunião
+          </button>
+        </div>
       </div>
     </section>
   );

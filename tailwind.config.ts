@@ -13,16 +13,14 @@ const config: Config = {
     extend: {
       colors: {
         unti: {
-          primary: "#6558f5",
-          primarySoft: "#e0defd",
-          accent: "#bd34d1",
-          accentSoft: "#c79fe7",
-          dark: "#293845",
-          muted: "#4b5c6b",
-          light: "#f0f4f7",
+          primary: "#396cff", // azul vibrante principal
+          dark: "#2d3b93", // azul escuro
+          light: "#7fa2ff", // azul claro
+          pastel: "#c3d6fc", // azul pastel
+          cta: "#ff9900", // laranja CTA
           surface: "#ffffff",
           border: "#e1e5ec",
-          warning: "#fce7a8"
+          muted: "#4b5c6b"
         }
       }
     }
