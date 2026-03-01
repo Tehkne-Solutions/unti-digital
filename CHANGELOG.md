@@ -1,5 +1,42 @@
 # Changelog
 
+## 2025-01-XX - FASE 1: Hero DigitalOcean-like
+
+### 🔥 Hero Principal
+
+#### Header Refinado
+- Atualizado para layout DO-like limpo e profissional
+- Nav centralizado com links principais (Soluções, Cases, Blog, Integrações, Contato)
+- CTA primário destacado à direita
+- Menu mobile com drawer usando Modal do Design System
+
+#### Hero Section
+- Implementado layout 2 colunas (desktop) / empilhado (mobile)
+- Conteúdo estratégico com hierarquia clara:
+  - Eyebrow: UNTI DIGITAL
+  - H1: Soluções em tecnologia para negócios que precisam escalar com segurança
+  - Subheadline: Desenvolvemos sites, plataformas e integrações críticas
+  - CTAs híbridos: "Falar com especialista" (primary) + "Ver soluções" (secondary)
+
+#### Hero Media
+- Carousel visual técnico com 3 slides:
+  - Analytics Dashboard (métricas de performance)
+  - Platform Architecture (infraestrutura)
+  - CRM Integration (conversão e ROI)
+- Cada slide com:
+  - Grid de métricas
+  - Bar chart animado
+  - Status live indicator
+  - Gradient background
+
+#### Validações
+- ✅ Build passa sem erros
+- ✅ Lint sem warnings
+- ✅ Totalmente responsivo
+- ✅ Acessibilidade completa
+
+---
+
 ## 2025-01-XX - FASE 0: Design System Base
 
 ### 🎨 Design System Foundation
