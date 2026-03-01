@@ -1,5 +1,68 @@
 # Changelog
 
+## 2025-01-XX - FASE 3: Services Carousel + Modal Técnico
+
+### 📦 Seção de Serviços (Preferida do Cliente)
+
+#### Modelo de Dados
+- Criado `src/data/services.ts` com interface Service
+- 6 serviços completos:
+  - Sites Institucionais
+  - Plataformas Web
+  - Integrações e Automações
+  - E-commerce
+  - Landing Pages
+  - White Label Técnico
+- Cada serviço com: slug, título, descrições, bullets, entregáveis, imagem
+
+#### Services Carousel
+- Carrossel horizontal grande e fluido
+- Cards com largura mínima 360px
+- Imagem topo (aspect-video) com gradiente
+- Título e descrição curta
+- CTA: "Ver detalhes →"
+- Scroll-snap habilitado
+- Arrows e dots navigation
+
+#### Service Modal
+- Layout 2 colunas (desktop) / empilhado (mobile)
+- Coluna esquerda:
+  - Título do serviço
+  - Descrição completa
+  - Seção "Diferenciais" (checkmarks azuis)
+  - Seção "Entregáveis" (checkmarks laranjas)
+  - CTAs: "Falar com especialista" + "Ver cases"
+- Coluna direita:
+  - Imagem grande (aspect-square)
+  - Placeholder com gradiente
+- Modal com Headless UI:
+  - ESC fecha
+  - Click outside fecha
+  - Focus trap
+  - Transições suaves
+
+#### Conteúdo Real
+- 24 bullets de diferenciais
+- 30 entregáveis detalhados
+- Descrições completas e profissionais
+- Baseado em serviços reais da UNTI
+
+#### Estilo Visual DO-like
+- Cards robustos com hover sutil
+- Modal limpo e espaçoso
+- Ícones SVG inline (Heroicons)
+- Gradientes consistentes
+- Muito espaço negativo
+
+#### Validações
+- ✅ Build passa (110 kB)
+- ✅ Lint sem erros
+- ✅ TypeScript tipado
+- ✅ Totalmente responsivo
+- ✅ Acessibilidade completa
+
+---
+
 ## 2025-01-XX - FASE 2: Segmentação Estratégica
 
 ### 🎯 Segmentação de Público
