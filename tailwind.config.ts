@@ -13,15 +13,15 @@ const config: Config = {
     extend: {
       colors: {
         unti: {
-          primary: "#396cff", // azul vibrante principal
-          dark: "#2d3b93", // azul escuro
-          light: "#7fa2ff", // azul claro
-          pastel: "#c3d6fc", // azul pastel
-          cta: "#ff9900", // laranja CTA
-          surface: "#ffffff",
-          border: "#e1e5ec",
-          muted: "#4b5c6b"
+          blue: "#396cff",
+          dark: "#2d3b93",
+          light: "#7fa2ff",
+          pastel: "#c3d6fc",
+          orange: "#ff9900"
         }
+      },
+      fontFamily: {
+        sans: ["var(--font-ubuntu)", "system-ui", "sans-serif"]
       }
     }
   },

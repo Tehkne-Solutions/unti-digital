@@ -7,7 +7,8 @@ import { Footer } from "@/components/footer";
 const ubuntu = Ubuntu({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
-  display: "swap"
+  display: "swap",
+  variable: "--font-ubuntu"
 });
 
 export const metadata: Metadata = {
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR">
-      <body className={ubuntu.className}>
+      <body className={`${ubuntu.variable} font-sans`}>
         <Header />
         <main>{children}</main>
         <Footer />
