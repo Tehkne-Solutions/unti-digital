@@ -1,5 +1,49 @@
 # Changelog
 
+## 2025-01-XX - FASE 2: Segmentação Estratégica
+
+### 🎯 Segmentação de Público
+
+#### Seção de Segmentação
+- Implementada logo abaixo do Hero
+- Layout DO-like com 2 cards grandes
+- Título: "Para quem desenvolvemos soluções digitais"
+- Subtítulo explicativo
+
+#### Card Empresas
+- Badge com ícone corporativo
+- 3 bullets: Performance, Integrações, Governança
+- CTA: "Ver soluções para empresas"
+- Link: /solucoes/empresas
+
+#### Card Agências
+- Badge com ícone de equipe
+- 3 bullets: White label, Sob demanda, Parceria
+- CTA: "Ver soluções para agências"
+- Link: /solucoes/agencias
+
+#### Estilo Visual
+- Cards com padding generoso (p-10)
+- Badges com background pastel
+- Bullets com checkmarks azuis
+- CTAs estilo link com seta
+- Hover effects sutis
+- Muito espaço negativo (DO-like)
+
+#### Estratégia de Funil
+- Segmentação natural após Hero
+- CTAs específicos por perfil
+- Jornada personalizada
+- Fluidez do scroll mantida
+
+#### Validações
+- ✅ Build passa (90.5 kB)
+- ✅ Lint sem erros
+- ✅ Totalmente responsivo
+- ✅ Acessibilidade completa
+
+---
+
 ## 2025-01-XX - FASE 1: Hero DigitalOcean-like
 
 ### 🔥 Hero Principal
