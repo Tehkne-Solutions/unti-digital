@@ -1,48 +1,99 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import logoHorizontal from "@/assets/logo horizontal.svg";
+import { Button } from "@/components/ui/Button";
+import { Modal } from "@/components/ui/Modal";
 
 const links = [
-  ["/", "home"],
-  ["/sobre", "sobre"],
-  ["/servicos", "serviços"],
-  ["/produtos", "produtos"],
-  ["/projetos", "projetos"],
-  ["/blog", "blog"],
-  ["/parceiros", "parceiros"],
-  ["/integracoes", "integrações"],
-  ["/contato", "contato"]
-] as const;
+  { href: "/solucoes", label: "Soluções" },
+  { href: "/cases", label: "Cases" },
+  { href: "/blog", label: "Blog" },
+  { href: "/integracoes", label: "Integrações" },
+  { href: "/contato", label: "Contato" }
+];
 
 export function Header() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
-    <header className="sticky top-0 z-20 border-b border-unti-border bg-unti-surface">
-      <div className="border-b border-unti-border bg-unti-pastel/60">
-        <div className="mx-auto flex max-w-[1100px] items-center justify-between px-4 py-2 text-xs text-unti-dark">
-          <div className="flex items-center gap-4">
-            <span>(11) 99999-9999</span>
-            <span>contato@untidigital.com</span>
-          </div>
-          <Link
-            href="/contato"
-            className="rounded-md bg-unti-cta px-3 py-1 font-semibold text-white transition-colors hover:brightness-95"
-          >
-            Fale com um especialista
+    <header className="sticky top-0 z-50 bg-white border-b border-gray-200">
+      <div className="max-w-[1200px] mx-auto px-6">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <Link href="/" className="flex items-center" aria-label="UNTI Digital">
+            <Image 
+              src={logoHorizontal} 
+              alt="UNTI Digital" 
+              width={140} 
+              height={40} 
+              className="h-8 w-auto" 
+              priority 
+            />
           </Link>
+
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex items-center gap-8">
+            {links.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-sm font-medium text-gray-700 hover:text-unti-blue transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+
+          {/* Desktop CTA */}
+          <div className="hidden md:block">
+            <Button variant="primary" onClick={() => window.location.href = '/contato'}>
+              Falar com especialista
+            </Button>
+          </div>
+
+          {/* Mobile Hamburger */}
+          <button
+            onClick={() => setMobileMenuOpen(true)}
+            className="md:hidden p-2 text-gray-700"
+            aria-label="Abrir menu"
+          >
+            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
         </div>
       </div>
-      <div className="mx-auto flex max-w-[1100px] items-center justify-between px-4 py-4">
-        <Link href="/" className="flex items-center" aria-label="UNTI Digital - Início">
-          <Image src={logoHorizontal} alt="UNTI Digital" width={180} height={48} className="h-10 w-auto" priority />
-        </Link>
-        <nav className="hidden items-center gap-6 text-sm uppercase tracking-tight text-unti-dark md:flex">
-          {links.map(([href, label]) => (
-            <Link key={href} href={href} className="hover:text-unti-primary transition-colors">
-              {label}
+
+      {/* Mobile Menu Modal */}
+      <Modal isOpen={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)}>
+        <nav className="flex flex-col gap-4">
+          {links.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="text-lg font-medium text-gray-700 hover:text-unti-blue transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {link.label}
             </Link>
           ))}
+          <div className="mt-4">
+            <Button 
+              variant="primary" 
+              className="w-full"
+              onClick={() => {
+                setMobileMenuOpen(false);
+                window.location.href = '/contato';
+              }}
+            >
+              Falar com especialista
+            </Button>
+          </div>
         </nav>
-      </div>
+      </Modal>
     </header>
   );
 }
