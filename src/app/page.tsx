@@ -1,27 +1,23 @@
 import { Hero } from "@/components/home/hero";
-import { Services } from "@/components/home/services";
-import { About } from "@/components/home/about";
-import { Clients } from "@/components/home/clients";
-import { Numbers } from "@/components/home/numbers";
-import { CtaIntegration } from "@/components/home/cta-integration";
-import { ProjectHighlight } from "@/components/home/project-highlight";
-import { Testimonials } from "@/components/home/testimonials";
-import { CtaFinal } from "@/components/home/cta-final";
-import { BlogSection } from "@/components/home/blog";
+import { Segmentation } from "@/components/home/segmentation";
+import { ServicesCarousel } from "@/components/home/services-carousel";
+import { LogoCloud } from "@/components/home/logo-cloud";
+import { CaseStudies } from "@/components/home/case-studies";
+import { FeatureBlocks } from "@/components/home/feature-blocks";
+import { BlogGrid } from "@/components/home/blog-grid";
+import { FinalCTA } from "@/components/home/final-cta";
 
 export default function HomePage() {
   return (
-    <div className="space-y-2">
+    <>
       <Hero />
-      <Services />
-      <About />
-      <Clients />
-      <Numbers />
-      <CtaIntegration />
-      <ProjectHighlight />
-      <Testimonials />
-      <CtaFinal />
-      <BlogSection />
-    </div>
+      <Segmentation />
+      <ServicesCarousel />
+      <LogoCloud />
+      <CaseStudies />
+      <FeatureBlocks />
+      <BlogGrid />
+      <FinalCTA />
+    </>
   );
 }
