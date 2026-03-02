@@ -2114,3 +2114,1434 @@ Execute o prompt no Codex e me diga:
 > FASE 2 CONCLUÍDA
 
 E seguimos imediatamente para a fase mais estratégica do projeto.
+
+Perfeito.
+
+Agora entramos na fase mais estratégica e tecnicamente mais sensível de toda a homepage.
+
+# 🔥 FASE 3 — SERVICES CAROUSEL GRANDE + MODAL TÉCNICO (SEÇÃO PREFERIDA DO CLIENTE)
+
+Essa seção é o coração da nova home.
+
+Ela precisa:
+
+- Ser visualmente impactante
+- Parecer DigitalOcean
+- Ser fluida
+- Ter modal técnico forte
+- Converter
+- Manter arquitetura limpa
+
+---
+
+# 🎯 OBJETIVO DA FASE 3
+
+Criar:
+
+- Carrossel grande horizontal
+- Cards robustos
+- Interação suave
+- Modal detalhado por serviço
+- Estrutura escalável
+- Total integração com Design System
+
+---
+
+# 🧠 ARQUITETURA ESTRUTURAL DA SEÇÃO
+
+## Estrutura macro
+
+```
+[Título]
+[Subtítulo]
+
+<Carousel>
+   [Service Card]
+   [Service Card]
+   [Service Card]
+   ...
+</Carousel>
+```
+
+Clique → abre modal detalhado.
+
+---
+
+# 📊 DADOS DOS SERVIÇOS
+
+Você já tem serviços no projeto atual.
+
+Agora precisamos padronizar um modelo de dados.
+
+Estrutura sugerida:
+
+```ts
+type Service = {
+  slug: string
+  title: string
+  shortDescription: string
+  fullDescription: string
+  bullets: string[]
+  deliverables: string[]
+  image: string
+}
+```
+
+Isso garante escalabilidade futura.
+
+---
+
+# ✍ CONTEÚDO BASE (USAR CONTEÚDO REAL)
+
+Serviços atuais devem alimentar:
+
+- Sites institucionais
+- Plataformas web
+- Integrações e automações
+- Gestão e performance digital
+- White label técnico (se existir)
+
+O modal deve conter:
+
+- Descrição detalhada
+- Lista de diferenciais
+- Entregáveis
+- CTA:
+
+  - Falar com especialista (primary)
+  - Ver cases (secondary)
+
+---
+
+# 🎨 ESTILO VISUAL (DO-LIKE)
+
+Card:
+
+- largura maior (min-w-[360px] ou mais)
+- imagem topo grande
+- título
+- descrição curta
+- CTA link
+
+Modal:
+
+- layout 2 col desktop
+- texto esquerda
+- imagem direita
+- espaço generoso
+- hierarquia forte
+
+---
+
+# 🚀 PROMPT — FASE 3 (COLAR NO CODEX)
+
+```
+PHASE 3 — IMPLEMENT SERVICES CAROUSEL + SERVICE MODAL (DO-LIKE)
+
+The segmentation section is complete.
+Now implement the Services Carousel section below it.
+
+Do not modify Hero or Segmentation.
+Only implement services-carousel.tsx and related logic.
+
+---------------------------------------------------
+1) CREATE DATA MODEL
+---------------------------------------------------
+
+Create a services array inside services-carousel.tsx or import from a new file src/data/services.ts.
+
+Each service must have:
+
+slug
+title
+shortDescription
+fullDescription
+bullets (array)
+deliverables (array)
+image (placeholder path)
+
+Use real service themes from the existing UNTI project.
+
+---------------------------------------------------
+2) IMPLEMENT SECTION STRUCTURE
+---------------------------------------------------
+
+Use Section + Container.
+
+Title:
+"Nossas soluções digitais"
+
+Subtitle:
+"Serviços desenvolvidos para empresas e agências que precisam de performance, segurança e escala."
+
+Below that:
+Render Carousel component.
+
+---------------------------------------------------
+3) SERVICE CARD DESIGN
+---------------------------------------------------
+
+Each card must:
+
+- Use Card component
+- Have large top image (aspect-video)
+- Title (font-medium)
+- shortDescription
+- Button variant="link":
+   "Ver detalhes"
+
+Card width min 360px.
+Use scroll-snap.
+Add spacing between cards.
+
+---------------------------------------------------
+4) MODAL IMPLEMENTATION
+---------------------------------------------------
+
+Use Modal component (Headless UI Dialog).
+
+When clicking "Ver detalhes":
+
+Open modal with:
+
+Layout:
+
+Desktop:
+grid md:grid-cols-2 gap-10
+
+Left column:
+- Title
+- fullDescription
+- Bullet list
+- Deliverables list
+- Primary button:
+   "Falar com especialista"
+- Secondary button:
+   "Ver cases"
+
+Right column:
+Large image placeholder
+
+Modal must:
+- Close on ESC
+- Close on backdrop click
+- Have close button top-right
+- Trap focus
+
+---------------------------------------------------
+5) RESPONSIVE BEHAVIOR
+---------------------------------------------------
+
+- Carousel horizontal scroll on mobile
+- Modal stacked on mobile
+- No layout breaking
+
+---------------------------------------------------
+6) ENSURE
+---------------------------------------------------
+
+- No unused imports
+- No console errors
+- Build passes
+- Clean TypeScript
+
+---------------------------------------------------
+OUTPUT
+Return services-carousel.tsx (and services data file if created).
+No explanation.
+Only code.
+```
+
+---
+
+# 🎯 RESULTADO ESPERADO
+
+Após essa fase:
+
+✔ A seção mais importante estará pronta
+✔ O site começará a parecer realmente SaaS enterprise
+✔ Cliente verá claramente a semelhança com DigitalOcean
+✔ Estrutura estará pronta para Cases e Features
+
+---
+
+# 📌 Próxima fase
+
+🔥 FASE 4 — Logo Cloud + Prova Social DO-like
+🔥 FASE 5 — Case Studies estilo “Customers growing…”
+
+---
+
+Execute no Codex e me diga:
+
+> FASE 3 CONCLUÍDA
+
+Agora o projeto começa a ganhar peso real.
+
+----
+
+Perfeito.
+
+Agora ficou **claríssimo** o que você quer.
+
+Você não quer “inspirado”.
+Você quer:
+
+> 📌 Estrutura idêntica à DigitalOcean
+> 📌 Hero centralizado
+> 📌 Carrossel colado na hero
+> 📌 Vídeo full width
+> 📌 Headline dinâmica abaixo do vídeo
+> 📌 Botões dentro do bloco do carrossel
+> 📌 Navegação circular lateral
+> 📌 Tudo visualmente igual
+> 📌 Só mudando paleta, fonte e conteúdo
+
+Excelente.
+Agora vamos fazer certo.
+
+---
+PROMPT CORREÇÃO ARQUITETURAL — HERO + CAROUSEL INTEGRADO (DIGITALOCEAN STRUCTURE)
+
+```
+
+# 🔥 PRIMEIRO: CORREÇÃO ARQUITETURAL
+
+Você está 100% certo.
+
+Na DigitalOcean:
+
+### O carrossel NÃO é uma seção separada
+
+Ele faz parte do HERO CONTAINER.
+
+Estrutura real:
+
+```
+
+Hero Wrapper
+ ├── Container
+ │    ├── H1
+ │    ├── Botões
+ │
+ └── Carousel Video Block
+      ├── Slides (video loop)
+      ├── Headline dinâmica do slide
+      ├── Descrição
+      ├── Botões
+      └── Navegação lateral
+
+```
+
+Ou seja:
+
+> A seção de serviços está embutida no hero.
+
+Nós fizemos errado ao separar como seção abaixo.
+
+Vamos corrigir.
+
+---
+
+# 🧠 NOVA ESTRUTURA FIEL À DIGITALOCEAN
+
+Agora a Home começa assim:
+
+```
+
+<HeroWrapper>
+   <HeroTopContent />
+   <HeroCarouselServices />
+</HeroWrapper>
+```
+
+Não existe “segmentation” antes.
+Segmentação vem depois.
+
+---
+
+# 🎯 COMO VAMOS REPLICAR EXATAMENTE
+
+Baseado no código que você enviou, a estrutura DO é:
+
+### 1️⃣ Bloco central com H1 e 2 CTAs
+
+Centralizado.
+
+### 2️⃣ Logo abaixo (colado), um carrossel FULL WIDTH
+
+- Slides com vídeo loop
+- Headline dinâmica
+- Descrição
+- Botões
+- Navegação com setas circulares
+
+Isso cria o efeito:
+
+Hero + Produto = Um único bloco
+
+---
+
+# 🔥 DECISÃO IMPORTANTE
+
+Para ficar realmente igual:
+
+- O hero NÃO deve ter grid 2 col.
+- O texto deve estar centralizado.
+- O carrossel deve ser full width.
+- O carrossel deve ter headline dinâmica abaixo do vídeo.
+
+---
+
+# 🏗 NOVA ARQUITETURA DA FASE 1 (REVISADA)
+
+Vamos refazer Fase 1 corretamente.
+
+---
+
+# 🚀 PROMPT CORRETO — HERO + CAROUSEL INTEGRADO (COLAR NO CODEX)
+
+```
+PHASE 1 REBUILD — HERO + INTEGRATED SERVICES CAROUSEL (DIGITALOCEAN STRUCTURE)
+
+We are restructuring the Hero to match DigitalOcean EXACT layout structure.
+
+Do not keep the previous 2-column Hero.
+Rebuild Hero completely.
+
+---------------------------------------------------
+STRUCTURE (MUST MATCH DIGITALOCEAN)
+---------------------------------------------------
+
+HeroWrapper (full width)
+
+Inside:
+
+1) Top Block (centered content)
+   - Container
+   - H1 centered
+   - Button row centered
+   - No side media
+   - No grid columns
+   - Large vertical spacing
+
+2) Carousel Block (full width below hero text)
+   - Full width section
+   - Video/Image slides
+   - Headline & description tied to active slide
+   - Primary and secondary CTA inside carousel content
+   - Circular navigation arrows
+   - Dots navigation optional
+
+---------------------------------------------------
+IMPLEMENTATION DETAILS
+---------------------------------------------------
+
+A) hero.tsx
+- Centered layout
+- Remove 2-column grid
+- Title large (text-5xl)
+- Buttons spaced 16px
+- Margin bottom large before carousel
+
+B) hero-carousel.tsx
+- Full width wrapper
+- Slides array with:
+   title
+   description
+   primaryCTA
+   secondaryCTA
+   video/image
+- Active slide state
+- Slide video loop muted
+- Under video:
+   dynamic headline (h2)
+   description
+   CTA buttons
+- Right side circular navigation arrows
+
+C) VISUAL RULES
+- Match DigitalOcean spacing
+- Carousel attached visually to hero
+- No section break
+- Use UNTI colors
+- Use Ubuntu
+- Do not invent layout
+
+---------------------------------------------------
+GOAL
+---------------------------------------------------
+
+When finished, the structure must visually resemble:
+
+DigitalOcean Hero + Video Carousel
+
+Only colors, font and text content change.
+
+---------------------------------------------------
+OUTPUT
+---------------------------------------------------
+
+Return:
+- hero.tsx
+- hero-carousel.tsx
+- any updated page.tsx import adjustments
+
+No explanations.
+Only code.
+```
+
+---
+
+# 🎯 IMPORTANTE
+
+Isso muda a lógica do funil.
+
+Agora fica:
+
+```
+Hero (centralizado)
++ Carousel serviços integrado
+↓
+Segmentação
+↓
+Logo Cloud
+↓
+Cases
+↓
+Features
+↓
+Blog
+↓
+CTA
+```
+
+Muito mais fiel ao modelo DigitalOcean.
+
+---
+
+# 🧠 POR QUE ISSO É MELHOR
+
+Porque:
+
+- Cliente reconhece imediatamente o modelo
+- Estrutura fica premium
+- Percepção de produto aumenta
+- Visual fica muito mais SaaS
+
+---
+
+# 🚨 PRÓXIMA AÇÃO
+
+Agora você precisa:
+
+1. Rodar o prompt acima no Codex
+2. Substituir a hero atual pela nova estrutura integrada
+
+Depois me diga:
+
+> HERO REBUILD CONCLUÍDO
+
+E então vamos:
+
+🔥 Ajustar animação de transição igual DO
+🔥 Refinar headline dinâmica
+🔥 Ajustar comportamento de autoplay
+
+Agora sim estamos copiando o modelo certo.
+
+-------------
+
+PROMPT DE REFINAMENTO — ANIMAÇÃO + HEADLINE DINÂMICA + AUTOPLAY
+
+```
+
+Perfeito.
+
+Agora ficou 100% claro.
+
+Você não quer “parecido”.
+Você quer:
+
+> 🔥 Estrutura IDÊNTICA à DigitalOcean
+> 🔥 Hero centralizado
+> 🔥 Carrossel colado logo abaixo
+> 🔥 Slide grande full width
+> 🔥 Headline + descrição + botões abaixo da imagem
+> 🔥 Setas circulares centralizadas
+> 🔥 Visual limpo, sem card separado
+> 🔥 Sem aquele fundo azul grande que virou um bloco estranho
+
+E você está certo:
+
+👉 O resultado atual está estruturalmente errado.
+
+---
+
+# 🎯 ONDE ESTÁ O ERRO ATUAL
+
+Hoje seu layout está assim:
+
+```
+
+Hero
+↓
+Bloco azul grande (seção separada)
+↓
+Headline + texto
+↓
+Dots
+
+```
+
+Mas a DigitalOcean é assim:
+
+```
+
+Hero
+↓
+[Imagem/Video grande FULL WIDTH]
+↓
+Headline dinâmica
+↓
+Botões
+↓
+Setas circulares
+
+```
+
+Sem caixa.
+Sem separação.
+Sem card.
+Sem fundo azul isolado.
+
+---
+
+# 🔥 COMO VAMOS CORRIGIR (ARQUITETURA EXATA)
+
+Agora vamos implementar exatamente essa estrutura:
+
+---
+
+# 🏗 ESTRUTURA CORRETA DO HERO + CAROUSEL
+
+```tsx
+<section class="hero-wrapper">
+
+  <!-- HERO TEXT CENTRALIZADO -->
+  <div class="container text-center">
+      <h1 />
+      <div class="cta-buttons" />
+  </div>
+
+  <!-- CAROUSEL FULL WIDTH -->
+  <div class="carousel-wrapper">
+
+      <!-- IMAGEM GRANDE -->
+      <div class="carousel-media">
+          <img />
+      </div>
+
+      <!-- BLOCO DE TEXTO DINÂMICO -->
+      <div class="carousel-content text-center">
+          <h2 />
+          <p />
+          <div class="buttons" />
+      </div>
+
+      <!-- SETAS -->
+      <div class="carousel-nav">
+          <button prev />
+          <button next />
+      </div>
+
+  </div>
+
+</section>
+```
+
+⚠️ Importante:
+
+- A imagem ocupa largura grande.
+- O texto fica abaixo da imagem.
+- Tudo centralizado.
+- Não é grid 2 col.
+- Não é card.
+- Não é fundo azul separado.
+
+---
+
+# 🎨 VISUAL EXATO (BASEADO NA SUA PRIMEIRA IMAGEM)
+
+- Hero com fundo claro
+- Carrossel com leve sombra
+- Imagem grande com rounded-xl
+- Headline H2 média
+- Botões pequenos
+- Setas circulares azuis
+- Indicadores pequenos abaixo
+
+---
+
+# 🚀 PROMPT DEFINITIVO PARA CORRIGIR (COLAR NO CODEX)
+
+```
+REBUILD HERO CAROUSEL TO MATCH DIGITALOCEAN STRUCTURE EXACTLY
+
+The current carousel layout is incorrect.
+It is separated visually and uses a large blue background block.
+We must rebuild it to match DigitalOcean structure exactly.
+
+DO NOT create separate colored sections.
+DO NOT use large background blocks.
+DO NOT use grid 2 columns.
+
+---------------------------------------------------
+STRUCTURE REQUIREMENTS
+---------------------------------------------------
+
+1) Hero text must remain centered.
+2) Directly below hero text, render carousel full width.
+3) Carousel layout must follow:
+
+   - Large image (or placeholder image) centered
+   - Below image: dynamic headline (h2)
+   - Below headline: description text
+   - Below description: 2 buttons
+   - Below that: dots navigation
+   - Circular arrow buttons centered horizontally
+
+4) Remove any big colored background container.
+
+---------------------------------------------------
+IMPLEMENTATION DETAILS
+---------------------------------------------------
+
+A) Replace video with images only.
+   Use next/image.
+   Aspect ratio 16:9.
+   Rounded-xl.
+
+B) Carousel wrapper:
+   max-w-[1100px]
+   mx-auto
+   mt-16
+   relative
+
+C) Slide structure:
+
+   <div class="flex flex-col items-center text-center space-y-6">
+
+       <Image />
+       <h2 />
+       <p />
+       <div class="buttons" />
+   </div>
+
+D) Navigation arrows:
+
+   Absolute positioned below image.
+   Center horizontally.
+   Use circular blue buttons.
+   Size 48px.
+   Rounded-full.
+
+E) Dots:
+
+   Small circles below content.
+   Active dot unti.blue.
+   Inactive light gray.
+
+---------------------------------------------------
+VISUAL RULES
+---------------------------------------------------
+
+- No giant gradient background.
+- No card wrapper around entire carousel.
+- Clean whitespace.
+- Must visually resemble DigitalOcean first screenshot.
+
+---------------------------------------------------
+RESPONSIVE
+---------------------------------------------------
+
+- Image scales down on mobile.
+- Text wraps.
+- Arrows still visible.
+
+---------------------------------------------------
+OUTPUT
+---------------------------------------------------
+
+Return updated hero-carousel.tsx only.
+No explanations.
+Only code.
+```
+
+---
+
+# 🎯 O QUE ISSO VAI FAZER
+
+✔ Remover aquele bloco azul estranho
+✔ Centralizar corretamente
+✔ Criar estrutura igual à DigitalOcean
+✔ Deixar a imagem dominante
+✔ Deixar o texto colado na imagem
+✔ Criar sensação SaaS real
+
+---
+
+# 🔥 IMPORTANTE
+
+Não seguimos para próximas seções até isso ficar 95% visualmente igual à primeira imagem que você mandou.
+
+Essa parte é crítica.
+
+---
+
+Execute esse prompt e me mande print novamente.
+
+Agora estamos alinhados com o modelo real.
+
+---------------------
+PROMPT FASE 4 — LOGO CLOUD + PROVA SOCIAL DO-LIKE
+
+```
+W:\TEHKNÉ SOLUTIONS\PROJETOS E PROPOSTAS\PROJETO SITE NOVO UNTI\unti-digital\docs\PROMPTS\PROMPT SITE UNTI V4.MD
+PHASE 4 — IMPLEMENT LOGO CLOUD + SOCIAL PROOF (DO-LIKE)
+Perfeito.
+
+Agora estamos entrando na parte que dá **peso enterprise real** ao layout.
+
+Hero está próximo do modelo DigitalOcean.
+
+Agora seguimos exatamente como o fluxo estrutural da DigitalOcean:
+
+---
+
+# 🔥 FASE 4 — LOGO CLOUD + TRANSIÇÃO VISUAL
+
+Na DigitalOcean, depois do Hero + Carousel:
+
+* Vem uma faixa visual forte
+* Depois entra prova social
+* E então começam os blocos de conteúdo
+
+No seu caso, vamos estruturar assim:
+
+```
+
+Hero + Carousel
+↓
+Logo Cloud (Empresas que confiam)
+↓
+Case Studies (Customers growing...)
+
+```
+
+---
+
+# 🎯 OBJETIVO DA FASE 4
+
+Criar uma seção que:
+
+* Quebre a hero visualmente de forma suave
+* Reforce autoridade
+* Seja minimalista
+* Pareça exatamente SaaS
+
+Sem card.
+Sem box.
+Sem sombra exagerada.
+
+---
+
+# 🧠 ESTRUTURA EXATA
+
+## Layout:
+
+```
+
+Section (background white)
+
+   Título pequeno centralizado:
+   "Empresas que confiam na Unti Digital"
+
+   Grid de logos (5 col desktop)
+   Espaçamento generoso
+
+```
+
+---
+
+# 🎨 VISUAL DIGITALOCEAN-STYLE
+
+* Logos em grayscale
+* Opacidade reduzida
+* Hover: full color
+* Muito espaço negativo
+* Nada de container pesado
+
+---
+
+# 🚀 PROMPT — FASE 4 (COLAR NO CODEX)
+
+```
+
+PHASE 4 — IMPLEMENT LOGO CLOUD SECTION (DIGITALOCEAN STYLE)
+
+We now implement the Logo Cloud section below the Hero Carousel.
+
+This must visually resemble DigitalOcean structure:
+Clean, centered, minimal, strong whitespace.
+
+---------------------------------------------------
+
+STRUCTURE
+---------------------------------------------------
+
+Create src/components/home/logo-cloud.tsx
+
+Use Section + Container.
+
+Centered layout.
+
+---------------------------------------------------
+
+CONTENT
+---------------------------------------------------
+
+Title:
+"Empresas que confiam na Unti Digital"
+
+Below:
+Grid of 5 columns on desktop.
+3 columns tablet.
+2 columns mobile.
+
+Use placeholder logos for now.
+Import from /public/assets/logos/.
+
+---------------------------------------------------
+
+STYLING
+---------------------------------------------------
+
+- Logos max-h-10
+- grayscale
+- opacity-70
+- hover: grayscale-0 + opacity-100
+- gap-12
+- generous vertical spacing
+
+---------------------------------------------------
+
+VISUAL RULES
+---------------------------------------------------
+
+- No card wrapper.
+- No background color.
+- Pure white.
+- Minimalist.
+
+---------------------------------------------------
+
+ENSURE
+---------------------------------------------------
+
+- Responsive grid works
+- No console errors
+- Build passes
+
+---------------------------------------------------
+
+OUTPUT
+---------------------------------------------------
+
+Return logo-cloud.tsx only.
+No explanation.
+Only code.
+
+```
+
+---
+
+# 🎯 RESULTADO ESPERADO
+
+✔ Visual SaaS enterprise
+✔ Transição suave após hero
+✔ Autoridade aumentada
+✔ Estrutura idêntica ao padrão DO
+
+---
+
+# 📌 PRÓXIMA FASE
+
+🔥 FASE 5 — CASE STUDIES estilo “Customers growing with DigitalOcean”
+
+Essa é uma das partes mais importantes para elevar percepção.
+
+---
+
+Execute Fase 4 e me diga:
+
+> FASE 4 CONCLUÍDA
+
+E seguimos imediatamente para Case Studies premium.
+
+
+--------
+
+FASE 5 — CASE STUDIES ESTILO “CUSTOMERS GROWING WITH DIGITALOCEAN”
+
+```
+
+PHASE 5 — IMPLEMENT CASE STUDIES
+
+Perfeito.
+
+Agora entramos na parte que realmente eleva o nível para **enterprise SaaS real**.
+
+Hero está alinhado.
+Logo Cloud está alinhado.
+
+Agora vem:
+
+# 🔥 FASE 5 — CASE STUDIES (MODELO “Customers growing with DigitalOcean”)
+
+Essa seção é extremamente estratégica.
+
+Ela muda percepção de:
+
+> “empresa de serviço”
+
+para:
+
+> “empresa de impacto e resultado”
+
+---
+
+# 🎯 OBJETIVO DA FASE 5
+
+Criar uma seção inspirada diretamente na estrutura:
+
+**“Customers growing with DigitalOcean”**
+
+Com:
+
+- Título forte
+- Subtítulo explicativo
+- Grid de 3–4 cards grandes
+- Cards com fundo colorido suave
+- Conteúdo resumido
+- CTA claro
+
+Sem caixas pesadas.
+Sem excesso de borda.
+Visual editorial premium.
+
+---
+
+# 🧠 ESTRUTURA EXATA
+
+## Layout
+
+```
+Section (white background)
+
+   Title (left aligned)
+   Subtitle (left aligned)
+
+   Grid 3 columns (desktop)
+      [Case Card]
+      [Case Card]
+      [Case Card]
+```
+
+---
+
+# 🎨 ESTILO DIGITALOCEAN
+
+Cards:
+
+- Rounded-2xl
+- Padding generoso
+- Background pastel suave (alternando tons)
+- Título do cliente
+- Pequeno destaque de resultado
+- Descrição curta
+- CTA link “Ver case”
+
+Sem sombra pesada.
+
+---
+
+# ✍ CONTEÚDO BASE (USAR REAL DO SITE ANTIGO)
+
+Podemos usar como base:
+
+- Cases existentes
+- Projetos de destaque
+- Exemplos reais do antigo
+
+Estrutura do card:
+
+```
+Cliente: Nome
+Resultado: “Aumento de conversão”
+Descrição curta
+Link
+```
+
+---
+
+# 🚀 PROMPT — FASE 5 (COLAR NO CODEX)
+
+```
+PHASE 5 — IMPLEMENT CASE STUDIES SECTION (DIGITALOCEAN STYLE)
+
+We now implement the Case Studies section below Logo Cloud.
+
+This section must visually resemble:
+"Customers growing with DigitalOcean"
+
+Clean, editorial, modern.
+
+---------------------------------------------------
+STRUCTURE
+---------------------------------------------------
+
+Create src/components/home/case-studies.tsx
+
+Use Section + Container.
+
+Title (left aligned):
+"Projetos que geram impacto real"
+
+Subtitle:
+"Empresas que escalaram sua presença digital com soluções desenvolvidas pela Unti Digital."
+
+---------------------------------------------------
+GRID
+---------------------------------------------------
+
+Desktop:
+grid-cols-3
+Gap-8
+
+Tablet:
+grid-cols-2
+
+Mobile:
+grid-cols-1
+
+---------------------------------------------------
+CARD STRUCTURE
+---------------------------------------------------
+
+Each card must contain:
+
+- Client name (small label)
+- Bold headline result
+- Short description
+- CTA link "Ver case →"
+
+---------------------------------------------------
+STYLING
+---------------------------------------------------
+
+- Rounded-2xl
+- Padding 32px
+- Background colors alternating between:
+   unti.pastel
+   white
+- Minimal shadow (optional)
+- Clean typography
+- Large whitespace
+
+---------------------------------------------------
+NO IMAGE REQUIRED FOR NOW
+---------------------------------------------------
+
+This is text-focused editorial style.
+
+---------------------------------------------------
+ENSURE
+---------------------------------------------------
+
+- Fully responsive
+- No layout shifts
+- Clean code
+- Build passes
+
+---------------------------------------------------
+OUTPUT
+---------------------------------------------------
+
+Return case-studies.tsx only.
+No explanation.
+Only code.
+```
+
+---
+
+# 🎯 RESULTADO ESPERADO
+
+✔ Estrutura muito parecida com DigitalOcean
+✔ Sensação de empresa sólida
+✔ Prova real
+✔ Transição natural para features
+
+---
+
+# 📌 PRÓXIMA FASE
+
+🔥 FASE 6 — Feature Blocks alternados (editorial DO style)
+
+Depois disso o site já estará com estrutura SaaS completa.
+
+---
+
+Execute essa fase e me diga:
+
+> FASE 5 CONCLUÍDA
+
+Estamos construindo algo muito mais profissional agora.
+
+----------
+
+FASE 6 — FEATURE BLOCKS ALTERNADOS (EDITORIAL DO STYLE)
+
+```
+Perfeito.
+
+Agora entramos na fase que separa “site bonito” de **site SaaS nível DigitalOcean real**.
+
+Hero ✔
+Logo Cloud ✔
+Case Studies ✔
+
+Agora vem:
+
+# 🔥 FASE 6 — FEATURE BLOCKS EDITORIAIS (ALTERNADO DO-STYLE)
+
+Essa seção é extremamente importante porque:
+
+* Dá profundidade
+* Explica diferenciais
+* Constrói autoridade técnica
+* Mantém fluidez visual
+* Evita parecer página institucional genérica
+
+---
+
+# 🎯 OBJETIVO DA FASE 6
+
+Criar blocos alternados no estilo DigitalOcean:
+
+```
+
+[Texto]        [Imagem]
+[Imagem]       [Texto]
+[Texto]        [Imagem]
+
+```
+
+Sem cards.
+Sem caixas.
+Sem fundo pesado.
+
+Layout editorial limpo.
+
+---
+
+# 🧠 ESTRUTURA DEFINITIVA
+
+Teremos 3 blocos:
+
+---
+
+## 🔵 BLOCO 1 — Comprometimento
+
+Título:
+Comprometimento com resultados e previsibilidade
+
+Texto:
+Projetos planejados com clareza de escopo, prazos e entregáveis definidos. Atuamos com metodologia e acompanhamento contínuo para garantir performance e estabilidade.
+
+Imagem:
+Placeholder ilustrativo (dashboard técnico minimalista)
+
+---
+
+## 🔵 BLOCO 2 — Agilidade técnica
+
+Título:
+Agilidade técnica com governança
+
+Texto:
+Times enxutos, comunicação direta e execução ágil sem abrir mão de boas práticas, segurança e arquitetura escalável.
+
+Imagem:
+Ilustração arquitetural leve
+
+---
+
+## 🔵 BLOCO 3 — Parceria estratégica
+
+Título:
+Parceria estratégica para crescimento digital
+
+Texto:
+Atuamos como extensão do seu time, oferecendo suporte técnico, evolução contínua e visão estratégica de longo prazo.
+
+Imagem:
+Ilustração conceitual clean
+
+---
+
+# 🎨 VISUAL DIGITALOCEAN
+
+* Muito espaço vertical
+* Grid 2 col desktop
+* Gap generoso (gap-16 ou maior)
+* Texto largura controlada (max-w-xl)
+* Imagem rounded-xl
+* Sem sombras exageradas
+* Fundo branco
+
+---
+
+# 🚀 PROMPT — FASE 6 (COLAR NO CODEX)
+
+```
+
+PHASE 6 — IMPLEMENT FEATURE BLOCKS (DIGITALOCEAN STYLE)
+
+We now implement the editorial feature blocks below Case Studies.
+
+This must follow DigitalOcean alternating layout style.
+
+---------------------------------------------------
+
+STRUCTURE
+---------------------------------------------------
+
+Create src/components/home/feature-blocks.tsx
+
+Use Section + Container.
+
+Render 3 blocks.
+
+---------------------------------------------------
+
+LAYOUT RULES
+---------------------------------------------------
+
+Each block:
+
+Desktop:
+grid md:grid-cols-2
+gap-16
+items-center
+
+Alternate layout:
+Block 1 → Text left / Image right
+Block 2 → Image left / Text right
+Block 3 → Text left / Image right
+
+Mobile:
+Stacked vertically.
+
+---------------------------------------------------
+
+CONTENT
+---------------------------------------------------
+
+Block 1:
+Title:
+"Comprometimento com resultados e previsibilidade"
+Paragraph:
+"Projetos planejados com clareza de escopo..."
+
+Block 2:
+Title:
+"Agilidade técnica com governança"
+Paragraph:
+"Times enxutos, comunicação direta..."
+
+Block 3:
+Title:
+"Parceria estratégica para crescimento digital"
+Paragraph:
+"Atuamos como extensão do seu time..."
+
+---------------------------------------------------
+
+IMAGES
+---------------------------------------------------
+
+Use placeholder images from:
+public/assets/features/
+
+Use next/image
+Rounded-xl
+Aspect-video
+
+---------------------------------------------------
+
+STYLING
+---------------------------------------------------
+
+- Titles text-3xl md:text-4xl
+- Font-medium
+- Text max-w-xl
+- Generous vertical spacing
+- Clean whitespace
+- No card container
+- No heavy shadows
+
+---------------------------------------------------
+
+ENSURE
+---------------------------------------------------
+
+- Fully responsive
+- No layout breaking
+- Build passes
+- Clean TypeScript
+
+---------------------------------------------------
+
+OUTPUT
+---------------------------------------------------
+
+Return feature-blocks.tsx only.
+No explanation.
+Only code.
+
+```
+
+---
+
+# 🎯 RESULTADO ESPERADO
+
+✔ Layout começa a parecer muito SaaS
+✔ Alternância visual fluida
+✔ Forte percepção de empresa estruturada
+✔ Transição elegante para conteúdo
+
+---
+
+# 📌 PRÓXIMA FASE
+
+🔥 FASE 7 — Blog Grid (DO-style minimal)
+🔥 FASE 8 — CTA Final Premium
+
+Estamos na reta final da homepage.
+
+Execute essa fase e me diga:
+
+> FASE 6 CONCLUÍDA
+
+Agora o site já está tomando forma real de produto enterprise.
