@@ -1,32 +1,42 @@
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
+import Image, { StaticImageData } from "next/image";
+import blogEstrategiaImg from "@/assets/unti-digital-homepage-image-blog-estrategia-digital-para-empresas-b2b.png";
+import blogIntegracoesImg from "@/assets/unti-digital-homepage-image-blog-integracoes-que-escalam-operacoes.png";
+import blogGovernancaImg from "@/assets/unti-digital-homepage-image-blog-governanca-e-seguranca-em-plataformas-web.png";
+import blogUxImg from "@/assets/unti-digital-homepage-image-blog-ux-para-ambientes-enterprise.png";
 
 interface BlogPost {
   title: string;
   description: string;
   category: string;
+  image: StaticImageData;
 }
 
 const posts: BlogPost[] = [
   {
     title: "Estratégia digital para empresas B2B",
     description: "Como estruturar presença digital com foco em geração de leads qualificados e conversão.",
-    category: "Estratégia"
+    category: "Estratégia",
+    image: blogEstrategiaImg
   },
   {
     title: "Integrações que escalam operações",
     description: "Conecte sistemas e automatize processos para crescer sem aumentar complexidade operacional.",
-    category: "Tecnologia"
+    category: "Tecnologia",
+    image: blogIntegracoesImg
   },
   {
     title: "Governança e segurança em plataformas web",
     description: "Boas práticas para garantir estabilidade, segurança e conformidade em ambientes críticos.",
-    category: "Segurança"
+    category: "Segurança",
+    image: blogGovernancaImg
   },
   {
     title: "UX para ambientes enterprise",
     description: "Design de interfaces que equilibram complexidade funcional com usabilidade e performance.",
-    category: "Design"
+    category: "Design",
+    image: blogUxImg
   }
 ];
 
@@ -51,11 +61,15 @@ export function BlogGrid() {
               key={index}
               className="rounded-xl border border-gray-200 overflow-hidden hover:shadow-md transition-shadow duration-300"
             >
-              {/* Image Placeholder */}
-              <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-                <svg className="w-12 h-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-                </svg>
+              {/* Image */}
+              <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden">
+                <Image
+                  src={post.image}
+                  alt={post.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 25vw"
+                />
               </div>
 
               {/* Content */}
