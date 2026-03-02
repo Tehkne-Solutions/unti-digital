@@ -1,9 +1,15 @@
+"use client";
+
 import { Section } from '@/components/ui/Section';
 import { Container } from '@/components/ui/Container';
+import { Modal } from '@/components/ui/Modal';
+import { Button } from '@/components/ui/Button';
 import { services } from '@/data/services';
-import Link from 'next/link';
+import { useState } from 'react';
+import type { Service } from '@/data/services';
 
 export function ServicesGrid() {
+  const [selectedService, setSelectedService] = useState<Service | null>(null);
   return (
     <Section>
       <Container>
@@ -34,16 +40,66 @@ export function ServicesGrid() {
                 {service.description}
               </p>
               
-              <Link 
-                href="#"
+              <button
+                onClick={() => setSelectedService(service)}
                 className="text-unti-blue font-medium hover:underline inline-flex items-center gap-2"
               >
                 Ver detalhes →
-              </Link>
+              </button>
             </div>
           ))}
         </div>
       </Container>
+
+      {/* Service Modal */}
+      <Modal
+        isOpen={selectedService !== null}
+        onClose={() => setSelectedService(null)}
+        title={selectedService?.title || ''}
+      >
+        {selectedService && (
+          <div className="space-y-6">
+            <p className="text-gray-600">{selectedService.fullDescription}</p>
+
+            <div>
+              <h4 className="font-medium text-unti-dark mb-3">Diferenciais</h4>
+              <ul className="space-y-2">
+                {selectedService.bullets.map((bullet, index) => (
+                  <li key={index} className="flex items-start gap-2">
+                    <svg className="w-5 h-5 text-unti-blue mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-gray-700">{bullet}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-medium text-unti-dark mb-3">O que você recebe</h4>
+              <ul className="space-y-2">
+                {selectedService.deliverables.map((deliverable, index) => (
+                  <li key={index} className="flex items-start gap-2">
+                    <svg className="w-5 h-5 text-unti-blue mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-gray-700">{deliverable}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="flex gap-4 pt-4">
+              <Button variant="primary" className="flex-1">
+                Solicitar orçamento
+              </Button>
+              <Button variant="secondary" className="flex-1">
+                Falar com especialista
+              </Button>
+            </div>
+          </div>
+        )}
+      </Modal>
     </Section>
   );
 }
