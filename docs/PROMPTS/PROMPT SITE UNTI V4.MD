@@ -3545,3 +3545,405 @@ Execute essa fase e me diga:
 > FASE 6 CONCLUÍDA
 
 Agora o site já está tomando forma real de produto enterprise.
+
+------------[
+   FASE 7 — BLOG GRID (DO-STYLE MINIMAL)
+
+   Perfeito.
+
+Agora entramos na reta final da homepage.
+
+Hero ✔
+Carousel integrado ✔
+Logo Cloud ✔
+Case Studies ✔
+Feature Blocks ✔
+
+Agora vem a parte que mantém autoridade contínua:
+
+# 🔥 FASE 7 — BLOG GRID (DO-STYLE MINIMAL)
+
+Essa seção é importante porque:
+
+* Mantém percepção de empresa ativa
+* Reforça autoridade técnica
+* Ajuda SEO
+* Prepara para tráfego orgânico
+
+E precisa seguir o padrão DigitalOcean:
+
+* Grid limpo
+* Cards simples
+* Muito espaço negativo
+* Sem caixas pesadas
+
+---
+
+# 🎯 OBJETIVO DA FASE 7
+
+Criar:
+
+* Título
+* Subtítulo
+* Grid 3–4 cards
+* Card simples com imagem topo
+* Título
+* Descrição curta
+* CTA link
+
+Nada exagerado.
+
+---
+
+# 🧠 ESTRUTURA EXATA
+
+## Layout
+
+```
+
+Section
+
+   Title (left aligned)
+   Subtitle
+
+   Grid:
+      [Blog Card]
+      [Blog Card]
+      [Blog Card]
+      [Blog Card]
+
+```
+
+---
+
+# 🎨 ESTILO DIGITALOCEAN
+
+Card:
+
+* Rounded-xl
+* Border leve
+* Hover: leve shadow
+* Imagem topo (aspect-video)
+* Padding interno 24–32px
+* CTA link azul
+
+Sem fundo pastel.
+Sem sombra forte.
+
+---
+
+# ✍ CONTEÚDO (PLACEHOLDER POR ENQUANTO)
+
+Exemplos:
+
+1️⃣ Estratégia digital para empresas B2B
+2️⃣ Integrações que escalam operações
+3️⃣ Governança e segurança em plataformas web
+4️⃣ UX para ambientes enterprise
+
+---
+
+# 🚀 PROMPT — FASE 7 (COLAR NO CODEX)
+
+```
+
+PHASE 7 — IMPLEMENT BLOG GRID SECTION (DIGITALOCEAN STYLE)
+
+We now implement the Blog Grid section below Feature Blocks.
+
+---------------------------------------------------
+
+STRUCTURE
+---------------------------------------------------
+
+Create src/components/home/blog-grid.tsx
+
+Use Section + Container.
+
+Title:
+"Insights sobre tecnologia e performance digital"
+
+Subtitle:
+"Conteúdos para empresas que buscam clareza, escala e previsibilidade."
+
+---------------------------------------------------
+
+GRID
+---------------------------------------------------
+
+Desktop:
+grid-cols-4
+gap-8
+
+Tablet:
+grid-cols-2
+
+Mobile:
+grid-cols-1
+
+---------------------------------------------------
+
+CARD STRUCTURE
+---------------------------------------------------
+
+Each card must include:
+
+- Image (aspect-video, rounded-xl)
+- Title
+- Short description
+- Link: "Ler matéria →"
+
+---------------------------------------------------
+
+STYLING
+---------------------------------------------------
+
+- Rounded-xl
+- Border border-gray-200
+- Hover shadow-md
+- Padding 24px
+- Clean typography
+- Generous whitespace
+- No background color block
+
+---------------------------------------------------
+
+ENSURE
+---------------------------------------------------
+
+- Fully responsive
+- Clean layout
+- Build passes
+- No unused imports
+
+---------------------------------------------------
+
+OUTPUT
+---------------------------------------------------
+
+Return blog-grid.tsx only.
+No explanation.
+Only code.
+
+```
+
+---
+
+# 🎯 RESULTADO ESPERADO
+
+✔ Estrutura editorial sólida
+✔ Visual enterprise
+✔ Consistência com DO
+✔ SEO-ready
+
+---
+
+# 🔥 FASE FINAL
+
+Depois disso vamos para:
+
+# 🔥 FASE 8 — CTA FINAL PREMIUM + TRANSIÇÃO PARA FOOTER
+
+Essa seção é extremamente importante para conversão.
+
+---
+
+Execute Fase 7 e me diga:
+
+> FASE 7 CONCLUÍDA
+
+Estamos a um passo de fechar a homepage enterprise completa.
+
+]
+
+----------
+
+FASE 8 — CTA FINAL PREMIUM + TRANSIÇÃO PARA FOOTER
+
+```
+
+Perfeito.
+
+Agora fechamos a homepage com a parte mais estratégica de todas:
+
+# 🔥 FASE 8 — CTA FINAL PREMIUM (ENTERPRISE-LEVEL)
+
+Essa seção é o fechamento do funil.
+
+Se feita corretamente:
+
+- Consolida autoridade
+- Remove dúvidas
+- Direciona ação clara
+- Aumenta conversão
+- Encerra com força
+
+DigitalOcean faz isso muito bem.
+
+Vamos fazer no mesmo padrão estrutural.
+
+---
+
+# 🎯 OBJETIVO DA FASE 8
+
+Criar um bloco final que:
+
+- Visualmente forte
+- Simples
+- Limpo
+- Foco total no CTA
+- Sem poluição visual
+
+---
+
+# 🧠 ESTRUTURA EXATA
+
+```
+Section (background unti.dark)
+
+   Container (centered)
+
+      Headline grande
+      Subheadline curta
+      Botão primário grande
+```
+
+Sem grid.
+Sem múltiplos cards.
+Sem distrações.
+
+---
+
+# ✍ CONTEÚDO DEFINIDO
+
+Headline:
+
+Pronto para escalar sua presença digital com segurança?
+
+Subheadline:
+
+Fale com um especialista e descubra como podemos estruturar sua operação digital com previsibilidade e performance.
+
+Botão:
+
+Falar com especialista
+
+---
+
+# 🎨 ESTILO DIGITALOCEAN
+
+- Fundo escuro sólido (unti.dark)
+- Texto branco
+- Headline grande (text-4xl ou 5xl)
+- Botão centralizado
+- Espaçamento vertical generoso
+- Muito ar
+
+Sem gradiente.
+Sem box.
+Sem sombra.
+
+---
+
+# 🚀 PROMPT — FASE 8 (COLAR NO CODEX)
+
+```
+PHASE 8 — IMPLEMENT FINAL CTA SECTION (ENTERPRISE STYLE)
+
+We now implement the final CTA section below Blog Grid.
+
+This section must feel strong, minimal and premium.
+
+---------------------------------------------------
+STRUCTURE
+---------------------------------------------------
+
+Create src/components/home/final-cta.tsx
+
+Use Section + Container.
+
+Center everything.
+
+---------------------------------------------------
+CONTENT
+---------------------------------------------------
+
+Headline:
+"Pronto para escalar sua presença digital com segurança?"
+
+Subheadline:
+"Fale com um especialista e descubra como podemos estruturar sua operação digital com previsibilidade e performance."
+
+Primary Button:
+"Falar com especialista"
+
+---------------------------------------------------
+STYLING
+---------------------------------------------------
+
+- Background: unti.dark
+- Text color: white
+- Headline:
+   text-4xl md:text-5xl
+   font-bold
+- Subheadline:
+   text-lg
+   opacity-80
+   max-w-2xl
+- Button centered
+- Generous vertical spacing (py-32 desktop)
+- No gradient
+- No box shadow
+- Clean minimal layout
+
+---------------------------------------------------
+ENSURE
+---------------------------------------------------
+
+- Fully responsive
+- No layout shifts
+- No unused imports
+- Build passes
+
+---------------------------------------------------
+OUTPUT
+---------------------------------------------------
+
+Return final-cta.tsx only.
+No explanation.
+Only code.
+```
+
+---
+
+# 🎯 RESULTADO ESPERADO
+
+✔ Homepage completa
+✔ Fluxo SaaS profissional
+✔ Estrutura fiel à DigitalOcean
+✔ Visual enterprise
+✔ Conversão clara
+
+---
+
+# 📦 APÓS FASE 8
+
+Depois que você rodar isso e confirmar:
+
+> HOMEPAGE CONCLUÍDA
+
+Nós vamos fazer:
+
+1️⃣ Auditoria estrutural final
+2️⃣ Ajustes finos de spacing para ficar ainda mais próximo da DO
+3️⃣ Microinterações suaves
+4️⃣ Revisão responsiva detalhada
+5️⃣ Checklist produção
+
+---
+
+Execute Fase 8 e me diga:
+
+> HOMEPAGE CONCLUÍDA
+
+Agora estamos no fechamento estratégico do projeto.
