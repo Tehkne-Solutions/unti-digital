@@ -59,7 +59,7 @@ export function BlogGrid() {
           {posts.map((post, index) => (
             <article
               key={index}
-              className="rounded-xl border border-gray-200 overflow-hidden hover:shadow-md transition-shadow duration-300"
+              className="rounded-xl border border-gray-200 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
             >
               {/* Image */}
               <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden">

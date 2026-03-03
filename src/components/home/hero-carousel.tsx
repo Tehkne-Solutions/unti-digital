@@ -66,9 +66,9 @@ export function HeroCarousel() {
   ];
 
   return (
-    <div className="max-w-[1100px] mx-auto mt-16 px-6 relative">
+    <div className="max-w-[1100px] mx-auto mt-20 md:mt-24 px-6 relative">
       {/* Slide Content */}
-      <div className="flex flex-col items-center text-center space-y-6">
+      <div className="flex flex-col items-center text-center space-y-8">
         {/* Image/Video Area */}
         <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg">
           <div className={`absolute inset-0 bg-gradient-to-br ${gradients[activeSlide]} transition-all duration-1000`}>
@@ -94,13 +94,13 @@ export function HeroCarousel() {
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-3">
-          <Button 
+          <Button
             variant="primary"
             onClick={() => window.location.href = '/contato'}
           >
             {currentSlide.primaryCTA}
           </Button>
-          <Button 
+          <Button
             variant="secondary"
             onClick={() => window.location.href = '/cases'}
           >
@@ -114,11 +114,10 @@ export function HeroCarousel() {
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`transition-all ${
-                index === activeSlide 
-                  ? "w-8 h-2 bg-unti-blue" 
+              className={`transition-all ${index === activeSlide
+                  ? "w-8 h-2 bg-unti-blue"
                   : "w-2 h-2 bg-gray-300 hover:bg-gray-400"
-              } rounded-full`}
+                } rounded-full`}
               aria-label={`Ir para slide ${index + 1}`}
             />
           ))}

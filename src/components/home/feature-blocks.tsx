@@ -41,14 +41,12 @@ export function FeatureBlocks() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className={`grid md:grid-cols-2 gap-12 md:gap-16 items-center ${
-                feature.imagePosition === "left" ? "md:flex-row-reverse" : ""
-              }`}
+              className={`grid md:grid-cols-2 gap-16 md:gap-20 items-center ${feature.imagePosition === "left" ? "md:flex-row-reverse" : ""
+                }`}
             >
               {/* Text Content */}
-              <div className={`space-y-6 ${
-                feature.imagePosition === "left" ? "md:order-2" : "md:order-1"
-              }`}>
+              <div className={`space-y-6 ${feature.imagePosition === "left" ? "md:order-2" : "md:order-1"
+                }`}>
                 <h2 className="text-3xl md:text-4xl font-medium text-unti-dark max-w-xl">
                   {feature.title}
                 </h2>
@@ -58,15 +56,14 @@ export function FeatureBlocks() {
               </div>
 
               {/* Image */}
-              <div className={`${
-                feature.imagePosition === "left" ? "md:order-1" : "md:order-2"
-              }`}>
+              <div className={`${feature.imagePosition === "left" ? "md:order-1" : "md:order-2"
+                }`}>
                 <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden">
                   <Image
                     src={feature.image}
                     alt={feature.title}
                     fill
-                    className="object-cover"
+                    className="object-cover transition-transform duration-500 hover:scale-[1.02]"
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>
