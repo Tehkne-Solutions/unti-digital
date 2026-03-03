@@ -1,71 +1,180 @@
-import { Section } from '@/components/ui/Section';
-import { Container } from '@/components/ui/Container';
-import { Button } from '@/components/ui/Button';
-import { Segmentation } from '@/components/home/segmentation';
-import { ServicesGrid } from '@/components/solutions/services-grid';
-import { FinalCTA } from '@/components/home/final-cta';
-import Image from 'next/image';
+"use client";
+
+import { Container } from "@/components/ui/Container";
+import { Section } from "@/components/ui/Section";
+import Link from "next/link";
+
+const solutions = [
+  {
+    title: "Sites Institucionais de Alta Performance",
+    description: "Plataformas corporativas focadas em conversão, performance e integração com sistemas internos.",
+    href: "/solucoes/sites-institucionais",
+  },
+  {
+    title: "Plataformas Web Sob Medida",
+    description: "Arquitetura personalizada para operações complexas com integrações avançadas em alta escala.",
+    href: "/solucoes/plataformas-web",
+  },
+  {
+    title: "Integrações com CRM e ERP",
+    description: "Conecte marketing, vendas e operação através de integrações robustas que automatizam processos.",
+    href: "/solucoes/integracoes-crm-erp",
+  },
+  {
+    title: "Governança e Segurança",
+    description: "Arquitetura segura com controle de acessos, monitoramento contínuo e compliance garantido.",
+    href: "/solucoes/governanca-seguranca",
+  },
+  {
+    title: "White Label Técnico para Agências",
+    description: "Desenvolvimento sob demanda com sua marca, entrega confidencial e arquitetura robusta.",
+    href: "/solucoes/white-label-agencias",
+  },
+];
 
 export default function SolucoesPage() {
   return (
-    <>
-      {/* Hero Section */}
-      <Section className="bg-white">
+    <div className="w-full">
+      {/* Hero */}
+      <Section>
         <Container>
-          <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold text-unti-dark mb-6">
-              Soluções digitais estruturadas para crescimento sustentável
+          <div className="max-w-5xl mx-auto text-center space-y-8">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-unti-dark tracking-tight leading-tight">
+              Soluções digitais para empresas que precisam escalar com segurança
             </h1>
-            <p className="text-lg text-gray-600 mb-10">
-              Desenvolvemos projetos com foco em performance, integração e governança técnica para empresas e agências.
+            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Desenvolvimento, integrações e governança para negócios que não podem falhar.
             </p>
-            <Button variant="primary">
-              Falar com especialista
-            </Button>
           </div>
         </Container>
       </Section>
 
-      {/* Segmentation Section */}
-      <Segmentation />
-
-      {/* Services Grid */}
-      <ServicesGrid />
+      {/* Solutions Grid */}
+      <Section>
+        <Container>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            {solutions.map((solution, index) => (
+              <Link key={index} href={solution.href}>
+                <div className="h-full rounded-2xl border border-gray-200 p-8 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 cursor-pointer bg-white">
+                  <h3 className="text-xl font-semibold text-unti-dark mb-4">
+                    {solution.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed mb-6">
+                    {solution.description}
+                  </p>
+                  <div className="text-unti-blue font-medium text-sm">
+                    Explorar solução →
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </Container>
+      </Section>
 
       {/* Differential Block */}
       <Section>
         <Container>
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-medium text-unti-dark mb-6">
-                Por que nossas soluções são diferentes?
-              </h2>
-              <div className="space-y-4 text-gray-600">
-                <p>
-                  Trabalhamos com comprometimento total aos resultados, garantindo previsibilidade em cada etapa do projeto através de metodologia estruturada e comunicação transparente.
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-unti-dark mb-12 text-center">
+              Abordagem diferenciada
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+              <div className="space-y-3">
+                <div className="text-2xl font-bold text-unti-blue">01</div>
+                <h3 className="text-xl font-semibold text-unti-dark">
+                  Metodologia estruturada
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Processos claros e documentados que garantem clareza, prazos e resultados previsíveis.
                 </p>
-                <p>
-                  Nossa agilidade técnica é combinada com governança sólida, permitindo entregas rápidas sem comprometer qualidade ou segurança.
+              </div>
+              <div className="space-y-3">
+                <div className="text-2xl font-bold text-unti-blue">02</div>
+                <h3 className="text-xl font-semibold text-unti-dark">
+                  Arquitetura escalável
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Preparamos suas plataformas para crescer junto com o seu negócio, sem reengenharia.
                 </p>
-                <p>
-                  Atuamos como parceria estratégica de longo prazo, não apenas como fornecedor, entendendo profundamente seu negócio e objetivos.
+              </div>
+              <div className="space-y-3">
+                <div className="text-2xl font-bold text-unti-blue">03</div>
+                <h3 className="text-xl font-semibold text-unti-dark">
+                  Times especializados
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Enxutos, com comunicação direta e expertise comprovada em cada área de atuação.
                 </p>
               </div>
             </div>
-            <div className="relative aspect-video rounded-xl overflow-hidden bg-gray-100">
-              <Image
-                src="/assets/features/feature-1.jpg"
-                alt="Diferencial estratégico"
-                fill
-                className="object-cover"
-              />
+          </div>
+        </Container>
+      </Section>
+
+      {/* Segmentation */}
+      <Section>
+        <Container>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            {/* Empresas */}
+            <div className="rounded-2xl bg-blue-50 p-12 space-y-6">
+              <h3 className="text-2xl font-bold text-unti-dark">Para Empresas</h3>
+              <div className="space-y-4 text-gray-600 leading-relaxed">
+                <div>
+                  <strong className="text-unti-dark">Performance:</strong> Plataformas otimizadas para conversão e SEO.
+                </div>
+                <div>
+                  <strong className="text-unti-dark">Governança:</strong> Arquitetura profissional e segura.
+                </div>
+                <div>
+                  <strong className="text-unti-dark">Integração:</strong> Conecte CRM, ERP e ferramentas de marketing.
+                </div>
+                <div>
+                  <strong className="text-unti-dark">Escalabilidade:</strong> Estrutura que cresce com seu negócio.
+                </div>
+              </div>
+            </div>
+
+            {/* Agências */}
+            <div className="rounded-2xl bg-blue-50 p-12 space-y-6">
+              <h3 className="text-2xl font-bold text-unti-dark">Para Agências</h3>
+              <div className="space-y-4 text-gray-600 leading-relaxed">
+                <div>
+                  <strong className="text-unti-dark">White Label:</strong> Desenvolvimento sob sua marca.
+                </div>
+                <div>
+                  <strong className="text-unti-dark">Execução Técnica:</strong> Time capacitado entrega seus projetos.
+                </div>
+                <div>
+                  <strong className="text-unti-dark">Arquitetura Robusta:</strong> Padrão profissional garantido.
+                </div>
+                <div>
+                  <strong className="text-unti-dark">Suporte Contínuo:</strong> Parceria de longo prazo.
+                </div>
+              </div>
             </div>
           </div>
         </Container>
       </Section>
 
       {/* Final CTA */}
-      <FinalCTA />
-    </>
+      <Section>
+        <Container>
+          <div className="max-w-6xl mx-auto">
+            <div className="bg-unti-blue rounded-2xl px-8 md:px-16 py-20 text-center space-y-8">
+              <h2 className="text-3xl md:text-4xl font-bold text-white">
+                Pronto para potencializar sua presença digital?
+              </h2>
+              <a
+                href="/contato"
+                className="inline-flex items-center justify-center px-8 py-3 bg-white text-unti-blue font-medium rounded-lg hover:bg-gray-50 transition-colors"
+              >
+                Falar com especialista
+              </a>
+            </div>
+          </div>
+        </Container>
+      </Section>
+    </div>
   );
 }
