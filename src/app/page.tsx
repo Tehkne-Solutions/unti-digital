@@ -2,7 +2,6 @@ import { Hero } from "@/components/home/hero";
 import { Segmentation } from "@/components/home/segmentation";
 import { ServicesCarousel } from "@/components/home/services-carousel";
 import { LogoCloud } from "@/components/home/logo-cloud";
-import { SocialProofNumbers } from "@/components/home/social-proof-numbers";
 import { CaseStudies } from "@/components/home/case-studies";
 import { FeatureBlocks } from "@/components/home/feature-blocks";
 import { BlogGrid } from "@/components/home/blog-grid";
@@ -18,7 +17,6 @@ export default function HomePage() {
       <HowWeWork />
       <ServicesCarousel />
       <LogoCloud />
-      <SocialProofNumbers />
       <CaseStudies />
       <FeatureBlocks />
       <BlogGrid />
