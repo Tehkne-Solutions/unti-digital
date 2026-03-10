@@ -1,0 +1,1025 @@
+Perfeito. Vou fazer agora um review visual profissional da homepage da UNTI com base no print que você enviou e no site em produção.
+
+A ideia aqui é elevar o site para nível SaaS premium (Stripe / Vercel / Linear) mantendo seu design system.
+
+🔎 REVIEW VISUAL – HOMEPAGE UNTI
+
+Baseado no print do site atual.
+
+Vou dividir em 5 melhorias críticas.
+
+1️⃣ HERO / SLIDER AINDA ESTÁ GRANDE DEMAIS
+
+Mesmo reduzindo, ainda recomendo um ajuste.
+
+Hoje:
+
+slider domina a seção
+
+rouba atenção do título
+
+Mas o título é o elemento de venda principal.
+
+Recomendação
+
+Layout mais SaaS:
+
+Título
+Descrição
+Botões
+
+Imagem (menor)
+
+Ou seja:
+
+[TEXTO]
+
+      [SLIDER]
+Ajuste recomendado
+
+No container:
+
+max-w-3xl mx-auto
+
+Isso deixa a imagem:
+
+✔ elegante
+✔ focada
+✔ menos pesada
+
+2️⃣ FALTA RESPIRO ENTRE SEÇÕES
+
+Hoje algumas seções estão próximas.
+
+Exemplo:
+
+slider
+↓
+
+para quem desenvolvemos
+Ajuste ideal
+
+Adicionar padding vertical padrão:
+
+py-24
+
+ou
+
+py-28
+
+Isso cria ritmo visual.
+
+3️⃣ SEÇÃO "PARA QUEM DESENVOLVEMOS"
+
+Ela está boa estruturalmente, mas pode ficar mais forte.
+
+Sugestão:
+
+Adicionar ícone maior ou ilustração pequena.
+
+Exemplo:
+
+🏢 Empresas
+📢 Agências
+
+Ou usar ícones tipo:
+
+briefcase
+megaphone
+
+Exemplo Tailwind + Lucide:
+
+<Briefcase className="w-8 h-8 text-unti-blue" />
+4️⃣ SEÇÃO "NOSSAS SOLUÇÕES DIGITAIS"
+
+Aqui existe um problema estrutural.
+
+Hoje:
+
+cards grandes
+slider lateral
+
+Isso cria:
+
+⚠ confusão visual
+
+Melhor estrutura
+
+Grid simples:
+
+[site institucional]
+[plataformas web]
+[integracoes]
+[governança]
+
+Grid:
+
+grid md:grid-cols-2 lg:grid-cols-3
+
+Isso é mais SaaS moderno.
+
+5️⃣ SEÇÃO "EMPRESAS QUE CONFIAM"
+
+Ela está muito apagada.
+
+Hoje parece placeholder.
+
+Melhor abordagem
+
+Adicionar:
+
+opacity-70 hover:opacity-100
+grayscale hover:grayscale-0
+
+Exemplo:
+
+className="opacity-70 hover:opacity-100 grayscale hover:grayscale-0 transition"
+
+Isso cria o efeito usado por:
+
+Vercel
+
+Stripe
+
+Supabase
+
+6️⃣ SEÇÃO DIFERENCIAIS (ESTÁ MUITO BOA)
+
+Essa parte está excelente.
+
+Principalmente:
+
+Comprometimento com previsibilidade
+Agilidade técnica com governança
+Parceria estratégica
+
+Mas recomendo:
+
+aumentar espaçamento interno
+gap-20
+
+Entre blocos.
+
+7️⃣ BLOG / INSIGHTS
+
+Muito bom estruturalmente.
+
+Sugestão apenas:
+
+Hover card:
+
+hover:-translate-y-1
+hover:shadow-lg
+transition
+
+Isso melhora UX.
+
+8️⃣ CTA FINAL
+
+Essa seção está muito boa.
+
+Mas recomendo:
+
+aumentar padding:
+
+py-28
+🎯 RESULTADO COM ESSES AJUSTES
+
+A homepage ficará:
+
+✔ mais respirável
+✔ mais SaaS
+✔ mais premium
+✔ mais clara para conversão
+-----
+
+Perfeito — agora vamos aplicar 3 melhorias de UX que aumentam MUITO a conversão em sites B2B de tecnologia.
+Essas técnicas são usadas por empresas como Stripe, Vercel, Supabase e Linear.
+
+Elas não são apenas visuais — melhoram geração de leads.
+
+🚀 MELHORIA 1 — SEÇÃO “COMO TRABALHAMOS”
+
+Hoje seu site fala o que vocês fazem, mas não como vocês trabalham.
+
+Para empresas isso é extremamente importante.
+
+Estrutura recomendada
+
+Adicionar logo depois da seção "Para quem desenvolvemos soluções digitais".
+
+Wireframe
+COMO TRABALHAMOS
+
+Diagnóstico → Arquitetura → Desenvolvimento → Evolução contínua
+Layout recomendado
+<section className="py-24 bg-white">
+
+<div className="max-w-6xl mx-auto px-6">
+
+<h2 className="text-3xl font-bold text-unti-dark text-center mb-16">
+Como trabalhamos
+</h2>
+
+<div className="grid md:grid-cols-4 gap-10">
+
+<div className="text-center space-y-4">
+<div className="w-14 h-14 rounded-xl bg-unti-pastel flex items-center justify-center mx-auto text-unti-blue font-bold text-lg">1</div>
+<h3 className="font-semibold text-unti-dark">Diagnóstico</h3>
+<p className="text-gray-600 text-sm">
+Entendemos o contexto do negócio e os desafios técnicos do projeto.
+</p>
+</div>
+
+<div className="text-center space-y-4">
+<div className="w-14 h-14 rounded-xl bg-unti-pastel flex items-center justify-center mx-auto text-unti-blue font-bold text-lg">2</div>
+<h3 className="font-semibold text-unti-dark">Arquitetura</h3>
+<p className="text-gray-600 text-sm">
+Definimos arquitetura, integrações e estrutura da solução digital.
+</p>
+</div>
+
+<div className="text-center space-y-4">
+<div className="w-14 h-14 rounded-xl bg-unti-pastel flex items-center justify-center mx-auto text-unti-blue font-bold text-lg">3</div>
+<h3 className="font-semibold text-unti-dark">Desenvolvimento</h3>
+<p className="text-gray-600 text-sm">
+Implementação com boas práticas de engenharia e foco em performance.
+</p>
+</div>
+
+<div className="text-center space-y-4">
+<div className="w-14 h-14 rounded-xl bg-unti-pastel flex items-center justify-center mx-auto text-unti-blue font-bold text-lg">4</div>
+<h3 className="font-semibold text-unti-dark">Evolução contínua</h3>
+<p className="text-gray-600 text-sm">
+Acompanhamento e evolução da plataforma conforme o crescimento do negócio.
+</p>
+</div>
+
+</div>
+</div>
+</section>
+🚀 MELHORIA 2 — MICRO PROVA SOCIAL
+
+Empresas confiam em outras empresas.
+
+Você já tem:
+
+Empresas que confiam
+
+Mas pode melhorar muito com micro provas sociais.
+
+Adicionar logo abaixo:
+
++50 projetos entregues
++10 anos de experiência
++99.9% uptime em plataformas
+Layout
+<div className="grid grid-cols-3 text-center max-w-4xl mx-auto py-16">
+
+<div>
+<p className="text-3xl font-bold text-unti-blue">+50</p>
+<p className="text-gray-600 text-sm">projetos entregues</p>
+</div>
+
+<div>
+<p className="text-3xl font-bold text-unti-blue">10+</p>
+<p className="text-gray-600 text-sm">anos de experiência</p>
+</div>
+
+<div>
+<p className="text-3xl font-bold text-unti-blue">99.9%</p>
+<p className="text-gray-600 text-sm">uptime em plataformas</p>
+</div>
+
+</div>
+🚀 MELHORIA 3 — CTA FIXO (AUMENTA MUITO LEADS)
+
+Sites B2B modernos usam CTA persistente.
+
+Tipo:
+
+💬 Falar com especialista
+
+fixo no canto.
+
+Você já tem algo parecido no print, mas pode melhorar.
+
+Comportamento ideal
+
+aparece após scroll
+
+animação suave
+
+abre contato ou WhatsApp
+
+Implementação
+<div className="fixed bottom-6 right-6 z-50">
+
+<a
+href="/contato"
+className="bg-unti-orange text-white px-5 py-3 rounded-full shadow-lg hover:scale-105 transition"
+>
+Falar com especialista
+</a>
+
+</div>
+🎯 RESULTADO
+
+Com essas três melhorias você terá:
+
+✔ mais confiança
+✔ mais conversão
+✔ experiência SaaS premium
+
+📊 ARQUITETURA FINAL DA HOMEPAGE
+
+A homepage ideal da UNTI ficará assim:
+
+Hero
+
+↓
+
+Serviços principais (slider)
+
+↓
+
+Para quem desenvolvemos
+
+↓
+
+Como trabalhamos
+
+↓
+
+Soluções digitais
+
+↓
+
+Empresas que confiam
+
+↓
+
+Prova social (números)
+
+↓
+
+Projetos / cases
+
+↓
+
+Diferenciais
+
+↓
+
+Insights / blog
+
+↓
+
+CTA final
+
+
+------
+Empresas que confiam na Unti Digital
+----
+essa seção vai pegar o estilo de um outro site que esta sendo feito em Next pela Unti. Segue o componente:
+<section class="page_section__zQZ2o page_sectionDeep__zIbZe page_storesMinimal__8HTos"><div class="page_sectionBox__u9A1n"><div class="page_sectionTitle__6ic_4"><h2>Lojas em Evidência</h2><p>Operação multi-lojistas com gestão central</p></div><div class="page_storeLogoArea__08_HC"><div class="page_storeLogoViewport__3C_dP "><div class="page_storeLogoTrack___7Tap" aria-label="Carrossel de logos das lojas"><button type="button" class="page_storeLogoCard__4G1Dn" aria-label="Abrir detalhes da loja Prime Motors"><img src="/images/stores/1002.png" alt="Logo Prime Motors" class="page_storeLogoImage__M9ZEN"></button><button type="button" class="page_storeLogoCard__4G1Dn" aria-label="Abrir detalhes da loja Top Class Car"><img src="/images/stores/diamante.jpg" alt="Logo Top Class Car" class="page_storeLogoImage__M9ZEN"></button><button type="button" class="page_storeLogoCard__4G1Dn" aria-label="Abrir detalhes da loja Premium Drive"><img src="/images/stores/emv.jpeg" alt="Logo Premium Drive" class="page_storeLogoImage__M9ZEN"></button><button type="button" class="page_storeLogoCard__4G1Dn" aria-label="Abrir detalhes da loja Select Auto"><img src="/images/stores/imperio.jpeg" alt="Logo Select Auto" class="page_storeLogoImage__M9ZEN"></button><button type="button" class="page_storeLogoCard__4G1Dn" aria-label="Abrir detalhes da loja Diamond Cars"><img src="/images/stores/diamante.jpg" alt="Logo Diamond Cars" class="page_storeLogoImage__M9ZEN"></button><button type="button" class="page_storeLogoCard__4G1Dn" aria-label="Abrir detalhes da loja Império Auto"><img src="/images/stores/imperio.jpeg" alt="Logo Império Auto" class="page_storeLogoImage__M9ZEN"></button><button type="button" class="page_storeLogoCard__4G1Dn" aria-label="Abrir detalhes da loja EMV Motors"><img src="/images/stores/emv.jpeg" alt="Logo EMV Motors" class="page_storeLogoImage__M9ZEN"></button><button type="button" class="page_storeLogoCard__4G1Dn" aria-label="Abrir detalhes da loja Urban Wheels"><img src="/images/stores/1002.png" alt="Logo Urban Wheels" class="page_storeLogoImage__M9ZEN"></button><button type="button" class="page_storeLogoCard__4G1Dn" aria-label="Abrir detalhes da loja Prime Motors"><img src="/images/stores/1002.png" alt="Logo Prime Motors" class="page_storeLogoImage__M9ZEN"></button><button type="button" class="page_storeLogoCard__4G1Dn" aria-label="Abrir detalhes da loja Top Class Car"><img src="/images/stores/diamante.jpg" alt="Logo Top Class Car" class="page_storeLogoImage__M9ZEN"></button><button type="button" class="page_storeLogoCard__4G1Dn" aria-label="Abrir detalhes da loja Premium Drive"><img src="/images/stores/emv.jpeg" alt="Logo Premium Drive" class="page_storeLogoImage__M9ZEN"></button><button type="button" class="page_storeLogoCard__4G1Dn" aria-label="Abrir detalhes da loja Select Auto"><img src="/images/stores/imperio.jpeg" alt="Logo Select Auto" class="page_storeLogoImage__M9ZEN"></button><button type="button" class="page_storeLogoCard__4G1Dn" aria-label="Abrir detalhes da loja Diamond Cars"><img src="/images/stores/diamante.jpg" alt="Logo Diamond Cars" class="page_storeLogoImage__M9ZEN"></button><button type="button" class="page_storeLogoCard__4G1Dn" aria-label="Abrir detalhes da loja Império Auto"><img src="/images/stores/imperio.jpeg" alt="Logo Império Auto" class="page_storeLogoImage__M9ZEN"></button><button type="button" class="page_storeLogoCard__4G1Dn" aria-label="Abrir detalhes da loja EMV Motors"><img src="/images/stores/emv.jpeg" alt="Logo EMV Motors" class="page_storeLogoImage__M9ZEN"></button><button type="button" class="page_storeLogoCard__4G1Dn" aria-label="Abrir detalhes da loja Urban Wheels"><img src="/images/stores/1002.png" alt="Logo Urban Wheels" class="page_storeLogoImage__M9ZEN"></button></div></div></div></div></section>
+ 
+
+Excelente escolha. Esse carrossel contínuo de logos é um padrão muito usado em SaaS (Stripe, Vercel, Ramp, Linear) e funciona muito bem como prova social visual.
+
+Vou te passar uma versão otimizada para o site da UNTI, já adaptada para:
+
+Next.js + Tailwind
+
+design system da UNTI
+
+loop infinito suave
+
+performance
+
+responsivo
+
+pronto para virar CMS depois
+
+🧠 Estrutura recomendada da seção
+
+Título da seção:
+
+Empresas que confiam na Unti Digital
+
+Subtítulo:
+
+Plataformas e empresas que utilizam soluções desenvolvidas pela Unti Digital.
+🚀 Componente otimizado para Next.js
+
+Crie:
+
+components/home/TrustedCompanies.tsx
+"use client"
+
+import Image from "next/image"
+
+const logos = [
+"/images/clients/1.png",
+"/images/clients/2.png",
+"/images/clients/3.png",
+"/images/clients/4.png",
+"/images/clients/5.png",
+"/images/clients/6.png",
+"/images/clients/7.png",
+"/images/clients/8.png"
+]
+
+export default function TrustedCompanies() {
+
+const duplicated = [...logos, ...logos]
+
+return (
+
+<section className="py-24 bg-white overflow-hidden">
+
+<div className="max-w-6xl mx-auto px-6">
+
+<div className="text-center mb-12">
+
+<h2 className="text-3xl font-bold text-unti-dark">
+Empresas que confiam na Unti Digital
+</h2>
+
+<p className="text-gray-600 mt-3">
+Plataformas e empresas que utilizam soluções desenvolvidas pela Unti Digital.
+</p>
+
+</div>
+
+<div className="relative">
+
+<div className="flex gap-12 animate-marquee">
+
+{duplicated.map((logo, index) => (
+
+<div
+key={index}
+className="flex items-center justify-center min-w-[160px] opacity-70 hover:opacity-100 transition"
+>
+
+<Image
+src={logo}
+alt="Logo empresa cliente Unti Digital"
+width={140}
+height={60}
+className="object-contain grayscale hover:grayscale-0 transition"
+/>
+
+</div>
+
+))}
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+)
+
+}
+🎨 Animação CSS (marquee suave)
+
+No seu globals.css adicione:
+
+@keyframes marquee {
+
+0% {
+transform: translateX(0);
+}
+
+100% {
+transform: translateX(-50%);
+}
+
+}
+
+.animate-marquee {
+
+display: flex;
+width: max-content;
+animation: marquee 35s linear infinite;
+
+}
+📱 Responsividade
+
+Esse layout automaticamente:
+
+Desktop
+logos grandes com espaçamento
+
+Tablet
+continua fluido
+
+Mobile
+logos menores e scroll suave
+
+Se quiser melhorar mobile:
+
+min-w-[120px] md:min-w-[160px]
+🎨 Melhorias visuais recomendadas
+
+Adicionar fade lateral, deixa o efeito MUITO mais premium.
+
+Adicione dentro do container:
+
+<div className="pointer-events-none absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-white to-transparent z-10"></div>
+
+<div className="pointer-events-none absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-white to-transparent z-10"></div>
+📊 Resultado visual esperado
+
+Parecido com:
+
+LOGO LOGO LOGO LOGO LOGO LOGO LOGO
+← movimento contínuo →
+LOGO LOGO LOGO LOGO LOGO LOGO LOGO
+
+com:
+
+✔ loop infinito
+✔ fade nas bordas
+✔ grayscale → color on hover
+
+🧠 Estrutura preparada para CMS
+
+Depois no CMS você pode trocar o array por:
+
+const logos = await getClients()
+
+ou:
+
+CMS → Clientes → Logos
+🚀 Se quiser, posso também te entregar
+A VERSÃO ULTRA PROFISSIONAL
+
+com:
+
+✔ drag infinito
+✔ pausa no hover
+✔ velocidade adaptativa
+✔ logos responsivos
+✔ lazy loading
+✔ compatível com CMS
+✔ acessibilidade ARIA
+
+que é o mesmo padrão usado em sites SaaS grandes.
+
+Se quiser, eu já te passo esse componente premium pronto.
+
+siga
+
+Perfeito. Agora vamos para a versão SaaS-level desse componente, que é o padrão usado em sites como Stripe, Supabase, Vercel e Linear.
+
+Essa versão inclui:
+
+✔ loop infinito perfeito
+✔ pausa no hover
+✔ fade lateral premium
+✔ performance otimizada
+✔ compatível com CMS depois
+✔ acessível
+✔ responsivo real
+
+🚀 Componente Profissional
+
+Crie:
+
+components/home/TrustedCompanies.tsx
+"use client"
+
+import Image from "next/image"
+import { useRef } from "react"
+
+const logos = [
+"/images/clients/client-1.png",
+"/images/clients/client-2.png",
+"/images/clients/client-3.png",
+"/images/clients/client-4.png",
+"/images/clients/client-5.png",
+"/images/clients/client-6.png",
+"/images/clients/client-7.png",
+"/images/clients/client-8.png"
+]
+
+export default function TrustedCompanies() {
+
+const trackRef = useRef<HTMLDivElement>(null)
+
+const duplicated = [...logos, ...logos]
+
+return (
+
+<section className="py-24 bg-white overflow-hidden">
+
+<div className="max-w-7xl mx-auto px-6">
+
+<div className="text-center mb-14">
+
+<h2 className="text-3xl md:text-4xl font-bold text-unti-dark">
+Empresas que confiam na Unti Digital
+</h2>
+
+<p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+Empresas e plataformas que utilizam soluções desenvolvidas pela Unti Digital.
+</p>
+
+</div>
+
+<div className="relative">
+
+{/* Fade esquerdo */}
+
+<div className="pointer-events-none absolute left-0 top-0 h-full w-32 bg-gradient-to-r from-white to-transparent z-10"/>
+
+{/* Fade direito */}
+
+<div className="pointer-events-none absolute right-0 top-0 h-full w-32 bg-gradient-to-l from-white to-transparent z-10"/>
+
+<div
+ref={trackRef}
+className="flex gap-16 animate-unti-marquee hover:[animation-play-state:paused]"
+>
+
+{duplicated.map((logo, index) => (
+
+<div
+key={index}
+className="flex items-center justify-center min-w-[140px] md:min-w-[180px] opacity-70 hover:opacity-100 transition"
+>
+
+<Image
+src={logo}
+alt="Cliente Unti Digital"
+width={160}
+height={70}
+className="object-contain grayscale hover:grayscale-0 transition duration-300"
+/>
+
+</div>
+
+))}
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+)
+
+}
+🎨 Animação Premium
+
+Adicione no globals.css
+
+@keyframes unti-marquee {
+
+0% {
+transform: translateX(0);
+}
+
+100% {
+transform: translateX(-50%);
+}
+
+}
+
+.animate-unti-marquee {
+
+display: flex;
+width: max-content;
+animation: unti-marquee 40s linear infinite;
+
+}
+🎯 Resultado visual
+
+Fluxo contínuo:
+
+[logo] [logo] [logo] [logo] [logo] [logo]
+← movimento suave infinito →
+[logo] [logo] [logo] [logo] [logo] [logo]
+
+Com:
+
+✔ grayscale → color hover
+✔ pausa quando mouse passa
+✔ fade nas laterais
+✔ sem jump no loop
+
+📱 Mobile
+
+Esse layout já funciona bem mobile, mas você pode melhorar com:
+
+gap-10 md:gap-16
+
+e
+
+min-w-[120px] md:min-w-[180px]
+🧠 Preparado para o CMS
+
+Depois, quando implementarmos o CMS da UNTI, basta trocar:
+
+const logos = [...]
+
+por:
+
+const logos = await getClients()
+
+E no painel:
+
+CMS
+Clientes
+Adicionar logo
+Nome da empresa
+Link
+💎 MELHORIA PRO (recomendado)
+
+Adicionar interação ao clicar no logo.
+
+Exemplo:
+
+<a href="/cases/empresa-x">
+
+Isso transforma essa seção em porta de entrada para cases.
+
+Estrutura ideal:
+
+Clientes → Cases
+🚀 Próximo upgrade que deixaria sua homepage nível SaaS global
+
+Posso te entregar o componente mais impressionante da homepage:
+
+Seção Projetos em Destaque com animação de scroll
+
+parecido com:
+
+Linear
+
+Stripe
+
+Vercel
+
+com cards animados conforme scroll.
+
+Essa seção aumenta muito autoridade da empresa.
+
+segue o codigo do componente modal que abre ao clicar em um dos logos do carrossel:
+<article class="page_storeModal__uzNTV "><div class="page_storeModalCover__dvEyo" style="background-image: linear-gradient(rgba(4, 7, 13, 0.46), rgba(4, 7, 13, 0.72)), url(&quot;https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&amp;fit=crop&amp;w=1400&amp;q=80&quot;);"></div><img src="/images/stores/emv.jpeg" alt="Logo EMV Motors" class="page_storeModalFloatingLogo__JG56r"><div class="page_storeModalBody__i5dar"><div class="page_storeModalLogoBlock__LOkBW"><h3>EMV Motors</h3><p>(11) 97000-7707</p><p>emv@tiquatira.com.br</p></div><div class="page_storeModalContent__PA8xj"><h4>Sobre a loja</h4><p>Loja com perfil comercial dinâmico, variedade de marcas e suporte especializado para fechamento rápido.</p><div class="page_storeModalActions___E4XO"><a class="page_button__52WaL page_buttonPrimary__ulm6i" href="https://wa.me/5511970007707" target="_blank">WhatsApp</a><a class="page_button__52WaL page_buttonGhostLight__JjDxS" href="/lojas">Visitar página da loja</a></div></div></div></article>
+
+Ótimo — esse modal é muito bom estruturalmente. Ele já segue um padrão usado em:
+
+marketplaces
+
+plataformas multi-loja
+
+diretórios SaaS
+
+Mas para o site da UNTI, recomendo 3 melhorias importantes:
+
+1️⃣ adaptar para Next.js + Tailwind
+2️⃣ deixar visual consistente com a paleta UNTI
+3️⃣ tornar reutilizável no CMS no futuro
+
+Vou te entregar uma versão otimizada profissional.
+
+🧩 Componente Modal (versão otimizada)
+
+Crie:
+
+components/ui/ClientModal.tsx
+"use client"
+
+import Image from "next/image"
+
+interface ClientModalProps {
+name: string
+phone: string
+email: string
+description: string
+logo: string
+cover: string
+whatsapp: string
+pageLink: string
+onClose: () => void
+}
+
+export default function ClientModal({
+name,
+phone,
+email,
+description,
+logo,
+cover,
+whatsapp,
+pageLink,
+onClose
+}: ClientModalProps) {
+
+return (
+
+<div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
+
+<div className="relative w-full max-w-2xl bg-white rounded-2xl overflow-hidden shadow-xl">
+
+{/* cover */}
+
+<div
+className="h-44 bg-cover bg-center"
+style={{
+backgroundImage: `linear-gradient(rgba(4,7,13,0.45),rgba(4,7,13,0.75)), url(${cover})`
+}}
+/>
+
+{/* floating logo */}
+
+<div className="absolute left-6 -top-10 bg-white rounded-xl p-3 shadow-md">
+
+<Image
+src={logo}
+alt={`Logo ${name}`}
+width={70}
+height={70}
+className="object-contain"
+/>
+
+</div>
+
+{/* body */}
+
+<div className="pt-14 px-6 pb-8">
+
+<div className="mb-6">
+
+<h3 className="text-xl font-bold text-unti-dark">
+{name}
+</h3>
+
+<p className="text-sm text-gray-600">
+{phone}
+</p>
+
+<p className="text-sm text-gray-600">
+{email}
+</p>
+
+</div>
+
+<div className="space-y-4">
+
+<h4 className="font-semibold text-unti-dark">
+Sobre a empresa
+</h4>
+
+<p className="text-gray-600 leading-relaxed">
+{description}
+</p>
+
+<div className="flex gap-3 pt-4">
+
+<a
+href={whatsapp}
+target="_blank"
+className="bg-unti-orange text-white px-5 py-2 rounded-lg hover:opacity-90 transition"
+>
+WhatsApp
+</a>
+
+<a
+href={pageLink}
+className="border border-unti-blue text-unti-blue px-5 py-2 rounded-lg hover:bg-unti-blue hover:text-white transition"
+>
+Ver case
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+{/* close */}
+
+<button
+onClick={onClose}
+className="absolute top-3 right-3 text-white text-xl"
+>
+✕
+</button>
+
+</div>
+
+</div>
+
+)
+
+}
+🎨 Resultado visual
+
+Layout:
+
+Imagem cover
+────────────
+
+    [logo]
+
+Empresa
+telefone
+email
+
+Sobre a empresa
+
+[WhatsApp] [Ver case]
+
+Com:
+
+✔ background escurecido
+✔ logo flutuante
+✔ CTA claro
+✔ visual SaaS
+
+🧠 Como conectar com o carrossel de logos
+
+No componente do carrossel:
+
+const [selectedClient, setSelectedClient] = useState(null)
+
+No logo:
+
+onClick={() => setSelectedClient(client)}
+
+Renderizar modal:
+
+{selectedClient && (
+<ClientModal
+name={selectedClient.name}
+phone={selectedClient.phone}
+email={selectedClient.email}
+description={selectedClient.description}
+logo={selectedClient.logo}
+cover={selectedClient.cover}
+whatsapp={selectedClient.whatsapp}
+pageLink={selectedClient.pageLink}
+onClose={() => setSelectedClient(null)}
+/>
+)}
+🧠 Estrutura de dados recomendada
+const clients = [
+{
+name: "EMV Motors",
+phone: "(11) 97000-7707",
+email: "contato@emvmotors.com",
+logo: "/images/clients/emv.png",
+cover: "/images/covers/emv.jpg",
+description:
+"Empresa especializada em soluções automotivas premium com gestão digital completa.",
+whatsapp: "https://wa.me/5511970007707",
+pageLink: "/cases/emv-motors"
+}
+]
+🚀 Quando o CMS estiver pronto
+
+Isso vira simplesmente:
+
+const clients = await getClients()
+
+E no admin:
+
+CMS
+Clientes
+Nome
+Logo
+Cover
+Telefone
+Email
+Descrição
+WhatsApp
+Link
+💎 MELHORIA QUE DEIXA ISSO MUITO MAIS PROFISSIONAL
+
+Adicionar animação de abertura do modal.
+
+Exemplo:
+
+scale
+opacity
+
+ou com Framer Motion.
+
+Resultado:
+
+logo clicado
+↓
+
+modal cresce suave
+
+igual Stripe dashboard.

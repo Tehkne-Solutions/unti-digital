@@ -26,24 +26,26 @@ export function LogoCloud() {
           </h2>
         </div>
 
-        {/* Logo Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-12 items-center justify-items-center">
-          {logos.map((logo, index) => (
-            <div
-              key={index}
-              className="flex items-center justify-center grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
-            >
-              {/* Placeholder - substituir por <Image /> com logos reais */}
-              <div 
-                className="flex items-center justify-center bg-gray-200 rounded px-6 py-4"
-                style={{ width: logo.width }}
+        {/* Continuous logo marquee */}
+        <div className="overflow-hidden">
+          <div className="flex space-x-12 animate-marquee">
+            {logos.concat(logos).map((logo, index) => (
+              <div
+                key={index}
+                className="flex items-center justify-center grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
               >
-                <span className="text-xs font-medium text-gray-500">
-                  {logo.name}
-                </span>
+                {/* Placeholder - substituir por <Image /> com logos reais */}
+                <div
+                  className="flex items-center justify-center bg-gray-200 rounded px-6 py-4"
+                  style={{ width: logo.width }}
+                >
+                  <span className="text-xs font-medium text-gray-500">
+                    {logo.name}
+                  </span>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </Container>
     </Section>

@@ -6,7 +6,6 @@ import { Container } from "@/components/ui/Container";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { Modal } from "@/components/ui/Modal";
-import { Carousel } from "@/components/ui/Carousel";
 import { services, Service } from "@/data/services";
 
 export function ServicesCarousel() {
@@ -25,10 +24,10 @@ export function ServicesCarousel() {
           </p>
         </div>
 
-        {/* Carousel */}
-        <Carousel>
+        {/* Services grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service) => (
-            <div key={service.slug} className="min-w-[360px]">
+            <div key={service.slug} className="">
               <Card className="h-full">
                 {/* Image */}
                 <div className="aspect-video bg-gradient-to-br from-unti-pastel to-unti-light rounded-lg mb-4 flex items-center justify-center">
@@ -45,8 +44,8 @@ export function ServicesCarousel() {
                   <p className="text-gray-600 text-sm leading-relaxed">
                     {service.shortDescription}
                   </p>
-                  <Button 
-                    variant="link" 
+                  <Button
+                    variant="link"
                     onClick={() => setSelectedService(service)}
                     className="p-0"
                   >
@@ -56,13 +55,13 @@ export function ServicesCarousel() {
               </Card>
             </div>
           ))}
-        </Carousel>
+        </div>
       </Container>
 
       {/* Service Modal */}
       {selectedService && (
-        <Modal 
-          isOpen={!!selectedService} 
+        <Modal
+          isOpen={!!selectedService}
           onClose={() => setSelectedService(null)}
           title={selectedService.title}
         >
@@ -106,13 +105,13 @@ export function ServicesCarousel() {
 
               {/* CTAs */}
               <div className="flex flex-col sm:flex-row gap-3 pt-4">
-                <Button 
+                <Button
                   variant="primary"
                   onClick={() => window.location.href = '/contato'}
                 >
                   Falar com especialista
                 </Button>
-                <Button 
+                <Button
                   variant="secondary"
                   onClick={() => window.location.href = '/cases'}
                 >
