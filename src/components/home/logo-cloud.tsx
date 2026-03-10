@@ -5,62 +5,70 @@ import { Container } from "@/components/ui/Container";
 import { clients } from "@/data/clients";
 import Image from "next/image";
 import { useState } from "react";
+import { motion } from "framer-motion";
+import ClientModal from "@/components/ClientModal";
 
 export function LogoCloud() {
-  const [activeClient, setActiveClient] = useState<{ name: string; logo: string } | null>(null);
+  const [activeClient, setActiveClient] = useState<typeof clients[0] | null>(null);
 
   return (
     <Section>
       <Container>
         {/* Title */}
         <div className="text-center mb-16">
-          <h2 className="text-2xl md:text-3xl font-semibold text-gray-600">
-            Empresas que confiam na Unti Digital
+          <h2 className="text-2xl md:text-3xl font-semibold text-gray-600 mb-4">
+            Tecnologia que impulsiona empresas reais
           </h2>
+          <p className="text-gray-500">
+            Clique em um cliente para ver o projeto e resultados alcançados
+          </p>
         </div>
 
         {/* Continuous logo marquee */}
-        <div className="overflow-hidden">
+        <div className="overflow-hidden mb-16">
           <div className="flex space-x-12 animate-marquee">
             {clients.concat(clients).map((client, index) => (
-              <button
-                key={index}
+              <motion.button
+                key={`${client.id}-${index}`}
                 onClick={() => setActiveClient(client)}
-                className="flex items-center justify-center grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="flex flex-col items-center justify-center p-6 grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all duration-300"
               >
                 <Image
                   src={client.logo}
                   alt={client.name}
                   width={120}
                   height={60}
-                  className="object-contain"
+                  className="object-contain mb-2"
                 />
-              </button>
+                <div className="text-center">
+                  <p className="text-xs font-medium text-gray-600 mb-1">{client.segment}</p>
+                  <p className="text-xs font-semibold text-green-600">{client.result}</p>
+                </div>
+              </motion.button>
             ))}
           </div>
         </div>
 
-        {/* Client Modal */}
-        {activeClient && (
-          <div
-            className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50"
-            onClick={() => setActiveClient(null)}
+        {/* CTA */}
+        <div className="text-center">
+          <p className="text-gray-600 mb-4">
+            Quer alcançar resultados como esses?
+          </p>
+          <a
+            href="/contato"
+            className="inline-block bg-blue-600 text-white px-8 py-3 rounded-md hover:bg-blue-700 transition-colors font-medium"
           >
-            <div
-              className="bg-white p-8 rounded-lg max-w-md w-full mx-4"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <Image
-                src={activeClient.logo}
-                alt={activeClient.name}
-                width={200}
-                height={100}
-                className="mx-auto mb-4 object-contain"
-              />
-              <h3 className="text-center text-xl font-semibold">{activeClient.name}</h3>
-            </div>
-          </div>
-        )}
+            Falar com especialista
+          </a>
+        </div>
+
+        {/* Client Modal */}
+        <ClientModal
+          client={activeClient}
+          onClose={() => setActiveClient(null)}
+        />
       </Container>
     </Section>
   );

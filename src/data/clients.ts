@@ -1,42 +1,142 @@
 export const clients = [
     {
+        id: "anaclin",
         name: "Anaclin",
-        logo: "/assets/clients/anaclin.png"
+        logo: "/images/clients/anaclin.png",
+        cover: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1400&q=80",
+        segment: "Clínica médica",
+        result: "+150% consultas online",
+        description: "Desenvolvimento de plataforma institucional com sistema de agendamento online e integração com prontuários digitais.",
+        technologies: ["Next.js", "Node.js", "PostgreSQL", "API REST"],
+        phone: "(11) 3333-0000",
+        email: "contato@anaclin.com.br",
+        whatsapp: "551133330000",
+        casePage: "/cases/anaclin"
     },
     {
+        id: "dra-ana-paula",
         name: "Dra Ana Paula",
-        logo: "/assets/clients/dra-ana-paula.png"
+        logo: "/images/clients/dra-ana-paula.png",
+        cover: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?auto=format&fit=crop&w=1400&q=80",
+        segment: "Consultório odontológico",
+        result: "+200% agendamentos",
+        description: "Site institucional com sistema de agendamento integrado e presença digital otimizada para SEO local.",
+        technologies: ["React", "SEO Local", "Google My Business", "WhatsApp API"],
+        phone: "(11) 4444-0000",
+        email: "contato@draanapaula.com.br",
+        whatsapp: "551144440000",
+        casePage: "/cases/dra-ana-paula"
     },
     {
+        id: "dra-isabel",
         name: "Dra Isabel",
-        logo: "/assets/clients/dra-isabel.png"
+        logo: "/images/clients/dra-isabel.png",
+        cover: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=1400&q=80",
+        segment: "Clínica dermatológica",
+        result: "+180% pacientes",
+        description: "Plataforma completa com e-commerce de produtos dermatológicos e blog de conteúdo especializado.",
+        technologies: ["Next.js", "E-commerce", "CMS", "Marketing Digital"],
+        phone: "(11) 5555-0000",
+        email: "contato@draisabel.com.br",
+        whatsapp: "551155550000",
+        casePage: "/cases/dra-isabel"
     },
     {
+        id: "uroclinica",
         name: "Uroclínica",
-        logo: "/assets/clients/uroclinica.png"
+        logo: "/images/clients/uroclinica.png",
+        cover: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=1400&q=80",
+        segment: "Clínica urológica",
+        result: "+120% consultas",
+        description: "Sistema de gestão de pacientes com telemedicina integrada e plataforma de educação em saúde.",
+        technologies: ["React", "Telemedicina", "HIPAA Compliance", "Analytics"],
+        phone: "(11) 6666-0000",
+        email: "contato@uroclinica.com.br",
+        whatsapp: "551166660000",
+        casePage: "/cases/uroclinica"
     },
     {
+        id: "flylink",
         name: "Flylink",
-        logo: "/assets/clients/flylink.png"
+        logo: "/images/clients/flylink.png",
+        cover: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1400&q=80",
+        segment: "Agência de viagens",
+        result: "+300% vendas online",
+        description: "Plataforma de reservas com integração de APIs de companhias aéreas e sistema de pagamentos.",
+        technologies: ["Next.js", "API Integration", "Payment Gateway", "Real-time"],
+        phone: "(11) 7777-0000",
+        email: "contato@flylink.com.br",
+        whatsapp: "551177770000",
+        casePage: "/cases/flylink"
     },
     {
+        id: "shopping-moveis-agua-branca",
         name: "Shopping Móveis Água Branca",
-        logo: "/assets/clients/shopping-moveis-agua-branca.png"
+        logo: "/images/clients/shopping-moveis-agua-branca.png",
+        cover: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1400&q=80",
+        segment: "Shopping de móveis",
+        result: "+120% tráfego orgânico",
+        description: "Centro comercial especializado em móveis e decoração com diversas lojas e marcas em um único espaço digital.",
+        technologies: ["Next.js", "SEO Avançado", "CMS Customizado", "Google Maps API"],
+        phone: "(11) 2222-0000",
+        email: "contato@moveisaguabranca.com.br",
+        whatsapp: "551122220000",
+        casePage: "/cases/shopping-moveis-agua-branca"
     },
     {
+        id: "toriba-renault",
         name: "Toriba Renault",
-        logo: "/assets/clients/toriba-renault.png"
+        logo: "/images/clients/toriba-renault.png",
+        cover: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1400&q=80",
+        segment: "Concessionária Renault",
+        result: "+250% leads",
+        description: "Site institucional com configurador de veículos online e sistema de test drive agendado.",
+        technologies: ["React", "3D Configurator", "CRM Integration", "Lead Management"],
+        phone: "(11) 8888-0000",
+        email: "contato@toribarenault.com.br",
+        whatsapp: "551188880000",
+        casePage: "/cases/toriba-renault"
     },
     {
+        id: "thereza-mussi",
         name: "Thereza Mussi",
-        logo: "/assets/clients/thereza-mussi.png"
+        logo: "/images/clients/thereza-mussi.png",
+        cover: "https://images.unsplash.com/photo-1594824804732-ca8db723f8fa?auto=format&fit=crop&w=1400&q=80",
+        segment: "Consultório psicológico",
+        result: "+180% pacientes",
+        description: "Plataforma de terapia online com sistema de agendamento e recursos de saúde mental.",
+        technologies: ["Next.js", "Video Conferencing", "Calendar API", "Secure Platform"],
+        phone: "(11) 9999-0000",
+        email: "contato@therezamussi.com.br",
+        whatsapp: "551199990000",
+        casePage: "/cases/thereza-mussi"
     },
     {
+        id: "onile",
         name: "Onile",
-        logo: "/assets/clients/onile.png"
+        logo: "/images/clients/onile.png",
+        cover: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=format&fit=crop&w=1400&q=80",
+        segment: "Clínica oftalmológica",
+        result: "+140% exames",
+        description: "Sistema completo de gestão oftalmológica com telemedicina e agendamento inteligente.",
+        technologies: ["React", "Medical Records", "AI Diagnostics", "Appointment System"],
+        phone: "(11) 1010-0000",
+        email: "contato@onile.com.br",
+        whatsapp: "551110100000",
+        casePage: "/cases/onile"
     },
     {
+        id: "wrk-agencia",
         name: "WRK Agência",
-        logo: "/assets/clients/wrk-agencia.webp"
+        logo: "/images/clients/wrk-agencia.webp",
+        cover: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=80",
+        segment: "Agência de marketing",
+        result: "+400% leads qualificados",
+        description: "Agência digital especializada em estratégias de marketing e desenvolvimento de presença online.",
+        technologies: ["Next.js", "Marketing Automation", "Analytics", "Social Media API"],
+        phone: "(11) 1111-0000",
+        email: "contato@wrkagencia.com.br",
+        whatsapp: "551111110000",
+        casePage: "/cases/wrk-agencia"
     }
 ]
