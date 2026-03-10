@@ -1,20 +1,13 @@
+"use client";
+
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
+import { clients } from "@/data/clients";
+import Image from "next/image";
+import { useState } from "react";
 
 export function LogoCloud() {
-  // Placeholder logos - substituir por logos reais depois
-  const logos = [
-    { name: "Empresa 1", width: 120 },
-    { name: "Empresa 2", width: 140 },
-    { name: "Empresa 3", width: 100 },
-    { name: "Empresa 4", width: 130 },
-    { name: "Empresa 5", width: 110 },
-    { name: "Empresa 6", width: 120 },
-    { name: "Empresa 7", width: 140 },
-    { name: "Empresa 8", width: 100 },
-    { name: "Empresa 9", width: 130 },
-    { name: "Empresa 10", width: 110 }
-  ];
+  const [activeClient, setActiveClient] = useState<{ name: string; logo: string } | null>(null);
 
   return (
     <Section>
@@ -29,24 +22,45 @@ export function LogoCloud() {
         {/* Continuous logo marquee */}
         <div className="overflow-hidden">
           <div className="flex space-x-12 animate-marquee">
-            {logos.concat(logos).map((logo, index) => (
-              <div
+            {clients.concat(clients).map((client, index) => (
+              <button
                 key={index}
+                onClick={() => setActiveClient(client)}
                 className="flex items-center justify-center grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
               >
-                {/* Placeholder - substituir por <Image /> com logos reais */}
-                <div
-                  className="flex items-center justify-center bg-gray-200 rounded px-6 py-4"
-                  style={{ width: logo.width }}
-                >
-                  <span className="text-xs font-medium text-gray-500">
-                    {logo.name}
-                  </span>
-                </div>
-              </div>
+                <Image
+                  src={client.logo}
+                  alt={client.name}
+                  width={120}
+                  height={60}
+                  className="object-contain"
+                />
+              </button>
             ))}
           </div>
         </div>
+
+        {/* Client Modal */}
+        {activeClient && (
+          <div
+            className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50"
+            onClick={() => setActiveClient(null)}
+          >
+            <div
+              className="bg-white p-8 rounded-lg max-w-md w-full mx-4"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Image
+                src={activeClient.logo}
+                alt={activeClient.name}
+                width={200}
+                height={100}
+                className="mx-auto mb-4 object-contain"
+              />
+              <h3 className="text-center text-xl font-semibold">{activeClient.name}</h3>
+            </div>
+          </div>
+        )}
       </Container>
     </Section>
   );
