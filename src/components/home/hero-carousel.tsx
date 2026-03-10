@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/Button";
+import Image, { StaticImageData } from "next/image";
 import sitesPlataformasImage from "@/assets/unti-digital-homepage-image-slider-servicos-sites-e-plataformas-de-alta-performance.png";
 import integracoesImage from "@/assets/unti-digital-homepage-image-slider-servicos-integracoes-e-automacoes-inteligentes.png";
 import whiteLabelImage from "@/assets/unti-digital-homepage-image-slider-servicos-white-label-tecnico-para-agencias.png";
@@ -11,7 +12,7 @@ interface Slide {
   description: string;
   ctaPrimary: string;
   ctaSecondary: string;
-  image: string;
+  image: StaticImageData;
 }
 
 const slides: Slide[] = [
@@ -71,10 +72,11 @@ export function HeroCarousel() {
       <div className="flex flex-col items-center text-center space-y-8">
         {/* Image/Video Area */}
         <div className="relative w-full max-w-3xl mx-auto md:max-w-4xl lg:max-w-5xl aspect-video rounded-xl overflow-hidden shadow-lg">
-          <img
+          <Image
             src={currentSlide.image}
             alt={currentSlide.title}
-            className="absolute inset-0 w-full h-full object-cover transition-all duration-1000"
+            fill
+            className="object-cover transition-all duration-1000"
           />
         </div>
 
