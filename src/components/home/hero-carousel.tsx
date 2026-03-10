@@ -2,36 +2,42 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/Button";
+import sitesPlataformasImage from "@/assets/unti-digital-homepage-image-slider-servicos-sites-e-plataformas-de-alta-performance.png";
+import integracoesImage from "@/assets/unti-digital-homepage-image-slider-servicos-integracoes-e-automacoes-inteligentes.png";
+import whiteLabelImage from "@/assets/unti-digital-homepage-image-slider-servicos-white-label-tecnico-para-agencias.png";
 
 interface Slide {
   title: string;
   description: string;
-  primaryCTA: string;
-  secondaryCTA: string;
+  ctaPrimary: string;
+  ctaSecondary: string;
   image: string;
 }
 
 const slides: Slide[] = [
   {
     title: "Sites e Plataformas de Alta Performance",
-    description: "Desenvolvemos sites institucionais e plataformas web escaláveis com foco em conversão, performance e experiência do usuário.",
-    primaryCTA: "Falar com especialista",
-    secondaryCTA: "Ver portfólio",
-    image: "gradient-1"
+    description:
+      "Desenvolvemos sites institucionais e plataformas web escaláveis com foco em conversão, performance e experiência do usuário.",
+    image: sitesPlataformasImage,
+    ctaPrimary: "Falar com especialista",
+    ctaSecondary: "Ver portfólio"
   },
   {
     title: "Integrações e Automações Inteligentes",
-    description: "Conecte seus sistemas (CRM, ERP, e-commerce) e automatize processos com integrações robustas e confiáveis.",
-    primaryCTA: "Falar com especialista",
-    secondaryCTA: "Ver casos de uso",
-    image: "gradient-2"
+    description:
+      "Conectamos sistemas, ERPs, CRMs e APIs para automatizar processos com integrações robustas e confiáveis.",
+    image: integracoesImage,
+    ctaPrimary: "Falar com especialista",
+    ctaSecondary: "Ver cases"
   },
   {
-    title: "White Label Técnico para Agências",
-    description: "Desenvolvimento sob demanda com sua marca. Entregas pontuais, qualidade garantida e total confidencialidade.",
-    primaryCTA: "Falar com especialista",
-    secondaryCTA: "Conhecer parceria",
-    image: "gradient-3"
+    title: "White-label técnico para agências",
+    description:
+      "Oferecemos suporte técnico especializado para agências digitais que precisam escalar projetos com segurança.",
+    image: whiteLabelImage,
+    ctaPrimary: "Falar com especialista",
+    ctaSecondary: "Ver soluções"
   }
 ];
 
@@ -59,27 +65,17 @@ export function HeroCarousel() {
 
   const currentSlide = slides[activeSlide];
 
-  const gradients = [
-    "from-unti-pastel via-unti-light to-unti-blue",
-    "from-blue-100 via-purple-100 to-pink-100",
-    "from-green-100 via-teal-100 to-blue-100"
-  ];
-
   return (
     <div className="max-w-[1100px] mx-auto mt-20 md:mt-24 px-6 relative">
       {/* Slide Content */}
       <div className="flex flex-col items-center text-center space-y-8">
         {/* Image/Video Area */}
-        <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg">
-          <div className={`absolute inset-0 bg-gradient-to-br ${gradients[activeSlide]} transition-all duration-1000`}>
-            {/* Pattern Overlay */}
-            <div className="absolute inset-0 opacity-10">
-              <div className="absolute inset-0" style={{
-                backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-                backgroundSize: '60px 60px'
-              }} />
-            </div>
-          </div>
+        <div className="relative w-full max-w-3xl mx-auto md:max-w-4xl lg:max-w-5xl aspect-video rounded-xl overflow-hidden shadow-lg">
+          <img
+            src={currentSlide.image}
+            alt={currentSlide.title}
+            className="absolute inset-0 w-full h-full object-cover transition-all duration-1000"
+          />
         </div>
 
         {/* Dynamic Headline */}
@@ -98,13 +94,13 @@ export function HeroCarousel() {
             variant="primary"
             onClick={() => window.location.href = '/contato'}
           >
-            {currentSlide.primaryCTA}
+            {currentSlide.ctaPrimary}
           </Button>
           <Button
             variant="secondary"
             onClick={() => window.location.href = '/cases'}
           >
-            {currentSlide.secondaryCTA}
+            {currentSlide.ctaSecondary}
           </Button>
         </div>
 
@@ -115,8 +111,8 @@ export function HeroCarousel() {
               key={index}
               onClick={() => goToSlide(index)}
               className={`transition-all ${index === activeSlide
-                  ? "w-8 h-2 bg-unti-blue"
-                  : "w-2 h-2 bg-gray-300 hover:bg-gray-400"
+                ? "w-8 h-2 bg-unti-blue"
+                : "w-2 h-2 bg-gray-300 hover:bg-gray-400"
                 } rounded-full`}
               aria-label={`Ir para slide ${index + 1}`}
             />
