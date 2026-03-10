@@ -1,3 +1,12 @@
+import sitesImg from "@/assets/unti-digital-homepage-image-nossas-solucoes-sites-institucionais.png";
+import plataformasImg from "@/assets/unti-digital-homepage-image-nossas-solucoes-plataformas-web.png";
+import integracoesImg from "@/assets/unti-digital-homepage-image-nossas-solucoes-integracoes-e-automacoes.png";
+import ecommerceImg from "@/assets/unti-digital-homepage-image-nossas-solucoes-ecommerce.png";
+import landingImg from "@/assets/unti-digital-homepage-image-nossas-solucoes-landing-pages.png";
+import whiteLabelImg from "@/assets/unti-digital-homepage-image-nossas-solucoes-white-label-tecnico.png";
+
+import { StaticImageData } from "next/image";
+
 export interface Service {
   slug: string;
   title: string;
@@ -6,7 +15,7 @@ export interface Service {
   fullDescription: string;
   bullets: string[];
   deliverables: string[];
-  image: string;
+  image: StaticImageData;
 }
 
 export const services: Service[] = [
@@ -29,7 +38,7 @@ export const services: Service[] = [
       "Treinamento da equipe",
       "Suporte pós-lançamento"
     ],
-    image: "/placeholder-site.jpg"
+    image: sitesImg
   },
   {
     slug: "plataformas-web",
@@ -50,7 +59,7 @@ export const services: Service[] = [
       "Deploy e infraestrutura",
       "Monitoramento e logs"
     ],
-    image: "/placeholder-platform.jpg"
+    image: plataformasImg
   },
   {
     slug: "integracoes",
@@ -71,7 +80,7 @@ export const services: Service[] = [
       "Monitoramento de integrações",
       "Suporte técnico dedicado"
     ],
-    image: "/placeholder-integration.jpg"
+    image: integracoesImg
   },
   {
     slug: "e-commerce",
@@ -92,7 +101,7 @@ export const services: Service[] = [
       "Sistema de cupons e promoções",
       "Relatórios de vendas"
     ],
-    image: "/placeholder-ecommerce.jpg"
+    image: ecommerceImg
   },
   {
     slug: "landing-pages",
@@ -113,7 +122,7 @@ export const services: Service[] = [
       "Tracking e analytics",
       "Variações para testes A/B"
     ],
-    image: "/placeholder-landing.jpg"
+    image: landingImg
   },
   {
     slug: "white-label",
@@ -134,6 +143,6 @@ export const services: Service[] = [
       "Revisões ilimitadas",
       "Confidencialidade garantida"
     ],
-    image: "/placeholder-whitelabel.jpg"
+    image: whiteLabelImg
   }
 ];

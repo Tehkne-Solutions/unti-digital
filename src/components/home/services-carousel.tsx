@@ -7,6 +7,7 @@ import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { Modal } from "@/components/ui/Modal";
 import { services, Service } from "@/data/services";
+import Image from "next/image";
 
 export function ServicesCarousel() {
   const [selectedService, setSelectedService] = useState<Service | null>(null);
@@ -27,13 +28,16 @@ export function ServicesCarousel() {
         {/* Services grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service) => (
-            <div key={service.slug} className="">
+            <div key={service.slug} className="group">
               <Card className="h-full">
                 {/* Image */}
-                <div className="aspect-video bg-gradient-to-br from-unti-pastel to-unti-light rounded-lg mb-4 flex items-center justify-center">
-                  <svg className="w-16 h-16 text-unti-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
+                <div className="relative aspect-video rounded-lg mb-4 overflow-hidden group-hover:scale-105 transition-transform duration-300">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
 
                 {/* Content */}
@@ -68,6 +72,15 @@ export function ServicesCarousel() {
           <div className="grid md:grid-cols-2 gap-10">
             {/* Left Column - Content */}
             <div className="space-y-6">
+              {/* Top image */}
+              <div className="w-full h-48 overflow-hidden rounded-xl mb-6 relative">
+                <Image
+                  src={selectedService.image}
+                  alt={selectedService.title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
               {/* Description */}
               <p className="text-gray-700 leading-relaxed">
                 {selectedService.fullDescription}
