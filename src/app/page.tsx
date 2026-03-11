@@ -8,6 +8,7 @@ import { BlogGrid } from "@/components/home/blog-grid";
 import { FinalCTA } from "@/components/home/final-cta";
 import { HowWeWork } from "@/components/home/how-we-work";
 import { FixedCTA } from "@/components/home/fixed-cta";
+import CasesSection from "@/components/CasesSection";
 
 export default function HomePage() {
   return (
@@ -17,6 +18,7 @@ export default function HomePage() {
       <HowWeWork />
       <ServicesCarousel />
       <LogoCloud />
+      <CasesSection />
       <CaseStudies />
       <FeatureBlocks />
       <BlogGrid />

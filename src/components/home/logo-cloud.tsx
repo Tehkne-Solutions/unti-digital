@@ -33,18 +33,22 @@ export function LogoCloud() {
                 onClick={() => setActiveClient(client)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="flex flex-col items-center justify-center p-6 grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all duration-300"
+                className="flex flex-col items-center justify-start p-6 grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all duration-300"
               >
-                <Image
-                  src={client.logo}
-                  alt={client.name}
-                  width={120}
-                  height={60}
-                  className="object-contain mb-2"
-                />
+                <div className="h-20 flex items-center justify-center mb-3">
+                  <Image
+                    src={client.logo}
+                    alt={client.name}
+                    width={120}
+                    height={60}
+                    className="max-h-20 w-auto object-contain"
+                  />
+                </div>
                 <div className="text-center">
                   <p className="text-xs font-medium text-gray-600 mb-1">{client.segment}</p>
-                  <p className="text-xs font-semibold text-green-600">{client.result}</p>
+                  <span className="inline-block bg-green-100 text-green-700 px-2 py-0.5 rounded text-xs font-semibold">
+                    {client.result}
+                  </span>
                 </div>
               </motion.button>
             ))}
