@@ -1,4 +1,7 @@
-import { SolutionHero } from "@/components/solucoes/SolutionHero";
+import { SolutionHeroWithImage } from "@/components/solucoes/SolutionHeroWithImage";
+import { SolutionProblems } from "@/components/solucoes/SolutionProblems";
+import { SolutionTechStack } from "@/components/solucoes/SolutionTechStack";
+import { SolutionResults } from "@/components/solucoes/SolutionResults";
 import { SolutionBenefits } from "@/components/solucoes/SolutionBenefits";
 import { SolutionProcess } from "@/components/solucoes/SolutionProcess";
 import { SolutionCases } from "@/components/solucoes/SolutionCases";
@@ -29,6 +32,45 @@ const schemaMarkup = {
 };
 
 export default function IntegracoesPage() {
+    const problems = [
+        {
+            title: "Dados fragmentados em múltiplos sistemas",
+            description: "Informações desorganizadas dificultam análises, decisões e geram retrabalho.",
+        },
+        {
+            title: "Processos manuais causam atraso e erros",
+            description: "Transferência manual de dados entre sistemas é lenta, trabalhosa e propensa a erros.",
+        },
+        {
+            title: "Impossível ter visão unificada do cliente",
+            description: "Dados espalhados impedem uma estratégia integrada de marketing e vendas.",
+        },
+    ];
+
+    const technologies = [
+        "APIs REST/GraphQL",
+        "Zapier/Make integrations",
+        "Message brokers",
+        "Data synchronization",
+        "Workflow automation",
+        "Real-time webhooks",
+    ];
+
+    const results = [
+        {
+            metric: "-85%",
+            description: "Redução de trabalho manual",
+        },
+        {
+            metric: "+150%",
+            description: "Velocidade de processamento",
+        },
+        {
+            metric: "0",
+            description: "Erros de entrada de dados manual",
+        },
+    ];
+
     const benefits = [
         {
             title: "Conexão entre sistemas",
@@ -94,12 +136,14 @@ export default function IntegracoesPage() {
                     { label: "Integrações CRM e ERP" },
                 ]}
             />
-            <SolutionHero
-                title="Integrações que conectam marketing, vendas e operação"
-                subtitle="Automatizamos processos e eliminamos silos de dados através de integrações robustas e confiáveis."
-                primaryCTA="Falar com especialista"
-                secondaryCTA="Ver cases"
+            <SolutionHeroWithImage
+                imageSrc="/images/solutions/unti-digital-solution-crm-erp-integrations.png"
+                title="Integrações com CRM e ERP"
+                subtitle="Conecte marketing, vendas e operação através de integrações robustas que automatizam processos."
             />
+            <SolutionProblems problems={problems} />
+            <SolutionTechStack technologies={technologies} />
+            <SolutionResults results={results} />
             <SolutionBenefits items={benefits} />
             <SolutionProcess steps={steps} />
             <SolutionCases cases={cases} />

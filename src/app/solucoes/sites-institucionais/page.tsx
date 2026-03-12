@@ -1,4 +1,7 @@
-import { SolutionHero } from "@/components/solucoes/SolutionHero";
+import { SolutionHeroWithImage } from "@/components/solucoes/SolutionHeroWithImage";
+import { SolutionProblems } from "@/components/solucoes/SolutionProblems";
+import { SolutionTechStack } from "@/components/solucoes/SolutionTechStack";
+import { SolutionResults } from "@/components/solucoes/SolutionResults";
 import { SolutionBenefits } from "@/components/solucoes/SolutionBenefits";
 import { SolutionProcess } from "@/components/solucoes/SolutionProcess";
 import { SolutionCases } from "@/components/solucoes/SolutionCases";
@@ -29,6 +32,45 @@ const schemaMarkup = {
 };
 
 export default function SitesInstitucionaisPage() {
+    const problems = [
+        {
+            title: "Sites lentos e difíceis de atualizar",
+            description: "Estruturas antigas prejudicam SEO, conversão e experiência do usuário.",
+        },
+        {
+            title: "Falta de integração com sistemas",
+            description: "Sites isolados dificultam automação de marketing e gestão de leads.",
+        },
+        {
+            title: "Baixa geração de oportunidades",
+            description: "Estrutura inadequada impede que o site gere novos negócios.",
+        },
+    ];
+
+    const technologies = [
+        "Next.js",
+        "Node.js",
+        "SEO técnico",
+        "APIs REST",
+        "Arquitetura escalável",
+        "Performance otimizada",
+    ];
+
+    const results = [
+        {
+            metric: "+180%",
+            description: "Aumento médio de conversões",
+        },
+        {
+            metric: "+120%",
+            description: "Crescimento de tráfego orgânico",
+        },
+        {
+            metric: "3x",
+            description: "Mais geração de leads",
+        },
+    ];
+
     const benefits = [
         {
             title: "Performance e SEO estruturado",
@@ -94,12 +136,14 @@ export default function SitesInstitucionaisPage() {
                     { label: "Sites Institucionais" },
                 ]}
             />
-            <SolutionHero
-                title="Sites institucionais de alta performance para empresas que precisam gerar resultados"
-                subtitle="Desenvolvemos plataformas corporativas focadas em conversão, integração e governança digital."
-                primaryCTA="Falar com especialista"
-                secondaryCTA="Ver cases"
+            <SolutionHeroWithImage
+                imageSrc="/images/solutions/unti-digital-solution-high-performance-websites.png"
+                title="Sites Institucionais de Alta Performance"
+                subtitle="Plataformas corporativas focadas em conversão, performance e integração com sistemas internos."
             />
+            <SolutionProblems problems={problems} />
+            <SolutionTechStack technologies={technologies} />
+            <SolutionResults results={results} />
             <SolutionBenefits items={benefits} />
             <SolutionProcess steps={steps} />
             <SolutionCases cases={cases} />

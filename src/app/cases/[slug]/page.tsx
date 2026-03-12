@@ -1,10 +1,39 @@
 import { cases } from "@/data/cases";
 import { notFound } from "next/navigation";
 import Image from "next/image";
+import { Metadata } from "next";
 
 interface PageProps {
     params: {
         slug: string;
+    };
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+    const caseItem = cases.find(c => c.slug === params.slug);
+
+    if (!caseItem) {
+        return {
+            title: "Case não encontrado | Unti Digital",
+            description: "O case solicitado não foi encontrado."
+        };
+    }
+
+    return {
+        title: caseItem.seoTitle,
+        description: caseItem.metaDescription,
+        openGraph: {
+            title: caseItem.seoTitle,
+            description: caseItem.metaDescription,
+            images: [caseItem.heroImage],
+            type: "article"
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: caseItem.seoTitle,
+            description: caseItem.metaDescription,
+            images: [caseItem.heroImage]
+        }
     };
 }
 
@@ -32,11 +61,26 @@ export default function CasePage({ params }: PageProps) {
             </p>
 
             <section className="mb-12">
+                <p className="text-gray-600 text-lg leading-relaxed">
+                    {caseItem.introduction}
+                </p>
+            </section>
+
+            <section className="mb-12">
                 <h2 className="text-2xl font-semibold mb-4">
                     O problema
                 </h2>
                 <p className="text-gray-600 text-lg leading-relaxed">
                     {caseItem.problem}
+                </p>
+            </section>
+
+            <section className="mb-12">
+                <h2 className="text-2xl font-semibold mb-4">
+                    Estratégia implementada
+                </h2>
+                <p className="text-gray-600 text-lg leading-relaxed">
+                    {caseItem.strategy}
                 </p>
             </section>
 
@@ -89,6 +133,46 @@ export default function CasePage({ params }: PageProps) {
                         className="rounded-lg w-full h-48 object-cover"
                     />
                 ))}
+            </section>
+
+            <section className="mb-16 bg-gray-50 rounded-xl p-8">
+                <h2 className="text-2xl font-semibold mb-6 text-center">
+                    Depoimento do cliente
+                </h2>
+                <blockquote className="text-lg text-gray-700 italic text-center mb-6">
+                    &ldquo;{caseItem.testimonial.quote}&rdquo;
+                </blockquote>
+                <div className="text-center">
+                    <p className="font-semibold text-gray-900">{caseItem.testimonial.author}</p>
+                    <p className="text-gray-600">{caseItem.testimonial.company}</p>
+                </div>
+            </section>
+
+            <section className="mb-16">
+                <h2 className="text-2xl font-semibold mb-4">
+                    Conclusão
+                </h2>
+                <p className="text-gray-600 text-lg leading-relaxed">
+                    {caseItem.conclusion}
+                </p>
+            </section>
+
+            <section className="mb-16">
+                <h2 className="text-2xl font-semibold mb-6">
+                    Perguntas frequentes
+                </h2>
+                <div className="space-y-6">
+                    {caseItem.faq.map((item, index) => (
+                        <div key={index} className="border-b border-gray-200 pb-6 last:border-b-0">
+                            <h3 className="text-lg font-semibold mb-2">
+                                {item.question}
+                            </h3>
+                            <p className="text-gray-600">
+                                {item.answer}
+                            </p>
+                        </div>
+                    ))}
+                </div>
             </section>
 
             <div className="text-center bg-gray-50 rounded-xl p-8">

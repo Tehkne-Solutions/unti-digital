@@ -1,4 +1,7 @@
-import { SolutionHero } from "@/components/solucoes/SolutionHero";
+import { SolutionHeroWithImage } from "@/components/solucoes/SolutionHeroWithImage";
+import { SolutionProblems } from "@/components/solucoes/SolutionProblems";
+import { SolutionTechStack } from "@/components/solucoes/SolutionTechStack";
+import { SolutionResults } from "@/components/solucoes/SolutionResults";
 import { SolutionBenefits } from "@/components/solucoes/SolutionBenefits";
 import { SolutionProcess } from "@/components/solucoes/SolutionProcess";
 import { SolutionCases } from "@/components/solucoes/SolutionCases";
@@ -29,6 +32,45 @@ const schemaMarkup = {
 };
 
 export default function PlataformasWebPage() {
+    const problems = [
+        {
+            title: "Operações complexas sem automação",
+            description: "Processos manuais geram erros, ineficiência e limitam o crescimento.",
+        },
+        {
+            title: "Sistemas desconectados e lentos",
+            description: "Múltiplas ferramentas que não conversam geram retrabalho e perda de dados.",
+        },
+        {
+            title: "Impossível escalar com infraestrutura atual",
+            description: "Plataformas antigas não suportam crescimento, integrações ou inovação.",
+        },
+    ];
+
+    const technologies = [
+        "Next.js",
+        "Node.js/Python",
+        "APIs REST/GraphQL",
+        "Banco de dados escalável",
+        "Arquitetura multi-tenant",
+        "Message queues",
+    ];
+
+    const results = [
+        {
+            metric: "10x",
+            description: "Aumento de capacidade operacional",
+        },
+        {
+            metric: "-80%",
+            description: "Redução de tempo em processos manuais",
+        },
+        {
+            metric: "+250%",
+            description: "Melhoria em eficiência de equipes",
+        },
+    ];
+
     const benefits = [
         {
             title: "Arquitetura personalizada",
@@ -94,12 +136,14 @@ export default function PlataformasWebPage() {
                     { label: "Plataformas Web" },
                 ]}
             />
-            <SolutionHero
-                title="Plataformas web sob medida para operações complexas"
-                subtitle="Desenvolvemos soluções personalizadas com arquitetura escalável, integrações avançadas e performance garantida."
-                primaryCTA="Falar com especialista"
-                secondaryCTA="Ver cases"
+            <SolutionHeroWithImage
+                imageSrc="/images/solutions/unti-digital-solution-custom-web-platforms.png"
+                title="Plataformas Web Sob Medida"
+                subtitle="Arquitetura personalizada para operações complexas com integrações avançadas em alta escala."
             />
+            <SolutionProblems problems={problems} />
+            <SolutionTechStack technologies={technologies} />
+            <SolutionResults results={results} />
             <SolutionBenefits items={benefits} />
             <SolutionProcess steps={steps} />
             <SolutionCases cases={cases} />

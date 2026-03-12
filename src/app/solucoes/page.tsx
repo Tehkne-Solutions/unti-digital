@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import Link from "next/link";
@@ -35,19 +36,35 @@ const solutions = [
 export default function SolucoesPage() {
   return (
     <div className="w-full">
-      {/* Hero */}
-      <Section>
-        <Container>
-          <div className="max-w-5xl mx-auto text-center space-y-8">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-unti-dark tracking-tight leading-tight">
-              Soluções digitais para empresas que precisam escalar com segurança
-            </h1>
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Desenvolvimento, integrações e governança para negócios que não podem falhar.
-            </p>
-          </div>
-        </Container>
-      </Section>
+      {/* Hero com Imagem */}
+      <section className="relative h-[420px] flex items-center justify-center text-center overflow-hidden">
+        <Image
+          src="/images/solutions/unti-digital-solutions-hub-platforms-integrations-automation.png"
+          alt="Soluções digitais da Unti"
+          fill
+          className="object-cover"
+          priority
+        />
+
+        <div className="absolute inset-0 bg-black/60"></div>
+
+        <div className="relative z-10 text-white max-w-3xl px-6">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            Soluções digitais para empresas que precisam escalar
+          </h1>
+
+          <p className="text-lg opacity-90 mb-8">
+            Desenvolvimento, integrações e governança para negócios que não podem falhar.
+          </p>
+
+          <Link
+            href="/contato"
+            className="inline-block bg-unti-blue hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium transition-colors"
+          >
+            Falar com especialista
+          </Link>
+        </div>
+      </section>
 
       {/* Solutions Grid */}
       <Section>

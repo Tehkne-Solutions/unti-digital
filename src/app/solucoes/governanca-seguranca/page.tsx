@@ -1,4 +1,7 @@
-import { SolutionHero } from "@/components/solucoes/SolutionHero";
+import { SolutionHeroWithImage } from "@/components/solucoes/SolutionHeroWithImage";
+import { SolutionProblems } from "@/components/solucoes/SolutionProblems";
+import { SolutionTechStack } from "@/components/solucoes/SolutionTechStack";
+import { SolutionResults } from "@/components/solucoes/SolutionResults";
 import { SolutionBenefits } from "@/components/solucoes/SolutionBenefits";
 import { SolutionProcess } from "@/components/solucoes/SolutionProcess";
 import { SolutionCases } from "@/components/solucoes/SolutionCases";
@@ -29,6 +32,45 @@ const schemaMarkup = {
 };
 
 export default function GovernancaSegurancaPage() {
+    const problems = [
+        {
+            title: "Vulnerabilidades de segurança críticas",
+            description: "Falhas na arquitetura colocam dados e operações em risco constante.",
+        },
+        {
+            title: "Falta de compliance com regulamentações",
+            description: "Ausência de controles adequados gera riscos legais e operacionais.",
+        },
+        {
+            title: "Sem visibilidade sobre acessos e atividades",
+            description: "Impossível auditar quem acessou o quê, quando e por quê.",
+        },
+    ];
+
+    const technologies = [
+        "Criptografia de dados",
+        "OAuth 2.0 / OIDC",
+        "Auditing avançado",
+        "Compliance automation",
+        "DLP (Data Loss Prevention)",
+        "Security monitoring 24/7",
+    ];
+
+    const results = [
+        {
+            metric: "100%",
+            description: "Conformidade com LGPD e ISO 27001",
+        },
+        {
+            metric: "-95%",
+            description: "Redução de riscos de segurança",
+        },
+        {
+            metric: "24/7",
+            description: "Monitoramento ativo de ameaças",
+        },
+    ];
+
     const benefits = [
         {
             title: "Arquitetura segura",
@@ -94,17 +136,19 @@ export default function GovernancaSegurancaPage() {
                     { label: "Governança e Segurança" },
                 ]}
             />
-            <SolutionHero
-                title="Governança e segurança para ambientes digitais críticos"
-                subtitle="Protegemos seus dados e operações com arquitetura robusta, compliance e monitoramento 24/7."
-                primaryCTA="Falar com especialista"
-                secondaryCTA="Ver cases"
+            <SolutionHeroWithImage
+                imageSrc="/images/solutions/unti-digital-solution-governance-security.png"
+                title="Governança e Segurança"
+                subtitle="Arquitetura segura com controle de acessos, monitoramento contínuo e compliance garantido."
             />
+            <SolutionProblems problems={problems} />
+            <SolutionTechStack technologies={technologies} />
+            <SolutionResults results={results} />
             <SolutionBenefits items={benefits} />
             <SolutionProcess steps={steps} />
             <SolutionCases cases={cases} />
             <SolutionCTA
-                title="Proteja sua operação digital com estrutura profissional"
+                title="Vamos blindar sua plataforma?"
                 buttonText="Falar com especialista"
             />
         </div>

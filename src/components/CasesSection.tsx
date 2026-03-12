@@ -11,7 +11,7 @@ export default function CasesSection() {
                 </p>
                 <div className="grid md:grid-cols-3 gap-8">
                     {cases.map((caseItem) => (
-                        <CaseCard key={caseItem.id} caseItem={caseItem} />
+                        <CaseCard key={caseItem.slug} caseItem={caseItem} />
                     ))}
                 </div>
             </div>
