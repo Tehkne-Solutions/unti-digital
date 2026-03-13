@@ -7,6 +7,7 @@ interface CaseItem {
     segment: string;
     resultHighlight: string;
     heroImage: string;
+    image?: string;
     problem: string;
     solution: string;
     technologies: string[];
@@ -23,7 +24,7 @@ export default function CaseCard({ caseItem }: CaseCardProps) {
         <Link href={`/cases/${caseItem.slug}`}>
             <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
                 <Image
-                    src={caseItem.heroImage}
+                    src={caseItem.image ?? caseItem.heroImage}
                     alt={caseItem.name}
                     width={400}
                     height={160}

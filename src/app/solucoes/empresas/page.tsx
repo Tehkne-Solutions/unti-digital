@@ -2,7 +2,7 @@ import { Section } from '@/components/ui/Section';
 import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
 import { ServicesGrid } from '@/components/solutions/services-grid';
-import { CaseStudies } from '@/components/home/case-studies';
+import CasesSection from '@/components/CasesSection';
 import { FinalCTA } from '@/components/home/final-cta';
 
 export default function EmpresasPage() {
@@ -76,7 +76,7 @@ export default function EmpresasPage() {
       <ServicesGrid />
 
       {/* Case Studies */}
-      <CaseStudies />
+      <CasesSection />
 
       {/* Final CTA */}
       <FinalCTA />

@@ -25,9 +25,18 @@ interface ClientModalProps {
 export default function ClientModal({ client, onClose }: ClientModalProps) {
     if (!client) return null;
 
+    const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
+        if (e.target === e.currentTarget) {
+            onClose();
+        }
+    };
+
     return (
-        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-            <div className="bg-white rounded-xl overflow-hidden max-w-4xl w-full shadow-xl relative">
+        <div
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4"
+            onClick={handleOverlayClick}
+        >
+            <div className="bg-white rounded-xl overflow-hidden max-w-3xl w-full shadow-xl relative">
                 <button
                     onClick={onClose}
                     className="absolute top-4 right-4 text-gray-500 hover:text-black text-lg z-10"
