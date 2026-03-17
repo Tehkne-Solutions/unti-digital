@@ -24,7 +24,7 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center" aria-label="UNTI Digital">
             <Image
-              src="/images/logo horizontal.svg"
+              src="/images/logo-horizontal.svg"
               alt="Unti Digital"
               width={180}
               height={40}
@@ -48,9 +48,11 @@ export function Header() {
 
           {/* Desktop CTA */}
           <div className="hidden md:block">
-            <Button variant="primary" onClick={() => window.location.href = '/contato'}>
-              Falar com especialista
-            </Button>
+            <Link href="/contato">
+              <Button variant="primary">
+                Falar com especialista
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Hamburger */}
@@ -80,16 +82,15 @@ export function Header() {
             </Link>
           ))}
           <div className="mt-4">
-            <Button
-              variant="primary"
-              className="w-full"
-              onClick={() => {
-                setMobileMenuOpen(false);
-                window.location.href = '/contato';
-              }}
-            >
-              Falar com especialista
-            </Button>
+            <Link href="/contato">
+              <Button
+                variant="primary"
+                className="w-full"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Falar com especialista
+              </Button>
+            </Link>
           </div>
         </nav>
       </Modal>

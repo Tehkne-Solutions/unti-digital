@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import logoVertical from "@/assets/logo vertrical.svg";
+import logoVertical from "@/assets/logo-vertical.svg";
 
 const institucional = [
   ["#", "Sobre a UNTI"],

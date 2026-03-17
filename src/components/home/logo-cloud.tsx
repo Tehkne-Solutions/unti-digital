@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
+import { motion, useMotionValue, useAnimation } from "framer-motion"
 import Image from "next/image"
 import ClientModal from "@/components/ClientModal"
 import { clients } from "@/data/clients"
@@ -8,63 +9,56 @@ import { clients } from "@/data/clients"
 export default function LogoCloud() {
   const [selectedClient, setSelectedClient] = useState<typeof clients[number] | null>(null)
   const [activeIndex, setActiveIndex] = useState(0)
-  const scrollRef = useRef<HTMLDivElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
+  const x = useMotionValue(0)
+  const controls = useAnimation()
+
+  const itemWidth = 140 + 64 // logo width + gap
+  const totalWidth = clients.length * itemWidth
 
   useEffect(() => {
-    const el = scrollRef.current
-    if (!el) return
-
-    let raf: number
-    let isHovering = false
-    const speed = 0.15
-
-    const updateActiveIndex = () => {
-      const item = el.querySelector<HTMLButtonElement>("button")
-      if (!item) return
-      const itemWidth = item.getBoundingClientRect().width
-      const gap = 64 // gap-16 em pixels
-      const total = itemWidth + gap
-      const index = Math.round(el.scrollLeft / total) % clients.length
-      setActiveIndex(index)
-    }
-
-    const loop = () => {
-      if (!isHovering) {
-        el.scrollLeft += speed
-        if (el.scrollLeft >= el.scrollWidth - el.clientWidth) {
-          el.scrollLeft = 0
+    const autoScroll = async () => {
+      await controls.start({
+        x: -totalWidth,
+        transition: {
+          duration: 30,
+          ease: "linear",
+          repeat: Infinity,
+          repeatType: "loop"
         }
-        updateActiveIndex()
-      }
-
-      raf = requestAnimationFrame(loop)
+      })
     }
 
-    const handleEnter = () => {
-      isHovering = true
-    }
-
-    const handleLeave = () => {
-      isHovering = false
-    }
-
-    el.addEventListener("mouseenter", handleEnter)
-    el.addEventListener("mouseleave", handleLeave)
-    el.addEventListener("pointerdown", handleEnter)
-    el.addEventListener("pointerup", handleLeave)
-    el.addEventListener("scroll", updateActiveIndex)
-
-    raf = requestAnimationFrame(loop)
+    autoScroll()
 
     return () => {
-      cancelAnimationFrame(raf)
-      el.removeEventListener("mouseenter", handleEnter)
-      el.removeEventListener("mouseleave", handleLeave)
-      el.removeEventListener("pointerdown", handleEnter)
-      el.removeEventListener("pointerup", handleLeave)
-      el.removeEventListener("scroll", updateActiveIndex)
+      controls.stop()
     }
-  }, [])
+  }, [controls, totalWidth])
+
+  const handleDragEnd = () => {
+    // Resume auto-scroll after drag
+    setTimeout(() => {
+      controls.start({
+        x: -totalWidth,
+        transition: {
+          duration: 30,
+          ease: "linear",
+          repeat: Infinity,
+          repeatType: "loop"
+        }
+      })
+    }, 2000)
+  }
+
+  const handleBulletClick = (index: number) => {
+    const targetX = -index * itemWidth
+    controls.start({
+      x: targetX,
+      transition: { duration: 0.5, ease: "easeInOut" }
+    })
+    setActiveIndex(index)
+  }
 
   return (
     <section className="py-20">
@@ -79,35 +73,46 @@ export default function LogoCloud() {
           </p>
         </div>
 
-        <div
-          ref={scrollRef}
-          className="flex gap-16 overflow-x-auto no-scrollbar"
-        >
-          {[...clients, ...clients].map((client, index) => (
-            <button
-              key={`${client.id}-${index}`}
-              onClick={() => setSelectedClient(client)}
-              className="flex-shrink-0 px-6 py-4 opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition"
-            >
-              <Image
-                src={client.logo}
-                alt={client.name}
-                width={140}
-                height={80}
-                loading="lazy"
-                className="h-16 md:h-20 w-auto object-contain"
-              />
-            </button>
-          ))}
+        <div className="overflow-hidden">
+          <motion.div
+            ref={containerRef}
+            className="flex gap-16"
+            style={{ x }}
+            drag="x"
+            dragConstraints={{ left: -totalWidth, right: 0 }}
+            dragElastic={0.1}
+            onDragStart={() => controls.stop()}
+            onDragEnd={handleDragEnd}
+            animate={controls}
+          >
+            {[...clients, ...clients].map((client, index) => (
+              <motion.button
+                key={`${client.id}-${index}`}
+                onClick={() => setSelectedClient(client)}
+                className="flex-shrink-0 px-6 py-4 opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Image
+                  src={client.logo}
+                  alt={client.name}
+                  width={140}
+                  height={80}
+                  loading="lazy"
+                  className="h-16 md:h-20 w-auto object-contain"
+                />
+              </motion.button>
+            ))}
+          </motion.div>
         </div>
 
         <div className="mt-6 flex items-center justify-center gap-2">
           {clients.map((_, idx) => (
-            <span
+            <button
               key={idx}
-              className={`h-2 w-2 rounded-full transition-all ${
-                idx === activeIndex ? "bg-blue-600" : "bg-gray-300"
-              }`}
+              onClick={() => handleBulletClick(idx)}
+              className={`h-2 w-2 rounded-full transition-all ${idx === activeIndex ? "bg-blue-600" : "bg-gray-300"
+                }`}
             />
           ))}
         </div>
