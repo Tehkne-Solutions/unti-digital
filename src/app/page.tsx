@@ -13,10 +13,10 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <LogoCloud />
       <Segmentation />
       <HowWeWork />
       <ServicesCarousel />
-      <LogoCloud />
       <CasesSection />
       <FeatureBlocks />
       <BlogGrid />
