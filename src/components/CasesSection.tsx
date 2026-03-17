@@ -4,7 +4,7 @@ import CaseCard from "./CaseCard";
 export default function CasesSection() {
     return (
         <section className="py-20 bg-gray-50">
-            <div className="max-w-6xl mx-auto px-6">
+            <div className="max-w-6xl mx-auto px-6 overflow-x-hidden">
                 <h2 className="text-3xl md:text-4xl font-bold text-blue-600 text-center mb-4">
                     Projetos que geram impacto real
                 </h2>

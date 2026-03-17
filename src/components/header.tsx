@@ -24,7 +24,7 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center" aria-label="UNTI Digital">
             <Image
-              src="/images/logo-unti-digital.png"
+              src="/images/logo horizontal.svg"
               alt="Unti Digital"
               width={180}
               height={40}

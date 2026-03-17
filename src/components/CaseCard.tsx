@@ -22,7 +22,7 @@ interface CaseCardProps {
 export default function CaseCard({ caseItem }: CaseCardProps) {
     return (
         <Link href={`/cases/${caseItem.slug}`}>
-            <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
+            <div className="w-full min-w-0 bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
                 <Image
                     src={caseItem.image ?? caseItem.heroImage}
                     alt={caseItem.name}

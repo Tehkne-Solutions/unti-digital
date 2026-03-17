@@ -7,6 +7,7 @@ import { clients } from "@/data/clients"
 
 export default function LogoCloud() {
   const [selectedClient, setSelectedClient] = useState<typeof clients[number] | null>(null)
+  const [activeIndex, setActiveIndex] = useState(0)
   const scrollRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -17,46 +18,51 @@ export default function LogoCloud() {
     let isHovering = false
     const speed = 0.15
 
+    const updateActiveIndex = () => {
+      const item = el.querySelector<HTMLButtonElement>("button")
+      if (!item) return
+      const itemWidth = item.getBoundingClientRect().width
+      const gap = 64 // gap-16 em pixels
+      const total = itemWidth + gap
+      const index = Math.round(el.scrollLeft / total) % clients.length
+      setActiveIndex(index)
+    }
+
     const loop = () => {
       if (!isHovering) {
         el.scrollLeft += speed
         if (el.scrollLeft >= el.scrollWidth - el.clientWidth) {
           el.scrollLeft = 0
         }
+        updateActiveIndex()
       }
 
       raf = requestAnimationFrame(loop)
     }
 
-    const handleMouseEnter = () => {
+    const handleEnter = () => {
       isHovering = true
     }
 
-    const handleMouseLeave = () => {
+    const handleLeave = () => {
       isHovering = false
     }
 
-    const handlePointerDown = () => {
-      isHovering = true
-    }
-
-    const handlePointerUp = () => {
-      isHovering = false
-    }
-
-    el.addEventListener("mouseenter", handleMouseEnter)
-    el.addEventListener("mouseleave", handleMouseLeave)
-    el.addEventListener("pointerdown", handlePointerDown)
-    el.addEventListener("pointerup", handlePointerUp)
+    el.addEventListener("mouseenter", handleEnter)
+    el.addEventListener("mouseleave", handleLeave)
+    el.addEventListener("pointerdown", handleEnter)
+    el.addEventListener("pointerup", handleLeave)
+    el.addEventListener("scroll", updateActiveIndex)
 
     raf = requestAnimationFrame(loop)
 
     return () => {
       cancelAnimationFrame(raf)
-      el.removeEventListener("mouseenter", handleMouseEnter)
-      el.removeEventListener("mouseleave", handleMouseLeave)
-      el.removeEventListener("pointerdown", handlePointerDown)
-      el.removeEventListener("pointerup", handlePointerUp)
+      el.removeEventListener("mouseenter", handleEnter)
+      el.removeEventListener("mouseleave", handleLeave)
+      el.removeEventListener("pointerdown", handleEnter)
+      el.removeEventListener("pointerup", handleLeave)
+      el.removeEventListener("scroll", updateActiveIndex)
     }
   }, [])
 
@@ -75,11 +81,11 @@ export default function LogoCloud() {
 
         <div
           ref={scrollRef}
-          className="flex gap-16 overflow-hidden no-scrollbar"
+          className="flex gap-16 overflow-x-auto no-scrollbar"
         >
-          {clients.map((client) => (
+          {[...clients, ...clients].map((client, index) => (
             <button
-              key={client.id}
+              key={`${client.id}-${index}`}
               onClick={() => setSelectedClient(client)}
               className="flex-shrink-0 px-6 py-4 opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition"
             >
@@ -92,6 +98,17 @@ export default function LogoCloud() {
                 className="h-16 md:h-20 w-auto object-contain"
               />
             </button>
+          ))}
+        </div>
+
+        <div className="mt-6 flex items-center justify-center gap-2">
+          {clients.map((_, idx) => (
+            <span
+              key={idx}
+              className={`h-2 w-2 rounded-full transition-all ${
+                idx === activeIndex ? "bg-blue-600" : "bg-gray-300"
+              }`}
+            />
           ))}
         </div>
 
