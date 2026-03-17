@@ -12,7 +12,7 @@ export default function LogoCloud() {
     const el = scrollRef.current
     if (!el) return
 
-    let raf: any
+    let raf: number
 
     const speed = 0.5
 
@@ -48,7 +48,7 @@ export default function LogoCloud() {
           ref={scrollRef}
           className="flex gap-16 overflow-x-scroll no-scrollbar"
         >
-          {clients.map((client, index) => (
+          {clients.map((client) => (
             <button
               key={client.id}
               onClick={() => setSelectedClient(client)}
