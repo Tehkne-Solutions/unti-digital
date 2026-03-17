@@ -1,22 +1,41 @@
-"use client";
+"use client"
 
-import { Section } from "@/components/ui/Section";
-import { Container } from "@/components/ui/Container";
-import { clients } from "@/data/clients";
-import Image from "next/image";
-import { useState } from "react";
-import { motion } from "framer-motion";
-import ClientModal from "@/components/ClientModal";
+import { useEffect, useRef, useState } from "react"
+import ClientModal from "@/components/ClientModal"
+import { clients } from "@/data/clients"
 
 export function LogoCloud() {
-  const [activeClient, setActiveClient] = useState<typeof clients[0] | null>(null);
+  const [activeClient, setActiveClient] = useState<typeof clients[number] | null>(null)
+  const scrollRef = useRef<HTMLDivElement | null>(null)
+
+  useEffect(() => {
+    const container = scrollRef.current
+    if (!container) return
+
+    let animationFrame: number
+
+    const autoScroll = () => {
+      if (!container) return
+
+      container.scrollLeft += 0.3
+
+      if (container.scrollLeft >= container.scrollWidth / 2) {
+        container.scrollLeft = 0
+      }
+
+      animationFrame = requestAnimationFrame(autoScroll)
+    }
+
+    animationFrame = requestAnimationFrame(autoScroll)
+
+    return () => cancelAnimationFrame(animationFrame)
+  }, [])
 
   return (
-    <Section>
-      <Container>
-        {/* Title */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-blue-600 text-center mb-4">
+    <section className="py-16 md:py-24">
+      <div className="max-w-[1200px] mx-auto px-4 md:px-6">
+        <div className="text-center mb-12">
+          <h2 className="text-2xl md:text-4xl font-bold text-blue-600 mb-4">
             Tecnologia que impulsiona empresas reais
           </h2>
           <p className="text-gray-500">
@@ -24,48 +43,39 @@ export function LogoCloud() {
           </p>
         </div>
 
-        {/* Continuous logo marquee */}
-        <div className="overflow-hidden mb-16">
-          <div className="flex space-x-12 animate-marquee items-center">
-            {clients.map((client, index) => (
-              <motion.button
-                key={`${client.id}-${index}`}
-                onClick={() => setActiveClient(client)}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="flex items-center justify-center px-6 py-4 grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all duration-300"
-              >
-                <Image
-                  src={client.logo}
-                  alt={client.name}
-                  width={120}
-                  height={60}
-                  className="h-14 w-auto object-contain"
-                />
-              </motion.button>
-            ))}
-          </div>
+        <div
+          ref={scrollRef}
+          className="flex gap-10 overflow-x-auto no-scrollbar scroll-smooth"
+        >
+          {[...clients, ...clients].map((client, index) => (
+            <button
+              key={`${client.id}-${index}`}
+              onClick={() => setActiveClient(client)}
+              className="flex-shrink-0 flex items-center justify-center px-8 py-6 grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all duration-300"
+            >
+              <img
+                src={client.logo}
+                alt={client.name}
+                className="h-16 md:h-20 w-auto object-contain"
+              />
+            </button>
+          ))}
         </div>
 
-        {/* CTA */}
-        <div className="text-center">
+        <div className="text-center mt-10">
           <p className="text-gray-600 mb-4">
             Quer alcançar resultados como esses?
           </p>
           <a
             href="/contato"
-            className="inline-block bg-blue-600 text-white px-8 py-3 rounded-md hover:bg-blue-700 transition-colors font-medium"
+            className="inline-block bg-blue-600 text-white px-8 py-3 rounded-md hover:bg-blue-700 transition"
           >
             Falar com especialista
           </a>
         </div>
 
-        {/* Client Modal */}
-        <ClientModal
-          client={activeClient}
-          onClose={() => setActiveClient(null)}
-        />
-      </Container>
-    </Section>
-  );
+        <ClientModal client={activeClient} onClose={() => setActiveClient(null)} />
+      </div>
+    </section>
+  )
 }

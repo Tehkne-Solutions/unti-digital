@@ -1,9 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
-import logoHorizontal from "@/assets/logo horizontal.svg";
 import { Button } from "@/components/ui/Button";
 import { Modal } from "@/components/ui/Modal";
 
@@ -24,13 +22,10 @@ export function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center" aria-label="UNTI Digital">
-            <Image 
-              src={logoHorizontal} 
-              alt="UNTI Digital" 
-              width={140} 
-              height={40} 
-              className="h-8 w-auto" 
-              priority 
+            <img
+              src="/images/logo-unti.png"
+              alt="Unti Digital"
+              className="w-[300px] h-auto"
             />
           </Link>
 
@@ -81,8 +76,8 @@ export function Header() {
             </Link>
           ))}
           <div className="mt-4">
-            <Button 
-              variant="primary" 
+            <Button
+              variant="primary"
               className="w-full"
               onClick={() => {
                 setMobileMenuOpen(false);
