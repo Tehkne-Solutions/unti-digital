@@ -13,22 +13,38 @@ export default function LogoCloud() {
     if (!el) return
 
     let raf: number
-
-    const speed = 0.5
+    let isHovering = false
+    const speed = 0.15
 
     const loop = () => {
-      el.scrollLeft += speed
-
-      if (el.scrollLeft >= el.scrollWidth - el.clientWidth) {
-        el.scrollLeft = 0
+      if (!isHovering) {
+        el.scrollLeft += speed
+        if (el.scrollLeft >= el.scrollWidth - el.clientWidth) {
+          el.scrollLeft = 0
+        }
       }
 
       raf = requestAnimationFrame(loop)
     }
 
+    const handleMouseEnter = () => {
+      isHovering = true
+    }
+
+    const handleMouseLeave = () => {
+      isHovering = false
+    }
+
+    el.addEventListener("mouseenter", handleMouseEnter)
+    el.addEventListener("mouseleave", handleMouseLeave)
+
     raf = requestAnimationFrame(loop)
 
-    return () => cancelAnimationFrame(raf)
+    return () => {
+      cancelAnimationFrame(raf)
+      el.removeEventListener("mouseenter", handleMouseEnter)
+      el.removeEventListener("mouseleave", handleMouseLeave)
+    }
   }, [])
 
   return (
@@ -46,7 +62,7 @@ export default function LogoCloud() {
 
         <div
           ref={scrollRef}
-          className="flex gap-16 overflow-x-scroll no-scrollbar"
+          className="flex gap-16 overflow-hidden no-scrollbar"
         >
           {clients.map((client) => (
             <button

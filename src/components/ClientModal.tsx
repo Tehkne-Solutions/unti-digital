@@ -33,13 +33,13 @@ export default function ClientModal({ client, onClose }: ClientModalProps) {
 
     return (
         <div
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
             onClick={handleOverlayClick}
         >
-            <div className="bg-white rounded-xl overflow-hidden max-w-3xl w-full shadow-xl relative">
+            <div className="bg-white w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-xl shadow-xl relative">
                 <button
                     onClick={onClose}
-                    className="absolute top-4 right-4 text-gray-500 hover:text-black text-lg z-10"
+                    className="absolute top-4 right-4 z-50 bg-white rounded-full p-2 shadow hover:scale-110 transition"
                 >
                     ✕
                 </button>
@@ -64,7 +64,7 @@ export default function ClientModal({ client, onClose }: ClientModalProps) {
                 </div>
 
                 {/* CONTENT */}
-                <div className="grid md:grid-cols-2 gap-8 p-8 pt-20">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-6 md:p-8 pt-20">
                     <div>
                         <h3 className="text-2xl font-bold mb-2">{client.name}</h3>
                         <p className="text-blue-600 font-medium mb-2">{client.segment}</p>
