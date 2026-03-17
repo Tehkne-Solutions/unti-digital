@@ -1,13 +1,17 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadFull } from "tsparticles";
 
 export const ParticlesHero: React.FC = () => {
+    const [isReady, setIsReady] = useState(false);
+
     useEffect(() => {
-        initParticlesEngine(loadFull);
+        initParticlesEngine(loadFull).then(() => setIsReady(true));
     }, []);
+
+    if (!isReady) return null;
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const particlesOptions: any = {
@@ -30,10 +34,20 @@ export const ParticlesHero: React.FC = () => {
             },
             number: { density: { enable: true, area: 1200 }, value: 40 },
             opacity: { value: 0.7 },
-            shape: {
-                type: "circle",
-            },
-            size: { value: { min: 3, max: 8 } },
+            shape: [
+                {
+                    type: "image",
+                    options: {
+                        image: {
+                            src: "/images/mais-svg-particles-hero-home.svg",
+                        },
+                    },
+                },
+                {
+                    type: "circle",
+                },
+            ] as any,
+            size: { value: { min: 6, max: 12 } },
         },
         interactivity: {
             events: {
@@ -48,11 +62,9 @@ export const ParticlesHero: React.FC = () => {
     };
 
     return (
-        <div className="absolute inset-0 -z-10 w-full h-full">
-            <Particles
-                options={particlesOptions}
-                className="w-full h-full"
-            />
-        </div>
+        <Particles
+            options={particlesOptions}
+            className="w-full h-full"
+        />
     );
 };

@@ -27,7 +27,7 @@ export function Footer() {
         <div className="flex flex-col gap-10 md:flex-row md:justify-between">
           <div>
             <Link href="/" aria-label="UNTI Digital - Início" className="inline-block">
-              <Image src={logoVertical} alt="UNTI Digital" width={150} height={80} className="h-20 w-auto object-contain" />
+              <Image src={logoVertical} alt="UNTI Digital" width={400} height={214} className="h-auto w-full object-contain max-w-xs" />
             </Link>
             <p className="mt-4 max-w-sm text-sm text-unti-light/80">
               Soluções em tecnologia para negócios inteligentes: sites, plataformas web e integrações críticas.

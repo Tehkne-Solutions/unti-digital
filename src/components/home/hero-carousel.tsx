@@ -67,7 +67,7 @@ export function HeroCarousel() {
   const currentSlide = slides[activeSlide];
 
   return (
-    <div className="max-w-[1100px] mx-auto mt-20 md:mt-24 px-6 relative">
+    <div className="max-w-[1100px] mx-auto mt-0 px-6 relative">
       {/* Slide Content */}
       <div className="flex flex-col items-center text-center space-y-8">
         {/* Image/Video Area */}

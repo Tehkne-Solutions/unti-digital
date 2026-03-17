@@ -26,9 +26,9 @@ export function Header() {
             <Image
               src="/images/logo-horizontal.svg"
               alt="Unti Digital"
-              width={180}
-              height={40}
-              className="h-10 w-auto object-contain"
+              width={216}
+              height={48}
+              className="h-12 w-auto object-contain"
               priority
             />
           </Link>

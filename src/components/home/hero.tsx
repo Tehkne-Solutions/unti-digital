@@ -10,14 +10,12 @@ export function Hero() {
     <div className="w-full">
       {/* Top Block - Centered Content with Particles Background */}
       <section className="relative min-h-[50vh] md:min-h-[60vh] flex items-center justify-center py-8 md:py-10 overflow-hidden bg-gradient-to-br from-blue-50 to-white">
-        <ParticlesHero />
+        <div className="absolute inset-0 -z-10">
+          <ParticlesHero />
+        </div>
 
         <Container>
           <div className="max-w-4xl mx-auto text-center space-y-8 relative z-10">
-            <div className="text-sm font-medium text-unti-blue uppercase tracking-wide">
-              UNTI DIGITAL
-            </div>
-
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-zinc-800 tracking-tight leading-tight">
               Soluções em tecnologia para negócios que precisam escalar com segurança.
             </h1>
