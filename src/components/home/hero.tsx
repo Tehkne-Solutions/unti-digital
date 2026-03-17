@@ -9,7 +9,7 @@ export function Hero() {
   return (
     <div className="w-full">
       {/* Top Block - Centered Content with Particles Background */}
-      <section className="relative w-full min-h-[50vh] md:min-h-[60vh] flex items-center justify-center py-8 md:py-10 overflow-hidden bg-gradient-to-br from-blue-50 to-white" style={{ willChange: "transform" }}>
+      <section className="relative w-full min-h-[50vh] md:min-h-[60vh] flex items-center justify-center py-8 md:py-10 overflow-hidden bg-gradient-to-br from-blue-50 to-white" style={{ willChange: "transform", clipPath: "inset(0)" }}>
         <div className="absolute inset-0 top-0 left-0 w-full h-full -z-10 overflow-hidden">
           <ParticlesHero />
         </div>

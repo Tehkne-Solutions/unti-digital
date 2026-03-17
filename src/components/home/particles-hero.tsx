@@ -13,6 +13,9 @@ export const ParticlesHero: React.FC = () => {
 
     if (!isReady) return null;
 
+    // SVG plus symbol as data URI
+    const plusSvgDataUri = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB4PSIxMCIgeT0iMiIgd2lkdGg9IjQiIGhlaWdodD0iMjAiIGZpbGw9IiMxRTNBOEEiLz48cmVjdCB4PSIyIiB5PSIxMCIgd2lkdGg9IjIwIiBmaWxsPSIyMCIgZmlsbD0iIzFFM0E4QSIvPjwvc3ZnPg==";
+
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const particlesOptions: any = {
         background: { color: { value: "transparent" } },
@@ -34,11 +37,15 @@ export const ParticlesHero: React.FC = () => {
             },
             number: { density: { enable: true, area: 1000 }, value: 35 },
             opacity: { value: 0.8 },
-            shape: { type: "circle" },
+            shape: {
+                type: "image",
+                image: {
+                    src: plusSvgDataUri,
+                    width: 20,
+                    height: 20,
+                },
+            } as any,
             size: { value: { min: 8, max: 10 } },
-            twinkle: {
-                particles: { enable: true, frequency: 0.05, opacity: 0.5 },
-            },
         },
         interactivity: {
             events: {
