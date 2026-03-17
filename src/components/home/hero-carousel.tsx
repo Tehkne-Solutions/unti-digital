@@ -44,24 +44,30 @@ const slides: Slide[] = [
 
 export function HeroCarousel() {
   const [activeSlide, setActiveSlide] = useState(0);
+  const [isAutoPlay, setIsAutoPlay] = useState(true);
 
   useEffect(() => {
+    if (!isAutoPlay) return;
+
     const interval = setInterval(() => {
       setActiveSlide((prev) => (prev + 1) % slides.length);
-    }, 5000);
+    }, 8000); // Aumentado de 5000 para 8000ms (8 segundos)
     return () => clearInterval(interval);
-  }, []);
+  }, [isAutoPlay]);
 
   const goToSlide = (index: number) => {
     setActiveSlide(index);
+    setIsAutoPlay(true); // Retoma auto-play após 5 segundos de inatividade
   };
 
   const nextSlide = () => {
     setActiveSlide((prev) => (prev + 1) % slides.length);
+    setIsAutoPlay(true);
   };
 
   const prevSlide = () => {
     setActiveSlide((prev) => (prev - 1 + slides.length) % slides.length);
+    setIsAutoPlay(true);
   };
 
   const currentSlide = slides[activeSlide];

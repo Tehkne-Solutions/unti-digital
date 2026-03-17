@@ -17,7 +17,7 @@ const servicos = [
 const contato = [
   ["/contato", "Contato"],
   ["mailto:contato@untidigital.com", "contato@untidigital.com"],
-  ["tel:+551199999999", "+55 (11) 99999-9999"]
+  ["tel:+5519982809717", "+55 19 98280-9717"]
 ] as const;
 
 export function Footer() {

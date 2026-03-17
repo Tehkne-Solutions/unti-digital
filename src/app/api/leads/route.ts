@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-const WHATSAPP_NUMBER = "5511999999999";
+const WHATSAPP_NUMBER = "5519982809717";
 
 export async function POST(request: Request) {
   const body = (await request.json()) as {
