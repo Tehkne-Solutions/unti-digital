@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { Modal } from "@/components/ui/Modal";
@@ -22,10 +23,13 @@ export function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center" aria-label="UNTI Digital">
-            <img
+            <Image
               src="/images/logo-unti-digital.png"
               alt="Unti Digital"
-              className="w-[300px] h-auto"
+              width={180}
+              height={40}
+              className="h-10 w-auto object-contain"
+              priority
             />
           </Link>
 

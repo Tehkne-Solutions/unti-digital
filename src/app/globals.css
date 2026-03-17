@@ -37,7 +37,6 @@ body {
   .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
-    overflow: hidden;
   }
 
   .no-scrollbar::-webkit-scrollbar {

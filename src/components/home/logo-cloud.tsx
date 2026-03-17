@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
+import Image from "next/image"
 import ClientModal from "@/components/ClientModal"
 import { clients } from "@/data/clients"
 
@@ -35,8 +36,18 @@ export default function LogoCloud() {
       isHovering = false
     }
 
+    const handlePointerDown = () => {
+      isHovering = true
+    }
+
+    const handlePointerUp = () => {
+      isHovering = false
+    }
+
     el.addEventListener("mouseenter", handleMouseEnter)
     el.addEventListener("mouseleave", handleMouseLeave)
+    el.addEventListener("pointerdown", handlePointerDown)
+    el.addEventListener("pointerup", handlePointerUp)
 
     raf = requestAnimationFrame(loop)
 
@@ -44,6 +55,8 @@ export default function LogoCloud() {
       cancelAnimationFrame(raf)
       el.removeEventListener("mouseenter", handleMouseEnter)
       el.removeEventListener("mouseleave", handleMouseLeave)
+      el.removeEventListener("pointerdown", handlePointerDown)
+      el.removeEventListener("pointerup", handlePointerUp)
     }
   }, [])
 
@@ -70,9 +83,11 @@ export default function LogoCloud() {
               onClick={() => setSelectedClient(client)}
               className="flex-shrink-0 px-6 py-4 opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition"
             >
-              <img
+              <Image
                 src={client.logo}
                 alt={client.name}
+                width={140}
+                height={80}
                 loading="lazy"
                 className="h-16 md:h-20 w-auto object-contain"
               />
