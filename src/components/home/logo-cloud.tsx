@@ -26,21 +26,21 @@ export function LogoCloud() {
 
         {/* Continuous logo marquee */}
         <div className="overflow-hidden mb-16">
-          <div className="flex space-x-12 animate-marquee">
-            {clients.concat(clients).map((client, index) => (
+          <div className="flex space-x-12 animate-marquee items-center">
+            {clients.map((client, index) => (
               <motion.button
                 key={`${client.id}-${index}`}
                 onClick={() => setActiveClient(client)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="flex items-center justify-center p-6 grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all duration-300"
+                className="flex items-center justify-center px-6 py-4 grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all duration-300"
               >
                 <Image
                   src={client.logo}
                   alt={client.name}
                   width={120}
                   height={60}
-                  className="h-12 w-auto object-contain"
+                  className="h-14 w-auto object-contain"
                 />
               </motion.button>
             ))}
