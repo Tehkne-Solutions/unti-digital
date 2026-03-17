@@ -24,7 +24,7 @@ export const ParticlesHero: React.FC = () => {
                 distance: 80,
                 enable: true,
                 opacity: 0.4,
-                width: 1,
+                width: 1.5,
             },
             move: {
                 direction: "none",
@@ -32,22 +32,13 @@ export const ParticlesHero: React.FC = () => {
                 outModes: { default: "bounce" },
                 speed: 1.5,
             },
-            number: { density: { enable: true, area: 1200 }, value: 40 },
-            opacity: { value: 0.7 },
-            shape: [
-                {
-                    type: "image",
-                    options: {
-                        image: {
-                            src: "/images/mais-svg-particles-hero-home.svg",
-                        },
-                    },
-                },
-                {
-                    type: "circle",
-                },
-            ] as any,
-            size: { value: { min: 6, max: 12 } },
+            number: { density: { enable: true, area: 1000 }, value: 35 },
+            opacity: { value: 0.8 },
+            shape: { type: "circle" },
+            size: { value: { min: 8, max: 10 } },
+            twinkle: {
+                particles: { enable: true, frequency: 0.05, opacity: 0.5 },
+            },
         },
         interactivity: {
             events: {
@@ -62,9 +53,19 @@ export const ParticlesHero: React.FC = () => {
     };
 
     return (
-        <Particles
-            options={particlesOptions}
-            className="w-full h-full"
-        />
+        <>
+            <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ filter: "url(#plusFilter)" }}>
+                <defs>
+                    <filter id="plusFilter">
+                        <feMorphology operator="dilate" radius="2" />
+                        <feGaussianBlur stdDeviation="1" />
+                    </filter>
+                </defs>
+            </svg>
+            <Particles
+                options={particlesOptions}
+                className="absolute inset-0 w-full h-full"
+            />
+        </>
     );
 };
