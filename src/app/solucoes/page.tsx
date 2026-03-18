@@ -73,7 +73,7 @@ export default function SolucoesPage() {
             {solutions.map((solution, index) => (
               <Link key={index} href={solution.href}>
                 <div className="h-full rounded-2xl border border-gray-200 p-8 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 cursor-pointer bg-white">
-                  <h3 className="text-xl font-semibold text-unti-dark mb-4">
+                  <h3 className="text-xl font-semibold mb-4">
                     {solution.title}
                   </h3>
                   <p className="text-gray-600 leading-relaxed mb-6">
@@ -93,13 +93,13 @@ export default function SolucoesPage() {
       <Section>
         <Container>
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-unti-dark mb-12 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
               Abordagem diferenciada
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
               <div className="space-y-3">
                 <div className="text-2xl font-bold text-unti-blue">01</div>
-                <h3 className="text-xl font-semibold text-unti-dark">
+                <h3 className="text-xl font-semibold">
                   Metodologia estruturada
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
@@ -108,7 +108,7 @@ export default function SolucoesPage() {
               </div>
               <div className="space-y-3">
                 <div className="text-2xl font-bold text-unti-blue">02</div>
-                <h3 className="text-xl font-semibold text-unti-dark">
+                <h3 className="text-xl font-semibold">
                   Arquitetura escalável
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
@@ -117,7 +117,7 @@ export default function SolucoesPage() {
               </div>
               <div className="space-y-3">
                 <div className="text-2xl font-bold text-unti-blue">03</div>
-                <h3 className="text-xl font-semibold text-unti-dark">
+                <h3 className="text-xl font-semibold">
                   Times especializados
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
@@ -135,19 +135,19 @@ export default function SolucoesPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Empresas */}
             <div className="rounded-2xl bg-blue-50 p-12 space-y-6">
-              <h3 className="text-2xl font-bold text-unti-dark">Para Empresas</h3>
+              <h3 className="text-2xl font-bold">Para Empresas</h3>
               <div className="space-y-4 text-gray-600 leading-relaxed">
                 <div>
-                  <strong className="text-unti-dark">Performance:</strong> Plataformas otimizadas para conversão e SEO.
+                  <strong className="text-unti-heading">Performance:</strong> Plataformas otimizadas para conversão e SEO.
                 </div>
                 <div>
-                  <strong className="text-unti-dark">Governança:</strong> Arquitetura profissional e segura.
+                  <strong className="text-unti-heading">Governça:</strong> Arquitetura profissional e segura.
                 </div>
                 <div>
-                  <strong className="text-unti-dark">Integração:</strong> Conecte CRM, ERP e ferramentas de marketing.
+                  <strong className="text-unti-heading">Integração:</strong> Conecte CRM, ERP e ferramentas de marketing.
                 </div>
                 <div>
-                  <strong className="text-unti-dark">Escalabilidade:</strong> Estrutura que cresce com seu negócio.
+                  <strong className="text-unti-heading">Escalabilidade:</strong> Estrutura que cresce com seu negócio.
                 </div>
               </div>
             </div>

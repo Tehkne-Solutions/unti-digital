@@ -19,13 +19,15 @@ const config: Config = {
         },
         unti: {
           blue: "#396cff",
-          dark: "#111827",
+          dark: "#2563eb",
           light: "#7fa2ff",
           pastel: "#c3d6fc",
           orange: "#ff9900",
           muted: "#6B7280",
           border: "#E5E7EB",
-          surface: "#F8FAFC"
+          surface: "#F8FAFC",
+          heading: "#4B5563",
+          topbarBg: "#2563eb"
         }
       },
       fontFamily: {

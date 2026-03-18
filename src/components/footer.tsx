@@ -23,7 +23,7 @@ const contato = [
 
 export function Footer() {
   return (
-    <footer className="bg-unti-dark text-white">
+    <footer className="bg-unti-topbarBg text-white">
       <div className="mx-auto max-w-6xl px-4 py-12">
         <div className="flex flex-col gap-10 md:flex-row md:justify-between">
           <div className="max-w-sm">

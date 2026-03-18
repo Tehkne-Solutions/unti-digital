@@ -32,7 +32,7 @@ body {
   h4,
   h5,
   h6 {
-    @apply text-brand-dark;
+    @apply text-unti-heading;
   }
 
   p,

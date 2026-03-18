@@ -47,7 +47,7 @@ export function FeatureBlocks() {
               {/* Text Content */}
               <div className={`space-y-6 ${feature.imagePosition === "left" ? "md:order-2" : "md:order-1"
                 }`}>
-                <h2 className="text-3xl md:text-4xl font-medium text-unti-dark max-w-xl">
+                <h2 className="text-3xl md:text-4xl font-medium max-w-xl">
                   {feature.title}
                 </h2>
                 <p className="text-lg text-gray-600 leading-relaxed max-w-xl">

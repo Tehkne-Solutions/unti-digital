@@ -1,4 +1,4 @@
-ï»¿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { Ubuntu } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
@@ -13,8 +13,8 @@ const ubuntu = Ubuntu({
 });
 
 export const metadata: Metadata = {
-  title: "UNTI â€” ServiÃ§os de Tecnologia",
-  description: "Site institucional da UNTI com foco em serviÃ§os de tecnologia, plataformas web e integraÃ§Ãµes."
+  title: "UNTI — Serviços de Tecnologia",
+  description: "Site institucional da UNTI com foco em serviços de tecnologia, plataformas web e integrações."
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

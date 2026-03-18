@@ -17,7 +17,7 @@ export function ServicesCarousel() {
       <Container>
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-unti-dark mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Nossas soluções digitais
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -79,7 +79,7 @@ export function ServicesCarousel() {
 
               {/* Bullets */}
               <div>
-                <h4 className="font-semibold text-unti-dark mb-3">Diferenciais</h4>
+                <h4 className="font-semibold mb-3">Diferenciais</h4>
                 <ul className="space-y-2">
                   {selectedService.bullets.map((bullet, idx) => (
                     <li key={idx} className="flex items-start gap-2">
@@ -94,7 +94,7 @@ export function ServicesCarousel() {
 
               {/* Deliverables */}
               <div>
-                <h4 className="font-semibold text-unti-dark mb-3">Entregáveis</h4>
+                <h4 className="font-semibold mb-3">Entregáveis</h4>
                 <ul className="space-y-2">
                   {selectedService.deliverables.map((item, idx) => (
                     <li key={idx} className="flex items-start gap-2">

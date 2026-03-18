@@ -26,7 +26,7 @@ export function SolutionHero({
             <Container>
                 <div className="max-w-5xl mx-auto text-center space-y-8">
                     {/* Title */}
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-unti-dark tracking-tight leading-tight">
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
                         {title}
                     </h1>
 

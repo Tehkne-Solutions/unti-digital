@@ -19,7 +19,7 @@ export function Button({
   const variants = {
     primary: "bg-unti-orange text-white hover:opacity-90 focus:ring-unti-orange",
     secondary: "border-2 border-unti-blue text-unti-blue bg-transparent hover:bg-unti-blue hover:text-white focus:ring-unti-blue",
-    link: "text-unti-blue hover:underline focus:ring-unti-blue"
+    link: "text-unti-blue hover:underline focus:ring-unti-blue [&.text-white]:text-white [&.text-white]:hover:text-white/80"
   };
 
   return (

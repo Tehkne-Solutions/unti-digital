@@ -46,7 +46,7 @@ export function BlogGrid() {
       <Container>
         {/* Header */}
         <div className="mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-unti-dark mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Insights sobre tecnologia e performance digital
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl">
@@ -80,7 +80,7 @@ export function BlogGrid() {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-lg font-semibold text-unti-dark leading-tight">
+                <h3 className="text-lg font-semibold leading-tight">
                   {post.title}
                 </h3>
 

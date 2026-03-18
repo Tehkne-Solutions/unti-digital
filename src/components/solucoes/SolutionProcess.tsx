@@ -15,7 +15,7 @@ export function SolutionProcess({ steps }: SolutionProcessProps) {
             <Container>
                 <div className="max-w-4xl mx-auto">
                     {/* Header */}
-                    <h2 className="text-3xl md:text-4xl font-bold text-unti-dark mb-12 text-center">
+                    <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
                         Processo estruturado
                     </h2>
 
@@ -32,7 +32,7 @@ export function SolutionProcess({ steps }: SolutionProcessProps) {
 
                                 {/* Content */}
                                 <div className="flex-1 pt-1">
-                                    <h3 className="text-xl font-semibold text-unti-dark mb-3">
+                                    <h3 className="text-xl font-semibold mb-3">
                                         {step.title}
                                     </h3>
                                     <p className="text-gray-600 leading-relaxed">

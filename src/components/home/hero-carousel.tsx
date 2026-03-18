@@ -96,7 +96,7 @@ export function HeroCarousel() {
           </div>
 
           {/* Dynamic Headline */}
-          <h2 className="text-2xl md:text-3xl font-bold text-unti-dark max-w-3xl">
+          <h2 className="text-2xl md:text-3xl font-bold max-w-3xl">
             {currentSlide.title}
           </h2>
 

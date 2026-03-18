@@ -14,7 +14,7 @@ export function ServicesGrid() {
     <Section>
       <Container>
         <div className="mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-unti-dark mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Nossas soluções
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl">
@@ -32,7 +32,7 @@ export function ServicesGrid() {
                 <div className="w-6 h-6 bg-unti-blue rounded" />
               </div>
               
-              <h3 className="text-xl font-medium text-unti-dark mb-3">
+              <h3 className="text-xl font-medium mb-3">
                 {service.title}
               </h3>
               
@@ -62,7 +62,7 @@ export function ServicesGrid() {
             <p className="text-gray-600">{selectedService.fullDescription}</p>
 
             <div>
-              <h4 className="font-medium text-unti-dark mb-3">Diferenciais</h4>
+              <h4 className="font-medium mb-3">Diferenciais</h4>
               <ul className="space-y-2">
                 {selectedService.bullets.map((bullet, index) => (
                   <li key={index} className="flex items-start gap-2">
@@ -76,7 +76,7 @@ export function ServicesGrid() {
             </div>
 
             <div>
-              <h4 className="font-medium text-unti-dark mb-3">O que você recebe</h4>
+              <h4 className="font-medium mb-3">O que você recebe</h4>
               <ul className="space-y-2">
                 {selectedService.deliverables.map((deliverable, index) => (
                   <li key={index} className="flex items-start gap-2">

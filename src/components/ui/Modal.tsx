@@ -49,7 +49,7 @@ export function Modal({ isOpen, onClose, children, title }: ModalProps) {
                 </button>
 
                 {title && (
-                  <Dialog.Title className="text-2xl font-bold text-unti-dark mb-4">
+                  <Dialog.Title className="text-2xl font-bold mb-4">
                     {title}
                   </Dialog.Title>
                 )}

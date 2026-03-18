@@ -2,7 +2,7 @@ export function BlogSection() {
   return (
     <section className="section">
       <header className="mb-8 space-y-2">
-        <h2 className="text-3xl font-semibold text-unti-dark uppercase">BLOG E MATERIAS</h2>
+        <h2 className="text-3xl font-semibold uppercase">BLOG E MATERIAS</h2>
         <p className="text-unti-muted">Conteúdo placeholder conforme wireframe.</p>
       </header>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
