@@ -167,41 +167,59 @@ export function Header() {
               onMouseLeave={() => setSolutionsOpen(false)}
             >
               <button
-                className="relative text-sm font-medium text-unti-heading transition-colors hover:text-unti-blue after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-unti-blue after:origin-bottom-right after:scale-x-0 after:transition-transform after:duration-300 hover:after:origin-bottom-left hover:after:scale-x-100"
-              >
-                Soluções
-              </button>
-
-              <AnimatePresence>
-                {solutionsOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -10 }}
+                className={`relative text-sm font-medium transition-colors ${
+                  solutionsOpen 
+                    ? 'text-unti-blue' 
+                    : 'text-unti-heading hover:text-unti-blue'
+                } after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-unti-blue after:origin-bottom-right after:transition-transform after:duration-300 ${
+                  solutionsOpen 
+                    ? 'after:scale-x-100 after:origin-bottom-left' 
+                    : 'after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100'
+                }`}
+                    initial={{ opacity: 0, y: -15 }}
                     animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.2 }}
-                    className="absolute left-0 top-full mt-2 w-full min-w-max bg-white rounded-2xl shadow-2xl ring-1 ring-black/5 p-8 z-50"
+                    exit={{ opacity: 0, y: -15 }}
+                    transition={{ duration: 0.25, ease: "easeOut" }}
+                    className="absolute left-0 top-full mt-3 w-full min-w-max bg-white rounded-2xl shadow-2xl ring-1 ring-black/5 p-8 z-50 backdrop-blur-sm"
                   >
-                    <div className="grid grid-cols-2 gap-6 min-w-[800px]">
-                      {solutions.map((solution) => (
-                        <Link
+                    <div className="grid grid-cols-2 gap-8 min-w-[900px]">
+                      {solutions.map((solution, index) => (
+                        <motion.div
                           key={solution.href}
-                          href={solution.href}
-                          onClick={() => setSolutionsOpen(false)}
-                          className="group flex gap-4 rounded-xl p-4 transition-all duration-300 hover:bg-gray-50"
+                          initial={{ opacity: 0, y: -10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.2, delay: index * 0.05 }}
                         >
-                          <div className="relative h-24 w-32 flex-shrink-0 overflow-hidden rounded-lg bg-gray-100">
-                            <Image
-                              src={solution.image}
-                              alt={solution.label}
-                              fill
-                              className="object-cover transition-transform duration-300 group-hover:scale-105"
-                            />
-                          </div>
-                          <div className="flex flex-col justify-center">
-                            <h3 className="font-bold text-unti-heading mb-1 text-sm">{solution.label}</h3>
-                            <p className="text-xs text-gray-600 line-clamp-2">{solution.description}</p>
-                          </div>
-                        </Link>
+                          <Link
+                            href={solution.href}
+                            onClick={() => setSolutionsOpen(false)}
+                            className="group flex flex-col gap-4 rounded-xl p-5 transition-all duration-300 hover:bg-gradient-to-br hover:from-blue-50 hover:to-slate-50"
+                          >
+                            <div className="relative h-28 w-full overflow-hidden rounded-xl bg-gradient-to-br from-gray-100 to-gray-50">
+                              <Image
+                                src={solution.image}
+                                alt={solution.label}
+                                fill
+                                className="object-cover transition-all duration-500 group-hover:scale-110"
+                              />
+                              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                            </div>
+                            <div className="flex flex-col gap-2">
+                              <h3 className="font-bold text-unti-heading text-sm leading-tight group-hover:text-unti-blue transition-colors duration-300">
+                                {solution.label}
+                              </h3>
+                              <p className="text-xs text-gray-600 line-clamp-2 group-hover:text-gray-700 transition-colors duration-300">
+                                {solution.description}
+                              </p>
+                            </div>
+                            <div className="flex items-center gap-2 text-unti-blue opacity-0 transition-all duration-300 group-hover:opacity-100 translate-x-0 group-hover:translate-x-1">
+                              <span className="text-xs font-semibold">Saiba mais</span>
+                              <svg className="w-3 h-3 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                              </svg>
+                            </div>
+                          </Link>
+                        </motion.div>
                       ))}
                     </div>
                   </motion.div>
