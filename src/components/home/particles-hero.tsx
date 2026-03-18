@@ -32,9 +32,19 @@ export const ParticlesHero: React.FC = () => {
                 outModes: { default: "bounce" },
                 speed: 1.5,
             },
-            number: { density: { enable: true, area: 1000 }, value: 35 },
+            number: { density: { enable: true, area: 1200 }, value: 40 },
             opacity: { value: 0.8 },
-            shape: { type: "circle" },
+            shape: {
+                type: ["circle", "char"],
+                options: {
+                    character: {
+                        value: ["+"],
+                        font: "Verdana",
+                        style: "",
+                        weight: "700"
+                    }
+                }
+            },
             size: { value: { min: 8, max: 10 } },
         },
         interactivity: {

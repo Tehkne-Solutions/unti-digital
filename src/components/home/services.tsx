@@ -16,7 +16,7 @@ export function Services() {
           {items.map((item, idx) => (
             <article
               key={idx}
-              className="min-w-[340px] snap-start rounded-2xl border border-unti-border bg-white p-6"
+              className="w-[85vw] max-w-[340px] flex-shrink-0 snap-start rounded-2xl border border-unti-border bg-white p-6"
             >
               <div className="mb-4 h-40 w-full rounded-xl bg-unti-light" />
               <h3 className="text-lg font-semibold text-unti-dark">{item.title}</h3>

@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/Button";
 import Image, { StaticImageData } from "next/image";
+import { AnimatePresence, motion } from "framer-motion";
 import sitesPlataformasImage from "@/assets/unti-digital-homepage-image-slider-servicos-sites-e-plataformas-de-alta-performance.png";
 import integracoesImage from "@/assets/unti-digital-homepage-image-slider-servicos-integracoes-e-automacoes-inteligentes.png";
 import whiteLabelImage from "@/assets/unti-digital-homepage-image-slider-servicos-white-label-tecnico-para-agencias.png";
@@ -51,7 +52,7 @@ export function HeroCarousel() {
 
     const interval = setInterval(() => {
       setActiveSlide((prev) => (prev + 1) % slides.length);
-    }, 8000); // Aumentado de 5000 para 8000ms (8 segundos)
+    }, 11000); // Slower autoplay for a smoother experience
     return () => clearInterval(interval);
   }, [isAutoPlay]);
 
@@ -73,60 +74,69 @@ export function HeroCarousel() {
   const currentSlide = slides[activeSlide];
 
   return (
-    <div className="max-w-[1100px] mx-auto mt-0 px-6 relative">
+    <div className="max-w-[760px] mx-auto mt-0 px-6 relative">
       {/* Slide Content */}
-      <div className="flex flex-col items-center text-center space-y-8">
-        {/* Image/Video Area */}
-        <div className="relative w-full max-w-3xl mx-auto md:max-w-4xl lg:max-w-5xl aspect-video rounded-xl overflow-hidden shadow-lg">
-          <Image
-            src={currentSlide.image}
-            alt={currentSlide.title}
-            fill
-            className="object-cover transition-all duration-1000"
-          />
-        </div>
-
-        {/* Dynamic Headline */}
-        <h2 className="text-2xl md:text-3xl font-bold text-unti-dark max-w-3xl">
-          {currentSlide.title}
-        </h2>
-
-        {/* Description */}
-        <p className="text-base md:text-lg text-gray-600 max-w-2xl leading-relaxed">
-          {currentSlide.description}
-        </p>
-
-        {/* CTAs */}
-        <div className="flex flex-col sm:flex-row gap-3">
-          <Button
-            variant="primary"
-            onClick={() => window.location.href = '/contato'}
-          >
-            {currentSlide.ctaPrimary}
-          </Button>
-          <Button
-            variant="secondary"
-            onClick={() => window.location.href = '/cases'}
-          >
-            {currentSlide.ctaSecondary}
-          </Button>
-        </div>
-
-        {/* Dots Navigation */}
-        <div className="flex justify-center gap-2 pt-4">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`transition-all ${index === activeSlide
-                ? "w-8 h-2 bg-unti-blue"
-                : "w-2 h-2 bg-gray-300 hover:bg-gray-400"
-                } rounded-full`}
-              aria-label={`Ir para slide ${index + 1}`}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={activeSlide}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.9, ease: "easeInOut" }}
+          className="flex flex-col items-center text-center space-y-8"
+        >
+          {/* Image/Video Area */}
+          <div className="relative w-full max-w-2xl mx-auto aspect-video rounded-xl overflow-hidden shadow-lg">
+            <Image
+              src={currentSlide.image}
+              alt={currentSlide.title}
+              fill
+              className="object-cover transition-transform duration-700 ease-out"
             />
-          ))}
-        </div>
-      </div>
+          </div>
+
+          {/* Dynamic Headline */}
+          <h2 className="text-2xl md:text-3xl font-bold text-unti-dark max-w-3xl">
+            {currentSlide.title}
+          </h2>
+
+          {/* Description */}
+          <p className="text-base md:text-lg text-gray-600 max-w-2xl leading-relaxed">
+            {currentSlide.description}
+          </p>
+
+          {/* CTAs */}
+          <div className="flex flex-col sm:flex-row gap-3">
+            <Button
+              variant="primary"
+              onClick={() => window.location.href = '/contato'}
+            >
+              {currentSlide.ctaPrimary}
+            </Button>
+            <Button
+              variant="secondary"
+              onClick={() => window.location.href = '/cases'}
+            >
+              {currentSlide.ctaSecondary}
+            </Button>
+          </div>
+
+          {/* Dots Navigation */}
+          <div className="flex justify-center gap-2 pt-4">
+            {slides.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`transition-all ${index === activeSlide
+                  ? "w-8 h-2 bg-unti-blue"
+                  : "w-2 h-2 bg-gray-300 hover:bg-gray-400"
+                  } rounded-full`}
+                aria-label={`Ir para slide ${index + 1}`}
+              />
+            ))}
+          </div>
+        </motion.div>
+      </AnimatePresence>
 
       {/* Navigation Arrows - Centered Horizontally */}
       <div className="absolute top-[40%] left-0 right-0 flex justify-between px-4 pointer-events-none">

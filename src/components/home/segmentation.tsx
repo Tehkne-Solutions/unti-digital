@@ -68,45 +68,45 @@ export function Segmentation() {
           </Card>
 
           {/* Card Agências */}
-          <Card className="p-10">
+          <Card className="p-10 bg-unti-blue text-white">
             <div className="space-y-6">
               {/* Badge */}
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-unti-pastel">
-                <svg className="w-8 h-8 text-unti-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-white/10">
+                <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
               </div>
 
               {/* Title */}
-              <h3 className="text-2xl font-bold text-unti-dark">
+              <h3 className="text-2xl font-bold">
                 Agências
               </h3>
 
               {/* Bullets */}
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
-                  <svg className="w-5 h-5 text-unti-blue mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-5 h-5 text-white/80 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-gray-700">White label técnico</span>
+                  <span className="text-white/90">White label técnico</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <svg className="w-5 h-5 text-unti-blue mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-5 h-5 text-white/80 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-gray-700">Desenvolvimento sob demanda</span>
+                  <span className="text-white/90">Desenvolvimento sob demanda</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <svg className="w-5 h-5 text-unti-blue mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-5 h-5 text-white/80 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-gray-700">Parceria estratégica de longo prazo</span>
+                  <span className="text-white/90">Parceria estratégica de longo prazo</span>
                 </li>
               </ul>
 
               {/* CTA */}
               <div className="pt-4">
-                <Button variant="link" onClick={() => window.location.href = '/solucoes/agencias'}>
+                <Button variant="link" className="text-white" onClick={() => window.location.href = '/solucoes/agencias'}>
                   Ver soluções para agências →
                 </Button>
               </div>

@@ -7,7 +7,7 @@ export const cases = [
         metaDescription: "Descubra como um shopping de móveis aumentou 120% o tráfego orgânico com SEO estratégico. Case real da Unti Digital.",
         resultHighlight: "+120% tráfego orgânico",
         heroImage: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1400&q=80",
-        image: "/images/cases/shopping-moveis.jpg",
+        image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1400&q=80",
         introduction: "Descubra como uma estratégia de SEO bem executada pode transformar a presença online de um negócio local, gerando mais visitantes qualificados e aumentando as vendas presenciais.",
         problem: "O Shopping Móveis Água Branca tinha uma presença online limitada, com um site antigo que não aparecia nos resultados do Google. Os clientes tinham dificuldade para encontrar as lojas e produtos online, resultando em baixa geração de leads digitais.",
         strategy: "Desenvolvemos uma estratégia completa baseada em três pilares fundamentais: plataforma moderna e rápida, estrutura otimizada para SEO, e catálogo digital das lojas com integração de mapas.",
@@ -51,8 +51,8 @@ export const cases = [
         seoTitle: "Como aumentar consultas médicas com site otimizado (+180%) | Case Unti Digital",
         metaDescription: "Saiba como uma clínica dermatológica aumentou 180% as consultas online com um site profissional e sistema de agendamento integrado.",
         resultHighlight: "+180% consultas online",
-        heroImage: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1400&q=80",
-        image: "/images/cases/clinica-dermatologia.jpg",
+        heroImage: "https://images.unsplash.com/photo-1526715480940-b33b6a907f7c?auto=format&fit=crop&w=1400&q=80",
+        image: "https://images.unsplash.com/photo-1526715480940-b33b6a907f7c?auto=format&fit=crop&w=1400&q=80",
         introduction: "Veja como uma clínica dermatológica transformou sua presença online, passando de poucas consultas digitais para um fluxo constante de pacientes qualificados.",
         problem: "A clínica enfrentava baixa visibilidade online e dificuldade em gerenciar agendamentos. Os pacientes tinham dificuldade para encontrar informações sobre tratamentos e marcar consultas online.",
         strategy: "Implementamos uma abordagem completa focada em experiência do paciente: site informativo e profissional, sistema de agendamento integrado, presença otimizada no Google My Business e blog de conteúdo especializado.",
@@ -64,9 +64,9 @@ export const cases = [
             "-40% tempo de resposta ao paciente"
         ],
         gallery: [
-            "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=800&q=80"
+            "https://images.unsplash.com/photo-1526715480940-b33b6a907f7c?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1520894255615-0f0e0f32f23e?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=800&q=80"
         ],
         testimonial: {
             quote: "O novo site e sistema de agendamento revolucionaram nossa clínica. Recebemos muito mais pacientes online e nossa equipe consegue trabalhar com mais eficiência.",
@@ -93,7 +93,7 @@ export const cases = [
         metaDescription: "Descubra como uma loja de moda triplicou suas vendas online com checkout otimizado, SEO e experiência do usuário aprimorada.",
         resultHighlight: "3x mais vendas online",
         heroImage: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1400&q=80",
-        image: "/images/cases/ecommerce-moda.jpg",
+        image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1400&q=80",
         introduction: "Veja como uma loja de moda online transformou sua conversão, passando de um checkout problemático para um funil de vendas altamente eficiente.",
         problem: "A loja tinha um checkout complexo que causava abandono de carrinho, site lento e baixa visibilidade nos motores de busca, resultando em vendas abaixo do potencial.",
         strategy: "Focamos em três áreas críticas: simplificação do processo de compra, otimização de performance e implementação de SEO avançado para aumentar o tráfego qualificado.",

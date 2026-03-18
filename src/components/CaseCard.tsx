@@ -23,13 +23,14 @@ export default function CaseCard({ caseItem }: CaseCardProps) {
     return (
         <Link href={`/cases/${caseItem.slug}`}>
             <div className="w-full min-w-0 bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
-                <Image
-                    src={caseItem.image ?? caseItem.heroImage}
-                    alt={caseItem.name}
-                    width={400}
-                    height={160}
-                    className="w-full h-40 object-cover"
-                />
+                <div className="relative w-full aspect-video">
+                    <Image
+                        src={caseItem.image ?? caseItem.heroImage}
+                        alt={caseItem.name}
+                        fill
+                        className="object-cover"
+                    />
+                </div>
                 <div className="p-6">
                     <p className="text-sm text-gray-500 mb-1">{caseItem.segment}</p>
                     <h3 className="font-semibold text-lg mb-2">{caseItem.name}</h3>

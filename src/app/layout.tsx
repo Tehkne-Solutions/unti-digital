@@ -2,6 +2,7 @@
 import { Ubuntu } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
+import { Newsletter } from "@/components/Newsletter";
 import { Footer } from "@/components/footer";
 
 const ubuntu = Ubuntu({
@@ -22,6 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={`${ubuntu.variable} font-sans`}>
         <Header />
         <main>{children}</main>
+        <Newsletter />
         <Footer />
       </body>
     </html>

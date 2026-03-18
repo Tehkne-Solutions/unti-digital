@@ -3,7 +3,9 @@
 import { useEffect, useRef, useState } from "react"
 import { motion, useMotionValue, useAnimation } from "framer-motion"
 import Image from "next/image"
+import Link from "next/link"
 import ClientModal from "@/components/ClientModal"
+import { Button } from "@/components/ui/Button"
 import { clients } from "@/data/clients"
 
 export default function LogoCloud() {
@@ -12,52 +14,78 @@ export default function LogoCloud() {
   const containerRef = useRef<HTMLDivElement>(null)
   const x = useMotionValue(0)
   const controls = useAnimation()
+  const resumeTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   const itemWidth = 140 + 64 // logo width + gap
   const totalWidth = clients.length * itemWidth
 
-  useEffect(() => {
-    const autoScroll = async () => {
-      await controls.start({
-        x: -totalWidth,
-        transition: {
-          duration: 30,
-          ease: "linear",
-          repeat: Infinity,
-          repeatType: "loop"
-        }
-      })
+  const startAutoScroll = () => {
+    controls.start({
+      x: -totalWidth,
+      transition: {
+        duration: 30,
+        ease: "linear",
+        repeat: Infinity,
+        repeatType: "loop"
+      }
+    })
+  }
+
+  const pauseAutoScroll = () => {
+    controls.stop()
+    if (resumeTimeoutRef.current) {
+      clearTimeout(resumeTimeoutRef.current)
+      resumeTimeoutRef.current = null
+    }
+  }
+
+  const resumeAutoScroll = (delay = 2000) => {
+    if (resumeTimeoutRef.current) {
+      clearTimeout(resumeTimeoutRef.current)
     }
 
-    autoScroll()
+    resumeTimeoutRef.current = setTimeout(() => {
+      startAutoScroll()
+    }, delay)
+  }
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    startAutoScroll()
 
     return () => {
       controls.stop()
+      if (resumeTimeoutRef.current) {
+        clearTimeout(resumeTimeoutRef.current)
+      }
     }
   }, [controls, totalWidth])
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    if (!selectedClient) {
+      // When modal closes, resume auto-scroll
+      resumeAutoScroll(500)
+    }
+  }, [selectedClient])
+
   const handleDragEnd = () => {
     // Resume auto-scroll after drag
-    setTimeout(() => {
-      controls.start({
-        x: -totalWidth,
-        transition: {
-          duration: 30,
-          ease: "linear",
-          repeat: Infinity,
-          repeatType: "loop"
-        }
-      })
-    }, 2000)
+    resumeAutoScroll(2000)
   }
 
   const handleBulletClick = (index: number) => {
+    pauseAutoScroll()
+
     const targetX = -index * itemWidth
     controls.start({
       x: targetX,
       transition: { duration: 0.5, ease: "easeInOut" }
     })
     setActiveIndex(index)
+
+    // Resume auto-scroll after a short pause so the user sees their selection
+    resumeAutoScroll(2500)
   }
 
   return (
@@ -88,7 +116,10 @@ export default function LogoCloud() {
             {[...clients, ...clients].map((client, index) => (
               <motion.button
                 key={`${client.id}-${index}`}
-                onClick={() => setSelectedClient(client)}
+                onClick={() => {
+                  pauseAutoScroll()
+                  setSelectedClient(client)
+                }}
                 className="flex-shrink-0 px-6 py-4 opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -121,12 +152,11 @@ export default function LogoCloud() {
           <p className="text-gray-600 mb-4">
             Quer alcançar resultados como esses?
           </p>
-          <a
-            href="/contato"
-            className="inline-block bg-blue-600 text-white px-8 py-3 rounded-md hover:bg-blue-700"
-          >
-            Falar com especialista
-          </a>
+          <Link href="/contato">
+            <Button className="mx-auto" variant="primary">
+              Falar com especialista
+            </Button>
+          </Link>
         </div>
 
         <ClientModal client={selectedClient} onClose={() => setSelectedClient(null)} />
