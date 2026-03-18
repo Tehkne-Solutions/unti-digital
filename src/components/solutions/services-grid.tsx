@@ -31,15 +31,15 @@ export function ServicesGrid() {
               <div className="w-12 h-12 rounded-lg bg-unti-blue/10 flex items-center justify-center mb-6">
                 <div className="w-6 h-6 bg-unti-blue rounded" />
               </div>
-              
+
               <h3 className="text-xl font-medium mb-3">
                 {service.title}
               </h3>
-              
+
               <p className="text-gray-600 mb-6 line-clamp-3">
                 {service.description}
               </p>
-              
+
               <button
                 onClick={() => setSelectedService(service)}
                 className="text-unti-blue font-medium hover:underline inline-flex items-center gap-2"

@@ -5,9 +5,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { Modal } from "@/components/ui/Modal";
+import { motion, AnimatePresence } from "framer-motion";
 
 const contact = {
-  email: "contato@untidigital.com",
+  email: "contato@untidigital.com.br",
   phone: "+55 19 98280-9717",
   whatsapp: "https://wa.me/5519982809717",
   linkedin: "https://www.linkedin.com/company/untidigital/",
@@ -15,11 +16,36 @@ const contact = {
 };
 
 const solutions = [
-  { href: "/solucoes/sites-institucionais", label: "Sites Institucionais" },
-  { href: "/solucoes/plataformas-web", label: "Plataformas Web" },
-  { href: "/solucoes/integracoes-crm-erp", label: "Integrações com CRM e ERP" },
-  { href: "/solucoes/governanca-seguranca", label: "Governança e Segurança" },
-  { href: "/solucoes/white-label-agencias", label: "White Label para Agências" }
+  {
+    href: "/solucoes/sites-institucionais",
+    label: "Sites Institucionais",
+    description: "Plataformas web profissionais com performance e relevância digital",
+    image: "/images/solutions/unti-digital-solution-high-performance-websites.png"
+  },
+  {
+    href: "/solucoes/plataformas-web",
+    label: "Plataformas Web",
+    description: "Soluções customizadas para ampliar sua presença online",
+    image: "/images/solutions/unti-digital-solution-custom-web-platforms.png"
+  },
+  {
+    href: "/solucoes/integracoes-crm-erp",
+    label: "Integrações com CRM e ERP",
+    description: "Automações inteligentes para otimizar seus processos",
+    image: "/images/solutions/unti-digital-solution-crm-erp-integrations.png"
+  },
+  {
+    href: "/solucoes/governanca-seguranca",
+    label: "Governança e Segurança",
+    description: "Conformidade regulatória e proteção de dados empresariais",
+    image: "/images/solutions/unti-digital-solution-governance-security.png"
+  },
+  {
+    href: "/solucoes/white-label-agencias",
+    label: "White Label para Agências",
+    description: "Serviços técnicos personalizados para sua agência",
+    image: "/images/solutions/unti-digital-solution-white-label-development.png"
+  }
 ];
 
 const links = [
@@ -64,90 +90,140 @@ function IconInstagram() {
   );
 }
 
+// Menu link com subline animada
+function MenuLink({ href, label }: { href: string; label: string }) {
+  return (
+    <Link
+      href={href}
+      className="relative text-sm font-medium text-unti-heading transition-colors hover:text-unti-blue after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-unti-blue after:origin-bottom-right after:scale-x-0 after:transition-transform after:duration-300 hover:after:origin-bottom-left hover:after:scale-x-100"
+    >
+      {label}
+    </Link>
+  );
+}
+
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [solutionsOpen, setSolutionsOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50">
-      <div className="bg-unti-topbarBg text-white">
-        <div className="mx-auto flex max-w-[1200px] items-center justify-between px-6 py-2 text-xs">
-          <div className="flex items-center gap-4">
-            <a href={`mailto:${contact.email}`} className="flex items-center gap-2 text-white hover:text-white/80">
+      {/* TOP BAR */}
+      <motion.div
+        className="bg-unti-blue text-white"
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4 }}
+      >
+        <div className="mx-auto flex max-w-[1200px] items-center justify-between px-6 py-3 text-xs">
+          <div className="flex items-center gap-6">
+            <a href={`mailto:${contact.email}`} className="flex items-center gap-2 text-white hover:text-blue-100 transition-colors">
               <IconMail />
-              <span>{contact.email}</span>
+              <span className="hidden sm:inline">{contact.email}</span>
             </a>
-            <a href={`tel:${contact.phone.replace(/\D/g, "")}`} className="flex items-center gap-2 text-white hover:text-white/80">
+            <a href={`tel:${contact.phone.replace(/\D/g, "")}`} className="flex items-center gap-2 text-white hover:text-blue-100 transition-colors">
               <IconPhone />
-              <span>{contact.phone}</span>
+              <span className="hidden sm:inline">{contact.phone}</span>
             </a>
           </div>
           <div className="flex items-center gap-4">
-            <a href={contact.linkedin} target="_blank" rel="noreferrer" className="text-white hover:text-white/80">
+            <a href={contact.linkedin} target="_blank" rel="noreferrer" className="text-white hover:text-blue-100 transition-colors">
               <IconLinkedIn />
             </a>
-            <a href={contact.instagram} target="_blank" rel="noreferrer" className="text-white hover:text-white/80">
+            <a href={contact.instagram} target="_blank" rel="noreferrer" className="text-white hover:text-blue-100 transition-colors">
               <IconInstagram />
             </a>
           </div>
         </div>
-      </div>
+      </motion.div>
 
+      {/* MAIN NAV */}
       <div className="bg-white border-b border-gray-200">
-        <div className="mx-auto flex max-w-[1200px] items-center justify-between px-6 h-16">
+        <div className="mx-auto flex max-w-[1200px] items-center justify-between px-6 h-20">
           <Link href="/" className="flex items-center" aria-label="UNTI Digital">
-            <Image
-              src="/images/logo-horizontal.svg"
-              alt="Unti Digital"
-              width={216}
-              height={48}
-              className="h-12 w-auto object-contain"
-              priority
-            />
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
+              <Image
+                src="/images/logo-horizontal.svg"
+                alt="Unti Digital"
+                width={240}
+                height={60}
+                className="h-16 w-auto object-contain"
+                priority
+              />
+            </motion.div>
           </Link>
 
-          <nav className="hidden md:flex items-center gap-8">
-            <div className="relative group">
-              <Link
-                href="/solucoes"
-                className="text-sm font-medium text-gray-700 hover:text-unti-blue transition-colors"
+          <nav className="hidden md:flex items-center gap-12">
+            <MenuLink href="/" label="Home" />
+
+            {/* MEGA MENU - SOLUÇÕES */}
+            <div
+              className="relative group"
+              onMouseEnter={() => setSolutionsOpen(true)}
+              onMouseLeave={() => setSolutionsOpen(false)}
+            >
+              <button
+                className="relative text-sm font-medium text-unti-heading transition-colors hover:text-unti-blue after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-unti-blue after:origin-bottom-right after:scale-x-0 after:transition-transform after:duration-300 hover:after:origin-bottom-left hover:after:scale-x-100"
               >
                 Soluções
-              </Link>
-              <div className="invisible absolute left-0 top-full mt-2 w-72 rounded-2xl bg-white p-4 shadow-lg ring-1 ring-black/5 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:visible group-focus-within:opacity-100">
-                <div className="grid gap-2">
-                  {solutions.map((solution) => (
-                    <Link
-                      key={solution.href}
-                      href={solution.href}
-                      className="rounded-lg px-3 py-2 text-sm font-medium text-unti-dark hover:bg-unti-pastel"
-                    >
-                      {solution.label}
-                    </Link>
-                  ))}
-                </div>
-              </div>
+              </button>
+
+              <AnimatePresence>
+                {solutionsOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute left-0 top-full mt-2 w-full min-w-max bg-white rounded-2xl shadow-2xl ring-1 ring-black/5 p-8 z-50"
+                  >
+                    <div className="grid grid-cols-2 gap-6 min-w-[800px]">
+                      {solutions.map((solution) => (
+                        <Link
+                          key={solution.href}
+                          href={solution.href}
+                          onClick={() => setSolutionsOpen(false)}
+                          className="group flex gap-4 rounded-xl p-4 transition-all duration-300 hover:bg-gray-50"
+                        >
+                          <div className="relative h-24 w-32 flex-shrink-0 overflow-hidden rounded-lg bg-gray-100">
+                            <Image
+                              src={solution.image}
+                              alt={solution.label}
+                              fill
+                              className="object-cover transition-transform duration-300 group-hover:scale-105"
+                            />
+                          </div>
+                          <div className="flex flex-col justify-center">
+                            <h3 className="font-bold text-unti-heading mb-1 text-sm">{solution.label}</h3>
+                            <p className="text-xs text-gray-600 line-clamp-2">{solution.description}</p>
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
 
-            {links.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium text-gray-700 hover:text-unti-blue transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
+            <MenuLink href="/cases" label="Cases" />
+            <MenuLink href="/blog" label="Blog" />
+            <MenuLink href="/integracoes" label="Integrações" />
+            <MenuLink href="/contato" label="Contato" />
           </nav>
 
           <div className="hidden md:block">
             <Link href="/contato">
-              <Button variant="primary">Falar com especialista</Button>
+              <Button variant="primary" className="interactive-btn">Falar com especialista</Button>
             </Link>
           </div>
 
           <button
             onClick={() => setMobileMenuOpen(true)}
-            className="md:hidden p-2 text-gray-700"
+            className="md:hidden p-2 text-unti-heading"
             aria-label="Abrir menu"
           >
             <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -157,6 +233,7 @@ export function Header() {
         </div>
       </div>
 
+      {/* MOBILE MENU */}
       <Modal isOpen={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)}>
         <nav className="flex flex-col gap-4">
           <div className="space-y-2">
@@ -166,7 +243,7 @@ export function Header() {
                 <Link
                   key={solution.href}
                   href={solution.href}
-                  className="block rounded-lg px-4 py-2 text-base font-medium text-gray-700 hover:bg-unti-pastel"
+                  className="block rounded-lg px-4 py-2 text-base font-medium text-unti-heading hover:bg-gray-100"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {solution.label}
@@ -176,14 +253,17 @@ export function Header() {
           </div>
 
           <div className="border-t border-gray-200 pt-4">
-            {links.map((link) => (
+            <Link href="/" className="block rounded-lg px-4 py-2 text-base font-medium text-unti-heading hover:bg-gray-100" onClick={() => setMobileMenuOpen(false)}>
+              Home
+            </Link>
+            {["cases", "blog", "integracoes", "contato"].map((item) => (
               <Link
-                key={link.href}
-                href={link.href}
-                className="block rounded-lg px-4 py-2 text-base font-medium text-gray-700 hover:bg-unti-pastel"
+                key={item}
+                href={`/${item}`}
+                className="block rounded-lg px-4 py-2 text-base font-medium text-unti-heading hover:bg-gray-100"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                {link.label}
+                {item.charAt(0).toUpperCase() + item.slice(1)}
               </Link>
             ))}
           </div>
@@ -200,3 +280,4 @@ export function Header() {
     </header>
   );
 }
+
