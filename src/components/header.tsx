@@ -162,25 +162,30 @@ export function Header() {
 
             {/* MEGA MENU - SOLUÇÕES */}
             <div
-              className="relative group"
+              className="relative"
               onMouseEnter={() => setSolutionsOpen(true)}
               onMouseLeave={() => setSolutionsOpen(false)}
             >
               <button
-                className={`relative text-sm font-medium transition-colors ${
-                  solutionsOpen 
-                    ? 'text-unti-blue' 
-                    : 'text-unti-heading hover:text-unti-blue'
-                } after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-unti-blue after:origin-bottom-right after:transition-transform after:duration-300 ${
-                  solutionsOpen 
-                    ? 'after:scale-x-100 after:origin-bottom-left' 
+                className={`relative text-sm font-medium transition-colors ${solutionsOpen
+                  ? 'text-unti-blue'
+                  : 'text-unti-heading hover:text-unti-blue'
+                  } after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-unti-blue after:origin-bottom-right after:transition-transform after:duration-300 ${solutionsOpen
+                    ? 'after:scale-x-100 after:origin-bottom-left'
                     : 'after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100'
-                }`}
-                    initial={{ opacity: 0, y: -15 }}
+                  }`}
+              >
+                Soluções
+              </button>
+
+              <AnimatePresence>
+                {solutionsOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -15 }}
-                    transition={{ duration: 0.25, ease: "easeOut" }}
-                    className="absolute left-0 top-full mt-3 w-full min-w-max bg-white rounded-2xl shadow-2xl ring-1 ring-black/5 p-8 z-50 backdrop-blur-sm"
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute left-0 top-full mt-3 w-full min-w-max bg-white rounded-2xl shadow-2xl ring-1 ring-black/5 p-8 z-50"
                   >
                     <div className="grid grid-cols-2 gap-8 min-w-[900px]">
                       {solutions.map((solution, index) => (
@@ -247,7 +252,6 @@ export function Header() {
             <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             </svg>
-          </button>
         </div>
       </div>
 
