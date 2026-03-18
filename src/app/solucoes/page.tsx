@@ -153,20 +153,20 @@ export default function SolucoesPage() {
             </div>
 
             {/* Agências */}
-            <div className="rounded-2xl bg-blue-50 p-12 space-y-6">
-              <h3 className="text-2xl font-bold text-unti-dark">Para Agências</h3>
-              <div className="space-y-4 text-gray-600 leading-relaxed">
+            <div className="rounded-2xl bg-unti-blue p-12 space-y-6">
+              <h3 className="text-2xl font-bold text-white">Para Agências</h3>
+              <div className="space-y-4 text-white/80 leading-relaxed">
                 <div>
-                  <strong className="text-unti-dark">White Label:</strong> Desenvolvimento sob sua marca.
+                  <strong className="text-white">White Label:</strong> Desenvolvimento sob sua marca.
                 </div>
                 <div>
-                  <strong className="text-unti-dark">Execução Técnica:</strong> Time capacitado entrega seus projetos.
+                  <strong className="text-white">Execução Técnica:</strong> Time capacitado entrega seus projetos.
                 </div>
                 <div>
-                  <strong className="text-unti-dark">Arquitetura Robusta:</strong> Padrão profissional garantido.
+                  <strong className="text-white">Arquitetura Robusta:</strong> Padrão profissional garantido.
                 </div>
                 <div>
-                  <strong className="text-unti-dark">Suporte Contínuo:</strong> Parceria de longo prazo.
+                  <strong className="text-white">Suporte Contínuo:</strong> Parceria de longo prazo.
                 </div>
               </div>
             </div>

@@ -24,6 +24,37 @@ body {
   animation: marquee 30s linear infinite;
 }
 
+@layer base {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-brand-dark;
+  }
+
+  p,
+  li,
+  span,
+  label,
+  input,
+  button,
+  small {
+    @apply text-unti-muted;
+  }
+
+  a {
+    @apply underline decoration-transparent underline-offset-4 transition-all duration-200;
+  }
+
+  a:hover,
+  a:focus {
+    @apply decoration-current;
+  }
+}
+
 @layer utilities {
   .scrollbar-hide {
     -ms-overflow-style: none;
@@ -41,5 +72,21 @@ body {
 
   .no-scrollbar::-webkit-scrollbar {
     display: none;
+  }
+
+  .interactive-btn {
+    @apply relative overflow-hidden;
+  }
+
+  .interactive-btn::before {
+    content: "";
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-0 pointer-events-none;
+    transform: translateX(-100%) skewX(-20deg);
+    transition: transform 0.8s ease, opacity 0.8s ease;
+  }
+
+  .interactive-btn:hover::before {
+    opacity: 1;
+    transform: translateX(100%) skewX(-20deg);
   }
 }

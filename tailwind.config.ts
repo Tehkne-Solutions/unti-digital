@@ -12,12 +12,20 @@ const config: Config = {
     },
     extend: {
       colors: {
+        brand: {
+          dark: '#1A1A1A',
+          muted: '#4B5563',
+          primary: '#0047FF'
+        },
         unti: {
           blue: "#396cff",
-          dark: "#2d3b93",
+          dark: "#111827",
           light: "#7fa2ff",
           pastel: "#c3d6fc",
-          orange: "#ff9900"
+          orange: "#ff9900",
+          muted: "#6B7280",
+          border: "#E5E7EB",
+          surface: "#F8FAFC"
         }
       },
       fontFamily: {
