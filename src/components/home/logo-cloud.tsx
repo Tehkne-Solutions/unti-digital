@@ -16,7 +16,7 @@ export default function LogoCloud() {
   const controls = useAnimation()
   const resumeTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
-  const itemWidth = 140 + 64 // logo width + gap
+  const itemWidth = 140 + 64
   const totalWidth = clients.length * itemWidth
 
   const startAutoScroll = useCallback(() => {
@@ -62,13 +62,11 @@ export default function LogoCloud() {
 
   useEffect(() => {
     if (!selectedClient) {
-      // When modal closes, resume auto-scroll
       resumeAutoScroll(500)
     }
   }, [selectedClient, resumeAutoScroll])
 
   const handleDragEnd = () => {
-    // Resume auto-scroll after drag
     resumeAutoScroll(2000)
   }
 
@@ -81,17 +79,14 @@ export default function LogoCloud() {
       transition: { duration: 0.5, ease: "easeInOut" }
     })
     setActiveIndex(index)
-
-    // Resume auto-scroll after a short pause so the user sees their selection
     resumeAutoScroll(2500)
   }
 
   return (
     <section className="py-20">
-      <div className="max-w-[1200px] mx-auto px-6">
-
-        <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-4xl font-bold text-blue-600 mb-4">
+      <div className="mx-auto max-w-[1200px] px-6">
+        <div className="mb-14 text-center">
+          <h2 className="mb-4 text-3xl font-bold text-brand-dark md:text-4xl">
             Tecnologia que impulsiona empresas reais
           </h2>
           <p className="text-gray-500">
@@ -118,7 +113,7 @@ export default function LogoCloud() {
                   pauseAutoScroll()
                   setSelectedClient(client)
                 }}
-                className="flex-shrink-0 px-6 py-4 opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition"
+                className="flex-shrink-0 px-6 py-4 opacity-60 transition hover:opacity-100 hover:grayscale-0 grayscale"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -128,7 +123,7 @@ export default function LogoCloud() {
                   width={140}
                   height={80}
                   loading="lazy"
-                  className="h-16 md:h-20 w-auto object-contain"
+                  className="h-16 w-auto object-contain md:h-20"
                 />
               </motion.button>
             ))}
@@ -140,14 +135,13 @@ export default function LogoCloud() {
             <button
               key={idx}
               onClick={() => handleBulletClick(idx)}
-              className={`h-2 w-2 rounded-full transition-all ${idx === activeIndex ? "bg-blue-600" : "bg-gray-300"
-                }`}
+              className={`h-2 w-2 rounded-full transition-all ${idx === activeIndex ? "bg-blue-600" : "bg-gray-300"}`}
             />
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <p className="text-gray-600 mb-4">
+        <div className="mt-12 text-center">
+          <p className="mb-4 text-gray-600">
             Quer alcançar resultados como esses?
           </p>
           <Link href="/contato">
@@ -158,7 +152,6 @@ export default function LogoCloud() {
         </div>
 
         <ClientModal client={selectedClient} onClose={() => setSelectedClient(null)} />
-
       </div>
     </section>
   )

@@ -1,7 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { motion, useAnimationFrame, useMotionValue } from "framer-motion";
+import { useState } from "react";
 import Image from "next/image";
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
@@ -10,110 +9,57 @@ import { Button } from "@/components/ui/Button";
 import { Modal } from "@/components/ui/Modal";
 import { services, Service } from "@/data/services";
 
-const SCROLL_SPEED = 0.15;
-
 export function ServicesCarousel() {
   const [selectedService, setSelectedService] = useState<Service | null>(null);
-  const [isHoverPaused, setIsHoverPaused] = useState(false);
-  const [loopWidth, setLoopWidth] = useState(0);
-  const trackRef = useRef<HTMLDivElement>(null);
-  const x = useMotionValue(0);
-  const isPaused = isHoverPaused || Boolean(selectedService);
-  const marqueeServices = [...services, ...services];
-
-  useEffect(() => {
-    const updateLoopWidth = () => {
-      if (!trackRef.current) return;
-      setLoopWidth(trackRef.current.scrollWidth / 2);
-    };
-
-    updateLoopWidth();
-    window.addEventListener("resize", updateLoopWidth);
-
-    return () => window.removeEventListener("resize", updateLoopWidth);
-  }, []);
-
-  useEffect(() => {
-    if (!loopWidth) return;
-
-    const currentX = x.get();
-    if (currentX <= -loopWidth) {
-      x.set(currentX + loopWidth);
-    }
-  }, [loopWidth, x]);
-
-  useAnimationFrame((_, delta) => {
-    if (isPaused || !loopWidth) return;
-
-    const nextX = x.get() - delta * SCROLL_SPEED;
-    x.set(nextX <= -loopWidth ? nextX + loopWidth : nextX);
-  });
 
   return (
-    <Section className="overflow-hidden">
+    <Section>
       <Container>
-        <div className="mb-14 text-center">
+        <div className="mb-16 text-center">
           <h2 className="mb-4 text-3xl font-bold text-brand-dark md:text-4xl">
             Nossas soluções digitais
           </h2>
           <p className="mx-auto max-w-3xl text-lg text-brand-muted">
             Serviços desenvolvidos para empresas e agências que precisam de performance, segurança e escala.
           </p>
-          <p className="mt-3 text-sm font-medium text-unti-blue">
-            Passe o mouse sobre o carrossel para pausar a navegação.
-          </p>
+        </div>
+
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+          {services.map((service) => (
+            <article key={service.slug} className="group">
+              <Card className="flex h-full flex-col border border-neutral-200 bg-white p-8 shadow-[0_18px_50px_rgba(15,23,42,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                <div className="relative mb-6 aspect-video overflow-hidden rounded-2xl">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+
+                <div className="flex h-full flex-col space-y-4">
+                  <h3 className="text-xl font-semibold text-brand-dark">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-brand-muted">
+                    {service.shortDescription}
+                  </p>
+
+                  <div className="mt-auto pt-3">
+                    <Button
+                      variant="link"
+                      className="!h-auto !px-0 text-sm font-semibold"
+                      onClick={() => setSelectedService(service)}
+                    >
+                      Ver detalhes →
+                    </Button>
+                  </div>
+                </div>
+              </Card>
+            </article>
+          ))}
         </div>
       </Container>
-
-      <div className="relative">
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-white to-transparent md:w-24" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-white to-transparent md:w-24" />
-
-        <div
-          className="overflow-hidden"
-          onMouseEnter={() => setIsHoverPaused(true)}
-          onMouseLeave={() => setIsHoverPaused(false)}
-        >
-          <motion.div ref={trackRef} className="flex w-max gap-6 px-6 md:px-10" style={{ x }}>
-            {marqueeServices.map((service, index) => (
-              <article key={`${service.slug}-${index}`} className="group w-[320px] shrink-0 sm:w-[340px] lg:w-[360px]">
-                <Card
-                  hover={false}
-                  className="flex h-full flex-col border border-slate-200 bg-white p-5 shadow-[0_18px_50px_rgba(15,23,42,0.08)] transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-[0_28px_70px_rgba(15,23,42,0.14)]"
-                >
-                  <div className="relative mb-5 aspect-video overflow-hidden rounded-2xl">
-                    <Image
-                      src={service.image}
-                      alt={service.title}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </div>
-
-                  <div className="flex h-full flex-col space-y-4">
-                    <h3 className="text-xl font-semibold text-brand-dark">
-                      {service.title}
-                    </h3>
-                    <p className="text-sm leading-relaxed text-brand-muted">
-                      {service.shortDescription}
-                    </p>
-
-                    <div className="mt-auto pt-2">
-                      <Button
-                        variant="link"
-                        className="!h-auto !px-0 text-sm font-semibold"
-                        onClick={() => setSelectedService(service)}
-                      >
-                        Ver detalhes →
-                      </Button>
-                    </div>
-                  </div>
-                </Card>
-              </article>
-            ))}
-          </motion.div>
-        </div>
-      </div>
 
       {selectedService && (
         <Modal

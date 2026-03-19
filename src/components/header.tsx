@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type SVGProps } from "react";
+import { useEffect, useState, type ReactElement, type SVGProps } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
@@ -13,7 +13,7 @@ type SolutionItem = {
   href: string;
   label: string;
   description: string;
-  icon: (props: IconProps) => JSX.Element;
+  icon: (props: IconProps) => ReactElement;
 };
 
 const contact = {
@@ -193,6 +193,17 @@ function MenuLink({ href, label, onClick }: { href: string; label: string; onCli
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur">
@@ -200,168 +211,175 @@ export function Header() {
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.35 }}
-        className="bg-unti-blue text-white"
+        className="bg-[#2563EB] text-white"
       >
-        <div className="mx-auto flex max-w-[1280px] flex-col gap-3 px-4 py-3 text-sm sm:flex-row sm:items-center sm:justify-between md:px-6">
-          <div className="flex flex-wrap items-center gap-4 sm:gap-6">
+        <div className="mx-auto flex max-w-[1280px] flex-col gap-2 px-4 py-[5px] text-xs sm:flex-row sm:items-center sm:justify-between md:px-6">
+          <div className="flex flex-wrap items-center gap-3 sm:gap-5">
             <a
               href={`mailto:${contact.email}`}
               className="inline-flex items-center gap-2 text-white no-underline transition-opacity hover:opacity-85 hover:no-underline"
             >
-              <IconMail className="h-4 w-4 shrink-0 text-white" />
+              <IconMail className="h-3.5 w-3.5 shrink-0 text-white" />
               <span className="text-white">{contact.email}</span>
             </a>
             <a
               href={`tel:${contact.phone.replace(/\D/g, "")}`}
               className="inline-flex items-center gap-2 text-white no-underline transition-opacity hover:opacity-85 hover:no-underline"
             >
-              <IconPhone className="h-4 w-4 shrink-0 text-white" />
+              <IconPhone className="h-3.5 w-3.5 shrink-0 text-white" />
               <span className="text-white">{contact.phone}</span>
             </a>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
             <a
               href={contact.linkedin}
               target="_blank"
               rel="noreferrer"
               aria-label="LinkedIn da UNTI Digital"
-              className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/25 text-white no-underline transition-colors hover:bg-white/10 hover:text-white hover:no-underline"
+              className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-white/25 text-white no-underline transition-colors hover:bg-white/10 hover:text-white hover:no-underline"
             >
-              <IconLinkedIn className="h-4 w-4" />
+              <IconLinkedIn className="h-3.5 w-3.5" />
             </a>
             <a
               href={contact.instagram}
               target="_blank"
               rel="noreferrer"
               aria-label="Instagram da UNTI Digital"
-              className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/25 text-white no-underline transition-colors hover:bg-white/10 hover:text-white hover:no-underline"
+              className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-white/25 text-white no-underline transition-colors hover:bg-white/10 hover:text-white hover:no-underline"
             >
-              <IconInstagram className="h-4 w-4" />
+              <IconInstagram className="h-3.5 w-3.5" />
             </a>
           </div>
         </div>
       </motion.div>
 
-      <div className="mx-auto flex h-24 max-w-[1280px] items-center justify-between px-4 md:px-6">
-        <Link href="/" aria-label="UNTI Digital" className="no-underline hover:no-underline">
-          <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.99 }} transition={{ type: "spring", stiffness: 350, damping: 24 }}>
-            <Image
-              src="/images/logo-horizontal.svg"
-              alt="UNTI Digital"
-              width={300}
-              height={76}
-              priority
-              className="h-16 w-auto max-w-[220px] object-contain md:h-20 md:max-w-[300px]"
-            />
-          </motion.div>
-        </Link>
+      <div className="bg-white/95 backdrop-blur">
+        <div className={`mx-auto flex max-w-[1280px] items-center justify-between px-4 transition-[height,padding] duration-300 md:px-6 ${isScrolled ? "h-16" : "h-24"}`}>
+          <Link href="/" aria-label="UNTI Digital" className="no-underline hover:no-underline">
+            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.99 }} transition={{ type: "spring", stiffness: 350, damping: 24 }}>
+              <div
+                className="transition-[width] duration-300 ease-in-out"
+                style={{ width: isScrolled ? "150px" : "250px" }}
+              >
+                <Image
+                  src="/images/logo-horizontal.svg"
+                  alt="UNTI Digital"
+                  width={250}
+                  height={64}
+                  priority
+                  className="h-auto w-full object-contain"
+                />
+              </div>
+            </motion.div>
+          </Link>
 
-        <nav className="hidden items-center gap-10 md:flex">
-          <MenuLink href="/" label="Home" />
+          <nav className="hidden items-center gap-8 lg:gap-10 md:flex">
+            <MenuLink href="/" label="Home" />
 
-          <div
-            className="relative"
-            onMouseEnter={() => setSolutionsOpen(true)}
-            onMouseLeave={() => setSolutionsOpen(false)}
-          >
-            <button
-              type="button"
-              className={`relative inline-flex items-center gap-2 pb-1 text-sm font-medium transition-colors ${solutionsOpen ? "text-unti-blue" : "text-brand-dark hover:text-unti-blue"} after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-unti-blue after:transition-transform after:duration-300 ${solutionsOpen ? "after:origin-left after:scale-x-100" : "after:origin-right after:scale-x-0 hover:after:origin-left hover:after:scale-x-100"}`}
+            <div
+              className="relative"
+              onMouseEnter={() => setSolutionsOpen(true)}
+              onMouseLeave={() => setSolutionsOpen(false)}
             >
-              <span>Soluções</span>
-              <IconChevronDown className={`h-4 w-4 transition-transform ${solutionsOpen ? "rotate-180" : ""}`} />
-            </button>
+              <button
+                type="button"
+                className={`relative inline-flex items-center gap-2 pb-1 text-sm font-medium transition-colors ${solutionsOpen ? "text-unti-blue" : "text-brand-dark hover:text-unti-blue"} after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-unti-blue after:transition-transform after:duration-300 ${solutionsOpen ? "after:origin-left after:scale-x-100" : "after:origin-right after:scale-x-0 hover:after:origin-left hover:after:scale-x-100"}`}
+              >
+                <span>Soluções</span>
+                <IconChevronDown className={`h-4 w-4 transition-transform ${solutionsOpen ? "rotate-180" : ""}`} />
+              </button>
 
-            <AnimatePresence>
-              {solutionsOpen && (
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 10 }}
-                  transition={{ duration: 0.18 }}
-                  className="absolute left-1/2 top-full z-50 mt-4 w-[960px] -translate-x-1/2 rounded-[28px] border border-slate-200 bg-white p-7 shadow-[0_30px_80px_rgba(15,23,42,0.16)]"
-                >
-                  <div className="mb-5 flex items-start justify-between gap-6 border-b border-slate-200 pb-5">
-                    <div className="max-w-xl">
-                      <p className="text-xs font-semibold uppercase tracking-[0.24em] text-unti-blue">
-                        Soluções Digitais
+              <AnimatePresence>
+                {solutionsOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    transition={{ duration: 0.18 }}
+                    className="absolute left-1/2 top-full z-50 mt-4 w-[960px] -translate-x-1/2 rounded-[28px] border border-slate-200 bg-white p-7 shadow-[0_30px_80px_rgba(15,23,42,0.16)]"
+                  >
+                    <div className="mb-5 flex items-start justify-between gap-6 border-b border-slate-200 pb-5">
+                      <div className="max-w-xl">
+                        <p className="text-xs font-semibold uppercase tracking-[0.24em] text-unti-blue">
+                          Soluções Digitais
+                        </p>
+                        <h2 className="mt-2 text-2xl font-bold text-brand-dark">
+                          Tecnologia sob medida para empresas e agências
+                        </h2>
+                      </div>
+                      <p className="max-w-sm text-sm leading-relaxed text-brand-muted">
+                        Explore serviços com foco em performance, integrações e entregas robustas para operação digital.
                       </p>
-                      <h2 className="mt-2 text-2xl font-bold text-brand-dark">
-                        Tecnologia sob medida para empresas e agências
-                      </h2>
                     </div>
-                    <p className="max-w-sm text-sm leading-relaxed text-brand-muted">
-                      Explore serviços com foco em performance, integrações e entregas robustas para operação digital.
-                    </p>
-                  </div>
 
-                  <div className="grid grid-cols-3 gap-4">
-                    {solutions.map((solution, index) => {
-                      const Icon = solution.icon;
+                    <div className="grid grid-cols-3 gap-4">
+                      {solutions.map((solution, index) => {
+                        const Icon = solution.icon;
 
-                      return (
-                        <motion.div
-                          key={solution.href}
-                          initial={{ opacity: 0, y: 8 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ duration: 0.18, delay: index * 0.03 }}
-                        >
-                          <Link
-                            href={solution.href}
-                            onClick={() => setSolutionsOpen(false)}
-                            className="group flex h-full flex-col gap-4 rounded-2xl border border-slate-200 p-5 no-underline transition-all duration-300 hover:-translate-y-1 hover:border-unti-blue hover:bg-slate-50 hover:no-underline"
+                        return (
+                          <motion.div
+                            key={solution.href}
+                            initial={{ opacity: 0, y: 8 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.18, delay: index * 0.03 }}
                           >
-                            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-unti-blue/10 text-unti-blue transition-colors group-hover:bg-unti-blue group-hover:text-white">
-                              <Icon className="h-6 w-6" />
-                            </div>
+                            <Link
+                              href={solution.href}
+                              onClick={() => setSolutionsOpen(false)}
+                              className="group flex h-full flex-col gap-4 rounded-2xl border border-slate-200 p-5 no-underline transition-all duration-300 hover:-translate-y-1 hover:border-unti-blue hover:bg-slate-50 hover:no-underline"
+                            >
+                              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-unti-blue/10 text-unti-blue transition-colors group-hover:bg-unti-blue group-hover:text-white">
+                                <Icon className="h-6 w-6" />
+                              </div>
 
-                            <div className="space-y-2">
-                              <h3 className="text-base font-bold text-brand-dark">
-                                {solution.label}
-                              </h3>
-                              <p className="text-sm leading-relaxed text-brand-muted">
-                                {solution.description}
-                              </p>
-                            </div>
+                              <div className="space-y-2">
+                                <h3 className="text-base font-bold text-brand-dark">
+                                  {solution.label}
+                                </h3>
+                                <p className="text-sm leading-relaxed text-brand-muted">
+                                  {solution.description}
+                                </p>
+                              </div>
 
-                            <span className="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-unti-blue">
-                              Ver solução
-                              <span aria-hidden="true">→</span>
-                            </span>
-                          </Link>
-                        </motion.div>
-                      );
-                    })}
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
+                              <span className="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-unti-blue">
+                                Ver solução
+                                <span aria-hidden="true">→</span>
+                              </span>
+                            </Link>
+                          </motion.div>
+                        );
+                      })}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            {links.slice(1).map((link) => (
+              <MenuLink key={link.href} href={link.href} label={link.label} />
+            ))}
+          </nav>
+
+          <div className="hidden md:block">
+            <Button variant="primary" onClick={() => (window.location.href = "/contato")}>
+              Falar com especialista
+            </Button>
           </div>
 
-          {links.slice(1).map((link) => (
-            <MenuLink key={link.href} href={link.href} label={link.label} />
-          ))}
-        </nav>
-
-        <div className="hidden md:block">
-          <Button variant="primary" onClick={() => (window.location.href = "/contato")}>
-            Falar com especialista
-          </Button>
+          <button
+            type="button"
+            onClick={() => setMobileMenuOpen(true)}
+            className="inline-flex items-center justify-center rounded-xl border border-slate-200 p-3 text-brand-dark transition-colors hover:border-unti-blue hover:text-unti-blue md:hidden"
+            aria-label="Abrir menu"
+          >
+            <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
+              <path d="M4 7h16" />
+              <path d="M4 12h16" />
+              <path d="M4 17h16" />
+            </svg>
+          </button>
         </div>
-
-        <button
-          type="button"
-          onClick={() => setMobileMenuOpen(true)}
-          className="inline-flex items-center justify-center rounded-xl border border-slate-200 p-3 text-brand-dark transition-colors hover:border-unti-blue hover:text-unti-blue md:hidden"
-          aria-label="Abrir menu"
-        >
-          <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
-            <path d="M4 7h16" />
-            <path d="M4 12h16" />
-            <path d="M4 17h16" />
-          </svg>
-        </button>
       </div>
 
       <Modal isOpen={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)}>
