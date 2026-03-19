@@ -232,10 +232,9 @@ export function Header() {
               </AnimatePresence>
             </div>
 
-            <MenuLink href="/cases" label="Cases" />
-            <MenuLink href="/blog" label="Blog" />
-            <MenuLink href="/integracoes" label="Integrações" />
-            <MenuLink href="/contato" label="Contato" />
+            {links.map((link) => (
+              <MenuLink key={link.href} href={link.href} label={link.label} />
+            ))}
           </nav>
 
           <div className="hidden md:block">
@@ -252,6 +251,7 @@ export function Header() {
             <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             </svg>
+          </button>
         </div>
       </div>
 
