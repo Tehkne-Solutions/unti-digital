@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useCallback, useEffect, useRef, useState } from "react"
 import { motion, useMotionValue, useAnimation } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
@@ -19,7 +19,7 @@ export default function LogoCloud() {
   const itemWidth = 140 + 64 // logo width + gap
   const totalWidth = clients.length * itemWidth
 
-  const startAutoScroll = () => {
+  const startAutoScroll = useCallback(() => {
     controls.start({
       x: -totalWidth,
       transition: {
@@ -29,17 +29,17 @@ export default function LogoCloud() {
         repeatType: "loop"
       }
     })
-  }
+  }, [controls, totalWidth])
 
-  const pauseAutoScroll = () => {
+  const pauseAutoScroll = useCallback(() => {
     controls.stop()
     if (resumeTimeoutRef.current) {
       clearTimeout(resumeTimeoutRef.current)
       resumeTimeoutRef.current = null
     }
-  }
+  }, [controls])
 
-  const resumeAutoScroll = (delay = 2000) => {
+  const resumeAutoScroll = useCallback((delay = 2000) => {
     if (resumeTimeoutRef.current) {
       clearTimeout(resumeTimeoutRef.current)
     }
@@ -47,9 +47,8 @@ export default function LogoCloud() {
     resumeTimeoutRef.current = setTimeout(() => {
       startAutoScroll()
     }, delay)
-  }
+  }, [startAutoScroll])
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     startAutoScroll()
 
@@ -59,15 +58,14 @@ export default function LogoCloud() {
         clearTimeout(resumeTimeoutRef.current)
       }
     }
-  }, [controls, totalWidth])
+  }, [controls, startAutoScroll])
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (!selectedClient) {
       // When modal closes, resume auto-scroll
       resumeAutoScroll(500)
     }
-  }, [selectedClient])
+  }, [selectedClient, resumeAutoScroll])
 
   const handleDragEnd = () => {
     // Resume auto-scroll after drag

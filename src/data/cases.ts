@@ -51,8 +51,8 @@ export const cases = [
         seoTitle: "Como aumentar consultas médicas com site otimizado (+180%) | Case Unti Digital",
         metaDescription: "Saiba como uma clínica dermatológica aumentou 180% as consultas online com um site profissional e sistema de agendamento integrado.",
         resultHighlight: "+180% consultas online",
-        heroImage: "https://images.unsplash.com/photo-1526715480940-b33b6a907f7c?auto=format&fit=crop&w=1400&q=80",
-        image: "https://images.unsplash.com/photo-1526715480940-b33b6a907f7c?auto=format&fit=crop&w=1400&q=80",
+        heroImage: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&q=80",
+        image: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&q=80",
         introduction: "Veja como uma clínica dermatológica transformou sua presença online, passando de poucas consultas digitais para um fluxo constante de pacientes qualificados.",
         problem: "A clínica enfrentava baixa visibilidade online e dificuldade em gerenciar agendamentos. Os pacientes tinham dificuldade para encontrar informações sobre tratamentos e marcar consultas online.",
         strategy: "Implementamos uma abordagem completa focada em experiência do paciente: site informativo e profissional, sistema de agendamento integrado, presença otimizada no Google My Business e blog de conteúdo especializado.",
@@ -64,7 +64,7 @@ export const cases = [
             "-40% tempo de resposta ao paciente"
         ],
         gallery: [
-            "https://images.unsplash.com/photo-1526715480940-b33b6a907f7c?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&q=80",
             "https://images.unsplash.com/photo-1520894255615-0f0e0f32f23e?auto=format&fit=crop&w=800&q=80",
             "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=800&q=80"
         ],

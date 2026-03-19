@@ -31,7 +31,7 @@ export const clients = [
         id: "dra-isabel",
         name: "Dra Isabel",
         logo: "/images/clients/dra-isabel.png",
-        cover: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=1400&q=80",
+        cover: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&q=80",
         segment: "Clínica dermatológica",
         result: "+180% pacientes",
         description: "Plataforma completa com e-commerce de produtos dermatológicos e blog de conteúdo especializado.",
@@ -39,7 +39,7 @@ export const clients = [
         phone: "(11) 5555-0000",
         email: "contato@draisabel.com.br",
         whatsapp: "551155550000",
-        casePage: "/cases/dra-isabel"
+        casePage: "/cases/como-aumentar-consultas-clinica-dermatologica"
     },
     {
         id: "uroclinica",
@@ -81,7 +81,7 @@ export const clients = [
         phone: "(11) 2222-0000",
         email: "contato@moveisaguabranca.com.br",
         whatsapp: "551122220000",
-        casePage: "/cases/shopping-moveis-agua-branca"
+        casePage: "/cases/como-aumentar-trafego-organico-shopping"
     },
     {
         id: "toriba-renault",

@@ -1,132 +1,172 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { motion, useAnimationFrame, useMotionValue } from "framer-motion";
+import Image from "next/image";
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { Modal } from "@/components/ui/Modal";
 import { services, Service } from "@/data/services";
-import Image from "next/image";
+
+const SCROLL_SPEED = 0.15;
 
 export function ServicesCarousel() {
   const [selectedService, setSelectedService] = useState<Service | null>(null);
+  const [isHoverPaused, setIsHoverPaused] = useState(false);
+  const [loopWidth, setLoopWidth] = useState(0);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const x = useMotionValue(0);
+  const isPaused = isHoverPaused || Boolean(selectedService);
+  const marqueeServices = [...services, ...services];
+
+  useEffect(() => {
+    const updateLoopWidth = () => {
+      if (!trackRef.current) return;
+      setLoopWidth(trackRef.current.scrollWidth / 2);
+    };
+
+    updateLoopWidth();
+    window.addEventListener("resize", updateLoopWidth);
+
+    return () => window.removeEventListener("resize", updateLoopWidth);
+  }, []);
+
+  useEffect(() => {
+    if (!loopWidth) return;
+
+    const currentX = x.get();
+    if (currentX <= -loopWidth) {
+      x.set(currentX + loopWidth);
+    }
+  }, [loopWidth, x]);
+
+  useAnimationFrame((_, delta) => {
+    if (isPaused || !loopWidth) return;
+
+    const nextX = x.get() - delta * SCROLL_SPEED;
+    x.set(nextX <= -loopWidth ? nextX + loopWidth : nextX);
+  });
 
   return (
-    <Section>
+    <Section className="overflow-hidden">
       <Container>
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+        <div className="mb-14 text-center">
+          <h2 className="mb-4 text-3xl font-bold text-brand-dark md:text-4xl">
             Nossas soluções digitais
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="mx-auto max-w-3xl text-lg text-brand-muted">
             Serviços desenvolvidos para empresas e agências que precisam de performance, segurança e escala.
           </p>
-        </div>
-
-        {/* Services grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service) => (
-            <div key={service.slug} className="group">
-              <Card className="h-full">
-                {/* Image */}
-                <div className="relative aspect-video rounded-lg mb-4 overflow-hidden group-hover:scale-105 transition-transform duration-300">
-                  <Image
-                    src={service.image}
-                    alt={service.title}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-
-                {/* Content */}
-                <div className="space-y-3">
-                  <h3 className="text-xl font-medium text-unti-dark">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    {service.shortDescription}
-                  </p>
-                  <Button
-                    variant="link"
-                    onClick={() => setSelectedService(service)}
-                    className="p-0"
-                  >
-                    Ver detalhes →
-                  </Button>
-                </div>
-              </Card>
-            </div>
-          ))}
+          <p className="mt-3 text-sm font-medium text-unti-blue">
+            Passe o mouse sobre o carrossel para pausar a navegação.
+          </p>
         </div>
       </Container>
 
-      {/* Service Modal */}
+      <div className="relative">
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-white to-transparent md:w-24" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-white to-transparent md:w-24" />
+
+        <div
+          className="overflow-hidden"
+          onMouseEnter={() => setIsHoverPaused(true)}
+          onMouseLeave={() => setIsHoverPaused(false)}
+        >
+          <motion.div ref={trackRef} className="flex w-max gap-6 px-6 md:px-10" style={{ x }}>
+            {marqueeServices.map((service, index) => (
+              <article key={`${service.slug}-${index}`} className="group w-[320px] shrink-0 sm:w-[340px] lg:w-[360px]">
+                <Card
+                  hover={false}
+                  className="flex h-full flex-col border border-slate-200 bg-white p-5 shadow-[0_18px_50px_rgba(15,23,42,0.08)] transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-[0_28px_70px_rgba(15,23,42,0.14)]"
+                >
+                  <div className="relative mb-5 aspect-video overflow-hidden rounded-2xl">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+
+                  <div className="flex h-full flex-col space-y-4">
+                    <h3 className="text-xl font-semibold text-brand-dark">
+                      {service.title}
+                    </h3>
+                    <p className="text-sm leading-relaxed text-brand-muted">
+                      {service.shortDescription}
+                    </p>
+
+                    <div className="mt-auto pt-2">
+                      <Button
+                        variant="link"
+                        className="!h-auto !px-0 text-sm font-semibold"
+                        onClick={() => setSelectedService(service)}
+                      >
+                        Ver detalhes →
+                      </Button>
+                    </div>
+                  </div>
+                </Card>
+              </article>
+            ))}
+          </motion.div>
+        </div>
+      </div>
+
       {selectedService && (
         <Modal
           isOpen={!!selectedService}
           onClose={() => setSelectedService(null)}
           title={selectedService.title}
         >
-          <div className="grid md:grid-cols-2 gap-10">
-            {/* Left Column - Content */}
+          <div className="grid gap-10 md:grid-cols-2">
             <div className="space-y-6">
-              {/* Description */}
-              <p className="text-gray-700 leading-relaxed">
+              <p className="leading-relaxed text-brand-muted">
                 {selectedService.fullDescription}
               </p>
 
-              {/* Bullets */}
               <div>
-                <h4 className="font-semibold mb-3">Diferenciais</h4>
+                <h4 className="mb-3 font-semibold text-brand-dark">Diferenciais</h4>
                 <ul className="space-y-2">
                   {selectedService.bullets.map((bullet, idx) => (
                     <li key={idx} className="flex items-start gap-2">
-                      <svg className="w-5 h-5 text-unti-blue mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <svg className="mt-0.5 h-5 w-5 flex-shrink-0 text-unti-blue" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                       </svg>
-                      <span className="text-gray-700 text-sm">{bullet}</span>
+                      <span className="text-sm text-brand-muted">{bullet}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              {/* Deliverables */}
               <div>
-                <h4 className="font-semibold mb-3">Entregáveis</h4>
+                <h4 className="mb-3 font-semibold text-brand-dark">Entregáveis</h4>
                 <ul className="space-y-2">
                   {selectedService.deliverables.map((item, idx) => (
                     <li key={idx} className="flex items-start gap-2">
-                      <svg className="w-5 h-5 text-unti-orange mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <svg className="mt-0.5 h-5 w-5 flex-shrink-0 text-unti-orange" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                       </svg>
-                      <span className="text-gray-700 text-sm">{item}</span>
+                      <span className="text-sm text-brand-muted">{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              {/* CTAs */}
-              <div className="flex flex-col sm:flex-row gap-3 pt-4">
-                <Button
-                  variant="primary"
-                  onClick={() => window.location.href = '/contato'}
-                >
+              <div className="flex flex-col gap-3 pt-4 sm:flex-row">
+                <Button variant="primary" onClick={() => (window.location.href = "/contato")}>
                   Falar com especialista
                 </Button>
-                <Button
-                  variant="secondary"
-                  onClick={() => window.location.href = '/cases'}
-                >
+                <Button variant="secondary" onClick={() => (window.location.href = "/cases")}>
                   Ver cases
                 </Button>
               </div>
             </div>
 
-            {/* Right Column - Image */}
             <div className="hidden md:block">
-              <div className="aspect-square rounded-2xl overflow-hidden relative">
+              <div className="relative aspect-square overflow-hidden rounded-[28px]">
                 <Image
                   src={selectedService.image}
                   alt={selectedService.title}

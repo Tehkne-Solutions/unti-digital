@@ -3,112 +3,117 @@
 import Image from "next/image";
 
 interface Client {
-    id: string;
-    name: string;
-    logo: string;
-    cover: string;
-    segment: string;
-    result: string;
-    description: string;
-    technologies: string[];
-    phone: string;
-    email: string;
-    whatsapp: string;
-    casePage: string;
+  id: string;
+  name: string;
+  logo: string;
+  cover: string;
+  segment: string;
+  result: string;
+  description: string;
+  technologies: string[];
+  phone: string;
+  email: string;
+  whatsapp: string;
+  casePage: string;
 }
 
 interface ClientModalProps {
-    client: Client | null;
-    onClose: () => void;
+  client: Client | null;
+  onClose: () => void;
 }
 
 export default function ClientModal({ client, onClose }: ClientModalProps) {
-    if (!client) return null;
+  if (!client) return null;
 
-    const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
-        if (e.target === e.currentTarget) {
-            onClose();
-        }
-    };
+  const handleOverlayClick = (event: React.MouseEvent<HTMLDivElement>) => {
+    if (event.target === event.currentTarget) {
+      onClose();
+    }
+  };
 
-    return (
-        <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
-            onClick={handleOverlayClick}
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
+      onClick={handleOverlayClick}
+    >
+      <div className="relative max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-xl bg-white shadow-xl">
+        <button
+          onClick={onClose}
+          className="absolute right-4 top-4 z-50 rounded-full bg-white/95 p-2 text-slate-600 shadow transition-transform hover:scale-110"
+          aria-label="Fechar modal"
         >
-            <div className="bg-white w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-xl shadow-xl relative">
-                <button
-                    onClick={onClose}
-                    className="absolute top-4 right-4 z-50 bg-white rounded-full p-2 shadow hover:scale-110 transition"
-                >
-                    ✕
-                </button>
+          <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
+            <path d="M6 6l12 12" />
+            <path d="M18 6 6 18" />
+          </svg>
+        </button>
 
-                {/* COVER */}
-                <div
-                    className="h-52 bg-cover bg-center relative"
-                    style={{
-                        backgroundImage: `linear-gradient(rgba(4,7,13,0.5), rgba(4,7,13,0.8)), url(${client.cover})`
-                    }}
-                />
-
-                {/* LOGO */}
-                <div className="absolute left-8 top-36 bg-white p-2 rounded shadow">
-                    <Image
-                        src={client.logo}
-                        alt={client.name}
-                        width={120}
-                        height={60}
-                        className="object-contain"
-                    />
-                </div>
-
-                {/* CONTENT */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-6 md:p-8 pt-20">
-                    <div>
-                        <h3 className="text-2xl font-bold mb-2">{client.name}</h3>
-                        <p className="text-blue-600 font-medium mb-2">{client.segment}</p>
-                        <p className="text-green-600 font-semibold text-lg mb-4">{client.result}</p>
-                        <p className="text-gray-500 mb-2">{client.phone}</p>
-                        <p className="text-gray-500 mb-6">{client.email}</p>
-                    </div>
-
-                    <div>
-                        <h4 className="font-semibold mb-3">Sobre o projeto</h4>
-                        <p className="text-gray-600 mb-6">{client.description}</p>
-
-                        <div className="mb-6">
-                            <h5 className="font-semibold mb-2">Tecnologias utilizadas</h5>
-                            <div className="flex flex-wrap gap-2">
-                                {client.technologies.map((tech) => (
-                                    <span
-                                        key={tech}
-                                        className="text-sm bg-gray-100 px-3 py-1 rounded-full"
-                                    >
-                                        {tech}
-                                    </span>
-                                ))}
-                            </div>
-                        </div>
-
-                        <div className="flex gap-3">
-                            <a
-                                href={`https://wa.me/${client.whatsapp}`}
-                                target="_blank"
-                                className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors"
-                            >
-                                WhatsApp
-                            </a>
-                            <a
-                                href={client.casePage}
-                                className="border border-gray-300 px-4 py-2 rounded-md hover:bg-gray-50 transition-colors"
-                            >
-                                Ver case completo
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div className="relative h-52 overflow-hidden">
+          <Image
+            src={client.cover}
+            alt={`Imagem de destaque do projeto ${client.name}`}
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#04070d]/35 via-[#04070d]/55 to-[#04070d]/80" />
         </div>
-    );
+
+        <div className="absolute left-8 top-36 rounded-xl bg-white p-2 shadow">
+          <Image
+            src={client.logo}
+            alt={client.name}
+            width={120}
+            height={60}
+            className="object-contain"
+          />
+        </div>
+
+        <div className="grid grid-cols-1 gap-8 p-6 pt-20 md:grid-cols-2 md:p-8 md:pt-20">
+          <div>
+            <h3 className="mb-2 text-2xl font-bold text-brand-dark">{client.name}</h3>
+            <p className="mb-2 font-medium text-unti-blue">{client.segment}</p>
+            <p className="mb-4 text-lg font-semibold text-green-600">{client.result}</p>
+            <p className="mb-2 text-brand-muted">{client.phone}</p>
+            <p className="mb-6 text-brand-muted">{client.email}</p>
+          </div>
+
+          <div>
+            <h4 className="mb-3 font-semibold text-brand-dark">Sobre o projeto</h4>
+            <p className="mb-6 text-brand-muted">{client.description}</p>
+
+            <div className="mb-6">
+              <h5 className="mb-2 font-semibold text-brand-dark">Tecnologias utilizadas</h5>
+              <div className="flex flex-wrap gap-2">
+                {client.technologies.map((tech) => (
+                  <span
+                    key={tech}
+                    className="rounded-full bg-slate-100 px-3 py-1 text-sm text-brand-dark"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="flex gap-3">
+              <a
+                href={`https://wa.me/${client.whatsapp}`}
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-md bg-unti-blue px-4 py-2 text-white no-underline transition-colors hover:bg-[#2f5edc] hover:no-underline"
+              >
+                WhatsApp
+              </a>
+              <a
+                href={client.casePage}
+                className="rounded-md border border-slate-300 px-4 py-2 text-brand-dark no-underline transition-colors hover:bg-slate-50 hover:no-underline"
+              >
+                Ver case completo
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }

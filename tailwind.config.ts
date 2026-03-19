@@ -13,21 +13,21 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          dark: '#1A1A1A',
-          muted: '#4B5563',
-          primary: '#0047FF'
+          dark: "#1A1A1A",
+          muted: "#4B5563",
+          primary: "#396cff"
         },
         unti: {
           blue: "#396cff",
-          dark: "#2563eb",
+          dark: "#1A1A1A",
           light: "#7fa2ff",
           pastel: "#c3d6fc",
           orange: "#ff9900",
-          muted: "#6B7280",
+          muted: "#4B5563",
           border: "#E5E7EB",
           surface: "#F8FAFC",
-          heading: "#4B5563",
-          topbarBg: "#2563eb"
+          heading: "#1A1A1A",
+          topbarBg: "#396cff"
         }
       },
       fontFamily: {
