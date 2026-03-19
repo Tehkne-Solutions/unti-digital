@@ -13,8 +13,8 @@ const ubuntu = Ubuntu({
 });
 
 export const metadata: Metadata = {
-  title: "UNTI — Serviços de Tecnologia",
-  description: "Site institucional da UNTI com foco em serviços de tecnologia, plataformas web e integrações."
+  title: "UNTI â€” ServiÃ§os de Tecnologia",
+  description: "Site institucional da UNTI com foco em serviÃ§os de tecnologia, plataformas web e integraÃ§Ãµes."
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
