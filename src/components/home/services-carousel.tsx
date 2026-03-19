@@ -17,6 +17,7 @@ export function ServicesCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isHovering, setIsHovering] = useState(false);
   const [isInteracting, setIsInteracting] = useState(false);
+  const [isTrackInView, setIsTrackInView] = useState(false);
   const trackRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<Array<HTMLElement | null>>([]);
   const activeIndexRef = useRef(0);
@@ -46,14 +47,19 @@ export function ServicesCarousel() {
       const isWrapAround =
         (currentIndex === services.length - 1 && normalizedIndex === 0) ||
         (currentIndex === 0 && normalizedIndex === services.length - 1);
+      const track = trackRef.current;
       const targetCard = cardRefs.current[normalizedIndex];
 
-      if (!targetCard) return;
+      if (!track || !targetCard) return;
 
-      targetCard.scrollIntoView({
-        behavior: isWrapAround ? "auto" : behavior,
-        block: "nearest",
-        inline: "center"
+      const rawLeft =
+        targetCard.offsetLeft - (track.clientWidth - targetCard.offsetWidth) / 2;
+      const maxLeft = Math.max(track.scrollWidth - track.clientWidth, 0);
+      const left = Math.min(Math.max(rawLeft, 0), maxLeft);
+
+      track.scrollTo({
+        left,
+        behavior: isWrapAround ? "auto" : behavior
       });
 
       activeIndexRef.current = normalizedIndex;
@@ -110,6 +116,24 @@ export function ServicesCarousel() {
   };
 
   useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsTrackInView(entry.isIntersecting);
+      },
+      {
+        threshold: 0.35
+      }
+    );
+
+    observer.observe(track);
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
     const initializeCarousel = () => {
       scrollToIndex(activeIndexRef.current, "auto");
       updateActiveIndexFromScroll();
@@ -122,14 +146,14 @@ export function ServicesCarousel() {
   }, [scrollToIndex, updateActiveIndexFromScroll]);
 
   useEffect(() => {
-    if (isHovering || isInteracting || selectedService) return;
+    if (!isTrackInView || isHovering || isInteracting || selectedService) return;
 
     const intervalId = window.setInterval(() => {
       scrollToIndex(activeIndexRef.current + 1);
     }, AUTOPLAY_DELAY);
 
     return () => window.clearInterval(intervalId);
-  }, [isHovering, isInteracting, scrollToIndex, selectedService]);
+  }, [isHovering, isInteracting, isTrackInView, scrollToIndex, selectedService]);
 
   useEffect(() => {
     return () => {
