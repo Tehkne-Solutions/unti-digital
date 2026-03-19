@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
@@ -9,11 +9,140 @@ import { Button } from "@/components/ui/Button";
 import { Modal } from "@/components/ui/Modal";
 import { services, Service } from "@/data/services";
 
+const AUTOPLAY_DELAY = 4200;
+const INTERACTION_PAUSE_DELAY = 1800;
+
 export function ServicesCarousel() {
   const [selectedService, setSelectedService] = useState<Service | null>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isHovering, setIsHovering] = useState(false);
+  const [isInteracting, setIsInteracting] = useState(false);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const cardRefs = useRef<Array<HTMLElement | null>>([]);
+  const activeIndexRef = useRef(0);
+  const interactionTimeoutRef = useRef<number | null>(null);
+  const scrollFrameRef = useRef<number | null>(null);
+
+  const clearInteractionTimeout = useCallback(() => {
+    if (interactionTimeoutRef.current !== null) {
+      window.clearTimeout(interactionTimeoutRef.current);
+      interactionTimeoutRef.current = null;
+    }
+  }, []);
+
+  const pauseAutoplayAfterInteraction = useCallback(() => {
+    clearInteractionTimeout();
+    setIsInteracting(true);
+    interactionTimeoutRef.current = window.setTimeout(() => {
+      setIsInteracting(false);
+      interactionTimeoutRef.current = null;
+    }, INTERACTION_PAUSE_DELAY);
+  }, [clearInteractionTimeout]);
+
+  const scrollToIndex = useCallback(
+    (index: number, behavior: ScrollBehavior = "smooth") => {
+      const normalizedIndex = ((index % services.length) + services.length) % services.length;
+      const currentIndex = activeIndexRef.current;
+      const isWrapAround =
+        (currentIndex === services.length - 1 && normalizedIndex === 0) ||
+        (currentIndex === 0 && normalizedIndex === services.length - 1);
+      const targetCard = cardRefs.current[normalizedIndex];
+
+      if (!targetCard) return;
+
+      targetCard.scrollIntoView({
+        behavior: isWrapAround ? "auto" : behavior,
+        block: "nearest",
+        inline: "center"
+      });
+
+      activeIndexRef.current = normalizedIndex;
+      setActiveIndex(normalizedIndex);
+    },
+    []
+  );
+
+  const updateActiveIndexFromScroll = useCallback(() => {
+    if (!trackRef.current) return;
+
+    const containerRect = trackRef.current.getBoundingClientRect();
+    const containerCenter = containerRect.left + containerRect.width / 2;
+
+    let closestIndex = 0;
+    let closestDistance = Number.POSITIVE_INFINITY;
+
+    cardRefs.current.forEach((card, index) => {
+      if (!card) return;
+
+      const rect = card.getBoundingClientRect();
+      const cardCenter = rect.left + rect.width / 2;
+      const distance = Math.abs(containerCenter - cardCenter);
+
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closestIndex = index;
+      }
+    });
+
+    activeIndexRef.current = closestIndex;
+    setActiveIndex((current) => (current === closestIndex ? current : closestIndex));
+  }, []);
+
+  const handleScroll = useCallback(() => {
+    if (scrollFrameRef.current !== null) {
+      window.cancelAnimationFrame(scrollFrameRef.current);
+    }
+
+    scrollFrameRef.current = window.requestAnimationFrame(() => {
+      updateActiveIndexFromScroll();
+      scrollFrameRef.current = null;
+    });
+  }, [updateActiveIndexFromScroll]);
+
+  const goToIndex = (index: number) => {
+    pauseAutoplayAfterInteraction();
+    scrollToIndex(index);
+  };
+
+  const openService = (service: Service) => {
+    pauseAutoplayAfterInteraction();
+    setSelectedService(service);
+  };
+
+  useEffect(() => {
+    const initializeCarousel = () => {
+      scrollToIndex(activeIndexRef.current, "auto");
+      updateActiveIndexFromScroll();
+    };
+
+    initializeCarousel();
+    window.addEventListener("resize", initializeCarousel);
+
+    return () => window.removeEventListener("resize", initializeCarousel);
+  }, [scrollToIndex, updateActiveIndexFromScroll]);
+
+  useEffect(() => {
+    if (isHovering || isInteracting || selectedService) return;
+
+    const intervalId = window.setInterval(() => {
+      scrollToIndex(activeIndexRef.current + 1);
+    }, AUTOPLAY_DELAY);
+
+    return () => window.clearInterval(intervalId);
+  }, [isHovering, isInteracting, scrollToIndex, selectedService]);
+
+  useEffect(() => {
+    return () => {
+      clearInteractionTimeout();
+
+      if (scrollFrameRef.current !== null) {
+        window.cancelAnimationFrame(scrollFrameRef.current);
+      }
+    };
+  }, [clearInteractionTimeout]);
 
   return (
-    <Section>
+    <Section className="overflow-hidden">
       <Container>
         <div className="mb-16 text-center">
           <h2 className="mb-4 text-3xl font-bold text-brand-dark md:text-4xl">
@@ -23,11 +152,51 @@ export function ServicesCarousel() {
             Serviços desenvolvidos para empresas e agências que precisam de performance, segurança e escala.
           </p>
         </div>
+      </Container>
 
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => (
-            <article key={service.slug} className="group">
-              <Card className="flex h-full flex-col border border-neutral-200 bg-white p-8 shadow-[0_18px_50px_rgba(15,23,42,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+      <div className="relative mx-auto max-w-[1440px]">
+        <button
+          type="button"
+          onClick={() => goToIndex(activeIndexRef.current - 1)}
+          className="absolute left-2 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white p-3 shadow-lg transition-colors hover:bg-gray-50 md:left-4"
+          aria-label="Anterior"
+        >
+          <svg className="h-6 w-6 text-unti-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+
+        <div
+          ref={trackRef}
+          onScroll={handleScroll}
+          onMouseEnter={() => setIsHovering(true)}
+          onMouseLeave={() => setIsHovering(false)}
+          onPointerDown={() => pauseAutoplayAfterInteraction()}
+          className="no-scrollbar flex snap-x snap-mandatory gap-6 overflow-x-auto overflow-y-hidden scroll-smooth pb-6"
+          style={{
+            paddingLeft: "max(1rem, calc((100% - 360px) / 2))",
+            paddingRight: "max(1rem, calc((100% - 360px) / 2))",
+            touchAction: "pan-y"
+          }}
+        >
+          {services.map((service, index) => (
+            <article
+              key={service.slug}
+              ref={(element) => {
+                cardRefs.current[index] = element;
+              }}
+              role="button"
+              tabIndex={0}
+              onClick={() => openService(service)}
+              onKeyDown={(event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                  event.preventDefault();
+                  openService(service);
+                }
+              }}
+              className="group w-[360px] flex-shrink-0 snap-center cursor-pointer"
+            >
+              <Card className="flex h-full min-h-[420px] flex-col rounded-2xl border border-neutral-200 bg-white p-8 shadow-[0_18px_50px_rgba(15,23,42,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
                 <div className="relative mb-6 aspect-video overflow-hidden rounded-2xl">
                   <Image
                     src={service.image}
@@ -47,9 +216,13 @@ export function ServicesCarousel() {
 
                   <div className="mt-auto pt-3">
                     <Button
+                      type="button"
                       variant="link"
                       className="!h-auto !px-0 text-sm font-semibold"
-                      onClick={() => setSelectedService(service)}
+                      onClick={(event) => {
+                        event.stopPropagation();
+                        openService(service);
+                      }}
                     >
                       Ver detalhes →
                     </Button>
@@ -59,7 +232,35 @@ export function ServicesCarousel() {
             </article>
           ))}
         </div>
-      </Container>
+
+        <button
+          type="button"
+          onClick={() => goToIndex(activeIndexRef.current + 1)}
+          className="absolute right-2 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white p-3 shadow-lg transition-colors hover:bg-gray-50 md:right-4"
+          aria-label="Próximo"
+        >
+          <svg className="h-6 w-6 text-unti-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+
+        <div className="mt-6 flex justify-center gap-2">
+          {services.map((service, index) => (
+            <button
+              key={service.slug}
+              type="button"
+              onClick={() => goToIndex(index)}
+              className={`h-2 rounded-full transition-all ${
+                index === activeIndex
+                  ? "w-8 bg-unti-blue"
+                  : "w-2 bg-gray-300 hover:bg-gray-400"
+              }`}
+              aria-label={`Ir para slide ${index + 1}`}
+              aria-current={index === activeIndex}
+            />
+          ))}
+        </div>
+      </div>
 
       {selectedService && (
         <Modal
@@ -102,10 +303,10 @@ export function ServicesCarousel() {
               </div>
 
               <div className="flex flex-col gap-3 pt-4 sm:flex-row">
-                <Button variant="primary" onClick={() => (window.location.href = "/contato")}>
+                <Button type="button" variant="primary" onClick={() => (window.location.href = "/contato")}>
                   Falar com especialista
                 </Button>
-                <Button variant="secondary" onClick={() => (window.location.href = "/cases")}>
+                <Button type="button" variant="secondary" onClick={() => (window.location.href = "/cases")}>
                   Ver cases
                 </Button>
               </div>

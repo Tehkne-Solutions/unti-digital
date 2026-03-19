@@ -60,7 +60,7 @@ export function Segmentation() {
             </div>
           </Card>
 
-          <Card className="bg-unti-blue p-10 text-white">
+          <Card className="bg-blue-600 p-10 text-white">
             <div className="space-y-6">
               <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-white/10">
                 <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">

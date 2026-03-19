@@ -13,7 +13,7 @@ interface ModalProps {
 export function Modal({ isOpen, onClose, children, title }: ModalProps) {
   return (
     <Transition appear show={isOpen} as={Fragment}>
-      <Dialog as="div" className="relative z-50" onClose={onClose}>
+      <Dialog as="div" className="relative z-[90]" onClose={onClose}>
         <Transition.Child
           as={Fragment}
           enter="ease-out duration-300"
@@ -37,10 +37,10 @@ export function Modal({ isOpen, onClose, children, title }: ModalProps) {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="w-full max-w-3xl transform overflow-hidden rounded-2xl bg-white p-10 shadow-xl transition-all relative">
+              <Dialog.Panel className="relative w-full max-w-3xl transform overflow-hidden rounded-2xl bg-white shadow-xl transition-all">
                 <button
                   onClick={onClose}
-                  className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+                  className="absolute right-4 top-4 z-10 text-gray-400 transition-colors hover:text-gray-600"
                   aria-label="Fechar modal"
                 >
                   <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -48,13 +48,15 @@ export function Modal({ isOpen, onClose, children, title }: ModalProps) {
                   </svg>
                 </button>
 
-                {title && (
-                  <Dialog.Title className="text-2xl font-bold mb-4">
-                    {title}
-                  </Dialog.Title>
-                )}
+                <div className="max-h-[90vh] overflow-y-auto p-10 pr-14">
+                  {title && (
+                    <Dialog.Title className="mb-4 text-2xl font-bold">
+                      {title}
+                    </Dialog.Title>
+                  )}
 
-                {children}
+                  {children}
+                </div>
               </Dialog.Panel>
             </Transition.Child>
           </div>

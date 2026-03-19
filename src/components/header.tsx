@@ -13,6 +13,7 @@ type SolutionItem = {
   href: string;
   label: string;
   description: string;
+  image: string;
   icon: (props: IconProps) => ReactElement;
 };
 
@@ -27,38 +28,37 @@ const solutions: SolutionItem[] = [
   {
     href: "/solucoes/sites-institucionais",
     label: "Sites Institucionais",
-    description: "Sites profissionais com performance, SEO e foco em conversão.",
+    description: "Alta performance com foco em conversão e SEO.",
+    image: "/images/solutions/unti-digital-solution-high-performance-websites.png",
     icon: IconMonitor
   },
   {
     href: "/solucoes/plataformas-web",
     label: "Plataformas Web",
-    description: "Produtos digitais sob medida para operações e jornadas complexas.",
+    description: "Sistemas complexos e escaláveis sob medida.",
+    image: "/images/solutions/unti-digital-solution-custom-web-platforms.png",
     icon: IconLayers
   },
   {
     href: "/solucoes/integracoes-crm-erp",
     label: "Integrações e Automações",
-    description: "Conexões robustas entre CRM, ERP, APIs e processos críticos.",
+    description: "Conexão robusta entre CRM, ERP e operações.",
+    image: "/images/solutions/unti-digital-solution-crm-erp-integrations.png",
     icon: IconWorkflow
   },
   {
     href: "/solucoes/governanca-seguranca",
     label: "Governança e Segurança",
-    description: "Arquitetura segura com previsibilidade técnica e boas práticas.",
+    description: "Proteção e monitoramento de ambientes críticos.",
+    image: "/images/solutions/unti-digital-solution-governance-security.png",
     icon: IconShield
   },
   {
     href: "/solucoes/white-label-agencias",
     label: "White Label para Agências",
-    description: "Execução técnica confiável para escalar entregas com sua marca.",
+    description: "Parceria técnica estratégica e confidencial.",
+    image: "/images/solutions/unti-digital-solution-white-label-development.png",
     icon: IconUsers
-  },
-  {
-    href: "/solucoes/empresas",
-    label: "Projetos para Empresas",
-    description: "Estratégia, tecnologia e evolução contínua para negócios digitais.",
-    icon: IconBriefcase
   }
 ];
 
@@ -160,16 +160,6 @@ function IconUsers(props: IconProps) {
   );
 }
 
-function IconBriefcase(props: IconProps) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" {...props}>
-      <rect x="3" y="7" width="18" height="12" rx="2" />
-      <path d="M8 7V5.5A1.5 1.5 0 0 1 9.5 4h5A1.5 1.5 0 0 1 16 5.5V7" />
-      <path d="M3 12h18" />
-    </svg>
-  );
-}
-
 function IconChevronDown(props: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" {...props}>
@@ -205,8 +195,26 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (!solutionsOpen) return;
+
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setSolutionsOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleEscape);
+    return () => window.removeEventListener("keydown", handleEscape);
+  }, [solutionsOpen]);
+
+  const menuTop = isScrolled ? 92 : 124;
+  const menuMaxHeight = isScrolled
+    ? "calc(100vh - 116px)"
+    : "calc(100vh - 148px)";
+
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur">
+    <header className="sticky top-0 z-[70] border-b border-slate-200/80 bg-white/95 backdrop-blur">
       <motion.div
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
@@ -274,87 +282,19 @@ export function Header() {
             </motion.div>
           </Link>
 
-          <nav className="hidden items-center gap-8 lg:gap-10 md:flex">
+          <nav className="hidden items-center gap-8 md:flex lg:gap-10">
             <MenuLink href="/" label="Home" />
 
-            <div
-              className="relative"
-              onMouseEnter={() => setSolutionsOpen(true)}
-              onMouseLeave={() => setSolutionsOpen(false)}
+            <button
+              type="button"
+              onClick={() => setSolutionsOpen((open) => !open)}
+              className={`relative inline-flex items-center gap-2 pb-1 text-sm font-medium transition-colors ${solutionsOpen ? "text-unti-blue" : "text-brand-dark hover:text-unti-blue"} after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-unti-blue after:transition-transform after:duration-300 ${solutionsOpen ? "after:origin-left after:scale-x-100" : "after:origin-right after:scale-x-0 hover:after:origin-left hover:after:scale-x-100"}`}
+              aria-expanded={solutionsOpen}
+              aria-controls="solutions-mega-menu"
             >
-              <button
-                type="button"
-                className={`relative inline-flex items-center gap-2 pb-1 text-sm font-medium transition-colors ${solutionsOpen ? "text-unti-blue" : "text-brand-dark hover:text-unti-blue"} after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-unti-blue after:transition-transform after:duration-300 ${solutionsOpen ? "after:origin-left after:scale-x-100" : "after:origin-right after:scale-x-0 hover:after:origin-left hover:after:scale-x-100"}`}
-              >
-                <span>Soluções</span>
-                <IconChevronDown className={`h-4 w-4 transition-transform ${solutionsOpen ? "rotate-180" : ""}`} />
-              </button>
-
-              <AnimatePresence>
-                {solutionsOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 10 }}
-                    transition={{ duration: 0.18 }}
-                    className="absolute left-1/2 top-full z-50 mt-4 w-[960px] -translate-x-1/2 rounded-[28px] border border-slate-200 bg-white p-7 shadow-[0_30px_80px_rgba(15,23,42,0.16)]"
-                  >
-                    <div className="mb-5 flex items-start justify-between gap-6 border-b border-slate-200 pb-5">
-                      <div className="max-w-xl">
-                        <p className="text-xs font-semibold uppercase tracking-[0.24em] text-unti-blue">
-                          Soluções Digitais
-                        </p>
-                        <h2 className="mt-2 text-2xl font-bold text-brand-dark">
-                          Tecnologia sob medida para empresas e agências
-                        </h2>
-                      </div>
-                      <p className="max-w-sm text-sm leading-relaxed text-brand-muted">
-                        Explore serviços com foco em performance, integrações e entregas robustas para operação digital.
-                      </p>
-                    </div>
-
-                    <div className="grid grid-cols-3 gap-4">
-                      {solutions.map((solution, index) => {
-                        const Icon = solution.icon;
-
-                        return (
-                          <motion.div
-                            key={solution.href}
-                            initial={{ opacity: 0, y: 8 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.18, delay: index * 0.03 }}
-                          >
-                            <Link
-                              href={solution.href}
-                              onClick={() => setSolutionsOpen(false)}
-                              className="group flex h-full flex-col gap-4 rounded-2xl border border-slate-200 p-5 no-underline transition-all duration-300 hover:-translate-y-1 hover:border-unti-blue hover:bg-slate-50 hover:no-underline"
-                            >
-                              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-unti-blue/10 text-unti-blue transition-colors group-hover:bg-unti-blue group-hover:text-white">
-                                <Icon className="h-6 w-6" />
-                              </div>
-
-                              <div className="space-y-2">
-                                <h3 className="text-base font-bold text-brand-dark">
-                                  {solution.label}
-                                </h3>
-                                <p className="text-sm leading-relaxed text-brand-muted">
-                                  {solution.description}
-                                </p>
-                              </div>
-
-                              <span className="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-unti-blue">
-                                Ver solução
-                                <span aria-hidden="true">→</span>
-                              </span>
-                            </Link>
-                          </motion.div>
-                        );
-                      })}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
+              <span>Soluções</span>
+              <IconChevronDown className={`h-4 w-4 transition-transform ${solutionsOpen ? "rotate-180" : ""}`} />
+            </button>
 
             {links.slice(1).map((link) => (
               <MenuLink key={link.href} href={link.href} label={link.label} />
@@ -381,6 +321,104 @@ export function Header() {
           </button>
         </div>
       </div>
+
+      <AnimatePresence>
+        {solutionsOpen && (
+          <>
+            <motion.button
+              type="button"
+              aria-label="Fechar mega menu"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              onClick={() => setSolutionsOpen(false)}
+              className="fixed inset-0 z-[50] bg-black/20"
+            />
+
+            <motion.div
+              id="solutions-mega-menu"
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 18 }}
+              transition={{ duration: 0.3 }}
+              className="fixed inset-x-4 z-[60] mx-auto w-auto max-w-7xl overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl"
+              style={{
+                top: menuTop,
+                maxHeight: menuMaxHeight
+              }}
+            >
+              <div className="max-h-[inherit] overflow-y-auto p-6 md:p-8">
+                <div className="mb-6 border-b border-slate-200 pb-6">
+                  <div className="max-w-2xl">
+                    <p className="text-xs font-semibold uppercase tracking-[0.24em] text-unti-blue">
+                      Soluções Digitais
+                    </p>
+                    <h2 className="mt-2 text-2xl font-bold text-brand-dark md:text-3xl">
+                      Tecnologia sob medida para empresas e agências
+                    </h2>
+                  </div>
+                </div>
+
+                <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+                  {solutions.map((solution, index) => {
+                    const Icon = solution.icon;
+
+                    return (
+                      <motion.div
+                        key={solution.href}
+                        initial={{ opacity: 0, y: 8 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.2, delay: index * 0.04 }}
+                      >
+                        <Link
+                          href={solution.href}
+                          onClick={() => setSolutionsOpen(false)}
+                          className="group flex h-full flex-col rounded-2xl border border-slate-200 p-4 no-underline transition-all duration-300 hover:-translate-y-1 hover:border-unti-blue hover:bg-slate-50 hover:no-underline"
+                        >
+                          <div className="relative mb-4 aspect-video overflow-hidden rounded-2xl">
+                            <Image
+                              src={solution.image}
+                              alt={solution.label}
+                              fill
+                              className="object-cover transition-transform duration-500 group-hover:scale-105"
+                            />
+                            <div className="absolute left-3 top-3 flex h-10 w-10 items-center justify-center rounded-2xl bg-white/95 text-unti-blue shadow-sm">
+                              <Icon className="h-5 w-5" />
+                            </div>
+                          </div>
+
+                          <div className="space-y-2">
+                            <h3 className="text-base font-bold text-brand-dark transition-colors group-hover:text-unti-blue">
+                              {solution.label}
+                            </h3>
+                            <p className="text-sm leading-relaxed text-brand-muted">
+                              {solution.description}
+                            </p>
+                          </div>
+                        </Link>
+                      </motion.div>
+                    );
+                  })}
+                </div>
+
+                <div className="mt-6 flex flex-col gap-3 border-t border-slate-200 pt-6 sm:flex-row sm:items-center sm:justify-between">
+                  <p className="text-sm text-brand-muted">
+                    Precisa de uma solução personalizada para o seu cenário?
+                  </p>
+                  <Link
+                    href="/contato"
+                    onClick={() => setSolutionsOpen(false)}
+                    className="text-sm font-bold text-unti-blue no-underline hover:underline"
+                  >
+                    Falar com especialista →
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
 
       <Modal isOpen={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)}>
         <nav className="flex flex-col gap-8">

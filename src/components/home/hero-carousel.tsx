@@ -2,18 +2,15 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/Button";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
-import sitesPlataformasImage from "@/assets/unti-digital-homepage-image-slider-servicos-sites-e-plataformas-de-alta-performance.png";
-import integracoesImage from "@/assets/unti-digital-homepage-image-slider-servicos-integracoes-e-automacoes-inteligentes.png";
-import whiteLabelImage from "@/assets/unti-digital-homepage-image-slider-servicos-white-label-tecnico-para-agencias.png";
 
 interface Slide {
   title: string;
   description: string;
   ctaPrimary: string;
   ctaSecondary: string;
-  image: StaticImageData;
+  image: string;
 }
 
 const slides: Slide[] = [
@@ -21,7 +18,7 @@ const slides: Slide[] = [
     title: "Sites e Plataformas de Alta Performance",
     description:
       "Desenvolvemos sites institucionais e plataformas web escaláveis com foco em conversão, performance e experiência do usuário.",
-    image: sitesPlataformasImage,
+    image: "/images/unti-digital-homepage-image-slider-servicos-sites-e-plataformas-de-alta-performance.png",
     ctaPrimary: "Falar com especialista",
     ctaSecondary: "Ver portfólio"
   },
@@ -29,7 +26,7 @@ const slides: Slide[] = [
     title: "Integrações e Automações Inteligentes",
     description:
       "Conectamos sistemas, ERPs, CRMs e APIs para automatizar processos com integrações robustas e confiáveis.",
-    image: integracoesImage,
+    image: "/images/unti-digital-homepage-image-slider-servicos-integracoes-e-automacoes-inteligentes.png",
     ctaPrimary: "Falar com especialista",
     ctaSecondary: "Ver cases"
   },
@@ -37,7 +34,7 @@ const slides: Slide[] = [
     title: "White-label técnico para agências",
     description:
       "Oferecemos suporte técnico especializado para agências digitais que precisam escalar projetos com segurança.",
-    image: whiteLabelImage,
+    image: "/images/unti-digital-homepage-image-slider-servicos-white-label-tecnico-para-agencias.png",
     ctaPrimary: "Falar com especialista",
     ctaSecondary: "Ver soluções"
   }
@@ -52,13 +49,13 @@ export function HeroCarousel() {
 
     const interval = setInterval(() => {
       setActiveSlide((prev) => (prev + 1) % slides.length);
-    }, 11000); // Slower autoplay for a smoother experience
+    }, 11000);
     return () => clearInterval(interval);
   }, [isAutoPlay]);
 
   const goToSlide = (index: number) => {
     setActiveSlide(index);
-    setIsAutoPlay(true); // Retoma auto-play após 5 segundos de inatividade
+    setIsAutoPlay(true);
   };
 
   const nextSlide = () => {
@@ -74,8 +71,7 @@ export function HeroCarousel() {
   const currentSlide = slides[activeSlide];
 
   return (
-    <div className="max-w-[760px] mx-auto mt-0 px-6 relative">
-      {/* Slide Content */}
+    <div className="relative mx-auto mt-0 max-w-[760px] px-6">
       <AnimatePresence mode="wait">
         <motion.div
           key={activeSlide}
@@ -83,10 +79,9 @@ export function HeroCarousel() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.9, ease: "easeInOut" }}
-          className="flex flex-col items-center text-center space-y-8"
+          className="flex flex-col items-center space-y-8 text-center"
         >
-          {/* Image/Video Area */}
-          <div className="relative w-full max-w-2xl mx-auto aspect-video rounded-xl overflow-hidden shadow-lg">
+          <div className="relative mx-auto aspect-video w-full max-w-2xl overflow-hidden rounded-xl shadow-lg">
             <Image
               src={currentSlide.image}
               alt={currentSlide.title}
@@ -95,42 +90,33 @@ export function HeroCarousel() {
             />
           </div>
 
-          {/* Dynamic Headline */}
-          <h2 className="text-2xl md:text-3xl font-bold max-w-3xl">
+          <h2 className="max-w-3xl text-2xl font-bold md:text-3xl">
             {currentSlide.title}
           </h2>
 
-          {/* Description */}
-          <p className="text-base md:text-lg text-gray-600 max-w-2xl leading-relaxed">
+          <p className="max-w-2xl text-base leading-relaxed text-gray-600 md:text-lg">
             {currentSlide.description}
           </p>
 
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-3">
-            <Button
-              variant="primary"
-              onClick={() => window.location.href = '/contato'}
-            >
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <Button variant="primary" onClick={() => (window.location.href = "/contato")}>
               {currentSlide.ctaPrimary}
             </Button>
-            <Button
-              variant="secondary"
-              onClick={() => window.location.href = '/cases'}
-            >
+            <Button variant="secondary" onClick={() => (window.location.href = "/cases")}>
               {currentSlide.ctaSecondary}
             </Button>
           </div>
 
-          {/* Dots Navigation */}
           <div className="flex justify-center gap-2 pt-4">
             {slides.map((_, index) => (
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`transition-all ${index === activeSlide
-                  ? "w-8 h-2 bg-unti-blue"
-                  : "w-2 h-2 bg-gray-300 hover:bg-gray-400"
-                  } rounded-full`}
+                className={`rounded-full transition-all ${
+                  index === activeSlide
+                    ? "h-2 w-8 bg-unti-blue"
+                    : "h-2 w-2 bg-gray-300 hover:bg-gray-400"
+                }`}
                 aria-label={`Ir para slide ${index + 1}`}
               />
             ))}
@@ -138,24 +124,23 @@ export function HeroCarousel() {
         </motion.div>
       </AnimatePresence>
 
-      {/* Navigation Arrows - Centered Horizontally */}
-      <div className="absolute top-[40%] left-0 right-0 flex justify-between px-4 pointer-events-none">
+      <div className="pointer-events-none absolute left-0 right-0 top-[40%] flex justify-between px-4">
         <button
           onClick={prevSlide}
-          className="w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-gray-50 transition-colors pointer-events-auto"
+          className="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-lg transition-colors hover:bg-gray-50"
           aria-label="Slide anterior"
         >
-          <svg className="w-6 h-6 text-unti-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg className="h-6 w-6 text-unti-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
         </button>
 
         <button
           onClick={nextSlide}
-          className="w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-gray-50 transition-colors pointer-events-auto"
+          className="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-lg transition-colors hover:bg-gray-50"
           aria-label="Próximo slide"
         >
-          <svg className="w-6 h-6 text-unti-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg className="h-6 w-6 text-unti-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
         </button>
