@@ -1,6 +1,14 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import {
+  animate,
+  motion,
+  useAnimationFrame,
+  useMotionValue,
+  type AnimationPlaybackControls,
+  type PanInfo
+} from "framer-motion";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
@@ -9,282 +17,396 @@ import { Button } from "@/components/ui/Button";
 import { Modal } from "@/components/ui/Modal";
 import { services, Service } from "@/data/services";
 
-const AUTOPLAY_DELAY = 4200;
-const INTERACTION_PAUSE_DELAY = 1800;
+const AUTO_SCROLL_PX_PER_SECOND = 90;
+const INTERACTION_PAUSE_DELAY = 1400;
 
 export function ServicesCarousel() {
   const [selectedService, setSelectedService] = useState<Service | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isHovering, setIsHovering] = useState(false);
-  const [isInteracting, setIsInteracting] = useState(false);
-  const [isTrackInView, setIsTrackInView] = useState(false);
+  const [groupWidth, setGroupWidth] = useState(0);
+  const [stepWidth, setStepWidth] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+  const [isTemporarilyPaused, setIsTemporarilyPaused] = useState(false);
+  const [isInView, setIsInView] = useState(false);
+  const viewportRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
-  const cardRefs = useRef<Array<HTMLElement | null>>([]);
+  const firstCardRef = useRef<HTMLDivElement>(null);
+  const animationRef = useRef<AnimationPlaybackControls | null>(null);
+  const resumeTimeoutRef = useRef<number | null>(null);
+  const suppressClickRef = useRef(false);
+  const dragDistanceRef = useRef(0);
   const activeIndexRef = useRef(0);
-  const interactionTimeoutRef = useRef<number | null>(null);
-  const scrollFrameRef = useRef<number | null>(null);
+  const x = useMotionValue(0);
+  const infiniteServices = [...services, ...services, ...services];
 
-  const clearInteractionTimeout = useCallback(() => {
-    if (interactionTimeoutRef.current !== null) {
-      window.clearTimeout(interactionTimeoutRef.current);
-      interactionTimeoutRef.current = null;
+  const clearResumeTimeout = useCallback(() => {
+    if (resumeTimeoutRef.current !== null) {
+      window.clearTimeout(resumeTimeoutRef.current);
+      resumeTimeoutRef.current = null;
     }
   }, []);
 
-  const pauseAutoplayAfterInteraction = useCallback(() => {
-    clearInteractionTimeout();
-    setIsInteracting(true);
-    interactionTimeoutRef.current = window.setTimeout(() => {
-      setIsInteracting(false);
-      interactionTimeoutRef.current = null;
+  const stopAnimation = useCallback(() => {
+    animationRef.current?.stop();
+    animationRef.current = null;
+  }, []);
+
+  const pauseAutoplayTemporarily = useCallback(() => {
+    clearResumeTimeout();
+    setIsTemporarilyPaused(true);
+    resumeTimeoutRef.current = window.setTimeout(() => {
+      setIsTemporarilyPaused(false);
+      resumeTimeoutRef.current = null;
     }, INTERACTION_PAUSE_DELAY);
-  }, [clearInteractionTimeout]);
+  }, [clearResumeTimeout]);
 
-  const scrollToIndex = useCallback(
-    (index: number, behavior: ScrollBehavior = "smooth") => {
-      const normalizedIndex = ((index % services.length) + services.length) % services.length;
-      const currentIndex = activeIndexRef.current;
-      const isWrapAround =
-        (currentIndex === services.length - 1 && normalizedIndex === 0) ||
-        (currentIndex === 0 && normalizedIndex === services.length - 1);
-      const track = trackRef.current;
-      const targetCard = cardRefs.current[normalizedIndex];
+  const normalizeX = useCallback(
+    (value: number) => {
+      if (!groupWidth) return value;
 
-      if (!track || !targetCard) return;
+      let nextValue = value;
 
-      const rawLeft =
-        targetCard.offsetLeft - (track.clientWidth - targetCard.offsetWidth) / 2;
-      const maxLeft = Math.max(track.scrollWidth - track.clientWidth, 0);
-      const left = Math.min(Math.max(rawLeft, 0), maxLeft);
+      while (nextValue > -groupWidth) {
+        nextValue -= groupWidth;
+      }
 
-      track.scrollTo({
-        left,
-        behavior: isWrapAround ? "auto" : behavior
-      });
+      while (nextValue <= -2 * groupWidth) {
+        nextValue += groupWidth;
+      }
 
-      activeIndexRef.current = normalizedIndex;
-      setActiveIndex(normalizedIndex);
+      return nextValue;
     },
-    []
+    [groupWidth]
   );
 
-  const updateActiveIndexFromScroll = useCallback(() => {
-    if (!trackRef.current) return;
+  const updateActiveIndexFromX = useCallback(
+    (value: number) => {
+      if (!groupWidth || !stepWidth) return;
 
-    const containerRect = trackRef.current.getBoundingClientRect();
-    const containerCenter = containerRect.left + containerRect.width / 2;
+      const logicalOffset =
+        (((-value - groupWidth) % groupWidth) + groupWidth) % groupWidth;
+      const nextIndex =
+        Math.floor((logicalOffset + stepWidth / 2) / stepWidth) % services.length;
 
-    let closestIndex = 0;
-    let closestDistance = Number.POSITIVE_INFINITY;
+      activeIndexRef.current = nextIndex;
+      setActiveIndex((current) => (current === nextIndex ? current : nextIndex));
+    },
+    [groupWidth, stepWidth]
+  );
 
-    cardRefs.current.forEach((card, index) => {
-      if (!card) return;
+  const resolveTargetX = useCallback(
+    (index: number) => {
+      if (!groupWidth || !stepWidth) return x.get();
 
-      const rect = card.getBoundingClientRect();
-      const cardCenter = rect.left + rect.width / 2;
-      const distance = Math.abs(containerCenter - cardCenter);
+      const normalizedIndex = ((index % services.length) + services.length) % services.length;
+      const itemOffset = normalizedIndex * stepWidth;
+      const currentX = x.get();
+      const candidates = [
+        -itemOffset,
+        -(groupWidth + itemOffset),
+        -(2 * groupWidth + itemOffset)
+      ];
 
-      if (distance < closestDistance) {
-        closestDistance = distance;
-        closestIndex = index;
-      }
-    });
+      return candidates.reduce((closest, candidate) => {
+        return Math.abs(candidate - currentX) < Math.abs(closest - currentX)
+          ? candidate
+          : closest;
+      });
+    },
+    [groupWidth, stepWidth, x]
+  );
 
-    activeIndexRef.current = closestIndex;
-    setActiveIndex((current) => (current === closestIndex ? current : closestIndex));
-  }, []);
+  const animateToX = useCallback(
+    (targetX: number) => {
+      stopAnimation();
+      pauseAutoplayTemporarily();
 
-  const handleScroll = useCallback(() => {
-    if (scrollFrameRef.current !== null) {
-      window.cancelAnimationFrame(scrollFrameRef.current);
-    }
+      animationRef.current = animate(x, targetX, {
+        duration: 0.8,
+        ease: "easeInOut",
+        onUpdate: (latest) => {
+          updateActiveIndexFromX(latest);
+        },
+        onComplete: () => {
+          const normalized = normalizeX(x.get());
+          x.set(normalized);
+          updateActiveIndexFromX(normalized);
+          animationRef.current = null;
+        }
+      });
+    },
+    [normalizeX, pauseAutoplayTemporarily, stopAnimation, updateActiveIndexFromX, x]
+  );
 
-    scrollFrameRef.current = window.requestAnimationFrame(() => {
-      updateActiveIndexFromScroll();
-      scrollFrameRef.current = null;
-    });
-  }, [updateActiveIndexFromScroll]);
+  const goToIndex = useCallback(
+    (index: number) => {
+      const normalizedIndex = ((index % services.length) + services.length) % services.length;
+      const targetX = resolveTargetX(normalizedIndex);
+      activeIndexRef.current = normalizedIndex;
+      setActiveIndex(normalizedIndex);
+      animateToX(targetX);
+    },
+    [animateToX, resolveTargetX]
+  );
 
-  const goToIndex = (index: number) => {
-    pauseAutoplayAfterInteraction();
-    scrollToIndex(index);
-  };
+  const handleCardClick = (service: Service) => {
+    if (suppressClickRef.current) return;
 
-  const openService = (service: Service) => {
-    pauseAutoplayAfterInteraction();
+    pauseAutoplayTemporarily();
     setSelectedService(service);
   };
 
+  const handleDragStart = () => {
+    stopAnimation();
+    clearResumeTimeout();
+    setIsTemporarilyPaused(true);
+    setIsDragging(true);
+    dragDistanceRef.current = 0;
+    suppressClickRef.current = false;
+  };
+
+  const handleDrag = (_event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
+    dragDistanceRef.current += info.delta.x;
+
+    if (Math.abs(dragDistanceRef.current) > 6) {
+      suppressClickRef.current = true;
+    }
+
+    const normalized = normalizeX(x.get());
+    if (normalized !== x.get()) {
+      x.set(normalized);
+    }
+
+    updateActiveIndexFromX(normalized);
+  };
+
+  const handleDragEnd = () => {
+    setIsDragging(false);
+
+    if (!stepWidth || !groupWidth) {
+      setIsTemporarilyPaused(false);
+      return;
+    }
+
+    const logicalOffset =
+      (((-x.get() - groupWidth) % groupWidth) + groupWidth) % groupWidth;
+    const nearestIndex = Math.round(logicalOffset / stepWidth) % services.length;
+
+    activeIndexRef.current = nearestIndex;
+    setActiveIndex(nearestIndex);
+    animateToX(resolveTargetX(nearestIndex));
+
+    window.setTimeout(() => {
+      dragDistanceRef.current = 0;
+      suppressClickRef.current = false;
+    }, 0);
+  };
+
+  useLayoutEffect(() => {
+    const measureTrack = () => {
+      const track = trackRef.current;
+      const firstCard = firstCardRef.current;
+      if (!track || !firstCard) return;
+
+      const styles = window.getComputedStyle(track);
+      const gap = parseFloat(styles.columnGap || styles.gap || "0");
+      const nextStepWidth = firstCard.offsetWidth + gap;
+      const nextGroupWidth = services.length * nextStepWidth;
+      const nextX = -(nextGroupWidth + activeIndexRef.current * nextStepWidth);
+
+      stopAnimation();
+      setStepWidth(nextStepWidth);
+      setGroupWidth(nextGroupWidth);
+      x.set(nextX);
+      updateActiveIndexFromX(nextX);
+    };
+
+    measureTrack();
+    window.addEventListener("resize", measureTrack);
+
+    return () => window.removeEventListener("resize", measureTrack);
+  }, [stopAnimation, updateActiveIndexFromX, x]);
+
   useEffect(() => {
-    const track = trackRef.current;
-    if (!track) return;
+    const viewport = viewportRef.current;
+    if (!viewport) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsTrackInView(entry.isIntersecting);
+        setIsInView(entry.isIntersecting);
       },
       {
         threshold: 0.35
       }
     );
 
-    observer.observe(track);
+    observer.observe(viewport);
 
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    const initializeCarousel = () => {
-      scrollToIndex(activeIndexRef.current, "auto");
-      updateActiveIndexFromScroll();
-    };
+  useAnimationFrame((_time, delta) => {
+    if (
+      !groupWidth ||
+      !stepWidth ||
+      isHovered ||
+      isDragging ||
+      isTemporarilyPaused ||
+      !isInView ||
+      !!selectedService ||
+      animationRef.current
+    ) {
+      return;
+    }
 
-    initializeCarousel();
-    window.addEventListener("resize", initializeCarousel);
-
-    return () => window.removeEventListener("resize", initializeCarousel);
-  }, [scrollToIndex, updateActiveIndexFromScroll]);
-
-  useEffect(() => {
-    if (!isTrackInView || isHovering || isInteracting || selectedService) return;
-
-    const intervalId = window.setInterval(() => {
-      scrollToIndex(activeIndexRef.current + 1);
-    }, AUTOPLAY_DELAY);
-
-    return () => window.clearInterval(intervalId);
-  }, [isHovering, isInteracting, isTrackInView, scrollToIndex, selectedService]);
+    const nextX = normalizeX(x.get() - AUTO_SCROLL_PX_PER_SECOND * (delta / 1000));
+    x.set(nextX);
+    updateActiveIndexFromX(nextX);
+  });
 
   useEffect(() => {
     return () => {
-      clearInteractionTimeout();
-
-      if (scrollFrameRef.current !== null) {
-        window.cancelAnimationFrame(scrollFrameRef.current);
-      }
+      clearResumeTimeout();
+      stopAnimation();
     };
-  }, [clearInteractionTimeout]);
+  }, [clearResumeTimeout, stopAnimation]);
 
   return (
     <Section className="overflow-hidden">
       <Container>
-        <div className="mb-16 text-center">
+        <div className="mb-16 text-left">
           <h2 className="mb-4 text-3xl font-bold text-brand-dark md:text-4xl">
             Nossas soluções digitais
           </h2>
-          <p className="mx-auto max-w-3xl text-lg text-brand-muted">
+          <p className="max-w-3xl text-lg text-brand-muted">
             Serviços desenvolvidos para empresas e agências que precisam de performance, segurança e escala.
           </p>
         </div>
-      </Container>
 
-      <div className="relative mx-auto max-w-[1440px]">
-        <button
-          type="button"
-          onClick={() => goToIndex(activeIndexRef.current - 1)}
-          className="absolute left-2 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white p-3 shadow-lg transition-colors hover:bg-gray-50 md:left-4"
-          aria-label="Anterior"
-        >
-          <svg className="h-6 w-6 text-unti-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
-        </button>
+        <div className="relative">
+          <button
+            type="button"
+            onClick={() => goToIndex(activeIndexRef.current - 1)}
+            className="absolute left-0 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white p-3 shadow-lg transition-colors hover:bg-gray-50"
+            aria-label="Anterior"
+          >
+            <svg className="h-6 w-6 text-unti-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
 
-        <div
-          ref={trackRef}
-          onScroll={handleScroll}
-          onMouseEnter={() => setIsHovering(true)}
-          onMouseLeave={() => setIsHovering(false)}
-          onPointerDown={() => pauseAutoplayAfterInteraction()}
-          className="no-scrollbar flex snap-x snap-mandatory gap-6 overflow-x-auto overflow-y-hidden scroll-smooth pb-6"
-          style={{
-            paddingLeft: "max(1rem, calc((100% - 360px) / 2))",
-            paddingRight: "max(1rem, calc((100% - 360px) / 2))",
-            touchAction: "pan-y"
-          }}
-        >
-          {services.map((service, index) => (
-            <article
-              key={service.slug}
-              ref={(element) => {
-                cardRefs.current[index] = element;
-              }}
-              role="button"
-              tabIndex={0}
-              onClick={() => openService(service)}
-              onKeyDown={(event) => {
-                if (event.key === "Enter" || event.key === " ") {
-                  event.preventDefault();
-                  openService(service);
-                }
-              }}
-              className="group w-[360px] flex-shrink-0 snap-center cursor-pointer"
+          <div
+            ref={viewportRef}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            className="overflow-hidden"
+          >
+            <motion.div
+              ref={trackRef}
+              drag="x"
+              dragElastic={0.04}
+              dragMomentum={false}
+              onDragStart={handleDragStart}
+              onDrag={handleDrag}
+              onDragEnd={handleDragEnd}
+              style={{ x }}
+              className="flex w-max gap-6 cursor-grab active:cursor-grabbing"
             >
-              <Card className="flex h-full min-h-[420px] flex-col rounded-2xl border border-neutral-200 bg-white p-8 shadow-[0_18px_50px_rgba(15,23,42,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-                <div className="relative mb-6 aspect-video overflow-hidden rounded-2xl">
-                  <Image
-                    src={service.image}
-                    alt={service.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
+              {infiniteServices.map((service, index) => {
+                const isAgencyService = service.slug === "white-label";
 
-                <div className="flex h-full flex-col space-y-4">
-                  <h3 className="text-xl font-semibold text-brand-dark">
-                    {service.title}
-                  </h3>
-                  <p className="text-sm leading-relaxed text-brand-muted">
-                    {service.shortDescription}
-                  </p>
-
-                  <div className="mt-auto pt-3">
-                    <Button
-                      type="button"
-                      variant="link"
-                      className="!h-auto !px-0 text-sm font-semibold"
-                      onClick={(event) => {
-                        event.stopPropagation();
-                        openService(service);
-                      }}
+                return (
+                  <article
+                    key={`${service.slug}-${index}`}
+                    ref={index === services.length ? firstCardRef : undefined}
+                    role="button"
+                    tabIndex={0}
+                    onClick={() => handleCardClick(service)}
+                    onKeyDown={(event) => {
+                      if (event.key === "Enter" || event.key === " ") {
+                        event.preventDefault();
+                        handleCardClick(service);
+                      }
+                    }}
+                    className="group w-[320px] flex-shrink-0 cursor-pointer sm:w-[360px]"
+                  >
+                    <Card
+                      className={`flex h-full min-h-[420px] flex-col rounded-2xl border p-8 shadow-[0_18px_50px_rgba(15,23,42,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${
+                        isAgencyService
+                          ? "border-blue-500 bg-blue-600 text-white"
+                          : "border-neutral-200 bg-white"
+                      }`}
                     >
-                      Ver detalhes →
-                    </Button>
-                  </div>
-                </div>
-              </Card>
-            </article>
-          ))}
-        </div>
+                      <div className="relative mb-6 aspect-video overflow-hidden rounded-2xl">
+                        <Image
+                          src={service.image}
+                          alt={service.title}
+                          fill
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                      </div>
 
-        <button
-          type="button"
-          onClick={() => goToIndex(activeIndexRef.current + 1)}
-          className="absolute right-2 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white p-3 shadow-lg transition-colors hover:bg-gray-50 md:right-4"
-          aria-label="Próximo"
-        >
-          <svg className="h-6 w-6 text-unti-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
-        </button>
+                      <div className="flex h-full flex-col space-y-4">
+                        <h3 className={`text-xl font-semibold ${isAgencyService ? "text-white" : "text-brand-dark"}`}>
+                          {service.title}
+                        </h3>
+                        <p className={`text-sm leading-relaxed ${isAgencyService ? "text-blue-50" : "text-brand-muted"}`}>
+                          {service.shortDescription}
+                        </p>
 
-        <div className="mt-6 flex justify-center gap-2">
-          {services.map((service, index) => (
-            <button
-              key={service.slug}
-              type="button"
-              onClick={() => goToIndex(index)}
-              className={`h-2 rounded-full transition-all ${
-                index === activeIndex
-                  ? "w-8 bg-unti-blue"
-                  : "w-2 bg-gray-300 hover:bg-gray-400"
-              }`}
-              aria-label={`Ir para slide ${index + 1}`}
-              aria-current={index === activeIndex}
-            />
-          ))}
+                        <div className="mt-auto pt-3">
+                          <Button
+                            type="button"
+                            variant="link"
+                            className={`!h-auto !px-0 text-sm font-semibold ${
+                              isAgencyService ? "text-white hover:text-white/80" : ""
+                            }`}
+                            onClick={(event) => {
+                              event.stopPropagation();
+                              handleCardClick(service);
+                            }}
+                          >
+                            Ver detalhes →
+                          </Button>
+                        </div>
+                      </div>
+                    </Card>
+                  </article>
+                );
+              })}
+            </motion.div>
+          </div>
+
+          <button
+            type="button"
+            onClick={() => goToIndex(activeIndexRef.current + 1)}
+            className="absolute right-0 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white p-3 shadow-lg transition-colors hover:bg-gray-50"
+            aria-label="Próximo"
+          >
+            <svg className="h-6 w-6 text-unti-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+
+          <div className="mt-6 flex justify-center gap-2">
+            {services.map((service, index) => (
+              <button
+                key={service.slug}
+                type="button"
+                onClick={() => goToIndex(index)}
+                className={`h-2 rounded-full transition-all ${
+                  index === activeIndex
+                    ? "w-8 bg-unti-blue"
+                    : "w-2 bg-gray-300 hover:bg-gray-400"
+                }`}
+                aria-label={`Ir para slide ${index + 1}`}
+                aria-current={index === activeIndex}
+              />
+            ))}
+          </div>
         </div>
-      </div>
+      </Container>
 
       {selectedService && (
         <Modal
