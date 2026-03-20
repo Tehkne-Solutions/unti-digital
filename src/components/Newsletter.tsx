@@ -1,11 +1,17 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/Button";
 
 export function Newsletter() {
+  const pathname = usePathname();
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+
+  if (pathname === "/contato") {
+    return null;
+  }
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();

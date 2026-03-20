@@ -40,7 +40,10 @@ export function LeadModal() {
       const response = await fetch("/api/leads", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(state)
+        body: JSON.stringify({
+          ...state,
+          origem: "lead-modal"
+        })
       });
 
       if (!response.ok) {
