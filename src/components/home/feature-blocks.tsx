@@ -46,7 +46,7 @@ export function FeatureBlocks() {
                 <h2 className="max-w-xl text-3xl font-medium md:text-4xl">
                   {feature.title}
                 </h2>
-                <p className="max-w-xl text-lg leading-relaxed text-gray-600">
+                <p className="max-w-xl text-lg leading-relaxed text-brand-muted">
                   {feature.description}
                 </p>
               </div>

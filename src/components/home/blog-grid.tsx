@@ -44,7 +44,7 @@ export function BlogGrid() {
           <h2 className="mb-4 text-3xl font-bold md:text-4xl">
             Insights sobre tecnologia e performance digital
           </h2>
-          <p className="max-w-3xl text-lg text-gray-600">
+          <p className="max-w-3xl text-lg text-brand-muted">
             Conteúdos para empresas que buscam clareza, escala e previsibilidade.
           </p>
         </div>
@@ -74,7 +74,7 @@ export function BlogGrid() {
                   {post.title}
                 </h3>
 
-                <p className="text-sm leading-relaxed text-gray-600">
+                <p className="text-sm leading-relaxed text-brand-muted">
                   {post.description}
                 </p>
 

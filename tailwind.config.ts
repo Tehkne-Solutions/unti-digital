@@ -13,17 +13,21 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          dark: "#1A1A1A",
-          muted: "#4B5563",
+          700: "#2f5edc",
+          dark: "#121212",
+          muted: "#52525b",
           primary: "#396cff"
         },
         unti: {
           blue: "#396cff",
+          cta: "#396cff",
           dark: "#1A1A1A",
           light: "#7fa2ff",
           pastel: "#c3d6fc",
           orange: "#ff9900",
           muted: "#4B5563",
+          primary: "#396cff",
+          primarySoft: "#dbe7ff",
           border: "#E5E7EB",
           surface: "#F8FAFC",
           heading: "#1A1A1A",

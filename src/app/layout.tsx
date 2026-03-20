@@ -13,9 +13,34 @@ const ubuntu = Ubuntu({
 });
 
 export const metadata: Metadata = {
-  title: "UNTI - Servicos de Tecnologia",
+  metadataBase: new URL("https://untidigital.com.br"),
+  title: "UNTI Digital | Solucoes de Performance, Seguranca e Escala",
   description:
-    "Site institucional da UNTI com foco em servicos de tecnologia, plataformas web e integracoes.",
+    "Desenvolvimento de alta performance para empresas e agencias que buscam resultados reais.",
+  openGraph: {
+    title: "UNTI Digital | Solucoes de Performance, Seguranca e Escala",
+    description:
+      "Desenvolvimento de alta performance para empresas e agencias que buscam resultados reais.",
+    url: "https://untidigital.com.br",
+    siteName: "UNTI Digital",
+    locale: "pt_BR",
+    type: "website",
+    images: [
+      {
+        url: "/images/unti-digital-homepage-image-hero-bg.jpeg",
+        width: 1600,
+        height: 900,
+        alt: "UNTI Digital"
+      }
+    ]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "UNTI Digital | Solucoes de Performance, Seguranca e Escala",
+    description:
+      "Desenvolvimento de alta performance para empresas e agencias que buscam resultados reais.",
+    images: ["/images/unti-digital-homepage-image-hero-bg.jpeg"]
+  },
   icons: {
     icon: "/images/unti-digital-favicon.png",
     shortcut: "/images/unti-digital-favicon.png",

@@ -8,19 +8,38 @@ import { FinalCTA } from "@/components/home/final-cta";
 import { HowWeWork } from "@/components/home/how-we-work";
 import { FixedCTA } from "@/components/home/fixed-cta";
 import CasesSection from "@/components/CasesSection";
+import { SectionReveal } from "@/components/ui/SectionReveal";
 
 export default function HomePage() {
   return (
     <>
-      <Hero />
-      <LogoCloud />
-      <Segmentation />
-      <HowWeWork />
-      <ServicesCarousel />
-      <CasesSection />
-      <FeatureBlocks />
-      <BlogGrid />
-      <FinalCTA />
+      <SectionReveal>
+        <Hero />
+      </SectionReveal>
+      <SectionReveal>
+        <LogoCloud />
+      </SectionReveal>
+      <SectionReveal>
+        <Segmentation />
+      </SectionReveal>
+      <SectionReveal>
+        <HowWeWork />
+      </SectionReveal>
+      <SectionReveal>
+        <ServicesCarousel />
+      </SectionReveal>
+      <SectionReveal>
+        <CasesSection />
+      </SectionReveal>
+      <SectionReveal>
+        <FeatureBlocks />
+      </SectionReveal>
+      <SectionReveal>
+        <BlogGrid />
+      </SectionReveal>
+      <SectionReveal>
+        <FinalCTA />
+      </SectionReveal>
       <FixedCTA />
     </>
   );

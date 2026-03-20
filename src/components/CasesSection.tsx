@@ -8,7 +8,7 @@ export default function CasesSection() {
         <h2 className="mb-4 text-center text-3xl font-bold text-brand-dark md:text-4xl">
           Projetos que geram impacto real
         </h2>
-        <p className="mx-auto mb-12 max-w-2xl text-center text-gray-600">
+        <p className="mx-auto mb-12 max-w-2xl text-center text-brand-muted">
           Resultados mensuráveis em tecnologia e performance digital.
         </p>
         <div className="grid gap-8 md:grid-cols-3">

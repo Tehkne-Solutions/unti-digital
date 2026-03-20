@@ -89,7 +89,7 @@ export default function LogoCloud() {
           <h2 className="mb-4 text-3xl font-bold text-brand-dark md:text-4xl">
             Tecnologia que impulsiona empresas reais
           </h2>
-          <p className="text-gray-500">
+          <p className="text-brand-muted">
             Clique em um cliente para ver o projeto e resultados alcançados
           </p>
         </div>
@@ -141,7 +141,7 @@ export default function LogoCloud() {
         </div>
 
         <div className="mt-12 text-center">
-          <p className="mb-4 text-gray-600">
+          <p className="mb-4 text-brand-muted">
             Quer alcançar resultados como esses?
           </p>
           <Link href="/contato">
