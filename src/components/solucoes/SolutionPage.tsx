@@ -32,11 +32,18 @@ export interface SolutionPageProps {
     title: string;
     subtitle: string;
     benefits: SolutionBenefit[];
+    benefitsTitle?: string;
+    benefitsSubtitle?: string;
     afterBenefitsSection?: React.ReactNode;
     processSteps: SolutionStep[];
+    processTitle?: string;
     keyMessage?: string;
     keyText?: string;
     imageSections?: SolutionImageSection[];
+    heroCtaButtonText?: string;
+    heroCtaButtonHref?: string;
+    heroSecondaryCtaText?: string;
+    heroSecondaryCtaHref?: string;
     ctaTitle?: string;
     ctaText?: string;
     ctaButtonText?: string;
@@ -51,11 +58,18 @@ export function SolutionPage({
     title,
     subtitle,
     benefits,
+    benefitsTitle = "Por que investir nesta solucao?",
+    benefitsSubtitle = "Estas vantagens estruturam sua jornada digital com resultados reais e previsiveis.",
     afterBenefitsSection,
     processSteps,
+    processTitle = "Como trabalhamos",
     keyMessage,
     keyText,
     imageSections,
+    heroCtaButtonText,
+    heroCtaButtonHref,
+    heroSecondaryCtaText,
+    heroSecondaryCtaHref,
     ctaTitle = "Pronto para escalar sua presenca digital com seguranca?",
     ctaText = "Fale com um especialista e descubra como podemos estruturar sua operacao digital com previsibilidade e performance.",
     ctaButtonText = "Falar com especialista",
@@ -107,11 +121,20 @@ export function SolutionPage({
                             <p className="mb-8 text-lg text-zinc-600 md:text-xl">{subtitle}</p>
                         </SectionReveal>
                         <SectionReveal>
-                            <Link href={ctaButtonHref}>
-                                <Button className="interactive-btn" variant="primary">
-                                    {ctaButtonText}
-                                </Button>
-                            </Link>
+                            <div className="flex flex-col gap-3 sm:flex-row">
+                                <Link href={heroCtaButtonHref ?? ctaButtonHref}>
+                                    <Button className="interactive-btn" variant="primary">
+                                        {heroCtaButtonText ?? ctaButtonText}
+                                    </Button>
+                                </Link>
+                                {heroSecondaryCtaText && heroSecondaryCtaHref && (
+                                    <Link href={heroSecondaryCtaHref}>
+                                        <Button className="min-w-[220px]" variant="secondary">
+                                            {heroSecondaryCtaText}
+                                        </Button>
+                                    </Link>
+                                )}
+                            </div>
                         </SectionReveal>
                     </div>
                 </Container>
@@ -121,10 +144,10 @@ export function SolutionPage({
                 <Container>
                     <SectionReveal className="mb-12 text-center">
                         <h2 className="text-3xl font-bold text-zinc-900 md:text-4xl">
-                            Por que investir nesta solucao?
+                            {benefitsTitle}
                         </h2>
                         <p className="mx-auto mt-4 max-w-3xl text-zinc-600">
-                            Estas vantagens estruturam sua jornada digital com resultados reais e previsiveis.
+                            {benefitsSubtitle}
                         </p>
                     </SectionReveal>
 
@@ -148,7 +171,7 @@ export function SolutionPage({
                     <div className="mx-auto max-w-5xl">
                         <SectionReveal>
                             <h2 className="mb-8 text-center text-3xl font-bold text-white md:text-4xl">
-                                Como trabalhamos
+                                {processTitle}
                             </h2>
                         </SectionReveal>
                         <ProcessSteps steps={processSteps} />
