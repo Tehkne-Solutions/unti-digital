@@ -1,12 +1,4 @@
-import { SolutionHeroWithImage } from "@/components/solucoes/SolutionHeroWithImage";
-import { SolutionProblems } from "@/components/solucoes/SolutionProblems";
-import { SolutionTechStack } from "@/components/solucoes/SolutionTechStack";
-import { SolutionResults } from "@/components/solucoes/SolutionResults";
-import { SolutionBenefits } from "@/components/solucoes/SolutionBenefits";
-import { SolutionProcess } from "@/components/solucoes/SolutionProcess";
-import { SolutionCases } from "@/components/solucoes/SolutionCases";
-import { SolutionCTA } from "@/components/solucoes/SolutionCTA";
-import { Breadcrumb } from "@/components/ui/Breadcrumb";
+﻿import { SolutionPage, SolutionBenefit, SolutionStep } from "@/components/solucoes/SolutionPage";
 
 export const metadata = {
     title: "Sites Institucionais de Alta Performance | Unti Digital",
@@ -31,126 +23,32 @@ const schemaMarkup = {
     areaServed: "BR",
 };
 
+const benefits: SolutionBenefit[] = [
+    { title: "Design Exclusivo", description: "Layout sob medida para sua marca, com identidade visual única e linguagem de comunicação clara." },
+    { title: "SEO Otimizado", description: "Estrutura técnica e conteúdo preparado para ranqueamento, velocidade e indexação orgânica." },
+    { title: "Velocidade de Carregamento", description: "Performance de carregamento rápido e fluida em desktop e mobile, reduzindo taxa de rejeição." },
+    { title: "Foco em Conversão", description: "Arquitetura de jornada focada em lead gen e geração de oportunidades para seu time de vendas." },
+];
+
+const processSteps: SolutionStep[] = [
+    { title: "Briefing e alinhamento", description: "Mapeamos metas, público, benchmark e KPI para o novo site institucional." },
+    { title: "Design UX/UI", description: "Prototipamos com foco em clareza, acessibilidade e performance mobile-first." },
+    { title: "Desenvolvimento e integração", description: "Construímos com Next.js, SEO técnico, integração CRM/ERP e automação de dados." },
+    { title: "Lançamento e otimização", description: "Deploy seguro, testes A/B e monitoramento para evolução contínua do site." },
+];
+
 export default function SitesInstitucionaisPage() {
-    const problems = [
-        {
-            title: "Sites lentos e difíceis de atualizar",
-            description: "Estruturas antigas prejudicam SEO, conversão e experiência do usuário.",
-        },
-        {
-            title: "Falta de integração com sistemas",
-            description: "Sites isolados dificultam automação de marketing e gestão de leads.",
-        },
-        {
-            title: "Baixa geração de oportunidades",
-            description: "Estrutura inadequada impede que o site gere novos negócios.",
-        },
-    ];
-
-    const technologies = [
-        "Next.js",
-        "Node.js",
-        "SEO técnico",
-        "APIs REST",
-        "Arquitetura escalável",
-        "Performance otimizada",
-    ];
-
-    const results = [
-        {
-            metric: "+180%",
-            description: "Aumento médio de conversões",
-        },
-        {
-            metric: "+120%",
-            description: "Crescimento de tráfego orgânico",
-        },
-        {
-            metric: "3x",
-            description: "Mais geração de leads",
-        },
-    ];
-
-    const benefits = [
-        {
-            title: "Performance e SEO estruturado",
-            description: "Estrutura otimizada para velocidade, indexação e geração de leads qualificados.",
-        },
-        {
-            title: "Arquitetura escalável",
-            description: "Projetos preparados para crescer junto com a operação da empresa.",
-        },
-        {
-            title: "Integração com CRM e ERP",
-            description: "Conectamos marketing, vendas e operação em um único ecossistema digital.",
-        },
-    ];
-
-    const steps = [
-        {
-            title: "Diagnóstico estratégico",
-            description: "Entendemos seu negócio, objetivos e desafios para estruturar a melhor solução.",
-        },
-        {
-            title: "Arquitetura e UX",
-            description: "Planejamos a estrutura técnica e a experiência do usuário para conversão máxima.",
-        },
-        {
-            title: "Desenvolvimento estruturado",
-            description: "Desenvolvimento com metodologia clara, documentado e com comunicação contínua.",
-        },
-        {
-            title: "Integração e testes",
-            description: "Conectamos com seus sistemas e validamos toda a plataforma antes do launch.",
-        },
-        {
-            title: "Governança contínua",
-            description: "Acompanhamento, otimizações e evolução da plataforma após o lançamento.",
-        },
-    ];
-
-    const cases = [
-        {
-            title: "Projeto SAVOL",
-            result: "Plataforma institucional integrada com sistemas internos, aumentando conversão em 40%.",
-        },
-        {
-            title: "Projeto corporativo B2B",
-            result: "Estrutura orientada para geração de leads qualificados com integração CRM.",
-        },
-        {
-            title: "Projeto multiunidade",
-            result: "Padronização digital com governança centralizada para múltiplas unidades.",
-        },
-    ];
-
     return (
-        <div className="w-full">
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
-            />
-            <Breadcrumb
-                items={[
-                    { label: "Soluções", href: "/solucoes" },
-                    { label: "Sites Institucionais" },
-                ]}
-            />
-            <SolutionHeroWithImage
-                imageSrc="/images/solutions/unti-digital-solution-high-performance-websites.png"
-                title="Sites Institucionais de Alta Performance"
-                subtitle="Plataformas corporativas focadas em conversão, performance e integração com sistemas internos."
-            />
-            <SolutionProblems problems={problems} />
-            <SolutionTechStack technologies={technologies} />
-            <SolutionResults results={results} />
-            <SolutionBenefits items={benefits} />
-            <SolutionProcess steps={steps} />
-            <SolutionCases cases={cases} />
-            <SolutionCTA
-                title="Vamos estruturar o próximo passo digital da sua empresa?"
-                buttonText="Falar com especialista"
-            />
-        </div>
+        <SolutionPage
+            schemaMarkup={schemaMarkup}
+            breadcrumb={[{ label: "Soluções", href: "/solucoes" }, { label: "Sites Institucionais" }]}
+            preTitle="Solução em Sites Institucionais"
+            title="Criação de Sites Institucionais de Alta Performance"
+            subtitle="Transformamos sua presença digital em uma ferramenta de vendas e autoridade."
+            benefits={benefits}
+            processSteps={processSteps}
+            keyMessage="O que dizíamos no site antigo"
+            keyText="Os serviços da Unti Digital são soluções inteligentes para qualquer empresa e agências de marketing digital que necessitam de experts em desenvolvimento de sites, landing pages, blogs e lojas. Entregamos websites modernos com foco em velocidade, experiência do usuário e alta conversão. Com integração direta a CRM, automação de leads e suporte contínuo, mantemos sua presença digital sempre alinhada às metas de crescimento. Planejamos cada etapa para que o projeto entregue não seja apenas visualmente atrativo, mas também eficiente em geração de resultados e otimizado para o ciclo de vendas."
+        />
     );
 }
