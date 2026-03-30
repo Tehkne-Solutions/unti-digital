@@ -32,6 +32,7 @@ export interface SolutionPageProps {
     title: string;
     subtitle: string;
     benefits: SolutionBenefit[];
+    afterBenefitsSection?: React.ReactNode;
     processSteps: SolutionStep[];
     keyMessage?: string;
     keyText?: string;
@@ -46,20 +47,28 @@ export interface SolutionPageProps {
 export function SolutionPage({
     schemaMarkup,
     breadcrumb,
-    preTitle = "Solução",
+    preTitle = "Solucao",
     title,
     subtitle,
     benefits,
+    afterBenefitsSection,
     processSteps,
     keyMessage,
     keyText,
     imageSections,
-    ctaTitle = "Pronto para escalar sua presença digital com segurança?",
-    ctaText = "Fale com um especialista e descubra como podemos estruturar sua operação digital com previsibilidade e performance.",
+    ctaTitle = "Pronto para escalar sua presenca digital com seguranca?",
+    ctaText = "Fale com um especialista e descubra como podemos estruturar sua operacao digital com previsibilidade e performance.",
     ctaButtonText = "Falar com especialista",
     ctaButtonHref = "/contato",
     extraSection,
 }: SolutionPageProps) {
+    const benefitsGridClassName =
+        benefits.length <= 2
+            ? "grid grid-cols-1 gap-6 sm:grid-cols-2"
+            : benefits.length === 3
+              ? "grid grid-cols-1 gap-6 md:grid-cols-3"
+              : "grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4";
+
     return (
         <div className="w-full">
             {schemaMarkup && (
@@ -112,14 +121,14 @@ export function SolutionPage({
                 <Container>
                     <SectionReveal className="mb-12 text-center">
                         <h2 className="text-3xl font-bold text-zinc-900 md:text-4xl">
-                            Por que investir nesta solução?
+                            Por que investir nesta solucao?
                         </h2>
                         <p className="mx-auto mt-4 max-w-3xl text-zinc-600">
-                            Estas vantagens estruturam sua jornada digital com resultados reais e previsíveis.
+                            Estas vantagens estruturam sua jornada digital com resultados reais e previsiveis.
                         </p>
                     </SectionReveal>
 
-                    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                    <div className={benefitsGridClassName}>
                         {benefits.map((item) => (
                             <SectionReveal key={item.title} className="h-full">
                                 <article className="h-full rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
@@ -131,6 +140,8 @@ export function SolutionPage({
                     </div>
                 </Container>
             </section>
+
+            {afterBenefitsSection}
 
             <section className="w-full bg-unti-blue py-20 text-white">
                 <Container>
