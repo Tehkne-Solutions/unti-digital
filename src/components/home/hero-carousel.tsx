@@ -15,7 +15,7 @@ interface Slide {
 
 const slides: Slide[] = [
   {
-    title: "Hubs Corporativos de Alta Performance",
+    title: "Sites Institucionais de Alta Performance",
     description:
       "Construimos plataformas institucionais premium para empresas que precisam unir autoridade, performance e conversao.",
     image: "/images/unti-digital-homepage-image-slider-servicos-sites-e-plataformas-de-alta-performance.png",
@@ -23,7 +23,7 @@ const slides: Slide[] = [
     ctaSecondary: "Ver portfolio"
   },
   {
-    title: "Automacao Inteligente de Dados",
+    title: "Integracoes com CRM e ERP",
     description:
       "Conectamos CRM, ERP, marketing e operacao para eliminar retrabalho e dar previsibilidade ao fluxo de dados.",
     image: "/images/unti-digital-homepage-image-slider-servicos-integracoes-e-automacoes-inteligentes.png",

@@ -12,7 +12,7 @@ export interface Service {
 export const services: Service[] = [
   {
     slug: "sites-institucionais",
-    title: "Hubs Corporativos de Alta Performance",
+    title: "Sites Institucionais de Alta Performance",
     description: "Sites institucionais premium com foco em conversao, integracao e performance real para empresas B2B.",
     shortDescription: "Sites institucionais premium com foco em conversao, integracao e performance real.",
     fullDescription: "Construimos hubs corporativos desenhados para empresas que buscam autoridade imediata. Unimos design minimalista premium a uma infraestrutura tecnica robusta, com foco em Core Web Vitals, SEO tecnico e integracao com fluxos internos.",

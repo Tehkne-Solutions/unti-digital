@@ -4,7 +4,7 @@ import { PageShell } from "@/components/page-shell";
 
 const services = [
   {
-    title: "Hubs corporativos de alta performance",
+    title: "Sites institucionais de alta performance",
     description: "Para empresas que precisam unir autoridade digital, Core Web Vitals e conversao em um unico ativo.",
     items: [
       "Arquitetura de conversao e narrativa comercial",

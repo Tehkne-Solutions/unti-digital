@@ -1,7 +1,7 @@
 import { SolutionPage, SolutionBenefit, SolutionStep } from "@/components/solucoes/SolutionPage";
 
 export const metadata = {
-    title: "O Braco Tecnologico de Elite da sua Agencia | Unti Digital",
+    title: "White Label Tecnico para Agencias | Unti Digital",
     description: "White Label tecnico para agencias com confidencialidade, engenharia senior sob demanda e entrega invisivel para projetos complexos.",
     keywords: [
         "white label tecnico para agencias",
@@ -14,7 +14,7 @@ export const metadata = {
         canonical: "/solucoes/white-label-agencias",
     },
     openGraph: {
-        title: "O Braco Tecnologico de Elite da sua Agencia | Unti Digital",
+        title: "White Label Tecnico para Agencias | Unti Digital",
         description: "White Label tecnico para agencias com confidencialidade, engenharia senior sob demanda e entrega invisivel para projetos complexos.",
         type: "website",
         url: "https://unti-digital.vercel.app/solucoes/white-label-agencias",
@@ -55,7 +55,7 @@ export default function WhiteLabelAgenciasPage() {
       schemaMarkup={schemaMarkup}
       breadcrumb={[{ label: "Solucoes", href: "/solucoes" }, { label: "White Label para Agencias" }]}
       preTitle="Solucao White Label"
-      title="O Braco Tecnologico de Elite da sua Agencia"
+      title="White Label Tecnico para Agencias"
       subtitle="Expanda a capacidade de entrega da sua agencia com engenharia de ponta sob sua propria marca. Atuamos com confidencialidade, arquitetura robusta e disciplina operacional para projetos de alta exigencia."
       benefits={benefits}
       processSteps={processSteps}

@@ -1,7 +1,7 @@
 import { SolutionPage, SolutionBenefit, SolutionStep } from "@/components/solucoes/SolutionPage";
 
 export const metadata = {
-    title: "Engenharia de Software para Operacoes Complexas | Unti Digital",
+    title: "Plataformas Web Sob Medida | Unti Digital",
     description: "Plataformas web sob medida com arquitetura modular, integracoes avancadas e escala para operacoes complexas e ambientes SaaS.",
     keywords: [
         "plataformas web sob medida",
@@ -14,7 +14,7 @@ export const metadata = {
         canonical: "/solucoes/plataformas-web",
     },
     openGraph: {
-        title: "Engenharia de Software para Operacoes Complexas | Unti Digital",
+        title: "Plataformas Web Sob Medida | Unti Digital",
         description: "Plataformas web sob medida com arquitetura modular, integracoes avancadas e escala para operacoes complexas e ambientes SaaS.",
         type: "website",
         url: "https://unti-digital.vercel.app/solucoes/plataformas-web",
@@ -24,7 +24,7 @@ export const metadata = {
 const schemaMarkup = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "Engenharia de Software para Operacoes Complexas",
+    name: "Plataformas Web Sob Medida",
     description: "Desenvolvemos sistemas web personalizados com arquitetura modular, integracoes avancadas e preparo para alta escala.",
     provider: {
         "@type": "Organization",
@@ -55,7 +55,7 @@ export default function PlataformasWebPage() {
       schemaMarkup={schemaMarkup}
       breadcrumb={[{ label: "Solucoes", href: "/solucoes" }, { label: "Plataformas Web" }]}
       preTitle="Solucao em Plataformas Web"
-      title="Engenharia de Software para Operacoes Complexas"
+      title="Plataformas Web Sob Medida"
       subtitle="Desenvolvemos ecossistemas SaaS, dashboards e ferramentas de gestao exclusivas. Nossa arquitetura personalizada garante estabilidade, flexibilidade e escala para operacoes que fogem do convencional."
       benefits={benefits}
       processSteps={processSteps}

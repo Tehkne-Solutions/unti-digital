@@ -1,7 +1,7 @@
 import { SolutionPage, SolutionBenefit, SolutionStep } from "@/components/solucoes/SolutionPage";
 
 export const metadata = {
-    title: "Automacao Inteligente de Ecossistemas de Dados | Unti Digital",
+    title: "Integracoes com CRM e ERP | Unti Digital",
     description: "Integracoes robustas entre CRM, ERP, marketing e operacao com sincronizacao em tempo real e reducao de retrabalho.",
     keywords: [
         "integracao crm e erp",
@@ -14,7 +14,7 @@ export const metadata = {
         canonical: "/solucoes/integracoes-crm-erp",
     },
     openGraph: {
-        title: "Automacao Inteligente de Ecossistemas de Dados | Unti Digital",
+        title: "Integracoes com CRM e ERP | Unti Digital",
         description: "Integracoes robustas entre CRM, ERP, marketing e operacao com sincronizacao em tempo real e reducao de retrabalho.",
         type: "website",
         url: "https://unti-digital.vercel.app/solucoes/integracoes-crm-erp",
@@ -24,7 +24,7 @@ export const metadata = {
 const schemaMarkup = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "Automacao Inteligente de Ecossistemas de Dados",
+    name: "Integracoes com CRM e ERP",
     description: "Conectamos CRM, ERP, marketing e operacao com integracoes robustas, automacao e dados em tempo real.",
     provider: {
         "@type": "Organization",
@@ -55,7 +55,7 @@ export default function IntegracoesPage() {
       schemaMarkup={schemaMarkup}
       breadcrumb={[{ label: "Solucoes", href: "/solucoes" }, { label: "Integracoes CRM e ERP" }]}
       preTitle="Solucao em Integracoes"
-      title="Automacao Inteligente de Ecossistemas de Dados"
+      title="Integracoes com CRM e ERP"
       subtitle="Conectamos marketing, vendas e operacao por meio de integracoes robustas entre Salesforce, SAP, RD Station, HubSpot e sistemas proprietarios, eliminando silos de dados e erros manuais."
       benefits={benefits}
       processSteps={processSteps}

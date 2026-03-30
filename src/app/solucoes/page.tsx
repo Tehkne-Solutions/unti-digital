@@ -25,27 +25,27 @@ export const metadata = {
 
 const solutions = [
   {
-    title: "Hubs Corporativos de Alta Performance e Conversao",
+    title: "Sites Institucionais de Alta Performance",
     description: "Sites institucionais premium com foco em Core Web Vitals, CRO, integracao com fluxos internos e autoridade digital.",
     href: "/solucoes/sites-institucionais",
   },
   {
-    title: "Engenharia de Software para Operacoes Complexas",
+    title: "Plataformas Web Sob Medida",
     description: "Plataformas web sob medida para operacoes complexas, arquitetura modular e crescimento sem travas.",
     href: "/solucoes/plataformas-web",
   },
   {
-    title: "Automacao Inteligente de Ecossistemas de Dados",
+    title: "Integracoes com CRM e ERP",
     description: "Integracoes robustas entre CRM, ERP, marketing e operacao com sincronizacao em tempo real.",
     href: "/solucoes/integracoes-crm-erp",
   },
   {
-    title: "Seguranca Nivel Enterprise e Compliance Digital",
+    title: "Governanca e Seguranca",
     description: "Arquiteturas Zero-Trust com controle de acessos, monitoramento continuo e conformidade com LGPD.",
     href: "/solucoes/governanca-seguranca",
   },
   {
-    title: "O Braco Tecnologico de Elite da sua Agencia",
+    title: "White Label Tecnico para Agencias",
     description: "White Label tecnico com confidencialidade, engenharia senior e entrega invisivel para projetos premium.",
     href: "/solucoes/white-label-agencias",
   },
