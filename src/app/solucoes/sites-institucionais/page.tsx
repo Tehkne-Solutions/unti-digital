@@ -138,7 +138,19 @@ const testimonials = [
     },
 ];
 
-const authorityBrands = [
+type AuthorityBrand =
+    | {
+          kind: "text";
+          name: string;
+      }
+    | {
+          kind: "image";
+          name: string;
+          logo: string;
+          alt: string;
+      };
+
+const authorityBrands: AuthorityBrand[] = [
     {
         name: "Grupo Savol",
         kind: "text",
@@ -252,10 +264,10 @@ export default function SitesInstitucionaisPage() {
                             {authorityBrands.map((brand) => (
                                 <SectionReveal key={brand.name} className="h-full">
                                     <article className="flex h-full min-h-[132px] items-center justify-center rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-                                        {"logo" in brand && brand.logo ? (
+                                        {brand.kind === "image" ? (
                                             <Image
                                                 src={brand.logo}
-                                                alt={brand.alt ?? brand.name}
+                                                alt={brand.alt}
                                                 width={180}
                                                 height={72}
                                                 className="h-14 w-auto object-contain grayscale transition duration-300 hover:grayscale-0"
