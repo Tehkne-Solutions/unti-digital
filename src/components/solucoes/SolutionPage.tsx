@@ -70,14 +70,14 @@ export function SolutionPage({
 
             <Breadcrumb items={breadcrumb} />
 
-            <section className="min-h-[60vh] bg-gradient-to-br from-slate-50 via-blue-50/50 to-white flex items-center relative overflow-hidden" style={{
+            <section className="min-h-[60vh] flex items-center relative overflow-hidden" style={{
                 backgroundImage: 'url(/images/unti-digital-solucoes-hero-banner-bg.png)',
                 backgroundAttachment: 'fixed',
                 backgroundPosition: 'center',
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat',
             }}>
-                <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/50 to-white opacity-50"></div>
+                <div className="absolute inset-0 bg-white/[0.85]"></div>
                 <Container className="relative z-20">
                     <div className="max-w-3xl py-20 relative z-10">
                         <p className="text-unti-blue font-semibold uppercase tracking-widest text-sm mb-4">
