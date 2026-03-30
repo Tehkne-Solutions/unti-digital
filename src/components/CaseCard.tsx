@@ -1,52 +1,82 @@
 import Image from "next/image";
 import Link from "next/link";
-
-interface CaseItem {
-    slug: string;
-    name: string;
-    segment: string;
-    resultHighlight: string;
-    heroImage: string;
-    image?: string;
-    problem: string;
-    solution: string;
-    technologies: string[];
-    results: string[];
-    gallery: string[];
-}
+import { caseCategoryThemes, type CaseStudy } from "@/data/cases";
 
 interface CaseCardProps {
-    caseItem: CaseItem;
+  caseItem: CaseStudy;
+  variant?: "portfolio" | "home";
+  priority?: boolean;
 }
 
-export default function CaseCard({ caseItem }: CaseCardProps) {
+export default function CaseCard({
+  caseItem,
+  variant = "portfolio",
+  priority = false
+}: CaseCardProps) {
+  const theme = caseCategoryThemes[caseItem.categoria];
+
+  if (variant === "home") {
     return (
-        <Link href={`/cases/${caseItem.slug}`}>
-            <div className="w-full min-w-0 bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
-                <div className="relative w-full aspect-video">
-                    <Image
-                        src={caseItem.image ?? caseItem.heroImage}
-                        alt={caseItem.name}
-                        fill
-                        className="object-cover"
-                    />
-                </div>
-                <div className="p-6">
-                    <p className="text-sm text-gray-500 mb-1">{caseItem.segment}</p>
-                    <h3 className="font-semibold text-lg mb-2">{caseItem.name}</h3>
-                    <span className="inline-block bg-green-100 text-green-700 px-3 py-1 rounded text-sm font-semibold mb-4">
-                        {caseItem.resultHighlight}
-                    </span>
-                    <p className="text-gray-600 text-sm mb-4">{caseItem.problem}</p>
-                    <div className="flex flex-wrap gap-2">
-                        {caseItem.technologies.map((tech) => (
-                            <span key={tech} className="bg-gray-100 text-xs px-2 py-1 rounded">
-                                {tech}
-                            </span>
-                        ))}
-                    </div>
-                </div>
+      <Link href={`/cases/${caseItem.slug}`} className="group block no-underline hover:no-underline">
+        <article className="overflow-hidden rounded-[28px] border border-zinc-100 bg-white shadow-[0_18px_60px_rgba(15,23,42,0.05)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_28px_80px_rgba(15,23,42,0.1)]">
+          <div className="relative aspect-[16/10] overflow-hidden">
+            <Image
+              src={caseItem.imagemBanner}
+              alt={caseItem.cliente}
+              fill
+              priority={priority}
+              sizes="(max-width: 1023px) 100vw, 33vw"
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-zinc-950/5 transition-colors duration-500 group-hover:bg-unti-blue/10" />
+          </div>
+
+          <div className="space-y-3 px-6 py-6">
+            <span
+              className={`inline-flex rounded-full border px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] ${theme.badgeClassName}`}
+            >
+              {caseItem.segmento}
+            </span>
+            <div className="space-y-2">
+              <h3 className="text-2xl font-semibold text-zinc-900">{caseItem.cliente}</h3>
+              <p className="text-sm text-zinc-600">{caseItem.resumoHome}</p>
             </div>
-        </Link>
+          </div>
+        </article>
+      </Link>
     );
+  }
+
+  return (
+    <Link href={`/cases/${caseItem.slug}`} className="group block no-underline hover:no-underline">
+      <article className="overflow-hidden rounded-3xl border border-zinc-100 bg-white shadow-[0_18px_60px_rgba(15,23,42,0.05)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_32px_90px_rgba(15,23,42,0.12)]">
+        <div className="relative aspect-[4/3] overflow-hidden">
+          <Image
+            src={caseItem.imagemBanner}
+            alt={caseItem.cliente}
+            fill
+            priority={priority}
+            sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 33vw"
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+          <div className="absolute inset-0 bg-unti-blue/0 transition-colors duration-500 group-hover:bg-unti-blue/10" />
+
+          <div className="absolute inset-x-0 bottom-0 p-6">
+            <div className="translate-y-3 transition-transform duration-500 group-hover:translate-y-0">
+              <span
+                className={`inline-flex rounded-full border px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] ${theme.badgeClassName}`}
+              >
+                {theme.label}
+              </span>
+              <h3 className="mt-4 text-2xl font-semibold text-white">{caseItem.cliente}</h3>
+              <p className="mt-2 max-w-md text-sm text-white/80 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                {caseItem.tagline}
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </Link>
+  );
 }

@@ -1,0 +1,26 @@
+<svg width="1600" height="1200" viewBox="0 0 1600 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1200" fill="#1B1206"/>
+  <rect width="1600" height="1200" fill="url(#paint0_linear)"/>
+  <circle cx="1310" cy="214" r="332" fill="#F59E0B" fill-opacity="0.14"/>
+  <circle cx="290" cy="980" r="244" fill="#FBBF24" fill-opacity="0.12"/>
+  <path d="M160 210H1440" stroke="white" stroke-opacity="0.12" stroke-width="2"/>
+  <path d="M160 342H1440" stroke="white" stroke-opacity="0.08" stroke-width="2"/>
+  <path d="M160 858H1440" stroke="white" stroke-opacity="0.08" stroke-width="2"/>
+  <path d="M160 990H1440" stroke="white" stroke-opacity="0.12" stroke-width="2"/>
+  <path d="M300 140V1060" stroke="white" stroke-opacity="0.08" stroke-width="2"/>
+  <path d="M980 140V1060" stroke="white" stroke-opacity="0.08" stroke-width="2"/>
+  <rect x="160" y="160" width="1280" height="880" rx="40" stroke="white" stroke-opacity="0.18" stroke-width="2"/>
+  <rect x="224" y="224" width="1152" height="752" rx="28" fill="white" fill-opacity="0.04"/>
+  <text x="240" y="398" fill="white" fill-opacity="0.76" font-family="Ubuntu, Arial, sans-serif" font-size="30" font-weight="700" letter-spacing="8">UNTI DIGITAL</text>
+  <text x="240" y="540" fill="white" font-family="Ubuntu, Arial, sans-serif" font-size="100" font-weight="700" letter-spacing="-2">INDUSTRIA</text>
+  <text x="240" y="626" fill="white" fill-opacity="0.72" font-family="Ubuntu, Arial, sans-serif" font-size="34" font-weight="400">Catalogos, operacao e credibilidade para ciclos comerciais complexos.</text>
+  <rect x="240" y="728" width="236" height="56" rx="28" fill="white" fill-opacity="0.1"/>
+  <text x="272" y="765" fill="white" font-family="Ubuntu, Arial, sans-serif" font-size="22" font-weight="500">PORTFOLIO</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="120" y1="80" x2="1434" y2="1160" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#221503"/>
+      <stop offset="0.58" stop-color="#8A4B06"/>
+      <stop offset="1" stop-color="#1B1206"/>
+    </linearGradient>
+  </defs>
+</svg>

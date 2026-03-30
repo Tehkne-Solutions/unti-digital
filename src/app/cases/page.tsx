@@ -1,86 +1,91 @@
+import type { Metadata } from "next";
 import Link from "next/link";
-import { PageShell } from "@/components/page-shell";
+import { cases } from "@/data/cases";
+import { CasesPortfolioGrid } from "@/components/cases/CasesPortfolioGrid";
 
-const caseStudies = [
-  {
-    title: "Grupo automotivo",
-    challenge: "Expansão regional sem presença institucional consistente.",
-    delivery: "Nova plataforma institucional com páginas de serviços e integração com CRM.",
-    impact: "Mais clareza para o time comercial e avanço no funil."
-  },
-  {
-    title: "Varejo multicanal",
-    challenge: "Campanhas desconectadas do atendimento e baixa conversão.",
-    delivery: "Landing pages integradas ao WhatsApp e automações de qualificação.",
-    impact: "Resposta mais rápida e menor perda de leads."
-  },
-  {
-    title: "Serviços B2B complexos",
-    challenge: "Oferta difícil de entender e baixa percepção de valor.",
-    delivery: "Reestruturação de conteúdo, prova social e UX orientada a decisão.",
-    impact: "Melhor entendimento da oferta e avanço de negociações."
-  }
-];
-
-const outcomes = [
-  "Clareza de oferta e posicionamento",
-  "Integração com operação e CRM",
-  "Melhor conversão em leads qualificados"
-];
+export const metadata: Metadata = {
+  title: "Cases | Unti Digital",
+  description:
+    "Portfolio da Unti Digital com projetos em saude, automotivo, corporativo e industria."
+};
 
 export default function CasesPage() {
   return (
-    <PageShell
-      title="Cases e Projetos"
-      description="Exemplos típicos de projetos entregues e resultados gerados para clientes B2B."
-    >
-      <div className="grid gap-6">
-        {caseStudies.map((item) => (
-          <article key={item.title} className="rounded-2xl border border-slate-200 bg-white p-6">
-            <h2 className="text-xl font-semibold text-slate-900">{item.title}</h2>
-            <div className="mt-4 grid gap-2 text-sm text-slate-600">
-              <p>
-                <strong className="font-semibold text-slate-700">Desafio:</strong> {item.challenge}
-              </p>
-              <p>
-                <strong className="font-semibold text-slate-700">Entrega:</strong> {item.delivery}
-              </p>
-              <p>
-                <strong className="font-semibold text-slate-700">Impacto:</strong> {item.impact}
-              </p>
-            </div>
-          </article>
-        ))}
-      </div>
+    <main className="bg-white">
+      <section className="border-b border-zinc-100 bg-white">
+        <div className="mx-auto max-w-6xl px-4 py-20">
+          <div className="max-w-4xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-zinc-500">
+              Pagina de Cases
+            </p>
+            <h1 className="mt-4 text-4xl font-semibold tracking-tight text-zinc-900 md:text-5xl">
+              Quantidade e variedade para comunicar solidez de operacao.
+            </h1>
+            <p className="mt-6 max-w-3xl text-base text-zinc-600 md:text-lg">
+              Da saude ao automotivo, reunimos um portfolio completo para mostrar repertorio
+              tecnico, consistencia de entrega e capacidade de executar jornadas digitais de alto
+              impacto.
+            </p>
+          </div>
 
-      <section className="mt-12 rounded-2xl border border-slate-200 bg-white p-8">
-        <h2 className="text-2xl font-semibold text-slate-900">Resultados mais comuns</h2>
-        <p className="mt-2 max-w-2xl text-slate-600">
-          Muitos projetos reais são apresentados sob NDA. Durante a conversa, detalhamos cenários semelhantes ao seu.
-        </p>
-        <ul className="mt-4 grid gap-2 text-sm text-slate-600 md:grid-cols-3">
-          {outcomes.map((item) => (
-            <li key={item} className="rounded-lg border border-slate-200 bg-slate-50 px-3 py-2">
-              {item}
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section className="mt-12 rounded-2xl bg-slate-900 px-8 py-10 text-white">
-        <h2 className="text-2xl font-semibold">Quer ver casos similares ao seu?</h2>
-        <p className="mt-2 max-w-2xl text-white/80">
-          Compartilhe seu contexto e segmentamos os exemplos mais próximos da sua realidade.
-        </p>
-        <div className="mt-6">
-          <Link
-            href="/contato"
-            className="rounded-md border border-white/60 px-4 py-2 text-sm font-semibold text-white"
-          >
-            Solicitar exemplos
-          </Link>
+          <div className="mt-10 flex flex-wrap gap-3">
+            {[
+              "24 projetos mapeados",
+              "4 frentes de mercado",
+              "Sites, plataformas e integracoes",
+              "Autoridade visual com base tecnica"
+            ].map((item) => (
+              <span
+                key={item}
+                className="rounded-full border border-zinc-200 bg-zinc-50 px-4 py-2 text-sm text-zinc-600"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
         </div>
       </section>
-    </PageShell>
+
+      <section className="bg-slate-50/50 py-16">
+        <div className="mx-auto max-w-6xl px-4">
+          <div className="mb-10 max-w-3xl">
+            <h2 className="text-2xl font-semibold text-zinc-900 md:text-3xl">
+              Vitrine completa de autoridade
+            </h2>
+            <p className="mt-3 text-zinc-600">
+              Os nove primeiros cards entregam peso de marca logo de entrada. O restante amplia a
+              leitura de volume, diversidade e maturidade operacional.
+            </p>
+          </div>
+
+          <CasesPortfolioGrid cases={cases} />
+        </div>
+      </section>
+
+      <section className="bg-white py-20">
+        <div className="mx-auto max-w-5xl px-4">
+          <div className="rounded-[32px] border border-zinc-100 bg-white px-8 py-10 text-center shadow-[0_18px_60px_rgba(15,23,42,0.05)]">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-zinc-500">
+              Proximo passo
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold text-zinc-900">
+              Quer estruturar um projeto com esse nivel de acabamento?
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-zinc-600">
+              Levamos a mesma combinacao de estrategia, design premium e engenharia para o seu
+              contexto.
+            </p>
+            <div className="mt-8 flex justify-center">
+              <Link
+                href="/contato"
+                className="interactive-btn inline-flex h-12 items-center justify-center rounded-xl border border-unti-blue px-6 text-sm font-semibold text-unti-blue no-underline transition-all duration-300 hover:bg-unti-blue hover:text-white hover:no-underline"
+              >
+                Solicitar Projeto Semelhante
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
