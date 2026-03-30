@@ -1,74 +1,106 @@
-import Link from "next/link";
-import { PageShell } from "@/components/page-shell";
+import type { Metadata } from "next";
+import { BlogPostCard } from "@/components/blog/BlogPostCard";
+import { blogPosts } from "@/data/posts";
 
-const pillars = [
-  "Estratégia digital institucional",
-  "Experiência e conversão B2B",
-  "Tecnologia aplicada a marketing e operações",
-  "LGPD, segurança e governança"
+export const metadata: Metadata = {
+  title: "Blog | UNTI Digital",
+  description:
+    "Conteudo tecnico da UNTI Digital sobre estrategia, integracoes, seguranca e design para operacoes de alto valor."
+};
+
+const editorialPillars = [
+  "Estrategia digital para operacoes B2B e crescimento previsivel",
+  "Integracoes, automacao e arquitetura aplicada a operacao",
+  "Governanca, seguranca e compliance como base de confianca",
+  "UX e experiencia de produto para ambientes corporativos"
 ];
-
-const series = [
-  {
-    title: "Entrevistas com líderes",
-    description: "Conversas com decisores sobre desafios reais de operação e tecnologia."
-  },
-  {
-    title: "Arquitetura de presença digital",
-    description: "Como estruturar sites institucionais que vendem e sustentam autoridade."
-  },
-  {
-    title: "Integrações que destravam crescimento",
-    description: "Casos e práticas de integração entre marketing, vendas e operação."
-  }
-];
-
-const formats = ["Entrevistas", "Guias práticos", "Análises de cases", "Opinião técnica"];
 
 export default function BlogPage() {
+  const [featuredPost, ...otherPosts] = blogPosts;
+
   return (
-    <PageShell
-      title="Blog"
-      description="Linha editorial voltada a autoridade técnica, entrevistas e práticas aplicáveis a negócios B2B."
-    >
-      <section className="rounded-2xl border border-slate-200 bg-white p-6">
-        <h2 className="text-xl font-semibold text-slate-900">Pilares editoriais</h2>
-        <p className="mt-2 text-sm text-slate-600">
-          Conteúdo pensado para decisores que precisam de clareza, previsibilidade e visão estratégica.
-        </p>
-        <ul className="mt-4 grid gap-2 text-sm text-slate-600 md:grid-cols-2">
-          {pillars.map((item) => (
-            <li key={item} className="rounded-lg border border-slate-200 bg-slate-50 px-3 py-2">
-              {item}
-            </li>
-          ))}
-        </ul>
-      </section>
+    <main className="bg-white">
+      <section className="border-b border-zinc-100 bg-white">
+        <div className="mx-auto max-w-6xl px-4 py-20">
+          <div className="max-w-4xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-zinc-500">
+              Blog UNTI Digital
+            </p>
+            <h1 className="mt-4 text-4xl font-semibold tracking-tight text-zinc-900 md:text-5xl">
+              Conhecimento para liderancas que tratam tecnologia como alavanca de negocio
+            </h1>
+            <p className="mt-6 max-w-3xl text-base text-zinc-600 md:text-lg">
+              A camada editorial da UNTI foi desenhada para educar o mercado, ampliar autoridade e
+              qualificar a conversa comercial com conteudo de leitura executiva.
+            </p>
+          </div>
 
-      <section className="mt-12 grid gap-6 lg:grid-cols-2">
-        {series.map((item) => (
-          <article key={item.title} className="rounded-2xl border border-slate-200 bg-white p-6">
-            <h2 className="text-xl font-semibold text-slate-900">{item.title}</h2>
-            <p className="mt-2 text-sm text-slate-600">{item.description}</p>
-          </article>
-        ))}
-      </section>
-
-      <section className="mt-12 rounded-2xl border border-slate-200 bg-white p-6">
-        <h2 className="text-xl font-semibold text-slate-900">Formatos em produção</h2>
-        <ul className="mt-4 grid gap-2 text-sm text-slate-600 md:grid-cols-2">
-          {formats.map((item) => (
-            <li key={item} className="rounded-lg border border-slate-200 bg-slate-50 px-3 py-2">
-              {item}
-            </li>
-          ))}
-        </ul>
-        <div className="mt-6">
-          <Link href="/contato" className="text-sm font-semibold text-brand-700">
-            Sugerir pauta
-          </Link>
+          <div className="mt-10 grid gap-3 md:grid-cols-2">
+            {editorialPillars.map((item) => (
+              <div
+                key={item}
+                className="rounded-2xl border border-zinc-200 bg-slate-50/60 px-4 py-3 text-sm text-zinc-600"
+              >
+                {item}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
-    </PageShell>
+
+      <section className="bg-slate-50/50 py-16">
+        <div className="mx-auto grid max-w-6xl gap-8 px-4 lg:grid-cols-[1.15fr_0.85fr]">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-zinc-500">
+              Materia em destaque
+            </p>
+            <div className="mt-6">
+              <BlogPostCard post={featuredPost} />
+            </div>
+          </div>
+
+          <div className="rounded-[32px] border border-zinc-100 bg-white px-8 py-8 shadow-[0_18px_60px_rgba(15,23,42,0.05)]">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-zinc-500">
+              Linha editorial
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold text-zinc-900">
+              White papers para decisao, nao conteudo para preencher calendario
+            </h2>
+            <p className="mt-4 text-zinc-600">
+              Cada materia nasce para reduzir objecoes, elevar repertorio e posicionar a UNTI como
+              parceira capaz de traduzir negocio, arquitetura e execucao no mesmo contexto.
+            </p>
+            <div className="mt-8 space-y-4">
+              {blogPosts.map((post) => (
+                <div key={post.slug} className="rounded-2xl border border-zinc-100 bg-slate-50/70 px-4 py-4">
+                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-unti-blue">
+                    {post.category}
+                  </p>
+                  <p className="mt-2 text-sm text-zinc-700">{post.keyInsight}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-20">
+        <div className="mx-auto max-w-6xl px-4">
+          <div className="mb-10 max-w-3xl">
+            <h2 className="text-3xl font-semibold text-zinc-900 md:text-4xl">Biblioteca inicial</h2>
+            <p className="mt-4 text-zinc-600">
+              Os quatro artigos inaugurais estruturam os pilares de estrategia, tecnologia,
+              seguranca e design sob a otica de operacoes premium.
+            </p>
+          </div>
+
+          <div className="grid gap-6 lg:grid-cols-3">
+            {otherPosts.map((post) => (
+              <BlogPostCard key={post.slug} post={post} />
+            ))}
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
