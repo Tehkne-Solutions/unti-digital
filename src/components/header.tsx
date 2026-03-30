@@ -28,35 +28,35 @@ const solutions: SolutionItem[] = [
   {
     href: "/solucoes/sites-institucionais",
     label: "Sites Institucionais",
-    description: "Alta performance com foco em conversão e SEO.",
+    description: "Hubs corporativos com foco em conversao, Core Web Vitals e autoridade digital.",
     image: "/images/solutions/unti-digital-solution-high-performance-websites.png",
     icon: IconMonitor
   },
   {
     href: "/solucoes/plataformas-web",
     label: "Plataformas Web",
-    description: "Sistemas complexos e escaláveis sob medida.",
+    description: "Engenharia de software para operacoes complexas, SaaS e produtos sob medida.",
     image: "/images/solutions/unti-digital-solution-custom-web-platforms.png",
     icon: IconLayers
   },
   {
     href: "/solucoes/integracoes-crm-erp",
-    label: "Integrações e Automações",
-    description: "Conexão robusta entre CRM, ERP e operações.",
+    label: "Integracoes com CRM e ERP",
+    description: "Automacao inteligente entre marketing, vendas e operacao em tempo real.",
     image: "/images/solutions/unti-digital-solution-crm-erp-integrations.png",
     icon: IconWorkflow
   },
   {
     href: "/solucoes/governanca-seguranca",
-    label: "Governança e Segurança",
-    description: "Proteção e monitoramento de ambientes críticos.",
+    label: "Governanca e Seguranca",
+    description: "Arquiteturas Zero-Trust, controle de acessos e compliance digital.",
     image: "/images/solutions/unti-digital-solution-governance-security.png",
     icon: IconShield
   },
   {
     href: "/solucoes/white-label-agencias",
-    label: "White Label para Agências",
-    description: "Parceria técnica estratégica e confidencial.",
+    label: "White Label para Agencias",
+    description: "Braco tecnologico invisivel para agencias que precisam escalar com seguranca.",
     image: "/images/solutions/unti-digital-solution-white-label-development.png",
     icon: IconUsers
   }

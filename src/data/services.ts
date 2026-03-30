@@ -12,127 +12,106 @@ export interface Service {
 export const services: Service[] = [
   {
     slug: "sites-institucionais",
-    title: "Sites Institucionais",
-    description: "Sites corporativos de alta performance com foco em conversão e experiência do usuário.",
-    shortDescription: "Sites corporativos de alta performance com foco em conversão e experiência do usuário.",
-    fullDescription: "Desenvolvemos sites institucionais modernos e responsivos, otimizados para SEO e conversão. Cada projeto é construído com tecnologias de ponta, garantindo performance, segurança e escalabilidade.",
+    title: "Hubs Corporativos de Alta Performance",
+    description: "Sites institucionais premium com foco em conversao, integracao e performance real para empresas B2B.",
+    shortDescription: "Sites institucionais premium com foco em conversao, integracao e performance real.",
+    fullDescription: "Construimos hubs corporativos desenhados para empresas que buscam autoridade imediata. Unimos design minimalista premium a uma infraestrutura tecnica robusta, com foco em Core Web Vitals, SEO tecnico e integracao com fluxos internos.",
     bullets: [
-      "Design responsivo e moderno",
-      "Otimização para mecanismos de busca (SEO)",
-      "Performance e velocidade de carregamento",
-      "Integração com ferramentas de analytics"
+      "Arquitetura focada em CRO e geracao de oportunidades",
+      "Core Web Vitals e experiencia consistente em todos os dispositivos",
+      "Integracao com CRM, automacoes e fluxos internos",
+      "Narrativa corporativa clara para reforco de autoridade"
     ],
     deliverables: [
-      "Site completo responsivo",
-      "Painel administrativo",
-      "Documentação técnica",
-      "Treinamento da equipe",
-      "Suporte pós-lançamento"
+      "Hub corporativo responsivo",
+      "Estrutura tecnica otimizada para SEO",
+      "Integracoes com ferramentas do negocio",
+      "Documentacao e orientacao de operacao",
+      "Plano de evolucao pos-lancamento"
     ],
     image: "/images/unti-digital-homepage-image-nossas-solucoes-sites-institucionais.png"
   },
   {
     slug: "plataformas-web",
-    title: "Plataformas Web",
-    description: "Sistemas web complexos e escaláveis para gestão de processos e operações críticas.",
-    shortDescription: "Sistemas web complexos e escaláveis para gestão de processos e operações críticas.",
-    fullDescription: "Criamos plataformas web robustas e escaláveis, desde dashboards administrativos até sistemas complexos de gestão. Arquitetura moderna, segurança enterprise e performance otimizada.",
+    title: "Plataformas Web Sob Medida",
+    description: "Engenharia de software para operacoes complexas, produtos SaaS e ecossistemas digitais sob medida.",
+    shortDescription: "Engenharia de software para operacoes complexas e plataformas sob medida.",
+    fullDescription: "Desenvolvemos solucoes de software web exclusivas para operacoes que fogem do convencional. Criamos ecossistemas SaaS, dashboards e ferramentas de gestao com arquitetura modular preparada para crescer sem sacrificar estabilidade.",
     bullets: [
-      "Arquitetura escalável e modular",
-      "Segurança enterprise-level",
-      "Dashboards e relatórios customizados",
-      "APIs RESTful e integrações"
+      "Arquitetura modular preparada para expansao",
+      "Integracoes avancadas com sistemas externos",
+      "Camadas tecnicas pensadas para escala e governanca",
+      "Observabilidade e evolucao continua do produto"
     ],
     deliverables: [
-      "Plataforma completa",
-      "Documentação de APIs",
-      "Testes automatizados",
-      "Deploy e infraestrutura",
-      "Monitoramento e logs"
+      "Plataforma web customizada",
+      "Documentacao tecnica e de APIs",
+      "Estrategia de deploy e infraestrutura",
+      "Monitoramento e trilha de evolucao",
+      "Base pronta para novas integracoes"
     ],
     image: "/images/unti-digital-homepage-image-nossas-solucoes-plataformas-web.png"
   },
   {
-    slug: "integracoes",
-    title: "Integrações e Automações",
-    description: "Conecte seus sistemas e automatize processos com integrações robustas e confiáveis.",
-    shortDescription: "Conecte seus sistemas e automatize processos com integrações robustas e confiáveis.",
-    fullDescription: "Desenvolvemos integrações customizadas entre CRM, ERP, e-commerce e outros sistemas. Automatizamos fluxos de trabalho, reduzindo erros manuais e aumentando a eficiência operacional.",
+    slug: "integracoes-crm-erp",
+    title: "Integracoes com CRM e ERP",
+    description: "Automacao inteligente entre marketing, vendas e operacao com dados sincronizados em tempo real.",
+    shortDescription: "Integracoes robustas entre CRM, ERP, marketing e operacao.",
+    fullDescription: "Eliminamos silos de dados conectando CRM, ERP, marketing e operacao. Desenvolvemos integracoes robustas que automatizam processos, reduzem erros manuais e transformam sistemas isolados em um fluxo operacional unificado.",
     bullets: [
-      "Integração com CRM (HubSpot, Salesforce, RD Station)",
-      "Conexão com ERPs e sistemas legados",
-      "Automação de workflows",
-      "Sincronização de dados em tempo real"
+      "Sincronizacao entre CRM, ERP e ferramentas de marketing",
+      "Automacao de workflows e etapas operacionais",
+      "Tratamento de erro e observabilidade de integracoes",
+      "Dados confiaveis para times comercial e operacional"
     ],
     deliverables: [
-      "APIs de integração",
-      "Webhooks e eventos",
-      "Documentação completa",
-      "Monitoramento de integrações",
-      "Suporte técnico dedicado"
+      "APIs, webhooks e pontos de sincronizacao",
+      "Documentacao completa dos fluxos",
+      "Monitoramento das integracoes criticas",
+      "Plano de contingencia operacional",
+      "Suporte tecnico para evolucao dos fluxos"
     ],
     image: "/images/unti-digital-homepage-image-nossas-solucoes-integracoes-e-automacoes.png"
   },
   {
-    slug: "e-commerce",
-    title: "E-commerce",
-    description: "Lojas virtuais completas com gestão de produtos, pagamentos e logística integrada.",
-    shortDescription: "Lojas virtuais completas com gestão de produtos, pagamentos e logística integrada.",
-    fullDescription: "Desenvolvemos e-commerces de alta conversão, com experiência de compra otimizada, gestão completa de produtos, integração com gateways de pagamento e sistemas de logística.",
+    slug: "governanca-seguranca",
+    title: "Governanca e Seguranca",
+    description: "Seguranca nivel enterprise com controle de acessos, monitoramento continuo e compliance digital.",
+    shortDescription: "Arquiteturas Zero-Trust, monitoramento continuo e conformidade.",
+    fullDescription: "Implementamos arquiteturas de seguranca nivel enterprise para proteger operacoes digitais criticas. Combinamos governanca, controle granular de acessos, monitoramento ativo e adequacao a LGPD para reduzir riscos reais.",
     bullets: [
-      "Plataforma de vendas completa",
-      "Integração com gateways de pagamento",
-      "Gestão de estoque e produtos",
-      "Painel administrativo robusto"
+      "Arquitetura Zero-Trust e menor privilegio",
+      "Controle granular de acessos e identidades",
+      "Monitoramento continuo de ameacas e anomalias",
+      "Conformidade com LGPD e boas praticas corporativas"
     ],
     deliverables: [
-      "Loja virtual completa",
-      "Painel de gestão",
-      "Integrações de pagamento",
-      "Sistema de cupons e promoções",
-      "Relatórios de vendas"
+      "Diagnostico de riscos e vulnerabilidades",
+      "Roadmap de seguranca e governanca",
+      "Implantacao de controles tecnicos",
+      "Documentacao de politicas e acessos",
+      "Recomendacoes de evolucao continua"
     ],
-    image: "/images/unti-digital-homepage-image-nossas-solucoes-ecommerce.png"
+    image: "/images/unti-digital-homepage-image-agilidade-tecnica-com-governanca.png"
   },
   {
-    slug: "landing-pages",
-    title: "Landing Pages",
-    description: "Páginas de conversão otimizadas para campanhas de marketing e geração de leads.",
-    shortDescription: "Páginas de conversão otimizadas para campanhas de marketing e geração de leads.",
-    fullDescription: "Criamos landing pages de alta conversão, otimizadas para campanhas de marketing digital. Design focado em CTA, integração com ferramentas de automação e tracking completo.",
+    slug: "white-label-agencias",
+    title: "White Label Tecnico para Agencias",
+    description: "Engenharia sob sua marca com confidencialidade, escala e qualidade tecnica para projetos premium.",
+    shortDescription: "Engenharia senior sob sua marca para ampliar a entrega da agencia.",
+    fullDescription: "Atuamos como braco tecnologico invisivel da sua agencia, com confidencialidade, capacidade sob demanda e arquitetura robusta. Voce preserva a relacao com o cliente final enquanto nos garantimos a excelencia tecnica por tras da entrega.",
     bullets: [
-      "Design focado em conversão",
-      "Otimização para campanhas pagas",
-      "Integração com ferramentas de marketing",
-      "A/B testing e otimização contínua"
+      "Confidencialidade e NDA em toda a operacao",
+      "Integracao ao processo, time e padrao da agencia",
+      "Capacidade sob demanda para projetos mais complexos",
+      "Execucao tecnica com padrao enterprise"
     ],
     deliverables: [
-      "Landing page responsiva",
-      "Formulários de captação",
-      "Integração com CRM",
-      "Tracking e analytics",
-      "Variações para testes A/B"
-    ],
-    image: "/images/unti-digital-homepage-image-nossas-solucoes-landing-pages.png"
-  },
-  {
-    slug: "white-label",
-    title: "White Label Técnico",
-    description: "Desenvolvimento técnico sob demanda para agências que precisam de um parceiro confiável.",
-    shortDescription: "Desenvolvimento técnico sob demanda para agências que precisam de um parceiro confiável.",
-    fullDescription: "Oferecemos serviços de desenvolvimento white label para agências. Sua marca, nossa execução técnica. Entregas pontuais, qualidade garantida e total confidencialidade.",
-    bullets: [
-      "Desenvolvimento sob sua marca",
-      "Entregas pontuais e previsíveis",
-      "Comunicação direta com sua equipe",
-      "Flexibilidade de escopo e demanda"
-    ],
-    deliverables: [
-      "Código-fonte completo",
-      "Documentação técnica",
-      "Suporte durante o projeto",
-      "Revisões ilimitadas",
-      "Confidencialidade garantida"
+      "Squad tecnico sob demanda",
+      "Entrega white label com documentacao",
+      "Fluxo de alinhamento e checkpoints",
+      "Sustentacao tecnica para novos projetos",
+      "Escala sem ampliar estrutura fixa"
     ],
     image: "/images/unti-digital-homepage-image-nossas-solucoes-white-label-tecnico.png"
   }

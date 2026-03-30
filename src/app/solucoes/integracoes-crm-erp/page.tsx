@@ -1,20 +1,31 @@
-﻿import { SolutionPage, SolutionBenefit, SolutionStep } from "@/components/solucoes/SolutionPage";
+import { SolutionPage, SolutionBenefit, SolutionStep } from "@/components/solucoes/SolutionPage";
 
 export const metadata = {
-    title: "Integrações CRM e ERP | Unti Digital",
-    description: "Conecte marketing, vendas e operação através de integrações robustas que automatizam processos.",
+    title: "Automacao Inteligente de Ecossistemas de Dados | Unti Digital",
+    description: "Integracoes robustas entre CRM, ERP, marketing e operacao com sincronizacao em tempo real e reducao de retrabalho.",
+    keywords: [
+        "integracao crm e erp",
+        "automacao de processos",
+        "sincronizacao de dados em tempo real",
+        "integracao salesforce sap",
+        "integracao hubspot rd station"
+    ],
+    alternates: {
+        canonical: "/solucoes/integracoes-crm-erp",
+    },
     openGraph: {
-        title: "Integrações CRM e ERP | Unti Digital",
-        description: "Conecte marketing, vendas e operação através de integrações robustas que automatizam processos.",
+        title: "Automacao Inteligente de Ecossistemas de Dados | Unti Digital",
+        description: "Integracoes robustas entre CRM, ERP, marketing e operacao com sincronizacao em tempo real e reducao de retrabalho.",
         type: "website",
+        url: "https://unti-digital.vercel.app/solucoes/integracoes-crm-erp",
     },
 };
 
 const schemaMarkup = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "Integrações CRM e ERP",
-    description: "Conecte marketing, vendas e operação através de integrações robustas que automatizam processos.",
+    name: "Automacao Inteligente de Ecossistemas de Dados",
+    description: "Conectamos CRM, ERP, marketing e operacao com integracoes robustas, automacao e dados em tempo real.",
     provider: {
         "@type": "Organization",
         name: "Unti Digital",
@@ -24,31 +35,32 @@ const schemaMarkup = {
 };
 
 const benefits: SolutionBenefit[] = [
-    { title: "Conexão entre sistemas", description: "Integramos CRM, ERP, e-commerce e ferramentas de marketing em um único ecossistema." },
-    { title: "Automação de processos", description: "Reduza retrabalho e eliminamos gargalos através de automações inteligentes." },
-    { title: "Redução de retrabalho", description: "Dados sincronizados em tempo real eliminam entrada manual e erros." },
+    { title: "Fluxos automatizados ponta a ponta", description: "Eliminamos tarefas manuais repetitivas conectando marketing, vendas, financeiro e operacao." },
+    { title: "Sincronizacao em tempo real", description: "Os dados circulam entre sistemas criticos com consistencia, rastreabilidade e contexto operacional." },
+    { title: "Reducao de falhas humanas", description: "Menos retrabalho, menos duplicidade e mais confianca nas informacoes que sustentam a tomada de decisao." },
+    { title: "Integracoes resilientes", description: "Projetamos camadas de integracao com tratamento de erro, monitoramento e escalabilidade." },
 ];
 
 const processSteps: SolutionStep[] = [
-    { title: "Mapeamento de sistemas", description: "Identificamos todos os sistemas, seus dados e pontos de integração." },
-    { title: "Arquitetura de integração", description: "Projetamos a melhor forma de conectar os sistemas mantendo performance." },
-    { title: "Implementação", description: "Desenvolvemos integrações testadas e documentadas de forma robusta." },
-    { title: "Testes", description: "Validamos completamente a integração antes do deployment em produção." },
-    { title: "Monitoramento", description: "Acompanhamos continuamente a saúde das integrações e otimizamos fluxos." },
+    { title: "Mapeamento de ecossistema", description: "Levantamos sistemas, regras de negocio, fontes de dados e pontos de atrito da operacao." },
+    { title: "Arquitetura de integracao", description: "Definimos filas, APIs, webhooks, politicas de sincronizacao e estrategia de observabilidade." },
+    { title: "Implementacao robusta", description: "Desenvolvemos as integracoes com validacao de payload, seguranca e documentacao tecnica." },
+    { title: "Homologacao e testes", description: "Simulamos cenarios reais para garantir consistencia, performance e comportamento confiavel em producao." },
+    { title: "Monitoramento continuo", description: "Acompanhamos logs, falhas e performance para manter os fluxos criticos sempre saudaveis." },
 ];
 
 export default function IntegracoesPage() {
   return (
     <SolutionPage
       schemaMarkup={schemaMarkup}
-      breadcrumb={[{ label: "Soluções", href: "/solucoes" }, { label: "Integrações CRM e ERP" }]}
-      preTitle="Solução em Integrações"
-      title="Integrações com CRM e ERP"
-      subtitle="Conecte marketing, vendas e operação através de integrações robustas que automatizam processos."
+      breadcrumb={[{ label: "Solucoes", href: "/solucoes" }, { label: "Integracoes CRM e ERP" }]}
+      preTitle="Solucao em Integracoes"
+      title="Automacao Inteligente de Ecossistemas de Dados"
+      subtitle="Conectamos marketing, vendas e operacao por meio de integracoes robustas entre Salesforce, SAP, RD Station, HubSpot e sistemas proprietarios, eliminando silos de dados e erros manuais."
       benefits={benefits}
       processSteps={processSteps}
-      keyMessage="Valor da integração"
-      keyText="Integrações corretas reduzem falhas, aceleram o time-to-market e garantem dados confiáveis para decisões estratégicas."
+      keyMessage="Resultados esperados"
+      keyText="Fluxos de trabalho 100% automatizados entre CRM e ERP, sincronizacao de dados em tempo real e reducao drastica de erros operacionais e retrabalho."
     />
   );
 }

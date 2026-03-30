@@ -314,7 +314,7 @@ export function ServicesCarousel() {
               className="flex w-max gap-6 cursor-grab active:cursor-grabbing"
             >
               {infiniteServices.map((service, index) => {
-                const isAgencyService = service.slug === "white-label";
+                const isAgencyService = service.slug === "white-label-agencias";
 
                 return (
                   <article

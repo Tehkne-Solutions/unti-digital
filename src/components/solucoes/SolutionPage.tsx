@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
+import { SectionReveal } from "@/components/ui/SectionReveal";
 import { ProcessSteps } from "@/components/solucoes/ProcessSteps";
 
 export interface SolutionBenefit {
@@ -70,78 +71,94 @@ export function SolutionPage({
 
             <Breadcrumb items={breadcrumb} />
 
-            <section className="min-h-[60vh] flex items-center relative overflow-hidden" style={{
-                backgroundImage: 'url(/images/unti-digital-solucoes-hero-banner-bg.png)',
-                backgroundAttachment: 'fixed',
-                backgroundPosition: 'center',
-                backgroundSize: 'cover',
-                backgroundRepeat: 'no-repeat',
-            }}>
+            <section
+                className="min-h-[60vh] relative flex items-center overflow-hidden"
+                style={{
+                    backgroundImage: "url(/images/unti-digital-solucoes-hero-banner-bg.png)",
+                    backgroundAttachment: "fixed",
+                    backgroundPosition: "center",
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
+                }}
+            >
                 <div className="absolute inset-0 bg-white/[0.85]"></div>
                 <Container className="relative z-20">
-                    <div className="max-w-3xl py-20 relative z-10">
-                        <p className="text-unti-blue font-semibold uppercase tracking-widest text-sm mb-4">
-                            {preTitle}
-                        </p>
-                        <h1 className="text-zinc-900 text-4xl md:text-6xl font-bold leading-tight mb-6">
-                            {title}
-                        </h1>
-                        <p className="text-zinc-600 text-lg md:text-xl mb-8">{subtitle}</p>
-
-                        <Link href={ctaButtonHref}>
-                            <Button className="interactive-btn" variant="primary">
-                                {ctaButtonText}
-                            </Button>
-                        </Link>
+                    <div className="relative z-10 max-w-3xl py-20">
+                        <SectionReveal>
+                            <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-unti-blue">
+                                {preTitle}
+                            </p>
+                        </SectionReveal>
+                        <SectionReveal>
+                            <h1 className="mb-6 text-4xl font-bold leading-tight text-zinc-900 md:text-6xl">
+                                {title}
+                            </h1>
+                        </SectionReveal>
+                        <SectionReveal>
+                            <p className="mb-8 text-lg text-zinc-600 md:text-xl">{subtitle}</p>
+                        </SectionReveal>
+                        <SectionReveal>
+                            <Link href={ctaButtonHref}>
+                                <Button className="interactive-btn" variant="primary">
+                                    {ctaButtonText}
+                                </Button>
+                            </Link>
+                        </SectionReveal>
                     </div>
                 </Container>
             </section>
 
             <section className="py-20">
                 <Container>
-                    <div className="mb-12 text-center">
-                        <h2 className="text-3xl md:text-4xl font-bold text-zinc-900">
+                    <SectionReveal className="mb-12 text-center">
+                        <h2 className="text-3xl font-bold text-zinc-900 md:text-4xl">
                             Por que investir nesta solução?
                         </h2>
-                        <p className="text-zinc-600 mt-4 max-w-3xl mx-auto">
+                        <p className="mx-auto mt-4 max-w-3xl text-zinc-600">
                             Estas vantagens estruturam sua jornada digital com resultados reais e previsíveis.
                         </p>
-                    </div>
+                    </SectionReveal>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
                         {benefits.map((item) => (
-                            <article
-                                key={item.title}
-                                className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow"
-                            >
-                                <h3 className="text-xl font-semibold text-zinc-900 mb-3">{item.title}</h3>
-                                <p className="text-zinc-600 leading-relaxed">{item.description}</p>
-                            </article>
+                            <SectionReveal key={item.title} className="h-full">
+                                <article className="h-full rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
+                                    <h3 className="mb-3 text-xl font-semibold text-zinc-900">{item.title}</h3>
+                                    <p className="leading-relaxed text-zinc-600">{item.description}</p>
+                                </article>
+                            </SectionReveal>
                         ))}
                     </div>
                 </Container>
             </section>
 
-            <section className="w-full bg-unti-blue text-white py-20">
+            <section className="w-full bg-unti-blue py-20 text-white">
                 <Container>
-                    <div className="max-w-5xl mx-auto">
-                        <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-white">Como trabalhamos</h2>
+                    <div className="mx-auto max-w-5xl">
+                        <SectionReveal>
+                            <h2 className="mb-8 text-center text-3xl font-bold text-white md:text-4xl">
+                                Como trabalhamos
+                            </h2>
+                        </SectionReveal>
                         <ProcessSteps steps={processSteps} />
                     </div>
                 </Container>
             </section>
 
             {imageSections && imageSections.length > 0 && (
-                <section className="py-20 bg-slate-50">
+                <section className="bg-slate-50 py-20">
                     <Container>
                         <div className="space-y-20">
                             {imageSections.map((section, index) => (
-                                <div key={index} className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-12`}>
+                                <SectionReveal
+                                    key={section.title}
+                                    className={`flex flex-col items-center gap-12 ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"}`}
+                                >
                                     <div className="flex-1">
-                                        <h3 className="text-2xl md:text-3xl font-bold text-zinc-900 mb-4">
+                                        <h3 className="mb-4 text-2xl font-bold text-zinc-900 md:text-3xl">
                                             {section.title}
                                         </h3>
-                                        <p className="text-zinc-600 leading-relaxed text-lg">
+                                        <p className="text-lg leading-relaxed text-zinc-600">
                                             {section.description}
                                         </p>
                                     </div>
@@ -151,10 +168,10 @@ export function SolutionPage({
                                             alt={section.imageAlt}
                                             width={600}
                                             height={400}
-                                            className="w-full h-auto rounded-lg shadow-lg"
+                                            className="h-auto w-full rounded-lg shadow-lg"
                                         />
                                     </div>
-                                </div>
+                                </SectionReveal>
                             ))}
                         </div>
                     </Container>
@@ -162,16 +179,21 @@ export function SolutionPage({
             )}
 
             {(keyMessage || keyText) && (
-                <section className="py-20 bg-white">
+                <section className="bg-white py-20">
                     <Container>
-                        <div className="max-w-4xl mx-auto">
-                            {keyMessage && (
-                                <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-6">
-                                    {keyMessage}
-                                </h2>
-                            )}
-                            {keyText && <p className="text-zinc-600 leading-relaxed">{keyText}</p>}
-                        </div>
+                        <SectionReveal className="mx-auto max-w-4xl">
+                            <div className="rounded-[32px] border border-blue-100 bg-gradient-to-br from-blue-50 via-white to-slate-50 p-8 shadow-[0_18px_50px_rgba(37,99,235,0.08)] md:p-10">
+                                <p className="text-sm font-semibold uppercase tracking-[0.24em] text-unti-blue">
+                                    Resultado esperado
+                                </p>
+                                {keyMessage && (
+                                    <h2 className="mt-4 text-3xl font-bold text-zinc-900 md:text-4xl">
+                                        {keyMessage}
+                                    </h2>
+                                )}
+                                {keyText && <p className="mt-4 text-lg leading-relaxed text-zinc-600">{keyText}</p>}
+                            </div>
+                        </SectionReveal>
                     </Container>
                 </section>
             )}
@@ -180,7 +202,7 @@ export function SolutionPage({
 
             <section className="bg-unti-blue py-32">
                 <Container>
-                    <div className="flex flex-col items-center text-center">
+                    <SectionReveal className="flex flex-col items-center text-center">
                         <h2 className="mb-6 text-4xl font-bold text-white md:text-5xl">{ctaTitle}</h2>
                         <p className="mb-10 max-w-2xl text-lg text-white/80">{ctaText}</p>
                         <Link href={ctaButtonHref}>
@@ -188,7 +210,7 @@ export function SolutionPage({
                                 {ctaButtonText}
                             </Button>
                         </Link>
-                    </div>
+                    </SectionReveal>
                 </Container>
             </section>
         </div>

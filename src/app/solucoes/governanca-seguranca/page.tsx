@@ -1,20 +1,31 @@
-﻿import { SolutionPage, SolutionBenefit, SolutionStep } from "@/components/solucoes/SolutionPage";
+import { SolutionPage, SolutionBenefit, SolutionStep } from "@/components/solucoes/SolutionPage";
 
 export const metadata = {
-    title: "Governança e Segurança Digital | Unti Digital",
-    description: "Arquitetura segura com controle de acessos, monitoramento contínuo e compliance garantido.",
+    title: "Seguranca Nivel Enterprise e Compliance Digital | Unti Digital",
+    description: "Arquiteturas Zero-Trust com controle de acessos, monitoramento continuo, LGPD e governanca para operacoes digitais criticas.",
+    keywords: [
+        "governanca e seguranca digital",
+        "zero trust",
+        "compliance lgpd",
+        "controle de acessos",
+        "monitoramento de seguranca"
+    ],
+    alternates: {
+        canonical: "/solucoes/governanca-seguranca",
+    },
     openGraph: {
-        title: "Governança e Segurança Digital | Unti Digital",
-        description: "Arquitetura segura com controle de acessos, monitoramento contínuo e compliance garantido.",
+        title: "Seguranca Nivel Enterprise e Compliance Digital | Unti Digital",
+        description: "Arquiteturas Zero-Trust com controle de acessos, monitoramento continuo, LGPD e governanca para operacoes digitais criticas.",
         type: "website",
+        url: "https://unti-digital.vercel.app/solucoes/governanca-seguranca",
     },
 };
 
 const schemaMarkup = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "Governança e Segurança Digital",
-    description: "Arquitetura segura com controle de acessos, monitoramento contínuo e compliance garantido.",
+    name: "Seguranca Nivel Enterprise e Compliance Digital",
+    description: "Protegemos operacoes digitais com arquitetura Zero-Trust, controle de acessos, monitoramento continuo e conformidade com LGPD.",
     provider: {
         "@type": "Organization",
         name: "Unti Digital",
@@ -24,31 +35,32 @@ const schemaMarkup = {
 };
 
 const benefits: SolutionBenefit[] = [
-    { title: "Arquitetura segura", description: "Implementamos práticas de segurança desde o design da solução." },
-    { title: "Controle de acessos", description: "Gerenciamento granular de permissões e roles para cada usuário e sistema." },
-    { title: "Monitoramento contínuo", description: "Detectamos anomalias e ameaças em tempo real com alertas automáticos." },
+    { title: "Arquitetura Zero-Trust", description: "Adotamos o principio de menor privilegio para reduzir superficie de ataque e fortalecer a operacao." },
+    { title: "Controle granular de acessos", description: "Definimos identidades, perfis e permissoes com rastreabilidade para usuarios, integracoes e servicos." },
+    { title: "Compliance orientado ao negocio", description: "Traduzimos LGPD e exigencias regulatorias em praticas aplicaveis ao seu ecossistema digital." },
+    { title: "Monitoramento e resposta", description: "Implementamos visibilidade continua para detectar anomalias, eventos criticos e comportamentos suspeitos." },
 ];
 
 const processSteps: SolutionStep[] = [
-    { title: "Auditoria de segurança", description: "Analisamos sua arquitetura atual e identificamos vulnerabilidades." },
-    { title: "Planejamento de segurança", description: "Criamos roadmap detalhado para implementar controles necessários." },
-    { title: "Implementação", description: "Implantamos controles, certificados, firewalls e sistemas de proteção." },
-    { title: "Testes de penetração", description: "Validamos a segurança com testes especializados e correção de vulnerabilidades." },
-    { title: "Evolução contínua", description: "Mantemos monitoramento ativo e atualizamos conforme novas ameaças surgem." },
+    { title: "Avaliacao e auditoria", description: "Revisamos arquitetura, permissoes, fluxos e riscos para identificar vulnerabilidades e lacunas de governanca." },
+    { title: "Plano de endurecimento", description: "Definimos roadmap com politicas, controles, responsabilidades e prioridades de implementacao." },
+    { title: "Implantacao de controles", description: "Aplicamos protecao de acesso, segregacao, monitoramento e praticas de seguranca aderentes ao ambiente." },
+    { title: "Validacao e conformidade", description: "Executamos testes, revisoes e verificacoes para comprovar aderencia tecnica e regulatoria." },
+    { title: "Operacao continua", description: "Mantemos monitoramento ativo, recomendacoes evolutivas e resposta mais rapida a novos riscos." },
 ];
 
 export default function GovernancaSegurancaPage() {
   return (
     <SolutionPage
       schemaMarkup={schemaMarkup}
-      breadcrumb={[{ label: "Soluções", href: "/solucoes" }, { label: "Governança e Segurança" }]}
-      preTitle="Solução em Governança e Segurança"
-      title="Governança e Segurança"
-      subtitle="Arquitetura segura com controle de acessos, monitoramento contínuo e compliance garantido."
+      breadcrumb={[{ label: "Solucoes", href: "/solucoes" }, { label: "Governanca e Seguranca" }]}
+      preTitle="Solucao em Governanca e Seguranca"
+      title="Seguranca Nivel Enterprise e Compliance Digital"
+      subtitle="Protegemos sua operacao com arquiteturas Zero-Trust, controle rigoroso de acessos, monitoramento continuo e conformidade com LGPD e normas de seguranca corporativa."
       benefits={benefits}
       processSteps={processSteps}
-      keyMessage="Processo seguro"
-      keyText="Segurança digital sólida é base para operações confiáveis, crescimento e retenção de clientes."
+      keyMessage="Resultados esperados"
+      keyText="Arquitetura Zero-Trust com monitoramento ativo, compliance garantido e controle granular de acessos, assegurando protecao total contra ataques e vazamento de dados."
     />
   );
 }

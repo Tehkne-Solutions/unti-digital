@@ -4,87 +4,87 @@ import { PageShell } from "@/components/page-shell";
 
 const services = [
   {
-    title: "Site institucional enterprise",
-    description: "Para empresas que precisam de presença robusta e narrativa comercial clara.",
+    title: "Hubs corporativos de alta performance",
+    description: "Para empresas que precisam unir autoridade digital, Core Web Vitals e conversao em um unico ativo.",
     items: [
-      "Arquitetura e narrativa comercial",
-      "Design UI/UX responsivo",
-      "SEO técnico, performance e Core Web Vitals",
-      "Analytics/GTM e consentimento LGPD"
+      "Arquitetura de conversao e narrativa comercial",
+      "Design responsivo com leitura premium",
+      "SEO tecnico, performance e Core Web Vitals",
+      "Integracao com fluxos comerciais e operacionais"
     ]
   },
   {
     title: "Plataformas web sob medida",
-    description: "Portais e áreas logadas conectadas aos processos internos e dados do negócio.",
+    description: "Software web para operacoes complexas, produtos SaaS e ecossistemas digitais em expansao.",
     items: [
-      "Portais, áreas logadas e dashboards",
-      "Integração com APIs e bases existentes",
-      "Gestão de acesso e perfis",
-      "Infra e deploy sob governança"
+      "Portais, areas logadas e dashboards",
+      "Arquitetura modular para novas frentes",
+      "Integracao com APIs e bases legadas",
+      "Governanca, deploy e monitoramento"
     ]
   },
   {
-    title: "Integrações e automações",
-    description: "Conectamos sistemas críticos para reduzir retrabalho e acelerar a operação.",
+    title: "Integracoes com CRM e ERP",
+    description: "Conectamos sistemas criticos para automatizar fluxos e sincronizar dados em tempo real.",
     items: [
       "CRM, ERP, BI e marketing",
-      "Webhooks, filas e sincronização",
+      "Webhooks, filas e sincronizacao",
       "Logs e observabilidade",
-      "Documentação técnica"
+      "Documentacao tecnica"
     ]
   },
   {
-    title: "Produtos internos e operações",
-    description: "Ferramentas digitais para times internos com foco em eficiência e visibilidade.",
+    title: "Governanca e seguranca",
+    description: "Arquiteturas Zero-Trust para proteger operacoes, dados sensiveis e acessos criticos.",
     items: [
-      "Ferramentas para time comercial e operacional",
-      "Fluxos digitais sob medida",
-      "Redução de retrabalho",
-      "Treinamento e handoff"
+      "Controle de acessos e identidades",
+      "Monitoramento e resposta a incidentes",
+      "Compliance e adequacao a LGPD",
+      "Roadmap continuo de seguranca"
     ]
   },
   {
-    title: "Evolução e performance",
-    description: "Ciclos contínuos de melhoria para manter performance e conversão.",
+    title: "White Label tecnico para agencias",
+    description: "Capacidade de engenharia sob sua marca para projetos premium com confidencialidade e previsibilidade.",
     items: [
-      "Otimizações contínuas",
-      "Testes e melhorias de conversão",
-      "Suporte a campanhas e lançamentos",
-      "Backlog priorizado"
+      "NDA e entrega invisivel",
+      "Integracao ao fluxo da agencia",
+      "Squad sob demanda para projetos complexos",
+      "Escala tecnica sem ampliar estrutura fixa"
     ]
   }
 ];
 
 const deliverySteps = [
   {
-    title: "Diagnóstico e escopo",
-    description: "Mapeamos objetivos, restrições e indicadores antes de definir entregas."
+    title: "Diagnostico e escopo",
+    description: "Mapeamos objetivos, restricoes e indicadores antes de definir a estrategia tecnica."
   },
   {
-    title: "Design e arquitetura",
-    description: "Estruturamos a narrativa, o fluxo e a base técnica do projeto."
+    title: "Arquitetura e experiencia",
+    description: "Estruturamos a narrativa, o fluxo e a base tecnica que sustentarao a operacao."
   },
   {
-    title: "Desenvolvimento e integrações",
-    description: "Implementação em sprints curtas com checkpoints e validações."
+    title: "Desenvolvimento e integracoes",
+    description: "Implementacao em sprints curtas com checkpoints, testes e visibilidade executiva."
   },
   {
-    title: "Go-live e evolução",
-    description: "Publicação assistida, monitoramento e ajustes pós-lançamento."
+    title: "Go-live e evolucao",
+    description: "Publicacao assistida, monitoramento e backlog priorizado para crescimento continuo."
   }
 ];
 
 const assurances = [
-  "Escopo fechado com prazos claros",
-  "Acompanhamento direto com time técnico",
-  "LGPD e boas práticas desde o início"
+  "Escopo claro com prazos previsiveis",
+  "Acompanhamento direto com time tecnico",
+  "Boas praticas de seguranca e compliance desde o inicio"
 ];
 
 export default function ServicosPage() {
   return (
     <PageShell
-      title="Serviços"
-      description="Pacotes de tecnologia com escopo fechado, prazos claros e foco em conversão e operação."
+      title="Servicos"
+      description="Solucoes digitais com foco em conversao, integracao, seguranca e escala para empresas e agencias."
     >
       <div className="grid gap-6">
         {services.map((service) => (
@@ -107,7 +107,7 @@ export default function ServicosPage() {
       <section className="mt-12 rounded-2xl border border-slate-200 bg-white p-8">
         <h2 className="text-2xl font-semibold text-slate-900">Modelo de entrega</h2>
         <p className="mt-2 max-w-2xl text-slate-600">
-          Trabalhamos com etapas claras, comunicação direta e entregas previsíveis.
+          Trabalhamos com etapas claras, comunicacao direta e entregas previsiveis.
         </p>
         <div className="mt-6 grid gap-4 md:grid-cols-2">
           {deliverySteps.map((step, index) => (
@@ -129,9 +129,9 @@ export default function ServicosPage() {
       </section>
 
       <section className="mt-12 rounded-2xl bg-slate-900 px-8 py-10 text-white">
-        <h2 className="text-2xl font-semibold">Precisa de um serviço específico?</h2>
+        <h2 className="text-2xl font-semibold">Precisa de um servico especifico?</h2>
         <p className="mt-2 max-w-2xl text-white/80">
-          Conte seu contexto e objetivos. Respondemos com diagnóstico inicial e próximo passo claro.
+          Conte seu contexto e objetivos. Respondemos com diagnostico inicial e proximo passo claro.
         </p>
         <div className="mt-6 flex flex-wrap gap-3">
           <LeadModal />

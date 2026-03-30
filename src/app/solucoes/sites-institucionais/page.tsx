@@ -1,20 +1,31 @@
-﻿import { SolutionPage, SolutionBenefit, SolutionStep, SolutionImageSection } from "@/components/solucoes/SolutionPage";
+import { SolutionPage, SolutionBenefit, SolutionStep, SolutionImageSection } from "@/components/solucoes/SolutionPage";
 
 export const metadata = {
-    title: "Sites Institucionais de Alta Performance | Unti Digital",
-    description: "Desenvolvemos plataformas corporativas focadas em conversão, integração e governança digital.",
+    title: "Hubs Corporativos de Alta Performance e Conversao | Unti Digital",
+    description: "Sites institucionais premium com foco em Core Web Vitals, CRO, integracao com sistemas internos e autoridade digital para empresas B2B.",
+    keywords: [
+        "sites institucionais de alta performance",
+        "site corporativo b2b",
+        "core web vitals",
+        "cro para site institucional",
+        "site com integracao crm e erp"
+    ],
+    alternates: {
+        canonical: "/solucoes/sites-institucionais",
+    },
     openGraph: {
-        title: "Sites Institucionais de Alta Performance | Unti Digital",
-        description: "Desenvolvemos plataformas corporativas focadas em conversão, integração e governança digital.",
+        title: "Hubs Corporativos de Alta Performance e Conversao | Unti Digital",
+        description: "Sites institucionais premium com foco em Core Web Vitals, CRO, integracao com sistemas internos e autoridade digital para empresas B2B.",
         type: "website",
+        url: "https://unti-digital.vercel.app/solucoes/sites-institucionais",
     },
 };
 
 const schemaMarkup = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "Sites Institucionais de Alta Performance",
-    description: "Desenvolvemos plataformas corporativas focadas em conversão, integração e governança digital.",
+    name: "Hubs Corporativos de Alta Performance e Conversao",
+    description: "Construimos hubs corporativos premium com foco em conversao, Core Web Vitals, SEO tecnico e integracao com fluxos internos.",
     provider: {
         "@type": "Organization",
         name: "Unti Digital",
@@ -24,37 +35,37 @@ const schemaMarkup = {
 };
 
 const benefits: SolutionBenefit[] = [
-    { title: "Design Exclusivo", description: "Layout sob medida para sua marca, com identidade visual única e linguagem de comunicação clara." },
-    { title: "SEO Otimizado", description: "Estrutura técnica e conteúdo preparado para ranqueamento, velocidade e indexação orgânica." },
-    { title: "Velocidade de Carregamento", description: "Performance de carregamento rápido e fluida em desktop e mobile, reduzindo taxa de rejeição." },
-    { title: "Foco em Conversão", description: "Arquitetura de jornada focada em lead gen e geração de oportunidades para seu time de vendas." },
+    { title: "Arquitetura orientada a conversao", description: "Estruturamos jornadas e paginas criticas para transformar trafego em oportunidades comerciais qualificadas." },
+    { title: "Core Web Vitals em primeiro plano", description: "Cada tela e construida para carregar rapido, responder com fluidez e preservar a experiencia em qualquer dispositivo." },
+    { title: "Integracao com fluxos internos", description: "Seu site passa a conversar com CRM, automacoes e processos comerciais sem retrabalho manual." },
+    { title: "Autoridade digital imediata", description: "Design premium e narrativa corporativa clara posicionam sua empresa como referencia desde o primeiro acesso." },
 ];
 
 const processSteps: SolutionStep[] = [
-    { title: "Briefing e alinhamento", description: "Mapeamos metas, público, benchmark e KPI para o novo site institucional." },
-    { title: "Design UX/UI", description: "Prototipamos com foco em clareza, acessibilidade e performance mobile-first." },
-    { title: "Desenvolvimento e integração", description: "Construímos com Next.js, SEO técnico, integração CRM/ERP e automação de dados." },
-    { title: "Lançamento e otimização", description: "Deploy seguro, testes A/B e monitoramento para evolução contínua do site." },
+    { title: "Diagnostico e posicionamento", description: "Mapeamos metas, diferenciais e gargalos comerciais para desenhar um hub corporativo alinhado ao negocio." },
+    { title: "Arquitetura de experiencia", description: "Organizamos navegacao, hierarquia de conteudo e CTA com foco em clareza, autoridade e CRO." },
+    { title: "Desenvolvimento e integracoes", description: "Implementamos uma base performatica com SEO tecnico, Core Web Vitals e conexao com ferramentas internas." },
+    { title: "Go-live com evolucao continua", description: "Publicamos com monitoramento ativo, ajustes finos e leitura constante de performance e conversao." },
 ];
 
 const imageSections: SolutionImageSection[] = [
     {
-        title: "Design Responsivo e Acessível",
-        description: "Criamos interfaces que se adaptam perfeitamente a todos os dispositivos, garantindo uma experiência excepcional em desktop, tablet e mobile. Nossa abordagem mobile-first assegura que seu site institucional seja acessível e funcional para todos os usuários.",
+        title: "Experiencia premium em qualquer tela",
+        description: "Criamos interfaces institucionais responsivas com leitura clara, hierarquia refinada e navegacao sem atrito do mobile ao desktop.",
         imageSrc: "/images/unti-digital-homepage-image-nossas-solucoes-sites-institucionais.png",
-        imageAlt: "Design responsivo de sites institucionais"
+        imageAlt: "Experiencia premium para sites institucionais"
     },
     {
-        title: "Performance e Velocidade Otimizadas",
-        description: "Utilizamos as melhores práticas de desenvolvimento para garantir carregamento rápido e performance excepcional. Técnicas avançadas de otimização de imagens, código minificado e CDN garantem que seu site converta visitantes em leads.",
+        title: "Performance que protege a conversao",
+        description: "Otimizamos imagens, front-end e infraestrutura para entregar carregamento sub-segundo, melhor experiencia e mais relevancia organica no Google.",
         imageSrc: "/images/unti-digital-homepage-image-slider-servicos-sites-e-plataformas-de-alta-performance.png",
         imageAlt: "Performance otimizada para sites institucionais"
     },
     {
-        title: "Integração com Sistemas Empresariais",
-        description: "Conectamos seu site institucional com CRM, ERP e outras ferramentas essenciais do seu negócio. Automatizamos processos de captação de leads e sincronização de dados para maximizar a eficiência operacional.",
+        title: "Conexao nativa com a operacao",
+        description: "Integramos CRM, ERP e fluxos de automacao para transformar o site em um ativo operacional, nao apenas institucional.",
         imageSrc: "/images/unti-digital-homepage-image-nossas-solucoes-integracoes-e-automacoes.png",
-        imageAlt: "Integração de sistemas empresariais"
+        imageAlt: "Integracao de sistemas empresariais"
     }
 ];
 
@@ -62,15 +73,15 @@ export default function SitesInstitucionaisPage() {
     return (
         <SolutionPage
             schemaMarkup={schemaMarkup}
-            breadcrumb={[{ label: "Soluções", href: "/solucoes" }, { label: "Sites Institucionais" }]}
-            preTitle="Solução em Sites Institucionais"
-            title="Criação de Sites Institucionais de Alta Performance"
-            subtitle="Transformamos sua presença digital em uma ferramenta de vendas e autoridade."
+            breadcrumb={[{ label: "Solucoes", href: "/solucoes" }, { label: "Sites Institucionais" }]}
+            preTitle="Solucao em Sites Institucionais"
+            title="Hubs Corporativos de Alta Performance e Conversao"
+            subtitle="Construimos plataformas institucionais desenhadas para empresas que buscam autoridade imediata. Unimos design minimalista premium a uma infraestrutura tecnica robusta, otimizada para Core Web Vitals e integracao com fluxos internos."
             benefits={benefits}
             processSteps={processSteps}
             imageSections={imageSections}
-            keyMessage="Resultados Comprovados: Sites Institucionais que Convertem"
-            keyText="Nossos sites institucionais não apenas impressionam visualmente, mas entregam resultados mensuráveis. Aumentamos a taxa de conversão em até 300% para clientes corporativos, reduzimos o tempo de carregamento para menos de 2 segundos e melhoramos o ranqueamento orgânico em 150% em média. Cada projeto é otimizado para performance, acessibilidade e ROI máximo."
+            keyMessage="Resultados esperados"
+            keyText="Plataformas corporativas ultravelozes com arquitetura focada em conversao, integracao nativa com fluxos internos e dominio total dos indices de performance e SEO do Google."
         />
     );
 }

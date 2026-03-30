@@ -15,28 +15,28 @@ interface Slide {
 
 const slides: Slide[] = [
   {
-    title: "Sites e Plataformas de Alta Performance",
+    title: "Hubs Corporativos de Alta Performance",
     description:
-      "Desenvolvemos sites institucionais e plataformas web escaláveis com foco em conversão, performance e experiência do usuário.",
+      "Construimos plataformas institucionais premium para empresas que precisam unir autoridade, performance e conversao.",
     image: "/images/unti-digital-homepage-image-slider-servicos-sites-e-plataformas-de-alta-performance.png",
     ctaPrimary: "Falar com especialista",
-    ctaSecondary: "Ver portfólio"
+    ctaSecondary: "Ver portfolio"
   },
   {
-    title: "Integrações e Automações Inteligentes",
+    title: "Automacao Inteligente de Dados",
     description:
-      "Conectamos sistemas, ERPs, CRMs e APIs para automatizar processos com integrações robustas e confiáveis.",
+      "Conectamos CRM, ERP, marketing e operacao para eliminar retrabalho e dar previsibilidade ao fluxo de dados.",
     image: "/images/unti-digital-homepage-image-slider-servicos-integracoes-e-automacoes-inteligentes.png",
     ctaPrimary: "Falar com especialista",
     ctaSecondary: "Ver cases"
   },
   {
-    title: "White-label técnico para agências",
+    title: "White Label Tecnico para Agencias",
     description:
-      "Oferecemos suporte técnico especializado para agências digitais que precisam escalar projetos com segurança.",
+      "Atuamos como braco tecnologico invisivel para agencias que precisam ampliar capacidade com confidencialidade e padrao enterprise.",
     image: "/images/unti-digital-homepage-image-slider-servicos-white-label-tecnico-para-agencias.png",
     ctaPrimary: "Falar com especialista",
-    ctaSecondary: "Ver soluções"
+    ctaSecondary: "Ver solucoes"
   }
 ];
 
@@ -138,7 +138,7 @@ export function HeroCarousel() {
         <button
           onClick={nextSlide}
           className="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-lg transition-colors hover:bg-gray-50"
-          aria-label="Próximo slide"
+          aria-label="Proximo slide"
         >
           <svg className="h-6 w-6 text-unti-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
