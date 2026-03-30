@@ -1,4 +1,4 @@
-﻿import { SolutionPage, SolutionBenefit, SolutionStep } from "@/components/solucoes/SolutionPage";
+﻿import { SolutionPage, SolutionBenefit, SolutionStep, SolutionImageSection } from "@/components/solucoes/SolutionPage";
 
 export const metadata = {
     title: "Sites Institucionais de Alta Performance | Unti Digital",
@@ -37,6 +37,27 @@ const processSteps: SolutionStep[] = [
     { title: "Lançamento e otimização", description: "Deploy seguro, testes A/B e monitoramento para evolução contínua do site." },
 ];
 
+const imageSections: SolutionImageSection[] = [
+    {
+        title: "Design Responsivo e Acessível",
+        description: "Criamos interfaces que se adaptam perfeitamente a todos os dispositivos, garantindo uma experiência excepcional em desktop, tablet e mobile. Nossa abordagem mobile-first assegura que seu site institucional seja acessível e funcional para todos os usuários.",
+        imageSrc: "/images/unti-digital-homepage-image-nossas-solucoes-sites-institucionais.png",
+        imageAlt: "Design responsivo de sites institucionais"
+    },
+    {
+        title: "Performance e Velocidade Otimizadas",
+        description: "Utilizamos as melhores práticas de desenvolvimento para garantir carregamento rápido e performance excepcional. Técnicas avançadas de otimização de imagens, código minificado e CDN garantem que seu site converta visitantes em leads.",
+        imageSrc: "/images/unti-digital-homepage-image-slider-servicos-sites-e-plataformas-de-alta-performance.png",
+        imageAlt: "Performance otimizada para sites institucionais"
+    },
+    {
+        title: "Integração com Sistemas Empresariais",
+        description: "Conectamos seu site institucional com CRM, ERP e outras ferramentas essenciais do seu negócio. Automatizamos processos de captação de leads e sincronização de dados para maximizar a eficiência operacional.",
+        imageSrc: "/images/unti-digital-homepage-image-nossas-solucoes-integracoes-e-automacoes.png",
+        imageAlt: "Integração de sistemas empresariais"
+    }
+];
+
 export default function SitesInstitucionaisPage() {
     return (
         <SolutionPage
@@ -47,8 +68,9 @@ export default function SitesInstitucionaisPage() {
             subtitle="Transformamos sua presença digital em uma ferramenta de vendas e autoridade."
             benefits={benefits}
             processSteps={processSteps}
-            keyMessage="O que dizíamos no site antigo"
-            keyText="Os serviços da Unti Digital são soluções inteligentes para qualquer empresa e agências de marketing digital que necessitam de experts em desenvolvimento de sites, landing pages, blogs e lojas. Entregamos websites modernos com foco em velocidade, experiência do usuário e alta conversão. Com integração direta a CRM, automação de leads e suporte contínuo, mantemos sua presença digital sempre alinhada às metas de crescimento. Planejamos cada etapa para que o projeto entregue não seja apenas visualmente atrativo, mas também eficiente em geração de resultados e otimizado para o ciclo de vendas."
+            imageSections={imageSections}
+            keyMessage="Resultados Comprovados: Sites Institucionais que Convertem"
+            keyText="Nossos sites institucionais não apenas impressionam visualmente, mas entregam resultados mensuráveis. Aumentamos a taxa de conversão em até 300% para clientes corporativos, reduzimos o tempo de carregamento para menos de 2 segundos e melhoramos o ranqueamento orgânico em 150% em média. Cada projeto é otimizado para performance, acessibilidade e ROI máximo."
         />
     );
 }

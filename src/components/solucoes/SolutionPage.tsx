@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
@@ -16,6 +17,13 @@ export interface SolutionStep {
     description: string;
 }
 
+export interface SolutionImageSection {
+    title: string;
+    description: string;
+    imageSrc: string;
+    imageAlt: string;
+}
+
 export interface SolutionPageProps {
     schemaMarkup?: Record<string, unknown>;
     breadcrumb: { label: string; href?: string }[];
@@ -26,6 +34,7 @@ export interface SolutionPageProps {
     processSteps: SolutionStep[];
     keyMessage?: string;
     keyText?: string;
+    imageSections?: SolutionImageSection[];
     ctaTitle?: string;
     ctaText?: string;
     ctaButtonText?: string;
@@ -43,6 +52,7 @@ export function SolutionPage({
     processSteps,
     keyMessage,
     keyText,
+    imageSections,
     ctaTitle = "Pronto para escalar sua presença digital com segurança?",
     ctaText = "Fale com um especialista e descubra como podemos estruturar sua operação digital com previsibilidade e performance.",
     ctaButtonText = "Falar com especialista",
@@ -113,6 +123,36 @@ export function SolutionPage({
                     </div>
                 </Container>
             </section>
+
+            {imageSections && imageSections.length > 0 && (
+                <section className="py-20 bg-slate-50">
+                    <Container>
+                        <div className="space-y-20">
+                            {imageSections.map((section, index) => (
+                                <div key={index} className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-12`}>
+                                    <div className="flex-1">
+                                        <h3 className="text-2xl md:text-3xl font-bold text-zinc-900 mb-4">
+                                            {section.title}
+                                        </h3>
+                                        <p className="text-zinc-600 leading-relaxed text-lg">
+                                            {section.description}
+                                        </p>
+                                    </div>
+                                    <div className="flex-1">
+                                        <Image
+                                            src={section.imageSrc}
+                                            alt={section.imageAlt}
+                                            width={600}
+                                            height={400}
+                                            className="w-full h-auto rounded-lg shadow-lg"
+                                        />
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </Container>
+                </section>
+            )}
 
             {(keyMessage || keyText) && (
                 <section className="py-20 bg-white">
