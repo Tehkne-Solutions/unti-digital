@@ -137,7 +137,7 @@ export function SolutionPage({
                         <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-6">{ctaTitle}</h2>
                         <p className="text-zinc-600 mb-8">{ctaText}</p>
                         <Link href={ctaButtonHref}>
-                            <Button className="interactive-btn bg-gradient-to-r from-unti-orange to-unti-yellow text-white shadow-lg hover:shadow-xl" variant="">
+                            <Button className="interactive-btn bg-gradient-to-r from-unti-orange to-unti-yellow text-white shadow-lg hover:shadow-xl">
                                 {ctaButtonText}
                             </Button>
                         </Link>
