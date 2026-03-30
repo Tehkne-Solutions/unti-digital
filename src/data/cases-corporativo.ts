@@ -2,152 +2,227 @@ import type { CaseSeed } from "./cases.shared";
 
 export const corporativoCases: CaseSeed[] = [
   {
-    id: "thiago-abreu",
-    slug: "thiago-abreu",
-    cliente: "Thiago Abreu",
+    id: "grupo-aljr",
+    slug: "grupo-aljr",
+    cliente: "Grupo ALJR",
     categoria: "corporativo",
-    segmento: "Marca pessoal & servicos",
-    tagline: "Posicionamento digital para autoridade e geracao de oportunidades",
-    resumoHome: "Marca pessoal estruturada para clareza de oferta e captacao consultiva.",
+    segmento: "Grupo empresarial",
+    tagline: "Presenca institucional para consolidar marca e relacionamento comercial",
+    resumoHome: "Site institucional para fortalecer autoridade e leitura de grupo empresarial.",
     resumo:
-      "Projeto institucional para fortalecer marca pessoal, organizar oferta e criar uma jornada mais madura para novos contatos comerciais.",
-    tecnologias: ["Next.js", "Posicionamento Digital", "SEO", "Formularios Inteligentes"],
+      "Projeto focado em traduzir estrutura de grupo, frentes de atuacao e credibilidade em uma experiencia institucional clara e de alto nivel.",
+    assetFolder: "grupo-ALJR",
+    assetBannerFile: "unti-digital-cases-grupo-ALJR-banner.webp",
+    assetPrintFile: "unti-digital-cases-grupo-ALJR-print-site.webp",
+    tecnologias: ["Next.js", "Tailwind CSS", "SEO Estrategico", "UX B2B"],
     desafio:
-      "Organizar discurso de autoridade sem transformar a experiencia em algo pesado ou excessivamente promocional.",
+      "Apresentar um grupo empresarial com mais solidez e clareza sem diluir a leitura das frentes de negocio.",
     entrega:
-      "Site institucional com narrativa de posicionamento, servicos organizados e canais de contato pensados para oportunidades qualificadas.",
+      "Arquitetura institucional com narrativa corporativa, organizacao de servicos e contato preparado para oportunidades qualificadas.",
     impacto:
-      "Mais clareza de oferta e melhor leitura de autoridade logo nos primeiros blocos da experiencia.",
+      "Mais consistencia de marca e uma presenca digital mais madura para conversas comerciais de maior valor.",
     resultados: [
-      "Marca pessoal mais consistente",
-      "Oferta melhor estruturada para decisores",
-      "Contato comercial mais qualificado"
+      "Grupo apresentado com mais autoridade",
+      "Oferta institucional mais clara",
+      "Base pronta para ampliar relacionamento comercial"
+    ],
+    destaqueHome: false,
+    ordemPortfolio: 12
+  },
+  {
+    id: "conect-7g",
+    slug: "conect-7g",
+    cliente: "Conect 7G",
+    categoria: "corporativo",
+    segmento: "Tecnologia & Servicos",
+    tagline: "Presenca institucional orientada a autoridade tecnica e captacao de demanda",
+    resumoHome: "Estrutura digital para servicos tecnicos com mais clareza comercial.",
+    resumo:
+      "Case construido para organizar proposta de valor, destacar capacidades tecnicas e conduzir o visitante a uma conversa comercial mais objetiva.",
+    assetFolder: "conect-7g",
+    assetBannerFile: "unti-digital-cases-conect-7g-banner.webp",
+    assetPrintFile: "unti-digital-cases-conect-7g-print-site.webp",
+    tecnologias: ["Next.js", "Tailwind CSS", "Performance Web", "SEO Tecnico"],
+    desafio:
+      "Tornar uma oferta tecnica mais simples de entender sem perder profundidade e credibilidade.",
+    entrega:
+      "Site institucional com foco em clareza, hierarquia de servicos e pontos de contato para acelerar a qualificacao inicial.",
+    impacto:
+      "Melhor entendimento da oferta e uma presenca digital mais forte para prospeccao e relacionamento.",
+    resultados: [
+      "Oferta tecnica mais facil de consumir",
+      "Melhor leitura comercial da marca",
+      "Contato mais bem direcionado"
     ],
     destaqueHome: false,
     ordemPortfolio: 13
   },
   {
-    id: "m-amabilis",
-    slug: "m-amabilis",
-    cliente: "M. Amabilis",
+    id: "lp-conect-7g",
+    slug: "lp-conect-7g",
+    cliente: "Landing Page Conect 7G",
     categoria: "corporativo",
-    segmento: "Marca institucional",
-    tagline: "Presenca institucional elegante para servicos de maior valor percebido",
-    resumoHome: "Experiencia institucional premium com discurso comercial mais limpo.",
+    segmento: "Landing page",
+    tagline: "Pagina de campanha com foco em captacao e resposta comercial rapida",
+    resumoHome: "Landing page orientada a campanha e geracao de leads qualificados.",
     resumo:
-      "Case construido para combinar refinamento visual, organizacao de conteudo e pontos de contato discretos, mas estrategicos.",
-    tecnologias: ["Next.js", "Tailwind CSS", "Design System", "SEO Estrategico"],
-    desafio: "Valorizar percepcao de marca sem abrir mao de objetividade comercial.",
+      "Estrutura enxuta desenvolvida para apoiar campanhas, concentrar atencao na oferta e reduzir o caminho ate a conversao.",
+    assetFolder: "lp-conect-7g",
+    assetBannerFile: "unti-digital-cases-lp-conect-7g-banner.webp",
+    assetPrintFile: "unti-digital-cases-lp-conect-7g-print-site.webp",
+    tecnologias: ["Next.js", "Tailwind CSS", "Framer Motion", "Otimizacao de Conversao"],
+    desafio:
+      "Criar uma pagina de campanha direta, convincente e preparada para responder com agilidade comercial.",
     entrega:
-      "Site institucional com hierarquia premium, conteudo simplificado e experiencia focada em credibilidade.",
+      "Landing page com narrativa enxuta, CTA claros e estrutura visual focada em captacao de oportunidades.",
     impacto:
-      "Mais refinamento na marca e uma jornada que transmite valor antes mesmo do primeiro contato.",
+      "Mais eficiencia para campanhas e uma jornada de conversao mais curta para o usuario.",
     resultados: [
-      "Posicionamento visual mais sofisticado",
-      "Conteudo mais facil de consumir",
-      "Contato mais aderente ao perfil de cliente ideal"
+      "Campanhas com destino mais objetivo",
+      "Leitura mais rapida da oferta",
+      "Captacao mais orientada a resultado"
     ],
     destaqueHome: false,
     ordemPortfolio: 14
   },
   {
-    id: "cia-do-sal",
-    slug: "cia-do-sal",
-    cliente: "Cia do Sal",
+    id: "clube-recreativo-de-sumare",
+    slug: "clube-recreativo-de-sumare",
+    cliente: "Clube Recreativo de Sumare",
     categoria: "corporativo",
-    segmento: "Marca & servicos",
-    tagline: "Presenca institucional clara para fortalecer marca e distribuicao",
-    resumoHome: "Site institucional com narrativa comercial mais clara e objetiva.",
+    segmento: "Institucional & servicos",
+    tagline: "Experiencia institucional para organizar informacoes, agenda e relacionamento",
+    resumoHome: "Canal institucional mais claro para servicos, eventos e relacionamento.",
     resumo:
-      "Projeto desenhado para organizar informacoes, apresentar portfolio e tornar a marca mais legivel para parceiros e clientes.",
-    tecnologias: ["Next.js", "SEO Tecnico", "Tailwind CSS", "Performance Web"],
+      "Projeto pensado para traduzir atividades, estrutura e proposta institucional em uma experiencia mais acessivel para publico e associados.",
+    assetFolder: "clube-recreativo-de-sumare",
+    assetBannerFile: "unti-digital-cases-clube-recreativo-de-sumare-banner.webp",
+    assetPrintFile: "unti-digital-cases-clube-recreativo-de-sumare-print-site.webp",
+    tecnologias: ["Next.js", "Tailwind CSS", "Arquitetura de Conteudo", "Performance Web"],
     desafio:
-      "Traduzir uma operacao com varias frentes em um discurso simples para publico comercial e institucional.",
+      "Organizar diferentes frentes de informacao institucional sem criar navegacao dispersa ou cansativa.",
     entrega:
-      "Estrutura institucional modular com secoes de portfolio, diferenciais e canais de contato bem sinalizados.",
+      "Site com foco em clareza institucional, distribuicao de conteudo e pontos de contato mais visiveis para a comunidade.",
     impacto:
-      "Mais clareza de marca e melhor suporte digital para apresentacoes e negociacoes.",
+      "Mais legibilidade para a proposta do clube e uma base mais solida para relacionamento e atualizacao digital.",
     resultados: [
-      "Portfolio mais facil de apresentar",
-      "Marca mais legivel para diferentes perfis",
-      "Canal institucional mais preparado para conversao"
+      "Informacoes melhor organizadas",
+      "Experiencia mais amigavel para o usuario",
+      "Canal institucional mais forte"
     ],
     destaqueHome: false,
     ordemPortfolio: 15
   },
   {
-    id: "advocacia-r-oliveira",
-    slug: "advocacia-r-oliveira",
-    cliente: "Advocacia R. Oliveira",
+    id: "odete-design",
+    slug: "odete-design",
+    cliente: "Odete Design",
     categoria: "corporativo",
-    segmento: "Advocacia",
-    tagline: "Presenca juridica com confianca, clareza e posicionamento institucional",
-    resumoHome: "Autoridade juridica traduzida em experiencia institucional objetiva.",
+    segmento: "Marca criativa",
+    tagline: "Presenca digital sofisticada para servicos criativos e posicionamento premium",
+    resumoHome: "Site de marca criativa com foco em percepcao de valor e autoridade.",
     resumo:
-      "Site institucional pensado para reforcar autoridade, organizar areas de atuacao e facilitar o primeiro contato com clareza.",
-    tecnologias: ["Next.js", "SEO Local", "Tailwind CSS", "UX para Servicos"],
+      "Case desenvolvido para combinar refinamento visual, apresentacao de portfolio e leitura comercial mais segura para clientes em processo de decisao.",
+    assetFolder: "odete-design",
+    assetBannerFile: "unti-digital-cases-odete-design-banner.webp",
+    assetPrintFile: "unti-digital-cases-odete-design-print-site.webp",
+    tecnologias: ["Next.js", "Tailwind CSS", "UX Premium", "SEO Estrategico"],
     desafio:
-      "Gerar confianca imediata sem recorrer a excesso de informacao ou linguagem pesada.",
+      "Criar uma experiencia sofisticada para servicos criativos sem sacrificar clareza de oferta e fluxo de contato.",
     entrega:
-      "Experiencia institucional com blocos de autoridade, areas de atuacao e CTA discretos para contato consultivo.",
+      "Site institucional com apelo visual premium, apresentacao de portfolio e CTA discretos para conversao consultiva.",
     impacto:
-      "Mais credibilidade na primeira impressao e uma experiencia que ajuda o usuario a entender a especialidade do escritorio.",
+      "Mais percepcao de valor e uma jornada digital mais alinhada a um servico criativo de alto nivel.",
     resultados: [
-      "Leitura mais clara das areas de atuacao",
-      "Posicionamento juridico mais solido",
-      "Contato mais contextualizado"
+      "Portfolio melhor valorizado",
+      "Marca apresentada com mais refinamento",
+      "Contato mais aderente ao perfil ideal"
     ],
     destaqueHome: false,
     ordemPortfolio: 16
   },
   {
-    id: "imobiliaria-viver",
-    slug: "imobiliaria-viver",
-    cliente: "Imobiliaria Viver",
+    id: "renata-pimentel",
+    slug: "renata-pimentel",
+    cliente: "Renata Pimentel",
     categoria: "corporativo",
-    segmento: "Mercado imobiliario",
-    tagline: "Presenca comercial para catalogo, captacao e relacionamento",
-    resumoHome: "Estrutura imobiliaria com leitura rapida de oferta e contato facilitado.",
+    segmento: "Marca pessoal",
+    tagline: "Posicionamento digital para autoridade, clareza de oferta e proximidade",
+    resumoHome: "Marca pessoal com estrutura mais clara para autoridade e contato.",
     resumo:
-      "Projeto voltado a apresentar portfolio imobiliario com mais clareza e reduzir friccao no caminho entre navegacao e contato comercial.",
-    tecnologias: ["Next.js", "Catalogo Digital", "SEO Local", "Integracoes"],
+      "Projeto focado em fortalecer presenca profissional, organizar servicos e construir uma jornada de contato mais madura para novos clientes.",
+    assetFolder: "renata-pimentel",
+    assetBannerFile: "unti-digital-cases-renata-pimentel-banner.webp",
+    assetPrintFile: "unti-digital-cases-renata-pimentel-print-site.webp",
+    tecnologias: ["Next.js", "Tailwind CSS", "SEO Local", "UX para Conversao"],
     desafio:
-      "Organizar ofertas e facilitar o contato sem transformar a navegacao em um processo pesado.",
+      "Transformar reputacao e expertise em uma experiencia digital mais organizada e profissional.",
     entrega:
-      "Experiencia institucional com foco em exibicao de oportunidades, diferenciais e canais de contato estrategicos.",
+      "Site institucional com foco em posicionamento, servicos e pontos de contato distribuidos ao longo da narrativa.",
     impacto:
-      "Mais clareza para o usuario final e melhor suporte digital para o time comercial.",
+      "Mais clareza sobre a oferta e uma presenca online mais coerente com a autoridade da marca pessoal.",
     resultados: [
-      "Oferta mais simples de explorar",
-      "Captacao mais objetiva para atendentes",
-      "Base preparada para evolucao do catalogo"
+      "Posicionamento profissional mais claro",
+      "Oferta mais facil de entender",
+      "Contato mais direcionado"
     ],
     destaqueHome: false,
     ordemPortfolio: 17
   },
   {
-    id: "consultoria-empresarial-jb",
-    slug: "consultoria-empresarial-jb",
-    cliente: "Consultoria Empresarial J.B.",
+    id: "plataforma-wiki-das-celebridades",
+    slug: "plataforma-wiki-das-celebridades",
+    cliente: "Plataforma Wiki das Celebridades",
     categoria: "corporativo",
-    segmento: "Consultoria empresarial",
-    tagline: "Presenca institucional para ofertas consultivas e decisores B2B",
-    resumoHome: "Oferta consultiva mais clara para empresas em processo de decisao.",
+    segmento: "Plataforma web",
+    tagline: "Projeto digital para estrutura de conteudo, navegacao e escala editorial",
+    resumoHome: "Plataforma de conteudo com foco em estrutura, navegacao e performance.",
     resumo:
-      "Site desenhado para organizar servicos, destacar maturidade tecnica e apoiar conversas com decisores em ambiente B2B.",
-    tecnologias: ["Next.js", "SEO Estrategico", "UX B2B", "Tailwind CSS"],
+      "Implementacao orientada a organizar grande volume de conteudo, facilitar descoberta e sustentar uma experiencia mais leve para o usuario.",
+    assetFolder: "plataforma-wiki-das-celebridades",
+    assetBannerFile: "unti-digital-cases-plataforma-wiki-das-celebridades-banner.webp",
+    assetPrintFile: "unti-digital-cases-plataforma-wiki-das-celebridades-print-site.webp",
+    tecnologias: ["Next.js", "Arquitetura de Conteudo", "SEO Tecnico", "Performance Web"],
     desafio:
-      "Traduzir uma oferta consultiva complexa em uma jornada simples, confiavel e orientada a oportunidade.",
+      "Estruturar uma plataforma de conteudo para crescer sem perder legibilidade, navegacao e consistencia editorial.",
     entrega:
-      "Arquitetura institucional com paginas de servicos, narrativa de autoridade e pontos de contato de baixa friccao.",
+      "Base de plataforma com hierarquia de paginas, experiencia de busca de conteudo e estrutura preparada para escala.",
     impacto:
-      "Maior entendimento da oferta e mais preparo para conversas comerciais de maior valor.",
+      "Mais organizacao editorial e uma experiencia mais forte para consumo recorrente de conteudo.",
     resultados: [
-      "Oferta consultiva mais facil de entender",
-      "Discurso digital mais maduro para B2B",
-      "Melhor apoio ao fechamento comercial"
+      "Conteudo melhor distribuido",
+      "Plataforma pronta para escala",
+      "Performance e navegacao mais consistentes"
     ],
     destaqueHome: false,
     ordemPortfolio: 18
+  },
+  {
+    id: "nerd-ao-maximo",
+    slug: "nerd-ao-maximo",
+    cliente: "Nerd ao Maximo",
+    categoria: "corporativo",
+    segmento: "Midia & conteudo",
+    tagline: "Presenca editorial com foco em comunidade, conteudo e navegacao leve",
+    resumoHome: "Projeto editorial com experiencia mais clara para consumo de conteudo.",
+    resumo:
+      "Case desenvolvido para valorizar identidade, organizar blocos editoriais e criar uma experiencia de conteudo com melhor fluidez.",
+    assetFolder: "nerd-ao-maximo",
+    assetBannerFile: "unti-digital-cases-nerd-ao-maximo-banner.webp",
+    assetPrintFile: "unti-digital-cases-nerd-ao-maximo-print-site.webp",
+    tecnologias: ["Next.js", "Tailwind CSS", "Arquitetura de Conteudo", "Performance Web"],
+    desafio:
+      "Equilibrar identidade forte e grande volume de informacao em uma experiencia editorial mais acessivel.",
+    entrega:
+      "Estrutura de conteudo com navegacao aprimorada, organizacao de destaques e base pronta para crescimento editorial.",
+    impacto:
+      "Leitura mais confortavel, melhor distribuicao de conteudo e uma presenca digital mais coerente com a comunidade.",
+    resultados: [
+      "Editorial mais organizado",
+      "Experiencia mais leve para o publico",
+      "Base pronta para evolucao de conteudo"
+    ],
+    destaqueHome: false,
+    ordemPortfolio: 19
   }
 ];

@@ -30,7 +30,7 @@ export default function CasesPage() {
 
           <div className="mt-10 flex flex-wrap gap-3">
             {[
-              "24 projetos mapeados",
+              `${cases.length} projetos mapeados`,
               "4 frentes de mercado",
               "Sites, plataformas e integracoes",
               "Autoridade visual com base tecnica"

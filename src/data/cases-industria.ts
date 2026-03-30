@@ -2,153 +2,115 @@ import type { CaseSeed } from "./cases.shared";
 
 export const industriaCases: CaseSeed[] = [
   {
-    id: "metalurgica-santos",
-    slug: "metalurgica-santos",
-    cliente: "Metalurgica Santos",
+    id: "catalogo-grupo-niks",
+    slug: "catalogo-grupo-niks",
+    cliente: "Catalogo Grupo Niks",
     categoria: "industria",
-    segmento: "Industria",
-    tagline: "Presenca industrial para apresentar capacidade tecnica e operacao",
-    resumoHome: "Site industrial com foco em capacidade produtiva e confianca comercial.",
+    segmento: "Catalogo digital",
+    tagline: "Estrutura digital para apresentar linhas de produto com mais clareza comercial",
+    resumoHome: "Catalogo web pensado para organizacao de oferta e leitura rapida.",
     resumo:
-      "Projeto institucional criado para traduzir capacidade industrial, organizacao operacional e credibilidade em uma experiencia clara para compradores e parceiros.",
-    tecnologias: ["Next.js", "Catalogo Tecnico", "Performance Web", "SEO Tecnico"],
+      "Projeto desenhado para transformar um portfolio de produtos em uma experiencia mais legivel, comercial e pronta para apoiar atendimento e vendas.",
+    assetFolder: "catalogo-grupo-niks",
+    assetBannerFile: "unti-digital-cases-catalogo-grupo-niks-banner.webp",
+    assetPrintFile: "unti-digital-cases-catalogo-grupo-niks-print-site.webp",
+    tecnologias: ["Next.js", "Catalogo Digital", "Tailwind CSS", "Performance Web"],
     desafio:
-      "Apresentar estrutura industrial e servicos tecnicos sem criar uma experiencia densa demais para o visitante.",
+      "Apresentar variedade de itens e categorias sem criar uma navegacao confusa ou pesada para o usuario.",
     entrega:
-      "Site institucional com foco em capacidades, processos e contato comercial para demandas tecnicas e orcamentos.",
+      "Catalogo digital com hierarquia de produtos, experiencia mais objetiva e apoio visual para consulta comercial.",
     impacto:
-      "Melhor leitura da operacao e suporte mais profissional para negociacoes industriais.",
+      "Mais clareza para apresentacao de oferta e uma base mais robusta para relacionamento com clientes e parceiros.",
     resultados: [
-      "Capacidade tecnica melhor comunicada",
-      "Mais clareza para compradores e parceiros",
-      "Canal institucional mais preparado para orcamentos"
-    ],
-    destaqueHome: false,
-    ordemPortfolio: 19
-  },
-  {
-    id: "loja-360",
-    slug: "loja-360",
-    cliente: "Loja 360",
-    categoria: "industria",
-    segmento: "Varejo",
-    tagline: "Experiencia digital para varejo com navegacao mais direta e comercial",
-    resumoHome: "Varejo com pagina mais enxuta, legivel e voltada a conversao.",
-    resumo:
-      "Estrutura desenhada para valorizar produtos, facilitar leitura de oferta e apoiar a conversao em uma experiencia mais limpa.",
-    tecnologias: ["Next.js", "UX para Varejo", "SEO", "Performance Web"],
-    desafio:
-      "Reduzir ruido visual e acelerar a compreensao da oferta em um ambiente de varejo digital.",
-    entrega:
-      "Pagina institucional e comercial com foco em produtos, diferenciais e canais de contato ou compra.",
-    impacto:
-      "Melhor leitura de oferta, mais agilidade na decisao e uma base mais consistente para campanhas.",
-    resultados: [
-      "Oferta mais simples de navegar",
-      "Conteudo visual mais alinhado a conversao",
-      "Base tecnica preparada para crescimento"
+      "Portfolio mais facil de explorar",
+      "Leitura comercial mais objetiva",
+      "Canal digital mais pronto para escala"
     ],
     destaqueHome: false,
     ordemPortfolio: 20
   },
   {
-    id: "soft-design",
-    slug: "soft-design",
-    cliente: "Soft Design",
+    id: "ecommerce-onile-alimentos",
+    slug: "ecommerce-onile-alimentos",
+    cliente: "E-commerce Onile Alimentos",
     categoria: "industria",
-    segmento: "Tecnologia & Servicos",
-    tagline: "Presenca digital para posicionamento tecnico e maturidade de entrega",
-    resumoHome: "Site com foco em clareza tecnica e posicionamento de servicos digitais.",
+    segmento: "E-commerce",
+    tagline: "Operacao digital para venda online com foco em navegacao e conversao",
+    resumoHome: "Loja virtual com estrutura mais clara para produto, jornada e compra.",
     resumo:
-      "Projeto institucional pensado para comunicar maturidade tecnica, capacidade de entrega e organizacao de servicos em ambiente competitivo.",
-    tecnologias: ["Next.js", "Tailwind CSS", "SEO Estrategico", "UX B2B"],
+      "Case voltado a organizar exibicao de produtos, tornar a experiencia de compra mais leve e reforcar a base tecnica de uma operacao digital de vendas.",
+    assetFolder: "ecommerce-onile-alimentos",
+    assetBannerFile: "unti-digital-cases-ecommerce-onile-alimentos-banner.webp",
+    assetPrintFile: "unti-digital-cases-ecommerce-onile-alimentos-print-site.webp",
+    tecnologias: ["Next.js", "E-commerce", "Tailwind CSS", "UX para Conversao"],
     desafio:
-      "Traduzir densidade tecnica em uma narrativa clara para decisores e times de produto.",
+      "Tornar a jornada de compra mais simples sem perder riqueza de informacao de produto e confianca visual.",
     entrega:
-      "Arquitetura de conteudo para servicos, provas de capacidade e canais de contato voltados a oportunidades qualificadas.",
+      "Loja virtual com foco em organizacao de categorias, apresentacao de itens e experiencia mais direta para conversao.",
     impacto:
-      "Maior legibilidade do posicionamento tecnico e uma experiencia mais madura para publico B2B.",
+      "Melhor navegacao de catalogo e uma experiencia comercial mais alinhada a uma operacao online em crescimento.",
     resultados: [
-      "Posicionamento tecnico mais facil de compreender",
-      "Oferta estruturada para decisores",
-      "Contato comercial melhor qualificado"
+      "Produtos melhor organizados",
+      "Jornada de compra mais clara",
+      "Base tecnica pronta para expansao"
     ],
     destaqueHome: false,
     ordemPortfolio: 21
   },
   {
-    id: "wbr",
-    slug: "wbr",
-    cliente: "WBR",
+    id: "swebsite-suporteshop",
+    slug: "swebsite-suporteshop",
+    cliente: "SWebsite SuporteShop",
     categoria: "industria",
-    segmento: "Industria & Varejo",
-    tagline: "Site institucional orientado a relacao comercial e apresentacao tecnica",
-    resumoHome: "Presenca institucional mais clara para operacoes tecnicas e comerciais.",
+    segmento: "E-commerce & suporte",
+    tagline: "Presenca digital para servicos e operacao de suporte ligada ao varejo online",
+    resumoHome: "Experiencia institucional para servicos ligados a operacao de loja online.",
     resumo:
-      "Case voltado a melhorar apresentacao de empresa, linhas de atendimento e clareza comercial em um contexto tecnico.",
-    tecnologias: ["Next.js", "Tailwind CSS", "Performance Web", "SEO Tecnico"],
+      "Projeto focado em apresentar servicos, organizar oferta e dar mais clareza a uma operacao de suporte especializada em ambiente digital.",
+    assetFolder: "SWebsite-suporteshop",
+    assetBannerFile: "unti-digital-cases-SWebsite-suporteshop-banner.webp",
+    assetPrintFile: "unti-digital-cases-SWebsite-suporteshop-print-site.webp",
+    tecnologias: ["Next.js", "Tailwind CSS", "SEO Tecnico", "UX Institucional"],
     desafio:
-      "Organizar informacoes tecnicas e comerciais sem perder objetividade na experiencia.",
+      "Explicar uma oferta de suporte digital com mais clareza, confianca e contexto comercial.",
     entrega:
-      "Estrutura institucional com blocos de apresentacao, areas de solucao e contato orientado a oportunidade.",
+      "Site institucional com foco em entendimento de servicos, prova de capacidade e caminhos diretos para contato.",
     impacto:
-      "Mais profissionalismo na primeira impressao e melhor apoio para conversas comerciais.",
+      "Oferta mais compreensivel e uma base mais forte para gerar conversas comerciais qualificadas.",
     resultados: [
-      "Marca mais bem apresentada online",
-      "Informacao tecnica mais acessivel",
-      "Melhor suporte digital para o time comercial"
+      "Servicos apresentados com mais clareza",
+      "Marca digital mais confiavel",
+      "Contato comercial mais bem orientado"
     ],
     destaqueHome: false,
     ordemPortfolio: 22
   },
   {
-    id: "consec",
-    slug: "consec",
-    cliente: "Consec",
+    id: "sos-pistolas",
+    slug: "sos-pistolas",
+    cliente: "SOS Pistolas",
     categoria: "industria",
-    segmento: "Industria & Servicos",
-    tagline: "Arquitetura institucional para clareza operacional e credibilidade",
-    resumoHome: "Experiencia institucional mais solida para operacoes e servicos tecnicos.",
+    segmento: "Industria & varejo",
+    tagline: "Presenca institucional para nicho tecnico com mais legibilidade comercial",
+    resumoHome: "Site de nicho tecnico com foco em clareza e contato objetivo.",
     resumo:
-      "Projeto desenhado para comunicar confiabilidade, apresentar servicos e criar uma experiencia mais objetiva para parceiros e clientes.",
-    tecnologias: ["Next.js", "SEO Estrategico", "Tailwind CSS", "UX Institucional"],
+      "Case orientado a apresentar servicos e especialidades de um nicho especifico com linguagem direta, confiavel e visualmente mais organizada.",
+    assetFolder: "SOS-pistolas",
+    assetBannerFile: "unti-digital-cases-SOSpistolas-banner.webp",
+    assetPrintFile: "unti-digital-cases-SOSpistolas-print-site.webp",
+    tecnologias: ["Next.js", "Tailwind CSS", "SEO Local", "Performance Web"],
     desafio:
-      "Traduzir operacao tecnica em uma linguagem institucional de facil leitura para publico comercial.",
+      "Traduzir um nicho tecnico em uma experiencia simples de entender e confiavel para o visitante.",
     entrega:
-      "Site institucional modular com focos de servico, blocos de credibilidade e contato simplificado.",
+      "Site institucional com estrutura objetiva, apresentacao de servicos e ponto de contato bem sinalizado.",
     impacto:
-      "Mais clareza operacional e uma presenca digital mais alinhada ao nivel de entrega da empresa.",
+      "Mais clareza institucional e uma experiencia mais forte para quem chega buscando atendimento especializado.",
     resultados: [
-      "Comunicacao institucional mais solida",
-      "Servicos organizados com melhor leitura",
-      "Canal digital mais pronto para novas oportunidades"
+      "Nicho tecnico mais facil de compreender",
+      "Contato mais rapido e contextualizado",
+      "Presenca digital mais profissional"
     ],
     destaqueHome: false,
     ordemPortfolio: 23
-  },
-  {
-    id: "madeireira-pinheiro",
-    slug: "madeireira-pinheiro",
-    cliente: "Madeireira Pinheiro",
-    categoria: "industria",
-    segmento: "Industria & Varejo",
-    tagline: "Presenca digital para catalogo, atendimento e confianca comercial",
-    resumoHome: "Catalogo institucional mais confiavel para apresentacao e contato.",
-    resumo:
-      "Implementacao focada em organizar portfolio, facilitar o entendimento da operacao e oferecer um canal institucional mais robusto.",
-    tecnologias: ["Next.js", "Catalogo Digital", "SEO Local", "Performance Web"],
-    desafio:
-      "Apresentar variedade de produtos e operacao comercial sem comprometer objetividade.",
-    entrega:
-      "Site institucional com catalogo organizado, blocos de credibilidade e caminhos diretos para contato e orcamento.",
-    impacto:
-      "Melhor apresentacao de portfolio e mais suporte digital para relacionamento com clientes e parceiros.",
-    resultados: [
-      "Portfolio mais simples de explorar",
-      "Canal institucional mais confiavel",
-      "Mais apoio a orcamentos e relacionamento comercial"
-    ],
-    destaqueHome: false,
-    ordemPortfolio: 24
   }
 ];

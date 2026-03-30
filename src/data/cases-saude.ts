@@ -11,8 +11,9 @@ export const saudeCases: CaseSeed[] = [
     resumoHome: "Posicionamento premium com experiencia de agendamento orientada a autoridade.",
     resumo:
       "Projeto desenhado para consolidar autoridade clinica, prova social e captacao de consultas em uma experiencia premium, direta e tecnicamente refinada.",
-    imagemBanner: "/images/cases/unti-digital-cases-dr-eduardo-ursolino-banner.webp",
-    imagemPrint: "/images/cases/unti-digital-cases-dr-eduardo-ursolino-print-site.webp",
+    assetFolder: "dr-eduardo-ursulino",
+    assetBannerFile: "unti-digital-cases-dr-eduardo-ursolino-banner.webp",
+    assetPrintFile: "unti-digital-cases-dr-eduardo-ursolino-print-site.webp",
     tecnologias: ["Next.js", "Tailwind CSS", "Framer Motion", "SEO Avancado"],
     desafio:
       "Traduzir excelencia clinica em uma presenca digital clara, premium e orientada a agendamento.",
@@ -56,103 +57,171 @@ export const saudeCases: CaseSeed[] = [
     ordemPortfolio: 5
   },
   {
-    id: "dra-vanessa-merlo",
-    slug: "dra-vanessa-merlo",
-    cliente: "Dra. Vanessa Merlo",
+    id: "uroclinica-de-joinville",
+    slug: "uroclinica-de-joinville",
+    cliente: "Uroclinica de Joinville",
     categoria: "saude",
-    segmento: "Saude & Estetica",
-    tagline: "Autoridade clinica com experiencia premium e conversao objetiva",
-    resumoHome: "Jornada premium para apresentar servicos e incentivar agendamento.",
+    segmento: "Clinica especializada",
+    tagline: "Presenca medica com foco em clareza institucional e contato qualificado",
+    resumoHome: "Estrutura institucional para especialidades medicas e captacao consultiva.",
     resumo:
-      "Case focado em posicionamento, refinamento visual e distribuicao de prova social para favorecer a decisao de novos pacientes.",
-    tecnologias: ["Next.js", "Tailwind CSS", "SEO Local", "Design System"],
+      "Projeto voltado a organizar servicos, fortalecer confianca e facilitar o primeiro contato de pacientes e parceiros em uma experiencia mais limpa.",
+    assetFolder: "uroclinica-de-joinville",
+    assetBannerFile: "unti-digital-cases-uroclinica-de-joinville-banner.webp",
+    assetPrintFile: "unti-digital-cases-uroclinica-de-joinville-print-site.webp",
+    tecnologias: ["Next.js", "Tailwind CSS", "SEO Local", "Performance Web"],
     desafio:
-      "Elevar a percepcao de valor da marca medica sem criar uma navegacao pesada ou dispersa.",
+      "Apresentar uma especialidade medica com autoridade sem transformar a navegacao em algo denso ou tecnico demais.",
     entrega:
-      "Pagina institucional com hierarquia visual premium, conteudo orientado a confianca e CTA estrategicos para contato rapido.",
+      "Site institucional com narrativa de confianca, servicos bem distribuidos e pontos de contato posicionados para reduzir atrito.",
     impacto:
-      "Mais consistencia na leitura de marca e uma jornada mais direta para agendamentos qualificados.",
+      "Mais seguranca na primeira impressao e uma jornada de contato mais madura para pacientes em processo de decisao.",
     resultados: [
-      "Posicionamento visual alinhado ao atendimento premium",
-      "Conteudo clinico com melhor leitura comercial",
-      "Contato mais direto para consultas e procedimentos"
+      "Leitura mais clara das especialidades",
+      "Contato mais rapido para novos pacientes",
+      "Presenca digital mais aderente ao posicionamento clinico"
     ],
     destaqueHome: false,
     ordemPortfolio: 6
   },
   {
-    id: "dra-thaysa-merlo",
-    slug: "dra-thaysa-merlo",
-    cliente: "Dra. Thaysa Merlo",
+    id: "hospital-thereza-mussi",
+    slug: "hospital-thereza-mussi",
+    cliente: "Hospital Thereza Mussi",
     categoria: "saude",
-    segmento: "Saude & Estetica",
-    tagline: "Experiencia digital enxuta para especialidades de alta percepcao",
-    resumoHome: "Clareza de servicos e autoridade para consultas de maior valor.",
+    segmento: "Instituicao hospitalar",
+    tagline: "Experiencia institucional para autoridade medica e organizacao de servicos",
+    resumoHome: "Presenca hospitalar com comunicacao mais clara para publico e parceiros.",
     resumo:
-      "Projeto criado para comunicar especialidade, apresentar diferenciais e converter interesse em contatos com menos ruido visual.",
-    tecnologias: ["Next.js", "Framer Motion", "SEO Tecnico", "UX Strategica"],
+      "Case focado em traduzir estrutura institucional e amplitude de atendimento em uma experiencia acessivel, confiavel e orientada a leitura rapida.",
+    assetFolder: "hospital-thereza-mussi",
+    assetBannerFile: "unti-digital-cases-hospital-thereza-mussi-banner.webp",
+    assetPrintFile: "unti-digital-cases-hospital-thereza-mussi-print-site].webp",
+    tecnologias: ["Next.js", "Tailwind CSS", "Arquitetura de Conteudo", "SEO Local"],
     desafio:
-      "Organizar informacoes tecnicas de forma premium e acessivel para o usuario em primeira visita.",
+      "Organizar a comunicacao de uma instituicao hospitalar de forma clara, sem perder credibilidade e profundidade.",
     entrega:
-      "Estrutura institucional com narrativa de especialidade, modulos de servicos e prova social em pontos de alta atencao.",
+      "Estrutura institucional com hierarquia de informacao, areas de servico e pontos de contato desenhados para facilitar orientacao.",
     impacto:
-      "Maior compreensao dos diferenciais e mais seguranca para o usuario iniciar a conversa.",
+      "Melhor leitura institucional, mais confianca digital e uma base mais forte para relacionamento com pacientes e parceiros.",
     resultados: [
-      "Leitura mais simples de servicos especializados",
-      "Melhor distribuicao de prova social na navegacao",
-      "Captacao mais aderente ao posicionamento premium"
+      "Comunicacao hospitalar mais organizada",
+      "Experiencia mais simples para navegacao",
+      "Canal institucional mais robusto"
     ],
     destaqueHome: false,
     ordemPortfolio: 7
   },
   {
-    id: "clinica-sorria",
-    slug: "clinica-sorria",
-    cliente: "Clinica Sorria",
+    id: "human-clinic",
+    slug: "human-clinic",
+    cliente: "Human Clinic",
     categoria: "saude",
-    segmento: "Odontologia",
-    tagline: "Presenca odontologica com foco em acolhimento e contato rapido",
-    resumoHome: "Site odontologico com fluxo claro para agendamento e confianca.",
+    segmento: "Clinica premium",
+    tagline: "Marca clinica com experiencia sofisticada e contato mais objetivo",
+    resumoHome: "Narrativa premium para saude com fluxo mais limpo para conversao.",
     resumo:
-      "Projeto voltado a facilitar o entendimento dos servicos odontologicos, reforcar acolhimento de marca e acelerar o contato pelo canal principal.",
-    tecnologias: ["Next.js", "WhatsApp", "SEO Local", "Tailwind CSS"],
+      "Projeto construido para elevar percepcao de marca, organizar informacoes e distribuir prova de autoridade em uma experiencia mais refinada.",
+    assetFolder: "human-clinic",
+    assetBannerFile: "unti-digital-cases-human-clinic-banner.webp",
+    assetPrintFile: "unti-digital-cases-human-clinic-print-site.webp",
+    tecnologias: ["Next.js", "Tailwind CSS", "Framer Motion", "UX Premium"],
     desafio:
-      "Traduzir acolhimento e seguranca em uma navegacao simples para novos pacientes.",
+      "Transmitir valor e credibilidade medica com uma linguagem visual premium e de leitura imediata.",
     entrega:
-      "Site institucional com apresentacao de servicos, diferenciais clinicos e pontos de contato distribuidos para agendamento.",
+      "Site institucional com foco em posicionamento, clareza de servicos e CTA discretos para uma jornada mais elegante.",
     impacto:
-      "Melhor leitura de servicos, mais confianca na marca e uma jornada mais objetiva para conversao.",
+      "Mais refinamento visual, mais clareza para o usuario e uma jornada de contato mais aderente a um atendimento premium.",
     resultados: [
-      "Experiencia institucional mais acolhedora",
-      "Contato agil para novos pacientes",
-      "Conteudo preparado para autoridade local"
+      "Percepcao de marca fortalecida",
+      "Informacao clinica mais facil de absorver",
+      "Contato com menos friccao"
     ],
     destaqueHome: false,
     ordemPortfolio: 8
   },
   {
-    id: "dra-giselle-barros",
-    slug: "dra-giselle-barros",
-    cliente: "Dra. Giselle Barros",
+    id: "dra-isabel-borelli",
+    slug: "dra-isabel-borelli",
+    cliente: "Dra. Isabel Borelli",
     categoria: "saude",
     segmento: "Saude & Estetica",
-    tagline: "Posicionamento medico com foco em confianca e experiencia premium",
-    resumoHome: "Marca medica fortalecida com hierarquia visual e CTA discretos.",
+    tagline: "Autoridade profissional combinada a uma experiencia mais leve de agendamento",
+    resumoHome: "Site medico com foco em posicionamento, confianca e proximidade.",
     resumo:
-      "Implementacao pensada para valorizar autoridade, reduzir poluicao visual e levar o usuario rapidamente aos proximos passos de contato.",
-    tecnologias: ["Next.js", "UX Premium", "SEO Local", "Tailwind CSS"],
+      "Presenca digital pensada para valorizar especialidade, reforcar autoridade e conduzir o usuario com mais clareza ate o contato.",
+    assetFolder: "dra-isabel-borelli",
+    assetBannerFile: "unti-digital-cases-dra-isabel-borelli-banner.webp",
+    assetPrintFile: "unti-digital-cases-dra-isabel-borelli-print-site.webp",
+    tecnologias: ["Next.js", "Tailwind CSS", "SEO Local", "UX para Conversao"],
     desafio:
-      "Criar uma experiencia de marca sofisticada sem sacrificar clareza comercial e captacao.",
+      "Apresentar servicos de forma profissional sem sobrecarregar a experiencia com excesso de informacao.",
     entrega:
-      "Site institucional com narrativa premium, estrutura modular e foco em decisao de pacientes de maior valor percebido.",
+      "Estrutura institucional com narrativa de autoridade, modulos de servico e pontos de contato distribuidos por contexto.",
     impacto:
-      "Mais clareza de posicionamento e uma experiencia digital mais alinhada a um atendimento de referencia.",
+      "Maior clareza no posicionamento e uma experiencia digital mais segura para o usuario que precisa decidir rapido.",
     resultados: [
-      "Percepcao de marca mais sofisticada",
-      "Jornada de decisao mais objetiva",
-      "Base digital pronta para ampliar autoridade"
+      "Leitura mais simples da oferta",
+      "Posicionamento mais solido",
+      "Contato mais bem contextualizado"
     ],
     destaqueHome: false,
     ordemPortfolio: 9
+  },
+  {
+    id: "dra-gionvana-bombonatto",
+    slug: "dra-gionvana-bombonatto",
+    cliente: "Dra. Gionvana Bombonatto",
+    categoria: "saude",
+    segmento: "Saude & Estetica",
+    tagline: "Presenca premium para reforcar autoridade e experiencia de marca",
+    resumoHome: "Experiencia institucional para posicionamento medico de alta percepcao.",
+    resumo:
+      "Projeto orientado a comunicar confianca, organizar servicos e criar uma experiencia visual mais sofisticada para a marca profissional.",
+    assetFolder: "dra-gionvana-bombonatto",
+    assetBannerFile: "unti-digtal-cases-dra-gionvana-bombonatto-banner.webp",
+    assetPrintFile: "unti-digtal-cases-dra-gionvana-bombonatto-print-site.webp",
+    tecnologias: ["Next.js", "Tailwind CSS", "UX Premium", "SEO Local"],
+    desafio:
+      "Elevar a percepcao de valor da marca sem abrir mao de uma navegacao simples e objetiva.",
+    entrega:
+      "Site institucional com foco em narrativa premium, organizacao de servicos e CTA bem distribuido.",
+    impacto:
+      "Mais refinamento de marca, melhor leitura comercial e uma base mais forte para novos agendamentos.",
+    resultados: [
+      "Marca apresentada com mais sofisticacao",
+      "Experiencia mais fluida para novos pacientes",
+      "Estrutura pronta para ampliar autoridade"
+    ],
+    destaqueHome: false,
+    ordemPortfolio: 10
+  },
+  {
+    id: "dr-thiago-azuaga",
+    slug: "dr-thiago-azuaga",
+    cliente: "Dr. Thiago Azuaga",
+    categoria: "saude",
+    segmento: "Saude especializada",
+    tagline: "Posicionamento clinico com foco em confianca e jornada de contato enxuta",
+    resumoHome: "Autoridade profissional com navegacao clara e ponto de contato direto.",
+    resumo:
+      "Case desenhado para consolidar especialidade, reforcar credibilidade e tornar a experiencia mais objetiva para novos pacientes.",
+    assetFolder: "dr-thiago-azuaga",
+    assetBannerFile: "unti-digital-cases-dr-thiago-azuaga-banner.webp",
+    assetPrintFile: "unti-digital-cases-dr-thiago-azuaga-print-site.webp",
+    tecnologias: ["Next.js", "Tailwind CSS", "SEO Local", "Performance Web"],
+    desafio:
+      "Transformar conhecimento tecnico e prova de autoridade em uma jornada mais simples para o usuario final.",
+    entrega:
+      "Site institucional com estrutura de especialidades, narrativa de credibilidade e canais de contato com baixa friccao.",
+    impacto:
+      "Mais clareza institucional e uma presenca digital mais alinhada ao nivel de especializacao do atendimento.",
+    resultados: [
+      "Especialidade apresentada com clareza",
+      "Contato agil para novas consultas",
+      "Experiencia digital mais profissional"
+    ],
+    destaqueHome: false,
+    ordemPortfolio: 11
   }
 ];

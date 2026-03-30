@@ -29,6 +29,9 @@ export type CaseSeed = Omit<CaseStudy, "imagemBanner" | "imagemPrint" | "seoTitl
   imagemPrint?: string;
   seoTitle?: string;
   metaDescription?: string;
+  assetFolder?: string;
+  assetBannerFile?: string;
+  assetPrintFile?: string;
 };
 
 export const caseCategoryThemes: Record<
@@ -67,15 +70,33 @@ export const caseCategoryThemes: Record<
 };
 
 export function criarCase(caseSeed: CaseSeed): CaseStudy {
+  const {
+    assetFolder,
+    assetBannerFile,
+    assetPrintFile,
+    imagemBanner,
+    imagemPrint,
+    seoTitle,
+    metaDescription,
+    ...caseBase
+  } = caseSeed;
   const placeholder = caseCategoryThemes[caseSeed.categoria].placeholder;
+  const resolvedBanner =
+    assetFolder && assetBannerFile
+      ? `/images/cases/${assetFolder}/${assetBannerFile}`
+      : imagemBanner ?? placeholder;
+  const resolvedPrint =
+    assetFolder && assetPrintFile
+      ? `/images/cases/${assetFolder}/${assetPrintFile}`
+      : imagemPrint ?? resolvedBanner;
 
   return {
-    ...caseSeed,
-    imagemBanner: caseSeed.imagemBanner ?? placeholder,
-    imagemPrint: caseSeed.imagemPrint ?? caseSeed.imagemBanner ?? placeholder,
-    seoTitle: caseSeed.seoTitle ?? `${caseSeed.cliente} | Case Unti Digital`,
+    ...caseBase,
+    imagemBanner: resolvedBanner,
+    imagemPrint: resolvedPrint,
+    seoTitle: seoTitle ?? `${caseBase.cliente} | Case Unti Digital`,
     metaDescription:
-      caseSeed.metaDescription ??
-      `${caseSeed.cliente}: ${caseSeed.tagline}. ${caseSeed.impacto}`
+      metaDescription ??
+      `${caseBase.cliente}: ${caseBase.tagline}. ${caseBase.impacto}`
   };
 }
