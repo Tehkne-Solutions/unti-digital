@@ -70,9 +70,16 @@ export function SolutionPage({
 
             <Breadcrumb items={breadcrumb} />
 
-            <section className="min-h-[60vh] bg-gradient-to-br from-slate-50 via-blue-50/50 to-white flex items-center">
-                <Container>
-                    <div className="max-w-3xl py-20">
+            <section className="min-h-[60vh] bg-gradient-to-br from-slate-50 via-blue-50/50 to-white flex items-center relative overflow-hidden" style={{
+                backgroundImage: 'url(/images/unti-digital-solucoes-hero-banner-bg.png)',
+                backgroundAttachment: 'fixed',
+                backgroundPosition: 'center',
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat',
+            }}>
+                <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/50 to-white opacity-50"></div>
+                <Container className="relative z-20">
+                    <div className="max-w-3xl py-20 relative z-10">
                         <p className="text-unti-blue font-semibold uppercase tracking-widest text-sm mb-4">
                             {preTitle}
                         </p>
@@ -118,7 +125,7 @@ export function SolutionPage({
             <section className="w-full bg-unti-blue text-white py-20">
                 <Container>
                     <div className="max-w-5xl mx-auto">
-                        <h2 className="text-3xl md:text-4xl font-bold mb-8">Como trabalhamos</h2>
+                        <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-white">Como trabalhamos</h2>
                         <ProcessSteps steps={processSteps} />
                     </div>
                 </Container>
