@@ -38,98 +38,184 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   {
     slug: "estrategia-digital-b2b",
-    title: "Estratégia digital para empresas B2B",
+    title: "Estratégia Digital para Empresas B2B: O Guia Definitivo para Escala e Conversão",
     excerpt:
-      "Como um site institucional de alta performance e conteúdo técnico reduzem o ciclo de vendas e aumentam o ticket médio.",
+      "Como estruturar uma estratégia digital que não apenas gera tráfego, mas constrói um pipeline previsível de leads qualificados.",
     description:
-      "Empresas B2B não precisam de likes: precisam de pipeline, previsibilidade comercial e autoridade digital.",
-    category: "Estrategia",
+      "Decisores realizam 70% da jornada de pesquisa de forma anônima antes de entrar em contato. Descubra como estruturar autoridade digital e confiança.",
+    category: "Estratégia",
     publishedAt: "2026-03-18",
-    readingTime: "6 min de leitura",
+    readingTime: "12 min de leitura",
     author: "Time UNTI Digital",
     image: "/images/unti-digital-homepage-image-blog-estrategia-digital-para-empresas-b2b.png",
-    tags: ["B2B", "Leads", "Site institucional", "Autoridade digital"],
-    keyInsight: "O site e o seu melhor vendedor 24/7 quando ele traduz oferta, prova e proximo passo com clareza.",
-    seoTitle: "Estrategia digital para empresas B2B | Blog UNTI Digital",
+    tags: ["B2B", "Estratégia Digital", "Geração de Leads", "Autoridade Digital", "Funil de Vendas"],
+    keyInsight: "Decisores B2B realizam 70% da jornada de pesquisa anonimamente. Se sua presença digital não existe ou não comunica autoridade, você já perdeu o negócio.",
+    seoTitle: "Estratégia Digital para Empresas B2B | Guia Completo - UNTI Digital",
     metaDescription:
-      "Entenda como sites institucionais e conteudo tecnico criam pipeline, previsibilidade e autoridade para empresas B2B.",
+      "Guia definitivo sobre estratégia digital B2B. Aprenda como estruturar presença digital baseada em autoridade técnica e confiança para gerar leads qualificados.",
     body: [
       {
-        type: "paragraph",
-        content:
-          "Empresas B2B nao precisam de volume vazio. Elas precisam de demanda qualificada, clareza de posicionamento e uma presenca digital que reduza friccao na jornada comercial. Quando o site institucional e tratado apenas como vitrine, o time de vendas perde tempo explicando o basico em toda reuniao."
+        type: "heading",
+        level: 2,
+        content: "O Novo Campo de Batalha B2B"
       },
       {
         type: "paragraph",
         content:
-          "A estrategia digital de alto nivel comeca no entendimento do cliente alvo e da cadeia de decisao. E por isso que um link building interno estruturado - como um mapa da jornada que parte de um blog sobre desafios e chega a uma pagina de <a href=\"/solucoes/sites-institucionais\" title=\"Sites Institucionais de Alta Performance\" class=\"text-blue-600 hover:underline\">Sites Institucionais de Alta Performance</a> - e essencial para converter."
+          "No cenário corporativo de 2026, a jornada de compra B2B mudou drasticamente. Decisores (CEOs, CTOs e Diretores de Compras) realizam cerca de 70% da jornada de pesquisa de forma anônima antes de entrar em contato com um vendedor. Se a sua empresa não possui uma presença digital baseada em autoridade técnica e confiança, você está perdendo negócios antes mesmo de saber que eles existem."
       },
       {
-        type: "quote",
+        type: "paragraph",
         content:
-          "O site institucional nao deve apenas apresentar a empresa. Ele deve antecipar duvidas, elevar confianca e preparar a conversa comercial antes da primeira reuniao.",
-        caption: "Insight central de autoridade digital"
+          "Este guia explora como estruturar uma estratégia digital que não apenas gera \"tráfego\", mas constrói um pipeline previsível de leads qualificados e transforma decisores de compradores em seus clientes mais engajados."
       },
       {
         type: "heading",
         level: 2,
-        content: "Por que a maioria dos sites B2B nao gera previsibilidade"
+        content: "A Anatomia de um Site B2B de Alta Performance"
       },
       {
         type: "paragraph",
         content:
-          "Quanto mais generico for o conteudo, menor sera o espacamento de palavras-chave especificas (e poderosas) como <a href=\"/solucoes/plataformas-web\" title=\"Engenharia de Software\" class=\"text-blue-600 hover:underline\">Engenharia de Software</a>. Entre empresas decidentes, essa falta de foco aumenta as perguntas abertas e atrasa o fechamento."
+          "Um <a href=\"/solucoes/sites-institucionais\" title=\"Sites Institucionais de Alta Performance\" class=\"text-blue-600 hover:underline\">site institucional para o setor B2B</a> não é um \"folder online\". Ele deve ser uma ferramenta de engenharia de vendas. Enquanto sites B2C focam em impulso, o B2B foca em redução de risco e demonstração de competência técnica."
+      },
+      {
+        type: "heading",
+        level: 3,
+        content: "Core Web Vitals e a Primeira Impressão"
       },
       {
         type: "paragraph",
         content:
-          "A estrategia que funciona muda o objetivo de cada bloco de texto: em vez de explicar quem voce e, responde \"por que esta empresa deve me considerar agora\". Essa narrativa natural leva ao problema -> solucao e ao CTA logico, gutando a transicao para <a href=\"/solucoes/integracoes-crm-erp\" title=\"Integracoes com CRM e ERP\" class=\"text-blue-600 hover:underline\">Integracoes com CRM e ERP</a>."
+          "A performance técnica é o primeiro sinal de competência. Um site lento comunica desorganização técnica. Na UNTI Digital, focamos em <a href=\"/solucoes/sites-institucionais\" title=\"Sites Institucionais de Alta Performance\" class=\"text-blue-600 hover:underline\">Sites Institucionais de Alta Performance</a> que carregam em menos de 1 segundo. Isso não é apenas para o Google; é para o decisor que não tem tempo a perder e associa performance técnica à capacidade operacional da sua empresa."
+      },
+      {
+        type: "heading",
+        level: 3,
+        content: "Design Minimalista e Autoridade"
+      },
+      {
+        type: "paragraph",
+        content:
+          "O design deve refletir a maturidade e profissionalismo da sua operação. O uso de espaços em branco, tipografia nítida e uma hierarquia clara de informações ajuda a guiar o lead pelo funil de decisão, estabelecendo confiança e posicionando-o como uma escolha segura e estruturada."
+      },
+      {
+        type: "heading",
+        level: 2,
+        content: "Geração de Leads: Do Tráfego à Conversão Qualificada"
+      },
+      {
+        type: "paragraph",
+        content:
+          "Muitas empresas cometem o erro de focar em volume de tráfego. No B2B, o que importa é a Intenção de Busca. Um único visitante buscando \"Integração de CRM e ERP para indústrias\" vale mais do que cem visitantes genéricos."
+      },
+      {
+        type: "heading",
+        level: 3,
+        content: "SEO Semântico e Cauda Longa"
+      },
+      {
+        type: "paragraph",
+        content:
+          "Em vez de tentar ranquear para termos genéricos como \"Software\", sua estratégia deve focar em termos de cauda longa e semanticamente relevantes como \"Integração de CRM e ERP para indústrias\" ou \"Compliance LGPD em plataformas SaaS\". Isso atrai o lead que já entende o problema e busca exatamente a solução que você oferece em <a href=\"/solucoes/integracoes-crm-erp\" title=\"Integrações com CRM e ERP\" class=\"text-blue-600 hover:underline\">Integrações com CRM e ERP</a>."
+      },
+      {
+        type: "heading",
+        level: 3,
+        content: "Iscas Intelectuais (White Papers e Cases)"
+      },
+      {
+        type: "paragraph",
+        content:
+          "O lead B2B busca prova de conceito antes de qualquer contato. Ter uma página de <a href=\"/cases\" title=\"Cases de Sucesso\" class=\"text-blue-600 hover:underline\">Cases de Sucesso</a> detalhada, mostrando como resolvemos problemas reais e mensuráveis para empresas do seu segmento, é o gatilho mais forte de conversão em B2B."
       },
       {
         type: "checklist",
         items: [
-          "Redirecionar termos genericos para paginas de servico especificas","Usar articulos como nudos de interligacao", "Aplicar CTA com sentido explicito (queremos _case_)", "Melhorar orga\u00e7\u00e3o com pilares (Authorized, Problema, Solucao, Prova)"
+          "Publicar cases com números reais de impacto (ROI, economia, tempo economizado)",
+          "Criar white papers sobre tendências da indústria e soluções estruturadas",
+          "Manter blog com conteúdo de autoridade que responda dúvidas do decisor",
+          "Oferecer webinars e workshops que posicionem sua empresa como referência"
         ]
       },
       {
         type: "heading",
         level: 2,
-        content: "Cases e prova social como aceleradores"
+        content: "Integração de Sistemas: Otimizando o Funil de Vendas"
       },
       {
         type: "paragraph",
         content:
-          "Em B2B, o sentido de risco e o fator numero 1. Por isso a estrategia deve mencionar <a href=\"/cases\" title=\"Cases de Sucesso\" class=\"text-blue-600 hover:underline\">Cases de Sucesso</a> logo nas primeiras secoes - e reforcar com metricas reais, dashboards e depuracaos. Isso constri a credibilidade e reduz atrito com diretores, CFO e comite tecnico."
+          "Nada destrói mais uma estratégia digital do que o \"vácuo de dados\". Quando um lead converte no seu site (preenchendo um formulário, fazendo download, solicitando demo), ele deve cair instantaneamente no seu CRM (Salesforce, HubSpot ou RD Station). Sem isso, o lead esfria e a oportunidade se extingue."
       },
       {
         type: "heading",
         level: 3,
-        content: "Arquitetura do conteudo para conversao"
+        content: "Automação de Marketing e Vendas"
       },
       {
         type: "paragraph",
         content:
-          "A sequencia ideal e: dor -> impacto -> evidencias -> solucao -> proximos passos. Cada paragrafo deve trabalhar palavras-chave de alto valor e sutilmente linkar para paginas de servico, como <a href=\"/solucoes/para-agencias\" title=\"White Label Tecnico\" class=\"text-blue-600 hover:underline\">White Label Tecnico</a>. O leitor que esteja dentro de um funil de decisao ver um fluxo assim entende que o blog e parte de uma cadeia de valor."
-      },
-      {
-        type: "paragraph",
-        content:
-          "Essa logica de conexao tambem melhora SEO: o Google ve essas ligacoes internas como sinal de hierarquia e topica, favorecendo tanto a pagina de blog quanto as paginas de servico quando a semantica esta correta."
+          "A sincronização em tempo real entre o site e o seu ERP permite que o marketing entenda quais canais estão gerando vendas reais, e não apenas leads de baixa qualidade. Isso é o que chamamos de <a href=\"/solucoes/integracoes-crm-erp\" title=\"Integrações que Escalam Operações\" class=\"text-blue-600 hover:underline\">Integrações que Escalam Operações</a>. Sem isso, seu investimento em marketing digital é um jogo de adivinhação."
       },
       {
         type: "heading",
         level: 2,
-        content: "Como medir o impacto da estrategia"
+        content: "Segurança e Governança como Diferencial Competitivo"
       },
       {
         type: "paragraph",
         content:
-          "Nao basta publicar: monitore parcours (scroll, leitura, clique) para ver se o leitor que veio via blog de \"Estratégia Digital para Empresas B2B\" foi na sequencia para <a href=\"/solucoes/sites-institucionais\" title=\"Sites Institucionais de Alta Performance\" class=\"text-blue-600 hover:underline\">Sites Institucionais de Alta Performance</a> ou <a href=\"/solucoes/plataformas-web\" title=\"Engenharia de Software\" class=\"text-blue-600 hover:underline\">Engenharia de Software</a>. Ajuste o copy dos blocos de problema e solucao com base nessa jornada."
+          "Em negociações enterprise, a segurança da informação é um critério de desempate. Se sua <a href=\"/solucoes/plataformas-web\" title=\"Plataforma Web\" class=\"text-blue-600 hover:underline\">plataforma web</a> não segue protocolos rigorosos de <a href=\"/solucoes/governanca-seguranca\" title=\"Governança e Segurança\" class=\"text-blue-600 hover:underline\">Governança e Segurança</a>, sua empresa será descartada antes mesmo da conversa comercial começar."
       },
       {
         type: "paragraph",
         content:
-          "Isso vira um loop virtuoso: cada novo artigo alimenta a malha de Link Building Interno, reforca o termo \"Empresas B2B\" e aumenta a relevancia geral das paginas principais."
+          "Implementar uma arquitetura Zero-Trust no seu site institucional prova que sua empresa leva a proteção de dados a sério. Isso é fundamental para empresas que buscam <a href=\"/solucoes/white-label-agencias\" title=\"White Label Técnico\" class=\"text-blue-600 hover:underline\">White Label Técnico</a> ou parcerias de longo prazo onde a confidencialidade é crítica."
+      },
+      {
+        type: "heading",
+        level: 2,
+        content: "Medindo o Sucesso: CAC, LTV e ROI"
+      },
+      {
+        type: "paragraph",
+        content:
+          "No B2B, o sucesso não é medido em cliques, mas em ROI (Retorno sobre Investimento). Três métricas vitais:"
+      },
+      {
+        type: "checklist",
+        items: [
+          "CAC (Custo de Aquisição de Cliente): Quanto custa transformar um visitante em um contrato fechado?",
+          "LTV (Lifetime Value): Qual o valor total que esse cliente traz para a empresa ao longo dos anos?",
+          "Velocidade de Vendas: Como o seu site está ajudando a encurtar o tempo entre primeiro contato e assinatura?"
+        ]
+      },
+      {
+        type: "heading",
+        level: 2,
+        content: "Conclusão: O Próximo Passo para sua Empresa"
+      },
+      {
+        type: "paragraph",
+        content:
+          "Uma estratégia digital B2B não é um projeto com data de entrega; é um processo contínuo de refinamento e otimização. Ter um parceiro que entende de Engenharia de Software e Estratégia de Negócios é o que separa as empresas que sobrevivem das que dominam o mercado."
+      },
+      {
+        type: "quote",
+        content:
+          "A jornada do decisor B2B começa bem antes do primeiro contato com seu time de vendas. Quem não estiver pronto digitalmente já perdeu.",
+        caption: "Realidade do mercado B2B 2026"
+      },
+      {
+        type: "heading",
+        level: 3,
+        content: "FAQ: Perguntas Frequentes sobre Estratégia Digital B2B"
+      },
+      {
+        type: "paragraph",
+        content:
+          "<strong>P: Qual a importância do SEO para empresas B2B?</strong><br>R: O SEO atrai leads com alta intenção de compra, reduzindo o custo de prospecção ativa e estabelecendo autoridade no mercado. Um lead orgânico conversa melhor do que um lead pago.<br><br><strong>P: Por que meu site deve ser integrado ao CRM?</strong><br>R: Para garantir que nenhum lead seja perdido e para mensurar o ROI real de cada campanha de marketing.<br><br><strong>P: O que é um site de alta performance?</strong><br>R: É um <a href=\"/solucoes/sites-institucionais\" title=\"Sites Institucionais de Alta Performance\" class=\"text-blue-600 hover:underline\">site otimizado para carregamento instantâneo, segurança robusta</a> e focado em converter o visitante em lead através de UX estratégica.<br><br><strong>P: Como a LGPD afeta meu marketing B2B?</strong><br>R: Exige que toda coleta de dados seja transparente e segura, sob risco de multas pesadas e perda de reputação. Saiba mais em <a href=\"/solucoes/governanca-seguranca\" title=\"Governança e Segurança\" class=\"text-blue-600 hover:underline\">Governança e Segurança</a>.<br><br><strong>P: Vale a pena investir em White Label Técnico?</strong><br>R: Sim, especialmente para agências que desejam escalar sua entrega sem aumentar a folha de pagamento. Veja nossos <a href=\"/solucoes/white-label-agencias\" title=\"White Label Técnico para Agências\" class=\"text-blue-600 hover:underline\">Planos para Agências</a>."
       }
     ],
   },
