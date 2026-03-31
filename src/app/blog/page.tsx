@@ -5,7 +5,7 @@ import { blogPosts } from "@/data/posts";
 export const metadata: Metadata = {
   title: "Blog | UNTI Digital",
   description:
-    "Conteudo tecnico da UNTI Digital sobre estrategia, integracoes, seguranca e design para operacoes de alto valor."
+    "Conteúdo técnico da UNTI Digital sobre estratégia, integrações, segurança e design para operações de alto valor."
 };
 
 const editorialPillars = [
@@ -27,11 +27,11 @@ export default function BlogPage() {
               Blog UNTI Digital
             </p>
             <h1 className="mt-4 text-4xl font-semibold tracking-tight text-zinc-900 md:text-5xl">
-              Conhecimento para liderancas que tratam tecnologia como alavanca de negocio
+              Conhecimento para lideranças que tratam tecnologia como alavanca de negócio
             </h1>
             <p className="mt-6 max-w-3xl text-base text-zinc-600 md:text-lg">
               A camada editorial da UNTI foi desenhada para educar o mercado, ampliar autoridade e
-              qualificar a conversa comercial com conteudo de leitura executiva.
+              qualificar a conversa comercial com conteúdo de leitura executiva.
             </p>
           </div>
 

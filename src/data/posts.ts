@@ -38,11 +38,11 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   {
     slug: "estrategia-digital-b2b",
-    title: "Estrategia digital para empresas B2B",
+    title: "Estratégia digital para empresas B2B",
     excerpt:
-      "Como um site institucional de alta performance e conteudo tecnico reduzem o ciclo de vendas e aumentam o ticket medio.",
+      "Como um site institucional de alta performance e conteúdo técnico reduzem o ciclo de vendas e aumentam o ticket médio.",
     description:
-      "Empresas B2B nao precisam de likes: precisam de pipeline, previsibilidade comercial e autoridade digital.",
+      "Empresas B2B não precisam de likes: precisam de pipeline, previsibilidade comercial e autoridade digital.",
     category: "Estrategia",
     publishedAt: "2026-03-18",
     readingTime: "6 min de leitura",
@@ -60,6 +60,11 @@ export const blogPosts: BlogPost[] = [
           "Empresas B2B nao precisam de volume vazio. Elas precisam de demanda qualificada, clareza de posicionamento e uma presenca digital que reduza friccao na jornada comercial. Quando o site institucional e tratado apenas como vitrine, o time de vendas perde tempo explicando o basico em toda reuniao."
       },
       {
+        type: "paragraph",
+        content:
+          "A estrategia digital de alto nivel comeca no entendimento do cliente alvo e da cadeia de decisao. E por isso que um link building interno estruturado - como um mapa da jornada que parte de um blog sobre desafios e chega a uma pagina de <a href=\"/solucoes/sites-institucionais\" title=\"Sites Institucionais de Alta Performance\" class=\"text-blue-600 hover:underline\">Sites Institucionais de Alta Performance</a> - e essencial para converter."
+      },
+      {
         type: "quote",
         content:
           "O site institucional nao deve apenas apresentar a empresa. Ele deve antecipar duvidas, elevar confianca e preparar a conversa comercial antes da primeira reuniao.",
@@ -73,81 +78,64 @@ export const blogPosts: BlogPost[] = [
       {
         type: "paragraph",
         content:
-          "Muitos sites corporativos ainda falham porque falam demais sobre a empresa e de menos sobre o problema do cliente. O visitante entende quem voce e, mas nao entende o que voce resolve, como entrega e por que deve confiar em voce agora."
+          "Quanto mais generico for o conteudo, menor sera o espacamento de palavras-chave especificas (e poderosas) como <a href=\"/solucoes/plataformas-web\" title=\"Engenharia de Software\" class=\"text-blue-600 hover:underline\">Engenharia de Software</a>. Entre empresas decidentes, essa falta de foco aumenta as perguntas abertas e atrasa o fechamento."
+      },
+      {
+        type: "paragraph",
+        content:
+          "A estrategia que funciona muda o objetivo de cada bloco de texto: em vez de explicar quem voce e, responde \"por que esta empresa deve me considerar agora\". Essa narrativa natural leva ao problema -> solucao e ao CTA logico, gutando a transicao para <a href=\"/solucoes/integracoes-crm-erp\" title=\"Integracoes com CRM e ERP\" class=\"text-blue-600 hover:underline\">Integracoes com CRM e ERP</a>."
       },
       {
         type: "checklist",
         items: [
-          "Oferta descrita de forma generica, sem clareza de contexto ou segmento",
-          "Prova social dispersa, sem apoiar a decisao de um comprador tecnico",
-          "Conteudo institucional que nao conversa com as dores do pipeline",
-          "Ausencia de CTA coerente com o estagio de compra do lead"
+          "Redirecionar termos genericos para paginas de servico especificas","Usar articulos como nudos de interligacao", "Aplicar CTA com sentido explicito (queremos _case_)", "Melhorar orga\u00e7\u00e3o com pilares (Authorized, Problema, Solucao, Prova)"
         ]
       },
       {
         type: "heading",
         level: 2,
-        content: "O site como vendedor consultivo"
+        content: "Cases e prova social como aceleradores"
       },
       {
         type: "paragraph",
         content:
-          "Quando a arquitetura da presenca digital e bem desenhada, o site passa a exercer um papel consultivo. Ele organiza contexto, mostra capacidade de entrega, elimina duvidas recorrentes e ajuda o visitante a chegar mais preparado a uma conversa comercial. Isso encurta o ciclo de vendas e aumenta a percepcao de valor."
+          "Em B2B, o sentido de risco e o fator numero 1. Por isso a estrategia deve mencionar <a href=\"/cases\" title=\"Cases de Sucesso\" class=\"text-blue-600 hover:underline\">Cases de Sucesso</a> logo nas primeiras secoes - e reforcar com metricas reais, dashboards e depuracaos. Isso constri a credibilidade e reduz atrito com diretores, CFO e comite tecnico."
       },
       {
         type: "heading",
         level: 3,
-        content: "Clareza de oferta antes de design chamativo"
+        content: "Arquitetura do conteudo para conversao"
       },
       {
         type: "paragraph",
         content:
-          "Autoridade digital nao nasce de paginas bonitas isoladamente. Ela nasce de uma narrativa coerente: para quem voce entrega, em que cenarios atua, como reduz risco e qual proximo passo o visitante deve tomar. O design premium amplifica essa mensagem; ele nao substitui a mensagem."
-      },
-      {
-        type: "heading",
-        level: 3,
-        content: "Conteudo tecnico que prepara a negociacao"
+          "A sequencia ideal e: dor -> impacto -> evidencias -> solucao -> proximos passos. Cada paragrafo deve trabalhar palavras-chave de alto valor e sutilmente linkar para paginas de servico, como <a href=\"/solucoes/para-agencias\" title=\"White Label Tecnico\" class=\"text-blue-600 hover:underline\">White Label Tecnico</a>. O leitor que esteja dentro de um funil de decisao ver um fluxo assim entende que o blog e parte de uma cadeia de valor."
       },
       {
         type: "paragraph",
         content:
-          "Artigos, guias e materiais de visao ajudam a empresa a educar o mercado e a dominar a conversa. Para leads de alto ticket, isso e decisivo: o prospect nao quer apenas um fornecedor, ele quer um parceiro que compreende sua operacao e antecipa seus desafios."
+          "Essa logica de conexao tambem melhora SEO: o Google ve essas ligacoes internas como sinal de hierarquia e topica, favorecendo tanto a pagina de blog quanto as paginas de servico quando a semantica esta correta."
       },
       {
         type: "heading",
         level: 2,
-        content: "Como transformar presenca digital em pipeline"
-      },
-      {
-        type: "checklist",
-        items: [
-          "Defina paginas orientadas por dores reais e nao apenas por departamentos internos",
-          "Use prova social, cases e stacks para reduzir percepcao de risco",
-          "Publique conteudo que responda objecoes do processo comercial",
-          "Estruture CTAs diferentes para diagnostico, consultoria e contato direto"
-        ]
+        content: "Como medir o impacto da estrategia"
       },
       {
         type: "paragraph",
         content:
-          "No fim, a presenca digital mais valiosa e a que melhora a qualidade da conversa comercial. Menos ruido, mais contexto e mais confianca. Para empresas B2B, isso significa um pipeline mais forte, negociacoes melhores e crescimento com mais previsibilidade."
+          "Nao basta publicar: monitore parcours (scroll, leitura, clique) para ver se o leitor que veio via blog de \"Estratégia Digital para Empresas B2B\" foi na sequencia para <a href=\"/solucoes/sites-institucionais\" title=\"Sites Institucionais de Alta Performance\" class=\"text-blue-600 hover:underline\">Sites Institucionais de Alta Performance</a> ou <a href=\"/solucoes/plataformas-web\" title=\"Engenharia de Software\" class=\"text-blue-600 hover:underline\">Engenharia de Software</a>. Ajuste o copy dos blocos de problema e solucao com base nessa jornada."
       },
       {
         type: "paragraph",
         content:
-          "Ao conectar essa narrativa com uma arquitetura de <a href=\"/solucoes/sites-institucionais\" title=\"Sites Institucionais de Alta Performance\" class=\"text-blue-600 hover:underline\">Sites Institucionais de Alta Performance</a>, voce transforma trafego em leads mais qualificados. Integrar com <a href=\"/solucoes/plataformas-web\" title=\"Engenharia de Software\" class=\"text-blue-600 hover:underline\">Engenharia de Software</a> e <a href=\"/solucoes/integracoes-crm-erp\" title=\"Integracoes com CRM e ERP\" class=\"text-blue-600 hover:underline\">Integracoes com CRM e ERP</a> garante que as oportunidades andem automaticamente pelo funnel.",
-      },
-      {
-        type: "paragraph",
-        content:
-          "Nossas referencias em <a href=\"/cases\" title=\"Cases de Sucesso\" class=\"text-blue-600 hover:underline\">Cases de Sucesso</a> mostram como a jornada de venda passa a ser inicializada no blog, qualificada via conteudo tecnico e concluida na pagina de servico, reduzindo em 30-40% o ciclo de negociacao. Para agencias, o modelo de <a href=\"/solucoes/para-agencias\" title=\"White Label Tecnico\" class=\"text-blue-600 hover:underline\">White Label Tecnico</a> permite replicar essa abordagem com governanca completa."
+          "Isso vira um loop virtuoso: cada novo artigo alimenta a malha de Link Building Interno, reforca o termo \"Empresas B2B\" e aumenta a relevancia geral das paginas principais."
       }
-    ]
+    ],
   },
   {
     slug: "integracoes-que-escalam-operacoes",
-    title: "Integracoes que escalam operacoes",
+    title: "Integrações que escalam operações",
     excerpt:
       "Como conectar CRMs, ERPs e plataformas web para eliminar retrabalho manual e destravar crescimento operacional.",
     description:
@@ -246,9 +234,9 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "governanca-e-seguranca-em-plataformas-web",
-    title: "Governanca e seguranca em plataformas web",
+    title: "Governança e segurança em plataformas web",
     excerpt:
-      "Por que empresas lideres investem em monitoramento continuo, arquitetura segura e conformidade para proteger reputacao e dados.",
+      "Por que empresas líderes investem em monitoramento contínuo, arquitetura segura e conformidade para proteger reputação e dados.",
     description:
       "Seguranca e o alicerce da confianca digital. Sem governanca, qualquer ganho de crescimento fica fragil.",
     category: "Seguranca",
@@ -348,7 +336,7 @@ export const blogPosts: BlogPost[] = [
     slug: "ux-para-ambientes-enterprise",
     title: "UX para ambientes enterprise",
     excerpt:
-      "Como projetar interfaces densas que equilibram produtividade, navegacao fluida e performance para operacoes corporativas.",
+      "Como projetar interfaces densas que equilibram produtividade, navegação fluida e performance para operações corporativas.",
     description:
       "Interfaces complexas nao precisam ser complicadas. Menos friccao significa mais conversao e mais produtividade.",
     category: "Design",
