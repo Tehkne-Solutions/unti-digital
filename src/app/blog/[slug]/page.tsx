@@ -91,7 +91,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
     <main className="bg-white">
       <BlogReadingProgress />
 
-      <section className="border-b border-zinc-100 bg-white">
+      <section className="border-b border-zinc-100 bg-white animate-fade-in-up">
         <div className="mx-auto max-w-6xl px-4 py-16 md:py-20">
           <nav className="flex items-center gap-2 text-sm text-zinc-500">
             <Link href="/" className="no-underline hover:text-zinc-900 hover:no-underline">
@@ -128,7 +128,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
 
       <section className="bg-white py-16">
         <div className="mx-auto grid max-w-6xl gap-12 px-4 lg:grid-cols-[minmax(0,768px)_280px]">
-          <article className="min-w-0">
+          <article className="min-w-0 animate-fade-in-up">
             <div className="rounded-[32px] border border-zinc-100 bg-slate-50/60 px-8 py-8">
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-zinc-500">
                 Insight-chave

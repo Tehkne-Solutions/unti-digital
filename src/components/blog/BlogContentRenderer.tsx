@@ -20,7 +20,10 @@ export function BlogContentRenderer({ blocks }: BlogContentRendererProps) {
       {blocks.map((block, index) => {
         if (block.type === "heading" && block.level === 2) {
           return (
-            <h2 key={`${block.type}-${index}`} className="pt-4 text-3xl font-semibold tracking-tight text-zinc-900">
+            <h2
+              key={`${block.type}-${index}`}
+              className="pt-4 text-3xl font-semibold tracking-tight text-zinc-900 opacity-0 animate-fade-in-up"
+            >
               {block.content}
             </h2>
           );
@@ -28,7 +31,10 @@ export function BlogContentRenderer({ blocks }: BlogContentRendererProps) {
 
         if (block.type === "heading" && block.level === 3) {
           return (
-            <h3 key={`${block.type}-${index}`} className="pt-2 text-2xl font-semibold tracking-tight text-zinc-900">
+            <h3
+              key={`${block.type}-${index}`}
+              className="pt-2 text-2xl font-semibold tracking-tight text-zinc-900 opacity-0 animate-fade-in-up"
+            >
               {block.content}
             </h3>
           );
@@ -36,9 +42,11 @@ export function BlogContentRenderer({ blocks }: BlogContentRendererProps) {
 
         if (block.type === "paragraph") {
           return (
-            <p key={`${block.type}-${index}`} className="text-[1.05rem] leading-relaxed text-zinc-700 md:text-[1.1rem]">
-              {block.content}
-            </p>
+            <p
+              key={`${block.type}-${index}`}
+              className="text-[1.05rem] leading-relaxed text-zinc-700 md:text-[1.1rem] opacity-0 animate-fade-in-up"
+              dangerouslySetInnerHTML={{ __html: block.content }}
+            ></p>
           );
         }
 
@@ -46,7 +54,7 @@ export function BlogContentRenderer({ blocks }: BlogContentRendererProps) {
           return (
             <blockquote
               key={`${block.type}-${index}`}
-              className="rounded-[28px] border-l-4 border-unti-blue bg-slate-50/70 px-6 py-6"
+              className="rounded-[28px] border-l-4 border-unti-blue bg-slate-50/70 px-6 py-6 opacity-0 animate-fade-in-up"
             >
               <p className="text-xl leading-relaxed text-zinc-800">{block.content}</p>
               {block.caption ? (
@@ -60,7 +68,7 @@ export function BlogContentRenderer({ blocks }: BlogContentRendererProps) {
 
         if (block.type === "checklist") {
           return (
-            <ul key={`${block.type}-${index}`} className="space-y-4">
+            <ul key={`${block.type}-${index}`} className="space-y-4 opacity-0 animate-fade-in-up">
               {block.items.map((item) => (
                 <li key={item} className="flex items-start gap-4 rounded-[24px] border border-zinc-100 bg-white px-5 py-4">
                   <CheckIcon />
