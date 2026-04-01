@@ -23,10 +23,10 @@ export const Header = () => {
           <nav className="hidden lg:flex items-center gap-8">
             <Link href="/" className="text-sm font-bold text-zinc-700 hover:text-blue-600">HOME</Link>
 
-            {/* SOLUÇÕES COM MEGA MENU (HOVER) */}
+            {/* SOLUCOES COM MEGA MENU (HOVER) */}
             <div className="relative group py-4">
               <Link href="/solucoes" className="flex items-center gap-1 text-sm font-bold text-zinc-900 group-hover:text-blue-600">
-                SOLUÇÕES <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
+                SOLUCOES <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
               </Link>
 
               {/* O MEGA MENU DESKTOP */}
@@ -41,7 +41,7 @@ export const Header = () => {
                     <p className="text-xs text-zinc-500 italic">E-commerce de Alta Performance</p>
                   </Link>
                   <Link href="/solucoes" className="group/item">
-                    <p className="font-bold text-zinc-900 group-hover/item:text-blue-600">Para Agências</p>
+                    <p className="font-bold text-zinc-900 group-hover/item:text-blue-600">Para Agencias</p>
                     <p className="text-xs text-zinc-500 italic">White Label & Squads Dedicadas</p>
                   </Link>
                 </div>
@@ -49,13 +49,13 @@ export const Header = () => {
             </div>
 
             <Link href="/cases" className="text-sm font-bold text-zinc-700 hover:text-blue-600">CASES</Link>
-            <Link href="/blog" className="text-sm font-bold text-zinc-700 hover:text-blue-600">CONTEÚDO</Link>
+            <Link href="/blog" className="text-sm font-bold text-zinc-700 hover:text-blue-600">CONTEUDO</Link>
           </nav>
 
-          {/* AÇÕES: BOTÃO + HAMBÚRGUER */}
+          {/* ACOES: BOTAO + HAMBURGUER */}
           <div className="flex items-center gap-4">
             <Button className="hidden sm:flex bg-blue-600 text-white px-6 h-11 rounded-full text-sm font-bold hover:bg-blue-700 transition-all">
-              Orçamento Rápido
+              Orcamento Rapido
             </Button>
 
             {/* GATILHO DO MENU (CORRIGIDO) */}
