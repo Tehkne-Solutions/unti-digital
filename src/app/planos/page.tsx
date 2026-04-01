@@ -10,7 +10,6 @@ import { ServicesCarousel } from "@/components/home/services-carousel";
 import { LogoCarousel } from "@/components/ui/LogoCarousel";
 import { Testimonials } from "@/components/ui/Testimonials";
 import { PricingForm } from "@/components/ui/PricingForm";
-import { PricingFooter } from "@/components/sections/PricingFooter";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 
@@ -104,7 +103,6 @@ export default function PricingPage() {
         </Section>
       </main>
 
-      <PricingFooter />
     </div>
   );
 }
