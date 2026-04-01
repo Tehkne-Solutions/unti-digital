@@ -11,16 +11,28 @@ const nextConfig = {
     async redirects() {
         return [
             {
-                // URL antiga do WordPress conforme o seu ficheiro HTML
                 source: '/planos-e-precos',
-                // Nova rota otimizada
                 destination: '/planos',
-                permanent: true, // Erro 301 (Movido permanentemente - Essencial para SEO)
+                permanent: true,
             },
             {
-                // Caso o utilizador tente o plural ou variações comuns
                 source: '/precos',
                 destination: '/planos',
+                permanent: true,
+            },
+            {
+                source: '/sites-institucionais',
+                destination: '/solucoes/sites-institucionais',
+                permanent: true,
+            },
+            {
+                source: '/lojas-virtuais',
+                destination: '/solucoes/plataformas-web',
+                permanent: true,
+            },
+            {
+                source: '/portais-de-conteudo',
+                destination: '/solucoes/governanca-seguranca',
                 permanent: true,
             },
         ];
