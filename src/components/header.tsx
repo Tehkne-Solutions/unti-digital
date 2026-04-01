@@ -285,7 +285,7 @@ export function Header() {
             </motion.div>
           </Link>
 
-          <nav className="hidden items-center gap-8 md:flex lg:gap-10">
+          <nav className="hidden items-center gap-8 lg:gap-10">
             <MenuLink href="/" label="Home" />
 
             <button
@@ -313,7 +313,7 @@ export function Header() {
           <button
             type="button"
             onClick={() => setMobileMenuOpen(true)}
-            className="inline-flex items-center justify-center rounded-xl border border-slate-200 p-3 text-brand-dark transition-colors hover:border-unti-blue hover:text-unti-blue md:hidden"
+            className="inline-flex items-center justify-center rounded-xl border border-slate-200 p-3 text-brand-dark transition-colors hover:border-unti-blue hover:text-unti-blue"
             aria-label="Abrir menu"
           >
             <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">

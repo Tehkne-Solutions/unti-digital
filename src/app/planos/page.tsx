@@ -79,7 +79,7 @@ export default function PricingPage() {
 
                 <div className="mt-6 w-full max-w-md rounded-2xl border border-white/20 bg-white/10 p-4">
                   <Image
-                    src="/images/contact-mockup.png"
+                    src="/images/unti-digital-homepage-image-hero-bg.jpeg"
                     alt="Mockup de contato UNTI"
                     width={640}
                     height={320}
