@@ -3,21 +3,21 @@ import { Section } from "@/components/ui/Section";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Solucoes Digitais para Empresas e Agencias | Unti Digital",
-  description: "Portfolio de solucoes da Unti Digital com foco em sites institucionais, plataformas web, integracoes, seguranca e white label tecnico.",
+  title: "Soluções Digitais para Empresas e Agências | Unti Digital",
+  description: "Portfolio de soluções da Unti Digital com foco em sites institucionais, plataformas web, integrações, segurança e white label técnico.",
   keywords: [
-    "solucoes digitais b2b",
+    "soluções digitais b2b",
     "sites institucionais de alta performance",
     "plataformas web sob medida",
-    "integracoes crm e erp",
-    "white label tecnico"
+    "integrações crm e erp",
+    "white label técnico"
   ],
   alternates: {
     canonical: "/solucoes",
   },
   openGraph: {
-    title: "Solucoes Digitais para Empresas e Agencias | Unti Digital",
-    description: "Portfolio de solucoes da Unti Digital com foco em sites institucionais, plataformas web, integracoes, seguranca e white label tecnico.",
+    title: "Soluções Digitais para Empresas e Agências | Unti Digital",
+    description: "Portfolio de soluções da Unti Digital com foco em sites institucionais, plataformas web, integrações, segurança e white label técnico.",
     type: "website",
     url: "https://unti-digital.vercel.app/solucoes",
   },
