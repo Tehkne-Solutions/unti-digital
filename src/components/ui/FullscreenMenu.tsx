@@ -3,7 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { X, Linkedin, Instagram } from "lucide-react";
+import { X, Link, Hash } from "lucide-react";
 
 interface FullscreenMenuProps {
   isOpen: boolean;
@@ -114,10 +114,10 @@ export const FullscreenMenu = ({ isOpen, onClose }: FullscreenMenuProps) => {
 
                 <div className="mt-10 pt-8 border-t border-zinc-100 flex gap-4">
                   <a href="https://www.linkedin.com/company/untidigital/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-                    <Linkedin className="w-6 h-6 text-zinc-400 hover:text-blue-600" />
+                    <Link className="w-6 h-6 text-zinc-400 hover:text-blue-600" />
                   </a>
                   <a href="https://www.instagram.com/untidigital/" target="_blank" rel="noreferrer" aria-label="Instagram">
-                    <Instagram className="w-6 h-6 text-zinc-400 hover:text-blue-600" />
+                    <Hash className="w-6 h-6 text-zinc-400 hover:text-blue-600" />
                   </a>
                 </div>
               </div>
