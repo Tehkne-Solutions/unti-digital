@@ -1,7 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Check, ArrowRight, Send, CheckCircle2 } from "lucide-react";
+import { Check, CheckCircle2 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
@@ -52,24 +51,6 @@ const plans = [
     cta: "Falar com Especialista",
   },
 ];
-      "Segurança de Dados Nível Bancário",
-      "Infraestrutura Escalável em Nuvem",
-      "Consultoria de UX/UI Dedicada",
-    ],
-    highlight: false,
-    cta: "Falar com Arquiteto",
-  },
-const comparisonFeatures = [
-  { feature: "Design Responsivo & Mobile First", express: true, enterprise: true, custom: true },
-  { feature: "Otimização de Velocidade (SEO)", express: true, enterprise: true, custom: true },
-  { feature: "Certificado SSL de Segurança", express: true, enterprise: true, custom: true },
-  { feature: "Painel Administrativo (CMS)", express: false, enterprise: true, custom: true },
-  { feature: "Blog Profissional Integrado", express: false, enterprise: true, custom: true },
-  { feature: "Integração com CRM/Marketing", express: "Básico", enterprise: "Avançado", custom: "Full API" },
-  { feature: "Suporte Técnico", express: "E-mail", enterprise: "Prioritário", custom: "SLA Dedicado" },
-  { feature: "Treinamento de Gestão", express: false, enterprise: true, custom: true },
-  { feature: "Infraestrutura Escalável (Cloud)", express: false, enterprise: false, custom: true },
-];
 
 export default function PricingPage() {
   return (
@@ -107,12 +88,6 @@ export default function PricingPage() {
                   <p className={`text-sm leading-relaxed ${plan.highlight ? "text-zinc-400" : "text-zinc-500"}`}>
                     {plan.description}
                   </p>
-                </div>
-
-                <div className="mb-8">
-                  <span className={`text-3xl font-extrabold ${plan.highlight ? "text-white" : "text-zinc-900"}`}>
-                    {plan.price}
-                  </span>
                 </div>
 
                 <ul className="space-y-4 mb-10">
