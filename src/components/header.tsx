@@ -304,18 +304,17 @@ export function Header() {
             ))}
           </nav>
 
-          <div className="hidden md:block">
-            <Button variant="primary" onClick={() => (window.location.href = "/contato")}>
-              Falar com especialista
+          <div className="flex items-center gap-3">
+            <Button variant="primary" className="px-5 h-11 rounded-full" onClick={() => (window.location.href = "/contato")}>
+              Solicitar Orçamento
             </Button>
-          </div>
 
-          <button
-            type="button"
-            onClick={() => setMobileMenuOpen(true)}
-            className="inline-flex items-center justify-center rounded-xl border border-slate-200 p-3 text-brand-dark transition-colors hover:border-unti-blue hover:text-unti-blue"
-            aria-label="Abrir menu"
-          >
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen(true)}
+              className="inline-flex items-center justify-center rounded-xl border border-slate-200 p-3 text-brand-dark transition-colors hover:border-unti-blue hover:text-unti-blue"
+              aria-label="Abrir menu"
+            >
             <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
               <path d="M4 7h16" />
               <path d="M4 12h16" />
