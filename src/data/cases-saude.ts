@@ -71,7 +71,7 @@ export const saudeCases: CaseSeed[] = [
     assetPrintFile: "unti-digital-cases-uroclinica-de-joinville-print-site.webp",
     tecnologias: ["Next.js", "Tailwind CSS", "SEO Local", "Performance Web"],
     desafio:
-      "Apresentar uma especialidade medica com autoridade sem transformar a navegacao em algo denso ou tecnico demais.",
+      "Apresentar uma especialidade médica com autoridade sem transformar a navegação em algo denso ou técnico demais.",
     entrega:
       "Site institucional com narrativa de confianca, servicos bem distribuidos e pontos de contato posicionados para reduzir atrito.",
     impacto:
@@ -101,7 +101,7 @@ export const saudeCases: CaseSeed[] = [
     desafio:
       "Organizar a comunicacao de uma instituicao hospitalar de forma clara, sem perder credibilidade e profundidade.",
     entrega:
-      "Estrutura institucional com hierarquia de informacao, areas de servico e pontos de contato desenhados para facilitar orientacao.",
+      "Estrutura institucional com hierarquia de informação, áreas de serviço e pontos de contato desenhados para facilitar orientação.",
     impacto:
       "Melhor leitura institucional, mais confianca digital e uma base mais forte para relacionamento com pacientes e parceiros.",
     resultados: [
@@ -211,7 +211,7 @@ export const saudeCases: CaseSeed[] = [
     assetPrintFile: "unti-digital-cases-dr-thiago-azuaga-print-site.webp",
     tecnologias: ["Next.js", "Tailwind CSS", "SEO Local", "Performance Web"],
     desafio:
-      "Transformar conhecimento tecnico e prova de autoridade em uma jornada mais simples para o usuario final.",
+      "Transformar conhecimento técnico e prova de autoridade em uma jornada mais simples para o usuário final.",
     entrega:
       "Site institucional com estrutura de especialidades, narrativa de credibilidade e canais de contato com baixa friccao.",
     impacto:

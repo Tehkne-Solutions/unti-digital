@@ -28,13 +28,13 @@ const contactCards: ContactCard[] = [
     icon: IconPhone
   },
   {
-    title: "Endereco",
+    title: "Endereço",
     value: "Campinas - SP",
     description: "Base operacional com atendimento remoto nacional.",
     icon: IconMapPin
   },
   {
-    title: "Horario",
+    title: "Horário",
     value: "Segunda a sexta, das 9h as 18h",
     description: "Janelas de reuniao sob agendamento.",
     icon: IconClock
@@ -50,7 +50,7 @@ const routingCards: RoutingCard[] = [
   {
     index: "02",
     title: "Plataformas",
-    description: "Escopo para areas logadas, portais e operacoes complexas."
+    description: "Escopo para áreas logadas, portais e operações complexas."
   },
   {
     index: "03",
@@ -84,8 +84,6 @@ export default function ContatoPage() {
               className="object-cover object-center"
               sizes="100vw"
             />
-            <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(255,255,255,0.95),rgba(255,255,255,0.76))]" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_24%,rgba(57,108,255,0.22),transparent_40%)]" />
           </div>
 
           <Container className="relative z-10 py-16 md:py-24">
@@ -113,7 +111,7 @@ export default function ContatoPage() {
                   </a>
                   <a
                     href="#form-contato"
-                    className="inline-flex h-12 items-center justify-center rounded-2xl bg-white px-6 text-sm font-semibold uppercase tracking-[0.14em] text-brand-dark no-underline shadow-[inset_0_1px_0_rgba(255,255,255,1),0_0_0_1px_rgba(148,163,184,0.16),0_16px_34px_rgba(15,23,42,0.08)] transition-all duration-300 hover:bg-slate-50 hover:shadow-[inset_0_1px_0_rgba(255,255,255,1),0_0_0_1px_rgba(148,163,184,0.2),0_20px_38px_rgba(15,23,42,0.1)] hover:no-underline"
+                    className="inline-flex h-12 items-center justify-center rounded-2xl bg-white px-6 text-sm font-semibold uppercase tracking-[0.14em] text-brand-dark no-underline shadow-[inset_0_1px_0_rgba(255,255,255,1),0_0_0_1px_rgba(148,163,184,0.16),0_16px_34px_rgba(15,23,42,0.08)] transition-all duration-300 hover:bg-slate-50 hover:shadow-[inset_0_1px_0_rgba(255,255,255,1),0_0_0_1px_rgba(148,163,184,0.2),0_20px_38px_rgba(15,23,42,0.1)] hover:scale-105 hover:no-underline"
                   >
                     Enviar mensagem
                   </a>

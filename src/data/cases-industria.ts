@@ -70,7 +70,7 @@ export const industriaCases: CaseSeed[] = [
     assetFolder: "SWebsite-suporteshop",
     assetBannerFile: "unti-digital-cases-SWebsite-suporteshop-banner.webp",
     assetPrintFile: "unti-digital-cases-SWebsite-suporteshop-print-site.webp",
-    tecnologias: ["Next.js", "Tailwind CSS", "SEO Tecnico", "UX Institucional"],
+    tecnologias: ["Next.js", "Tailwind CSS", "SEO Técnico", "UX Institucional"],
     desafio:
       "Explicar uma oferta de suporte digital com mais clareza, confianca e contexto comercial.",
     entrega:
@@ -91,8 +91,8 @@ export const industriaCases: CaseSeed[] = [
     cliente: "SOS Pistolas",
     categoria: "industria",
     segmento: "Industria & varejo",
-    tagline: "Presenca institucional para nicho tecnico com mais legibilidade comercial",
-    resumoHome: "Site de nicho tecnico com foco em clareza e contato objetivo.",
+    tagline: "Presença institucional para nicho técnico com mais legibilidade comercial",
+    resumoHome: "Site de nicho técnico com foco em clareza e contato objetivo.",
     resumo:
       "Case orientado a apresentar servicos e especialidades de um nicho especifico com linguagem direta, confiavel e visualmente mais organizada.",
     assetFolder: "SOS-pistolas",
@@ -100,13 +100,13 @@ export const industriaCases: CaseSeed[] = [
     assetPrintFile: "unti-digital-cases-SOSpistolas-print-site.webp",
     tecnologias: ["Next.js", "Tailwind CSS", "SEO Local", "Performance Web"],
     desafio:
-      "Traduzir um nicho tecnico em uma experiencia simples de entender e confiavel para o visitante.",
+      "Traduzir um nicho técnico em uma experiência simples de entender e confiável para o visitante.",
     entrega:
       "Site institucional com estrutura objetiva, apresentacao de servicos e ponto de contato bem sinalizado.",
     impacto:
       "Mais clareza institucional e uma experiencia mais forte para quem chega buscando atendimento especializado.",
     resultados: [
-      "Nicho tecnico mais facil de compreender",
+      "Nicho técnico mais fácil de compreender",
       "Contato mais rapido e contextualizado",
       "Presenca digital mais profissional"
     ],

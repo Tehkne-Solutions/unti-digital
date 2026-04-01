@@ -36,13 +36,13 @@ export const corporativoCases: CaseSeed[] = [
     categoria: "corporativo",
     segmento: "Tecnologia & Servicos",
     tagline: "Presenca institucional orientada a autoridade tecnica e captacao de demanda",
-    resumoHome: "Estrutura digital para servicos tecnicos com mais clareza comercial.",
+    resumoHome: "Estrutura digital para serviços técnicos com mais clareza comercial.",
     resumo:
       "Case construido para organizar proposta de valor, destacar capacidades tecnicas e conduzir o visitante a uma conversa comercial mais objetiva.",
     assetFolder: "conect-7g",
     assetBannerFile: "unti-digital-cases-conect-7g-banner.webp",
     assetPrintFile: "unti-digital-cases-conect-7g-print-site.webp",
-    tecnologias: ["Next.js", "Tailwind CSS", "Performance Web", "SEO Tecnico"],
+    tecnologias: ["Next.js", "Tailwind CSS", "Performance Web", "SEO Técnico"],
     desafio:
       "Tornar uma oferta tecnica mais simples de entender sem perder profundidade e credibilidade.",
     entrega:
@@ -182,7 +182,7 @@ export const corporativoCases: CaseSeed[] = [
     assetFolder: "plataforma-wiki-das-celebridades",
     assetBannerFile: "unti-digital-cases-plataforma-wiki-das-celebridades-banner.webp",
     assetPrintFile: "unti-digital-cases-plataforma-wiki-das-celebridades-print-site.webp",
-    tecnologias: ["Next.js", "Arquitetura de Conteudo", "SEO Tecnico", "Performance Web"],
+    tecnologias: ["Next.js", "Arquitetura de Conteúdo", "SEO Técnico", "Performance Web"],
     desafio:
       "Estruturar uma plataforma de conteudo para crescer sem perder legibilidade, navegacao e consistencia editorial.",
     entrega:

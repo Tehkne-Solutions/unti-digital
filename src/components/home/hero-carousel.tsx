@@ -31,7 +31,7 @@ const slides: Slide[] = [
     ctaSecondary: "Ver cases"
   },
   {
-    title: "White Label Tecnico para Agencias",
+    title: "White Label Técnico para Agências",
     description:
       "Atuamos como braco tecnologico invisivel para agencias que precisam ampliar capacidade com confidencialidade e padrao enterprise.",
     image: "/images/unti-digital-homepage-image-slider-servicos-white-label-tecnico-para-agencias.png",

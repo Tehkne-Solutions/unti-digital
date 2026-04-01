@@ -87,10 +87,9 @@ export default function BlogPage() {
       <section className="bg-white py-20">
         <div className="mx-auto max-w-6xl px-4">
           <div className="mb-10 max-w-3xl">
-            <h2 className="text-3xl font-semibold text-zinc-900 md:text-4xl">Biblioteca inicial</h2>
+            <h2 className="text-3xl font-semibold text-zinc-900 md:text-4xl">Outros Artigos</h2>
             <p className="mt-4 text-zinc-600">
-              Os quatro artigos inaugurais estruturam os pilares de estrategia, tecnologia,
-              seguranca e design sob a otica de operacoes premium.
+              Explore conteúdos estratégicos que elevam a autoridade técnica e qualificam decisões executivas no universo digital B2B.
             </p>
           </div>
 

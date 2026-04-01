@@ -15,7 +15,7 @@ export function Segmentation() {
           </h2>
           <p className="mx-auto max-w-3xl text-lg text-brand-muted">
             Atendemos empresas que precisam escalar com seguranca e agencias que buscam
-            um parceiro tecnico estrategico.
+            um parceiro técnico estratégico.
           </p>
         </div>
 
@@ -135,7 +135,7 @@ export function Segmentation() {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <span className="text-white/90">White label tecnico</span>
+                  <span className="text-white/90">White label técnico</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <svg

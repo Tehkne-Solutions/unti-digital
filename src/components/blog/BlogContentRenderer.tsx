@@ -41,10 +41,11 @@ export function BlogContentRenderer({ blocks }: BlogContentRendererProps) {
         }
 
         if (block.type === "paragraph") {
+          const isFAQ = block.content.includes("FAQ") || block.content.includes("<strong>P:");
           return (
             <p
               key={`${block.type}-${index}`}
-              className="text-[1.05rem] leading-relaxed text-zinc-700 md:text-[1.1rem] opacity-0 animate-fade-in-up"
+              className={`text-[1.05rem] leading-relaxed text-zinc-700 md:text-[1.1rem] opacity-0 animate-fade-in-up ${isFAQ ? 'space-y-4' : ''}`}
               dangerouslySetInnerHTML={{ __html: block.content }}
             ></p>
           );
@@ -72,7 +73,7 @@ export function BlogContentRenderer({ blocks }: BlogContentRendererProps) {
               {block.items.map((item) => (
                 <li key={item} className="flex items-start gap-4 rounded-[24px] border border-zinc-100 bg-white px-5 py-4">
                   <CheckIcon />
-                  <span className="text-[1rem] leading-relaxed text-zinc-700">{item}</span>
+                  <span className="text-[1rem] leading-relaxed text-zinc-700" dangerouslySetInnerHTML={{ __html: item }}></span>
                 </li>
               ))}
             </ul>

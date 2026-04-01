@@ -35,7 +35,7 @@ const solutions: SolutionItem[] = [
   {
     href: "/solucoes/plataformas-web",
     label: "Plataformas Web",
-    description: "Engenharia de software para operacoes complexas, SaaS e produtos sob medida.",
+    description: "Engenharia de software para operações complexas, SaaS e produtos sob medida.",
     image: "/images/solutions/unti-digital-solution-custom-web-platforms.png",
     icon: IconLayers
   },

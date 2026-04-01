@@ -7,14 +7,14 @@ export const automotivoCases: CaseSeed[] = [
     cliente: "Grupo Savol",
     categoria: "automotivo",
     segmento: "Ecossistema automotivo",
-    tagline: "Ecossistema digital para marcas, operacoes e captacao regional",
+    tagline: "Ecossistema digital para marcas, operações e captação regional",
     resumoHome: "Arquitetura institucional unificada para marcas, servicos e captacao regional.",
     resumo:
       "Reestruturacao do ecossistema digital do grupo para sustentar multiplas marcas, narrativas comerciais e operacao de leads com governanca unica.",
     assetFolder: "grupo-savol",
     assetBannerFile: "unti-digital-cases-grupo-savol-banner.webp",
     assetPrintFile: "unti-digital-cases-grupo-savol-print-site.webp",
-    tecnologias: ["Next.js", "Tailwind CSS", "SEO Tecnico", "Integracao com CRM"],
+    tecnologias: ["Next.js", "Tailwind CSS", "SEO Técnico", "Integração com CRM"],
     desafio:
       "Unificar a presenca digital do grupo sem perder a especificidade comercial de cada frente automotiva.",
     entrega:
@@ -22,7 +22,7 @@ export const automotivoCases: CaseSeed[] = [
     impacto:
       "Mais consistencia de marca, mais clareza para o funil comercial e uma base escalavel para expansao regional.",
     resultados: [
-      "Estrutura preparada para multiplas operacoes dentro do mesmo grupo",
+      "Estrutura preparada para múltiplas operações dentro do mesmo grupo",
       "Padronizacao de paginas comerciais com foco em conversao",
       "Base tecnica pronta para crescimento de novas unidades"
     ],
@@ -74,7 +74,7 @@ export const automotivoCases: CaseSeed[] = [
     assetFolder: "auto-shopping-tiquatira",
     assetBannerFile: "auto-shopping-tiquatira-banner.webp",
     assetPrintFile: "auto-shopping-tiquatira-print-site.webp",
-    tecnologias: ["Integracao API", "Catalogo Web", "SEO Tecnico", "Automacao Comercial"],
+    tecnologias: ["Integração API", "Catálogo Web", "SEO Técnico", "Automação Comercial"],
     desafio:
       "Exibir estoque atualizado sem gerar friccao entre operacao interna, experiencia do usuario e captacao.",
     entrega:

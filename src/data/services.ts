@@ -15,7 +15,7 @@ export const services: Service[] = [
     title: "Sites Institucionais de Alta Performance",
     description: "Sites institucionais premium com foco em conversao, integracao e performance real para empresas B2B.",
     shortDescription: "Sites institucionais premium com foco em conversao, integracao e performance real.",
-    fullDescription: "Construimos hubs corporativos desenhados para empresas que buscam autoridade imediata. Unimos design minimalista premium a uma infraestrutura tecnica robusta, com foco em Core Web Vitals, SEO tecnico e integracao com fluxos internos.",
+    fullDescription: "Construimos hubs corporativos desenhados para empresas que buscam autoridade imediata. Unimos design minimalista premium a uma infraestrutura técnica robusta, com foco em Core Web Vitals, SEO técnico e integração com fluxos internos.",
     bullets: [
       "Arquitetura focada em CRO e geracao de oportunidades",
       "Core Web Vitals e experiencia consistente em todos os dispositivos",
@@ -34,9 +34,9 @@ export const services: Service[] = [
   {
     slug: "plataformas-web",
     title: "Plataformas Web Sob Medida",
-    description: "Engenharia de software para operacoes complexas, produtos SaaS e ecossistemas digitais sob medida.",
-    shortDescription: "Engenharia de software para operacoes complexas e plataformas sob medida.",
-    fullDescription: "Desenvolvemos solucoes de software web exclusivas para operacoes que fogem do convencional. Criamos ecossistemas SaaS, dashboards e ferramentas de gestao com arquitetura modular preparada para crescer sem sacrificar estabilidade.",
+    description: "Engenharia de software para operações complexas, produtos SaaS e ecossistemas digitais sob medida.",
+    shortDescription: "Engenharia de software para operações complexas e plataformas sob medida.",
+    fullDescription: "Desenvolvemos soluções de software web exclusivas para operações que fogem do convencional. Criamos ecossistemas SaaS, dashboards e ferramentas de gestão com arquitetura modular preparada para crescer sem sacrificar estabilidade.",
     bullets: [
       "Arquitetura modular preparada para expansao",
       "Integracoes avancadas com sistemas externos",
@@ -69,16 +69,16 @@ export const services: Service[] = [
       "Documentacao completa dos fluxos",
       "Monitoramento das integracoes criticas",
       "Plano de contingencia operacional",
-      "Suporte tecnico para evolucao dos fluxos"
+      "Suporte técnico para evolução dos fluxos"
     ],
     image: "/images/unti-digital-homepage-image-nossas-solucoes-integracoes-e-automacoes.png"
   },
   {
     slug: "governanca-seguranca",
-    title: "Governanca e Seguranca",
-    description: "Seguranca nivel enterprise com controle de acessos, monitoramento continuo e compliance digital.",
+    title: "Governança e Segurança",
+    description: "Segurança nível enterprise com controle de acessos, monitoramento contínuo e compliance digital.",
     shortDescription: "Arquiteturas Zero-Trust, monitoramento continuo e conformidade.",
-    fullDescription: "Implementamos arquiteturas de seguranca nivel enterprise para proteger operacoes digitais criticas. Combinamos governanca, controle granular de acessos, monitoramento ativo e adequacao a LGPD para reduzir riscos reais.",
+    fullDescription: "Implementamos arquiteturas de segurança nível enterprise para proteger operações digitais críticas. Combinamos governança, controle granular de acessos, monitoramento ativo e adequação a LGPD para reduzir riscos reais.",
     bullets: [
       "Arquitetura Zero-Trust e menor privilegio",
       "Controle granular de acessos e identidades",
@@ -87,8 +87,8 @@ export const services: Service[] = [
     ],
     deliverables: [
       "Diagnostico de riscos e vulnerabilidades",
-      "Roadmap de seguranca e governanca",
-      "Implantacao de controles tecnicos",
+      "Roadmap de segurança e governança",
+      "Implantação de controles técnicos",
       "Documentacao de politicas e acessos",
       "Recomendacoes de evolucao continua"
     ],
@@ -96,7 +96,7 @@ export const services: Service[] = [
   },
   {
     slug: "white-label-agencias",
-    title: "White Label Tecnico para Agencias",
+    title: "White Label Técnico para Agências",
     description: "Engenharia sob sua marca com confidencialidade, escala e qualidade tecnica para projetos premium.",
     shortDescription: "Engenharia senior sob sua marca para ampliar a entrega da agencia.",
     fullDescription: "Atuamos como braco tecnologico invisivel da sua agencia, com confidencialidade, capacidade sob demanda e arquitetura robusta. Voce preserva a relacao com o cliente final enquanto nos garantimos a excelencia tecnica por tras da entrega.",
@@ -107,7 +107,7 @@ export const services: Service[] = [
       "Execucao tecnica com padrao enterprise"
     ],
     deliverables: [
-      "Squad tecnico sob demanda",
+      "Squad técnico sob demanda",
       "Entrega white label com documentacao",
       "Fluxo de alinhamento e checkpoints",
       "Sustentacao tecnica para novos projetos",

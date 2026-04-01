@@ -17,7 +17,7 @@ const services = [
     title: "Plataformas web sob medida",
     description: "Software web para operacoes complexas, produtos SaaS e ecossistemas digitais em expansao.",
     items: [
-      "Portais, areas logadas e dashboards",
+      "Portais, áreas logadas e dashboards",
       "Arquitetura modular para novas frentes",
       "Integracao com APIs e bases legadas",
       "Governanca, deploy e monitoramento"

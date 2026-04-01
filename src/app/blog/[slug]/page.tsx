@@ -142,7 +142,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
               <BlogContentRenderer blocks={post.body} />
             </div>
 
-            <div className="mt-14 rounded-[32px] border border-zinc-100 bg-zinc-950 px-8 py-8 text-white">
+            <div className="mt-14 rounded-[32px] border border-zinc-100 bg-unti-blue px-8 py-8 text-white">
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/60">
                 Proximo passo
               </p>

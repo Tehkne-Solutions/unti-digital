@@ -1,15 +1,26 @@
+import Link from "next/link";
+import Image from "next/image";
+import { clients } from "@/data/clients";
+
 export function Clients() {
   return (
     <section className="section space-y-6 text-center">
       <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-unti-dark">Empresas com projeto Unti Digital</h3>
       <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-        {Array.from({ length: 8 }).map((_, idx) => (
-          <div
-            key={idx}
-            className="flex h-16 items-center justify-center rounded-md border border-unti-border bg-unti-surface text-sm text-unti-muted"
+        {clients.map((client) => (
+          <Link
+            key={client.id}
+            href={client.casePage}
+            className="flex h-16 items-center justify-center rounded-md border border-unti-border bg-unti-surface p-2 transition-all hover:bg-unti-surface/80 hover:shadow-md"
           >
-            Logo
-          </div>
+            <Image
+              src={client.logo}
+              alt={`Logo ${client.name}`}
+              width={120}
+              height={40}
+              className="h-full w-auto object-contain"
+            />
+          </Link>
         ))}
       </div>
     </section>
