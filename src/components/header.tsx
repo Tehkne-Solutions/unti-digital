@@ -143,8 +143,15 @@ export function Header() {
             </motion.div>
           </Link>
 
+          <nav className="hidden lg:flex items-center gap-8">
+            <Link href="/" className="text-sm font-bold text-zinc-700 hover:text-blue-600">HOME</Link>
+            <Link href="/solucoes" className="text-sm font-bold text-zinc-900 hover:text-blue-600 border-b-2 border-blue-600">SOLUÇÕES</Link>
+            <Link href="/cases" className="text-sm font-bold text-zinc-700 hover:text-blue-600">CASES</Link>
+            <Link href="/blog" className="text-sm font-bold text-zinc-700 hover:text-blue-600">CONTEÚDO</Link>
+          </nav>
+
           <div className="flex items-center gap-3">
-            <Button variant="primary" className="px-5 h-11 rounded-full" onClick={() => (window.location.href = "/contato")}>
+            <Button variant="primary" className="px-5 h-11 rounded-full" onClick={() => (window.location.href = "/contato") }>
               Solicitar Orçamento
             </Button>
 

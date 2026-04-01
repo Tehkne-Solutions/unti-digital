@@ -112,10 +112,11 @@ const solutionItems: SolutionItem[] = [
 export function FullscreenMenuModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   const navLinks = [
     { label: "Home", href: "/" },
+    { label: "Soluções", href: "/solucoes" },
     { label: "Cases", href: "/cases" },
-    { label: "Blog", href: "/blog" },
-    { label: "Para Empresas", href: "/planos#empresas" },
-    { label: "Para Agências", href: "/planos#agencias" },
+    { label: "Conteúdo", href: "/blog" },
+    { label: "Para Empresas", href: "/solucoes" },
+    { label: "Para Agências", href: "/solucoes" },
     { label: "Contato", href: "/contato" }
   ];
 
