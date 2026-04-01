@@ -288,7 +288,7 @@ export function ServicesCarousel() {
           <button
             type="button"
             onClick={() => goToIndex(activeIndexRef.current - 1)}
-            className="absolute left-0 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white p-3 shadow-lg transition-colors hover:bg-gray-50"
+            className="absolute left-0 top-[calc(56.25%/2)] z-10 -translate-y-1/2 rounded-full bg-white p-3 shadow-lg transition-colors hover:bg-gray-50 sm:top-1/2"
             aria-label="Anterior"
           >
             <svg className="h-6 w-6 text-unti-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -381,7 +381,7 @@ export function ServicesCarousel() {
           <button
             type="button"
             onClick={() => goToIndex(activeIndexRef.current + 1)}
-            className="absolute right-0 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white p-3 shadow-lg transition-colors hover:bg-gray-50"
+            className="absolute right-0 top-[calc(56.25%/2)] z-10 -translate-y-1/2 rounded-full bg-white p-3 shadow-lg transition-colors hover:bg-gray-50 sm:top-1/2"
             aria-label="Próximo"
           >
             <svg className="h-6 w-6 text-unti-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
