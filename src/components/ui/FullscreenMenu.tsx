@@ -24,13 +24,13 @@ const solutions = [
     href: "/solucoes"
   },
   {
-    title: "Portais de Conteúdo",
-    desc: "Gestão de Dados & Conteúdo",
+    title: "Portais de Conteudo",
+    desc: "GestÃ£o de Dados & ConteÃºdo",
     img: "/images/services/portals.jpg",
     href: "/solucoes"
   },
   {
-    title: "Para Agências",
+    title: "Para Agencias",
     desc: "White Label & Squads",
     img: "/images/services/agencies.jpg",
     href: "/solucoes"
@@ -64,7 +64,7 @@ export const FullscreenMenu = ({ isOpen, onClose }: FullscreenMenuProps) => {
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
               <div className="lg:col-span-8">
-                <p className="text-xs font-black text-blue-600 uppercase tracking-widest mb-8">Nossas Soluções</p>
+                <p className="text-xs font-black text-blue-600 uppercase tracking-widest mb-8">Nossas Solucoes</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {solutions.map((solution) => (
                     <Link
@@ -94,11 +94,11 @@ export const FullscreenMenu = ({ isOpen, onClose }: FullscreenMenuProps) => {
                 <nav className="space-y-5">
                   {[
                     { label: "Home", href: "/" },
-                    { label: "Soluções", href: "/solucoes" },
+                    { label: "Solucoes", href: "/solucoes" },
                     { label: "Cases", href: "/cases" },
-                    { label: "Conteúdo", href: "/blog" },
-                    { label: "Para Empresas", href: "/solucoes" },
-                    { label: "Para Agências", href: "/solucoes" },
+                    { label: "Conteudo", href: "/blog" },
+                    { label: "Para Agencias", href: "/solucoes" },
+                    { label: "Para Agï¿½ncias", href: "/solucoes" },
                     { label: "Contato", href: "/contato" }
                   ].map((link) => (
                     <Link
