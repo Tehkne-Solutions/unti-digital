@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type ReactElement, type SVGProps } from "react";
+import { type ReactElement, type SVGProps } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
@@ -58,17 +58,6 @@ function IconShield(props: IconProps) {
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" {...props}>
       <path d="M12 3 5 6v5c0 4.4 2.9 8.4 7 9.7 4.1-1.3 7-5.3 7-9.7V6l-7-3Z" />
       <path d="m9.5 12 1.8 1.8 3.6-3.6" />
-    </svg>
-  );
-}
-
-function IconUsers(props: IconProps) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" {...props}>
-      <path d="M16 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2" />
-      <circle cx="9.5" cy="8" r="3" />
-      <path d="M20 21v-2a4 4 0 0 0-3-3.9" />
-      <path d="M15 4.1a3 3 0 0 1 0 5.8" />
     </svg>
   );
 }
