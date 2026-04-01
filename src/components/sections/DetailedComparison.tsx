@@ -79,7 +79,7 @@ export const DetailedComparison = ({ category }: ComparisonProps) => {
   );
 };
 
-function renderCell(value: any) {
+function renderCell(value: boolean | string) {
   if (typeof value === "boolean") {
     return value ? <Check className="w-5 h-5 text-blue-600 mx-auto" /> : <Minus className="w-5 h-5 text-zinc-300 mx-auto" />;
   }
