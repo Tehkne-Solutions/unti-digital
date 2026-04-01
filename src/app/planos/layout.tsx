@@ -2,10 +2,10 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Planos e Investimentos | UNTI Digital - Engenharia de Performance",
-  description: "Escolha o plano ideal para a escala do seu negócio. Soluções em sites institucionais, e-commerce e plataformas customizadas com foco em SEO e conversão.",
+  description: "Escolha o plano ideal para a escala do seu negócio. Soluções em sites institucionais, lojas virtuais e portais de conteúdo com foco em SEO e conversão.",
   openGraph: {
     title: "UNTI Digital | Tabela de Investimentos 2026",
-    description: "Transforme sua presença digital com engenharia de software de elite. Conheça nossos planos Express, Enterprise e Custom.",
+    description: "Transforme sua presença digital com engenharia de software de elite. Conheça nossos planos de Sites Institucionais, Lojas Virtuais e Portais de Conteúdo.",
     url: "https://untidigital.com.br/planos",
     siteName: "UNTI Digital",
     images: [
