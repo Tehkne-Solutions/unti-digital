@@ -4,7 +4,7 @@ import { type ReactElement, type SVGProps } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-import { X, Instagram, Linkedin } from "lucide-react";
+import { X } from "lucide-react";
 
 type IconProps = SVGProps<SVGSVGElement>;
 
@@ -58,6 +58,22 @@ function IconShield(props: IconProps) {
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" {...props}>
       <path d="M12 3 5 6v5c0 4.4 2.9 8.4 7 9.7 4.1-1.3 7-5.3 7-9.7V6l-7-3Z" />
       <path d="m9.5 12 1.8 1.8 3.6-3.6" />
+    </svg>
+  );
+}
+
+function IconInstagram(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+      <path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 2 .3 2.5.5.7.2 1.2.5 1.8 1 .5.5.8 1 1 1.8.2.5.4 1.3.5 2.5.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.3 2-.5 2.5-.2.7-.5 1.2-1 1.8-.5.5-.8 1-1 1.8-.2.5-.4 1.3-.5 2.5C15.6 21.8 15.2 21.8 12 21.8s-3.6 0-4.8-.1c-1.2-.1-2-.3-2.5-.5-.7-.2-1.2-.5-1.8-1-.5-.5-.8-1-1-1.8-.2-.5-.4-1.3-.5-2.5C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-1.2.3-2 .5-2.5.2-.7.5-1.2 1-1.8.5-.5 1-.8 1.8-1 .5-.2 1.3-.4 2.5-.5C8.4 2.2 8.8 2.2 12 2.2Zm0 2.2c-3.1 0-3.4 0-4.7.1-1 .1-1.5.2-1.9.3-.5.2-.8.3-1.1.6-.3.3-.5.6-.6 1.1-.2.4-.3.9-.3 1.9-.1 1.3-.1 1.6-.1 4.7s0 3.4.1 4.7c.1 1 .2 1.5.3 1.9.2.5.3.8.6 1.1.3.3.6.5 1.1.6.4.2.9.3 1.9.3 1.3.1 1.6.1 4.7.1s3.4 0 4.7-.1c1-.1 1.5-.2 1.9-.3.5-.2.8-.3 1.1-.6.3-.3.5-.6.6-1.1.2-.4.3-.9.3-1.9.1-1.3.1-1.6.1-4.7s0-3.4-.1-4.7c-.1-1-.2-1.5-.3-1.9-.2-.5-.3-.8-.6-1.1-.3-.3-.6-.5-1.1-.6-.4-.2-.9-.3-1.9-.3-1.3-.1-1.6-.1-4.7-.1Zm0 3.7A3.9 3.9 0 1 1 8.1 12 3.9 3.9 0 0 1 12 8.1Zm0 5.6A1.7 1.7 0 1 0 10.3 12 1.7 1.7 0 0 0 12 13.7Zm4.9-5.8a.9.9 0 1 0-.9-.9.9.9 0 0 0 .9.9Z" />
+    </svg>
+  );
+}
+
+function IconLinkedin(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+      <path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3A2.02 2.02 0 0 0 3.2 5.02c0 1.1.9 2 2.02 2a2.01 2.01 0 0 0 2.03-2C7.25 3.9 6.37 3 5.25 3ZM20.8 12.68c0-3.44-1.84-5.04-4.3-5.04-1.98 0-2.87 1.1-3.37 1.87V8.5H9.75V20h3.38v-6.4c0-1.68.32-3.3 2.4-3.3 2.05 0 2.08 1.9 2.08 3.4V20H21V12.68h-.2Z" />
     </svg>
   );
 }
@@ -200,7 +216,7 @@ export function FullscreenMenuModal({ isOpen, onClose }: { isOpen: boolean; onCl
                       className="p-3 hover:bg-zinc-100 rounded-full transition-all duration-200"
                       aria-label="Instagram"
                     >
-                      <Instagram className="w-5 h-5 text-zinc-600 hover:text-unti-blue" />
+                      <IconInstagram className="w-5 h-5 text-zinc-600 hover:text-unti-blue" />
                     </a>
                     <a
                       href="https://www.linkedin.com/company/untidigital/"
@@ -209,7 +225,7 @@ export function FullscreenMenuModal({ isOpen, onClose }: { isOpen: boolean; onCl
                       className="p-3 hover:bg-zinc-100 rounded-full transition-all duration-200"
                       aria-label="LinkedIn"
                     >
-                      <Linkedin className="w-5 h-5 text-zinc-600 hover:text-unti-blue" />
+                      <IconLinkedin className="w-5 h-5 text-zinc-600 hover:text-unti-blue" />
                     </a>
                   </div>
                 </div>
