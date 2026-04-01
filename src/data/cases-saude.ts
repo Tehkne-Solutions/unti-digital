@@ -10,13 +10,13 @@ export const saudeCases: CaseSeed[] = [
     tagline: "Hub de autoridade e agendamento para odontologia de alta performance",
     resumoHome: "Posicionamento premium com experiencia de agendamento orientada a autoridade.",
     resumo:
-      "Projeto desenhado para consolidar autoridade clinica, prova social e captacao de consultas em uma experiencia premium, direta e tecnicamente refinada.",
+      "Projeto desenhado para consolidar autoridade clínica, prova social e captação de consultas em uma experiência premium, direta e tecnicamente refinada.",
     assetFolder: "dr-eduardo-ursulino",
     assetBannerFile: "unti-digital-cases-dr-eduardo-ursolino-banner.webp",
     assetPrintFile: "unti-digital-cases-dr-eduardo-ursolino-print-site.webp",
     tecnologias: ["Next.js", "Tailwind CSS", "Framer Motion", "SEO Avancado"],
     desafio:
-      "Traduzir excelencia clinica em uma presenca digital clara, premium e orientada a agendamento.",
+      "Traduzir excelência clínica em uma presença digital clara, premium e orientada a agendamento.",
     entrega:
       "Site premium com narrativa de autoridade, vitrine de procedimentos, CTA estrategico e base SEO preparada para crescimento organico.",
     impacto:
@@ -24,7 +24,7 @@ export const saudeCases: CaseSeed[] = [
     resultados: [
       "Autoridade visual compativel com um atendimento premium",
       "Fluxo de contato desenhado para reduzir atrito",
-      "Base SEO pronta para ampliacao de presenca organica"
+      "Base SEO pronta para ampliação de presença orgânica",
     ],
     destaqueHome: true,
     ordemHome: 4,
@@ -37,10 +37,10 @@ export const saudeCases: CaseSeed[] = [
     cliente: "Dr. Alessandro Linder",
     categoria: "saude",
     segmento: "Saude & Estetica",
-    tagline: "Presenca digital para confianca clinica e captacao de consultas",
+    tagline: "Presença digital para confiança clínica e captação de consultas",
     resumoHome: "Autoridade medica com experiencia clara para contato e decisao.",
     resumo:
-      "Estrutura institucional pensada para reforcar confianca clinica, explicar procedimentos e encurtar a jornada ate o primeiro contato.",
+      "Estrutura institucional pensada para reforçar confiança clínica, explicar procedimentos e encurtar a jornada até o primeiro contato.",
     tecnologias: ["Next.js", "SEO Local", "WhatsApp", "UX para Conversao"],
     desafio:
       "Apresentar servicos medicos com clareza e credibilidade em uma jornada objetiva para novos pacientes.",
@@ -61,8 +61,8 @@ export const saudeCases: CaseSeed[] = [
     slug: "uroclinica-de-joinville",
     cliente: "Uroclinica de Joinville",
     categoria: "saude",
-    segmento: "Clinica especializada",
-    tagline: "Presenca medica com foco em clareza institucional e contato qualificado",
+    segmento: "Clínica especializada",
+    tagline: "Presença médica com foco em clareza institucional e contato qualificado",
     resumoHome: "Estrutura institucional para especialidades medicas e captacao consultiva.",
     resumo:
       "Projeto voltado a organizar servicos, fortalecer confianca e facilitar o primeiro contato de pacientes e parceiros em uma experiencia mais limpa.",
@@ -79,7 +79,7 @@ export const saudeCases: CaseSeed[] = [
     resultados: [
       "Leitura mais clara das especialidades",
       "Contato mais rapido para novos pacientes",
-      "Presenca digital mais aderente ao posicionamento clinico"
+      "Presença digital mais aderente ao posicionamento clínico"
     ],
     destaqueHome: false,
     ordemPortfolio: 6
@@ -91,7 +91,7 @@ export const saudeCases: CaseSeed[] = [
     categoria: "saude",
     segmento: "Instituicao hospitalar",
     tagline: "Experiencia institucional para autoridade medica e organizacao de servicos",
-    resumoHome: "Presenca hospitalar com comunicacao mais clara para publico e parceiros.",
+    resumoHome: "Presença hospitalar com comunicação mais clara para público e parceiros.",
     resumo:
       "Case focado em traduzir estrutura institucional e amplitude de atendimento em uma experiencia acessivel, confiavel e orientada a leitura rapida.",
     assetFolder: "hospital-thereza-mussi",
@@ -117,8 +117,8 @@ export const saudeCases: CaseSeed[] = [
     slug: "human-clinic",
     cliente: "Human Clinic",
     categoria: "saude",
-    segmento: "Clinica premium",
-    tagline: "Marca clinica com experiencia sofisticada e contato mais objetivo",
+    segmento: "Clínica premium",
+    tagline: "Marca clínica com experiência sofisticada e contato mais objetivo",
     resumoHome: "Narrativa premium para saude com fluxo mais limpo para conversao.",
     resumo:
       "Projeto construido para elevar percepcao de marca, organizar informacoes e distribuir prova de autoridade em uma experiencia mais refinada.",
@@ -134,7 +134,7 @@ export const saudeCases: CaseSeed[] = [
       "Mais refinamento visual, mais clareza para o usuario e uma jornada de contato mais aderente a um atendimento premium.",
     resultados: [
       "Percepcao de marca fortalecida",
-      "Informacao clinica mais facil de absorver",
+      "Informação clínica mais fácil de absorver",
       "Contato com menos friccao"
     ],
     destaqueHome: false,
@@ -149,7 +149,7 @@ export const saudeCases: CaseSeed[] = [
     tagline: "Autoridade profissional combinada a uma experiencia mais leve de agendamento",
     resumoHome: "Site medico com foco em posicionamento, confianca e proximidade.",
     resumo:
-      "Presenca digital pensada para valorizar especialidade, reforcar autoridade e conduzir o usuario com mais clareza ate o contato.",
+      "Presença digital pensada para valorizar especialidade, reforçar autoridade e conduzir o usuário com mais clareza até o contato.",
     assetFolder: "dra-isabel-borelli",
     assetBannerFile: "unti-digital-cases-dra-isabel-borelli-banner.webp",
     assetPrintFile: "unti-digital-cases-dra-isabel-borelli-print-site.webp",
@@ -174,7 +174,7 @@ export const saudeCases: CaseSeed[] = [
     cliente: "Dra. Gionvana Bombonatto",
     categoria: "saude",
     segmento: "Saude & Estetica",
-    tagline: "Presenca premium para reforcar autoridade e experiencia de marca",
+    tagline: "Presença premium para reforçar autoridade e experiência de marca",
     resumoHome: "Experiencia institucional para posicionamento medico de alta percepcao.",
     resumo:
       "Projeto orientado a comunicar confianca, organizar servicos e criar uma experiencia visual mais sofisticada para a marca profissional.",
@@ -215,7 +215,7 @@ export const saudeCases: CaseSeed[] = [
     entrega:
       "Site institucional com estrutura de especialidades, narrativa de credibilidade e canais de contato com baixa friccao.",
     impacto:
-      "Mais clareza institucional e uma presenca digital mais alinhada ao nivel de especializacao do atendimento.",
+      "Mais clareza institucional e uma presença digital mais alinhada ao nível de especialização do atendimento.",
     resultados: [
       "Especialidade apresentada com clareza",
       "Contato agil para novas consultas",

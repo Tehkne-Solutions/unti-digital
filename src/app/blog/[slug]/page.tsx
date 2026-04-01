@@ -185,8 +185,8 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                   Conversa executiva
                 </p>
                 <p className="mt-3 text-sm leading-relaxed text-zinc-700">
-                  Conteudo desenhado para liderancas que precisam tomar decisoes com menos ruido e
-                  mais base tecnica.
+                  Conteúdo desenhado para lideranças que precisam tomar decisões com menos ruído e
+                  mais base técnica.
                 </p>
               </div>
             </div>

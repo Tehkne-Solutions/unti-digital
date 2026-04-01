@@ -24,7 +24,7 @@ export const services: Service[] = [
     ],
     deliverables: [
       "Hub corporativo responsivo",
-      "Estrutura tecnica otimizada para SEO",
+      "Estrutura técnica otimizada para SEO",
       "Integracoes com ferramentas do negocio",
       "Documentacao e orientacao de operacao",
       "Plano de evolucao pos-lancamento"
@@ -40,12 +40,12 @@ export const services: Service[] = [
     bullets: [
       "Arquitetura modular preparada para expansao",
       "Integracoes avancadas com sistemas externos",
-      "Camadas tecnicas pensadas para escala e governanca",
+      "Camadas técnicas pensadas para escala e governança",
       "Observabilidade e evolucao continua do produto"
     ],
     deliverables: [
       "Plataforma web customizada",
-      "Documentacao tecnica e de APIs",
+      "Documentação técnica e de APIs",
       "Estrategia de deploy e infraestrutura",
       "Monitoramento e trilha de evolucao",
       "Base pronta para novas integracoes"
@@ -97,20 +97,20 @@ export const services: Service[] = [
   {
     slug: "white-label-agencias",
     title: "White Label Técnico para Agências",
-    description: "Engenharia sob sua marca com confidencialidade, escala e qualidade tecnica para projetos premium.",
+    description: "Engenharia sob sua marca com confidencialidade, escala e qualidade técnica para projetos premium.",
     shortDescription: "Engenharia senior sob sua marca para ampliar a entrega da agencia.",
-    fullDescription: "Atuamos como braco tecnologico invisivel da sua agencia, com confidencialidade, capacidade sob demanda e arquitetura robusta. Voce preserva a relacao com o cliente final enquanto nos garantimos a excelencia tecnica por tras da entrega.",
+    fullDescription: "Atuamos como braço tecnológico invisível da sua agência, com confidencialidade, capacidade sob demanda e arquitetura robusta. Você preserva a relação com o cliente final enquanto nós garantimos a excelência técnica por trás da entrega.",
     bullets: [
       "Confidencialidade e NDA em toda a operacao",
       "Integracao ao processo, time e padrao da agencia",
       "Capacidade sob demanda para projetos mais complexos",
-      "Execucao tecnica com padrao enterprise"
+      "Execução técnica com padrão enterprise",
     ],
     deliverables: [
       "Squad técnico sob demanda",
       "Entrega white label com documentacao",
       "Fluxo de alinhamento e checkpoints",
-      "Sustentacao tecnica para novos projetos",
+      "Sustentação técnica para novos projetos",
       "Escala sem ampliar estrutura fixa"
     ],
     image: "/images/unti-digital-homepage-image-nossas-solucoes-white-label-tecnico.png"

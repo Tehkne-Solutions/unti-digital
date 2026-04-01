@@ -7,7 +7,7 @@ export const corporativoCases: CaseSeed[] = [
     cliente: "Grupo ALJR",
     categoria: "corporativo",
     segmento: "Grupo empresarial",
-    tagline: "Presenca institucional para consolidar marca e relacionamento comercial",
+    tagline: "Presença institucional para consolidar marca e relacionamento comercial",
     resumoHome: "Site institucional para fortalecer autoridade e leitura de grupo empresarial.",
     resumo:
       "Projeto focado em traduzir estrutura de grupo, frentes de atuacao e credibilidade em uma experiencia institucional clara e de alto nivel.",
@@ -20,7 +20,7 @@ export const corporativoCases: CaseSeed[] = [
     entrega:
       "Arquitetura institucional com narrativa corporativa, organizacao de servicos e contato preparado para oportunidades qualificadas.",
     impacto:
-      "Mais consistencia de marca e uma presenca digital mais madura para conversas comerciais de maior valor.",
+      "Mais consistência de marca e uma presença digital mais madura para conversas comerciais de maior valor.",
     resultados: [
       "Grupo apresentado com mais autoridade",
       "Oferta institucional mais clara",
@@ -35,22 +35,22 @@ export const corporativoCases: CaseSeed[] = [
     cliente: "Conect 7G",
     categoria: "corporativo",
     segmento: "Tecnologia & Servicos",
-    tagline: "Presenca institucional orientada a autoridade tecnica e captacao de demanda",
+    tagline: "Presença institucional orientada a autoridade técnica e captação de demanda",
     resumoHome: "Estrutura digital para serviços técnicos com mais clareza comercial.",
     resumo:
-      "Case construido para organizar proposta de valor, destacar capacidades tecnicas e conduzir o visitante a uma conversa comercial mais objetiva.",
+      "Case construido para organizar proposta de valor, destacar capacidades técnicas e conduzir o visitante a uma conversa comercial mais objetiva.",
     assetFolder: "conect-7g",
     assetBannerFile: "unti-digital-cases-conect-7g-banner.webp",
     assetPrintFile: "unti-digital-cases-conect-7g-print-site.webp",
     tecnologias: ["Next.js", "Tailwind CSS", "Performance Web", "SEO Técnico"],
     desafio:
-      "Tornar uma oferta tecnica mais simples de entender sem perder profundidade e credibilidade.",
+      "Tornar uma oferta técnica mais simples de entender sem perder profundidade e credibilidade.",
     entrega:
       "Site institucional com foco em clareza, hierarquia de servicos e pontos de contato para acelerar a qualificacao inicial.",
     impacto:
-      "Melhor entendimento da oferta e uma presenca digital mais forte para prospeccao e relacionamento.",
+      "Melhor entendimento da oferta e uma presença digital mais forte para prospecção e relacionamento.",
     resultados: [
-      "Oferta tecnica mais facil de consumir",
+      "Oferta técnica mais fácil de consumir",
       "Melhor leitura comercial da marca",
       "Contato mais bem direcionado"
     ],
@@ -119,7 +119,7 @@ export const corporativoCases: CaseSeed[] = [
     cliente: "Odete Design",
     categoria: "corporativo",
     segmento: "Marca criativa",
-    tagline: "Presenca digital sofisticada para servicos criativos e posicionamento premium",
+    tagline: "Presença digital sofisticada para serviços criativos e posicionamento premium",
     resumoHome: "Site de marca criativa com foco em percepcao de valor e autoridade.",
     resumo:
       "Case desenvolvido para combinar refinamento visual, apresentacao de portfolio e leitura comercial mais segura para clientes em processo de decisao.",
@@ -150,7 +150,7 @@ export const corporativoCases: CaseSeed[] = [
     tagline: "Posicionamento digital para autoridade, clareza de oferta e proximidade",
     resumoHome: "Marca pessoal com estrutura mais clara para autoridade e contato.",
     resumo:
-      "Projeto focado em fortalecer presenca profissional, organizar servicos e construir uma jornada de contato mais madura para novos clientes.",
+      "Projeto focado em fortalecer presença profissional, organizar serviços e construir uma jornada de contato mais madura para novos clientes.",
     assetFolder: "renata-pimentel",
     assetBannerFile: "unti-digital-cases-renata-pimentel-banner.webp",
     assetPrintFile: "unti-digital-cases-renata-pimentel-print-site.webp",
@@ -160,7 +160,7 @@ export const corporativoCases: CaseSeed[] = [
     entrega:
       "Site institucional com foco em posicionamento, servicos e pontos de contato distribuidos ao longo da narrativa.",
     impacto:
-      "Mais clareza sobre a oferta e uma presenca online mais coerente com a autoridade da marca pessoal.",
+      "Mais clareza sobre a oferta e uma presença online mais coerente com a autoridade da marca pessoal.",
     resultados: [
       "Posicionamento profissional mais claro",
       "Oferta mais facil de entender",
@@ -203,7 +203,7 @@ export const corporativoCases: CaseSeed[] = [
     cliente: "Nerd ao Maximo",
     categoria: "corporativo",
     segmento: "Midia & conteudo",
-    tagline: "Presenca editorial com foco em comunidade, conteudo e navegacao leve",
+    tagline: "Presença editorial com foco em comunidade, conteúdo e navegação leve",
     resumoHome: "Projeto editorial com experiencia mais clara para consumo de conteudo.",
     resumo:
       "Case desenvolvido para valorizar identidade, organizar blocos editoriais e criar uma experiencia de conteudo com melhor fluidez.",
@@ -216,7 +216,7 @@ export const corporativoCases: CaseSeed[] = [
     entrega:
       "Estrutura de conteudo com navegacao aprimorada, organizacao de destaques e base pronta para crescimento editorial.",
     impacto:
-      "Leitura mais confortavel, melhor distribuicao de conteudo e uma presenca digital mais coerente com a comunidade.",
+      "Leitura mais confortável, melhor distribuição de conteúdo e uma presença digital mais coerente com a comunidade.",
     resultados: [
       "Editorial mais organizado",
       "Experiencia mais leve para o publico",

@@ -38,7 +38,7 @@ export const industriaCases: CaseSeed[] = [
     tagline: "Operacao digital para venda online com foco em navegacao e conversao",
     resumoHome: "Loja virtual com estrutura mais clara para produto, jornada e compra.",
     resumo:
-      "Case voltado a organizar exibicao de produtos, tornar a experiencia de compra mais leve e reforcar a base tecnica de uma operacao digital de vendas.",
+      "Case voltado a organizar exibicao de produtos, tornar a experiencia de compra mais leve e reforcar a base técnica de uma operacao digital de vendas.",
     assetFolder: "ecommerce-onile-alimentos",
     assetBannerFile: "unti-digital-cases-ecommerce-onile-alimentos-banner.webp",
     assetPrintFile: "unti-digital-cases-ecommerce-onile-alimentos-print-site.webp",
@@ -52,7 +52,7 @@ export const industriaCases: CaseSeed[] = [
     resultados: [
       "Produtos melhor organizados",
       "Jornada de compra mais clara",
-      "Base tecnica pronta para expansao"
+      "Base técnica pronta para expansão"
     ],
     destaqueHome: false,
     ordemPortfolio: 21
@@ -63,7 +63,7 @@ export const industriaCases: CaseSeed[] = [
     cliente: "SWebsite SuporteShop",
     categoria: "industria",
     segmento: "E-commerce & suporte",
-    tagline: "Presenca digital para servicos e operacao de suporte ligada ao varejo online",
+    tagline: "Presença digital para serviços e operação de suporte ligada ao varejo online",
     resumoHome: "Experiencia institucional para servicos ligados a operacao de loja online.",
     resumo:
       "Projeto focado em apresentar servicos, organizar oferta e dar mais clareza a uma operacao de suporte especializada em ambiente digital.",
@@ -108,7 +108,7 @@ export const industriaCases: CaseSeed[] = [
     resultados: [
       "Nicho técnico mais fácil de compreender",
       "Contato mais rapido e contextualizado",
-      "Presenca digital mais profissional"
+      "Presença digital mais profissional"
     ],
     destaqueHome: false,
     ordemPortfolio: 23

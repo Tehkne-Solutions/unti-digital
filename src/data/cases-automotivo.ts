@@ -16,7 +16,7 @@ export const automotivoCases: CaseSeed[] = [
     assetPrintFile: "unti-digital-cases-grupo-savol-print-site.webp",
     tecnologias: ["Next.js", "Tailwind CSS", "SEO Técnico", "Integração com CRM"],
     desafio:
-      "Unificar a presenca digital do grupo sem perder a especificidade comercial de cada frente automotiva.",
+      "Unificar a presença digital do grupo sem perder a especificidade comercial de cada frente automotiva.",
     entrega:
       "Arquitetura institucional modular com paginas orientadas a leads, governanca de conteudo e pontos de conversao distribuidos.",
     impacto:
@@ -24,7 +24,7 @@ export const automotivoCases: CaseSeed[] = [
     resultados: [
       "Estrutura preparada para múltiplas operações dentro do mesmo grupo",
       "Padronizacao de paginas comerciais com foco em conversao",
-      "Base tecnica pronta para crescimento de novas unidades"
+      "Base técnica pronta para crescimento de novas unidades"
     ],
     destaqueHome: true,
     ordemHome: 1,
