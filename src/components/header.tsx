@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
-import { Modal } from "@/components/ui/Modal";
+import { X } from "lucide-react";
 
 type IconProps = SVGProps<SVGSVGElement>;
 
@@ -64,9 +64,12 @@ const solutions: SolutionItem[] = [
 
 const links = [
   { href: "/", label: "Home" },
+  { href: "/servicos", label: "Serviços" },
+  { href: "/planos", label: "Planos" },
+  { href: "/planos#empresas", label: "Para Empresas" },
+  { href: "/planos#agencias", label: "Para Agências" },
   { href: "/cases", label: "Cases" },
   { href: "/blog", label: "Blog" },
-  { href: "/integracoes", label: "Integrações" },
   { href: "/contato", label: "Contato" }
 ];
 
@@ -420,68 +423,99 @@ export function Header() {
         )}
       </AnimatePresence>
 
-      <Modal isOpen={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)}>
-        <nav className="flex flex-col gap-8">
-          <div className="space-y-3">
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-unti-blue">
-              Soluções
-            </p>
-            <div className="grid gap-3">
-              {solutions.map((solution) => {
-                const Icon = solution.icon;
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <>
+            <motion.button
+              type="button"
+              aria-label="Fechar menu"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              onClick={() => setMobileMenuOpen(false)}
+              className="fixed inset-0 z-[80] bg-black/50"
+            />
 
-                return (
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "tween", duration: 0.3 }}
+              className="fixed right-0 top-0 z-[90] h-full w-full max-w-xs bg-white p-6 shadow-2xl"
+            >
+              <div className="mb-6 flex items-center justify-between">
+                <p className="text-sm font-bold uppercase tracking-widest text-zinc-900">Menu</p>
+                <button
+                  type="button"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="rounded-lg p-2 text-zinc-800 hover:bg-zinc-100"
+                  aria-label="Fechar menu"
+                >
+                  <X className="h-5 w-5" />
+                </button>
+              </div>
+
+              <nav className="flex flex-col gap-4">
+                {links.map((link) => (
                   <Link
-                    key={solution.href}
-                    href={solution.href}
-                    className="flex items-start gap-4 rounded-2xl border border-slate-200 p-4 no-underline transition-colors hover:border-unti-blue hover:bg-slate-50 hover:no-underline"
+                    key={link.href}
+                    href={link.href}
                     onClick={() => setMobileMenuOpen(false)}
+                    className="rounded-xl px-3 py-2 text-base font-semibold text-zinc-900 hover:bg-zinc-100"
                   >
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-unti-blue/10 text-unti-blue">
-                      <Icon className="h-5 w-5" />
-                    </div>
-                    <div className="space-y-1">
-                      <p className="text-sm font-semibold text-brand-dark">{solution.label}</p>
-                      <p className="text-sm leading-relaxed text-brand-muted">{solution.description}</p>
-                    </div>
+                    {link.label}
                   </Link>
-                );
-              })}
-            </div>
-          </div>
+                ))}
 
-          <div className="space-y-2 border-t border-slate-200 pt-6">
-            {links.map((link) => (
-              <MenuLink key={link.href} href={link.href} label={link.label} onClick={() => setMobileMenuOpen(false)} />
-            ))}
-          </div>
+                <div className="mt-6 border-t border-zinc-200 pt-4">
+                  <p className="mb-2 text-xs uppercase tracking-widest text-zinc-500">Para Agências e Empresas</p>
+                  <Link
+                    href="/planos#agencias"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block rounded-lg px-3 py-2 text-sm font-medium text-blue-600 hover:bg-blue-50"
+                  >
+                    Planos para Agências
+                  </Link>
+                  <Link
+                    href="/planos#empresas"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="mt-2 block rounded-lg px-3 py-2 text-sm font-medium text-blue-600 hover:bg-blue-50"
+                  >
+                    Planos para Empresas
+                  </Link>
+                </div>
 
-          <div className="space-y-3 border-t border-slate-200 pt-6">
-            <a
-              href={`mailto:${contact.email}`}
-              className="block text-sm font-medium text-brand-dark no-underline hover:text-unti-blue hover:no-underline"
-            >
-              {contact.email}
-            </a>
-            <a
-              href={`tel:${contact.phone.replace(/\D/g, "")}`}
-              className="block text-sm font-medium text-brand-dark no-underline hover:text-unti-blue hover:no-underline"
-            >
-              {contact.phone}
-            </a>
-            <Button
-              variant="primary"
-              className="w-full"
-              onClick={() => {
-                setMobileMenuOpen(false);
-                window.location.href = "/contato";
-              }}
-            >
-              Falar com especialista
-            </Button>
-          </div>
-        </nav>
-      </Modal>
+                <div className="mt-6 border-t border-zinc-200 pt-4">
+                  <a
+                    href={`mailto:${contact.email}`}
+                    className="text-sm font-medium text-zinc-700 hover:text-blue-600"
+                  >
+                    {contact.email}
+                  </a>
+                  <a
+                    href={`tel:${contact.phone.replace(/\D/g, "")}`}
+                    className="mt-2 block text-sm font-medium text-zinc-700 hover:text-blue-600"
+                  >
+                    {contact.phone}
+                  </a>
+                </div>
+
+                <Button
+                  variant="primary"
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    window.location.href = "/contato";
+                  }}
+                  className="mt-6"
+                >
+                  Falar com especialista
+                </Button>
+              </nav>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </header>
   );
 }
