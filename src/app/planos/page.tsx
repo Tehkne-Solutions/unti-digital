@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { motion } from "framer-motion";
+import { CheckCircle2 } from "lucide-react";
 import { PricingTabs } from "@/components/sections/PricingTabs";
 import { DetailedComparison } from "@/components/sections/DetailedComparison";
 import { ServicesCarousel } from "@/components/home/services-carousel";
@@ -14,30 +16,29 @@ import { Section } from "@/components/ui/Section";
 
 function HeroPlanos() {
   return (
-    <section className="bg-white py-20">
+    <Section className="pt-24 pb-16 bg-white overflow-hidden">
       <Container>
-        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 lg:grid-cols-2 lg:items-center">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-widest text-blue-500">Planos</p>
-            <h1 className="mt-4 text-3xl font-extrabold text-zinc-900 sm:text-4xl lg:text-5xl">
-              A engenharia que transforma seu orçamento em ativo de performance.
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}>
+            <h1 className="text-4xl md:text-6xl font-extrabold text-zinc-900 tracking-tight mb-6">
+              A engenharia que transforma seu orçamento em um <span className="text-blue-600">ativo de performance.</span>
             </h1>
-            <p className="mt-6 text-lg leading-relaxed text-zinc-600">
-              Escolha o plano que impulsionará seu próximo nível de escala. Não construímos apenas sites; projetamos infraestruturas digitais que escalam o seu faturamento.
+            <p className="text-xl text-zinc-600 leading-relaxed">
+              Não construímos apenas sites; projetamos infraestruturas digitais que escalam o seu faturamento. Escolha o plano que representa o próximo nível do seu negócio.
             </p>
-          </div>
-          <div className="rounded-3xl border border-zinc-200 bg-zinc-50 p-4">
+          </motion.div>
+          <div className="relative h-[400px] rounded-[32px] overflow-hidden shadow-2xl">
             <Image
-              src="/images/contact-mockup.png"
-              alt="Mockup de contato"
-              width={700}
-              height={420}
-              className="w-full rounded-2xl object-contain"
+              src="/images/unti-digital-homepage-image-slider-servicos-sites-e-plataformas-de-alta-performance.png"
+              alt="Engenharia de Performance UNTI"
+              fill
+              className="object-cover"
+              priority
             />
           </div>
         </div>
       </Container>
-    </section>
+    </Section>
   );
 }
 
@@ -62,29 +63,38 @@ export default function PricingPage() {
         <LogoCarousel />
         <Testimonials />
 
-        {/* 5. SEÇÃO CTA AZUL & FORMULÁRIO (Transmutação de Hierarquia) */}
+        {/* SEÇÃO CTA AZUL - RETIFICADA */}
         <Section id="contato-planos" className="py-24 bg-blue-600 text-white">
           <Container>
-            <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 items-start">
-              <div className="space-y-6">
-                <h2 className="text-4xl font-extrabold leading-tight">Pronto para tirar a sua presença digital da inércia?</h2>
-                <p className="text-lg leading-relaxed text-white/90">
-                  Seja você uma empresa em busca de liderança ou uma agência precisando de um braço tecnológico de elite, a UNTI entrega a engenharia necessária para você focar apenas no que importa: <strong>o seu crescimento</strong>.
-                </p>
-                <ul className="space-y-3 text-sm text-white/90">
-                  <li>• Diagnóstico de Engenharia: análise técnica gratuita da sua estrutura atual.</li>
-                  <li>• Transparência de Código: propriedade total e documentação clara desde o dia 1.</li>
-                  <li>• Proposta sob Medida: cronograma de execução focado no seu ROI.</li>
-                </ul>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+              <div className="space-y-8">
+                <div>
+                  <h2 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight text-white">
+                    Pronto para tirar a sua presença digital da inércia?
+                  </h2>
+                  <p className="text-blue-100 text-lg leading-relaxed">
+                    Seja você uma empresa em busca de liderança ou uma agência precisando de um braço tecnológico de elite, a UNTI entrega a engenharia necessária.
+                  </p>
+                </div>
 
-                <div className="mt-6 w-full max-w-md rounded-2xl border border-white/20 bg-white/10 p-4">
+                <div className="relative h-[300px] w-full rounded-2xl overflow-hidden border border-blue-400/30">
                   <Image
-                    src="/images/unti-digital-homepage-image-hero-bg.jpeg"
-                    alt="Mockup de contato UNTI"
-                    width={640}
-                    height={320}
-                    className="w-full object-contain"
+                    src="/images/unti-digital-homepage-image-parceria-estrategica-para-crescimento-digital.png"
+                    alt="Atendimento UNTI Digital"
+                    fill
+                    className="object-cover opacity-90"
                   />
+                </div>
+
+                <div className="space-y-4">
+                  <div className="flex items-center gap-4">
+                    <CheckCircle2 className="text-white w-6 h-6" />
+                    <span className="font-medium text-white">Análise técnica gratuita baseada nos planos.</span>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <CheckCircle2 className="text-white w-6 h-6" />
+                    <span className="font-medium text-white">Proposta personalizada entregue em até 24h.</span>
+                  </div>
                 </div>
               </div>
 
