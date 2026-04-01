@@ -9,6 +9,7 @@ import { HowWeWork } from "@/components/home/how-we-work";
 import { FixedCTA } from "@/components/home/fixed-cta";
 import CasesSection from "@/components/CasesSection";
 import { SectionReveal } from "@/components/ui/SectionReveal";
+import { Testimonials } from "@/components/ui/Testimonials";
 
 export default function HomePage() {
   return (
@@ -30,6 +31,9 @@ export default function HomePage() {
       </SectionReveal>
       <SectionReveal>
         <CasesSection />
+      </SectionReveal>
+      <SectionReveal>
+        <Testimonials />
       </SectionReveal>
       <SectionReveal>
         <FeatureBlocks />
