@@ -1,11 +1,11 @@
 "use client";
 
-import { useEffect, useState, type ReactElement, type SVGProps } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
-import { X } from "lucide-react";
+import { FullscreenMenuModal } from "@/components/FullscreenMenuModal";
 
 type IconProps = SVGProps<SVGSVGElement>;
 
