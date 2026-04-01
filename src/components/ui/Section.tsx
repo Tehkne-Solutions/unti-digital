@@ -4,11 +4,13 @@ interface SectionProps {
   children: ReactNode;
   className?: string;
   background?: string;
+  id?: string;
 }
 
-export function Section({ children, className = "", background }: SectionProps) {
+export function Section({ children, className = "", background, id }: SectionProps) {
   return (
-    <section 
+    <section
+      id={id}
       className={`py-20 md:py-28 ${background || ""} ${className}`}
     >
       {children}
