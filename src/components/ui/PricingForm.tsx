@@ -3,7 +3,11 @@
 import { useState } from "react";
 import { Send, CheckCircle2 } from "lucide-react";
 
-export const PricingForm = () => {
+interface PricingFormProps {
+  defaultPlan?: "empresas" | "agencias";
+}
+
+export const PricingForm = ({ defaultPlan }: PricingFormProps) => {
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -11,6 +15,18 @@ export const PricingForm = () => {
     setSubmitted(true);
     // Lógica de envio (API/Email) entraria aqui
   };
+
+  const planOptions = defaultPlan === "empresas" 
+    ? [
+        { value: "sites-institucionais", label: "Sites Institucionais" },
+        { value: "lojas-virtuais", label: "Lojas Virtuais (E-commerce)" },
+        { value: "portais-custom", label: "Portais / Custom" },
+      ]
+    : [
+        { value: "white-label", label: "Parceiro White Label" },
+        { value: "terceirizacao-ti", label: "Terceirização de TI" },
+        { value: "projetos-demanda", label: "Projetos Sob Demanda" },
+      ];
 
   if (submitted) {
     return (
@@ -55,10 +71,15 @@ export const PricingForm = () => {
         {/* Plano de Interesse e Telefone */}
         <div className="space-y-2">
           <label className="text-sm font-bold text-zinc-700 ml-1">Plano de Interesse</label>
-          <select className="w-full h-14 px-6 rounded-2xl bg-zinc-50 border border-zinc-200 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition-all appearance-none cursor-pointer">
-            <option value="enterprise">Enterprise Scale (Mais Popular)</option>
-            <option value="express">Business Express</option>
-            <option value="custom">Custom Solutions / SaaS</option>
+          <select 
+            defaultValue={planOptions[0].value}
+            className="w-full h-14 px-6 rounded-2xl bg-zinc-50 border border-zinc-200 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition-all appearance-none cursor-pointer"
+          >
+            {planOptions.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
           </select>
         </div>
         <div className="space-y-2">
@@ -83,7 +104,7 @@ export const PricingForm = () => {
 
         <div className="md:col-span-2 pt-4">
           <button type="submit" className="w-full h-16 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-bold text-lg shadow-xl shadow-blue-200 flex items-center justify-center gap-3 group transition-all">
-            Enviar Solicitação <Send className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+            Enviar Solicitação <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>
           <p className="text-center text-zinc-400 text-xs mt-6 italic">
             * Ao enviar, concorda com a nossa política de privacidade e tratamento de dados.
