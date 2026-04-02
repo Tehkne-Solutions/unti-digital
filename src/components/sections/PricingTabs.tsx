@@ -52,8 +52,10 @@ export const PricingTabs = ({ activeTab, setActiveTab }: PricingTabsProps) => {
   return (
     <section className="py-24 bg-white">
       <Container>
-        {/* Seletor de Abas Estilo UNTI Premium */}
-        <div className="flex justify-center mb-16">
+        {/* Seletor de Abas */}
+        <div className="mb-12">
+          <h2 className="text-3xl font-bold text-zinc-900 mb-8">Planos e Soluções</h2>
+          <div className="flex justify-center">
           <div className="bg-zinc-100 p-1 rounded-2xl flex gap-1">
             <button
               onClick={() => setActiveTab("empresas")}
@@ -71,6 +73,7 @@ export const PricingTabs = ({ activeTab, setActiveTab }: PricingTabsProps) => {
             >
               PARA AGÊNCIAS
             </button>
+          </div>
           </div>
         </div>
 

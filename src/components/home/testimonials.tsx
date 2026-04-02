@@ -2,8 +2,8 @@ export function Testimonials() {
   return (
     <section className="section">
       <header className="mb-8 space-y-2">
-        <h2 className="text-3xl font-semibold text-unti-dark">Depoimentos</h2>
-        <p className="text-unti-muted">Clientes comentam sobre resultados e parceria.</p>
+        <h2 className="text-3xl font-bold text-unti-heading">Depoimentos</h2>
+        <p className="text-unti-muted">A voz de quem escala com a UNTI.</p>
       </header>
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         {Array.from({ length: 4 }).map((_, idx) => (

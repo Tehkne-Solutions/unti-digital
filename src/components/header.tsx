@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { X } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Modal } from "@/components/ui/Modal";
 import { motion, AnimatePresence } from "framer-motion";
@@ -100,6 +101,13 @@ function MenuLink({ href, label }: { href: string; label: string }) {
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <header className="sticky top-0 z-50">
@@ -137,16 +145,16 @@ export function Header() {
         <div className="mx-auto flex max-w-[1200px] items-center justify-between px-6 h-20">
           <Link href="/" className="flex items-center" aria-label="UNTI Digital">
             <motion.div
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              animate={{ width: scrolled ? 150 : 240 }}
+              transition={{ duration: 0.35, ease: "easeInOut" }}
+              style={{ overflow: "hidden" }}
             >
               <Image
                 src="/images/logo-horizontal.svg"
                 alt="Unti Digital"
                 width={240}
                 height={60}
-                className="h-16 w-auto object-contain"
+                className="h-12 w-full object-contain object-left"
                 priority
               />
             </motion.div>
@@ -155,54 +163,61 @@ export function Header() {
           <nav className="hidden md:flex items-center gap-12">
             <MenuLink href="/" label="Home" />
 
-            {/* MEGA MENU - SOLUÇÕES */}
-            <div
-              className="relative group"
-              onMouseEnter={() => setSolutionsOpen(true)}
-              onMouseLeave={() => setSolutionsOpen(false)}
-            >
+            {/* MEGA MENU - SOLUÇÕES (modal fullscreen) */}
+            <div className="relative">
               <button
+                onClick={() => setSolutionsOpen(true)}
                 className="relative text-sm font-medium text-unti-heading transition-colors hover:text-unti-blue after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-unti-blue after:origin-bottom-right after:scale-x-0 after:transition-transform after:duration-300 hover:after:origin-bottom-left hover:after:scale-x-100"
               >
                 Soluções
               </button>
+            </div>
 
-              <AnimatePresence>
-                {solutionsOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.2 }}
-                    className="absolute left-0 top-full mt-2 w-full min-w-max bg-white rounded-2xl shadow-2xl ring-1 ring-black/5 p-8 z-50"
-                  >
-                    <div className="grid grid-cols-2 gap-6 min-w-[800px]">
+            <AnimatePresence>
+              {solutionsOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: -8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.2 }}
+                  className="fixed inset-0 top-0 z-[200] bg-white overflow-y-auto"
+                >
+                  <div className="mx-auto max-w-[1200px] px-6 py-10">
+                    <div className="flex items-center justify-between mb-12">
+                      <span className="text-xs font-bold uppercase tracking-widest text-unti-blue">Nossas Soluções</span>
+                      <button
+                        onClick={() => setSolutionsOpen(false)}
+                        className="p-3 rounded-full bg-zinc-100 hover:bg-zinc-200 transition-colors"
+                        aria-label="Fechar"
+                      >
+                        <X className="w-5 h-5" />
+                      </button>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                       {solutions.map((solution) => (
                         <Link
                           key={solution.href}
                           href={solution.href}
                           onClick={() => setSolutionsOpen(false)}
-                          className="group flex gap-4 rounded-xl p-4 transition-all duration-300 hover:bg-gray-50"
+                          className="group relative h-64 rounded-[28px] overflow-hidden border border-zinc-100 shadow-md"
                         >
-                          <div className="relative h-24 w-32 flex-shrink-0 overflow-hidden rounded-lg bg-gray-100">
-                            <Image
-                              src={solution.image}
-                              alt={solution.label}
-                              fill
-                              className="object-cover transition-transform duration-300 group-hover:scale-105"
-                            />
-                          </div>
-                          <div className="flex flex-col justify-center">
-                            <h3 className="font-bold text-unti-heading mb-1 text-sm">{solution.label}</h3>
-                            <p className="text-xs text-gray-600 line-clamp-2">{solution.description}</p>
+                          <Image
+                            src={solution.image}
+                            alt={solution.label}
+                            fill
+                            className="object-cover transition-transform duration-500 group-hover:scale-105"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-zinc-950/20 to-transparent p-6 flex flex-col justify-end">
+                            <h3 className="text-white text-xl font-bold">{solution.label}</h3>
+                            <p className="text-zinc-300 text-sm mt-1">{solution.description}</p>
                           </div>
                         </Link>
                       ))}
                     </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
 
             <MenuLink href="/cases" label="Cases" />
             <MenuLink href="/blog" label="Blog" />
