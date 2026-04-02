@@ -26,27 +26,27 @@ export const metadata = {
 const solutions = [
   {
     title: "Sites Institucionais de Alta Performance",
-    description: "Sites institucionais premium com foco em Core Web Vitals, CRO, integracao com fluxos internos e autoridade digital.",
+    description: "Sites institucionais premium com foco em Core Web Vitals, CRO, integração com fluxos internos e autoridade digital.",
     href: "/solucoes/sites-institucionais",
   },
   {
     title: "Plataformas Web Sob Medida",
-    description: "Plataformas web sob medida para operacoes complexas, arquitetura modular e crescimento sem travas.",
+    description: "Plataformas web sob medida para operações complexas, arquitetura modular e crescimento sem travas.",
     href: "/solucoes/plataformas-web",
   },
   {
-    title: "Integracoes com CRM e ERP",
-    description: "Integracoes robustas entre CRM, ERP, marketing e operacao com sincronizacao em tempo real.",
+    title: "Integrações com CRM e ERP",
+    description: "Integrações robustas entre CRM, ERP, marketing e operação com sincronização em tempo real.",
     href: "/solucoes/integracoes-crm-erp",
   },
   {
-    title: "Governanca e Seguranca",
-    description: "Arquiteturas Zero-Trust com controle de acessos, monitoramento continuo e conformidade com LGPD.",
+    title: "Governança e Segurança",
+    description: "Arquiteturas Zero-Trust com controle de acessos, monitoramento contínuo e conformidade com LGPD.",
     href: "/solucoes/governanca-seguranca",
   },
   {
-    title: "White Label Tecnico para Agencias",
-    description: "White Label tecnico com confidencialidade, engenharia senior e entrega invisivel para projetos premium.",
+    title: "White Label Técnico para Agências",
+    description: "White Label técnico com confidencialidade, engenharia sênior e entrega invisível para projetos premium.",
     href: "/solucoes/white-label-agencias",
   },
 ];
@@ -58,13 +58,13 @@ export default function SolucoesPage() {
         <Container>
           <div className="max-w-3xl py-20 text-center">
             <p className="text-unti-blue font-semibold uppercase tracking-widest text-sm mb-4">
-              Solucoes Digitais
+              Soluções Digitais
             </p>
             <h1 className="text-zinc-900 text-4xl md:text-6xl font-bold leading-tight mb-6">
-              Tecnologia estruturada para operacoes que nao podem falhar
+              Tecnologia estruturada para operações que não podem falhar
             </h1>
             <p className="text-zinc-600 text-lg md:text-xl mb-8">
-              Construimos solucoes digitais para empresas e agencias que precisam de conversao, integracao, seguranca e escala com padrao enterprise.
+              Construímos soluções digitais para empresas e agências que precisam de conversão, integração, segurança e escala com padrão enterprise.
             </p>
             <Link href="/contato" className="inline-block bg-unti-blue hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium transition-colors">
               Falar com especialista
@@ -81,7 +81,7 @@ export default function SolucoesPage() {
                 <div className="h-full rounded-2xl border border-gray-200 p-8 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 cursor-pointer bg-white">
                   <h3 className="text-xl font-semibold mb-4">{solution.title}</h3>
                   <p className="text-gray-600 leading-relaxed mb-6">{solution.description}</p>
-                  <div className="text-unti-blue font-medium text-sm">Explorar solucao -&gt;</div>
+                  <div className="text-unti-blue font-medium text-sm">Explorar solução &rarr;</div>
                 </div>
               </Link>
             ))}

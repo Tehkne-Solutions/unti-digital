@@ -24,7 +24,7 @@ const contactCards: ContactCard[] = [
   {
     title: "Telefone",
     value: "+55 19 98280-9717",
-    description: "Atendimento comercial e tecnico.",
+    description: "Atendimento comercial e técnico.",
     icon: IconPhone
   },
   {
@@ -35,8 +35,8 @@ const contactCards: ContactCard[] = [
   },
   {
     title: "Horário",
-    value: "Segunda a sexta, das 9h as 18h",
-    description: "Janelas de reuniao sob agendamento.",
+    value: "Segunda a sexta, das 9h às 18h",
+    description: "Janelas de reunião sob agendamento.",
     icon: IconClock
   }
 ];
@@ -54,20 +54,20 @@ const routingCards: RoutingCard[] = [
   },
   {
     index: "03",
-    title: "Integracoes",
-    description: "Mapeamento de CRM, ERP, APIs e automacoes criticas."
+    title: "Integrações",
+    description: "Mapeamento de CRM, ERP, APIs e automações críticas."
   },
   {
     index: "04",
     title: "White Label",
-    description: "Primeiro alinhamento para agencias e squads sob demanda."
+    description: "Primeiro alinhamento para agências e squads sob demanda."
   }
 ];
 
 export const metadata: Metadata = {
   title: "Contato | UNTI Digital",
   description:
-    "Entre em contato com a UNTI Digital para discutir projetos de performance, seguranca, plataformas web e integracoes."
+    "Entre em contato com a UNTI Digital para discutir projetos de performance, segurança, plataformas web e integrações."
 };
 
 export default function ContatoPage() {
@@ -78,7 +78,7 @@ export default function ContatoPage() {
           <div className="absolute inset-0">
             <Image
               src="/images/unti-digital-homepage-image-hero-bg.jpeg"
-              alt="Background da pagina de contato da UNTI Digital"
+              alt="Background da página de contato da UNTI Digital"
               fill
               priority
               className="object-cover object-center"
@@ -129,8 +129,8 @@ export default function ContatoPage() {
               <ImageCard
                 image="/images/unti-digital-homepage-image-agilidade-tecnica-com-governanca.png"
                 label="Central de atendimento"
-                title="Contato comercial e servicos em uma unica estrutura."
-                description="Resposta rapida, triagem correta e atendimento direto."
+                title="Contato comercial e serviços em uma única estrutura."
+                description="Resposta rápida, triagem correta e atendimento direto."
                 className="min-h-[320px]"
               />
 
@@ -227,7 +227,7 @@ export default function ContatoPage() {
                 </a>
 
                 <iframe
-                  title="Mapa da regiao de Campinas"
+                  title="Mapa da região de Campinas"
                   src="https://www.google.com/maps?q=Campinas%2C%20SP&output=embed"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
@@ -242,7 +242,7 @@ export default function ContatoPage() {
                     <div>
                       <p className="text-sm font-semibold text-brand-dark">Atendimento organizado</p>
                       <p className="mt-1 text-sm text-brand-muted">
-                        Comercial, tecnico e operacao com fluxo centralizado.
+                        Comercial, técnico e operação com fluxo centralizado.
                       </p>
                     </div>
                   </div>

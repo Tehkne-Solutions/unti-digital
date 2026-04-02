@@ -3,10 +3,10 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { X } from "lucide-react";
+import { X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/Button";
-import { Modal } from "@/components/ui/Modal";
 import { motion, AnimatePresence } from "framer-motion";
+import { FullscreenMenu } from "@/components/ui/FullscreenMenu";
 
 const contact = {
   email: "contato@untidigital.com.br",
@@ -160,16 +160,16 @@ export function Header() {
             </motion.div>
           </Link>
 
-          <nav className="hidden md:flex items-center gap-12">
+          <nav className="hidden md:flex items-center gap-8">
             <MenuLink href="/" label="Home" />
 
-            {/* MEGA MENU - SOLUÇÕES (modal fullscreen) */}
+            {/* MEGA MENU - SOLUÇÕES */}
             <div className="relative">
               <button
                 onClick={() => setSolutionsOpen(true)}
-                className="relative text-sm font-medium text-unti-heading transition-colors hover:text-unti-blue after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-unti-blue after:origin-bottom-right after:scale-x-0 after:transition-transform after:duration-300 hover:after:origin-bottom-left hover:after:scale-x-100"
+                className="relative flex items-center gap-1 text-sm font-medium text-unti-heading transition-colors hover:text-unti-blue after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-unti-blue after:origin-bottom-right after:scale-x-0 after:transition-transform after:duration-300 hover:after:origin-bottom-left hover:after:scale-x-100"
               >
-                Soluções
+                Soluções <ChevronDown className="w-3 h-3 text-blue-500" />
               </button>
             </div>
 
@@ -220,17 +220,29 @@ export function Header() {
             </AnimatePresence>
 
             <MenuLink href="/cases" label="Cases" />
-            <MenuLink href="/blog" label="Blog" />
-            <MenuLink href="/integracoes" label="Integrações" />
+            <MenuLink href="/blog" label="Conteúdo" />
+            <MenuLink href="/integracoes" label="Integrações com API’s" />
             <MenuLink href="/contato" label="Contato" />
           </nav>
 
-          <div className="hidden md:block">
-            <Link href="/contato">
-              <Button variant="primary" className="interactive-btn">Falar com especialista</Button>
+          {/* DESKTOP RIGHT: hamburguer + botão Planos */}
+          <div className="hidden md:flex items-center gap-3">
+            <button
+              onClick={() => setMobileMenuOpen(true)}
+              className="p-2.5 rounded-xl text-zinc-700 hover:bg-zinc-100 transition-colors"
+              aria-label="Menu completo"
+            >
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+            <Link href="/planos" className="interactive-btn relative overflow-hidden inline-flex h-10 items-center justify-center rounded-xl bg-unti-blue px-5 text-xs font-bold uppercase tracking-[0.14em] text-white shadow-[0_8px_24px_rgba(57,108,255,0.35)] transition-all duration-300 hover:scale-[0.97] hover:shadow-[0_4px_12px_rgba(57,108,255,0.25)] active:scale-95 group">
+              <span className="absolute inset-0 translate-x-[-100%] bg-white/20 skew-x-[-20deg] transition-transform duration-500 group-hover:translate-x-[200%]" />
+              Planos e preços
             </Link>
           </div>
 
+          {/* MOBILE: apenas hamburguer */}
           <button
             onClick={() => setMobileMenuOpen(true)}
             className="md:hidden p-2 text-unti-heading"
@@ -243,50 +255,8 @@ export function Header() {
         </div>
       </div>
 
-      {/* MOBILE MENU */}
-      <Modal isOpen={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)}>
-        <nav className="flex flex-col gap-4">
-          <div className="space-y-2">
-            <div className="text-sm font-semibold text-unti-dark">Soluções</div>
-            <div className="grid gap-2">
-              {solutions.map((solution) => (
-                <Link
-                  key={solution.href}
-                  href={solution.href}
-                  className="block rounded-lg px-4 py-2 text-base font-medium text-unti-heading hover:bg-gray-100"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {solution.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          <div className="border-t border-gray-200 pt-4">
-            <Link href="/" className="block rounded-lg px-4 py-2 text-base font-medium text-unti-heading hover:bg-gray-100" onClick={() => setMobileMenuOpen(false)}>
-              Home
-            </Link>
-            {["cases", "blog", "integracoes", "contato"].map((item) => (
-              <Link
-                key={item}
-                href={`/${item}`}
-                className="block rounded-lg px-4 py-2 text-base font-medium text-unti-heading hover:bg-gray-100"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {item.charAt(0).toUpperCase() + item.slice(1)}
-              </Link>
-            ))}
-          </div>
-
-          <div className="mt-4">
-            <Link href="/contato">
-              <Button variant="primary" className="w-full" onClick={() => setMobileMenuOpen(false)}>
-                Falar com especialista
-              </Button>
-            </Link>
-          </div>
-        </nav>
-      </Modal>
+      {/* MOBILE FULLSCREEN MENU */}
+      <FullscreenMenu isOpen={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} />
     </header>
   );
 }
