@@ -10,15 +10,15 @@ const institucional = [
 ] as const;
 
 const servicos = [
-  ["/servicos", "Serviços"],
-  ["/integracoes", "Integrações"],
-  ["/parceiros", "Parceiros"]
+  ["/solucoes", "Soluções"],
+  ["/integracoes", "Integrações com APIs"],
+  ["/planos", "Planos e Preços"]
 ] as const;
 
-const contato = [
-  ["/contato", "Contato"],
-  ["mailto:contato@untidigital.com.br", "contato@untidigital.com.br"],
-  ["tel:+5519982809717", "+55 19 98280-9717"]
+const legal = [
+  ["/privacidade", "Política de Privacidade"],
+  ["/politica-empresarial", "Política Empresarial"],
+  ["/contato", "Contato"]
 ] as const;
 
 export function Footer() {
@@ -45,7 +45,7 @@ export function Footer() {
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
             <FooterColumn title="Institucional" items={institucional} />
             <FooterColumn title="Serviços" items={servicos} />
-            <FooterColumn title="Contato" items={contato} />
+            <FooterColumn title="Legal" items={legal} />
           </div>
         </div>
       </div>

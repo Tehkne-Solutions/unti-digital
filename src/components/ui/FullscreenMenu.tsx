@@ -42,6 +42,7 @@ const subLinks = [
   { label: "Para Agências (White Label)", href: "/solucoes/white-label-agencias" },
   { label: "Integrações com APIs", href: "/solucoes/integracoes-crm-erp" },
   { label: "Política de Privacidade", href: "/privacidade" },
+  { label: "Política Empresarial", href: "/politica-empresarial" },
 ];
 
 export const FullscreenMenu = ({
