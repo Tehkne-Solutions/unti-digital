@@ -48,12 +48,7 @@ const solutions = [
   }
 ];
 
-const links = [
-  { href: "/cases", label: "Cases" },
-  { href: "/blog", label: "Blog" },
-  { href: "/integracoes", label: "Integrações" },
-  { href: "/contato", label: "Contato" }
-];
+
 
 function IconMail() {
   return (
