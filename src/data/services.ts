@@ -25,7 +25,7 @@ export const services: Service[] = [
     deliverables: [
       "Hub corporativo responsivo",
       "Estrutura técnica otimizada para SEO",
-      "Integracoes com ferramentas do negocio",
+      "Integrações com ferramentas do negocio",
       "Documentacao e orientacao de operacao",
       "Plano de evolucao pos-lancamento"
     ],
@@ -39,35 +39,35 @@ export const services: Service[] = [
     fullDescription: "Desenvolvemos soluções de software web exclusivas para operações que fogem do convencional. Criamos ecossistemas SaaS, dashboards e ferramentas de gestão com arquitetura modular preparada para crescer sem sacrificar estabilidade.",
     bullets: [
       "Arquitetura modular preparada para expansao",
-      "Integracoes avancadas com sistemas externos",
+      "Integrações avancadas com sistemas externos",
       "Camadas técnicas pensadas para escala e governança",
       "Observabilidade e evolucao continua do produto"
     ],
     deliverables: [
       "Plataforma web customizada",
       "Documentação técnica e de APIs",
-      "Estrategia de deploy e infraestrutura",
+      "Estratégia de deploy e infraestrutura",
       "Monitoramento e trilha de evolucao",
-      "Base pronta para novas integracoes"
+      "Base pronta para novas integrações"
     ],
     image: "/images/unti-digital-homepage-image-nossas-solucoes-plataformas-web.png"
   },
   {
-    slug: "integracoes-crm-erp",
-    title: "Integracoes com CRM e ERP",
+    slug: "integrações-crm-erp",
+    title: "Integrações com CRM e ERP",
     description: "Automacao inteligente entre marketing, vendas e operacao com dados sincronizados em tempo real.",
-    shortDescription: "Integracoes robustas entre CRM, ERP, marketing e operacao.",
-    fullDescription: "Eliminamos silos de dados conectando CRM, ERP, marketing e operacao. Desenvolvemos integracoes robustas que automatizam processos, reduzem erros manuais e transformam sistemas isolados em um fluxo operacional unificado.",
+    shortDescription: "Integrações robustas entre CRM, ERP, marketing e operacao.",
+    fullDescription: "Eliminamos silos de dados conectando CRM, ERP, marketing e operacao. Desenvolvemos integrações robustas que automatizam processos, reduzem erros manuais e transformam sistemas isolados em um fluxo operacional unificado.",
     bullets: [
       "Sincronizacao entre CRM, ERP e ferramentas de marketing",
       "Automacao de workflows e etapas operacionais",
-      "Tratamento de erro e observabilidade de integracoes",
+      "Tratamento de erro e observabilidade de integrações",
       "Dados confiaveis para times comercial e operacional"
     ],
     deliverables: [
       "APIs, webhooks e pontos de sincronizacao",
       "Documentacao completa dos fluxos",
-      "Monitoramento das integracoes criticas",
+      "Monitoramento das integrações criticas",
       "Plano de contingencia operacional",
       "Suporte técnico para evolução dos fluxos"
     ],

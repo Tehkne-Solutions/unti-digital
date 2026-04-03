@@ -16,7 +16,7 @@ export default function CasesPage() {
         <div className="mx-auto max-w-6xl px-4 py-20">
           <div className="max-w-4xl">
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-zinc-500">
-              Pagina de Cases
+              Página de Cases
             </p>
             <h1 className="mt-4 text-4xl font-semibold tracking-tight text-zinc-900 md:text-5xl">
               Quantidade e variedade para comunicar solidez de operacao.
@@ -32,7 +32,7 @@ export default function CasesPage() {
             {[
               `${cases.length} projetos mapeados`,
               "4 frentes de mercado",
-              "Sites, plataformas e integracoes",
+              "Sites, plataformas e integrações",
               "Autoridade visual com base tecnica"
             ].map((item) => (
               <span

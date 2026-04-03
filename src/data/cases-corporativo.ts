@@ -63,7 +63,7 @@ export const corporativoCases: CaseSeed[] = [
     cliente: "Landing Page Conect 7G",
     categoria: "corporativo",
     segmento: "Landing page",
-    tagline: "Pagina de campanha com foco em captacao e resposta comercial rapida",
+    tagline: "Página de campanha com foco em captacao e resposta comercial rapida",
     resumoHome: "Landing page orientada a campanha e geracao de leads qualificados.",
     resumo:
       "Estrutura enxuta desenvolvida para apoiar campanhas, concentrar atencao na oferta e reduzir o caminho ate a conversao.",
@@ -91,14 +91,14 @@ export const corporativoCases: CaseSeed[] = [
     cliente: "Clube Recreativo de Sumare",
     categoria: "corporativo",
     segmento: "Institucional & servicos",
-    tagline: "Experiencia institucional para organizar informacoes, agenda e relacionamento",
+    tagline: "Experiência institucional para organizar informacoes, agenda e relacionamento",
     resumoHome: "Canal institucional mais claro para servicos, eventos e relacionamento.",
     resumo:
       "Projeto pensado para traduzir atividades, estrutura e proposta institucional em uma experiencia mais acessivel para publico e associados.",
     assetFolder: "clube-recreativo-de-sumare",
     assetBannerFile: "unti-digital-cases-clube-recreativo-de-sumare-banner.webp",
     assetPrintFile: "unti-digital-cases-clube-recreativo-de-sumare-print-site.webp",
-    tecnologias: ["Next.js", "Tailwind CSS", "Arquitetura de Conteudo", "Performance Web"],
+    tecnologias: ["Next.js", "Tailwind CSS", "Arquitetura de Conteúdo", "Performance Web"],
     desafio:
       "Organizar diferentes frentes de informacao institucional sem criar navegacao dispersa ou cansativa.",
     entrega:
@@ -107,7 +107,7 @@ export const corporativoCases: CaseSeed[] = [
       "Mais legibilidade para a proposta do clube e uma base mais solida para relacionamento e atualizacao digital.",
     resultados: [
       "Informacoes melhor organizadas",
-      "Experiencia mais amigavel para o usuario",
+      "Experiência mais amigavel para o usuario",
       "Canal institucional mais forte"
     ],
     destaqueHome: false,
@@ -190,7 +190,7 @@ export const corporativoCases: CaseSeed[] = [
     impacto:
       "Mais organizacao editorial e uma experiencia mais forte para consumo recorrente de conteudo.",
     resultados: [
-      "Conteudo melhor distribuido",
+      "Conteúdo melhor distribuido",
       "Plataforma pronta para escala",
       "Performance e navegacao mais consistentes"
     ],
@@ -210,7 +210,7 @@ export const corporativoCases: CaseSeed[] = [
     assetFolder: "nerd-ao-maximo",
     assetBannerFile: "unti-digital-cases-nerd-ao-maximo-banner.webp",
     assetPrintFile: "unti-digital-cases-nerd-ao-maximo-print-site.webp",
-    tecnologias: ["Next.js", "Tailwind CSS", "Arquitetura de Conteudo", "Performance Web"],
+    tecnologias: ["Next.js", "Tailwind CSS", "Arquitetura de Conteúdo", "Performance Web"],
     desafio:
       "Equilibrar identidade forte e grande volume de informacao em uma experiencia editorial mais acessivel.",
     entrega:
@@ -219,7 +219,7 @@ export const corporativoCases: CaseSeed[] = [
       "Leitura mais confortável, melhor distribuição de conteúdo e uma presença digital mais coerente com a comunidade.",
     resultados: [
       "Editorial mais organizado",
-      "Experiencia mais leve para o publico",
+      "Experiência mais leve para o publico",
       "Base pronta para evolucao de conteudo"
     ],
     destaqueHome: false,

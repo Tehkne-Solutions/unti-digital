@@ -16,7 +16,7 @@ export function BlogGrid() {
               Conhecimento e autoridade
             </p>
             <h2 className="mt-4 text-3xl font-semibold text-zinc-900 md:text-4xl">
-              Conteudo tecnico para decisores que precisam de previsibilidade
+              Conteúdo tecnico para decisores que precisam de previsibilidade
             </h2>
             <p className="mt-4 text-lg text-brand-muted">
               Artigos pensados para educar o mercado, elevar a conversa comercial e sustentar SEO

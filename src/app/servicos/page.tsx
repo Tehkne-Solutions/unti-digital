@@ -20,11 +20,11 @@ const services = [
       "Portais, áreas logadas e dashboards",
       "Arquitetura modular para novas frentes",
       "Integracao com APIs e bases legadas",
-      "Governanca, deploy e monitoramento"
+      "Governança, deploy e monitoramento"
     ]
   },
   {
-    title: "Integracoes com CRM e ERP",
+    title: "Integrações com CRM e ERP",
     description: "Conectamos sistemas criticos para automatizar fluxos e sincronizar dados em tempo real.",
     items: [
       "CRM, ERP, BI e marketing",
@@ -34,7 +34,7 @@ const services = [
     ]
   },
   {
-    title: "Governanca e seguranca",
+    title: "Governança e seguranca",
     description: "Arquiteturas Zero-Trust para proteger operacoes, dados sensiveis e acessos criticos.",
     items: [
       "Controle de acessos e identidades",
@@ -65,7 +65,7 @@ const deliverySteps = [
     description: "Estruturamos a narrativa, o fluxo e a base tecnica que sustentarao a operacao."
   },
   {
-    title: "Desenvolvimento e integracoes",
+    title: "Desenvolvimento e integrações",
     description: "Implementacao em sprints curtas com checkpoints, testes e visibilidade executiva."
   },
   {
@@ -84,7 +84,7 @@ export default function ServicosPage() {
   return (
     <PageShell
       title="Servicos"
-      description="Solucoes digitais com foco em conversao, integracao, seguranca e escala para empresas e agencias."
+      description="Soluções digitais com foco em conversao, integracao, seguranca e escala para empresas e agencias."
     >
       <div className="grid gap-6">
         {services.map((service) => (

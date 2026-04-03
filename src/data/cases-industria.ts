@@ -64,7 +64,7 @@ export const industriaCases: CaseSeed[] = [
     categoria: "industria",
     segmento: "E-commerce & suporte",
     tagline: "Presença digital para serviços e operação de suporte ligada ao varejo online",
-    resumoHome: "Experiencia institucional para servicos ligados a operacao de loja online.",
+    resumoHome: "Experiência institucional para servicos ligados a operacao de loja online.",
     resumo:
       "Projeto focado em apresentar servicos, organizar oferta e dar mais clareza a uma operacao de suporte especializada em ambiente digital.",
     assetFolder: "SWebsite-suporteshop",

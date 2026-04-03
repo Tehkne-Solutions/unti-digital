@@ -167,7 +167,7 @@ export default function ContatoPage() {
               <div>
                 <div className="mb-6 max-w-xl">
                   <p className="text-xs font-semibold uppercase tracking-[0.24em] text-unti-blue">
-                    Envie sua mensagem
+                    Entre em contato
                   </p>
                   <h2 className="mt-4 max-w-[10ch] text-4xl font-bold leading-[0.95] text-brand-dark md:text-5xl">
                     Envie sua mensagem.

@@ -220,7 +220,7 @@ export const blogPosts: BlogPost[] = [
     ],
   },
   {
-    slug: "integracoes-que-escalam-operacoes",
+    slug: "integrações-que-escalam-operacoes",
     title: "Integrações que Escalam Operações: O Guia de Unificação de Ecossistemas Digitais",
     excerpt:
       "Como conectar CRMs, ERPs e plataformas web para eliminar retrabalho manual e destravar crescimento operacional.",

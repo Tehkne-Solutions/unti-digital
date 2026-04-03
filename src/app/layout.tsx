@@ -14,13 +14,13 @@ const ubuntu = Ubuntu({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://untidigital.com.br"),
-  title: "UNTI Digital | Solucoes de Performance, Seguranca e Escala",
+  title: "UNTI Digital | Soluções de Performance, Segurança e Escala",
   description:
-    "Desenvolvimento de alta performance para empresas e agencias que buscam resultados reais.",
+    "Desenvolvimento de alta performance para empresas e agências que buscam resultados reais.",
   openGraph: {
-    title: "UNTI Digital | Solucoes de Performance, Seguranca e Escala",
+    title: "UNTI Digital | Soluções de Performance, Segurança e Escala",
     description:
-      "Desenvolvimento de alta performance para empresas e agencias que buscam resultados reais.",
+      "Desenvolvimento de alta performance para empresas e agências que buscam resultados reais.",
     url: "https://untidigital.com.br",
     siteName: "UNTI Digital",
     locale: "pt_BR",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "UNTI Digital | Solucoes de Performance, Seguranca e Escala",
+    title: "UNTI Digital | Soluções de Performance, Segurança e Escala",
     description:
       "Desenvolvimento de alta performance para empresas e agencias que buscam resultados reais.",
     images: ["/images/unti-digital-homepage-image-hero-bg.jpeg"]

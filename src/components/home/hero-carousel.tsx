@@ -23,7 +23,7 @@ const slides: Slide[] = [
     ctaSecondary: "Ver portfolio"
   },
   {
-    title: "Integracoes com CRM e ERP",
+    title: "Integrações com CRM e ERP",
     description:
       "Conectamos CRM, ERP, marketing e operacao para eliminar retrabalho e dar previsibilidade ao fluxo de dados.",
     image: "/images/unti-digital-homepage-image-slider-servicos-integracoes-e-automacoes-inteligentes.png",
@@ -36,7 +36,7 @@ const slides: Slide[] = [
       "Atuamos como braco tecnologico invisivel para agencias que precisam ampliar capacidade com confidencialidade e padrao enterprise.",
     image: "/images/unti-digital-homepage-image-slider-servicos-white-label-tecnico-para-agencias.png",
     ctaPrimary: "Falar com especialista",
-    ctaSecondary: "Ver solucoes"
+    ctaSecondary: "Ver soluções"
   }
 ];
 

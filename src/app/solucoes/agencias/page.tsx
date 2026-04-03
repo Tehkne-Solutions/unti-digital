@@ -5,7 +5,7 @@ import { SectionReveal } from "@/components/ui/SectionReveal";
 import { SolutionPage, SolutionStep } from "@/components/solucoes/SolutionPage";
 
 export const metadata = {
-    title: "Desenvolvimento de Sites para Agencias | Unti Digital",
+    title: "Desenvolvimento de Sites para Agências | Unti Digital",
     description:
         "Terceirizacao white label para agencias com planos flexiveis, suporte continuo, correcao de bugs e entrega garantida sem burocracia.",
     keywords: [
@@ -19,7 +19,7 @@ export const metadata = {
         canonical: "/solucoes/agencias",
     },
     openGraph: {
-        title: "Desenvolvimento de Sites para Agencias | Unti Digital",
+        title: "Desenvolvimento de Sites para Agências | Unti Digital",
         description:
             "Terceirize o desenvolvimento da sua agencia com planos flexiveis, suporte tecnico e entrega garantida.",
         type: "website",
@@ -30,8 +30,8 @@ export const metadata = {
 const schemaMarkup = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "Desenvolvimento de Sites para Agencias",
-    serviceType: "White Label para Agencias",
+    name: "Desenvolvimento de Sites para Agências",
+    serviceType: "White Label para Agências",
     description:
         "Servico de terceirizacao de desenvolvimento para agencias com planos flexiveis, suporte continuo e capacidade sob demanda.",
     provider: {
@@ -54,7 +54,7 @@ const benefits = [
             "Flexibilidade total para operar do seu jeito, com planos mensais de manutencao ou projetos pontuais que acompanham sua demanda.",
     },
     {
-        title: "03. Entrega e Gestao",
+        title: "03. Entrega e Gestão",
         description:
             "Sua agencia ganha suporte continuo e um canal claro para solicitar ajustes, evitando retrabalho e tarefas esquecidas.",
     },
@@ -149,7 +149,7 @@ const testimonials = [
 
 const faqs = [
     {
-        question: "Qual a diferenca entre Planos Agencia e Planos Empresa?",
+        question: "Qual a diferenca entre Planos Agência e Planos Empresa?",
         answer:
             "Os planos para agencias partem do principio de que sua equipe ja chega com briefing, wireframe, estrategia e fluxo de aprovacao mais definidos. Isso permite uma operacao white label mais agil, com suporte tecnico especializado para alta rotatividade de demandas.",
     },
@@ -170,8 +170,8 @@ export default function AgenciasPage() {
         <SolutionPage
             schemaMarkup={schemaMarkup}
             breadcrumb={[{ label: "Solucoes", href: "/solucoes" }, { label: "Para Agencias" }]}
-            preTitle="Para Agencias"
-            title="Desenvolvimento de Sites para Agencias: Sem burocracia e com entrega garantida"
+            preTitle="Para Agências"
+            title="Desenvolvimento de Sites para Agências: Sem burocracia e com entrega garantida"
             subtitle="Seja o braco tecnologico de elite que sua agencia precisa. Terceirize o desenvolvimento com a Unti Digital e elimine o estresse com prazos, bugs e gestao de devs."
             benefits={benefits}
             benefitsTitle="Tres pilares para terceirizar sem perder o controle"
@@ -328,7 +328,7 @@ export default function AgenciasPage() {
                                 FAQ estrategico
                             </p>
                             <h2 className="mt-4 text-3xl font-bold text-zinc-900 md:text-4xl">
-                                Duvidas que costumam travar a decisao da agencia
+                                Dúvidas que costumam travar a decisao da agencia
                             </h2>
                             <p className="mt-4 text-lg leading-relaxed text-zinc-600">
                                 Aqui esta o que normalmente precisa ficar claro antes de terceirizar o desenvolvimento.

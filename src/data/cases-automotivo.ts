@@ -48,7 +48,7 @@ export const automotivoCases: CaseSeed[] = [
     desafio:
       "Reduzir a distancia entre campanha, captura e resposta comercial em uma operacao orientada a leads.",
     entrega:
-      "Landing pages, formularios inteligentes, integracoes de captura e estrutura visual focada em leitura rapida de oferta.",
+      "Landing pages, formularios inteligentes, integrações de captura e estrutura visual focada em leitura rapida de oferta.",
     impacto:
       "Mais previsibilidade no volume de oportunidades e uma operacao comercial mais veloz no primeiro contato.",
     resultados: [

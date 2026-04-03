@@ -21,33 +21,33 @@ type IntegrationCase = {
 
 const benefits: IntegrationBenefit[] = [
   {
-    title: "Manutencao simplificada",
+    title: "Manutenção simplificada",
     description:
-      "Quando uma API e atualizada ou aprimorada, as alteracoes podem ser absorvidas com menos atrito em uma arquitetura bem planejada, reduzindo quebra de compatibilidade e retrabalho.",
+      "Quando uma API é atualizada ou aprimorada, as alterações podem ser absorvidas com menos atrito em uma arquitetura bem planejada, reduzindo quebra de compatibilidade e retrabalho.",
     icon: IconRefresh
   },
   {
-    title: "Seguranca e controle",
+    title: "Segurança e controle",
     description:
-      "As APIs podem operar com autenticacao, autorizacao e trilha de acesso para proteger dados sensiveis e manter governanca sobre cada fluxo critico.",
+      "As APIs podem operar com autenticação, autorização e trilha de acesso para proteger dados sensíveis e manter governança sobre cada fluxo crítico.",
     icon: IconShield
   },
   {
-    title: "Analise de dados",
+    title: "Análise de dados",
     description:
-      "Integramos fontes de dados valiosas para que sua empresa tome decisoes mais rapidas, informadas e conectadas ao que acontece na operacao em tempo real.",
+      "Integramos fontes de dados valiosas para que sua empresa tome decisões mais rápidas, informadas e conectadas ao que acontece na operação em tempo real.",
     icon: IconChart
   },
   {
     title: "Economia de recursos",
     description:
-      "Consumir APIs prontas e estruturar bem a integracao pode reduzir custo de desenvolvimento, acelerar o time-to-market e evitar reinventar componentes criticos.",
+      "Consumir APIs prontas e estruturar bem a integração pode reduzir custo de desenvolvimento, acelerar o time-to-market e evitar reinventar componentes críticos.",
     icon: IconCoins
   },
   {
-    title: "Integracao de aplicativos",
+    title: "Integração de aplicativos",
     description:
-      "Conectamos sistemas, plataformas e aplicativos heterogeneos para que compartilhem dados com eficiencia, melhorando a interoperabilidade do seu ecossistema digital.",
+      "Conectamos sistemas, plataformas e aplicativos heterogêneos para que compartilhem dados com eficiência, melhorando a interoperabilidade do seu ecossistema digital.",
     icon: IconNodes
   }
 ];
@@ -56,38 +56,38 @@ const cases: IntegrationCase[] = [
   {
     name: "Auto Shopping Tiquatira",
     label: "Dados de mercado",
-    description: "Sincronizacao de dados de mercado em tempo real e conexao entre publicacao, catalogo e operacao comercial."
+    description: "Sincronização de dados de mercado em tempo real e conexão entre publicação, catálogo e operação comercial."
   },
   {
     name: "Toriba",
     label: "Leads e CRM",
-    description: "Automacao de fluxos de leads e integracao com CRM de vendas para acelerar atendimento e rastrear oportunidades."
+    description: "Automação de fluxos de leads e integração com CRM de vendas para acelerar atendimento e rastrear oportunidades."
   },
   {
     name: "Grupo Savol",
     label: "Interoperabilidade",
-    description: "Interoperabilidade entre sistemas de gestao e ambientes web para manter a operacao conectada sem friccao."
+    description: "Interoperabilidade entre sistemas de gestão e ambientes web para manter a operação conectada sem fricção."
   }
 ];
 
 export const metadata = {
-  title: "Integracoes com APIs | UNTI Digital",
+  title: "Integrações com APIs | UNTI Digital",
   description:
-    "Descubra a forma mais moderna e segura de integrar APIs, CRM, ERP e sistemas internos para automatizar dados e operacoes.",
+    "Descubra a forma mais moderna e segura de integrar APIs, CRM, ERP e sistemas internos para automatizar dados e operações.",
   keywords: [
-    "integracao de api",
-    "integracao crm erp",
+    "integração de api",
+    "integração crm erp",
     "consumo de api",
-    "automacao de dados",
-    "integracao de sistemas"
+    "automação de dados",
+    "integração de sistemas"
   ],
   alternates: {
     canonical: "/integracoes"
   },
   openGraph: {
-    title: "Integracoes com APIs | UNTI Digital",
+    title: "Integrações com APIs | UNTI Digital",
     description:
-      "Descubra a forma mais moderna e segura de integrar APIs, CRM, ERP e sistemas internos para automatizar dados e operacoes.",
+      "Descubra a forma mais moderna e segura de integrar APIs, CRM, ERP e sistemas internos para automatizar dados e operações.",
     type: "website",
     url: "https://unti-digital.vercel.app/integracoes"
   }
@@ -106,21 +106,21 @@ export default function IntegracoesPage() {
             <div className="max-w-3xl">
               <SectionReveal>
                 <p className="text-xs font-semibold uppercase tracking-[0.24em] text-unti-blue">
-                  Integracoes com API&apos;s
+                  Integrações com API&apos;s
                 </p>
               </SectionReveal>
 
               <SectionReveal>
                 <h1 className="mt-4 text-4xl font-bold leading-[0.95] text-zinc-900 md:text-6xl">
-                  Servicos de integracao de API para sites, CRM, ERP e operacao.
+                  Serviços de integração de API para sites, CRM, ERP e operação.
                 </h1>
               </SectionReveal>
 
               <SectionReveal>
                 <p className="mt-6 max-w-2xl text-lg leading-relaxed text-zinc-600 md:text-xl">
-                  Descubra a forma mais facil, moderna e segura de consumir dados em seu site e
-                  conectar o coracao da sua empresa. Estruturamos integracoes que automatizam
-                  processos e mantem o fluxo das informacoes em tempo real.
+                  Descubra a forma mais fácil, moderna e segura de consumir dados em seu site e
+                  conectar o coração da sua empresa. Estruturamos integrações que automatizam
+                  processos e mantêm o fluxo das informações em tempo real.
                 </p>
               </SectionReveal>
 
@@ -150,12 +150,12 @@ export default function IntegracoesPage() {
                 </h2>
                 <p className="mt-4 text-base leading-relaxed text-zinc-600">
                   As APIs podem fornecer acesso a dados de mercado em tempo real, ajudando
-                  empresas a alimentar sites, plataformas e operacoes a partir de qualquer
+                  empresas a alimentar sites, plataformas e operações a partir de qualquer
                   integrador.
                 </p>
 
                 <div className="mt-8 grid gap-3 sm:grid-cols-2">
-                  {["CRM e vendas", "ERP e financeiro", "Marketing e automacao", "Aplicacoes internas"].map((item) => (
+                  {["CRM e vendas", "ERP e financeiro", "Marketing e automação", "Aplicações internas"].map((item) => (
                     <div
                       key={item}
                       className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-medium text-zinc-700"
@@ -174,14 +174,14 @@ export default function IntegracoesPage() {
         <Container>
           <SectionReveal className="mx-auto max-w-3xl text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-unti-blue">
-              Beneficios reais
+              Benefícios reais
             </p>
             <h2 className="mt-4 text-3xl font-bold text-zinc-900 md:text-4xl">
-              O que uma integracao bem feita destrava no seu negocio.
+              O que uma integração bem feita destrava no seu negócio.
             </h2>
             <p className="mt-4 text-lg text-zinc-600">
-              Reorganizamos o conteudo da pagina antiga para refletir a mesma proposta em uma
-              estrutura mais clara, premium e orientada a operacao.
+              Reorganizamos o conteúdo da página antiga para refletir a mesma proposta em uma
+              estrutura mais clara, premium e orientada a operação.
             </p>
           </SectionReveal>
 
@@ -212,28 +212,28 @@ export default function IntegracoesPage() {
               <div className="grid gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(280px,0.85fr)]">
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.24em] text-unti-blue">
-                    Estrutura tecnica
+                    Estrutura técnica
                   </p>
                   <h2 className="mt-4 text-3xl font-bold text-zinc-900 md:text-4xl">
                     APIs bem consumidas geram mais velocidade, menos atrito e mais previsibilidade.
                   </h2>
                   <p className="mt-4 max-w-3xl text-lg leading-relaxed text-zinc-600">
-                    A logica da pagina antiga continua valida: integrar APIs nao e apenas puxar dados,
-                    e criar uma base confiavel para automatizar operacoes, reduzir custo tecnico e
-                    manter a manutencao sob controle.
+                    A lógica da página antiga continua válida: integrar APIs não é apenas puxar dados,
+                    é criar uma base confiável para automatizar operações, reduzir custo técnico e
+                    manter a manutenção sob controle.
                   </p>
                 </div>
 
                 <div className="rounded-[28px] bg-white p-6 shadow-[inset_0_1px_0_rgba(255,255,255,1),0_0_0_1px_rgba(148,163,184,0.12),0_16px_36px_rgba(15,23,42,0.06)]">
                   <p className="text-sm font-semibold uppercase tracking-[0.2em] text-unti-blue">
-                    Aplicacoes comuns
+                    Aplicações comuns
                   </p>
                   <ul className="mt-5 space-y-3">
                     {[
                       "Consumo de dados de mercado em tempo real",
-                      "Sincronizacao entre site, CRM e ERP",
-                      "Automacao de cadastro, leads e atendimento",
-                      "Integração entre plataformas heterogeneas"
+                      "Sincronização entre site, CRM e ERP",
+                      "Automação de cadastro, leads e atendimento",
+                      "Integração entre plataformas heterogêneas"
                     ].map((item) => (
                       <li key={item} className="flex items-start gap-3 text-sm text-zinc-600">
                         <span className="mt-1 h-2.5 w-2.5 rounded-full bg-unti-blue" />
@@ -252,14 +252,14 @@ export default function IntegracoesPage() {
         <Container>
           <SectionReveal className="mx-auto max-w-3xl text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-unti-blue">
-              Projetos com integracao
+              Projetos com integração
             </p>
             <h2 className="mt-4 text-3xl font-bold text-zinc-900 md:text-4xl">
-              Alguns projetos que utilizam nossos servicos de integracao via API.
+              Alguns projetos que utilizam nossos serviços de integração via API.
             </h2>
             <p className="mt-4 text-lg text-zinc-600">
               Cases citados na estrutura antiga, agora apresentados como prova de autoridade para
-              fluxos de dados, operacao e interoperabilidade.
+              fluxos de dados, operação e interoperabilidade.
             </p>
           </SectionReveal>
 
@@ -303,11 +303,11 @@ export default function IntegracoesPage() {
                   Sob demanda
                 </p>
                 <h2 className="mt-4 text-3xl font-bold leading-tight text-white md:text-4xl">
-                  Precisa de um servico pontual de integracao?
+                  Precisa de um serviço pontual de integração?
                 </h2>
                 <p className="mt-4 max-w-2xl text-lg leading-relaxed text-white/80">
-                  Caso sua empresa ou agencia nao precise de todos os servicos dos planos, ou queira
-                  um trabalho especifico sob demanda, entre em contato e solicite sua cotacao.
+                  Caso sua empresa ou agência não precise de todos os serviços dos planos, ou queira
+                  um trabalho específico sob demanda, entre em contato e solicite sua cotação.
                 </p>
 
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">

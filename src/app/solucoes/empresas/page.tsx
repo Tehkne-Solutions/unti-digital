@@ -6,12 +6,12 @@ import { SectionReveal } from "@/components/ui/SectionReveal";
 import { SolutionPage, SolutionStep } from "@/components/solucoes/SolutionPage";
 
 export const metadata = {
-    title: "Criacao de Sites e Solucoes Digitais para Empresas | Unti Digital",
+    title: "Criacao de Sites e Soluções Digitais para Empresas | Unti Digital",
     description:
         "Criacao de sites, landing pages, blogs e lojas para empresas que precisam vender mais, ganhar autoridade e ter suporte real em Campinas, Sao Paulo, Curitiba, Santa Catarina, Mato Grosso do Sul e todo o Brasil.",
     keywords: [
         "criacao de sites para empresas",
-        "solucoes digitais para empresas",
+        "soluções digitais para empresas",
         "criacao de landing pages",
         "blog corporativo",
         "loja virtual para empresa",
@@ -21,7 +21,7 @@ export const metadata = {
         canonical: "/solucoes/empresas",
     },
     openGraph: {
-        title: "Criacao de Sites e Solucoes Digitais para Empresas | Unti Digital",
+        title: "Criacao de Sites e Soluções Digitais para Empresas | Unti Digital",
         description:
             "A Unti Digital atende empresas com sites, landing pages, blogs, lojas e suporte continuo para projetos que precisam sair do papel com previsibilidade.",
         type: "website",
@@ -32,7 +32,7 @@ export const metadata = {
 const schemaMarkup = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "Criacao de Sites e Solucoes Digitais para Empresas",
+    name: "Criacao de Sites e Soluções Digitais para Empresas",
     serviceType: "Desenvolvimento Web para Empresas",
     description:
         "Servico de criacao de sites, landing pages, blogs, lojas e suporte digital para empresas que buscam autoridade, resultado e prazo previsivel.",
@@ -97,15 +97,15 @@ const businessOffers: BusinessOffer[] = [
         description:
             "Para empresas que precisam transmitir autoridade, apresentar servicos com clareza e facilitar o contato comercial.",
         bullets: [
-            "Pagina inicial com narrativa comercial",
+            "Página inicial com narrativa comercial",
             "Estrutura para servicos e diferenciais",
-            "Formulario, WhatsApp e captacao de leads",
+            "Formulário, WhatsApp e captacao de leads",
         ],
     },
     {
         title: "Landing pages",
         description:
-            "Paginas orientadas a campanha para lancamentos, captacao de leads e validacao de novas frentes comerciais.",
+            "Páginas orientadas a campanha para lancamentos, captacao de leads e validacao de novas frentes comerciais.",
         bullets: [
             "Foco total em conversao",
             "CTAs claros e integracao com marketing",
@@ -244,7 +244,7 @@ export default function EmpresasPage() {
             schemaMarkup={schemaMarkup}
             breadcrumb={[{ label: "Solucoes", href: "/solucoes" }, { label: "Para Empresas" }]}
             preTitle="Para Empresas"
-            title="Criacao de Sites e Solucoes Digitais para Empresas"
+            title="Criacao de Sites e Soluções Digitais para Empresas"
             subtitle="A Unti Digital atende empresas que precisam de experts em desenvolvimento de sites, landing pages, blogs e lojas. Voce ganha um parceiro para tirar o projeto do papel com clareza, prazo e uma entrega que ajuda a alavancar o negocio."
             benefits={benefits}
             benefitsTitle="Como tiramos o projeto da sua empresa do papel"
@@ -409,7 +409,7 @@ export default function EmpresasPage() {
                                 FAQ estrategico
                             </p>
                             <h2 className="mt-4 text-3xl font-bold text-zinc-900 md:text-4xl">
-                                Duvidas mais comuns antes de contratar o projeto
+                                Dúvidas mais comuns antes de contratar o projeto
                             </h2>
                             <p className="mt-4 text-lg leading-relaxed text-zinc-600">
                                 Trouxemos para ca as perguntas que o site antigo ja respondia bem, agora com uma

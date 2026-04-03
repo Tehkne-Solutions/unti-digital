@@ -56,7 +56,7 @@ const benefits: SolutionBenefit[] = [
             "Sabemos que tempo e dinheiro. Trabalhamos com prazos rigorosos para colocar sua empresa no ar sem perder oportunidades comerciais.",
     },
     {
-        title: "Estrategia personalizada",
+        title: "Estratégia personalizada",
         description:
             "Antes de codificar, entendemos seu negocio. Seu site nasce como ferramenta de vendas, nao como mais uma pagina bonita sem direcao.",
     },
@@ -101,7 +101,7 @@ const imageSections: SolutionImageSection[] = [
     {
         title: "Site que cresce com sua empresa",
         description:
-            "Planejamos uma base preparada para novas paginas, servicos, integracoes e campanhas, sem obrigar voce a reconstruir tudo mais adiante.",
+            "Planejamos uma base preparada para novas paginas, servicos, integrações e campanhas, sem obrigar voce a reconstruir tudo mais adiante.",
         imageSrc: "/images/unti-digital-homepage-image-nossas-solucoes-sites-institucionais.png",
         imageAlt: "Site preparado para crescimento da empresa",
     },
@@ -156,10 +156,10 @@ const authorityBrands: AuthorityBrand[] = [
         kind: "text",
     },
     {
-        name: "WRK Agencia",
+        name: "WRK Agência",
         kind: "image",
         logo: "/images/clients/wrk-agencia.webp",
-        alt: "Logo da WRK Agencia",
+        alt: "Logo da WRK Agência",
     },
     {
         name: "Toriba Renault",
@@ -326,7 +326,7 @@ export default function SitesInstitucionaisPage() {
                                 FAQ
                             </p>
                             <h2 className="mt-4 text-3xl font-bold text-zinc-900 md:text-4xl">
-                                Duvidas comuns antes de criar um site profissional
+                                Dúvidas comuns antes de criar um site profissional
                             </h2>
                             <p className="mt-4 text-lg text-zinc-600">
                                 Respondemos aqui o que normalmente pesa na decisao de contratar um novo site.

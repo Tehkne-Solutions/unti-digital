@@ -9,9 +9,9 @@ export const metadata: Metadata = {
 };
 
 const editorialPillars = [
-  "Estrategia digital para operacoes B2B e crescimento previsivel",
-  "Integracoes, automacao e arquitetura aplicada a operacao",
-  "Governanca, seguranca e compliance como base de confianca",
+  "Estratégia digital para operacoes B2B e crescimento previsivel",
+  "Integrações, automacao e arquitetura aplicada a operacao",
+  "Governança, seguranca e compliance como base de confianca",
   "UX e experiencia de produto para ambientes corporativos"
 ];
 

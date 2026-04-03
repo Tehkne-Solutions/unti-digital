@@ -90,14 +90,14 @@ export const saudeCases: CaseSeed[] = [
     cliente: "Hospital Thereza Mussi",
     categoria: "saude",
     segmento: "Instituicao hospitalar",
-    tagline: "Experiencia institucional para autoridade medica e organizacao de servicos",
+    tagline: "Experiência institucional para autoridade medica e organizacao de servicos",
     resumoHome: "Presença hospitalar com comunicação mais clara para público e parceiros.",
     resumo:
       "Case focado em traduzir estrutura institucional e amplitude de atendimento em uma experiencia acessivel, confiavel e orientada a leitura rapida.",
     assetFolder: "hospital-thereza-mussi",
     assetBannerFile: "unti-digital-cases-hospital-thereza-mussi-banner.webp",
     assetPrintFile: "unti-digital-cases-hospital-thereza-mussi-print-site].webp",
-    tecnologias: ["Next.js", "Tailwind CSS", "Arquitetura de Conteudo", "SEO Local"],
+    tecnologias: ["Next.js", "Tailwind CSS", "Arquitetura de Conteúdo", "SEO Local"],
     desafio:
       "Organizar a comunicacao de uma instituicao hospitalar de forma clara, sem perder credibilidade e profundidade.",
     entrega:
@@ -106,7 +106,7 @@ export const saudeCases: CaseSeed[] = [
       "Melhor leitura institucional, mais confianca digital e uma base mais forte para relacionamento com pacientes e parceiros.",
     resultados: [
       "Comunicacao hospitalar mais organizada",
-      "Experiencia mais simples para navegacao",
+      "Experiência mais simples para navegacao",
       "Canal institucional mais robusto"
     ],
     destaqueHome: false,
@@ -175,7 +175,7 @@ export const saudeCases: CaseSeed[] = [
     categoria: "saude",
     segmento: "Saude & Estetica",
     tagline: "Presença premium para reforçar autoridade e experiência de marca",
-    resumoHome: "Experiencia institucional para posicionamento medico de alta percepcao.",
+    resumoHome: "Experiência institucional para posicionamento medico de alta percepcao.",
     resumo:
       "Projeto orientado a comunicar confianca, organizar servicos e criar uma experiencia visual mais sofisticada para a marca profissional.",
     assetFolder: "dra-gionvana-bombonatto",
@@ -190,7 +190,7 @@ export const saudeCases: CaseSeed[] = [
       "Mais refinamento de marca, melhor leitura comercial e uma base mais forte para novos agendamentos.",
     resultados: [
       "Marca apresentada com mais sofisticacao",
-      "Experiencia mais fluida para novos pacientes",
+      "Experiência mais fluida para novos pacientes",
       "Estrutura pronta para ampliar autoridade"
     ],
     destaqueHome: false,
@@ -219,7 +219,7 @@ export const saudeCases: CaseSeed[] = [
     resultados: [
       "Especialidade apresentada com clareza",
       "Contato agil para novas consultas",
-      "Experiencia digital mais profissional"
+      "Experiência digital mais profissional"
     ],
     destaqueHome: false,
     ordemPortfolio: 11

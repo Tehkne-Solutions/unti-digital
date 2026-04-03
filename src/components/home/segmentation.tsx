@@ -11,7 +11,7 @@ export function Segmentation() {
       <Container>
         <div className="mb-16 text-center">
           <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-            Para quem desenvolvemos solucoes digitais
+            Para quem desenvolvemos soluções digitais
           </h2>
           <p className="mx-auto max-w-3xl text-lg text-brand-muted">
             Atendemos empresas que precisam escalar com seguranca e agencias que buscam
@@ -70,7 +70,7 @@ export function Segmentation() {
                     />
                   </svg>
                   <span className="text-brand-muted">
-                    Integracoes com CRM, ERP e sistemas internos
+                    Integrações com CRM, ERP e sistemas internos
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
@@ -86,7 +86,7 @@ export function Segmentation() {
                     />
                   </svg>
                   <span className="text-brand-muted">
-                    Governanca e previsibilidade tecnica
+                    Governança e previsibilidade tecnica
                   </span>
                 </li>
               </ul>
@@ -96,7 +96,7 @@ export function Segmentation() {
                   variant="link"
                   onClick={() => (window.location.href = "/solucoes/empresas")}
                 >
-                  Ver solucoes para empresas →
+                  Ver soluções para empresas →
                 </Button>
               </div>
             </div>
@@ -173,7 +173,7 @@ export function Segmentation() {
                   className="text-white"
                   onClick={() => (window.location.href = "/solucoes/agencias")}
                 >
-                  Ver solucoes para agencias →
+                  Ver soluções para agencias →
                 </Button>
               </div>
             </div>
