@@ -277,13 +277,13 @@ function ImageCard({
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,12,24,0.18),rgba(7,12,24,0.72))]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(57,108,255,0.22),transparent_34%)]" />
       <div className="absolute inset-x-0 bottom-0 p-6 md:p-7">
-        <p className="text-xs font-semibold uppercase tracking-[0.24em] text-unti-blue">
+        <p className="text-xs font-semibold uppercase tracking-[0.24em] text-white">
           {label}
         </p>
         <h3 className="mt-4 max-w-[13ch] text-3xl font-bold leading-[0.95] text-white">
           {title}
         </h3>
-        <p className="mt-4 max-w-md text-sm text-white/68">{description}</p>
+        <p className="mt-4 max-w-md text-sm text-white">{description}</p>
       </div>
     </div>
   );
