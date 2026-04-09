@@ -1,18 +1,9 @@
-import type { Metadata } from "next";
-import { getTranslations } from 'next-intl/server';
+"use client";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations('Metadata');
+import { useTranslations } from "next-intl";
 
-  return {
-    title: t('about.title'),
-    description: t('about.desc'),
-    alternates: { canonical: "/sobre" },
-  };
-}
-
-export default async function AboutPage() {
-  const t = await getTranslations('About');
+export default function AboutPage() {
+  const t = useTranslations('About');
 
   return (
     <div className="bg-white text-zinc-900 min-h-screen pt-32">

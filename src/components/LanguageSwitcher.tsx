@@ -1,13 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { useLocale, useRouter, usePathname } from "next-intl/client";
+import { useParams } from "next/navigation";
+import { useRouter, usePathname } from "next-intl/client";
 import { motion, AnimatePresence } from "framer-motion";
 import { Globe, ChevronDown, Check } from "lucide-react";
 
 export const LanguageSwitcher = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const locale = useLocale();
+  const params = useParams();
+  const locale = params?.locale ?? "pt";
   const router = useRouter();
   const pathname = usePathname();
 
