@@ -1,7 +1,9 @@
+"use client";
+
 import type { Metadata } from "next";
 import type { JSX, SVGProps } from "react";
 import Image from "next/image";
-import { getTranslations } from "next-intl/server";
+import { useTranslations } from "next-intl";
 import { ContactForm } from "@/components/contact/contact-form";
 import { Container } from "@/components/ui/Container";
 import { SectionReveal } from "@/components/ui/SectionReveal";
@@ -71,8 +73,8 @@ export const metadata: Metadata = {
     "Entre em contato com a UNTI Digital para discutir projetos de performance, segurança, plataformas web e integrações."
 };
 
-export default async function ContatoPage() {
-  const t = await getTranslations("Contact");
+export default function ContatoPage() {
+  const t = useTranslations("Contact");
 
   return (
     <div className="bg-white text-brand-dark">

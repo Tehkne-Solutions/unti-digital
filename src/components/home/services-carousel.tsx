@@ -105,7 +105,7 @@ export function ServicesCarousel() {
       activeIndexRef.current = nextIndex;
       setActiveIndex((current) => (current === nextIndex ? current : nextIndex));
     },
-    [groupWidth, stepWidth]
+    [groupWidth, stepWidth, services.length]
   );
 
   const resolveTargetX = useCallback(
@@ -127,7 +127,7 @@ export function ServicesCarousel() {
           : closest;
       });
     },
-    [groupWidth, stepWidth, x]
+    [groupWidth, stepWidth, x, services.length]
   );
 
   const animateToX = useCallback(
@@ -149,7 +149,7 @@ export function ServicesCarousel() {
         }
       });
     },
-    [normalizeX, pauseAutoplayTemporarily, stopAnimation, updateActiveIndexFromX, x]
+    [normalizeX, pauseAutoplayTemporarily, stopAnimation, updateActiveIndexFromX, x, services.length]
   );
 
   const goToIndex = useCallback(
@@ -239,7 +239,7 @@ export function ServicesCarousel() {
     window.addEventListener("resize", measureTrack);
 
     return () => window.removeEventListener("resize", measureTrack);
-  }, [stopAnimation, updateActiveIndexFromX, x]);
+  }, [stopAnimation, updateActiveIndexFromX, x, services.length]);
 
   useEffect(() => {
     const viewport = viewportRef.current;
