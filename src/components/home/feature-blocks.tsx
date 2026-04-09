@@ -1,6 +1,7 @@
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 interface Feature {
   title: string;
@@ -9,28 +10,30 @@ interface Feature {
   image: string;
 }
 
-const features: Feature[] = [
-  {
-    title: "Comprometimento com resultados e previsibilidade",
-    description: "Projetos planejados com clareza de escopo, prazos e entregáveis definidos. Atuamos com metodologia e acompanhamento contínuo para garantir performance e estabilidade.",
-    imagePosition: "right",
-    image: "/images/unti-digital-homepage-image-comprometimento-com-resultados-e-previsibilidade.png"
-  },
-  {
-    title: "Agilidade técnica com governança",
-    description: "Times enxutos, comunicação direta e execução ágil sem abrir mão de boas práticas, segurança e arquitetura escalável.",
-    imagePosition: "left",
-    image: "/images/unti-digital-homepage-image-agilidade-tecnica-com-governanca.png"
-  },
-  {
-    title: "Parceria estratégica para crescimento digital",
-    description: "Atuamos como extensão do seu time, oferecendo suporte técnico, evolução contínua e visão estratégica de longo prazo.",
-    imagePosition: "right",
-    image: "/images/unti-digital-homepage-image-parceria-estrategica-para-crescimento-digital.png"
-  }
-];
-
 export function FeatureBlocks() {
+  const t = useTranslations("FeatureBlocks");
+
+  const features: Feature[] = [
+    {
+      title: t("features.0.title"),
+      description: t("features.0.description"),
+      imagePosition: "right",
+      image: "/images/unti-digital-homepage-image-comprometimento-com-resultados-e-previsibilidade.png"
+    },
+    {
+      title: t("features.1.title"),
+      description: t("features.1.description"),
+      imagePosition: "left",
+      image: "/images/unti-digital-homepage-image-agilidade-tecnica-com-governanca.png"
+    },
+    {
+      title: t("features.2.title"),
+      description: t("features.2.description"),
+      imagePosition: "right",
+      image: "/images/unti-digital-homepage-image-parceria-estrategica-para-crescimento-digital.png"
+    }
+  ];
+
   return (
     <Section>
       <Container>

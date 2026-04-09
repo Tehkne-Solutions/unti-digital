@@ -1,33 +1,38 @@
 "use client";
 
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-
-const institucional = [
-  ["/sobre", "Sobre a UNTI"],
-  ["/cases", "Cases"],
-  ["/clientes", "Clientes"]
-] as const;
-
-const servicos = [
-  ["/solucoes", "Soluções"],
-  ["/integracoes", "Integrações com APIs"],
-  ["/planos", "Planos e Preços"]
-] as const;
-
-const legal = [
-  ["/privacidade", "Política de Privacidade"],
-  ["/politica-empresarial", "Política Empresarial"],
-  ["/contato", "Contato"]
-] as const;
+import { useTranslations } from "next-intl";
 
 export function Footer() {
+  const t = useTranslations("Footer");
+
+  const institucional = [
+    ["/sobre", t("institucional.sobre")],
+    ["/cases", t("institucional.cases")],
+    ["/clientes", t("institucional.clientes")]
+  ] as const;
+
+  const servicos = [
+    ["/solucoes", t("servicos.solucoes")],
+    ["/integracoes", t("servicos.integracoes")],
+    ["/planos", t("servicos.planos")]
+  ] as const;
+
+  const legal = [
+    ["/privacidade", t("legal.privacidade")],
+    ["/politica-empresarial", t("legal.politicaEmpresarial")],
+    ["/contato", t("legal.contato")]
+  ] as const;
+
   return (
     <footer className="bg-[#173c8b] text-white">
       <div className="mx-auto max-w-6xl px-4 py-14">
         <div className="flex flex-col gap-12 md:flex-row md:justify-between">
           <div className="max-w-sm">
-            <Link href="/" aria-label="UNTI Digital - Início" className="inline-block no-underline hover:no-underline">
+            <Link href="/" aria-label="UNTI Digital" className="inline-block no-underline hover:no-underline">
               <Image
                 src="/images/logo-branco.png"
                 alt="UNTI Digital"
@@ -38,20 +43,20 @@ export function Footer() {
             </Link>
 
             <p className="mt-5 text-sm leading-relaxed text-white">
-              Soluções em tecnologia para negócios inteligentes: sites, plataformas web e integrações críticas com foco em performance.
+              {t("description")}
             </p>
           </div>
 
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
-            <FooterColumn title="Institucional" items={institucional} />
-            <FooterColumn title="Serviços" items={servicos} />
-            <FooterColumn title="Legal" items={legal} />
+            <FooterColumn title={t("institucionalTitle")} items={institucional} />
+            <FooterColumn title={t("servicosTitle")} items={servicos} />
+            <FooterColumn title={t("legalTitle")} items={legal} />
           </div>
         </div>
       </div>
 
       <div className="border-t border-white/15 bg-[#123172] px-4 py-4 text-center text-sm text-white">
-        © {new Date().getFullYear()} UNTI Digital - Todos os direitos reservados.
+        {t("rights", { year: new Date().getFullYear() })}
       </div>
     </footer>
   );

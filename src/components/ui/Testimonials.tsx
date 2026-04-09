@@ -3,40 +3,42 @@
 import { Play } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
-
-const testimonials = [
-  {
-    name: "John L. Nascimento",
-    role: "CEO - Conect 7G",
-    videoId: "nIBcgopxF34",
-    thumb: "/images/testimonials/john-nascimento.png",
-  },
-  {
-    name: "Wellington Leite",
-    role: "CTO - Criativa Marketing",
-    videoId: "mC-6CWCIIT0",
-    thumb: "/images/testimonials/wellington-leite.png",
-  },
-  {
-    name: "Andre Luis",
-    role: "CEO - Grupo ALJR",
-    videoId: "CyDjKwZ0rQ4",
-    thumb: "/images/testimonials/andre-luis.png",
-  },
-];
+import { useTranslations } from "next-intl";
 
 export const Testimonials = () => {
+  const t = useTranslations("Testimonials");
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
+
+  const testimonials = [
+    {
+      name: t("testimonials.0.name"),
+      role: t("testimonials.0.role"),
+      videoId: t("testimonials.0.videoId"),
+      thumb: t("testimonials.0.thumb"),
+    },
+    {
+      name: t("testimonials.1.name"),
+      role: t("testimonials.1.role"),
+      videoId: t("testimonials.1.videoId"),
+      thumb: t("testimonials.1.thumb"),
+    },
+    {
+      name: t("testimonials.2.name"),
+      role: t("testimonials.2.role"),
+      videoId: t("testimonials.2.videoId"),
+      thumb: t("testimonials.2.thumb"),
+    },
+  ];
 
   return (
     <section className="py-24 bg-zinc-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <p className="text-xs font-semibold uppercase tracking-[0.24em] text-zinc-500">
-            Depoimentos
+            {t("badge")}
           </p>
           <h2 className="mt-4 text-3xl font-semibold text-zinc-900 md:text-4xl">
-            A voz de quem <span className="text-blue-600">escala com a UNTI</span>
+            {t("title")}
           </h2>
         </div>
 
@@ -44,14 +46,14 @@ export const Testimonials = () => {
           {testimonials.map((item) => (
             <div key={item.videoId} className="group relative bg-white rounded-[32px] p-4 shadow-xl shadow-zinc-200/50 hover:shadow-2xl transition-all duration-500">
               {/* Vídeo / Thumbnail Wrapper */}
-              <div 
+              <div
                 className="relative aspect-video rounded-2xl overflow-hidden mb-6 cursor-pointer"
                 onClick={() => setActiveVideo(item.videoId)}
               >
-                <Image 
-                  src={item.thumb} 
-                  alt={item.name} 
-                  fill 
+                <Image
+                  src={item.thumb}
+                  alt={item.name}
+                  fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors flex items-center justify-center">
@@ -73,7 +75,7 @@ export const Testimonials = () => {
 
       {/* Modal de Vídeo */}
       {activeVideo && (
-        <div 
+        <div
           className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4"
           onClick={() => setActiveVideo(null)}
         >

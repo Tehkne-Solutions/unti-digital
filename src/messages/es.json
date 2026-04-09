@@ -5,6 +5,248 @@
     "menu": "Menú",
     "plans": "Planes y precios"
   },
+  "Hero": {
+    "badge": "Tecnología a medida para crecer con previsibilidad",
+    "title": "Soluciones en tecnología para negocios que necesitan escalar con seguridad.",
+    "subtitle": "Diseñamos sitios web, plataformas web e integraciones enfocadas en rendimiento, experiencia y operación digital sin cuellos de botella.",
+    "ctaPrimary": "Hablar con especialista",
+    "ctaSecondary": "Ver soluciones",
+    "feature1": {
+      "title": "Proyectos a medida",
+      "description": "Arquitectura, UX e ingeniería orientadas a resultados."
+    },
+    "feature2": {
+      "title": "Integraciones críticas",
+      "description": "CRM, ERP y automatizaciones conectadas con seguridad."
+    }
+  },
+  "Segmentation": {
+    "title": "Para quién desarrollamos soluciones digitales",
+    "subtitle": "Atendemos empresas que necesitan escalar con seguridad y agencias que buscan un socio técnico estratégico.",
+    "companies": {
+      "title": "Empresas",
+      "features": [
+        "Sitios web y plataformas de alto rendimiento",
+        "Integraciones con CRM, ERP y sistemas internos",
+        "Gobernanza y previsibilidad técnica"
+      ],
+      "cta": "Ver soluciones para empresas →"
+    },
+    "agencies": {
+      "title": "Agencias",
+      "features": [
+        "White label técnico",
+        "Desarrollo bajo demanda",
+        "Sociedad estratégica a largo plazo"
+      ],
+      "cta": "Ver soluciones para agencias →"
+    }
+  },
+  "HowWeWork": {
+    "title": "Cómo trabajamos",
+    "subtitle": "Un proceso claro para sacar proyectos del papel con seguridad, previsibilidad y evolución continua.",
+    "steps": [
+      {
+        "title": "Diagnóstico",
+        "description": "Entendemos el contexto del negocio y los desafíos técnicos del proyecto."
+      },
+      {
+        "title": "Arquitectura",
+        "description": "Definimos arquitectura, integraciones y estructura de la solución digital."
+      },
+      {
+        "title": "Desarrollo",
+        "description": "Implementación con buenas prácticas de ingeniería y foco en rendimiento."
+      },
+      {
+        "title": "Evolución continua",
+        "description": "Acompañamiento y evolución de la plataforma conforme al crecimiento del negocio."
+      }
+    ]
+  },
+  "FinalCTA": {
+    "title": "¿Listo para escalar tu presencia digital con seguridad?",
+    "subtitle": "Habla con un especialista y descubre cómo podemos estructurar tu operación digital con previsibilidad y rendimiento.",
+    "cta": "Hablar con especialista"
+  },
+  "FixedCTA": {
+    "ariaLabel": "Abrir WhatsApp"
+  },
+  "FeatureBlocks": {
+    "features": [
+      {
+        "title": "Compromiso con resultados y previsibilidad",
+        "description": "Proyectos planificados con claridad de alcance, plazos y entregables definidos. Actuamos con metodología y acompañamiento continuo para garantizar rendimiento y estabilidad."
+      },
+      {
+        "title": "Agilidad técnica con gobernanza",
+        "description": "Equipos reducidos, comunicación directa y ejecución ágil sin renunciar a buenas prácticas, seguridad y arquitectura escalable."
+      },
+      {
+        "title": "Sociedad estratégica para crecimiento digital",
+        "description": "Actuamos como extensión de tu equipo, ofreciendo soporte técnico, evolución continua y visión estratégica a largo plazo."
+      }
+    ]
+  },
+  "BlogGrid": {
+    "badge": "Conocimiento y autoridad",
+    "title": "Contenido técnico para decisores que necesitan previsibilidad",
+    "subtitle": "Artículos pensados para educar el mercado, elevar la conversación comercial y sustentar SEO semántico en temas de alto valor.",
+    "viewAll": "Ver biblioteca completa"
+  },
+  "CasesSection": {
+    "badge": "Autoridad mínima",
+    "title": "Proyectos que sustentan conversaciones mayores",
+    "subtitle": "Tres entregas que combinan integración, volumen operacional y posicionamiento digital en nivel premium.",
+    "viewAll": "Explorar Portfolio Completo"
+  },
+  "LogoCarousel": {
+    "title": "Empresas que confían en nuestra ingeniería",
+    "subtitle": "Haz clic en un cliente para ver el proyecto y resultados alcanzados"
+  },
+  "Testimonials": {
+    "badge": "Testimonios",
+    "title": "La voz de quienes escalan con UNTI",
+    "testimonials": [
+      {
+        "name": "John L. Nascimento",
+        "role": "CEO - Conect 7G",
+        "videoId": "nIBcgopxF34",
+        "thumb": "/images/testimonials/john-nascimento.png"
+      },
+      {
+        "name": "Wellington Leite",
+        "role": "CTO - Criativa Marketing",
+        "videoId": "mC-6CWCIIT0",
+        "thumb": "/images/testimonials/wellington-leite.png"
+      },
+      {
+        "name": "Andre Luis",
+        "role": "CEO - Grupo ALJR",
+        "videoId": "CyDjKwZ0rQ4",
+        "thumb": "/images/testimonials/andre-luis.png"
+      }
+    ]
+  },
+  "ServicesCarousel": {
+    "title": "Nuestras soluciones digitales",
+    "subtitle": "Servicios desarrollados para empresas y agencias que necesitan rendimiento, seguridad y escala.",
+    "services": [
+      {
+        "slug": "sites-institucionais",
+        "title": "Sitios Institucionales de Alto Rendimiento",
+        "description": "Sitios institucionales premium enfocados en conversión, integración y rendimiento real para empresas B2B.",
+        "shortDescription": "Sitios institucionales premium enfocados en conversión, integración y rendimiento real.",
+        "fullDescription": "Construimos hubs corporativos diseñados para empresas que buscan autoridad inmediata. Combinamos diseño minimalista premium con infraestructura técnica robusta, enfocándonos en Core Web Vitals, SEO técnico e integración con flujos internos.",
+        "bullets": [
+          "Arquitectura enfocada en CRO y generación de oportunidades",
+          "Core Web Vitals y experiencia consistente en todos los dispositivos",
+          "Integración con CRM, automatizaciones y flujos internos",
+          "Narrativa corporativa clara para reforzar autoridad"
+        ],
+        "deliverables": [
+          "Hub corporativo responsivo",
+          "Estructura técnica optimizada para SEO",
+          "Integraciones con herramientas de negocio",
+          "Documentación y guía de operación",
+          "Plan de evolución post-lanzamiento"
+        ],
+        "image": "/images/unti-digital-homepage-image-nossas-solucoes-sites-institucionais.png"
+      },
+      {
+        "slug": "plataformas-web",
+        "title": "Plataformas Web Personalizadas",
+        "description": "Ingeniería de software para operaciones complejas, productos SaaS y ecosistemas digitales personalizados.",
+        "shortDescription": "Ingeniería de software para operaciones complejas y plataformas personalizadas.",
+        "fullDescription": "Desarrollamos soluciones de software web exclusivas para operaciones que van más allá de lo convencional. Creamos ecosistemas SaaS, dashboards y herramientas de gestión con arquitectura modular preparada para crecer sin sacrificar estabilidad.",
+        "bullets": [
+          "Arquitectura modular preparada para expansión",
+          "Integraciones avanzadas con sistemas externos",
+          "Capas técnicas diseñadas para escala y gobernanza",
+          "Observabilidad y evolución continua del producto"
+        ],
+        "deliverables": [
+          "Plataforma web personalizada",
+          "Documentación técnica y de API",
+          "Estrategia de deploy e infraestructura",
+          "Monitoreo y seguimiento de evolución",
+          "Base lista para nuevas integraciones"
+        ],
+        "image": "/images/unti-digital-homepage-image-nossas-solucoes-plataformas-web.png"
+      },
+      {
+        "slug": "integrações-crm-erp",
+        "title": "Integraciones CRM y ERP",
+        "description": "Automatización inteligente entre marketing, ventas y operación con datos sincronizados en tiempo real.",
+        "shortDescription": "Integraciones robustas entre CRM, ERP, marketing y operación.",
+        "fullDescription": "Eliminamos silos de datos conectando CRM, ERP, marketing y operación. Desarrollamos integraciones robustas que automatizan procesos, reducen errores manuales y transforman sistemas aislados en un flujo operativo unificado.",
+        "bullets": [
+          "Sincronización entre CRM, ERP y herramientas de marketing",
+          "Automatización de workflows y pasos operativos",
+          "Manejo de errores y observabilidad de integraciones",
+          "Datos confiables para equipos comerciales y operativos"
+        ],
+        "deliverables": [
+          "APIs, webhooks y puntos de sincronización",
+          "Documentación completa de flujos",
+          "Monitoreo de integraciones críticas",
+          "Plan de contingencia operacional",
+          "Soporte técnico para evolución de flujos"
+        ],
+        "image": "/images/unti-digital-homepage-image-nossas-solucoes-integracoes-e-automacoes.png"
+      },
+      {
+        "slug": "governanca-seguranca",
+        "title": "Gobernanza y Seguridad",
+        "description": "Seguridad de nivel empresarial con control de acceso, monitoreo continuo y cumplimiento digital.",
+        "shortDescription": "Arquitecturas Zero-Trust, monitoreo continuo y cumplimiento.",
+        "fullDescription": "Implementamos arquitecturas de seguridad de nivel empresarial para proteger operaciones digitales críticas. Combinamos gobernanza, control de acceso granular, monitoreo activo y cumplimiento LGPD para reducir riesgos reales.",
+        "bullets": [
+          "Arquitectura Zero-Trust y menor privilegio",
+          "Control granular de acceso e identidad",
+          "Monitoreo continuo de amenazas y anomalías",
+          "Cumplimiento LGPD y mejores prácticas corporativas"
+        ],
+        "deliverables": [
+          "Diagnóstico de riesgos y vulnerabilidades",
+          "Hoja de ruta de seguridad y gobernanza",
+          "Implementación de controles técnicos",
+          "Políticas y documentación de acceso",
+          "Recomendaciones de evolución continua"
+        ],
+        "image": "/images/unti-digital-homepage-image-agilidade-tecnica-com-governanca.png"
+      },
+      {
+        "slug": "white-label-agencias",
+        "title": "White Label Técnico para Agencias",
+        "description": "Ingeniería bajo tu marca con confidencialidad, escala y calidad técnica para proyectos premium.",
+        "shortDescription": "Ingeniería senior bajo tu marca para expandir la entrega de la agencia.",
+        "fullDescription": "Actuamos como el brazo tecnológico invisible de tu agencia, con confidencialidad, capacidad bajo demanda y arquitectura robusta. Tú preservas la relación con el cliente final mientras nosotros garantizamos la excelencia técnica detrás de la entrega.",
+        "bullets": [
+          "Confidencialidad y NDA durante toda la operación",
+          "Integración en el proceso, equipo y estándar de la agencia",
+          "Capacidad bajo demanda para proyectos más complejos",
+          "Ejecución técnica con estándar empresarial"
+        ],
+        "deliverables": [
+          "Escuadrón técnico bajo demanda",
+          "Entrega white label con documentación",
+          "Flujo de alineación y checkpoints",
+          "Soporte técnico para nuevos proyectos",
+          "Escala sin expandir estructura fija"
+        ],
+        "image": "/images/unti-digital-homepage-image-nossas-solucoes-white-label-tecnico.png"
+      }
+    ]
+  },
+  "differentials": "Diferenciales",
+  "deliverables": "Entregables",
+  "contactExpert": "Hablar con especialista",
+  "viewCases": "Ver casos",
+  "viewDetails": "Ver detalles",
+  "Clients": {
+    "title": "Empresas con proyecto Unti Digital"
+  },
   "About": {
     "title": "Sobre UNTI",
     "subtitle": "Ingeniería de Rendimiento y Autoridad Digital",
@@ -23,7 +265,8 @@
       { "t": "Precisión", "d": "Código limpio y arquitectura escalable." },
       { "t": "Autoridad", "d": "Diseño que impone respeto y convierte." },
       { "t": "Seguridad", "d": "Cumplimiento total con LGPD y normas globales." }
-    ]
+    ],
+    "learnMore": "Saber más"
   },
   "Solutions": {
     "title": "Nuestras Soluciones",
@@ -80,11 +323,25 @@
   },
   "Footer": {
     "description": "Ingeniería de élite para empresas que buscan soberanía digital y escala global.",
-    "links_title": "Navegación",
-    "legal_title": "Jurídico",
-    "rights": "© {year} UNTI Digital. Todos los derechos reservados.",
-    "terms": "Términos de Uso",
-    "privacy": "Privacidad"
+    "institucionalTitle": "Institucional",
+    "institucional": {
+      "sobre": "Sobre UNTI",
+      "cases": "Casos",
+      "clientes": "Clientes"
+    },
+    "servicosTitle": "Servicios",
+    "servicos": {
+      "solucoes": "Soluciones",
+      "integracoes": "Integraciones API",
+      "planos": "Planes y precios"
+    },
+    "legalTitle": "Jurídico",
+    "legal": {
+      "privacidade": "Política de Privacidad",
+      "politicaEmpresarial": "Política Empresarial",
+      "contato": "Contacto"
+    },
+    "rights": "© {year} UNTI Digital. Todos los derechos reservados."
   },
   "Categories": {
     "automotive": "Automotriz",

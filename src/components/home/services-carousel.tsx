@@ -10,17 +10,30 @@ import {
 } from "framer-motion";
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { Modal } from "@/components/ui/Modal";
-import { services, Service } from "@/data/services";
+
+type Service = {
+  slug: string;
+  title: string;
+  description: string;
+  shortDescription: string;
+  fullDescription: string;
+  bullets: string[];
+  deliverables: string[];
+  image: string;
+};
 
 const AUTO_SCROLL_PX_PER_SECOND = 90;
 const INTERACTION_PAUSE_DELAY = 1400;
 
 export function ServicesCarousel() {
+  const t = useTranslations("ServicesCarousel");
+  const services = t.raw("services");
   const [selectedService, setSelectedService] = useState<Service | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [groupWidth, setGroupWidth] = useState(0);
@@ -277,10 +290,10 @@ export function ServicesCarousel() {
       <Container>
         <div className="mb-16 text-left">
           <h2 className="mb-4 text-3xl font-bold text-brand-dark md:text-4xl">
-            Nossas soluções digitais
+            {t("title")}
           </h2>
           <p className="max-w-3xl text-lg text-brand-muted">
-            Serviços desenvolvidos para empresas e agências que precisam de performance, segurança e escala.
+            {t("subtitle")}
           </p>
         </div>
 
@@ -367,7 +380,7 @@ export function ServicesCarousel() {
                               handleCardClick(service);
                             }}
                           >
-                            Ver detalhes →
+                            {t("viewDetails")} →
                           </Button>
                         </div>
                       </div>
@@ -390,7 +403,7 @@ export function ServicesCarousel() {
           </button>
 
           <div className="mt-6 flex justify-center gap-2">
-            {services.map((service, index) => (
+            {services.map((service: Service, index: number) => (
               <button
                 key={service.slug}
                 type="button"
@@ -421,7 +434,7 @@ export function ServicesCarousel() {
               </p>
 
               <div>
-                <h4 className="mb-3 font-semibold text-brand-dark">Diferenciais</h4>
+                <h4 className="mb-3 font-semibold text-brand-dark">{t("differentials")}</h4>
                 <ul className="space-y-2">
                   {selectedService.bullets.map((bullet, idx) => (
                     <li key={idx} className="flex items-start gap-2">
@@ -435,7 +448,7 @@ export function ServicesCarousel() {
               </div>
 
               <div>
-                <h4 className="mb-3 font-semibold text-brand-dark">Entregáveis</h4>
+                <h4 className="mb-3 font-semibold text-brand-dark">{t("deliverables")}</h4>
                 <ul className="space-y-2">
                   {selectedService.deliverables.map((item, idx) => (
                     <li key={idx} className="flex items-start gap-2">
@@ -450,10 +463,10 @@ export function ServicesCarousel() {
 
               <div className="flex flex-col gap-3 pt-4 sm:flex-row">
                 <Button type="button" variant="primary" onClick={() => (window.location.href = "/contato")}>
-                  Falar com especialista
+                  {t("contactExpert")}
                 </Button>
                 <Button type="button" variant="secondary" onClick={() => (window.location.href = "/cases")}>
-                  Ver cases
+                  {t("viewCases")}
                 </Button>
               </div>
             </div>

@@ -3,13 +3,21 @@
 import type { FormEvent } from "react";
 import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/Button";
+
+type ContactSubject =
+  | "sites"
+  | "plataformas"
+  | "integracoes"
+  | "whiteLabel"
+  | "consultoria";
 
 type ContactFormState = {
   nome: string;
   email: string;
   telefone: string;
-  assunto: string;
+  assunto: ContactSubject;
   mensagem: string;
 };
 
@@ -28,7 +36,7 @@ const initialState: ContactFormState = {
   nome: "",
   email: "",
   telefone: "",
-  assunto: "Sites institucionais",
+  assunto: "sites",
   mensagem: ""
 };
 
@@ -52,9 +60,18 @@ function isEmailValid(value: string) {
 }
 
 export function ContactForm({ id }: ContactFormProps) {
+  const t = useTranslations("Contact");
   const [state, setState] = useState<ContactFormState>(initialState);
   const [sending, setSending] = useState(false);
   const [feedback, setFeedback] = useState<SubmitFeedback>(null);
+
+  const subjectOptions = [
+    { value: "sites", label: t("form.subjectOptions.sites") },
+    { value: "plataformas", label: t("form.subjectOptions.platforms") },
+    { value: "integracoes", label: t("form.subjectOptions.integrations") },
+    { value: "whiteLabel", label: t("form.subjectOptions.whiteLabel") },
+    { value: "consultoria", label: t("form.subjectOptions.consulting") }
+  ] as const;
 
   const phoneDigits = state.telefone.replace(/\D/g, "");
   const canSubmit = useMemo(() => {
@@ -62,10 +79,9 @@ export function ContactForm({ id }: ContactFormProps) {
       state.nome.trim().length >= 3 &&
       isEmailValid(state.email.trim()) &&
       phoneDigits.length >= 10 &&
-      state.assunto.trim().length >= 3 &&
       state.mensagem.trim().length >= 10
     );
-  }, [phoneDigits.length, state.assunto, state.email, state.mensagem, state.nome]);
+  }, [phoneDigits.length, state.email, state.mensagem, state.nome]);
 
   function updateField<K extends keyof ContactFormState>(
     field: K,
@@ -83,6 +99,7 @@ export function ContactForm({ id }: ContactFormProps) {
       setSending(true);
       setFeedback(null);
 
+      const selectedSubject = subjectOptions.find((option) => option.value === state.assunto)?.label ?? t("form.subjectOptions.sites");
       const response = await fetch("/api/leads", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -90,7 +107,7 @@ export function ContactForm({ id }: ContactFormProps) {
           nome: state.nome.trim(),
           email: state.email.trim(),
           telefone: state.telefone.trim(),
-          assunto: state.assunto.trim(),
+          assunto: selectedSubject,
           mensagem: state.mensagem.trim(),
           origem: "contact-page"
         })
@@ -98,7 +115,7 @@ export function ContactForm({ id }: ContactFormProps) {
 
       if (!response.ok) {
         const payload = (await response.json().catch(() => null)) as { error?: string } | null;
-        throw new Error(payload?.error || "Falha ao enviar o formulario");
+        throw new Error(payload?.error || t("form.error"));
       }
 
       await response.json();
@@ -106,11 +123,10 @@ export function ContactForm({ id }: ContactFormProps) {
       setState(initialState);
       setFeedback({
         type: "success",
-        message:
-          "Mensagem enviada para contato@untidigital.com.br. Nossa equipe retornara pelo e-mail ou telefone informado."
+        message: t("form.success")
       });
     } catch (error) {
-      const message = error instanceof Error ? error.message : "Nao foi possivel enviar agora.";
+      const message = error instanceof Error ? error.message : t("form.error");
       setFeedback({
         type: "error",
         message
@@ -135,7 +151,7 @@ export function ContactForm({ id }: ContactFormProps) {
             type="text"
             name="nome"
             autoComplete="name"
-            placeholder="Seu nome"
+            placeholder={t("form.name")}
             value={state.nome}
             onChange={(event) => updateField("nome", event.target.value)}
             className={inputStyles}
@@ -146,7 +162,7 @@ export function ContactForm({ id }: ContactFormProps) {
             type="tel"
             name="telefone"
             autoComplete="tel"
-            placeholder="WhatsApp"
+            placeholder={t("form.whatsapp")}
             value={state.telefone}
             onChange={(event) => updateField("telefone", formatPhone(event.target.value))}
             className={inputStyles}
@@ -159,7 +175,7 @@ export function ContactForm({ id }: ContactFormProps) {
             type="email"
             name="email"
             autoComplete="email"
-            placeholder="E-mail"
+            placeholder={t("form.email")}
             value={state.email}
             onChange={(event) => updateField("email", event.target.value)}
             className={inputStyles}
@@ -169,22 +185,22 @@ export function ContactForm({ id }: ContactFormProps) {
           <select
             name="assunto"
             value={state.assunto}
-            onChange={(event) => updateField("assunto", event.target.value)}
+            onChange={(event) => updateField("assunto", event.target.value as ContactSubject)}
             className={inputStyles}
             required
           >
-            <option value="Sites institucionais">Sites institucionais</option>
-            <option value="Plataformas web">Plataformas web</option>
-            <option value="Integracoes e automacoes">Integracoes e automacoes</option>
-            <option value="White label para agencias">White label para agencias</option>
-            <option value="Consultoria tecnica">Consultoria tecnica</option>
+            {subjectOptions.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
           </select>
         </div>
 
         <textarea
           name="mensagem"
           rows={8}
-          placeholder="Conte brevemente o que voce precisa."
+          placeholder={t("form.messagePlaceholder")}
           value={state.mensagem}
           onChange={(event) => updateField("mensagem", event.target.value)}
           className={`${inputStyles} min-h-[220px] resize-y`}
@@ -192,10 +208,7 @@ export function ContactForm({ id }: ContactFormProps) {
         />
 
         <div className="space-y-4 pt-1">
-          <p className="text-xs text-brand-muted">
-            Ao enviar, voce concorda com o uso dos dados para contato comercial
-            conforme a LGPD.
-          </p>
+          <p className="text-xs text-brand-muted">{t("form.consent")}</p>
 
           {feedback ? (
             <p
@@ -213,7 +226,7 @@ export function ContactForm({ id }: ContactFormProps) {
             disabled={!canSubmit || sending}
             className="w-full rounded-2xl !bg-unti-blue !text-white shadow-[0_18px_40px_rgba(57,108,255,0.24)] hover:!bg-[#2f5edc] disabled:cursor-not-allowed disabled:opacity-60"
           >
-            {sending ? "Enviando..." : "Enviar mensagem"}
+            {sending ? t("form.sending") : t("form.send")}
           </Button>
         </div>
       </form>
