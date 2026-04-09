@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useLocale } from "next-intl";
-import { useRouter, usePathname } from "next-intl/client";
+import { useLocale, useRouter, usePathname } from "next-intl/client";
 import { motion, AnimatePresence } from "framer-motion";
 import { Globe, ChevronDown, Check } from "lucide-react";
 
