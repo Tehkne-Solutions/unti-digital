@@ -1,0 +1,126 @@
+{
+  "Header": {
+    "integrations": "API Integrations",
+    "contact": "Contact",
+    "menu": "Menu",
+    "plans": "Plans and Pricing"
+  },
+  "About": {
+    "title": "About UNTI",
+    "subtitle": "Performance Engineering and Digital Authority",
+    "manifesto_title": "The Elite Manifesto",
+    "manifesto_text": "At UNTI, technology is not the end, but the vehicle for digital sovereignty. We understand that every line of code is a brick in the building of unshakable authority. Our elite engineering approach focuses on what truly matters: measurable results and absolute security. In a world saturated with promises, we deliver precision.",
+    "hero": {
+      "tag": "UNTI MANIFESTO",
+      "title": "Engineering that defines tomorrow.",
+      "lead": "We don't just build websites. We erect high-performance digital fortresses."
+    },
+    "manifesto_content": [
+      "At UNTI, technology is not the end, but the vehicle for digital sovereignty. We understand that every line of code is a brick in the building of unshakable authority.",
+      "Our elite engineering approach focuses on what truly matters: measurable results and absolute security. In a world saturated with promises, we deliver precision."
+    ],
+    "pillars": [
+      { "t": "Precision", "d": "Clean code and scalable architecture." },
+      { "t": "Authority", "d": "Design that commands respect and converts." },
+      { "t": "Security", "d": "Full compliance with GDPR and global standards." }
+    ]
+  },
+  "Solutions": {
+    "title": "Our Solutions",
+    "header_tag": "UNTI ENGINEERING // SOLUTIONS",
+    "institutional": {
+      "title": "Institutional Websites",
+      "desc": "High-authority portals focused on conversion and corporate digital presence."
+    },
+    "platforms": {
+      "title": "Web Platforms",
+      "desc": "Complex systems and intelligent dashboards tailored to your operation."
+    },
+    "integrations": {
+      "title": "API Integrations",
+      "desc": "Absolute connectivity between your CRM, ERP, and marketing tools."
+    },
+    "governance": {
+      "title": "Governance & Security",
+      "desc": "Protection of digital assets and full compliance with LGPD/GDPR standards."
+    },
+    "whiteLabel": {
+      "title": "White Label for Agencies",
+      "desc": "UNTI's engineering power operating as your agency's technical arm."
+    }
+  },
+  "Cases": {
+    "tag": "ELITE PORTFOLIO",
+    "title": "Ecosystems that scale.",
+    "filter_all": "All",
+    "view_case": "View Case Study",
+    "results": "Impact Results"
+  },
+  "Blog": {
+    "tag": "TECHNICAL CONTENT",
+    "title": "Engineering Insights",
+    "read_more": "Read Full Article",
+    "search": "Search knowledge..."
+  },
+  "Contact": {
+    "tag": "CONTACT",
+    "title": "Ready to scale?",
+    "form": {
+      "name": "Full name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "send": "Send Message"
+    },
+    "info": {
+      "address": "Address",
+      "hours": "Business hours",
+      "social": "Social Media"
+    }
+  },
+  "Footer": {
+    "description": "Elite engineering for companies seeking digital sovereignty and global scale.",
+    "links_title": "Navigation",
+    "legal_title": "Legal",
+    "rights": "© {year} UNTI Digital. All rights reserved.",
+    "terms": "Terms of Use",
+    "privacy": "Privacy Policy"
+  },
+  "Categories": {
+    "automotive": "Automotive",
+    "health": "Healthcare",
+    "industry": "Industrial",
+    "corporate": "Corporate",
+    "government": "Government"
+  },
+  "CaseStudies": {
+    "automotive": {
+      "title": "Automotive Ecosystem 4.0",
+      "metric_label": "Performance",
+      "metric_value": "+85% Speed Increase",
+      "summary": "Full digitalization of the buyer's journey for dealership networks."
+    },
+    "health": {
+      "title": "HealthTech Platform",
+      "metric_label": "Security",
+      "metric_value": "100% HIPAA/GDPR Compliant",
+      "summary": "Critical integration of sensitive data with zero latency."
+    },
+    "industry": {
+      "title": "Connected Industry",
+      "metric_label": "Efficiency",
+      "metric_value": "-30% Operational Costs",
+      "summary": "Automation of critical processes and real-time dashboards."
+    }
+  },
+  "Metadata": {
+    "home": {
+      "title": "UNTI Digital | Software Engineering & Digital Elite",
+      "desc": "High-performance institutional websites, web platforms, and API integrations with a focus on security."
+    },
+    "about": {
+      "title": "Manifesto & Authority | UNTI Digital",
+      "desc": "Learn about the engineering behind UNTI. Technology as a vehicle for digital sovereignty."
+    }
+  }
+}

@@ -1,32 +1,36 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { getTranslations } from 'next-intl/server';
 import { Container } from "@/components/ui/Container";
 import { SectionReveal } from "@/components/ui/SectionReveal";
 
-export const metadata: Metadata = {
-  title: "Sobre a UNTI Digital | Engenharia de Performance",
-  description:
-    "Conheça a UNTI Digital: história, metodologia, valores técnicos e as soluções que transformam tecnologia em estratégia de negócio.",
-  alternates: { canonical: "/sobre" },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations('Metadata');
 
-const pillars = [
-  {
-    title: "Provedora de Serviços de Tecnologia",
-    description:
-      "Saímos do modelo de agência tradicional para atuar como parceiro técnico de longo prazo, com escopo fechado e responsabilidade sobre resultados.",
-  },
-  {
-    title: "Execução com Governança",
-    description:
-      "Cronogramas claros, comunicação objetiva e entrega documentada. Cada projeto tem um arquiteto responsável do briefing ao deploy.",
-  },
-  {
-    title: "Foco Comercial e Operacional",
-    description:
-      "Construímos plataformas que vendem, integram e escalam. Tecnologia conectada ao fluxo real do negócio, não ao portfólio da agência.",
-  },
-];
+  return {
+    title: t('about.title'),
+    description: t('about.desc'),
+    alternates: { canonical: "/sobre" },
+  };
+}
+
+export default async function AboutPage() {
+  const t = await getTranslations('About');
+
+  const pillars = [
+    {
+      title: t('pillars.0.t'),
+      description: t('pillars.0.d'),
+    },
+    {
+      title: t('pillars.1.t'),
+      description: t('pillars.1.d'),
+    },
+    {
+      title: t('pillars.2.t'),
+      description: t('pillars.2.d'),
+    },
+  ];
 
 const methodology = [
   {

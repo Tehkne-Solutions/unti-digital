@@ -5,8 +5,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { Menu } from "lucide-react";
 import { motion } from "framer-motion";
+import { useTranslations } from 'next-intl';
 import { MegaMenuModal } from "@/components/ui/MegaMenuModal";
 import { FullscreenMenu } from "@/components/ui/FullscreenMenu";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 
 const contact = {
   email: "contato@untidigital.com.br",
@@ -50,6 +52,7 @@ function IconInstagram() {
 }
 
 export function Header() {
+  const t = useTranslations('Header');
   const [megaMenuOpen, setMegaMenuOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -119,13 +122,13 @@ export function Header() {
               href="/integracoes"
               className="text-xs font-black uppercase tracking-widest text-zinc-700 transition-colors hover:text-unti-blue"
             >
-              Integrações com API&apos;s
+              {t('integrations')}
             </Link>
             <Link
               href="/contato"
               className="text-xs font-black uppercase tracking-widest text-zinc-700 transition-colors hover:text-unti-blue"
             >
-              Contato
+              {t('contact')}
             </Link>
 
             {/* Hambúrguer desktop — abre MegaMenuModal */}
@@ -135,16 +138,17 @@ export function Header() {
               aria-label="Menu"
             >
               <Menu className="h-5 w-5" />
-              Menu
+              {t('menu')}
             </button>
 
             {/* Botão Planos com efeito brilho */}
+            <LanguageSwitcher />
             <Link
               href="/planos"
               className="interactive-btn group relative inline-flex h-10 items-center justify-center overflow-hidden rounded-xl bg-unti-blue px-5 text-xs font-bold uppercase tracking-[0.14em] text-white shadow-[0_8px_24px_rgba(57,108,255,0.35)] transition-all duration-300 hover:scale-[0.97] hover:shadow-[0_4px_12px_rgba(57,108,255,0.25)] active:scale-95"
             >
               <span className="absolute inset-0 -translate-x-full skew-x-[-20deg] bg-white/20 transition-transform duration-500 group-hover:translate-x-[200%]" />
-              Planos e preços
+              {t('plans')}
             </Link>
           </nav>
 

@@ -1,0 +1,126 @@
+{
+  "Header": {
+    "integrations": "Integraciones con API",
+    "contact": "Contacto",
+    "menu": "Menú",
+    "plans": "Planes y precios"
+  },
+  "About": {
+    "title": "Sobre UNTI",
+    "subtitle": "Ingeniería de Rendimiento y Autoridad Digital",
+    "manifesto_title": "El Manifiesto de Élite",
+    "manifesto_text": "En UNTI, la tecnología no es el fin, sino el medio para la soberanía digital. Entendemos que cada línea de código es un ladrillo en la construcción de una autoridad inquebrantable. Nuestro enfoque de ingeniería de élite se centra en lo que realmente importa: resultados medibles y seguridad absoluta. En un mundo saturado de promesas, entregamos precisión.",
+    "hero": {
+      "tag": "MANIFIESTO UNTI",
+      "title": "Ingeniería que define el mañana.",
+      "lead": "No construimos solo sitios web. Erigimos fortalezas digitales de alto rendimiento."
+    },
+    "manifesto_content": [
+      "En UNTI, la tecnología no es el fin, sino el medio para la soberanía digital. Entendemos que cada línea de código es un ladrillo en la construcción de una autoridad inquebrantable.",
+      "Nuestro enfoque de ingeniería de élite se centra en lo que realmente importa: resultados medibles y seguridad absoluta. En un mundo saturado de promesas, entregamos precisión."
+    ],
+    "pillars": [
+      { "t": "Precisión", "d": "Código limpio y arquitectura escalable." },
+      { "t": "Autoridad", "d": "Diseño que impone respeto y convierte." },
+      { "t": "Seguridad", "d": "Cumplimiento total con LGPD y normas globales." }
+    ]
+  },
+  "Solutions": {
+    "title": "Nuestras Soluciones",
+    "header_tag": "INGENIERÍA UNTI // SOLUCIONES",
+    "institutional": {
+      "title": "Sitios Institucionales",
+      "desc": "Portales de alta autoridad centrados en la conversión y presencia corporativa."
+    },
+    "platforms": {
+      "title": "Plataformas Web",
+      "desc": "Sistemas complejos y dashboards inteligentes a medida para su operación."
+    },
+    "integrations": {
+      "title": "Integraciones de API",
+      "desc": "Conectividad absoluta entre sus sistemas CRM, ERP y herramientas."
+    },
+    "governance": {
+      "title": "Gobernanza y Seguridad",
+      "desc": "Protección de activos digitales y cumplimiento total de las normas LGPD."
+    },
+    "whiteLabel": {
+      "title": "Marca Blanca para Agencias",
+      "desc": "La fuerza de ingeniería de UNTI como el brazo técnico de su agencia."
+    }
+  },
+  "Cases": {
+    "tag": "PORTAFOLIO DE ÉLITE",
+    "title": "Ecosistemas que escalan.",
+    "filter_all": "Todos",
+    "view_case": "Ver Estudio de Caso",
+    "results": "Resultados de Impacto"
+  },
+  "Blog": {
+    "tag": "CONTENIDO TÉCNICO",
+    "title": "Perspectivas de Ingeniería",
+    "read_more": "Leer Artículo Completo",
+    "search": "Buscar conocimiento..."
+  },
+  "Contact": {
+    "tag": "CONTACTO",
+    "title": "¿Listo para el próximo nivel?",
+    "form": {
+      "name": "Nombre completo",
+      "email": "Correo electrónico",
+      "subject": "Asunto",
+      "message": "Mensaje",
+      "send": "Enviar Mensaje"
+    },
+    "info": {
+      "address": "Dirección",
+      "hours": "Horario de atención",
+      "social": "Redes Sociales"
+    }
+  },
+  "Footer": {
+    "description": "Ingeniería de élite para empresas que buscan soberanía digital y escala global.",
+    "links_title": "Navegación",
+    "legal_title": "Jurídico",
+    "rights": "© {year} UNTI Digital. Todos los derechos reservados.",
+    "terms": "Términos de Uso",
+    "privacy": "Privacidad"
+  },
+  "Categories": {
+    "automotive": "Automotriz",
+    "health": "Salud",
+    "industry": "Industrial",
+    "corporate": "Corporativo",
+    "government": "Gubernamental"
+  },
+  "CaseStudies": {
+    "automotive": {
+      "title": "Ecosistema Automotriz 4.0",
+      "metric_label": "Rendimiento",
+      "metric_value": "+85% de velocidad",
+      "summary": "Digitalización completa del viaje de compra para redes de concesionarios."
+    },
+    "health": {
+      "title": "Plataforma HealthTech",
+      "metric_label": "Seguridad",
+      "metric_value": "100% LGPD Compliant",
+      "summary": "Integración crítica de datos sensibles con latencia cero."
+    },
+    "industry": {
+      "title": "Industria Conectada",
+      "metric_label": "Eficiencia",
+      "metric_value": "-30% de costo operacional",
+      "summary": "Automatización de procesos críticos y dashboards en tiempo real."
+    }
+  },
+  "Metadata": {
+    "home": {
+      "title": "UNTI Digital | Ingeniería de Software y Élite Digital",
+      "desc": "Desarrollo de sitios institucionales, plataformas web e integraciones de API con enfoque en rendimiento y seguridad."
+    },
+    "about": {
+      "title": "Manifiesto y Autoridad | UNTI Digital",
+      "desc": "Conozca la ingeniería detrás de UNTI. Tecnología como medio para la soberanía digital."
+    }
+  }
+}
