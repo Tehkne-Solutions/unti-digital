@@ -1,9 +1,5 @@
-import type { Metadata } from "next";
 import { Ubuntu } from "next/font/google";
 import "./globals.css";
-import { Header } from "@/components/header";
-import { Newsletter } from "@/components/Newsletter";
-import { Footer } from "@/components/footer";
 
 const ubuntu = Ubuntu({
   subsets: ["latin"],
@@ -12,7 +8,7 @@ const ubuntu = Ubuntu({
   variable: "--font-ubuntu"
 });
 
-export const metadata: Metadata = {
+export const metadata = {
   metadataBase: new URL("https://untidigital.com.br"),
   title: "UNTI Digital | Soluções de Performance, Segurança e Escala",
   description:
@@ -51,11 +47,8 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR">
-      <body className={`${ubuntu.variable} font-sans`}>
-        <Header />
-        <main>{children}</main>
-        <Newsletter />
-        <Footer />
+      <body className={`${ubuntu.variable} font-sans bg-white text-zinc-900`}>
+        {children}
       </body>
     </html>
   );

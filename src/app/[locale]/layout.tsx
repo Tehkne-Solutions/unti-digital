@@ -1,7 +1,6 @@
 import { Ubuntu } from "next/font/google";
-import { NextIntlClientProvider } from 'next-intl';
-import { notFound } from 'next/navigation';
-import "../globals.css";
+import { NextIntlClientProvider } from "next-intl";
+import { notFound } from "next/navigation";
 import { Header } from "@/components/header";
 import { Newsletter } from "@/components/Newsletter";
 import { Footer } from "@/components/footer";
@@ -13,6 +12,8 @@ const ubuntu = Ubuntu({
   variable: "--font-ubuntu"
 });
 
+const supportedLocales = ["pt", "en", "es"] as const;
+
 export default async function LocaleLayout({
   children,
   params: { locale }
@@ -20,6 +21,10 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: { locale: string };
 }) {
+  if (!supportedLocales.includes(locale as typeof supportedLocales[number])) {
+    notFound();
+  }
+
   let messages;
   try {
     messages = (await import(`@/messages/${locale}.json`)).default;
@@ -27,14 +32,14 @@ export default async function LocaleLayout({
     notFound();
   }
 
+  const htmlLang = locale === "pt" ? "pt-BR" : locale;
+
   return (
-    <html lang={locale}>
+    <html lang={htmlLang}>
       <body className={`${ubuntu.variable} font-sans bg-white text-zinc-900`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Header />
-          <main className="flex-1">
-            {children}
-          </main>
+          <main className="flex-1">{children}</main>
           <Newsletter />
           <Footer />
         </NextIntlClientProvider>
