@@ -4,18 +4,20 @@ import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
+import { useTranslations } from "next-intl";
 
 export function Segmentation() {
+  const t = useTranslations("Segmentation");
+
   return (
     <Section>
       <Container>
         <div className="mb-16 text-center">
           <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-            Para quem desenvolvemos soluções digitais
+            {t("title")}
           </h2>
           <p className="mx-auto max-w-3xl text-lg text-brand-muted">
-            Atendemos empresas que precisam escalar com seguranca e agencias que buscam
-            um parceiro técnico estratégico.
+            {t("subtitle")}
           </p>
         </div>
 
@@ -38,7 +40,7 @@ export function Segmentation() {
                 </svg>
               </div>
 
-              <h3 className="text-2xl font-bold text-brand-dark">Empresas</h3>
+              <h3 className="text-2xl font-bold text-brand-dark">{t("companies.title")}</h3>
 
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
@@ -54,7 +56,7 @@ export function Segmentation() {
                     />
                   </svg>
                   <span className="text-brand-muted">
-                    Sites e plataformas de alta performance
+                    {t("companies.features.0")}
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
@@ -70,7 +72,7 @@ export function Segmentation() {
                     />
                   </svg>
                   <span className="text-brand-muted">
-                    Integrações com CRM, ERP e sistemas internos
+                    {t("companies.features.1")}
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
@@ -86,7 +88,7 @@ export function Segmentation() {
                     />
                   </svg>
                   <span className="text-brand-muted">
-                    Governança e previsibilidade tecnica
+                    {t("companies.features.2")}
                   </span>
                 </li>
               </ul>
@@ -96,7 +98,7 @@ export function Segmentation() {
                   variant="link"
                   onClick={() => (window.location.href = "/solucoes/empresas")}
                 >
-                  Ver soluções para empresas →
+                  {t("companies.cta")}
                 </Button>
               </div>
             </div>
@@ -120,7 +122,7 @@ export function Segmentation() {
                 </svg>
               </div>
 
-              <h3 className="text-2xl font-bold text-white">Agencias</h3>
+              <h3 className="text-2xl font-bold text-white">{t("agencies.title")}</h3>
 
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
@@ -135,7 +137,7 @@ export function Segmentation() {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <span className="text-white/90">White label técnico</span>
+                  <span className="text-white/90">{t("agencies.features.0")}</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <svg
@@ -149,7 +151,7 @@ export function Segmentation() {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <span className="text-white/90">Desenvolvimento sob demanda</span>
+                  <span className="text-white/90">{t("agencies.features.1")}</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <svg
@@ -163,7 +165,7 @@ export function Segmentation() {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <span className="text-white/90">Parceria estrategica de longo prazo</span>
+                  <span className="text-white/90">{t("agencies.features.2")}</span>
                 </li>
               </ul>
 
@@ -173,7 +175,7 @@ export function Segmentation() {
                   className="text-white"
                   onClick={() => (window.location.href = "/solucoes/agencias")}
                 >
-                  Ver soluções para agencias →
+                  {t("agencies.cta")}
                 </Button>
               </div>
             </div>

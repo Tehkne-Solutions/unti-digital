@@ -4,8 +4,10 @@ import React, { useState } from "react";
 import Image from "next/image";
 import ClientModal from "@/components/ClientModal";
 import { clients } from "@/data/clients";
+import { useTranslations } from "next-intl";
 
 export const LogoCarousel = () => {
+  const t = useTranslations("LogoCarousel");
   const [selectedClient, setSelectedClient] = useState<typeof clients[number] | null>(null);
 
   // Duplicamos a lista para criar o efeito infinito sem saltos
@@ -15,10 +17,10 @@ export const LogoCarousel = () => {
     <section className="py-20 bg-white overflow-hidden">
       <div className="container mx-auto px-4 mb-10 text-center">
         <h2 className="mb-4 text-3xl font-bold text-brand-dark md:text-4xl">
-          Empresas que confiam na nossa engenharia
+          {t("title")}
         </h2>
         <p className="text-brand-muted">
-          Clique em um cliente para ver o projeto e resultados alcançados
+          {t("subtitle")}
         </p>
       </div>
 

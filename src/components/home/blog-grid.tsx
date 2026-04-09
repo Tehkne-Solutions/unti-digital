@@ -3,8 +3,10 @@ import { blogPosts } from "@/data/posts";
 import { BlogPostCard } from "@/components/blog/BlogPostCard";
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
+import { useTranslations } from "next-intl";
 
 export function BlogGrid() {
+  const t = useTranslations("BlogGrid");
   const posts = blogPosts.slice(0, 4);
 
   return (
@@ -13,14 +15,13 @@ export function BlogGrid() {
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="max-w-3xl">
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-zinc-500">
-              Conhecimento e autoridade
+              {t("badge")}
             </p>
             <h2 className="mt-4 text-3xl font-semibold text-zinc-900 md:text-4xl">
-              Conteúdo tecnico para decisores que precisam de previsibilidade
+              {t("title")}
             </h2>
             <p className="mt-4 text-lg text-brand-muted">
-              Artigos pensados para educar o mercado, elevar a conversa comercial e sustentar SEO
-              semantico em temas de alto valor.
+              {t("subtitle")}
             </p>
           </div>
 
@@ -28,7 +29,7 @@ export function BlogGrid() {
             href="/blog"
             className="inline-flex items-center text-sm font-semibold text-unti-blue no-underline hover:no-underline"
           >
-            Ver biblioteca completa
+            {t("viewAll")}
           </Link>
         </div>
 

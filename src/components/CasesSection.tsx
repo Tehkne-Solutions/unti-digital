@@ -1,21 +1,23 @@
 import Link from "next/link";
 import { casesHome } from "@/data/cases";
 import CaseCard from "./CaseCard";
+import { useTranslations } from "next-intl";
 
 export default function CasesSection() {
+  const t = useTranslations("CasesSection");
+
   return (
     <section className="bg-white py-24">
       <div className="mx-auto max-w-6xl px-4">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.24em] text-zinc-500">
-            Autoridade minima
+            {t("badge")}
           </p>
           <h2 className="mt-4 text-3xl font-semibold text-zinc-900 md:text-4xl">
-            Projetos que sustentam conversas maiores
+            {t("title")}
           </h2>
           <p className="mt-4 text-zinc-600">
-            Tres entregas que combinam integracao, volume operacional e posicionamento digital em
-            nivel premium.
+            {t("subtitle")}
           </p>
         </div>
 
@@ -30,7 +32,7 @@ export default function CasesSection() {
             href="/cases"
             className="interactive-btn inline-flex h-12 items-center justify-center rounded-xl border border-unti-blue px-6 text-sm font-semibold text-unti-blue no-underline transition-all duration-300 hover:bg-unti-blue hover:text-white hover:no-underline"
           >
-            Explorar Portfolio Completo
+            {t("viewAll")}
           </Link>
         </div>
       </div>

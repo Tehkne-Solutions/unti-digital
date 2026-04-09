@@ -1,11 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { clients } from "@/data/clients";
 
 export function Clients() {
+  const t = useTranslations("Clients");
+
   return (
     <section className="section space-y-6 text-center">
-      <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-unti-dark">Empresas com projeto Unti Digital</h3>
+      <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-unti-dark">{t("title")}</h3>
       <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
         {clients.map((client) => (
           <Link

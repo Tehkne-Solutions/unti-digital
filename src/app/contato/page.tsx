@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { JSX, SVGProps } from "react";
 import Image from "next/image";
+import { getTranslations } from "next-intl/server";
 import { ContactForm } from "@/components/contact/contact-form";
 import { Container } from "@/components/ui/Container";
 import { SectionReveal } from "@/components/ui/SectionReveal";
@@ -70,7 +71,9 @@ export const metadata: Metadata = {
     "Entre em contato com a UNTI Digital para discutir projetos de performance, segurança, plataformas web e integrações."
 };
 
-export default function ContatoPage() {
+export default async function ContatoPage() {
+  const t = await getTranslations("Contact");
+
   return (
     <div className="bg-white text-brand-dark">
       <SectionReveal>
@@ -78,7 +81,7 @@ export default function ContatoPage() {
           <div className="absolute inset-0">
             <Image
               src="/images/unti-digital-homepage-image-hero-bg.jpeg"
-              alt="Background da página de contato da UNTI Digital"
+              alt={t("page.hero.backgroundAlt")}
               fill
               priority
               className="object-cover object-center"
@@ -90,14 +93,13 @@ export default function ContatoPage() {
             <div className="flex min-h-[420px] items-center">
               <div className="max-w-[640px] rounded-[34px] bg-white/78 p-8 shadow-[inset_0_1px_0_rgba(255,255,255,1),0_0_0_1px_rgba(148,163,184,0.14),0_40px_120px_rgba(15,23,42,0.14)] backdrop-blur-xl md:p-10">
                 <p className="text-xs font-semibold uppercase tracking-[0.24em] text-unti-blue">
-                  Contato
+                  {t("page.hero.tag")}
                 </p>
                 <h1 className="mt-4 max-w-[12ch] text-4xl font-bold leading-[0.95] text-brand-dark md:text-6xl">
-                  Fale com a equipe certa.
+                  {t("page.hero.title")}
                 </h1>
                 <p className="mt-5 max-w-xl text-base text-brand-muted md:text-lg">
-                  Um ponto de contato central para acelerar atendimento comercial e
-                  direcionar seu projeto para a frente certa dentro da UNTI.
+                  {t("page.hero.description")}
                 </p>
 
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -107,13 +109,13 @@ export default function ContatoPage() {
                     rel="noreferrer"
                     className="interactive-btn inline-flex h-12 items-center justify-center rounded-2xl bg-unti-blue px-6 text-sm font-semibold uppercase tracking-[0.14em] text-white no-underline shadow-[0_18px_40px_rgba(57,108,255,0.32)] transition-all duration-300 hover:translate-y-[-1px] hover:no-underline"
                   >
-                    Falar no WhatsApp
+                    {t("page.hero.cta.whatsapp")}
                   </a>
                   <a
                     href="#form-contato"
                     className="inline-flex h-12 items-center justify-center rounded-2xl bg-white px-6 text-sm font-semibold uppercase tracking-[0.14em] text-brand-dark no-underline shadow-[inset_0_1px_0_rgba(255,255,255,1),0_0_0_1px_rgba(148,163,184,0.16),0_16px_34px_rgba(15,23,42,0.08)] transition-all duration-300 hover:bg-slate-50 hover:shadow-[inset_0_1px_0_rgba(255,255,255,1),0_0_0_1px_rgba(148,163,184,0.2),0_20px_38px_rgba(15,23,42,0.1)] hover:scale-105 hover:no-underline"
                   >
-                    Enviar mensagem
+                    {t("page.hero.cta.send")}
                   </a>
                 </div>
               </div>
@@ -167,10 +169,10 @@ export default function ContatoPage() {
               <div>
                 <div className="mb-6 max-w-xl">
                   <p className="text-xs font-semibold uppercase tracking-[0.24em] text-unti-blue">
-                    Entre em contato
+                    {t("page.form.tag")}
                   </p>
                   <h2 className="mt-4 max-w-[10ch] text-4xl font-bold leading-[0.95] text-brand-dark md:text-5xl">
-                    Envie sua mensagem.
+                    {t("page.form.title")}
                   </h2>
                 </div>
 
@@ -207,10 +209,10 @@ export default function ContatoPage() {
           <Container>
             <div className="max-w-md">
               <p className="text-xs font-semibold uppercase tracking-[0.24em] text-unti-blue">
-                Visite a base
+                {t("page.visit.tag")}
               </p>
               <h2 className="mt-4 text-4xl font-bold leading-[0.95] text-brand-dark md:text-5xl">
-                Estrutura centralizada para atendimento presencial.
+                {t("page.visit.title")}
               </h2>
             </div>
 

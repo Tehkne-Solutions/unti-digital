@@ -3,6 +3,7 @@
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -24,35 +25,18 @@ const itemVariants = {
   }
 };
 
-const steps = [
-  {
-    title: "Diagnóstico",
-    description: "Entendemos o contexto do negócio e os desafios técnicos do projeto."
-  },
-  {
-    title: "Arquitetura",
-    description: "Definimos arquitetura, integrações e estrutura da solução digital."
-  },
-  {
-    title: "Desenvolvimento",
-    description: "Implementação com boas práticas de engenharia e foco em performance."
-  },
-  {
-    title: "Evolução contínua",
-    description: "Acompanhamento e evolução da plataforma conforme o crescimento do negócio."
-  }
-];
-
 export function HowWeWork() {
+  const t = useTranslations("HowWeWork");
+
   return (
     <Section className="bg-unti-blue py-24 text-white">
       <Container>
         <div className="mx-auto mb-16 max-w-3xl text-center">
           <h2 className="text-3xl font-bold text-white md:text-4xl">
-            Como trabalhamos
+            {t("title")}
           </h2>
           <p className="mt-4 text-white">
-            Um processo claro para tirar projetos do papel com segurança, previsibilidade e evolução contínua.
+            {t("subtitle")}
           </p>
         </div>
 
@@ -63,17 +47,17 @@ export function HowWeWork() {
           whileInView="show"
           viewport={{ once: true, amount: 0.3 }}
         >
-          {steps.map((step, index) => (
+          {Array.from({ length: 4 }, (_, index) => (
             <motion.div
-              key={step.title}
+              key={index}
               variants={itemVariants}
               className="space-y-4 rounded-[28px] border border-white/20 bg-white/10 p-6 text-center backdrop-blur-sm"
             >
               <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-white/15 text-lg font-bold text-white">
                 {index + 1}
               </div>
-              <h3 className="text-lg font-semibold text-white">{step.title}</h3>
-              <p className="text-sm leading-relaxed text-white">{step.description}</p>
+              <h3 className="text-lg font-semibold text-white">{t(`steps.${index}.title`)}</h3>
+              <p className="text-sm leading-relaxed text-white">{t(`steps.${index}.description`)}</p>
             </motion.div>
           ))}
         </motion.div>
