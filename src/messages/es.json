@@ -3,7 +3,8 @@
     "integrations": "Integraciones con API",
     "contact": "Contacto",
     "menu": "Menú",
-    "plans": "Planes y precios"
+    "plans": "Planes y precios",
+    "openMenu": "Abrir men?"
   },
   "Hero": {
     "badge": "Tecnología a medida para crecer con previsibilidad",
@@ -260,7 +261,13 @@
     "sectors": {
       "title": "Sectores con experiencia",
       "description": "Actuamos en sectores con operaciones complejas y necesidad de integración entre áreas.",
-      "list": ["Automotriz", "Retail", "Servicios B2B", "Industria", "Tecnología y SaaS"]
+      "list": [
+        "Automotriz",
+        "Retail",
+        "Servicios B2B",
+        "Industria",
+        "Tecnología y SaaS"
+      ]
     },
     "priorities": {
       "title": "Qué valoran los clientes",
@@ -288,9 +295,18 @@
       "Nuestro enfoque de ingeniería de élite se centra en lo que realmente importa: resultados medibles y seguridad absoluta. En un mundo saturado de promesas, entregamos precisión."
     ],
     "pillars": [
-      { "t": "Precisión", "d": "Código limpio y arquitectura escalable." },
-      { "t": "Autoridad", "d": "Diseño que impone respeto y convierte." },
-      { "t": "Seguridad", "d": "Cumplimiento total con LGPD y normas globales." }
+      {
+        "t": "Precisión",
+        "d": "Código limpio y arquitectura escalable."
+      },
+      {
+        "t": "Autoridad",
+        "d": "Diseño que impone respeto y convierte."
+      },
+      {
+        "t": "Seguridad",
+        "d": "Cumplimiento total con LGPD y normas globales."
+      }
     ],
     "learnMore": "Saber más"
   },
@@ -319,7 +335,8 @@
       "title": "Marca Blanca para Agencias",
       "desc": "La fuerza de ingeniería de UNTI como el brazo técnico de su agencia."
     }
-  },  "Integrations": {
+  },
+  "Integrations": {
     "title": "Integraciones con APIs",
     "description": "Descubre la forma más moderna y segura de integrar APIs, CRM, ERP y sistemas internos para automatizar datos y operaciones.",
     "hero": {
@@ -351,18 +368,21 @@
         "description": "Conectamos sistemas, plataformas y aplicaciones heterogéneas para que compartan datos de manera eficiente, mejorando la interoperabilidad de tu ecosistema digital."
       }
     ]
-  },  "Cases": {
+  },
+  "Cases": {
     "tag": "PORTAFOLIO DE ÉLITE",
     "title": "Ecosistemas que escalan.",
     "filter_all": "Todos",
     "view_case": "Ver Estudio de Caso",
-    "results": "Resultados de Impacto"
+    "results": "Resultados de Impacto",
+    "loadMore": "Cargar m?s casos"
   },
   "Blog": {
     "tag": "CONTENIDO TÉCNICO",
     "title": "Perspectivas de Ingeniería",
     "read_more": "Leer Artículo Completo",
-    "search": "Buscar conocimiento..."
+    "search": "Buscar conocimiento...",
+    "readArticle": "Leer art?culo"
   },
   "Contact": {
     "tag": "CONTACTO",
@@ -372,7 +392,20 @@
       "email": "Correo electrónico",
       "subject": "Asunto",
       "message": "Mensaje",
-      "send": "Enviar Mensaje"
+      "send": "Enviar Mensaje",
+      "whatsapp": "WhatsApp",
+      "messagePlaceholder": "Cu?ntanos un poco sobre el escenario actual, tus objetivos y qu? necesitas destrabar.",
+      "consent": "Al enviar, aceptas que usemos esta informaci?n para responder y dar continuidad a la conversaci?n comercial.",
+      "sending": "Enviando...",
+      "error": "No fue posible enviar tu mensaje ahora. Int?ntalo nuevamente en unos instantes.",
+      "success": "Mensaje enviado con ?xito. Nuestro equipo responder? pronto.",
+      "subjectOptions": {
+        "sites": "Sitios institucionales",
+        "platforms": "Plataformas web",
+        "integrations": "Integraciones con CRM y ERP",
+        "whiteLabel": "White label para agencias",
+        "consulting": "Diagn?stico y consultor?a"
+      }
     },
     "info": {
       "address": "Dirección",
@@ -400,7 +433,7 @@
       "politicaEmpresarial": "Política Empresarial",
       "contato": "Contacto"
     },
-    "rights": "© {year} UNTI Digital. Todos los derechos reservados."
+    "rights": "? {year} UNTI Digital. Todos los derechos reservados."
   },
   "Categories": {
     "automotive": "Automotriz",
@@ -459,12 +492,31 @@
     "forYourCompany": "Para su empresa",
     "quickAccess": "Acceso Rápido",
     "eliteDigitalEngineering": "Ingeniería Digital de Elite",
-    "servicesAndPolicies": "Servicios & Políticas"
+    "servicesAndPolicies": "Servicios & Políticas",
+    "close": "Cerrar men?",
+    "viewSolution": "Ver soluci?n",
+    "signature": "UNTI Digital // Performance y Autoridad",
+    "companyScope": "Peque?as, medianas y grandes operaciones.",
+    "solutionsImageAlt": "Soluciones de UNTI Digital"
   },
   "Modal": {
     "close": "Cerrar modal"
   },
   "FullscreenMenu": {
     "close": "Cerrar menú"
+  },
+  "LanguageSwitcher": {
+    "portuguese": "Portugu?s",
+    "english": "English",
+    "spanish": "Espa?ol",
+    "active": "Activo"
+  },
+  "Newsletter": {
+    "title": "Reciba insights sobre sitios, integraciones y plataformas",
+    "description": "Una curadur?a breve con contenido pr?ctico para equipos que necesitan evolucionar presencia digital, operaci?n y tecnolog?a con m?s previsibilidad.",
+    "inputLabel": "Tu correo",
+    "inputPlaceholder": "Ingresa tu mejor correo",
+    "button": "Quiero recibir",
+    "success": "Suscripci?n realizada. Pronto compartiremos los pr?ximos contenidos."
   }
 }

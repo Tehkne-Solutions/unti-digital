@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "next-intl/link";
 import { Container } from "@/components/ui/Container";
 
 interface BreadcrumbItem {

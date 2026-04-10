@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "next-intl/link";
 import Image from "next/image";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { Container } from "@/components/ui/Container";

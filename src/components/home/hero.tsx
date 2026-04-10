@@ -4,9 +4,11 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { HeroCarousel } from "./hero-carousel";
 import { useTranslations } from "next-intl";
+import { useRouter } from "next-intl/client";
 
 export function Hero() {
   const t = useTranslations("Hero");
+  const router = useRouter();
 
   return (
     <div className="w-full">
@@ -36,10 +38,10 @@ export function Hero() {
             </div>
 
             <div className="flex flex-col justify-center gap-4 pt-2 sm:flex-row">
-              <Button variant="primary" onClick={() => (window.location.href = "/contato")}>
+              <Button variant="primary" onClick={() => router.push("/contato")}>
                 {t("ctaPrimary")}
               </Button>
-              <Button variant="secondary" onClick={() => (window.location.href = "/solucoes")}>
+              <Button variant="secondary" onClick={() => router.push("/solucoes")}>
                 {t("ctaSecondary")}
               </Button>
             </div>

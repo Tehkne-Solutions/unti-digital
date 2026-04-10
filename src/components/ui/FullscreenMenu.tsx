@@ -1,33 +1,19 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
+import type { AppLocale } from "@/lib/i18n";
 import { X, ArrowUpRight, ChevronRight } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
-import { useTranslations } from "next-intl";
+import Link from "next-intl/link";
+import { useLocale, useTranslations } from "next-intl";
+import { getServices } from "@/data/services";
 
-const solutionCards = [
-  {
-    key: "institutionalSites",
-    img: "/images/solutions/unti-digital-solution-high-performance-websites.png",
-    h: "/solucoes/sites-institucionais",
-  },
-  {
-    key: "webPlatforms",
-    img: "/images/solutions/unti-digital-solution-custom-web-platforms.png",
-    h: "/solucoes/plataformas-web",
-  },
-  {
-    key: "crmErpIntegrations",
-    img: "/images/solutions/unti-digital-solution-crm-erp-integrations.png",
-    h: "/solucoes/integracoes-crm-erp",
-  },
-  {
-    key: "governanceSecurity",
-    img: "/images/solutions/unti-digital-solution-governance-security.png",
-    h: "/solucoes/governanca-seguranca",
-  },
-];
+const featuredSolutionSlugs = [
+  "sites-institucionais",
+  "plataformas-web",
+  "integracoes-crm-erp",
+  "governanca-seguranca"
+] as const;
 
 const mainLinks = [
   { key: "home", href: "/" },
@@ -35,29 +21,34 @@ const mainLinks = [
   { key: "cases", href: "/cases" },
   { key: "content", href: "/blog" },
   { key: "about", href: "/sobre" },
-  { key: "contact", href: "/contato" },
-];
+  { key: "contact", href: "/contato" }
+] as const;
 
 const subLinks = [
-  { key: "forCompanies", href: "/solucoes" },
+  { key: "forCompanies", href: "/solucoes/empresas" },
   { key: "forAgencies", href: "/solucoes/white-label-agencias" },
   { key: "apiIntegrations", href: "/solucoes/integracoes-crm-erp" },
   { key: "privacyPolicy", href: "/privacidade" },
-  { key: "businessPolicy", href: "/politica-empresarial" },
-];
+  { key: "businessPolicy", href: "/politica-empresarial" }
+] as const;
 
 export const FullscreenMenu = ({
   isOpen,
-  onClose,
+  onClose
 }: {
   isOpen: boolean;
   onClose: () => void;
 }) => {
-  const t = useTranslations('Menu');
+  const locale = useLocale() as AppLocale;
+  const t = useTranslations("Menu");
+  const services = getServices(locale);
+  const featuredSolutions = featuredSolutionSlugs
+    .map((slug) => services.find((service) => service.slug === slug))
+    .filter((service): service is NonNullable<typeof service> => Boolean(service));
 
   return (
     <AnimatePresence>
-      {isOpen && (
+      {isOpen ? (
         <motion.div
           initial={{ x: "100%" }}
           animate={{ x: 0 }}
@@ -65,49 +56,48 @@ export const FullscreenMenu = ({
           transition={{ type: "spring", damping: 28, stiffness: 220 }}
           className="fixed inset-0 z-[999] flex flex-col overflow-hidden bg-white lg:grid lg:grid-cols-12"
         >
-          {/* LADO ESQUERDO: cards visuais — desktop only */}
-          <div className="hidden lg:flex lg:col-span-7 flex-col justify-between border-r border-zinc-100 bg-zinc-50 p-16">
+          <div className="hidden flex-col justify-between border-r border-zinc-100 bg-zinc-50 p-16 lg:col-span-7 lg:flex">
             <div>
               <p className="mb-12 text-[10px] font-black uppercase italic tracking-[0.3em] text-unti-blue">
                 {t("eliteDigitalEngineering")}
               </p>
               <div className="grid grid-cols-2 gap-6">
-                {solutionCards.map((item) => (
+                {featuredSolutions.map((service) => (
                   <Link
-                    key={item.key}
-                    href={item.h}
+                    key={service.slug}
+                    href={`/solucoes/${service.slug}`}
                     onClick={onClose}
                     className="group relative h-72 overflow-hidden rounded-[32px] border border-zinc-200 bg-white shadow-sm"
                   >
                     <Image
-                      src={item.img}
-                      alt={t(item.key)}
+                      src={service.image}
+                      alt={service.title}
                       fill
                       className="object-cover opacity-80 transition-all duration-700 group-hover:scale-105 group-hover:opacity-100"
                     />
                     <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-zinc-900/70 to-transparent p-7">
-                      <h4 className="text-xl font-black text-white">{t(item.key)}</h4>
-                      <p className="mt-1 text-xs font-semibold uppercase tracking-widest text-white/60">
-                        Ver solução
+                      <h4 className="text-xl font-black text-white">{service.title}</h4>
+                      <p className="mt-1 text-xs font-semibold uppercase tracking-widest text-white/70">
+                        {t("viewSolution")}
                       </p>
                     </div>
                   </Link>
                 ))}
               </div>
             </div>
+
             <p className="text-[10px] font-bold uppercase tracking-widest text-zinc-400">
-              UNTI Digital // Performance &amp; Autoridade
+              {t("signature")}
             </p>
           </div>
 
-          {/* LADO DIREITO: navegação */}
           <div className="flex flex-1 flex-col justify-between overflow-y-auto p-8 md:p-16 lg:col-span-5">
-            {/* Header do menu */}
             <div className="flex items-center justify-between">
               <Link href="/" onClick={onClose} className="text-2xl font-black tracking-tighter text-zinc-900">
                 UNTI<span className="text-unti-blue">.</span>
               </Link>
               <button
+                type="button"
                 onClick={onClose}
                 className="rounded-full bg-zinc-900 p-4 text-white shadow-xl transition-all hover:bg-unti-blue"
                 aria-label={t("close")}
@@ -116,7 +106,6 @@ export const FullscreenMenu = ({
               </button>
             </div>
 
-            {/* Links principais */}
             <nav className="mt-12 flex flex-col gap-3">
               {mainLinks.map((link) => (
                 <Link
@@ -131,7 +120,6 @@ export const FullscreenMenu = ({
               ))}
             </nav>
 
-            {/* Sub-links: serviços e políticas */}
             <div className="mt-12 border-t border-zinc-100 pt-8">
               <p className="mb-5 text-[10px] font-black uppercase italic tracking-widest text-zinc-400">
                 {t("servicesAndPolicies")}
@@ -152,7 +140,7 @@ export const FullscreenMenu = ({
             </div>
           </div>
         </motion.div>
-      )}
+      ) : null}
     </AnimatePresence>
   );
 };

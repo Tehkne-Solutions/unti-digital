@@ -3,7 +3,8 @@
     "integrations": "Integrações com API's",
     "contact": "Contato",
     "menu": "Menu",
-    "plans": "Planos e preços"
+    "plans": "Planos e preços",
+    "openMenu": "Abrir menu"
   },
   "Hero": {
     "badge": "Tecnologia sob medida para crescer com previsibilidade",
@@ -260,7 +261,13 @@
     "sectors": {
       "title": "Setores com experiência",
       "description": "Atuamos em setores com operações complexas e necessidade de integração entre áreas.",
-      "list": ["Automotivo", "Varejo", "Serviços B2B", "Indústria", "Tecnologia e SaaS"]
+      "list": [
+        "Automotivo",
+        "Varejo",
+        "Serviços B2B",
+        "Indústria",
+        "Tecnologia e SaaS"
+      ]
     },
     "priorities": {
       "title": "O que os clientes valorizam",
@@ -288,9 +295,18 @@
       "Nossa abordagem de engenharia de elite foca no que realmente importa: resultados mensuráveis e segurança absoluta. Em um mundo saturado de promessas, entregamos precisão."
     ],
     "pillars": [
-      { "t": "Precisão", "d": "Código limpo e arquitetura escalável." },
-      { "t": "Autoridade", "d": "Design que impõe respeito e converte." },
-      { "t": "Segurança", "d": "Conformidade total com LGPD e normas globais." }
+      {
+        "t": "Precisão",
+        "d": "Código limpo e arquitetura escalável."
+      },
+      {
+        "t": "Autoridade",
+        "d": "Design que impõe respeito e converte."
+      },
+      {
+        "t": "Segurança",
+        "d": "Conformidade total com LGPD e normas globais."
+      }
     ],
     "learnMore": "Saiba mais"
   },
@@ -358,13 +374,15 @@
     "title": "Ecossistemas que escalam.",
     "filter_all": "Todos",
     "view_case": "Ver Estudo de Caso",
-    "results": "Resultados de Impacto"
+    "results": "Resultados de Impacto",
+    "loadMore": "Carregar mais cases"
   },
   "Blog": {
     "tag": "CONTEÚDO TÉCNICO",
     "title": "Insights de Engenharia",
     "read_more": "Ler Artigo Completo",
-    "search": "Buscar conhecimento..."
+    "search": "Buscar conhecimento...",
+    "readArticle": "Ler artigo"
   },
   "Contact": {
     "tag": "CONTATO",
@@ -374,7 +392,20 @@
       "email": "E-mail",
       "subject": "Assunto",
       "message": "Mensagem",
-      "send": "Enviar Mensagem"
+      "send": "Enviar Mensagem",
+      "whatsapp": "WhatsApp",
+      "messagePlaceholder": "Conte um pouco sobre o cen?rio atual, seus objetivos e o que precisa destravar.",
+      "consent": "Ao enviar, voc? concorda com o uso das informa??es para retorno comercial e continuidade do atendimento.",
+      "sending": "Enviando...",
+      "error": "N?o foi poss?vel enviar sua mensagem agora. Tente novamente em instantes.",
+      "success": "Mensagem enviada com sucesso. Nossa equipe retornar? em breve.",
+      "subjectOptions": {
+        "sites": "Sites institucionais",
+        "platforms": "Plataformas web",
+        "integrations": "Integra??es com CRM e ERP",
+        "whiteLabel": "White label para ag?ncias",
+        "consulting": "Diagn?stico e consultoria"
+      }
     },
     "info": {
       "address": "Endereço",
@@ -402,7 +433,7 @@
       "politicaEmpresarial": "Política Empresarial",
       "contato": "Contato"
     },
-    "rights": "© {year} UNTI Digital. Todos os direitos reservados."
+    "rights": "? {year} UNTI Digital. Todos os direitos reservados."
   },
   "Categories": {
     "automotive": "Automotivo",
@@ -461,12 +492,31 @@
     "forYourCompany": "Para sua empresa",
     "quickAccess": "Acesso Rápido",
     "eliteDigitalEngineering": "Engenharia Digital de Elite",
-    "servicesAndPolicies": "Serviços & Políticas"
+    "servicesAndPolicies": "Serviços & Políticas",
+    "close": "Fechar menu",
+    "viewSolution": "Ver solu??o",
+    "signature": "UNTI Digital // Performance e Autoridade",
+    "companyScope": "Pequenas, m?dias e grandes opera??es.",
+    "solutionsImageAlt": "Solu??es da UNTI Digital"
   },
   "Modal": {
     "close": "Fechar modal"
   },
   "FullscreenMenu": {
     "close": "Fechar menu"
+  },
+  "LanguageSwitcher": {
+    "portuguese": "Portugu?s",
+    "english": "English",
+    "spanish": "Espa?ol",
+    "active": "Ativo"
+  },
+  "Newsletter": {
+    "title": "Receba insights sobre sites, integra??es e plataformas",
+    "description": "Uma curadoria com conte?dos pr?ticos para quem precisa evoluir presen?a digital, opera??o e tecnologia com mais previsibilidade.",
+    "inputLabel": "Seu e-mail",
+    "inputPlaceholder": "Digite seu melhor e-mail",
+    "button": "Quero receber",
+    "success": "Cadastro realizado. Em breve voc? receber? os pr?ximos conte?dos."
   }
 }

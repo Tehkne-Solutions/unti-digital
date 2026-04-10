@@ -1,5 +1,5 @@
 import { Container } from "@/components/ui/Container";
-import Link from "next/link";
+import Link from "next-intl/link";
 import { Mail, Phone } from "lucide-react";
 
 export const PricingFooter = () => {

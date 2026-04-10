@@ -3,7 +3,8 @@
     "integrations": "API Integrations",
     "contact": "Contact",
     "menu": "Menu",
-    "plans": "Plans and Pricing"
+    "plans": "Plans and Pricing",
+    "openMenu": "Open menu"
   },
   "Hero": {
     "badge": "Custom technology to grow with predictability",
@@ -260,7 +261,13 @@
     "sectors": {
       "title": "Sectors with experience",
       "description": "We operate in sectors with complex operations and need for integration between areas.",
-      "list": ["Automotive", "Retail", "B2B Services", "Industry", "Technology and SaaS"]
+      "list": [
+        "Automotive",
+        "Retail",
+        "B2B Services",
+        "Industry",
+        "Technology and SaaS"
+      ]
     },
     "priorities": {
       "title": "What clients value",
@@ -288,9 +295,18 @@
       "Our elite engineering approach focuses on what truly matters: measurable results and absolute security. In a world saturated with promises, we deliver precision."
     ],
     "pillars": [
-      { "t": "Precision", "d": "Clean code and scalable architecture." },
-      { "t": "Authority", "d": "Design that commands respect and converts." },
-      { "t": "Security", "d": "Full compliance with GDPR and global standards." }
+      {
+        "t": "Precision",
+        "d": "Clean code and scalable architecture."
+      },
+      {
+        "t": "Authority",
+        "d": "Design that commands respect and converts."
+      },
+      {
+        "t": "Security",
+        "d": "Full compliance with GDPR and global standards."
+      }
     ],
     "learnMore": "Learn more"
   },
@@ -358,13 +374,15 @@
     "title": "Ecosystems that scale.",
     "filter_all": "All",
     "view_case": "View Case Study",
-    "results": "Impact Results"
+    "results": "Impact Results",
+    "loadMore": "Load more cases"
   },
   "Blog": {
     "tag": "TECHNICAL CONTENT",
     "title": "Engineering Insights",
     "read_more": "Read Full Article",
-    "search": "Search knowledge..."
+    "search": "Search knowledge...",
+    "readArticle": "Read article"
   },
   "Contact": {
     "tag": "CONTACT",
@@ -374,7 +392,20 @@
       "email": "Email",
       "subject": "Subject",
       "message": "Message",
-      "send": "Send Message"
+      "send": "Send Message",
+      "whatsapp": "WhatsApp",
+      "messagePlaceholder": "Share a bit about your current scenario, goals, and what needs to be unlocked.",
+      "consent": "By submitting, you agree that we may use this information to reply and continue the commercial conversation.",
+      "sending": "Sending...",
+      "error": "We could not send your message right now. Please try again in a moment.",
+      "success": "Message sent successfully. Our team will get back to you soon.",
+      "subjectOptions": {
+        "sites": "Institutional websites",
+        "platforms": "Web platforms",
+        "integrations": "CRM and ERP integrations",
+        "whiteLabel": "White-label for agencies",
+        "consulting": "Discovery and consulting"
+      }
     },
     "info": {
       "address": "Address",
@@ -402,7 +433,7 @@
       "politicaEmpresarial": "Business Policy",
       "contato": "Contact"
     },
-    "rights": "© {year} UNTI Digital. All rights reserved."
+    "rights": "? {year} UNTI Digital. All rights reserved."
   },
   "Categories": {
     "automotive": "Automotive",
@@ -461,12 +492,31 @@
     "forYourCompany": "For your company",
     "quickAccess": "Quick Access",
     "eliteDigitalEngineering": "Elite Digital Engineering",
-    "servicesAndPolicies": "Services & Policies"
+    "servicesAndPolicies": "Services & Policies",
+    "close": "Close menu",
+    "viewSolution": "View solution",
+    "signature": "UNTI Digital // Performance and Authority",
+    "companyScope": "Small, mid-sized, and large operations.",
+    "solutionsImageAlt": "UNTI Digital solutions"
   },
   "Modal": {
     "close": "Close modal"
   },
   "FullscreenMenu": {
     "close": "Close menu"
+  },
+  "LanguageSwitcher": {
+    "portuguese": "Portugu?s",
+    "english": "English",
+    "spanish": "Espa?ol",
+    "active": "Active"
+  },
+  "Newsletter": {
+    "title": "Get insights on websites, integrations, and platforms",
+    "description": "A concise stream of practical content for teams improving digital presence, operations, and technology with more predictability.",
+    "inputLabel": "Your email",
+    "inputPlaceholder": "Enter your best email",
+    "button": "Subscribe",
+    "success": "Subscription received. We will share the next insights soon."
   }
 }

@@ -1,4 +1,6 @@
-import Link from "next/link";
+"use client";
+
+import Link from "next-intl/link";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { clients } from "@/data/clients";

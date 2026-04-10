@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import {
   animate,
@@ -9,31 +9,27 @@ import {
   type PanInfo
 } from "framer-motion";
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
+import type { AppLocale } from "@/lib/i18n";
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
+import { useRouter } from "next-intl/client";
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { Modal } from "@/components/ui/Modal";
-
-type Service = {
-  slug: string;
-  title: string;
-  description: string;
-  shortDescription: string;
-  fullDescription: string;
-  bullets: string[];
-  deliverables: string[];
-  image: string;
-};
+import { getServicesContent, type Service } from "@/data/services";
 
 const AUTO_SCROLL_PX_PER_SECOND = 90;
 const INTERACTION_PAUSE_DELAY = 1400;
 
 export function ServicesCarousel() {
-  const t = useTranslations("ServicesCarousel");
-  const services = t.raw("services");
+  const locale = useLocale() as AppLocale;
+  const router = useRouter();
+  const content = getServicesContent(locale);
+  const services = content.services;
+  const labels = content.labels;
+  const serviceCount = services.length;
   const [selectedService, setSelectedService] = useState<Service | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [groupWidth, setGroupWidth] = useState(0);
@@ -100,19 +96,19 @@ export function ServicesCarousel() {
       const logicalOffset =
         (((-value - groupWidth) % groupWidth) + groupWidth) % groupWidth;
       const nextIndex =
-        Math.floor((logicalOffset + stepWidth / 2) / stepWidth) % services.length;
+        Math.floor((logicalOffset + stepWidth / 2) / stepWidth) % serviceCount;
 
       activeIndexRef.current = nextIndex;
       setActiveIndex((current) => (current === nextIndex ? current : nextIndex));
     },
-    [groupWidth, stepWidth, services.length]
+    [groupWidth, stepWidth, serviceCount]
   );
 
   const resolveTargetX = useCallback(
     (index: number) => {
       if (!groupWidth || !stepWidth) return x.get();
 
-      const normalizedIndex = ((index % services.length) + services.length) % services.length;
+      const normalizedIndex = ((index % serviceCount) + serviceCount) % serviceCount;
       const itemOffset = normalizedIndex * stepWidth;
       const currentX = x.get();
       const candidates = [
@@ -127,7 +123,7 @@ export function ServicesCarousel() {
           : closest;
       });
     },
-    [groupWidth, stepWidth, x, services.length]
+    [groupWidth, stepWidth, x, serviceCount]
   );
 
   const animateToX = useCallback(
@@ -149,18 +145,18 @@ export function ServicesCarousel() {
         }
       });
     },
-    [normalizeX, pauseAutoplayTemporarily, stopAnimation, updateActiveIndexFromX, x, services.length]
+    [normalizeX, pauseAutoplayTemporarily, stopAnimation, updateActiveIndexFromX, x]
   );
 
   const goToIndex = useCallback(
     (index: number) => {
-      const normalizedIndex = ((index % services.length) + services.length) % services.length;
+      const normalizedIndex = ((index % serviceCount) + serviceCount) % serviceCount;
       const targetX = resolveTargetX(normalizedIndex);
       activeIndexRef.current = normalizedIndex;
       setActiveIndex(normalizedIndex);
       animateToX(targetX);
     },
-    [animateToX, resolveTargetX]
+    [animateToX, resolveTargetX, serviceCount]
   );
 
   const handleCardClick = (service: Service) => {
@@ -204,7 +200,7 @@ export function ServicesCarousel() {
 
     const logicalOffset =
       (((-x.get() - groupWidth) % groupWidth) + groupWidth) % groupWidth;
-    const nearestIndex = Math.round(logicalOffset / stepWidth) % services.length;
+    const nearestIndex = Math.round(logicalOffset / stepWidth) % serviceCount;
 
     activeIndexRef.current = nearestIndex;
     setActiveIndex(nearestIndex);
@@ -225,7 +221,7 @@ export function ServicesCarousel() {
       const styles = window.getComputedStyle(track);
       const gap = parseFloat(styles.columnGap || styles.gap || "0");
       const nextStepWidth = firstCard.offsetWidth + gap;
-      const nextGroupWidth = services.length * nextStepWidth;
+      const nextGroupWidth = serviceCount * nextStepWidth;
       const nextX = -(nextGroupWidth + activeIndexRef.current * nextStepWidth);
 
       stopAnimation();
@@ -239,7 +235,7 @@ export function ServicesCarousel() {
     window.addEventListener("resize", measureTrack);
 
     return () => window.removeEventListener("resize", measureTrack);
-  }, [stopAnimation, updateActiveIndexFromX, x, services.length]);
+  }, [stopAnimation, updateActiveIndexFromX, x, serviceCount]);
 
   useEffect(() => {
     const viewport = viewportRef.current;
@@ -290,10 +286,10 @@ export function ServicesCarousel() {
       <Container>
         <div className="mb-16 text-left">
           <h2 className="mb-4 text-3xl font-bold text-brand-dark md:text-4xl">
-            {t("title")}
+            {content.title}
           </h2>
           <p className="max-w-3xl text-lg text-brand-muted">
-            {t("subtitle")}
+            {content.subtitle}
           </p>
         </div>
 
@@ -302,7 +298,7 @@ export function ServicesCarousel() {
             type="button"
             onClick={() => goToIndex(activeIndexRef.current - 1)}
             className="absolute left-0 top-[calc(56.25%/2)] z-10 -translate-y-1/2 rounded-full bg-white p-3 shadow-lg transition-colors hover:bg-gray-50 sm:top-1/2"
-            aria-label="Anterior"
+            aria-label={labels.previous}
           >
             <svg className="h-6 w-6 text-unti-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -332,7 +328,7 @@ export function ServicesCarousel() {
                 return (
                   <article
                     key={`${service.slug}-${index}`}
-                    ref={index === services.length ? firstCardRef : undefined}
+                    ref={index === serviceCount ? firstCardRef : undefined}
                     role="button"
                     tabIndex={0}
                     onClick={() => handleCardClick(service)}
@@ -380,7 +376,7 @@ export function ServicesCarousel() {
                               handleCardClick(service);
                             }}
                           >
-                            {t("viewDetails")} →
+                            {labels.viewDetails} {'->'}
                           </Button>
                         </div>
                       </div>
@@ -395,7 +391,7 @@ export function ServicesCarousel() {
             type="button"
             onClick={() => goToIndex(activeIndexRef.current + 1)}
             className="absolute right-0 top-[calc(56.25%/2)] z-10 -translate-y-1/2 rounded-full bg-white p-3 shadow-lg transition-colors hover:bg-gray-50 sm:top-1/2"
-            aria-label="Próximo"
+            aria-label={labels.next}
           >
             <svg className="h-6 w-6 text-unti-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -413,7 +409,7 @@ export function ServicesCarousel() {
                     ? "w-8 bg-unti-blue"
                     : "w-2 bg-gray-300 hover:bg-gray-400"
                 }`}
-                aria-label={`Ir para slide ${index + 1}`}
+                aria-label={`${labels.goToSlide} ${index + 1}`}
                 aria-current={index === activeIndex}
               />
             ))}
@@ -434,7 +430,7 @@ export function ServicesCarousel() {
               </p>
 
               <div>
-                <h4 className="mb-3 font-semibold text-brand-dark">{t("differentials")}</h4>
+                <h4 className="mb-3 font-semibold text-brand-dark">{labels.differentials}</h4>
                 <ul className="space-y-2">
                   {selectedService.bullets.map((bullet, idx) => (
                     <li key={idx} className="flex items-start gap-2">
@@ -448,7 +444,7 @@ export function ServicesCarousel() {
               </div>
 
               <div>
-                <h4 className="mb-3 font-semibold text-brand-dark">{t("deliverables")}</h4>
+                <h4 className="mb-3 font-semibold text-brand-dark">{labels.deliverables}</h4>
                 <ul className="space-y-2">
                   {selectedService.deliverables.map((item, idx) => (
                     <li key={idx} className="flex items-start gap-2">
@@ -462,11 +458,11 @@ export function ServicesCarousel() {
               </div>
 
               <div className="flex flex-col gap-3 pt-4 sm:flex-row">
-                <Button type="button" variant="primary" onClick={() => (window.location.href = "/contato")}>
-                  {t("contactExpert")}
+                <Button type="button" variant="primary" onClick={() => router.push("/contato")}>
+                  {labels.contactExpert}
                 </Button>
-                <Button type="button" variant="secondary" onClick={() => (window.location.href = "/cases")}>
-                  {t("viewCases")}
+                <Button type="button" variant="secondary" onClick={() => router.push("/cases")}>
+                  {labels.viewCases}
                 </Button>
               </div>
             </div>
@@ -487,3 +483,5 @@ export function ServicesCarousel() {
     </Section>
   );
 }
+
+

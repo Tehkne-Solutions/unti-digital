@@ -1,7 +1,10 @@
 "use client";
 
+﻿"use client";
+
 import { useMemo, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import type { CaseStudy } from "@/data/cases";
 import CaseCard from "@/components/CaseCard";
 
@@ -14,6 +17,7 @@ interface CasesPortfolioGridProps {
 export function CasesPortfolioGrid({ cases }: CasesPortfolioGridProps) {
   const [mostrarTodos, setMostrarTodos] = useState(false);
   const shouldReduceMotion = useReducedMotion();
+  const t = useTranslations("Cases");
 
   const casesVisiveis = useMemo(
     () => (mostrarTodos ? cases : cases.slice(0, INITIAL_CASES)),
@@ -62,7 +66,7 @@ export function CasesPortfolioGrid({ cases }: CasesPortfolioGridProps) {
             whileTap={shouldReduceMotion ? undefined : { scale: 0.99 }}
             className="interactive-btn inline-flex h-12 items-center justify-center rounded-xl border border-unti-blue px-6 text-sm font-semibold text-unti-blue transition-all duration-300 hover:bg-unti-blue hover:text-white"
           >
-            Carregar Mais Projetos
+            {t("loadMore")}
           </motion.button>
         </div>
       ) : null}

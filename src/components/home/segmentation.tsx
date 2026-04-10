@@ -5,9 +5,11 @@ import { Container } from "@/components/ui/Container";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { useTranslations } from "next-intl";
+import { useRouter } from "next-intl/client";
 
 export function Segmentation() {
   const t = useTranslations("Segmentation");
+  const router = useRouter();
 
   return (
     <Section>
@@ -96,7 +98,7 @@ export function Segmentation() {
               <div className="pt-4">
                 <Button
                   variant="link"
-                  onClick={() => (window.location.href = "/solucoes/empresas")}
+                  onClick={() => router.push("/solucoes/empresas")}
                 >
                   {t("companies.cta")}
                 </Button>
@@ -173,7 +175,7 @@ export function Segmentation() {
                 <Button
                   variant="link"
                   className="text-white"
-                  onClick={() => (window.location.href = "/solucoes/agencias")}
+                  onClick={() => router.push("/solucoes/agencias")}
                 >
                   {t("agencies.cta")}
                 </Button>

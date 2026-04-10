@@ -1,5 +1,11 @@
+"use client";
+
+﻿"use client";
+
 import Image from "next/image";
-import Link from "next/link";
+import type { AppLocale } from "@/lib/i18n";
+import Link from "next-intl/link";
+import { useLocale, useTranslations } from "next-intl";
 import type { BlogPost } from "@/data/posts";
 
 interface BlogPostCardProps {
@@ -10,9 +16,11 @@ interface BlogPostCardProps {
 export function BlogPostCard({ post, variant = "list" }: BlogPostCardProps) {
   const isRelated = variant === "related";
   const isHome = variant === "home";
+  const locale = useLocale() as AppLocale;
+  const t = useTranslations("Blog");
 
   return (
-    <Link href={`/blog/${post.slug}`} className="group block no-underline hover:no-underline">
+    <Link href={`/blog/${post.slug}`} locale={locale} className="group block no-underline hover:no-underline">
       <article
         className={`overflow-hidden rounded-[28px] border border-zinc-100 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_70px_rgba(15,23,42,0.08)] ${
           isRelated ? "h-full" : "shadow-[0_14px_50px_rgba(15,23,42,0.05)]"
@@ -50,7 +58,7 @@ export function BlogPostCard({ post, variant = "list" }: BlogPostCardProps) {
           </div>
 
           <div className="inline-flex items-center text-sm font-semibold text-unti-blue">
-            Ler materia
+            {t("readArticle")}
           </div>
         </div>
       </article>

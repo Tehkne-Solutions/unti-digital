@@ -1,6 +1,10 @@
+﻿"use client";
+
 import Image from "next/image";
-import Link from "next/link";
-import { caseCategoryThemes, type CaseStudy } from "@/data/cases";
+import Link from "next-intl/link";
+import { useLocale } from "next-intl";
+import { getCaseCategoryThemes, type CaseStudy } from "@/data/cases";
+import type { AppLocale } from "@/lib/i18n";
 
 interface CaseCardProps {
   caseItem: CaseStudy;
@@ -13,7 +17,8 @@ export default function CaseCard({
   variant = "portfolio",
   priority = false
 }: CaseCardProps) {
-  const theme = caseCategoryThemes[caseItem.categoria];
+  const locale = useLocale() as AppLocale;
+  const theme = getCaseCategoryThemes(locale)[caseItem.categoria];
 
   if (variant === "home") {
     return (
@@ -32,9 +37,7 @@ export default function CaseCard({
           </div>
 
           <div className="space-y-3 px-6 py-6">
-            <span
-              className={`inline-flex rounded-full border px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] ${theme.badgeClassName}`}
-            >
+            <span className={`inline-flex rounded-full border px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] ${theme.badgeClassName}`}>
               {caseItem.segmento}
             </span>
             <div className="space-y-2">
@@ -64,9 +67,7 @@ export default function CaseCard({
 
           <div className="absolute inset-x-0 bottom-0 p-6">
             <div className="translate-y-3 transition-transform duration-500 group-hover:translate-y-0">
-              <span
-                className={`inline-flex rounded-full border px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] ${theme.badgeClassName}`}
-              >
+              <span className={`inline-flex rounded-full border px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] ${theme.badgeClassName}`}>
                 {theme.label}
               </span>
               <h3 className="mt-4 text-2xl font-semibold text-white">{caseItem.cliente}</h3>
