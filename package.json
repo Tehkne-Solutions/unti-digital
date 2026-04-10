@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "audit:i18n": "node audit-intl-coverage.mjs"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.9",

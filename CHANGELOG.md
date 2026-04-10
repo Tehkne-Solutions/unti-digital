@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-04-10 - Fechamento Multi-idioma PT/EN/ES
+
+- Normalizada a arquitetura de i18n com rotas localizadas em `/[locale]`, metadata por p?gina, `not-found` localizado e navega??o padronizada com `next-intl`.
+- Conclu?da a cobertura multi-idioma das p?ginas institucionais, contato, integra??es, solu??es, blog, posts, cases e estudos de caso com conte?do por locale em `src/data`.
+- Corrigidos os erros que quebravam o deploy na Vercel, incluindo as rotas din?micas de blog/cases, tipagem de locale, componentes compartilhados e compatibilidade do cat?logo de servi?os.
+- Atualizados `robots.ts` e `sitemap.ts` para o dom?nio can?nico `https://untidigital.com.br` com URLs por idioma e alternates.
+- Adicionada a auditoria `audit-intl-coverage.mjs` e script `npm run audit:i18n` para validar chaves obrigat?rias, arquivos esperados e navega??o que perde locale.
+- Valida??o conclu?da com `npm run audit:i18n` e `npm run build`.
+
+---
+
 ## 2025-01-XX - FASE 3: Services Carousel + Modal Técnico
 
 ### 📦 Seção de Serviços (Preferida do Cliente)
