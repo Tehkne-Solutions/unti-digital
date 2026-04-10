@@ -1,12 +1,14 @@
-export { default } from "@/app/cases/[slug]/page";
-export * from "@/app/cases/[slug]/page";
+import { Container } from "@/components/ui/Container";
+import { useTranslations } from "next-intl";
 
-import { generateStaticParams as caseStaticParams } from "@/app/cases/[slug]/page";
+export default function CasePage({ params }: { params: { slug: string } }) {
+  const t = useTranslations("Cases");
 
-const locales = ["pt", "en", "es"] as const;
-
-export function generateStaticParams() {
-  return caseStaticParams().flatMap(({ slug }) =>
-    locales.map((locale) => ({ locale, slug }))
+  return (
+    <Container className="py-20">
+      <h1 className="text-4xl font-bold">Case: {params.slug}</h1>
+      <p className="mt-4 text-lg">{t("view_case")}</p>
+    </Container>
   );
+}
 }

@@ -2,6 +2,7 @@
 
 import { Fragment, ReactNode } from "react";
 import { Dialog, Transition } from "@headlessui/react";
+import { useTranslations } from "next-intl";
 
 interface ModalProps {
   isOpen: boolean;
@@ -11,6 +12,8 @@ interface ModalProps {
 }
 
 export function Modal({ isOpen, onClose, children, title }: ModalProps) {
+  const t = useTranslations('Modal');
+
   return (
     <Transition appear show={isOpen} as={Fragment}>
       <Dialog as="div" className="relative z-[90]" onClose={onClose}>
@@ -41,7 +44,7 @@ export function Modal({ isOpen, onClose, children, title }: ModalProps) {
                 <button
                   onClick={onClose}
                   className="absolute right-4 top-4 z-10 text-gray-400 transition-colors hover:text-gray-600"
-                  aria-label="Fechar modal"
+                  aria-label={t("close")}
                 >
                   <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />

@@ -4,45 +4,46 @@ import { AnimatePresence, motion } from "framer-motion";
 import { X, ArrowUpRight, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 const solutionCards = [
   {
-    t: "Sites Institucionais",
+    key: "institutionalSites",
     img: "/images/solutions/unti-digital-solution-high-performance-websites.png",
     h: "/solucoes/sites-institucionais",
   },
   {
-    t: "Plataformas Web",
+    key: "webPlatforms",
     img: "/images/solutions/unti-digital-solution-custom-web-platforms.png",
     h: "/solucoes/plataformas-web",
   },
   {
-    t: "Integrações CRM & ERP",
+    key: "crmErpIntegrations",
     img: "/images/solutions/unti-digital-solution-crm-erp-integrations.png",
     h: "/solucoes/integracoes-crm-erp",
   },
   {
-    t: "Governança e Segurança",
+    key: "governanceSecurity",
     img: "/images/solutions/unti-digital-solution-governance-security.png",
     h: "/solucoes/governanca-seguranca",
   },
 ];
 
 const mainLinks = [
-  { label: "Home", href: "/" },
-  { label: "Soluções", href: "/solucoes" },
-  { label: "Cases", href: "/cases" },
-  { label: "Conteúdo", href: "/blog" },
-  { label: "Sobre a UNTI", href: "/sobre" },
-  { label: "Contato", href: "/contato" },
+  { key: "home", href: "/" },
+  { key: "solutions", href: "/solucoes" },
+  { key: "cases", href: "/cases" },
+  { key: "content", href: "/blog" },
+  { key: "about", href: "/sobre" },
+  { key: "contact", href: "/contato" },
 ];
 
 const subLinks = [
-  { label: "Para Empresas", href: "/solucoes" },
-  { label: "Para Agências (White Label)", href: "/solucoes/white-label-agencias" },
-  { label: "Integrações com APIs", href: "/solucoes/integracoes-crm-erp" },
-  { label: "Política de Privacidade", href: "/privacidade" },
-  { label: "Política Empresarial", href: "/politica-empresarial" },
+  { key: "forCompanies", href: "/solucoes" },
+  { key: "forAgencies", href: "/solucoes/white-label-agencias" },
+  { key: "apiIntegrations", href: "/solucoes/integracoes-crm-erp" },
+  { key: "privacyPolicy", href: "/privacidade" },
+  { key: "businessPolicy", href: "/politica-empresarial" },
 ];
 
 export const FullscreenMenu = ({
@@ -52,6 +53,8 @@ export const FullscreenMenu = ({
   isOpen: boolean;
   onClose: () => void;
 }) => {
+  const t = useTranslations('Menu');
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -66,24 +69,24 @@ export const FullscreenMenu = ({
           <div className="hidden lg:flex lg:col-span-7 flex-col justify-between border-r border-zinc-100 bg-zinc-50 p-16">
             <div>
               <p className="mb-12 text-[10px] font-black uppercase italic tracking-[0.3em] text-unti-blue">
-                Engenharia Digital de Elite
+                {t("eliteDigitalEngineering")}
               </p>
               <div className="grid grid-cols-2 gap-6">
                 {solutionCards.map((item) => (
                   <Link
-                    key={item.t}
+                    key={item.key}
                     href={item.h}
                     onClick={onClose}
                     className="group relative h-72 overflow-hidden rounded-[32px] border border-zinc-200 bg-white shadow-sm"
                   >
                     <Image
                       src={item.img}
-                      alt={item.t}
+                      alt={t(item.key)}
                       fill
                       className="object-cover opacity-80 transition-all duration-700 group-hover:scale-105 group-hover:opacity-100"
                     />
                     <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-zinc-900/70 to-transparent p-7">
-                      <h4 className="text-xl font-black text-white">{item.t}</h4>
+                      <h4 className="text-xl font-black text-white">{t(item.key)}</h4>
                       <p className="mt-1 text-xs font-semibold uppercase tracking-widest text-white/60">
                         Ver solução
                       </p>
@@ -107,7 +110,7 @@ export const FullscreenMenu = ({
               <button
                 onClick={onClose}
                 className="rounded-full bg-zinc-900 p-4 text-white shadow-xl transition-all hover:bg-unti-blue"
-                aria-label="Fechar menu"
+                aria-label={t("close")}
               >
                 <X className="h-5 w-5" />
               </button>
@@ -117,12 +120,12 @@ export const FullscreenMenu = ({
             <nav className="mt-12 flex flex-col gap-3">
               {mainLinks.map((link) => (
                 <Link
-                  key={link.label}
+                  key={link.key}
                   href={link.href}
                   onClick={onClose}
                   className="group flex items-center gap-3 text-4xl font-black text-zinc-900 transition-all hover:translate-x-2 hover:text-unti-blue md:text-5xl"
                 >
-                  {link.label}
+                  {t(link.key)}
                   <ArrowUpRight className="h-7 w-7 opacity-0 transition-opacity group-hover:opacity-100" />
                 </Link>
               ))}
@@ -131,18 +134,18 @@ export const FullscreenMenu = ({
             {/* Sub-links: serviços e políticas */}
             <div className="mt-12 border-t border-zinc-100 pt-8">
               <p className="mb-5 text-[10px] font-black uppercase italic tracking-widest text-zinc-400">
-                Serviços &amp; Políticas
+                {t("servicesAndPolicies")}
               </p>
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 {subLinks.map((sub) => (
                   <Link
-                    key={sub.label}
+                    key={sub.key}
                     href={sub.href}
                     onClick={onClose}
                     className="flex items-center gap-2 text-xs font-bold text-zinc-600 transition-colors hover:text-unti-blue"
                   >
                     <ChevronRight className="h-3 w-3 text-unti-blue" />
-                    {sub.label}
+                    {t(sub.key)}
                   </Link>
                 ))}
               </div>

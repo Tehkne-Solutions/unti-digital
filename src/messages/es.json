@@ -245,7 +245,33 @@
   "viewCases": "Ver casos",
   "viewDetails": "Ver detalles",
   "Clients": {
-    "title": "Empresas con proyecto Unti Digital"
+    "title": "Clientes",
+    "description": "Perfil de empresas que atendemos y prioridades comunes en las entregas de UNTI.",
+    "whoWeServe": {
+      "title": "A quién atendemos",
+      "description": "Trabajamos con cuentas que necesitan ejecución rápida, gobernanza y presencia institucional consistente.",
+      "profiles": [
+        "Empresas con operación digital crítica",
+        "Equipos de marketing y TI que necesitan alineación",
+        "Negocios B2B con ciclo de venta consultiva",
+        "Organizaciones en reposicionamiento de marca"
+      ]
+    },
+    "sectors": {
+      "title": "Sectores con experiencia",
+      "description": "Actuamos en sectores con operaciones complejas y necesidad de integración entre áreas.",
+      "list": ["Automotriz", "Retail", "Servicios B2B", "Industria", "Tecnología y SaaS"]
+    },
+    "priorities": {
+      "title": "Qué valoran los clientes",
+      "description": "Los proyectos institucionales exigen claridad de comunicación e integración con la operación.",
+      "list": [
+        "Gobernanza y previsibilidad",
+        "Seguridad y LGPD",
+        "Integración con CRM y datos",
+        "Experiencia institucional robusta"
+      ]
+    }
   },
   "About": {
     "title": "Sobre UNTI",
@@ -271,6 +297,8 @@
   "Solutions": {
     "title": "Nuestras Soluciones",
     "header_tag": "INGENIERÍA UNTI // SOLUCIONES",
+    "subtitle": "Construimos soluciones digitales para empresas y agencias que necesitan conversión, integración, seguridad y escala con estándares empresariales.",
+    "cta": "Hablar con especialista",
     "institutional": {
       "title": "Sitios Institucionales",
       "desc": "Portales de alta autoridad centrados en la conversión y presencia corporativa."
@@ -291,8 +319,39 @@
       "title": "Marca Blanca para Agencias",
       "desc": "La fuerza de ingeniería de UNTI como el brazo técnico de su agencia."
     }
-  },
-  "Cases": {
+  },  "Integrations": {
+    "title": "Integraciones con APIs",
+    "description": "Descubre la forma más moderna y segura de integrar APIs, CRM, ERP y sistemas internos para automatizar datos y operaciones.",
+    "hero": {
+      "tag": "Integraciones con APIs",
+      "title": "Servicios de integración de API para sitios web, CRM, ERP y operación.",
+      "subtitle": "Descubre la forma más fácil, moderna y segura de consumir datos en tu sitio web y conectar el corazón de tu empresa. Estructuramos integraciones que automatizan procesos y mantienen el flujo de información en tiempo real.",
+      "ctaPrimary": "Hablar con un especialista",
+      "ctaSecondary": "Ver más casos"
+    },
+    "benefits": [
+      {
+        "title": "Mantenimiento simplificado",
+        "description": "Cuando una API se actualiza o mejora, los cambios pueden absorberse con menos fricción en una arquitectura bien planificada, reduciendo rupturas de compatibilidad y retrabajo."
+      },
+      {
+        "title": "Seguridad y control",
+        "description": "Las APIs pueden operar con autenticación, autorización y rastro de acceso para proteger datos sensibles y mantener gobernanza sobre cada flujo crítico."
+      },
+      {
+        "title": "Análisis de datos",
+        "description": "Integramos fuentes de datos valiosas para que tu empresa tome decisiones más rápidas, informadas y conectadas a lo que sucede en la operación en tiempo real."
+      },
+      {
+        "title": "Ahorro de recursos",
+        "description": "Consumir APIs listas y estructurar bien la integración puede reducir costos de desarrollo, acelerar el time-to-market y evitar reinventar componentes críticos."
+      },
+      {
+        "title": "Integración de aplicaciones",
+        "description": "Conectamos sistemas, plataformas y aplicaciones heterogéneas para que compartan datos de manera eficiente, mejorando la interoperabilidad de tu ecosistema digital."
+      }
+    ]
+  },  "Cases": {
     "tag": "PORTAFOLIO DE ÉLITE",
     "title": "Ecosistemas que escalan.",
     "filter_all": "Todos",
@@ -379,5 +438,33 @@
       "title": "Manifiesto y Autoridad | UNTI Digital",
       "desc": "Conozca la ingeniería detrás de UNTI. Tecnología como medio para la soberanía digital."
     }
+  },
+  "Menu": {
+    "solutions": "Soluciones",
+    "institutionalSites": "Sitios Institucionales",
+    "webPlatforms": "Plataformas Web",
+    "crmErpIntegrations": "Integraciones CRM & ERP",
+    "governanceSecurity": "Gobernanza y Seguridad",
+    "whiteLabelAgencies": "White Label para Agencias",
+    "home": "Inicio",
+    "cases": "Casos",
+    "content": "Contenido",
+    "about": "Acerca de",
+    "contact": "Contacto",
+    "forCompanies": "Para Empresas",
+    "forAgencies": "Para Agencias (White Label)",
+    "apiIntegrations": "Integraciones con APIs",
+    "privacyPolicy": "Política de Privacidad",
+    "businessPolicy": "Política Empresarial",
+    "forYourCompany": "Para su empresa",
+    "quickAccess": "Acceso Rápido",
+    "eliteDigitalEngineering": "Ingeniería Digital de Elite",
+    "servicesAndPolicies": "Servicios & Políticas"
+  },
+  "Modal": {
+    "close": "Cerrar modal"
+  },
+  "FullscreenMenu": {
+    "close": "Cerrar menú"
   }
 }

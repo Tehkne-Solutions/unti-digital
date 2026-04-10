@@ -1,2 +1,13 @@
-export { default } from "@/app/solucoes/governanca-seguranca/page";
-export * from "@/app/solucoes/governanca-seguranca/page";
+import { Container } from "@/components/ui/Container";
+import { useTranslations } from "next-intl";
+
+export default function GovernancaSegurancaPage() {
+  const t = useTranslations("Solutions");
+
+  return (
+    <Container className="py-20">
+      <h1 className="text-4xl font-bold">{t("governance.title")}</h1>
+      <p className="mt-4 text-lg">{t("governance.desc")}</p>
+    </Container>
+  );
+}

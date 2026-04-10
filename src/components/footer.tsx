@@ -1,9 +1,7 @@
 "use client";
 
-"use client";
-
 import Image from "next/image";
-import Link from "next/link";
+import Link from "next-intl/link";
 import { useTranslations } from "next-intl";
 
 export function Footer() {
@@ -42,9 +40,7 @@ export function Footer() {
               />
             </Link>
 
-            <p className="mt-5 text-sm leading-relaxed text-white">
-              {t("description")}
-            </p>
+            <p className="mt-5 text-sm leading-relaxed text-white">{t("description")}</p>
           </div>
 
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
@@ -62,7 +58,13 @@ export function Footer() {
   );
 }
 
-function FooterColumn({ title, items }: { title: string; items: readonly (readonly [string, string])[] }) {
+function FooterColumn({
+  title,
+  items
+}: {
+  title: string;
+  items: readonly (readonly [string, string])[];
+}) {
   return (
     <div className="space-y-3">
       <h3 className="text-sm font-semibold text-white">{title}</h3>

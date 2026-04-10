@@ -245,7 +245,33 @@
   "viewCases": "View cases",
   "viewDetails": "View details",
   "Clients": {
-    "title": "Companies with Unti Digital project"
+    "title": "Clients",
+    "description": "Profile of companies we serve and common priorities in UNTI deliveries.",
+    "whoWeServe": {
+      "title": "Who we serve",
+      "description": "We work with accounts that need fast execution, governance and consistent institutional presence.",
+      "profiles": [
+        "Companies with critical digital operations",
+        "Marketing and IT teams that need alignment",
+        "B2B businesses with consultative sales cycle",
+        "Organizations in brand repositioning"
+      ]
+    },
+    "sectors": {
+      "title": "Sectors with experience",
+      "description": "We operate in sectors with complex operations and need for integration between areas.",
+      "list": ["Automotive", "Retail", "B2B Services", "Industry", "Technology and SaaS"]
+    },
+    "priorities": {
+      "title": "What clients value",
+      "description": "Institutional projects require clear communication and integration with operations.",
+      "list": [
+        "Governance and predictability",
+        "Security and LGPD",
+        "CRM and data integration",
+        "Robust institutional experience"
+      ]
+    }
   },
   "About": {
     "title": "About UNTI",
@@ -271,6 +297,8 @@
   "Solutions": {
     "title": "Our Solutions",
     "header_tag": "UNTI ENGINEERING // SOLUTIONS",
+    "subtitle": "We build digital solutions for companies and agencies that need conversion, integration, security and scale with enterprise standards.",
+    "cta": "Talk to an expert",
     "institutional": {
       "title": "Institutional Websites",
       "desc": "High-authority portals focused on conversion and corporate digital presence."
@@ -291,6 +319,39 @@
       "title": "White Label for Agencies",
       "desc": "UNTI's engineering power operating as your agency's technical arm."
     }
+  },
+  "Integrations": {
+    "title": "API Integrations",
+    "description": "Discover the most modern and secure way to integrate APIs, CRM, ERP and internal systems to automate data and operations.",
+    "hero": {
+      "tag": "API Integrations",
+      "title": "API integration services for websites, CRM, ERP and operation.",
+      "subtitle": "Discover the easiest, most modern and secure way to consume data on your website and connect your company's heart. We structure integrations that automate processes and keep information flow in real time.",
+      "ctaPrimary": "Talk to an expert",
+      "ctaSecondary": "See more cases"
+    },
+    "benefits": [
+      {
+        "title": "Simplified maintenance",
+        "description": "When an API is updated or improved, changes can be absorbed with less friction in a well-planned architecture, reducing compatibility breaks and rework."
+      },
+      {
+        "title": "Security and control",
+        "description": "APIs can operate with authentication, authorization and access trail to protect sensitive data and maintain governance over each critical flow."
+      },
+      {
+        "title": "Data analysis",
+        "description": "We integrate valuable data sources so your company can make faster, more informed and connected decisions to what happens in real-time operation."
+      },
+      {
+        "title": "Resource savings",
+        "description": "Consuming ready-made APIs and structuring integration well can reduce development costs, accelerate time-to-market and avoid reinventing critical components."
+      },
+      {
+        "title": "Application integration",
+        "description": "We connect heterogeneous systems, platforms and applications so they can share data efficiently, improving the interoperability of your digital ecosystem."
+      }
+    ]
   },
   "Cases": {
     "tag": "ELITE PORTFOLIO",
@@ -379,5 +440,33 @@
       "title": "Manifesto & Authority | UNTI Digital",
       "desc": "Learn about the engineering behind UNTI. Technology as a vehicle for digital sovereignty."
     }
+  },
+  "Menu": {
+    "solutions": "Solutions",
+    "institutionalSites": "Institutional Sites",
+    "webPlatforms": "Web Platforms",
+    "crmErpIntegrations": "CRM & ERP Integrations",
+    "governanceSecurity": "Governance and Security",
+    "whiteLabelAgencies": "White Label for Agencies",
+    "home": "Home",
+    "cases": "Cases",
+    "content": "Content",
+    "about": "About",
+    "contact": "Contact",
+    "forCompanies": "For Companies",
+    "forAgencies": "For Agencies (White Label)",
+    "apiIntegrations": "API Integrations",
+    "privacyPolicy": "Privacy Policy",
+    "businessPolicy": "Business Policy",
+    "forYourCompany": "For your company",
+    "quickAccess": "Quick Access",
+    "eliteDigitalEngineering": "Elite Digital Engineering",
+    "servicesAndPolicies": "Services & Policies"
+  },
+  "Modal": {
+    "close": "Close modal"
+  },
+  "FullscreenMenu": {
+    "close": "Close menu"
   }
 }

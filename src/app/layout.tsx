@@ -1,5 +1,8 @@
+import type { Metadata } from "next";
+import { cookies } from "next/headers";
 import { Ubuntu } from "next/font/google";
 import "./globals.css";
+import { defaultLocale, isLocale, localeToHtmlLang, siteUrl } from "@/lib/i18n";
 
 const ubuntu = Ubuntu({
   subsets: ["latin"],
@@ -8,35 +11,8 @@ const ubuntu = Ubuntu({
   variable: "--font-ubuntu"
 });
 
-export const metadata = {
-  metadataBase: new URL("https://untidigital.com.br"),
-  title: "UNTI Digital | Soluções de Performance, Segurança e Escala",
-  description:
-    "Desenvolvimento de alta performance para empresas e agências que buscam resultados reais.",
-  openGraph: {
-    title: "UNTI Digital | Soluções de Performance, Segurança e Escala",
-    description:
-      "Desenvolvimento de alta performance para empresas e agências que buscam resultados reais.",
-    url: "https://untidigital.com.br",
-    siteName: "UNTI Digital",
-    locale: "pt_BR",
-    type: "website",
-    images: [
-      {
-        url: "/images/unti-digital-homepage-image-hero-bg.jpeg",
-        width: 1600,
-        height: 900,
-        alt: "UNTI Digital"
-      }
-    ]
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "UNTI Digital | Soluções de Performance, Segurança e Escala",
-    description:
-      "Desenvolvimento de alta performance para empresas e agencias que buscam resultados reais.",
-    images: ["/images/unti-digital-homepage-image-hero-bg.jpeg"]
-  },
+export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   icons: {
     icon: "/images/unti-digital-favicon.png",
     shortcut: "/images/unti-digital-favicon.png",
@@ -44,9 +20,12 @@ export const metadata = {
   }
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const localeCookie = cookies().get("NEXT_LOCALE")?.value ?? defaultLocale;
+  const locale = isLocale(localeCookie) ? localeCookie : defaultLocale;
+
   return (
-    <html lang="pt-BR">
+    <html lang={localeToHtmlLang[locale]}>
       <body className={`${ubuntu.variable} font-sans bg-white text-zinc-900`}>
         {children}
       </body>

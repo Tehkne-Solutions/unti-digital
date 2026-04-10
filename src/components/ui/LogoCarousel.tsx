@@ -2,51 +2,52 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next-intl/link";
+import { useLocale, useTranslations } from "next-intl";
 import ClientModal from "@/components/ClientModal";
 import { clients } from "@/data/clients";
-import { useTranslations } from "next-intl";
+import { getHomeContent } from "@/data/home-content";
+import type { AppLocale } from "@/lib/i18n";
 
 export const LogoCarousel = () => {
+  const locale = useLocale() as AppLocale;
   const t = useTranslations("LogoCarousel");
+  const content = getHomeContent(locale).logoCarousel;
   const [selectedClient, setSelectedClient] = useState<typeof clients[number] | null>(null);
 
-  // Duplicamos a lista para criar o efeito infinito sem saltos
   const duplicatedClients = [...clients, ...clients];
 
   return (
-    <section className="py-20 bg-white overflow-hidden">
-      <div className="container mx-auto px-4 mb-10 text-center">
-        <h2 className="mb-4 text-3xl font-bold text-brand-dark md:text-4xl">
-          {t("title")}
-        </h2>
-        <p className="text-brand-muted">
-          {t("subtitle")}
-        </p>
+    <section className="overflow-hidden bg-white py-20">
+      <div className="container mx-auto mb-10 px-4 text-center">
+        <h2 className="mb-4 text-3xl font-bold text-brand-dark md:text-4xl">{t("title")}</h2>
+        <p className="text-brand-muted">{t("subtitle")}</p>
       </div>
 
-      {/* Container do Carrossel com Máscara de Gradiente */}
       <div className="relative flex items-center">
-        {/* Efeito de Fade nas laterais */}
-        <div className="absolute inset-y-0 left-0 w-20 md:w-40 bg-gradient-to-r from-white to-transparent z-10" />
-        <div className="absolute inset-y-0 right-0 w-20 md:w-40 bg-gradient-to-l from-white to-transparent z-10" />
+        <div className="absolute inset-y-0 left-0 z-10 w-20 bg-gradient-to-r from-white to-transparent md:w-40" />
+        <div className="absolute inset-y-0 right-0 z-10 w-20 bg-gradient-to-l from-white to-transparent md:w-40" />
 
-        {/* Linha de Animação */}
-        <div className="flex animate-infinite-scroll gap-16 md:gap-24 items-center whitespace-nowrap">
+        <div className="flex animate-infinite-scroll items-center gap-16 whitespace-nowrap md:gap-24">
           {duplicatedClients.map((client, index) => (
             <button
               key={`${client.id}-${index}`}
               onClick={() => setSelectedClient(client)}
-              className="flex-shrink-0 w-[150px] md:w-[200px] h-20 relative grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500 ease-in-out cursor-pointer p-4"
+              className="relative h-20 w-[150px] flex-shrink-0 cursor-pointer p-4 grayscale opacity-40 transition-all duration-500 ease-in-out hover:grayscale-0 hover:opacity-100 md:w-[200px]"
             >
-              <Image
-                src={client.logo}
-                alt={client.name}
-                fill
-                className="object-contain"
-              />
+              <Image src={client.logo} alt={client.name} fill className="object-contain" />
             </button>
           ))}
         </div>
+      </div>
+
+      <div className="mt-10 text-center">
+        <Link
+          href="/contato"
+          className="inline-flex items-center rounded-xl border border-unti-blue px-5 py-3 text-sm font-semibold text-unti-blue no-underline transition-colors hover:bg-unti-blue hover:text-white hover:no-underline"
+        >
+          {content.cta}
+        </Link>
       </div>
 
       <ClientModal client={selectedClient} onClose={() => setSelectedClient(null)} />

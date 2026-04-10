@@ -1,11 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import Link from "next-intl/link";
 import { Menu } from "lucide-react";
 import { motion } from "framer-motion";
-import { useTranslations } from 'next-intl';
+import { useTranslations } from "next-intl";
 import { MegaMenuModal } from "@/components/ui/MegaMenuModal";
 import { FullscreenMenu } from "@/components/ui/FullscreenMenu";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
@@ -14,20 +14,37 @@ const contact = {
   email: "contato@untidigital.com.br",
   phone: "+55 19 98280-9717",
   linkedin: "https://www.linkedin.com/company/untidigital/",
-  instagram: "https://www.instagram.com/untidigital/",
+  instagram: "https://www.instagram.com/untidigital/"
 };
 
 function IconMail() {
   return (
-    <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-      <path d="M4 4h16v16H4z" /><path d="M22 6l-10 7L2 6" />
+    <svg
+      className="h-3.5 w-3.5"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M4 4h16v16H4z" />
+      <path d="M22 6l-10 7L2 6" />
     </svg>
   );
 }
 
 function IconPhone() {
   return (
-    <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+    <svg
+      className="h-3.5 w-3.5"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
       <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72 12.34 12.34 0 0 0 .57 2.81 2 2 0 0 1-.45 2.11L9 10.5a16 16 0 0 0 6.5 6.5l1.85-1.1a2 2 0 0 1 2.11-.45 12.34 12.34 0 0 0 2.81.57A2 2 0 0 1 22 16.92z" />
     </svg>
   );
@@ -52,7 +69,7 @@ function IconInstagram() {
 }
 
 export function Header() {
-  const t = useTranslations('Header');
+  const t = useTranslations("Header");
   const [megaMenuOpen, setMegaMenuOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -65,7 +82,6 @@ export function Header() {
 
   return (
     <>
-      {/* TOP BAR */}
       <motion.div
         className="bg-unti-blue text-white"
         initial={{ opacity: 0, y: -10 }}
@@ -74,31 +90,44 @@ export function Header() {
       >
         <div className="mx-auto flex max-w-[1200px] items-center justify-between px-6 py-3 text-xs">
           <div className="flex items-center gap-6">
-            <a href={`mailto:${contact.email}`} className="flex items-center gap-2 text-white transition-colors hover:text-blue-100">
+            <a
+              href={`mailto:${contact.email}`}
+              className="flex items-center gap-2 text-white transition-colors hover:text-blue-100"
+            >
               <IconMail />
               <span className="hidden sm:inline">{contact.email}</span>
             </a>
-            <a href={`tel:${contact.phone.replace(/\D/g, "")}`} className="flex items-center gap-2 text-white transition-colors hover:text-blue-100">
+            <a
+              href={`tel:${contact.phone.replace(/\D/g, "")}`}
+              className="flex items-center gap-2 text-white transition-colors hover:text-blue-100"
+            >
               <IconPhone />
               <span className="hidden sm:inline">{contact.phone}</span>
             </a>
           </div>
           <div className="flex items-center gap-4">
-            <a href={contact.linkedin} target="_blank" rel="noreferrer" className="text-white transition-colors hover:text-blue-100">
+            <a
+              href={contact.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              className="text-white transition-colors hover:text-blue-100"
+            >
               <IconLinkedIn />
             </a>
-            <a href={contact.instagram} target="_blank" rel="noreferrer" className="text-white transition-colors hover:text-blue-100">
+            <a
+              href={contact.instagram}
+              target="_blank"
+              rel="noreferrer"
+              className="text-white transition-colors hover:text-blue-100"
+            >
               <IconInstagram />
             </a>
           </div>
         </div>
       </motion.div>
 
-      {/* MAIN NAV */}
       <header className="sticky top-0 z-50 border-b border-gray-200 bg-white/95 backdrop-blur-md">
         <div className="mx-auto flex h-20 max-w-[1200px] items-center justify-between px-6">
-
-          {/* LOGO */}
           <Link href="/" className="flex items-center" aria-label="UNTI Digital">
             <motion.div
               animate={{ width: scrolled ? 150 : 240 }}
@@ -116,47 +145,43 @@ export function Header() {
             </motion.div>
           </Link>
 
-          {/* DESKTOP NAV — minimalista */}
           <nav className="hidden items-center gap-8 md:flex">
             <Link
               href="/integracoes"
               className="text-xs font-black uppercase tracking-widest text-zinc-700 transition-colors hover:text-unti-blue"
             >
-              {t('integrations')}
+              {t("integrations")}
             </Link>
             <Link
               href="/contato"
               className="text-xs font-black uppercase tracking-widest text-zinc-700 transition-colors hover:text-unti-blue"
             >
-              {t('contact')}
+              {t("contact")}
             </Link>
 
-            {/* Hambúrguer desktop — abre MegaMenuModal */}
             <button
               onClick={() => setMegaMenuOpen(true)}
               className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-zinc-900 transition-colors hover:text-unti-blue"
-              aria-label="Menu"
+              aria-label={t("menu")}
             >
               <Menu className="h-5 w-5" />
-              {t('menu')}
+              {t("menu")}
             </button>
 
-            {/* Botão Planos com efeito brilho */}
             <LanguageSwitcher />
             <Link
               href="/planos"
               className="interactive-btn group relative inline-flex h-10 items-center justify-center overflow-hidden rounded-xl bg-unti-blue px-5 text-xs font-bold uppercase tracking-[0.14em] text-white shadow-[0_8px_24px_rgba(57,108,255,0.35)] transition-all duration-300 hover:scale-[0.97] hover:shadow-[0_4px_12px_rgba(57,108,255,0.25)] active:scale-95"
             >
               <span className="absolute inset-0 -translate-x-full skew-x-[-20deg] bg-white/20 transition-transform duration-500 group-hover:translate-x-[200%]" />
-              {t('plans')}
+              {t("plans")}
             </Link>
           </nav>
 
-          {/* MOBILE: hambúrguer — abre FullscreenMenu */}
           <button
             onClick={() => setMobileMenuOpen(true)}
             className="p-2 text-zinc-700 md:hidden"
-            aria-label="Abrir menu"
+            aria-label={t("openMenu")}
           >
             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
@@ -165,10 +190,7 @@ export function Header() {
         </div>
       </header>
 
-      {/* MEGA MENU MODAL — desktop */}
       <MegaMenuModal isOpen={megaMenuOpen} onClose={() => setMegaMenuOpen(false)} />
-
-      {/* FULLSCREEN MENU — mobile */}
       <FullscreenMenu isOpen={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} />
     </>
   );

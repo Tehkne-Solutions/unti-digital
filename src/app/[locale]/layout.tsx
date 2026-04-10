@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import { Header } from "@/components/header";
 import { Newsletter } from "@/components/Newsletter";
 import { Footer } from "@/components/footer";
+import { isLocale } from "@/lib/i18n";
+import { getStaticLocaleParams } from "@/lib/metadata";
 
 const ubuntu = Ubuntu({
   subsets: ["latin"],
@@ -12,7 +14,9 @@ const ubuntu = Ubuntu({
   variable: "--font-ubuntu"
 });
 
-const supportedLocales = ["pt", "en", "es"] as const;
+export function generateStaticParams() {
+  return getStaticLocaleParams();
+}
 
 export default async function LocaleLayout({
   children,
@@ -21,7 +25,7 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: { locale: string };
 }) {
-  if (!supportedLocales.includes(locale as typeof supportedLocales[number])) {
+  if (!isLocale(locale)) {
     notFound();
   }
 
@@ -32,18 +36,14 @@ export default async function LocaleLayout({
     notFound();
   }
 
-  const htmlLang = locale === "pt" ? "pt-BR" : locale;
-
   return (
-    <html lang={htmlLang}>
-      <body className={`${ubuntu.variable} font-sans bg-white text-zinc-900`}>
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Newsletter />
-          <Footer />
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <NextIntlClientProvider locale={locale} messages={messages}>
+      <div className={`${ubuntu.variable} flex min-h-screen flex-col font-sans bg-white text-zinc-900`}>
+        <Header />
+        <main className="flex-1">{children}</main>
+        <Newsletter />
+        <Footer />
+      </div>
+    </NextIntlClientProvider>
   );
 }

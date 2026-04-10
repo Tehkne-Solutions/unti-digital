@@ -1,12 +1,14 @@
-export { default } from "@/app/blog/[slug]/page";
-export * from "@/app/blog/[slug]/page";
+import { Container } from "@/components/ui/Container";
+import { useTranslations } from "next-intl";
 
-import { generateStaticParams as blogStaticParams } from "@/app/blog/[slug]/page";
+export default function BlogPostPage({ params }: { params: { slug: string } }) {
+  const t = useTranslations("Blog");
 
-const locales = ["pt", "en", "es"] as const;
-
-export function generateStaticParams() {
-  return blogStaticParams().flatMap(({ slug }) =>
-    locales.map((locale) => ({ locale, slug }))
+  return (
+    <Container className="py-20">
+      <h1 className="text-4xl font-bold">Post: {params.slug}</h1>
+      <p className="mt-4 text-lg">{t("read_more")}</p>
+    </Container>
   );
+}
 }

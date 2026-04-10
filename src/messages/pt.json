@@ -245,7 +245,33 @@
   "viewCases": "Ver cases",
   "viewDetails": "Ver detalhes",
   "Clients": {
-    "title": "Empresas com projeto Unti Digital"
+    "title": "Clientes",
+    "description": "Perfil de empresas que atendemos e prioridades comuns nas entregas da UNTI.",
+    "whoWeServe": {
+      "title": "Quem atendemos",
+      "description": "Trabalhamos com contas que precisam de execução rápida, governança e presença institucional consistente.",
+      "profiles": [
+        "Empresas com operação digital crítica",
+        "Times de marketing e TI que precisam de alinhamento",
+        "Negócios B2B com ciclo de venda consultiva",
+        "Organizações em reposicionamento de marca"
+      ]
+    },
+    "sectors": {
+      "title": "Setores com experiência",
+      "description": "Atuamos em setores com operações complexas e necessidade de integração entre áreas.",
+      "list": ["Automotivo", "Varejo", "Serviços B2B", "Indústria", "Tecnologia e SaaS"]
+    },
+    "priorities": {
+      "title": "O que os clientes valorizam",
+      "description": "Projetos institucionais exigem clareza de comunicação e integração com a operação.",
+      "list": [
+        "Governança e previsibilidade",
+        "Segurança e LGPD",
+        "Integração com CRM e dados",
+        "Experiência institucional robusta"
+      ]
+    }
   },
   "About": {
     "title": "Sobre a UNTI",
@@ -271,6 +297,8 @@
   "Solutions": {
     "title": "Nossas Soluções",
     "header_tag": "UNTI ENGINEERING // SOLUÇÕES",
+    "subtitle": "Construímos soluções digitais para empresas e agências que precisam de conversão, integração, segurança e escala com padrão enterprise.",
+    "cta": "Falar com especialista",
     "institutional": {
       "title": "Sites Institucionais",
       "desc": "Portais de alta autoridade focados em conversão e presença corporativa digital."
@@ -291,6 +319,39 @@
       "title": "White Label para Agências",
       "desc": "O poder de engenharia da UNTI operando como braço técnico da sua agência."
     }
+  },
+  "Integrations": {
+    "title": "Integrações com APIs",
+    "description": "Descubra a forma mais moderna e segura de integrar APIs, CRM, ERP e sistemas internos para automatizar dados e operações.",
+    "hero": {
+      "tag": "Integrações com API's",
+      "title": "Serviços de integração de API para sites, CRM, ERP e operação.",
+      "subtitle": "Descubra a forma mais fácil, moderna e segura de consumir dados em seu site e conectar o coração da sua empresa. Estruturamos integrações que automatizam processos e mantêm o fluxo das informações em tempo real.",
+      "ctaPrimary": "Falar com um especialista",
+      "ctaSecondary": "Ver mais cases"
+    },
+    "benefits": [
+      {
+        "title": "Manutenção simplificada",
+        "description": "Quando uma API é atualizada ou aprimorada, as alterações podem ser absorvidas com menos atrito em uma arquitetura bem planejada, reduzindo quebra de compatibilidade e retrabalho."
+      },
+      {
+        "title": "Segurança e controle",
+        "description": "As APIs podem operar com autenticação, autorização e trilha de acesso para proteger dados sensíveis e manter governança sobre cada fluxo crítico."
+      },
+      {
+        "title": "Análise de dados",
+        "description": "Integramos fontes de dados valiosas para que sua empresa tome decisões mais rápidas, informadas e conectadas ao que acontece na operação em tempo real."
+      },
+      {
+        "title": "Economia de recursos",
+        "description": "Consumir APIs prontas e estruturar bem a integração pode reduzir custo de desenvolvimento, acelerar o time-to-market e evitar reinventar componentes críticos."
+      },
+      {
+        "title": "Integração de aplicativos",
+        "description": "Conectamos sistemas, plataformas e aplicativos heterogêneos para que compartilhem dados com eficiência, melhorando a interoperabilidade do seu ecossistema digital."
+      }
+    ]
   },
   "Cases": {
     "tag": "PORTFÓLIO DE ELITE",
@@ -379,5 +440,33 @@
       "title": "Manifesto e Autoridade | UNTI Digital",
       "desc": "Conheça a engenharia por trás da UNTI. Tecnologia como meio para a soberania digital."
     }
+  },
+  "Menu": {
+    "solutions": "Soluções",
+    "institutionalSites": "Sites Institucionais",
+    "webPlatforms": "Plataformas Web",
+    "crmErpIntegrations": "Integrações CRM & ERP",
+    "governanceSecurity": "Governança e Segurança",
+    "whiteLabelAgencies": "White Label para Agências",
+    "home": "Home",
+    "cases": "Cases",
+    "content": "Conteúdo",
+    "about": "Sobre",
+    "contact": "Contato",
+    "forCompanies": "Para Empresas",
+    "forAgencies": "Para Agências (White Label)",
+    "apiIntegrations": "Integrações com APIs",
+    "privacyPolicy": "Política de Privacidade",
+    "businessPolicy": "Política Empresarial",
+    "forYourCompany": "Para sua empresa",
+    "quickAccess": "Acesso Rápido",
+    "eliteDigitalEngineering": "Engenharia Digital de Elite",
+    "servicesAndPolicies": "Serviços & Políticas"
+  },
+  "Modal": {
+    "close": "Fechar modal"
+  },
+  "FullscreenMenu": {
+    "close": "Fechar menu"
   }
 }

@@ -1,46 +1,19 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/Button";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
-
-interface Slide {
-  title: string;
-  description: string;
-  ctaPrimary: string;
-  ctaSecondary: string;
-  image: string;
-}
-
-const slides: Slide[] = [
-  {
-    title: "Sites Institucionais de Alta Performance",
-    description:
-      "Construimos plataformas institucionais premium para empresas que precisam unir autoridade, performance e conversao.",
-    image: "/images/unti-digital-homepage-image-slider-servicos-sites-e-plataformas-de-alta-performance.png",
-    ctaPrimary: "Falar com especialista",
-    ctaSecondary: "Ver portfolio"
-  },
-  {
-    title: "Integrações com CRM e ERP",
-    description:
-      "Conectamos CRM, ERP, marketing e operacao para eliminar retrabalho e dar previsibilidade ao fluxo de dados.",
-    image: "/images/unti-digital-homepage-image-slider-servicos-integracoes-e-automacoes-inteligentes.png",
-    ctaPrimary: "Falar com especialista",
-    ctaSecondary: "Ver cases"
-  },
-  {
-    title: "White Label Técnico para Agências",
-    description:
-      "Atuamos como braco tecnologico invisivel para agencias que precisam ampliar capacidade com confidencialidade e padrao enterprise.",
-    image: "/images/unti-digital-homepage-image-slider-servicos-white-label-tecnico-para-agencias.png",
-    ctaPrimary: "Falar com especialista",
-    ctaSecondary: "Ver soluções"
-  }
-];
+import { useLocale } from "next-intl";
+import { useRouter } from "next-intl/client";
+import { Button } from "@/components/ui/Button";
+import { getHomeContent } from "@/data/home-content";
+import type { AppLocale } from "@/lib/i18n";
 
 export function HeroCarousel() {
+  const locale = useLocale() as AppLocale;
+  const router = useRouter();
+  const content = getHomeContent(locale).heroCarousel;
+  const slides = content.slides;
   const [activeSlide, setActiveSlide] = useState(0);
   const [isAutoPlay, setIsAutoPlay] = useState(true);
 
@@ -50,8 +23,9 @@ export function HeroCarousel() {
     const interval = setInterval(() => {
       setActiveSlide((prev) => (prev + 1) % slides.length);
     }, 11000);
+
     return () => clearInterval(interval);
-  }, [isAutoPlay]);
+  }, [isAutoPlay, slides.length]);
 
   const goToSlide = (index: number) => {
     setActiveSlide(index);
@@ -90,19 +64,17 @@ export function HeroCarousel() {
             />
           </div>
 
-          <h2 className="max-w-3xl text-2xl font-bold md:text-3xl">
-            {currentSlide.title}
-          </h2>
+          <h2 className="max-w-3xl text-2xl font-bold md:text-3xl">{currentSlide.title}</h2>
 
           <p className="max-w-2xl text-base leading-relaxed text-gray-600 md:text-lg">
             {currentSlide.description}
           </p>
 
           <div className="flex flex-col gap-3 sm:flex-row">
-            <Button variant="primary" onClick={() => (window.location.href = "/contato")}>
+            <Button variant="primary" onClick={() => router.push(currentSlide.primaryHref)}>
               {currentSlide.ctaPrimary}
             </Button>
-            <Button variant="secondary" onClick={() => (window.location.href = "/cases")}>
+            <Button variant="secondary" onClick={() => router.push(currentSlide.secondaryHref)}>
               {currentSlide.ctaSecondary}
             </Button>
           </div>
@@ -117,7 +89,7 @@ export function HeroCarousel() {
                     ? "h-2 w-8 bg-unti-blue"
                     : "h-2 w-2 bg-gray-300 hover:bg-gray-400"
                 }`}
-                aria-label={`Ir para slide ${index + 1}`}
+                aria-label={`${content.goToSlideLabel} ${index + 1}`}
               />
             ))}
           </div>
@@ -128,7 +100,7 @@ export function HeroCarousel() {
         <button
           onClick={prevSlide}
           className="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-lg transition-colors hover:bg-gray-50"
-          aria-label="Slide anterior"
+          aria-label={content.prevSlideLabel}
         >
           <svg className="h-6 w-6 text-unti-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -138,7 +110,7 @@ export function HeroCarousel() {
         <button
           onClick={nextSlide}
           className="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-lg transition-colors hover:bg-gray-50"
-          aria-label="Proximo slide"
+          aria-label={content.nextSlideLabel}
         >
           <svg className="h-6 w-6 text-unti-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

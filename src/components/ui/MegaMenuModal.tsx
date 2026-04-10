@@ -4,20 +4,21 @@ import { AnimatePresence, motion } from "framer-motion";
 import { X, Globe, MonitorSmartphone, Share2, ShieldCheck, Briefcase } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 const solutions = [
-  { t: "Sites Institucionais", d: "Autoridade e performance.", icon: Globe, h: "/solucoes/sites-institucionais" },
-  { t: "Plataformas Web", d: "Ecossistemas sob medida.", icon: MonitorSmartphone, h: "/solucoes/plataformas-web" },
-  { t: "Integrações com APIs", d: "Conectividade entre sistemas.", icon: Share2, h: "/solucoes/integracoes-crm-erp" },
-  { t: "Governança e Segurança", d: "Proteção de dados (LGPD).", icon: ShieldCheck, h: "/solucoes/governanca-seguranca" },
-  { t: "White Label para Agências", d: "Engenharia para agências.", icon: Briefcase, h: "/solucoes/white-label-agencias" },
+  { key: "institutionalSites", d: "Autoridade e performance.", icon: Globe, h: "/solucoes/sites-institucionais" },
+  { key: "webPlatforms", d: "Ecossistemas sob medida.", icon: MonitorSmartphone, h: "/solucoes/plataformas-web" },
+  { key: "apiIntegrations", d: "Conectividade entre sistemas.", icon: Share2, h: "/solucoes/integracoes-crm-erp" },
+  { key: "governanceSecurity", d: "Proteção de dados (LGPD).", icon: ShieldCheck, h: "/solucoes/governanca-seguranca" },
+  { key: "whiteLabelAgencies", d: "Engenharia para agências.", icon: Briefcase, h: "/solucoes/white-label-agencias" },
 ];
 
 const mainLinks = [
-  { label: "Home", href: "/" },
-  { label: "Cases", href: "/cases" },
-  { label: "Conteúdo", href: "/blog" },
-  { label: "Sobre", href: "/sobre" },
+  { key: "home", href: "/" },
+  { key: "cases", href: "/cases" },
+  { key: "content", href: "/blog" },
+  { key: "about", href: "/sobre" },
 ];
 
 export function MegaMenuModal({
@@ -27,6 +28,8 @@ export function MegaMenuModal({
   isOpen: boolean;
   onClose: () => void;
 }) {
+  const t = useTranslations('Menu');
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -78,17 +81,17 @@ export function MegaMenuModal({
               {/* Soluções — topo no mobile (order-1), direita no desktop (order-2) */}
               <div className="order-1 w-full bg-white p-8 md:order-2 md:w-7/12 md:p-10 md:py-12">
                 <p className="mb-5 text-[10px] font-black uppercase tracking-widest text-zinc-400 md:hidden">
-                  Soluções de Engenharia
+                  {t("solutions")}
                 </p>
                 <p className="mb-6 hidden text-[10px] font-black uppercase tracking-widest text-zinc-400 md:block">
-                  Escolha sua solução
+                  {t("solutions")}
                 </p>
                 <div className="flex flex-col gap-6 md:gap-5">
                   {solutions.map((item) => {
                     const Icon = item.icon;
                     return (
                       <Link
-                        key={item.t}
+                        key={item.key}
                         href={item.h}
                         onClick={onClose}
                         className="group flex items-start gap-4 transition-transform hover:translate-x-1"
@@ -98,7 +101,7 @@ export function MegaMenuModal({
                         </div>
                         <div>
                           <h4 className="text-base font-bold text-zinc-900 transition-colors group-hover:text-unti-blue md:text-sm">
-                            {item.t}
+                            {t(item.key)}
                           </h4>
                           <p className="mt-0.5 text-sm leading-snug text-zinc-500 md:text-xs">{item.d}</p>
                         </div>
@@ -112,24 +115,24 @@ export function MegaMenuModal({
               <div className="order-2 flex w-full flex-col justify-between border-t border-zinc-100 bg-zinc-50 p-8 md:order-1 md:w-5/12 md:border-r md:border-t-0 md:p-10">
                 <div>
                   <h3 className="mb-2 hidden text-2xl font-black tracking-tight text-zinc-900 md:block">
-                    Para sua empresa
+                    {t("forYourCompany")}
                   </h3>
                   <p className="mb-7 hidden text-sm font-medium text-zinc-500 md:block">
                     Pequenas, médias e grandes operações.
                   </p>
 
                   <p className="mb-4 text-[10px] font-black uppercase tracking-widest text-zinc-400 md:hidden">
-                    Acesso Rápido
+                    {t("quickAccess")}
                   </p>
                   <div className="flex flex-col gap-4 md:flex-row md:flex-wrap md:gap-5">
                     {mainLinks.map((link) => (
                       <Link
-                        key={link.label}
+                        key={link.key}
                         href={link.href}
                         onClick={onClose}
                         className="text-2xl font-black uppercase tracking-widest text-zinc-900 transition-colors hover:text-unti-blue md:text-xs"
                       >
-                        {link.label}
+                        {t(link.key)}
                       </Link>
                     ))}
                   </div>
