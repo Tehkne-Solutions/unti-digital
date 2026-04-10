@@ -1,10 +1,21 @@
-import { Container } from "@/components/ui/Container";
+﻿import { PageShell } from "@/components/page-shell";
+import { StaticPageSections } from "@/components/static-page-sections";
+import { getStaticPageContent } from "@/data/site-pages";
+import { buildMetadata } from "@/lib/metadata";
+import { isLocale, type AppLocale } from "@/lib/i18n";
 
-export default function ParceirosPage() {
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
+  const resolvedLocale: AppLocale = isLocale(locale) ? locale : "pt";
+  const content = getStaticPageContent(resolvedLocale, "partners");
+  return buildMetadata({ locale: resolvedLocale, title: content.seoTitle, description: content.seoDescription, pathname: "/parceiros" });
+}
+
+export default function ParceirosPage({ params: { locale } }: { params: { locale: AppLocale } }) {
+  const content = getStaticPageContent(locale, "partners");
+
   return (
-    <Container className="py-20">
-      <h1 className="text-4xl font-bold">Parceiros</h1>
-      <p className="mt-4 text-lg">Nossos parceiros estratégicos.</p>
-    </Container>
+    <PageShell eyebrow={content.eyebrow} title={content.title} description={content.description} actions={content.actions}>
+      <StaticPageSections sections={content.sections} />
+    </PageShell>
   );
 }

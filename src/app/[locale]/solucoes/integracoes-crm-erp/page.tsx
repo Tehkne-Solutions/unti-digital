@@ -1,13 +1,18 @@
-import { Container } from "@/components/ui/Container";
-import { useTranslations } from "next-intl";
+﻿import { ServiceDetailPage } from "@/components/service-detail-page";
+import { getServiceBySlug } from "@/data/services";
+import { getSolutionDetailLabels } from "@/data/solution-page-copy";
+import { buildMetadata } from "@/lib/metadata";
+import { isLocale, type AppLocale } from "@/lib/i18n";
 
-export default function IntegracoesCrmErpPage() {
-  const t = useTranslations("Solutions");
+const slug = "integracoes-crm-erp";
 
-  return (
-    <Container className="py-20">
-      <h1 className="text-4xl font-bold">{t("integrations.title")}</h1>
-      <p className="mt-4 text-lg">{t("integrations.desc")}</p>
-    </Container>
-  );
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
+  const resolvedLocale: AppLocale = isLocale(locale) ? locale : "pt";
+  const service = getServiceBySlug(resolvedLocale, slug)!;
+  return buildMetadata({ locale: resolvedLocale, title: service.seoTitle, description: service.metaDescription, pathname: `/solucoes/${slug}` });
+}
+
+export default function IntegracoesCrmErpPage({ params: { locale } }: { params: { locale: AppLocale } }) {
+  const service = getServiceBySlug(locale, slug)!;
+  return <ServiceDetailPage service={service} labels={getSolutionDetailLabels(locale)} />;
 }

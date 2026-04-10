@@ -1,10 +1,21 @@
-import { Container } from "@/components/ui/Container";
+﻿import { PageShell } from "@/components/page-shell";
+import { StaticPageSections } from "@/components/static-page-sections";
+import { getStaticPageContent } from "@/data/site-pages";
+import { buildMetadata } from "@/lib/metadata";
+import { isLocale, type AppLocale } from "@/lib/i18n";
 
-export default function PrivacidadePage() {
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
+  const resolvedLocale: AppLocale = isLocale(locale) ? locale : "pt";
+  const content = getStaticPageContent(resolvedLocale, "privacy");
+  return buildMetadata({ locale: resolvedLocale, title: content.seoTitle, description: content.seoDescription, pathname: "/privacidade" });
+}
+
+export default function PrivacidadePage({ params: { locale } }: { params: { locale: AppLocale } }) {
+  const content = getStaticPageContent(locale, "privacy");
+
   return (
-    <Container className="py-20">
-      <h1 className="text-4xl font-bold">Política de Privacidade</h1>
-      <p className="mt-4 text-lg">Nossa política de privacidade.</p>
-    </Container>
+    <PageShell eyebrow={content.eyebrow} title={content.title} description={content.description}>
+      <StaticPageSections sections={content.sections} />
+    </PageShell>
   );
 }
