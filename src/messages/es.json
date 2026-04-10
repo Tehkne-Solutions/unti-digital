@@ -6,6 +6,12 @@
     "plans": "Planes y precios",
     "openMenu": "Abrir men?"
   },
+  "Cookies": {
+    "message": "Utilizamos cookies para garantizar que tengas la mejor experiencia en nuestra plataforma de ingeniería digital.",
+    "privacy_link": "Política de Privacidad",
+    "accept": "Aceptar",
+    "decline": "Rechazar"
+  },
   "Hero": {
     "badge": "Tecnología a medida para crecer con previsibilidad",
     "title": "Soluciones en tecnología para negocios que necesitan escalar con seguridad.",

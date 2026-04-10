@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { Header } from "@/components/header";
 import { Newsletter } from "@/components/Newsletter";
 import { Footer } from "@/components/footer";
+import { CookieBanner } from "@/components/ui/CookieBanner";
 import { isLocale } from "@/lib/i18n";
 import { getStaticLocaleParams } from "@/lib/metadata";
 
@@ -43,6 +44,7 @@ export default async function LocaleLayout({
         <main className="flex-1">{children}</main>
         <Newsletter />
         <Footer />
+        <CookieBanner />
       </div>
     </NextIntlClientProvider>
   );

@@ -6,6 +6,12 @@
     "plans": "Plans and Pricing",
     "openMenu": "Open menu"
   },
+  "Cookies": {
+    "message": "We use cookies to ensure you have the best experience on our digital engineering platform.",
+    "privacy_link": "Privacy Policy",
+    "accept": "Accept",
+    "decline": "Decline"
+  },
   "Hero": {
     "badge": "Custom technology to grow with predictability",
     "title": "Technology solutions for businesses that need to scale securely.",

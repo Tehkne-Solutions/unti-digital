@@ -7,6 +7,7 @@
 - Corrigidos os erros que quebravam o deploy na Vercel, incluindo as rotas din?micas de blog/cases, tipagem de locale, componentes compartilhados e compatibilidade do cat?logo de servi?os.
 - Atualizados `robots.ts` e `sitemap.ts` para o dom?nio can?nico `https://untidigital.com.br` com URLs por idioma e alternates.
 - Adicionada a auditoria `audit-intl-coverage.mjs` e script `npm run audit:i18n` para validar chaves obrigat?rias, arquivos esperados e navega??o que perde locale.
+- Implementado o `CookieBanner` multilíngue com `Framer Motion`, persistência via `localStorage` e link direto para a página de privacidade.
 - Valida??o conclu?da com `npm run audit:i18n` e `npm run build`.
 
 ---
@@ -16,6 +17,7 @@
 ### 📦 Seção de Serviços (Preferida do Cliente)
 
 #### Modelo de Dados
+
 - Criado `src/data/services.ts` com interface Service
 - 6 serviços completos:
   - Sites Institucionais
@@ -27,6 +29,7 @@
 - Cada serviço com: slug, título, descrições, bullets, entregáveis, imagem
 
 #### Services Carousel
+
 - Carrossel horizontal grande e fluido
 - Cards com largura mínima 360px
 - Imagem topo (aspect-video) com gradiente
@@ -36,6 +39,7 @@
 - Arrows e dots navigation
 
 #### Service Modal
+
 - Layout 2 colunas (desktop) / empilhado (mobile)
 - Coluna esquerda:
   - Título do serviço
@@ -53,12 +57,14 @@
   - Transições suaves
 
 #### Conteúdo Real
+
 - 24 bullets de diferenciais
 - 30 entregáveis detalhados
 - Descrições completas e profissionais
 - Baseado em serviços reais da UNTI
 
 #### Estilo Visual DO-like
+
 - Cards robustos com hover sutil
 - Modal limpo e espaçoso
 - Ícones SVG inline (Heroicons)
@@ -66,6 +72,7 @@
 - Muito espaço negativo
 
 #### Validações
+
 - ✅ Build passa (110 kB)
 - ✅ Lint sem erros
 - ✅ TypeScript tipado
@@ -79,24 +86,28 @@
 ### 🎯 Segmentação de Público
 
 #### Seção de Segmentação
+
 - Implementada logo abaixo do Hero
 - Layout DO-like com 2 cards grandes
 - Título: "Para quem desenvolvemos soluções digitais"
 - Subtítulo explicativo
 
 #### Card Empresas
+
 - Badge com ícone corporativo
 - 3 bullets: Performance, Integrações, Governança
 - CTA: "Ver soluções para empresas"
 - Link: /solucoes/empresas
 
 #### Card Agências
+
 - Badge com ícone de equipe
 - 3 bullets: White label, Sob demanda, Parceria
 - CTA: "Ver soluções para agências"
 - Link: /solucoes/agencias
 
 #### Estilo Visual
+
 - Cards com padding generoso (p-10)
 - Badges com background pastel
 - Bullets com checkmarks azuis
@@ -105,12 +116,14 @@
 - Muito espaço negativo (DO-like)
 
 #### Estratégia de Funil
+
 - Segmentação natural após Hero
 - CTAs específicos por perfil
 - Jornada personalizada
 - Fluidez do scroll mantida
 
 #### Validações
+
 - ✅ Build passa (90.5 kB)
 - ✅ Lint sem erros
 - ✅ Totalmente responsivo
@@ -123,12 +136,14 @@
 ### 🔥 Hero Principal
 
 #### Header Refinado
+
 - Atualizado para layout DO-like limpo e profissional
 - Nav centralizado com links principais (Soluções, Cases, Blog, Integrações, Contato)
 - CTA primário destacado à direita
 - Menu mobile com drawer usando Modal do Design System
 
 #### Hero Section
+
 - Implementado layout 2 colunas (desktop) / empilhado (mobile)
 - Conteúdo estratégico com hierarquia clara:
   - Eyebrow: UNTI DIGITAL
@@ -137,6 +152,7 @@
   - CTAs híbridos: "Falar com especialista" (primary) + "Ver soluções" (secondary)
 
 #### Hero Media
+
 - Carousel visual técnico com 3 slides:
   - Analytics Dashboard (métricas de performance)
   - Platform Architecture (infraestrutura)
@@ -148,6 +164,7 @@
   - Gradient background
 
 #### Validações
+
 - ✅ Build passa sem erros
 - ✅ Lint sem warnings
 - ✅ Totalmente responsivo
@@ -160,11 +177,13 @@
 ### 🎨 Design System Foundation
 
 #### Tokens & Tipografia
+
 - Implementado sistema de tokens de cores UNTI (blue, dark, light, pastel, orange)
 - Configurado Ubuntu (400, 500, 700) como fonte global via CSS variable
 - Atualizado tailwind.config.ts com tokens e fontFamily
 
 #### Componentes UI Base
+
 - **Container**: Wrapper centralizado (max-w-[1200px])
 - **Section**: Espaçamento vertical consistente (py-20/md:py-28)
 - **Button**: 3 variantes (primary, secondary, link) com acessibilidade
@@ -173,6 +192,7 @@
 - **Carousel**: Implementação custom com scroll-snap, arrows, dots, swipe support
 
 #### Estrutura Homepage
+
 - Criados 8 componentes placeholder em `src/components/home/`:
   - hero.tsx
   - segmentation.tsx
@@ -185,9 +205,11 @@
 - Atualizado page.tsx como orquestrador limpo
 
 #### Dependências
+
 - Adicionado @headlessui/react para Modal acessível
 
 #### Validações
+
 - ✅ Build passa sem erros
 - ✅ Lint sem warnings
 - ✅ TypeScript validado
