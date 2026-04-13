@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { cookies } from "next/headers";
 import { Ubuntu } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { defaultLocale, isLocale, localeToHtmlLang, siteUrl } from "@/lib/i18n";
 
@@ -28,6 +29,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <html lang={localeToHtmlLang[locale]}>
       <body className={`${ubuntu.variable} font-sans bg-white text-zinc-900`}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
