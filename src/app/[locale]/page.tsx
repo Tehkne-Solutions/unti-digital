@@ -24,13 +24,13 @@ function getHomeCopy(locale: AppLocale) {
   if (locale === "es") {
     return {
       title: "UNTI Digital | Sitios, plataformas e integraciones para escalar",
-      description: "UNTI Digital dise?a sitios, plataformas web, integraciones con CRM y ERP y apoyo t?cnico para operaciones que necesitan autoridad y previsibilidad."
+      description: "UNTI Digital diseña sitios, plataformas web, integraciones con CRM y ERP y apoyo técnico para operaciones que necesitan autoridad y previsibilidad."
     };
   }
 
   return {
-    title: "UNTI Digital | Sites, plataformas e integra??es para escalar com previsibilidade",
-    description: "A UNTI Digital projeta sites, plataformas web, integra??es com CRM e ERP e apoio t?cnico para opera??es que precisam crescer com autoridade e seguran?a."
+    title: "UNTI Digital | Sites, plataformas e integrações para escalar com previsibilidade",
+    description: "A UNTI Digital projeta sites, plataformas web, integrações com CRM e ERP e apoio técnico para operações que precisam crescer com autoridade e segurança."
   };
 }
 

@@ -60,6 +60,7 @@ export function HeroCarousel() {
               src={currentSlide.image}
               alt={currentSlide.title}
               fill
+              priority={activeSlide === 0}
               className="object-cover transition-transform duration-700 ease-out"
             />
           </div>

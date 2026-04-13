@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-04-13 - Otimizações de Performance para Lighthouse 95+
+
+- Aplicado dynamic import no CookieBanner para reduzir TBT (Total Blocking Time).
+- Adicionado atributo `priority` à primeira imagem do HeroCarousel para melhorar LCP (Largest Contentful Paint).
+- Corrigidos erros de codificação de caracteres em page.tsx (integrações, técnico, segurança).
+- Bundle analisado: First Load JS em 87.3 kB (abaixo do limite de 100 kB).
+- Validação concluída com `npm run build` (148 páginas geradas com sucesso).
+
 ## 2026-04-13 - Atualização de Páginas de Privacidade e Empresarial + Correções de Grafia
 
 - Atualizadas as páginas de privacidade e política empresarial com conteúdo real em português, inglês e espanhol, substituindo placeholders por textos completos e localizados.

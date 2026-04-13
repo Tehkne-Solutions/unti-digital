@@ -4,9 +4,11 @@ import { notFound } from "next/navigation";
 import { Header } from "@/components/header";
 import { Newsletter } from "@/components/Newsletter";
 import { Footer } from "@/components/footer";
-import { CookieBanner } from "@/components/ui/CookieBanner";
 import { isLocale } from "@/lib/i18n";
 import { getStaticLocaleParams } from "@/lib/metadata";
+import dynamic from "next/dynamic";
+
+const CookieBanner = dynamic(() => import("@/components/ui/CookieBanner").then(mod => mod.CookieBanner), { ssr: false });
 
 const ubuntu = Ubuntu({
   subsets: ["latin"],
