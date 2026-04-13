@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import {
+  defaultLocale,
   getLocalizedUrl,
   localeToOpenGraphLocale,
   locales,
+  siteUrl,
   type AppLocale
 } from "@/lib/i18n";
 
@@ -51,9 +53,13 @@ export function buildMetadata({
   return {
     title,
     description,
+    metadataBase: new URL(siteUrl),
     alternates: {
       canonical: url,
-      languages: getLanguageAlternates(pathname)
+      languages: {
+        ...getLanguageAlternates(pathname),
+        "x-default": getLocalizedUrl(defaultLocale, pathname)
+      }
     },
     openGraph: {
       title,

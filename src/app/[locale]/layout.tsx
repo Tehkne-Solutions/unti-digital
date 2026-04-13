@@ -9,7 +9,13 @@ import { getStaticLocaleParams } from "@/lib/metadata";
 import dynamic from "next/dynamic";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-const CookieBanner = dynamic(() => import("@/components/ui/CookieBanner").then(mod => mod.CookieBanner), { ssr: false });
+const CookieBanner = dynamic(() => import("@/components/ui/CookieBanner").then((mod) => mod.CookieBanner), {
+  ssr: false
+});
+
+const FixedCTA = dynamic(() => import("@/components/home/fixed-cta").then((mod) => mod.FixedCTA), {
+  ssr: false
+});
 
 const ubuntu = Ubuntu({
   subsets: ["latin"],
@@ -47,6 +53,7 @@ export default async function LocaleLayout({
         <main className="flex-1">{children}</main>
         <Newsletter />
         <Footer />
+        <FixedCTA />
         <CookieBanner />
         <SpeedInsights />
       </div>

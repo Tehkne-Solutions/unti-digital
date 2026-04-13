@@ -61,7 +61,7 @@ export function HeroCarousel() {
               alt={currentSlide.title}
               fill
               priority={activeSlide === 0}
-              sizes="(max-width: 768px) 100vw, 50vw"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className="object-cover transition-transform duration-700 ease-out"
             />
           </div>
