@@ -1,14 +1,21 @@
 # Changelog
 
+## 2026-04-13 - Atualização de Páginas de Privacidade e Empresarial + Correções de Grafia
+
+- Atualizadas as páginas de privacidade e política empresarial com conteúdo real em português, inglês e espanhol, substituindo placeholders por textos completos e localizados.
+- Corrigidos erros de codificação de caracteres em português (pt.json), incluindo "informações", "você", "não", "retornará", "integrações", "agências", "diagnóstico", "solução", "médias", "operações", "conteúdos", "presença", "operação", "próximos").
+- Corrigidos erros de grafia no CHANGELOG.md para português correto.
+- Validação concluída com `npm run build` (148 páginas geradas com sucesso).
+
 ## 2026-04-10 - Fechamento Multi-idioma PT/EN/ES
 
-- Normalizada a arquitetura de i18n com rotas localizadas em `/[locale]`, metadata por p?gina, `not-found` localizado e navega??o padronizada com `next-intl`.
-- Conclu?da a cobertura multi-idioma das p?ginas institucionais, contato, integra??es, solu??es, blog, posts, cases e estudos de caso com conte?do por locale em `src/data`.
-- Corrigidos os erros que quebravam o deploy na Vercel, incluindo as rotas din?micas de blog/cases, tipagem de locale, componentes compartilhados e compatibilidade do cat?logo de servi?os.
-- Atualizados `robots.ts` e `sitemap.ts` para o dom?nio can?nico `https://untidigital.com.br` com URLs por idioma e alternates.
-- Adicionada a auditoria `audit-intl-coverage.mjs` e script `npm run audit:i18n` para validar chaves obrigat?rias, arquivos esperados e navega??o que perde locale.
+- Normalizada a arquitetura de i18n com rotas localizadas em `/[locale]`, metadata por página, `not-found` localizado e navegação padronizada com `next-intl`.
+- Concluída a cobertura multi-idioma das páginas institucionais, contato, integrações, soluções, blog, posts, cases e estudos de caso com conteúdo por locale em `src/data`.
+- Corrigidos os erros que quebravam o deploy na Vercel, incluindo as rotas dinâmicas de blog/cases, tipagem de locale, componentes compartilhados e compatibilidade do catálogo de serviços.
+- Atualizados `robots.ts` e `sitemap.ts` para o domínio canônico `https://untidigital.com.br` com URLs por idioma e alternates.
+- Adicionada a auditoria `audit-intl-coverage.mjs` e script `npm run audit:i18n` para validar chaves obrigatórias, arquivos esperados e navegação que perde locale.
 - Implementado o `CookieBanner` multilíngue com `Framer Motion`, persistência via `localStorage` e link direto para a página de privacidade.
-- Valida??o conclu?da com `npm run audit:i18n` e `npm run build`.
+- Validação concluída com `npm run audit:i18n` e `npm run build`.
 
 ---
 

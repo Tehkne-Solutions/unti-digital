@@ -400,17 +400,17 @@
       "message": "Mensagem",
       "send": "Enviar Mensagem",
       "whatsapp": "WhatsApp",
-      "messagePlaceholder": "Conte um pouco sobre o cen?rio atual, seus objetivos e o que precisa destravar.",
-      "consent": "Ao enviar, voc? concorda com o uso das informa??es para retorno comercial e continuidade do atendimento.",
+      "messagePlaceholder": "Conte um pouco sobre o cenário atual, seus objetivos e o que precisa destravar.",
+      "consent": "Ao enviar, você concorda com o uso das informações para retorno comercial e continuidade do atendimento.",
       "sending": "Enviando...",
-      "error": "N?o foi poss?vel enviar sua mensagem agora. Tente novamente em instantes.",
-      "success": "Mensagem enviada com sucesso. Nossa equipe retornar? em breve.",
+      "error": "Não foi possível enviar sua mensagem agora. Tente novamente em instantes.",
+      "success": "Mensagem enviada com sucesso. Nossa equipe retornará em breve.",
       "subjectOptions": {
         "sites": "Sites institucionais",
         "platforms": "Plataformas web",
-        "integrations": "Integra??es com CRM e ERP",
-        "whiteLabel": "White label para ag?ncias",
-        "consulting": "Diagn?stico e consultoria"
+        "integrations": "Integrações com CRM e ERP",
+        "whiteLabel": "White label para agências",
+        "consulting": "Diagnóstico e consultoria"
       }
     },
     "info": {
@@ -500,10 +500,10 @@
     "eliteDigitalEngineering": "Engenharia Digital de Elite",
     "servicesAndPolicies": "Serviços & Políticas",
     "close": "Fechar menu",
-    "viewSolution": "Ver solu??o",
+    "viewSolution": "Ver solução",
     "signature": "UNTI Digital // Performance e Autoridade",
-    "companyScope": "Pequenas, m?dias e grandes opera??es.",
-    "solutionsImageAlt": "Solu??es da UNTI Digital"
+    "companyScope": "Pequenas, médias e grandes operações.",
+    "solutionsImageAlt": "Soluções da UNTI Digital"
   },
   "Modal": {
     "close": "Fechar modal"
@@ -518,11 +518,11 @@
     "active": "Ativo"
   },
   "Newsletter": {
-    "title": "Receba insights sobre sites, integra??es e plataformas",
-    "description": "Uma curadoria com conte?dos pr?ticos para quem precisa evoluir presen?a digital, opera??o e tecnologia com mais previsibilidade.",
+    "title": "Receba insights sobre sites, integrações e plataformas",
+    "description": "Uma curadoria com conteúdos práticos para quem precisa evoluir presença digital, operação e tecnologia com mais previsibilidade.",
     "inputLabel": "Seu e-mail",
     "inputPlaceholder": "Digite seu melhor e-mail",
     "button": "Quero receber",
-    "success": "Cadastro realizado. Em breve voc? receber? os pr?ximos conte?dos."
+    "success": "Cadastro realizado. Em breve você receberá os próximos conteúdos."
   }
 }
