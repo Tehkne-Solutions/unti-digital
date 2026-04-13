@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-04-13 - Integração Vercel Speed Insights para Monitoramento de Performance
+
+- Instalado @vercel/speed-insights para coleta de dados de performance em produção.
+- Adicionado componente <SpeedInsights /> no layout principal para rastreamento automático.
+- Bundle analisado: First Load JS em 87.6 kB (mantido otimizado).
+- Validação concluída com `npm run build` (148 páginas geradas com sucesso).
+
 ## 2026-04-13 - Otimizações de Performance para Lighthouse 95+
 
 - Aplicado dynamic import no CookieBanner para reduzir TBT (Total Blocking Time).

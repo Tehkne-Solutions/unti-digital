@@ -7,6 +7,7 @@ import { Footer } from "@/components/footer";
 import { isLocale } from "@/lib/i18n";
 import { getStaticLocaleParams } from "@/lib/metadata";
 import dynamic from "next/dynamic";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const CookieBanner = dynamic(() => import("@/components/ui/CookieBanner").then(mod => mod.CookieBanner), { ssr: false });
 
@@ -47,6 +48,7 @@ export default async function LocaleLayout({
         <Newsletter />
         <Footer />
         <CookieBanner />
+        <SpeedInsights />
       </div>
     </NextIntlClientProvider>
   );
