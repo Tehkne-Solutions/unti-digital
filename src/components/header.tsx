@@ -111,6 +111,7 @@ export function Header() {
               target="_blank"
               rel="noreferrer"
               className="text-white transition-colors hover:text-blue-100"
+              aria-label={t("Accessibility.linkedin")}
             >
               <IconLinkedIn />
             </a>
@@ -119,6 +120,7 @@ export function Header() {
               target="_blank"
               rel="noreferrer"
               className="text-white transition-colors hover:text-blue-100"
+              aria-label={t("Accessibility.instagram")}
             >
               <IconInstagram />
             </a>
@@ -128,7 +130,7 @@ export function Header() {
 
       <header className="sticky top-0 z-50 border-b border-gray-200 bg-white/95 backdrop-blur-md">
         <div className="mx-auto flex h-20 max-w-[1200px] items-center justify-between px-6">
-          <Link href="/" className="flex items-center" aria-label="UNTI Digital">
+          <Link href="/" className="flex items-center" aria-label={t("Accessibility.logo_alt")}>
             <motion.div
               animate={{ width: scrolled ? 150 : 240 }}
               transition={{ duration: 0.35, ease: "easeInOut" }}
@@ -162,9 +164,9 @@ export function Header() {
             <button
               onClick={() => setMegaMenuOpen(true)}
               className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-zinc-900 transition-colors hover:text-unti-blue"
-              aria-label={t("menu")}
+              aria-label={t("Accessibility.menu_open")}
             >
-              <Menu className="h-5 w-5" />
+              <Menu className="h-5 w-5" aria-hidden="true" />
               {t("menu")}
             </button>
 
@@ -181,9 +183,9 @@ export function Header() {
           <button
             onClick={() => setMobileMenuOpen(true)}
             className="p-2 text-zinc-700 md:hidden"
-            aria-label={t("openMenu")}
+            aria-label={t("Accessibility.menu_open")}
           >
-            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>

@@ -4,7 +4,15 @@
     "contact": "Contacto",
     "menu": "Menú",
     "plans": "Planes y precios",
-    "openMenu": "Abrir men?"
+    "openMenu": "Abrir menú"
+  },
+  "Accessibility": {
+    "menu_open": "Abrir menú de navegación",
+    "menu_close": "Cerrar menú",
+    "language_select": "Seleccionar idioma",
+    "logo_alt": "Logotipo UNTI Digital - Volver al inicio",
+    "linkedin": "Abrir LinkedIn",
+    "instagram": "Abrir Instagram"
   },
   "Cookies": {
     "message": "Utilizamos cookies para garantizar que tengas la mejor experiencia en nuestra plataforma de ingeniería digital.",

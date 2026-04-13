@@ -6,6 +6,14 @@
     "plans": "Planos e preços",
     "openMenu": "Abrir menu"
   },
+  "Accessibility": {
+    "menu_open": "Abrir menu de navegação",
+    "menu_close": "Fechar menu",
+    "language_select": "Selecionar idioma",
+    "logo_alt": "Logotipo UNTI Digital - Voltar para a home",
+    "linkedin": "Abrir LinkedIn",
+    "instagram": "Abrir Instagram"
+  },
   "Cookies": {
     "message": "Utilizamos cookies para garantir que você tenha a melhor experiência em nossa plataforma de engenharia digital.",
     "privacy_link": "Política de Privacidade",

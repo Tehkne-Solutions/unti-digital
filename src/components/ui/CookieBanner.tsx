@@ -61,7 +61,7 @@ export const CookieBanner = () => {
                   </button>
                   <button
                     onClick={declineCookies}
-                    className="px-6 text-zinc-400 text-[10px] font-black uppercase tracking-widest hover:text-zinc-900 transition-colors"
+                    className="px-6 text-zinc-500 text-[10px] font-black uppercase tracking-widest hover:text-zinc-900 transition-colors"
                   >
                     {t("decline")}
                   </button>

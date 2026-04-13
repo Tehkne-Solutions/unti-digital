@@ -29,11 +29,13 @@ export const LanguageSwitcher = () => {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="group flex items-center gap-2 rounded-full border border-zinc-100 bg-white px-3 py-2 shadow-sm transition-all hover:bg-zinc-50"
+        aria-label={t("Accessibility.language_select")}
       >
-        <Globe className="h-4 w-4 text-zinc-400 transition-colors group-hover:text-blue-600" />
+        <Globe className="h-4 w-4 text-zinc-400 transition-colors group-hover:text-blue-600" aria-hidden="true" />
         <span className="text-[10px] font-black uppercase tracking-widest text-zinc-900">{locale}</span>
         <ChevronDown
           className={`h-3 w-3 text-zinc-400 transition-transform ${isOpen ? "rotate-180" : ""}`}
+          aria-hidden="true"
         />
       </button>
 

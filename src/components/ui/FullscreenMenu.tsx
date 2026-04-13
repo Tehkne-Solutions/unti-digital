@@ -86,7 +86,7 @@ export const FullscreenMenu = ({
               </div>
             </div>
 
-            <p className="text-[10px] font-bold uppercase tracking-widest text-zinc-400">
+            <p className="text-[10px] font-bold uppercase tracking-widest text-zinc-500">
               {t("signature")}
             </p>
           </div>
@@ -121,7 +121,7 @@ export const FullscreenMenu = ({
             </nav>
 
             <div className="mt-12 border-t border-zinc-100 pt-8">
-              <p className="mb-5 text-[10px] font-black uppercase italic tracking-widest text-zinc-400">
+              <p className="mb-5 text-[10px] font-black uppercase italic tracking-widest text-zinc-500">
                 {t("servicesAndPolicies")}
               </p>
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">

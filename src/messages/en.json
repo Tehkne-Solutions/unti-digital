@@ -6,6 +6,14 @@
     "plans": "Plans and Pricing",
     "openMenu": "Open menu"
   },
+  "Accessibility": {
+    "menu_open": "Open navigation menu",
+    "menu_close": "Close menu",
+    "language_select": "Select language",
+    "logo_alt": "UNTI Digital Logo - Back to home",
+    "linkedin": "Open LinkedIn",
+    "instagram": "Open Instagram"
+  },
   "Cookies": {
     "message": "We use cookies to ensure you have the best experience on our digital engineering platform.",
     "privacy_link": "Privacy Policy",

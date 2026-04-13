@@ -98,10 +98,10 @@ export function MegaMenuModal({
 
             <div className="flex flex-1 flex-col overflow-y-auto md:flex-row">
               <div className="order-1 w-full bg-white p-8 md:order-2 md:w-7/12 md:p-10 md:py-12">
-                <p className="mb-5 text-[10px] font-black uppercase tracking-widest text-zinc-400 md:hidden">
+                <p className="mb-5 text-[10px] font-black uppercase tracking-widest text-zinc-500 md:hidden">
                   {t("solutions")}
                 </p>
-                <p className="mb-6 hidden text-[10px] font-black uppercase tracking-widest text-zinc-400 md:block">
+                <p className="mb-6 hidden text-[10px] font-black uppercase tracking-widest text-zinc-500 md:block">
                   {t("solutions")}
                 </p>
                 <div className="flex flex-col gap-6 md:gap-5">
@@ -141,7 +141,7 @@ export function MegaMenuModal({
                     {t("companyScope")}
                   </p>
 
-                  <p className="mb-4 text-[10px] font-black uppercase tracking-widest text-zinc-400 md:hidden">
+                  <p className="mb-4 text-[10px] font-black uppercase tracking-widest text-zinc-500 md:hidden">
                     {t("quickAccess")}
                   </p>
                   <div className="flex flex-col gap-4 md:flex-row md:flex-wrap md:gap-5">
