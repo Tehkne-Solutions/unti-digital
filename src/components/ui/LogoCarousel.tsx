@@ -9,10 +9,8 @@ import { clients, type Client } from "@/data/clients";
 import { getHomeContent } from "@/data/home-content";
 import type { AppLocale } from "@/lib/i18n";
 
-function getLogoCardClass(client: Client) {
-  return client.surface === "dark"
-    ? "border-white/10 bg-[#05070d] shadow-[0_18px_40px_rgba(2,6,23,0.14)]"
-    : "border-slate-200 bg-white shadow-[0_18px_40px_rgba(15,23,42,0.08)]";
+function getLogoCardClass() {
+  return "border-slate-200 bg-white shadow-[0_18px_40px_rgba(15,23,42,0.08)]";
 }
 
 export const LogoCarousel = () => {
@@ -39,7 +37,7 @@ export const LogoCarousel = () => {
             <button
               key={`${client.id}-${index}`}
               onClick={() => setSelectedClient(client)}
-              className={`relative h-24 w-[190px] flex-shrink-0 cursor-pointer overflow-hidden rounded-2xl border p-5 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-2xl md:h-28 md:w-[240px] ${getLogoCardClass(client)}`}
+              className={`relative h-24 w-[190px] flex-shrink-0 cursor-pointer overflow-hidden rounded-2xl border p-5 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-2xl md:h-28 md:w-[240px] ${getLogoCardClass()}`}
               aria-label={client.name}
             >
               <Image

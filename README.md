@@ -1,22 +1,29 @@
-# Pacote de atualização de logos — UNTI Digital
+# UNTI Digital — atualização de logos com fundo branco/transparente
 
-Este pacote contém as novas logos normalizadas para o site da UNTI Digital e os arquivos de código ajustados.
+Pacote para substituir os arquivos no repositório `Tehkne-Solutions/unti-digital`.
 
 ## O que mudou
 
-- Substituição da base antiga de clientes por logos reais enviadas para atualização.
-- Preservação dos nomes oficiais das marcas, sem tradução dos textos presentes nas logos.
-- Filtro por idioma: logos com texto claramente em português foram configuradas para aparecer em `pt` e `es`, mas não em `en`.
-- Ajuste visual do carrossel para cards com fundo claro/escuro conforme contraste da logo.
-- Modal de cliente atualizado para respeitar o fundo correto da logo.
+- O carrossel de logos passa a usar fundo branco em todos os cards.
+- O modal também usa fundo branco no card da logo.
+- As logos que eram brancas sobre fundo escuro foram ajustadas para funcionar em fundo branco/transparente:
+  - `dafra.svg`
+  - `cb-autos.png`
+  - `magrela.png`
+  - `savianna.webp`
+  - `mg.png`
+- `src/data/clients.ts` mantém o contrato antigo do tipo `Client`, mas sem textos artificiais de resultado, descrição, telefone, WhatsApp, e-mail ou case.
+- `src/data/logos.ts` continua sincronizado com `src/data/clients.ts`.
 
-## Como aplicar manualmente
+## Como aplicar
 
-Copie as pastas `public/` e `src/` deste pacote para a raiz do projeto `unti-digital`, mantendo a estrutura de diretórios.
-
+Copie o conteúdo desta pasta para a raiz do projeto, substituindo os arquivos existentes.
 Depois rode:
 
 ```bash
-npm install
 npm run build
 ```
+
+## Atenção
+
+O arquivo `mg.jpeg` foi mantido no pacote por histórico, mas a base de clientes agora aponta para `mg.png`, que possui fundo transparente e melhor contraste em card branco.

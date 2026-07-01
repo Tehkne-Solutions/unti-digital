@@ -12,10 +12,8 @@ interface ClientModalProps {
   onClose: () => void;
 }
 
-function getLogoCardClass(client: Client) {
-  return client.surface === "dark"
-    ? "bg-[#05070d] ring-white/10"
-    : "bg-white ring-slate-200";
+function getLogoCardClass() {
+  return "bg-white ring-slate-200";
 }
 
 export default function ClientModal({ client, onClose }: ClientModalProps) {
@@ -60,7 +58,7 @@ export default function ClientModal({ client, onClose }: ClientModalProps) {
           <div className="absolute inset-0 bg-gradient-to-br from-[#04070d] via-[#14337a] to-[#04070d]" />
         </div>
 
-        <div className={`absolute left-8 top-36 flex h-24 w-48 items-center justify-center rounded-xl p-4 shadow ring-1 ${getLogoCardClass(client)}`}>
+        <div className={`absolute left-8 top-36 flex h-24 w-48 items-center justify-center rounded-xl p-4 shadow ring-1 ${getLogoCardClass()}`}>
           <Image
             src={client.logo}
             alt={client.name}
