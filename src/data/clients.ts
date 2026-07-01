@@ -141,5 +141,47 @@ export const clients: Client[] = [
     name: "MG",
     logo: `${logoBasePath}/mg.png`,
     locales: allLocales
+  }),
+  createClientLogo({
+    id: "idea-cia",
+    name: "IDEA & CIA",
+    logo: `${logoBasePath}/idea-cia.png`,
+    locales: latinLocales
+  }),
+  createClientLogo({
+    id: "thereza-mussi-hospital",
+    name: "Thereza Mussi Hospital",
+    logo: `${logoBasePath}/thereza-mussi-hospital.png`,
+    locales: allLocales
+  }),
+  createClientLogo({
+    id: "inovar-implementos-rodoviarios",
+    name: "Inovar Implementos Rodoviários",
+    logo: `${logoBasePath}/inovar-implementos-rodoviarios.png`,
+    locales: latinLocales
+  }),
+  createClientLogo({
+    id: "ange360-comunicacao",
+    name: "ange360 Comunicação",
+    logo: `${logoBasePath}/ange360-comunicacao.png`,
+    locales: latinLocales
+  }),
+  createClientLogo({
+    id: "jesus-e-bom",
+    name: "Jesus é Bom",
+    logo: `${logoBasePath}/jesus-e-bom.png`,
+    locales: latinLocales
+  }),
+  createClientLogo({
+    id: "toyota-symbol",
+    name: "Toyota",
+    logo: `${logoBasePath}/toyota-symbol.png`,
+    locales: allLocales
+  }),
+  createClientLogo({
+    id: "citroen",
+    name: "Citroën",
+    logo: `${logoBasePath}/citroen.png`,
+    locales: allLocales
   })
 ];
