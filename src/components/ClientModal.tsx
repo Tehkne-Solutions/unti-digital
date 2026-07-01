@@ -4,16 +4,18 @@ import Image from "next/image";
 import Link from "next-intl/link";
 import { useLocale } from "next-intl";
 import { getHomeContent } from "@/data/home-content";
+import type { Client } from "@/data/clients";
 import type { AppLocale } from "@/lib/i18n";
-
-interface Client {
-  name: string;
-  logo: string;
-}
 
 interface ClientModalProps {
   client: Client | null;
   onClose: () => void;
+}
+
+function getLogoCardClass(client: Client) {
+  return client.surface === "dark"
+    ? "bg-[#05070d] ring-white/10"
+    : "bg-white ring-slate-200";
 }
 
 export default function ClientModal({ client, onClose }: ClientModalProps) {
@@ -58,13 +60,14 @@ export default function ClientModal({ client, onClose }: ClientModalProps) {
           <div className="absolute inset-0 bg-gradient-to-br from-[#04070d] via-[#14337a] to-[#04070d]" />
         </div>
 
-        <div className="absolute left-8 top-36 rounded-xl bg-white p-2 shadow">
+        <div className={`absolute left-8 top-36 flex h-24 w-48 items-center justify-center rounded-xl p-4 shadow ring-1 ${getLogoCardClass(client)}`}>
           <Image
             src={client.logo}
             alt={client.name}
-            width={120}
-            height={60}
-            className="object-contain"
+            width={180}
+            height={80}
+            unoptimized={client.logo.startsWith("data:")}
+            className="max-h-16 w-auto object-contain"
           />
         </div>
 

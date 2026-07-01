@@ -4,20 +4,30 @@ import { useCallback, useEffect, useRef, useState } from "react"
 import { motion, useMotionValue, useAnimation } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
+import { useLocale } from "next-intl"
 import ClientModal from "@/components/ClientModal"
 import { Button } from "@/components/ui/Button"
-import { clients } from "@/data/clients"
+import { clients, type Client } from "@/data/clients"
+import type { AppLocale } from "@/lib/i18n"
+
+function getLogoCardClass(client: Client) {
+  return client.surface === "dark"
+    ? "border-white/10 bg-[#05070d]"
+    : "border-slate-200 bg-white"
+}
 
 export default function LogoCloud() {
-  const [selectedClient, setSelectedClient] = useState<typeof clients[number] | null>(null)
+  const locale = useLocale() as AppLocale
+  const visibleClients = clients.filter((client) => client.locales.includes(locale))
+  const [selectedClient, setSelectedClient] = useState<Client | null>(null)
   const [activeIndex, setActiveIndex] = useState(0)
   const containerRef = useRef<HTMLDivElement>(null)
   const x = useMotionValue(0)
   const controls = useAnimation()
   const resumeTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
-  const itemWidth = 140 + 64
-  const totalWidth = clients.length * itemWidth
+  const itemWidth = 180 + 48
+  const totalWidth = visibleClients.length * itemWidth
 
   const startAutoScroll = useCallback(() => {
     controls.start({
@@ -97,7 +107,7 @@ export default function LogoCloud() {
         <div className="overflow-hidden">
           <motion.div
             ref={containerRef}
-            className="flex gap-16"
+            className="flex gap-12"
             style={{ x }}
             drag="x"
             dragConstraints={{ left: -totalWidth, right: 0 }}
@@ -106,24 +116,24 @@ export default function LogoCloud() {
             onDragEnd={handleDragEnd}
             animate={controls}
           >
-            {[...clients, ...clients].map((client, index) => (
+            {[...visibleClients, ...visibleClients].map((client, index) => (
               <motion.button
                 key={`${client.id}-${index}`}
                 onClick={() => {
                   pauseAutoScroll()
                   setSelectedClient(client)
                 }}
-                className="flex-shrink-0 px-6 py-4 opacity-60 transition hover:opacity-100 hover:grayscale-0 grayscale"
+                className={`relative h-24 w-[180px] flex-shrink-0 overflow-hidden rounded-2xl border p-5 shadow-sm transition hover:shadow-xl ${getLogoCardClass(client)}`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <Image
                   src={client.logo}
                   alt={client.name}
-                  width={140}
-                  height={80}
-                  loading="lazy"
-                  className="h-16 w-auto object-contain md:h-20"
+                  fill
+                  sizes="180px"
+                  unoptimized={client.logo.startsWith("data:")}
+                  className="p-5 object-contain"
                 />
               </motion.button>
             ))}
@@ -131,7 +141,7 @@ export default function LogoCloud() {
         </div>
 
         <div className="mt-6 flex items-center justify-center gap-2">
-          {clients.map((_, idx) => (
+          {visibleClients.map((_, idx) => (
             <button
               key={idx}
               onClick={() => handleBulletClick(idx)}

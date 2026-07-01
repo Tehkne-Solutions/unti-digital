@@ -1,18 +1,22 @@
-# UNTI Site — Fase 1
+# Pacote de atualização de logos — UNTI Digital
 
-Base inicial do novo site institucional da UNTI em Next.js + Tailwind.
+Este pacote contém as novas logos normalizadas para o site da UNTI Digital e os arquivos de código ajustados.
 
-## Executar
+## O que mudou
+
+- Substituição da base antiga de clientes por logos reais enviadas para atualização.
+- Preservação dos nomes oficiais das marcas, sem tradução dos textos presentes nas logos.
+- Filtro por idioma: logos com texto claramente em português foram configuradas para aparecer em `pt` e `es`, mas não em `en`.
+- Ajuste visual do carrossel para cards com fundo claro/escuro conforme contraste da logo.
+- Modal de cliente atualizado para respeitar o fundo correto da logo.
+
+## Como aplicar manualmente
+
+Copie as pastas `public/` e `src/` deste pacote para a raiz do projeto `unti-digital`, mantendo a estrutura de diretórios.
+
+Depois rode:
 
 ```bash
 npm install
-npm run dev
+npm run build
 ```
-
-## O que entrou na fase 1
-
-- Estrutura base Next.js (App Router)
-- Tailwind configurado
-- Páginas institucionais iniciais
-- Modal de captação antes do WhatsApp
-- API route `/api/leads` com validação e redirecionamento para WhatsApp
