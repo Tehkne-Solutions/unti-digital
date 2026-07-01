@@ -66,7 +66,6 @@ export default function ClientModal({ client, onClose }: ClientModalProps) {
             alt={client.name}
             width={180}
             height={80}
-            unoptimized={client.logo.startsWith("data:")}
             className="max-h-16 w-auto object-contain"
           />
         </div>

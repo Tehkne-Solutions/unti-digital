@@ -47,7 +47,6 @@ export const LogoCarousel = () => {
                 alt={client.name}
                 fill
                 sizes="(max-width: 768px) 190px, 240px"
-                unoptimized={client.logo.startsWith("data:")}
                 className="p-5 object-contain"
               />
             </button>
