@@ -143,6 +143,12 @@ export const clients: Client[] = [
     locales: allLocales
   }),
   createClientLogo({
+    id: "jetour",
+    name: "JETOUR",
+    logo: `${logoBasePath}/jetour.png`,
+    locales: allLocales
+  }),
+  createClientLogo({
     id: "idea-cia",
     name: "IDEA & CIA",
     logo: `${logoBasePath}/idea-cia.png`,

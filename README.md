@@ -1,35 +1,23 @@
 # UNTI Digital — Atualização de logos do carrossel
 
-Pacote com a base atual de logos e os novos logos recebidos em 01/07/2026.
+Pacote atualizado para aplicar na raiz do repositório `Tehkne-Solutions/unti-digital`.
 
-## O que inclui
+## Alterações incluídas
 
-- Cards do carrossel e do modal com fundo branco.
-- Novos assets em `public/images/clients/updated/`.
-- `src/data/clients.ts` atualizado com os novos logos.
-- `src/data/logos.ts` sincronizado com `clients.ts`.
-
-## Novos logos adicionados
-
-- IDEA & CIA
-- Thereza Mussi Hospital
-- Inovar Implementos Rodoviários
-- ange360 Comunicação
-- Jesus é Bom
-- Toyota
-- Citroën
-
-## Regra de idioma
-
-Logos com texto em português foram limitadas a `pt` e `es`. Logos neutras ou internacionais ficam em `pt`, `en` e `es`.
+- Atualiza o logo `MG` usando `public/images/clients/updated/mg.png`.
+- Adiciona o logo `JETOUR` em `public/images/clients/updated/jetour.png`.
+- Atualiza `src/data/clients.ts` para incluir `JETOUR` no carrossel.
+- Mantém todos os cards de logos em fundo branco, sem fundo escuro por marca.
+- Mantém os nomes das empresas exatamente como aparecem nas identidades.
 
 ## Como aplicar
 
-Copie o conteúdo desta pasta para a raiz do repositório `Tehkne-Solutions/unti-digital`, substituindo os arquivos existentes quando solicitado.
+Copie o conteúdo desta pasta para a raiz do projeto, substituindo os arquivos existentes quando solicitado.
 
 Depois rode:
 
 ```bash
+npm install
 npm run build
 ```
 
