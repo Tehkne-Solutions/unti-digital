@@ -13,6 +13,21 @@ const nextConfig = {
     async redirects() {
         return [
             {
+                source: '/lp-services',
+                destination: '/en/lp-services',
+                permanent: false,
+            },
+            {
+                source: '/lp-servicos',
+                destination: '/pt/lp-services',
+                permanent: false,
+            },
+            {
+                source: '/lp-serviços',
+                destination: '/pt/lp-services',
+                permanent: false,
+            },
+            {
                 source: '/planos-e-precos',
                 destination: '/planos',
                 permanent: true,
