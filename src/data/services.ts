@@ -30,11 +30,19 @@ type ServicesContent = {
   services: Service[];
 };
 
+const imageMap = {
+  web: "/images/unti-digital-homepage-image-nossas-solucoes-sites-institucionais.png",
+  platform: "/images/unti-digital-homepage-image-nossas-solucoes-plataformas-web.png",
+  integration: "/images/unti-digital-homepage-image-nossas-solucoes-integracoes-e-automacoes.png",
+  governance: "/images/unti-digital-homepage-image-agilidade-tecnica-com-governanca.png",
+  whiteLabel: "/images/unti-digital-homepage-image-nossas-solucoes-white-label-tecnico.png"
+};
+
 const servicesContent: Record<AppLocale, ServicesContent> = {
   pt: {
-    title: "Nossas soluções digitais",
+    title: "Nossos serviços",
     subtitle:
-      "Serviços desenhados para empresas e agências que precisam combinar autoridade, integrações críticas, segurança e crescimento previsível.",
+      "Soluções para empresas que precisam estruturar tecnologia, marketing digital, operação com cliente final e evolução contínua dos projetos.",
     labels: {
       differentials: "Diferenciais",
       deliverables: "Entregáveis",
@@ -47,151 +55,245 @@ const servicesContent: Record<AppLocale, ServicesContent> = {
     },
     services: [
       {
-        slug: "sites-institucionais",
-        title: "Sites institucionais de alta performance",
+        slug: "desenvolvimento-web",
+        title: "Desenvolvimento Web",
         description:
-          "Presença institucional com narrativa clara, velocidade real, SEO técnico e estrutura voltada a geração de oportunidades.",
-        shortDescription:
-          "Sites premium para empresas que precisam comunicar autoridade e converter melhor.",
+          "Sites, landing pages e estruturas web com foco em autoridade, performance, SEO e geração de oportunidades.",
+        shortDescription: "Sites e páginas premium para empresas que precisam vender, comunicar e operar melhor.",
         fullDescription:
-          "Criamos hubs institucionais pensados para empresas que precisam transmitir maturidade digital desde a primeira visita. O foco é unir posicionamento, performance, arquitetura de conteúdo e rotas de conversão com uma base técnica sólida.",
+          "Criamos experiências web completas para empresas que precisam de presença digital forte, páginas rápidas, conteúdo organizado e caminhos claros de conversão.",
         bullets: [
-          "Arquitetura focada em posicionamento, leitura rápida e conversão consultiva",
-          "Core Web Vitals e experiência estável em desktop e mobile",
-          "Base preparada para SEO técnico, conteúdo e crescimento orgânico",
-          "Pontos de contato distribuídos para reduzir atrito comercial"
+          "Arquitetura de páginas com foco comercial",
+          "Performance, responsividade e SEO técnico",
+          "Design alinhado à identidade da empresa",
+          "Estrutura preparada para evolução contínua"
         ],
         deliverables: [
-          "Mapa de páginas e arquitetura institucional",
-          "Interface responsiva com foco em autoridade",
-          "Estrutura preparada para integrações com CRM e automações",
-          "Blocos de prova, diferenciais e conteúdo escalável",
-          "Documentação de operação e evolução contínua"
+          "Site institucional ou landing page",
+          "Componentes responsivos",
+          "Base técnica otimizada",
+          "Configuração de rotas de conversão",
+          "Documentação de operação"
         ],
-        image: "/images/unti-digital-homepage-image-nossas-solucoes-sites-institucionais.png",
+        image: imageMap.web,
         audience: "companies",
-        seoTitle: "Sites institucionais de alta performance | UNTI Digital",
-        metaDescription:
-          "Projetamos sites institucionais premium com foco em autoridade, performance, SEO técnico e geração de oportunidades."
+        seoTitle: "Desenvolvimento Web | UNTI Digital",
+        metaDescription: "Desenvolvimento web para empresas com foco em performance, SEO, autoridade e conversão."
       },
       {
-        slug: "plataformas-web",
-        title: "Plataformas web sob medida",
+        slug: "implementacao-setor-tecnologia",
+        title: "Implementação do setor de tecnologia da empresa",
         description:
-          "Sistemas, portais e operações digitais construídos para suportar fluxos complexos sem perder clareza, estabilidade e escala.",
-        shortDescription:
-          "Engenharia sob medida para operações, produtos e áreas logadas de maior complexidade.",
+          "Estruturamos processos, ferramentas, arquitetura e rotina técnica para empresas que precisam organizar sua área de tecnologia.",
+        shortDescription: "Organização do setor de tecnologia com processos, ferramentas e governança técnica.",
         fullDescription:
-          "Desenvolvemos plataformas web para operações que precisam ir além do site institucional. Estruturamos módulos, permissões, dashboards, automações e integrações em arquiteturas preparadas para evolução contínua.",
+          "Apoiamos empresas na criação ou profissionalização do setor de tecnologia, conectando estratégia, operação, processos, fornecedores, documentação e gestão técnica.",
         bullets: [
-          "Arquitetura modular preparada para novas regras de negócio",
-          "Experiência orientada a operação e usabilidade real",
-          "Camadas de acesso, governança e observabilidade",
-          "Base técnica pronta para crescer sem reescrever a plataforma"
+          "Diagnóstico da maturidade técnica atual",
+          "Definição de processos e responsabilidades",
+          "Organização de stack, acessos e documentação",
+          "Rotina de governança e priorização"
         ],
         deliverables: [
-          "Descoberta de fluxos e desenho funcional",
-          "Plataforma web customizada com áreas autenticadas",
-          "Documentação técnica, endpoints e integrações",
-          "Estratégia de deploy e monitoramento",
-          "Roadmap inicial de evolução do produto"
+          "Mapa de maturidade tecnológica",
+          "Plano de estruturação do setor",
+          "Documentação de acessos e ferramentas",
+          "Processo de gestão de demandas",
+          "Roadmap técnico inicial"
         ],
-        image: "/images/unti-digital-homepage-image-nossas-solucoes-plataformas-web.png",
+        image: imageMap.platform,
         audience: "companies",
-        seoTitle: "Plataformas web sob medida | UNTI Digital",
-        metaDescription:
-          "Criamos plataformas web, portais e sistemas sob medida com foco em escala, governança e operação digital."
+        seoTitle: "Implementação de setor de tecnologia | UNTI Digital",
+        metaDescription: "Estruturação de setor de tecnologia para empresas com processos, governança, documentação e roadmap técnico."
       },
       {
-        slug: "integracoes-crm-erp",
-        title: "Integrações com CRM e ERP",
+        slug: "implementacao-mkt-digital",
+        title: "Implementação do setor de MKT Digital da empresa",
         description:
-          "Conectamos marketing, vendas, operações e dados críticos para reduzir retrabalho e acelerar respostas comerciais.",
-        shortDescription:
-          "Integrações robustas entre CRM, ERP, APIs e sistemas internos.",
+          "Montamos a base de marketing digital para aquisição, posicionamento, conteúdo, campanhas e acompanhamento de resultados.",
+        shortDescription: "Estruturação de marketing digital para empresas que precisam gerar demanda com método.",
         fullDescription:
-          "Mapeamos fluxos, eventos, dependências e regras de negócio para criar integrações confiáveis entre ferramentas comerciais e sistemas operacionais. O objetivo é eliminar silos e transformar dados dispersos em um fluxo único.",
+          "Organizamos o setor de marketing digital com canais, métricas, campanhas, conteúdo, automações e rotinas de análise para tornar a geração de demanda mais previsível.",
         bullets: [
-          "Sincronização entre CRM, ERP, marketing e operação",
-          "Tratamento de falhas e observabilidade dos fluxos",
-          "Automação de etapas repetitivas e críticas",
-          "Mais previsibilidade para equipes comercial e operacional"
+          "Mapeamento de canais e público",
+          "Organização de campanhas e funis",
+          "Rotina de conteúdo e análise",
+          "Integração com vendas e atendimento"
         ],
         deliverables: [
-          "Mapeamento técnico dos fluxos e pontos de integração",
-          "APIs, webhooks e rotinas de sincronização",
-          "Monitoramento e alertas para integrações críticas",
-          "Documentação funcional e técnica dos processos",
-          "Plano de contingência e evolução dos conectores"
+          "Plano de marketing digital",
+          "Estrutura de campanha e captação",
+          "Calendário inicial de conteúdo",
+          "Métricas de acompanhamento",
+          "Fluxo entre marketing e vendas"
         ],
-        image: "/images/unti-digital-homepage-image-nossas-solucoes-integracoes-e-automacoes.png",
+        image: imageMap.whiteLabel,
+        audience: "companies",
+        seoTitle: "Implementação de MKT Digital | UNTI Digital",
+        metaDescription: "Implementação de setor de marketing digital para empresas com campanhas, conteúdo, funis e métricas."
+      },
+      {
+        slug: "desenvolvimento-aplicacoes-aplicativos",
+        title: "Desenvolvimento de aplicações e aplicativos",
+        description:
+          "Criamos sistemas, portais, áreas logadas, aplicações web e aplicativos para digitalizar processos e produtos.",
+        shortDescription: "Aplicações, sistemas e aplicativos sob medida para operações digitais mais completas.",
+        fullDescription:
+          "Desenvolvemos aplicações sob medida para empresas que precisam transformar processos, serviços ou produtos em experiências digitais robustas, escaláveis e bem organizadas.",
+        bullets: [
+          "Arquitetura modular e escalável",
+          "UX voltada ao uso real da operação",
+          "Áreas autenticadas, dashboards e permissões",
+          "Integrações com APIs e sistemas internos"
+        ],
+        deliverables: [
+          "Desenho funcional da aplicação",
+          "Aplicação web ou app sob medida",
+          "Documentação técnica",
+          "Deploy e monitoramento",
+          "Roadmap de evolução"
+        ],
+        image: imageMap.platform,
+        audience: "companies",
+        seoTitle: "Desenvolvimento de aplicações e aplicativos | UNTI Digital",
+        metaDescription: "Desenvolvimento de sistemas, aplicações web e aplicativos sob medida para empresas."
+      },
+      {
+        slug: "infraestrutura-digital",
+        title: "Infraestrutura digital",
+        description:
+          "Organizamos hospedagem, domínio, segurança, performance, acessos, monitoramento e base técnica dos ambientes digitais.",
+        shortDescription: "Base técnica, segurança e infraestrutura para ambientes digitais mais confiáveis.",
+        fullDescription:
+          "Estruturamos a infraestrutura digital da empresa para reduzir riscos, melhorar performance, organizar acessos e manter ambientes mais seguros e estáveis.",
+        bullets: [
+          "Revisão de hospedagem, domínio e DNS",
+          "Organização de acessos e permissões",
+          "Boas práticas de segurança e backup",
+          "Monitoramento e plano de continuidade"
+        ],
+        deliverables: [
+          "Diagnóstico de infraestrutura",
+          "Mapa de acessos e riscos",
+          "Plano de segurança e backup",
+          "Configuração de ambientes",
+          "Rotina de manutenção técnica"
+        ],
+        image: imageMap.governance,
         audience: "shared",
-        seoTitle: "Integrações com CRM e ERP | UNTI Digital",
-        metaDescription:
-          "Integramos CRM, ERP, APIs e automações para unificar dados, reduzir retrabalho e acelerar a operação digital."
+        seoTitle: "Infraestrutura digital | UNTI Digital",
+        metaDescription: "Infraestrutura digital para empresas com hospedagem, domínio, segurança, backup e monitoramento."
       },
       {
-        slug: "governanca-seguranca",
-        title: "Governança e segurança",
+        slug: "integracao",
+        title: "Integração",
         description:
-          "Camadas de proteção, controle de acessos, trilhas de auditoria e boas práticas para operações digitais mais seguras.",
-        shortDescription:
-          "Segurança, governança e conformidade para ambientes web e integrações críticas.",
+          "Conectamos sistemas, CRMs, ERPs, formulários, automações e dados para reduzir retrabalho e acelerar a operação.",
+        shortDescription: "Integrações entre ferramentas, APIs, CRM, ERP e automações operacionais.",
         fullDescription:
-          "Organizamos políticas, acessos, riscos e práticas técnicas para reduzir exposição operacional. A proposta é transformar segurança em uma decisão de arquitetura e não em uma reação tardia.",
+          "Mapeamos fluxos, eventos, dependências e regras de negócio para criar integrações confiáveis entre ferramentas comerciais, sistemas operacionais e canais digitais.",
         bullets: [
-          "Controle de acessos e desenho de permissões",
-          "Revisão de superfícies críticas e riscos operacionais",
-          "Boas práticas alinhadas a LGPD e governança digital",
-          "Mais previsibilidade para auditoria, manutenção e escala"
+          "Mapeamento de fluxos e dependências",
+          "Integração via APIs, webhooks e automações",
+          "Tratamento de falhas e logs",
+          "Documentação funcional e técnica"
         ],
         deliverables: [
-          "Diagnóstico inicial de riscos e prioridades",
-          "Roadmap técnico de segurança e governança",
-          "Recomendações de controle de acesso e proteção",
-          "Documentação de fluxos sensíveis e pontos críticos",
-          "Trilha de melhoria contínua para evolução da operação"
+          "Mapa de integrações",
+          "Conectores e webhooks",
+          "Rotinas de sincronização",
+          "Logs e alertas",
+          "Documentação do processo"
         ],
-        image: "/images/unti-digital-homepage-image-agilidade-tecnica-com-governanca.png",
+        image: imageMap.integration,
         audience: "shared",
-        seoTitle: "Governança e segurança digital | UNTI Digital",
-        metaDescription:
-          "Estruturamos governança, segurança e controles para operações digitais com foco em proteção, conformidade e escala."
+        seoTitle: "Integração de sistemas | UNTI Digital",
+        metaDescription: "Integração de sistemas, CRM, ERP, APIs e automações para empresas."
       },
       {
-        slug: "white-label-agencias",
-        title: "White label técnico para agências",
+        slug: "operacao-cliente-final",
+        title: "Operação com cliente final",
         description:
-          "Squad técnico sob demanda para ampliar a capacidade da agência com confidencialidade, velocidade e padrão enterprise.",
-        shortDescription:
-          "Engenharia sob sua marca para projetos que exigem mais robustez técnica.",
+          "Apoiamos a operação digital no contato com o cliente final, organizando canais, atendimento, funis e rotinas comerciais.",
+        shortDescription: "Apoio na operação digital com cliente final, atendimento, canais e funis comerciais.",
         fullDescription:
-          "Atuamos como extensão técnica da agência para viabilizar entregas mais sofisticadas sem sobrecarregar a estrutura interna. Entramos para organizar escopo, executar com consistência e preservar a relação comercial da agência com o cliente final.",
+          "Estruturamos a operação com cliente final para tornar o atendimento mais claro, reduzir perdas de oportunidade e conectar marketing, vendas e suporte em um fluxo mais eficiente.",
         bullets: [
-          "Atuação confidencial com integração ao processo da agência",
-          "Capacidade sob demanda para projetos mais complexos",
-          "Entrega técnica com padrão consistente de engenharia",
-          "Mais escala comercial sem ampliar folha fixa"
+          "Mapeamento da jornada do cliente final",
+          "Organização de canais e respostas",
+          "Integração com CRM e WhatsApp",
+          "Rotina de acompanhamento comercial"
         ],
         deliverables: [
-          "Apoio técnico em sites, plataformas e integrações",
-          "Fluxo de alinhamento, checkpoints e documentação",
-          "Estrutura white label para squads sob demanda",
-          "Suporte na priorização técnica e distribuição de escopo",
-          "Base confiável para recorrência e retenção de clientes"
+          "Fluxo de atendimento digital",
+          "Organização de canais",
+          "Roteiros e automações iniciais",
+          "Métricas de contato e conversão",
+          "Plano de melhoria da operação"
         ],
-        image: "/images/unti-digital-homepage-image-nossas-solucoes-white-label-tecnico.png",
+        image: imageMap.web,
+        audience: "companies",
+        seoTitle: "Operação com cliente final | UNTI Digital",
+        metaDescription: "Operação digital com cliente final, atendimento, canais, funis e rotinas comerciais."
+      },
+      {
+        slug: "manutencao-gestao-projetos",
+        title: "Manutenção e gestão de projetos entregues",
+        description:
+          "Mantemos projetos digitais em evolução com suporte, melhorias, organização de demandas e gestão técnica contínua.",
+        shortDescription: "Manutenção, sustentação e gestão técnica para projetos digitais já entregues.",
+        fullDescription:
+          "Assumimos a manutenção e evolução de projetos digitais para preservar qualidade, corrigir pontos críticos, priorizar melhorias e manter a operação técnica funcionando com previsibilidade.",
+        bullets: [
+          "Correções, melhorias e suporte recorrente",
+          "Gestão de demandas e prioridades",
+          "Monitoramento de estabilidade e performance",
+          "Documentação e histórico de evolução"
+        ],
+        deliverables: [
+          "Plano de manutenção",
+          "Backlog priorizado",
+          "Correções e melhorias contínuas",
+          "Relatórios de acompanhamento",
+          "Gestão técnica do projeto"
+        ],
+        image: imageMap.governance,
+        audience: "shared",
+        seoTitle: "Manutenção e gestão de projetos digitais | UNTI Digital",
+        metaDescription: "Manutenção, sustentação e gestão técnica de sites, sistemas, aplicações e projetos digitais entregues."
+      },
+      {
+        slug: "servicos-sob-demanda",
+        title: "Serviços sob demanda",
+        description:
+          "Squad técnico flexível para demandas pontuais, sprints, correções, melhorias, white label e reforço de capacidade.",
+        shortDescription: "Equipe sob demanda para ampliar capacidade técnica com rapidez, sigilo e qualidade.",
+        fullDescription:
+          "Atuamos sob demanda para empresas e agências que precisam de reforço técnico, white label, apoio em sprints, correções críticas ou execução de projetos específicos com padrão profissional.",
+        bullets: [
+          "Atuação white label quando necessário",
+          "Sprints pontuais ou recorrentes",
+          "Correções, melhorias e novas entregas",
+          "Capacidade técnica sem contratação fixa"
+        ],
+        deliverables: [
+          "Diagnóstico da demanda",
+          "Sprint técnica definida",
+          "Execução e validação",
+          "Documentação objetiva",
+          "Plano de continuidade quando aplicável"
+        ],
+        image: imageMap.whiteLabel,
         audience: "agencies",
-        seoTitle: "White label técnico para agências | UNTI Digital",
-        metaDescription:
-          "Apoiamos agências com engenharia white label para sites, plataformas e integrações com confidencialidade e escala."
+        seoTitle: "Serviços sob demanda | UNTI Digital",
+        metaDescription: "Serviços técnicos sob demanda para empresas e agências: white label, sprints, melhorias e reforço de capacidade."
       }
     ]
   },
   en: {
-    title: "Our digital solutions",
+    title: "Our services",
     subtitle:
-      "Services designed for companies and agencies that need authority, critical integrations, strong security, and predictable growth.",
+      "Solutions for companies that need technology structure, digital marketing operations, client-facing workflows, and continuous project evolution.",
     labels: {
       differentials: "Differentials",
       deliverables: "Deliverables",
@@ -204,151 +306,128 @@ const servicesContent: Record<AppLocale, ServicesContent> = {
     },
     services: [
       {
-        slug: "sites-institucionais",
-        title: "High-performance institutional websites",
-        description:
-          "Institutional presence with clear messaging, real speed, technical SEO, and a structure built to generate qualified opportunities.",
-        shortDescription:
-          "Premium websites for companies that need to communicate authority and convert better.",
-        fullDescription:
-          "We build institutional hubs for companies that need to signal digital maturity from the first visit. The goal is to combine positioning, performance, content architecture, and conversion paths on top of a reliable technical foundation.",
-        bullets: [
-          "Architecture focused on positioning, quick comprehension, and consultative conversion",
-          "Stable Core Web Vitals across desktop and mobile",
-          "A technical base ready for SEO, content, and organic growth",
-          "Distributed contact points to reduce commercial friction"
-        ],
-        deliverables: [
-          "Institutional sitemap and content architecture",
-          "Responsive interface built around authority and clarity",
-          "Structure prepared for CRM and automation integrations",
-          "Proof, differentiation, and scalable content blocks",
-          "Operational documentation and an evolution plan"
-        ],
-        image: "/images/unti-digital-homepage-image-nossas-solucoes-sites-institucionais.png",
+        slug: "desenvolvimento-web",
+        title: "Web Development",
+        description: "Websites, landing pages, and web structures focused on authority, performance, SEO, and qualified opportunities.",
+        shortDescription: "Premium websites and pages for companies that need to sell, communicate, and operate better.",
+        fullDescription: "We build complete web experiences for companies that need strong digital presence, fast pages, organized content, and clear conversion paths.",
+        bullets: ["Commercial page architecture", "Performance, responsiveness, and technical SEO", "Design aligned with the company identity", "Structure prepared for continuous evolution"],
+        deliverables: ["Institutional website or landing page", "Responsive components", "Optimized technical base", "Conversion path setup", "Operational documentation"],
+        image: imageMap.web,
         audience: "companies",
-        seoTitle: "High-performance institutional websites | UNTI Digital",
-        metaDescription:
-          "We design premium institutional websites focused on authority, performance, technical SEO, and opportunity generation."
+        seoTitle: "Web Development | UNTI Digital",
+        metaDescription: "Web development for companies focused on performance, SEO, authority, and conversion."
       },
       {
-        slug: "plataformas-web",
-        title: "Custom web platforms",
-        description:
-          "Systems, portals, and digital operations built to support complex workflows without sacrificing clarity, stability, or scale.",
-        shortDescription:
-          "Tailored engineering for operations, products, and higher-complexity member areas.",
-        fullDescription:
-          "We develop web platforms for operations that need more than a marketing website. We structure modules, permissions, dashboards, automations, and integrations inside architectures designed for continuous evolution.",
-        bullets: [
-          "Modular architecture prepared for new business rules",
-          "Experience designed around real operational use",
-          "Access layers, governance, and observability",
-          "A technical base that can scale without rebuilding the platform"
-        ],
-        deliverables: [
-          "Workflow discovery and functional design",
-          "Custom web platform with authenticated areas",
-          "Technical documentation, endpoints, and integrations",
-          "Deployment and monitoring strategy",
-          "Initial product evolution roadmap"
-        ],
-        image: "/images/unti-digital-homepage-image-nossas-solucoes-plataformas-web.png",
+        slug: "implementacao-setor-tecnologia",
+        title: "Technology department implementation",
+        description: "We structure processes, tools, architecture, and technical routines for companies that need to organize their technology area.",
+        shortDescription: "Technology department organization with processes, tools, and technical governance.",
+        fullDescription: "We support companies in creating or professionalizing their technology department by connecting strategy, operation, processes, vendors, documentation, and technical management.",
+        bullets: ["Technical maturity diagnosis", "Process and responsibility definition", "Stack, access, and documentation organization", "Governance and prioritization routine"],
+        deliverables: ["Technology maturity map", "Department structuring plan", "Access and tool documentation", "Demand management process", "Initial technical roadmap"],
+        image: imageMap.platform,
         audience: "companies",
-        seoTitle: "Custom web platforms | UNTI Digital",
-        metaDescription:
-          "We build custom web platforms, portals, and systems focused on scale, governance, and digital operations."
+        seoTitle: "Technology department implementation | UNTI Digital",
+        metaDescription: "Technology department implementation for companies with processes, governance, documentation, and technical roadmap."
       },
       {
-        slug: "integracoes-crm-erp",
-        title: "CRM and ERP integrations",
-        description:
-          "We connect marketing, sales, operations, and critical data to reduce manual work and speed up commercial response.",
-        shortDescription:
-          "Robust integrations across CRM, ERP, APIs, and internal systems.",
-        fullDescription:
-          "We map flows, events, dependencies, and business rules to create reliable integrations between commercial tools and operational systems. The objective is to remove silos and turn fragmented data into a single flow.",
-        bullets: [
-          "Synchronization across CRM, ERP, marketing, and operations",
-          "Failure handling and observability for critical flows",
-          "Automation of repetitive and high-impact steps",
-          "More predictability for commercial and operational teams"
-        ],
-        deliverables: [
-          "Technical mapping of flows and integration points",
-          "APIs, webhooks, and synchronization routines",
-          "Monitoring and alerts for critical integrations",
-          "Functional and technical process documentation",
-          "Contingency and connector evolution plan"
-        ],
-        image: "/images/unti-digital-homepage-image-nossas-solucoes-integracoes-e-automacoes.png",
+        slug: "implementacao-mkt-digital",
+        title: "Digital marketing department implementation",
+        description: "We build the digital marketing foundation for acquisition, positioning, content, campaigns, and performance tracking.",
+        shortDescription: "Digital marketing structure for companies that need demand generation with method.",
+        fullDescription: "We organize digital marketing operations with channels, metrics, campaigns, content, automations, and analysis routines to make demand generation more predictable.",
+        bullets: ["Channel and audience mapping", "Campaign and funnel organization", "Content and analysis routine", "Sales and customer service integration"],
+        deliverables: ["Digital marketing plan", "Campaign and acquisition structure", "Initial content calendar", "Tracking metrics", "Marketing-to-sales flow"],
+        image: imageMap.whiteLabel,
+        audience: "companies",
+        seoTitle: "Digital marketing department implementation | UNTI Digital",
+        metaDescription: "Digital marketing department implementation with campaigns, content, funnels, and metrics."
+      },
+      {
+        slug: "desenvolvimento-aplicacoes-aplicativos",
+        title: "Application and app development",
+        description: "We build systems, portals, logged areas, web applications, and apps to digitize processes and products.",
+        shortDescription: "Custom applications, systems, and apps for more complete digital operations.",
+        fullDescription: "We develop custom applications for companies that need to turn processes, services, or products into robust, scalable, and well-organized digital experiences.",
+        bullets: ["Modular and scalable architecture", "UX designed for real operational use", "Authenticated areas, dashboards, and permissions", "Integrations with APIs and internal systems"],
+        deliverables: ["Functional application design", "Custom web application or app", "Technical documentation", "Deploy and monitoring", "Evolution roadmap"],
+        image: imageMap.platform,
+        audience: "companies",
+        seoTitle: "Application and app development | UNTI Digital",
+        metaDescription: "Development of systems, web applications, and custom apps for companies."
+      },
+      {
+        slug: "infraestrutura-digital",
+        title: "Digital infrastructure",
+        description: "We organize hosting, domains, security, performance, access, monitoring, and the technical base of digital environments.",
+        shortDescription: "Technical base, security, and infrastructure for more reliable digital environments.",
+        fullDescription: "We structure the company's digital infrastructure to reduce risks, improve performance, organize access, and maintain safer and more stable environments.",
+        bullets: ["Hosting, domain, and DNS review", "Access and permission organization", "Security and backup best practices", "Monitoring and continuity plan"],
+        deliverables: ["Infrastructure diagnosis", "Access and risk map", "Security and backup plan", "Environment setup", "Technical maintenance routine"],
+        image: imageMap.governance,
         audience: "shared",
-        seoTitle: "CRM and ERP integrations | UNTI Digital",
-        metaDescription:
-          "We integrate CRM, ERP, APIs, and automation flows to unify data, reduce rework, and accelerate digital operations."
+        seoTitle: "Digital infrastructure | UNTI Digital",
+        metaDescription: "Digital infrastructure for companies with hosting, domains, security, backup, and monitoring."
       },
       {
-        slug: "governanca-seguranca",
-        title: "Governance and security",
-        description:
-          "Protection layers, access control, audit trails, and operational best practices for safer digital environments.",
-        shortDescription:
-          "Security, governance, and compliance for web environments and critical integrations.",
-        fullDescription:
-          "We organize policies, access, risks, and technical practices to reduce operational exposure. The goal is to make security an architectural decision rather than a late-stage reaction.",
-        bullets: [
-          "Access control and permission design",
-          "Review of critical surfaces and operational risk points",
-          "Best practices aligned with data privacy and digital governance",
-          "More predictability for audits, maintenance, and scale"
-        ],
-        deliverables: [
-          "Initial diagnosis of risks and priorities",
-          "Security and governance technical roadmap",
-          "Recommendations for access control and protection",
-          "Documentation of sensitive flows and critical points",
-          "Continuous improvement track for the operation"
-        ],
-        image: "/images/unti-digital-homepage-image-agilidade-tecnica-com-governanca.png",
+        slug: "integracao",
+        title: "Integration",
+        description: "We connect systems, CRMs, ERPs, forms, automations, and data to reduce rework and accelerate operations.",
+        shortDescription: "Integrations across tools, APIs, CRM, ERP, and operational automations.",
+        fullDescription: "We map flows, events, dependencies, and business rules to create reliable integrations between commercial tools, operational systems, and digital channels.",
+        bullets: ["Flow and dependency mapping", "API, webhook, and automation integration", "Failure handling and logs", "Functional and technical documentation"],
+        deliverables: ["Integration map", "Connectors and webhooks", "Synchronization routines", "Logs and alerts", "Process documentation"],
+        image: imageMap.integration,
         audience: "shared",
-        seoTitle: "Digital governance and security | UNTI Digital",
-        metaDescription:
-          "We structure governance, security, and controls for digital operations with a focus on protection, compliance, and scale."
+        seoTitle: "System integration | UNTI Digital",
+        metaDescription: "Systems, CRM, ERP, API, and automation integration for companies."
       },
       {
-        slug: "white-label-agencias",
-        title: "Technical white-label for agencies",
-        description:
-          "On-demand technical squad to expand agency delivery with confidentiality, speed, and enterprise-grade execution.",
-        shortDescription:
-          "Engineering under your brand for projects that require stronger technical depth.",
-        fullDescription:
-          "We work as an extension of the agency's technical team to make more sophisticated deliveries viable without overloading the internal structure. We step in to organize scope, execute consistently, and preserve the agency's commercial relationship with the end client.",
-        bullets: [
-          "Confidential work integrated into the agency process",
-          "On-demand capacity for more complex projects",
-          "Consistent engineering standards across deliveries",
-          "More commercial scale without expanding fixed payroll"
-        ],
-        deliverables: [
-          "Technical support for websites, platforms, and integrations",
-          "Alignment flow, checkpoints, and documentation",
-          "White-label structure for on-demand squads",
-          "Support in technical prioritization and scope distribution",
-          "Reliable base for recurring delivery and retention"
-        ],
-        image: "/images/unti-digital-homepage-image-nossas-solucoes-white-label-tecnico.png",
+        slug: "operacao-cliente-final",
+        title: "End-client operation",
+        description: "We support the digital operation in contact with the end client by organizing channels, service flows, funnels, and commercial routines.",
+        shortDescription: "Support for end-client digital operations, service channels, and commercial funnels.",
+        fullDescription: "We structure the end-client operation to make service clearer, reduce lost opportunities, and connect marketing, sales, and support in a more efficient flow.",
+        bullets: ["End-client journey mapping", "Channel and response organization", "CRM and WhatsApp integration", "Commercial follow-up routine"],
+        deliverables: ["Digital service flow", "Channel organization", "Initial scripts and automations", "Contact and conversion metrics", "Operation improvement plan"],
+        image: imageMap.web,
+        audience: "companies",
+        seoTitle: "End-client operation | UNTI Digital",
+        metaDescription: "End-client digital operation, service channels, funnels, and commercial routines."
+      },
+      {
+        slug: "manutencao-gestao-projetos",
+        title: "Maintenance and management of delivered projects",
+        description: "We keep digital projects evolving with support, improvements, demand organization, and continuous technical management.",
+        shortDescription: "Maintenance, support, and technical management for delivered digital projects.",
+        fullDescription: "We take over maintenance and evolution of digital projects to preserve quality, correct critical points, prioritize improvements, and keep the technical operation predictable.",
+        bullets: ["Recurring fixes, improvements, and support", "Demand and priority management", "Stability and performance monitoring", "Documentation and evolution history"],
+        deliverables: ["Maintenance plan", "Prioritized backlog", "Continuous fixes and improvements", "Follow-up reports", "Technical project management"],
+        image: imageMap.governance,
+        audience: "shared",
+        seoTitle: "Maintenance and management of digital projects | UNTI Digital",
+        metaDescription: "Maintenance, support, and technical management for websites, systems, applications, and delivered digital projects."
+      },
+      {
+        slug: "servicos-sob-demanda",
+        title: "On-demand services",
+        description: "A flexible technical squad for specific demands, sprints, fixes, improvements, white-label execution, and capacity reinforcement.",
+        shortDescription: "On-demand team to expand technical capacity with speed, confidentiality, and quality.",
+        fullDescription: "We work on demand for companies and agencies that need technical reinforcement, white-label execution, sprint support, critical fixes, or specific projects with a professional standard.",
+        bullets: ["White-label execution when needed", "One-off or recurring sprints", "Fixes, improvements, and new deliveries", "Technical capacity without fixed hiring"],
+        deliverables: ["Demand diagnosis", "Defined technical sprint", "Execution and validation", "Objective documentation", "Continuity plan when applicable"],
+        image: imageMap.whiteLabel,
         audience: "agencies",
-        seoTitle: "Technical white-label for agencies | UNTI Digital",
-        metaDescription:
-          "We support agencies with white-label engineering for websites, platforms, and integrations with confidentiality and scale."
+        seoTitle: "On-demand services | UNTI Digital",
+        metaDescription: "On-demand technical services for companies and agencies: white label, sprints, improvements, and capacity reinforcement."
       }
     ]
   },
   es: {
-    title: "Nuestras soluciones digitales",
+    title: "Nuestros servicios",
     subtitle:
-      "Servicios pensados para empresas y agencias que necesitan autoridad, integraciones críticas, seguridad sólida y crecimiento predecible.",
+      "Soluciones para empresas que necesitan estructurar tecnología, marketing digital, operación con cliente final y evolución continua de proyectos.",
     labels: {
       differentials: "Diferenciales",
       deliverables: "Entregables",
@@ -361,147 +440,132 @@ const servicesContent: Record<AppLocale, ServicesContent> = {
     },
     services: [
       {
-        slug: "sites-institucionais",
-        title: "Sitios institucionales de alto rendimiento",
-        description:
-          "Presencia institucional con narrativa clara, velocidad real, SEO técnico y estructura orientada a generar oportunidades calificadas.",
-        shortDescription:
-          "Sitios premium para empresas que necesitan comunicar autoridad y convertir mejor.",
-        fullDescription:
-          "Creamos hubs institucionales para empresas que necesitan transmitir madurez digital desde la primera visita. La propuesta combina posicionamiento, rendimiento, arquitectura de contenido y rutas de conversión sobre una base técnica confiable.",
-        bullets: [
-          "Arquitectura orientada a posicionamiento, lectura rápida y conversión consultiva",
-          "Core Web Vitals estables en desktop y mobile",
-          "Base técnica preparada para SEO, contenido y crecimiento orgánico",
-          "Puntos de contacto distribuidos para reducir fricción comercial"
-        ],
-        deliverables: [
-          "Mapa de páginas y arquitectura institucional",
-          "Interfaz responsive enfocada en autoridad y claridad",
-          "Estructura lista para integraciones con CRM y automatizaciones",
-          "Bloques de prueba, diferenciación y contenido escalable",
-          "Documentación operativa y plan de evolución"
-        ],
-        image: "/images/unti-digital-homepage-image-nossas-solucoes-sites-institucionais.png",
+        slug: "desenvolvimento-web",
+        title: "Desarrollo Web",
+        description: "Sitios, landing pages y estructuras web enfocadas en autoridad, rendimiento, SEO y oportunidades calificadas.",
+        shortDescription: "Sitios y páginas premium para empresas que necesitan vender, comunicar y operar mejor.",
+        fullDescription: "Creamos experiencias web completas para empresas que necesitan presencia digital fuerte, páginas rápidas, contenido organizado y rutas claras de conversión.",
+        bullets: ["Arquitectura de páginas con foco comercial", "Rendimiento, responsividad y SEO técnico", "Diseño alineado con la identidad de la empresa", "Estructura lista para evolución continua"],
+        deliverables: ["Sitio institucional o landing page", "Componentes responsivos", "Base técnica optimizada", "Configuración de rutas de conversión", "Documentación operativa"],
+        image: imageMap.web,
         audience: "companies",
-        seoTitle: "Sitios institucionales de alto rendimiento | UNTI Digital",
-        metaDescription:
-          "Diseñamos sitios institucionales premium con foco en autoridad, rendimiento, SEO técnico y generación de oportunidades."
+        seoTitle: "Desarrollo Web | UNTI Digital",
+        metaDescription: "Desarrollo web para empresas con foco en rendimiento, SEO, autoridad y conversión."
       },
       {
-        slug: "plataformas-web",
-        title: "Plataformas web a medida",
-        description:
-          "Sistemas, portales y operaciones digitales creados para soportar flujos complejos sin perder claridad, estabilidad ni escala.",
-        shortDescription:
-          "Ingeniería a medida para operaciones, productos y áreas privadas de mayor complejidad.",
-        fullDescription:
-          "Desarrollamos plataformas web para operaciones que necesitan ir más allá del sitio institucional. Estructuramos módulos, permisos, tableros, automatizaciones e integraciones en arquitecturas listas para evolucionar continuamente.",
-        bullets: [
-          "Arquitectura modular preparada para nuevas reglas de negocio",
-          "Experiencia diseñada para el uso operativo real",
-          "Capas de acceso, gobernanza y observabilidad",
-          "Base técnica que puede escalar sin rehacer la plataforma"
-        ],
-        deliverables: [
-          "Descubrimiento de flujos y diseño funcional",
-          "Plataforma web customizada con áreas autenticadas",
-          "Documentación técnica, endpoints e integraciones",
-          "Estrategia de deploy y monitoreo",
-          "Roadmap inicial de evolución del producto"
-        ],
-        image: "/images/unti-digital-homepage-image-nossas-solucoes-plataformas-web.png",
+        slug: "implementacao-setor-tecnologia",
+        title: "Implementación del sector de tecnología de la empresa",
+        description: "Estructuramos procesos, herramientas, arquitectura y rutina técnica para empresas que necesitan organizar su área de tecnología.",
+        shortDescription: "Organización del sector de tecnología con procesos, herramientas y gobernanza técnica.",
+        fullDescription: "Apoyamos a empresas en la creación o profesionalización del sector de tecnología, conectando estrategia, operación, procesos, proveedores, documentación y gestión técnica.",
+        bullets: ["Diagnóstico de madurez técnica", "Definición de procesos y responsabilidades", "Organización de stack, accesos y documentación", "Rutina de gobernanza y priorización"],
+        deliverables: ["Mapa de madurez tecnológica", "Plan de estructura del sector", "Documentación de accesos y herramientas", "Proceso de gestión de demandas", "Roadmap técnico inicial"],
+        image: imageMap.platform,
         audience: "companies",
-        seoTitle: "Plataformas web a medida | UNTI Digital",
-        metaDescription:
-          "Creamos plataformas web, portales y sistemas a medida con foco en escala, gobernanza y operación digital."
+        seoTitle: "Implementación de sector de tecnología | UNTI Digital",
+        metaDescription: "Implementación de sector de tecnología con procesos, gobernanza, documentación y roadmap técnico."
       },
       {
-        slug: "integracoes-crm-erp",
-        title: "Integraciones con CRM y ERP",
-        description:
-          "Conectamos marketing, ventas, operaciones y datos críticos para reducir retrabajo y acelerar la respuesta comercial.",
-        shortDescription:
-          "Integraciones robustas entre CRM, ERP, APIs y sistemas internos.",
-        fullDescription:
-          "Mapeamos flujos, eventos, dependencias y reglas de negocio para crear integraciones confiables entre herramientas comerciales y sistemas operativos. El objetivo es eliminar silos y convertir datos fragmentados en un flujo único.",
-        bullets: [
-          "Sincronización entre CRM, ERP, marketing y operación",
-          "Tratamiento de fallos y observabilidad de flujos críticos",
-          "Automatización de pasos repetitivos y de alto impacto",
-          "Más previsibilidad para equipos comerciales y operativos"
-        ],
-        deliverables: [
-          "Mapeo técnico de flujos y puntos de integración",
-          "APIs, webhooks y rutinas de sincronización",
-          "Monitoreo y alertas para integraciones críticas",
-          "Documentación funcional y técnica de procesos",
-          "Plan de contingencia y evolución de conectores"
-        ],
-        image: "/images/unti-digital-homepage-image-nossas-solucoes-integracoes-e-automacoes.png",
+        slug: "implementacao-mkt-digital",
+        title: "Implementación del sector de MKT Digital de la empresa",
+        description: "Montamos la base de marketing digital para adquisición, posicionamiento, contenido, campañas y seguimiento de resultados.",
+        shortDescription: "Estructura de marketing digital para empresas que necesitan generar demanda con método.",
+        fullDescription: "Organizamos la operación de marketing digital con canales, métricas, campañas, contenido, automatizaciones y rutinas de análisis para volver la generación de demanda más previsible.",
+        bullets: ["Mapeo de canales y público", "Organización de campañas y embudos", "Rutina de contenido y análisis", "Integración con ventas y atención"],
+        deliverables: ["Plan de marketing digital", "Estructura de campaña y captación", "Calendario inicial de contenido", "Métricas de seguimiento", "Flujo entre marketing y ventas"],
+        image: imageMap.whiteLabel,
+        audience: "companies",
+        seoTitle: "Implementación de MKT Digital | UNTI Digital",
+        metaDescription: "Implementación de sector de marketing digital con campañas, contenido, embudos y métricas."
+      },
+      {
+        slug: "desenvolvimento-aplicacoes-aplicativos",
+        title: "Desarrollo de aplicaciones y apps",
+        description: "Creamos sistemas, portales, áreas privadas, aplicaciones web y apps para digitalizar procesos y productos.",
+        shortDescription: "Aplicaciones, sistemas y apps a medida para operaciones digitales más completas.",
+        fullDescription: "Desarrollamos aplicaciones a medida para empresas que necesitan transformar procesos, servicios o productos en experiencias digitales robustas, escalables y bien organizadas.",
+        bullets: ["Arquitectura modular y escalable", "UX enfocada en uso operativo real", "Áreas autenticadas, dashboards y permisos", "Integraciones con APIs y sistemas internos"],
+        deliverables: ["Diseño funcional de la aplicación", "Aplicación web o app a medida", "Documentación técnica", "Deploy y monitoreo", "Roadmap de evolución"],
+        image: imageMap.platform,
+        audience: "companies",
+        seoTitle: "Desarrollo de aplicaciones y apps | UNTI Digital",
+        metaDescription: "Desarrollo de sistemas, aplicaciones web y apps a medida para empresas."
+      },
+      {
+        slug: "infraestrutura-digital",
+        title: "Infraestructura digital",
+        description: "Organizamos hosting, dominio, seguridad, rendimiento, accesos, monitoreo y base técnica de ambientes digitales.",
+        shortDescription: "Base técnica, seguridad e infraestructura para ambientes digitales más confiables.",
+        fullDescription: "Estructuramos la infraestructura digital de la empresa para reducir riesgos, mejorar rendimiento, organizar accesos y mantener ambientes más seguros y estables.",
+        bullets: ["Revisión de hosting, dominio y DNS", "Organización de accesos y permisos", "Buenas prácticas de seguridad y backup", "Monitoreo y plan de continuidad"],
+        deliverables: ["Diagnóstico de infraestructura", "Mapa de accesos y riesgos", "Plan de seguridad y backup", "Configuración de ambientes", "Rutina de mantenimiento técnico"],
+        image: imageMap.governance,
         audience: "shared",
-        seoTitle: "Integraciones con CRM y ERP | UNTI Digital",
-        metaDescription:
-          "Integramos CRM, ERP, APIs y automatizaciones para unificar datos, reducir retrabajo y acelerar la operación digital."
+        seoTitle: "Infraestructura digital | UNTI Digital",
+        metaDescription: "Infraestructura digital para empresas con hosting, dominio, seguridad, backup y monitoreo."
       },
       {
-        slug: "governanca-seguranca",
-        title: "Gobernanza y seguridad",
-        description:
-          "Capas de protección, control de acceso, trazabilidad y buenas prácticas para operaciones digitales más seguras.",
-        shortDescription:
-          "Seguridad, gobernanza y cumplimiento para entornos web e integraciones críticas.",
-        fullDescription:
-          "Organizamos políticas, accesos, riesgos y prácticas técnicas para reducir exposición operativa. La meta es transformar la seguridad en una decisión de arquitectura y no en una reacción tardía.",
-        bullets: [
-          "Control de accesos y diseño de permisos",
-          "Revisión de superficies críticas y puntos de riesgo operativo",
-          "Buenas prácticas alineadas con privacidad y gobernanza digital",
-          "Más previsibilidad para auditorías, mantenimiento y escala"
-        ],
-        deliverables: [
-          "Diagnóstico inicial de riesgos y prioridades",
-          "Roadmap técnico de seguridad y gobernanza",
-          "Recomendaciones de control de acceso y protección",
-          "Documentación de flujos sensibles y puntos críticos",
-          "Ruta de mejora continua para la operación"
-        ],
-        image: "/images/unti-digital-homepage-image-agilidade-tecnica-com-governanca.png",
+        slug: "integracao",
+        title: "Integración",
+        description: "Conectamos sistemas, CRMs, ERPs, formularios, automatizaciones y datos para reducir retrabajo y acelerar la operación.",
+        shortDescription: "Integraciones entre herramientas, APIs, CRM, ERP y automatizaciones operativas.",
+        fullDescription: "Mapeamos flujos, eventos, dependencias y reglas de negocio para crear integraciones confiables entre herramientas comerciales, sistemas operativos y canales digitales.",
+        bullets: ["Mapeo de flujos y dependencias", "Integración vía APIs, webhooks y automatizaciones", "Tratamiento de fallos y logs", "Documentación funcional y técnica"],
+        deliverables: ["Mapa de integraciones", "Conectores y webhooks", "Rutinas de sincronización", "Logs y alertas", "Documentación del proceso"],
+        image: imageMap.integration,
         audience: "shared",
-        seoTitle: "Gobernanza y seguridad digital | UNTI Digital",
-        metaDescription:
-          "Estructuramos gobernanza, seguridad y controles para operaciones digitales con foco en protección, cumplimiento y escala."
+        seoTitle: "Integración de sistemas | UNTI Digital",
+        metaDescription: "Integración de sistemas, CRM, ERP, APIs y automatizaciones para empresas."
       },
       {
-        slug: "white-label-agencias",
-        title: "White label técnico para agencias",
-        description:
-          "Squad técnico bajo demanda para ampliar la capacidad de la agencia con confidencialidad, velocidad y estándar enterprise.",
-        shortDescription:
-          "Ingeniería bajo tu marca para proyectos que requieren mayor profundidad técnica.",
-        fullDescription:
-          "Actuamos como extensión técnica de la agencia para hacer viables entregas más sofisticadas sin sobrecargar la estructura interna. Entramos para organizar el alcance, ejecutar con consistencia y preservar la relación comercial de la agencia con el cliente final.",
-        bullets: [
-          "Trabajo confidencial integrado al proceso de la agencia",
-          "Capacidad bajo demanda para proyectos más complejos",
-          "Estándar consistente de ingeniería en las entregas",
-          "Más escala comercial sin ampliar la nómina fija"
-        ],
-        deliverables: [
-          "Soporte técnico para sitios, plataformas e integraciones",
-          "Flujo de alineación, checkpoints y documentación",
-          "Estructura white label para squads bajo demanda",
-          "Apoyo en priorización técnica y distribución de alcance",
-          "Base confiable para recurrencia y retención"
-        ],
-        image: "/images/unti-digital-homepage-image-nossas-solucoes-white-label-tecnico.png",
+        slug: "operacao-cliente-final",
+        title: "Operación con cliente final",
+        description: "Apoyamos la operación digital en el contacto con el cliente final, organizando canales, atención, embudos y rutinas comerciales.",
+        shortDescription: "Apoyo en operación digital con cliente final, atención, canales y embudos comerciales.",
+        fullDescription: "Estructuramos la operación con cliente final para volver la atención más clara, reducir pérdida de oportunidades y conectar marketing, ventas y soporte en un flujo más eficiente.",
+        bullets: ["Mapeo de jornada del cliente final", "Organización de canales y respuestas", "Integración con CRM y WhatsApp", "Rutina de seguimiento comercial"],
+        deliverables: ["Flujo de atención digital", "Organización de canales", "Guiones y automatizaciones iniciales", "Métricas de contacto y conversión", "Plan de mejora de la operación"],
+        image: imageMap.web,
+        audience: "companies",
+        seoTitle: "Operación con cliente final | UNTI Digital",
+        metaDescription: "Operación digital con cliente final, atención, canales, embudos y rutinas comerciales."
+      },
+      {
+        slug: "manutencao-gestao-projetos",
+        title: "Mantenimiento y gestión de proyectos entregados",
+        description: "Mantenemos proyectos digitales en evolución con soporte, mejoras, organización de demandas y gestión técnica continua.",
+        shortDescription: "Mantenimiento, soporte y gestión técnica para proyectos digitales ya entregados.",
+        fullDescription: "Asumimos el mantenimiento y evolución de proyectos digitales para preservar calidad, corregir puntos críticos, priorizar mejoras y mantener la operación técnica funcionando con previsibilidad.",
+        bullets: ["Correcciones, mejoras y soporte recurrente", "Gestión de demandas y prioridades", "Monitoreo de estabilidad y rendimiento", "Documentación e histórico de evolución"],
+        deliverables: ["Plan de mantenimiento", "Backlog priorizado", "Correcciones y mejoras continuas", "Informes de seguimiento", "Gestión técnica del proyecto"],
+        image: imageMap.governance,
+        audience: "shared",
+        seoTitle: "Mantenimiento y gestión de proyectos digitales | UNTI Digital",
+        metaDescription: "Mantenimiento, soporte y gestión técnica de sitios, sistemas, aplicaciones y proyectos digitales entregados."
+      },
+      {
+        slug: "servicos-sob-demanda",
+        title: "Servicios bajo demanda",
+        description: "Squad técnico flexible para demandas puntuales, sprints, correcciones, mejoras, white label y refuerzo de capacidad.",
+        shortDescription: "Equipo bajo demanda para ampliar capacidad técnica con rapidez, confidencialidad y calidad.",
+        fullDescription: "Actuamos bajo demanda para empresas y agencias que necesitan refuerzo técnico, white label, apoyo en sprints, correcciones críticas o ejecución de proyectos específicos con estándar profesional.",
+        bullets: ["Actuación white label cuando sea necesario", "Sprints puntuales o recurrentes", "Correcciones, mejoras y nuevas entregas", "Capacidad técnica sin contratación fija"],
+        deliverables: ["Diagnóstico de la demanda", "Sprint técnica definida", "Ejecución y validación", "Documentación objetiva", "Plan de continuidad cuando aplique"],
+        image: imageMap.whiteLabel,
         audience: "agencies",
-        seoTitle: "White label técnico para agencias | UNTI Digital",
-        metaDescription:
-          "Apoyamos agencias con ingeniería white label para sitios, plataformas e integraciones con confidencialidad y escala."
+        seoTitle: "Servicios bajo demanda | UNTI Digital",
+        metaDescription: "Servicios técnicos bajo demanda para empresas y agencias: white label, sprints, mejoras y refuerzo de capacidad."
       }
     ]
   }
+};
+
+const serviceAliases: Record<string, string> = {
+  "sites-institucionais": "desenvolvimento-web",
+  "plataformas-web": "desenvolvimento-aplicacoes-aplicativos",
+  "integracoes-crm-erp": "integracao",
+  "governanca-seguranca": "infraestrutura-digital",
+  "white-label-agencias": "servicos-sob-demanda"
 };
 
 export function getServicesContent(locale: AppLocale) {
@@ -513,5 +577,6 @@ export function getServices(locale: AppLocale) {
 }
 
 export function getServiceBySlug(locale: AppLocale, slug: string) {
-  return getServices(locale).find((service) => service.slug === slug);
+  const resolvedSlug = serviceAliases[slug] ?? slug;
+  return getServices(locale).find((service) => service.slug === resolvedSlug);
 }
