@@ -28,6 +28,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
   return (
     <html lang={localeToHtmlLang[locale]}>
+      <head>
+        <meta charSet="utf-8" />
+      </head>
       <body className={`${ubuntu.variable} font-sans bg-white text-zinc-900`}>
         {children}
         <Analytics />
