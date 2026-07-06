@@ -2,34 +2,11 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import type { AppLocale } from "@/lib/i18n";
-import {
-  X,
-  Globe,
-  MonitorSmartphone,
-  Share2,
-  ShieldCheck,
-  Briefcase
-} from "lucide-react";
+import { X, Briefcase } from "lucide-react";
 import Image from "next/image";
 import Link from "next-intl/link";
 import { useLocale, useTranslations } from "next-intl";
 import { getServices } from "@/data/services";
-
-const solutionIcons = {
-  "sites-institucionais": Globe,
-  "plataformas-web": MonitorSmartphone,
-  "integracoes-crm-erp": Share2,
-  "governanca-seguranca": ShieldCheck,
-  "white-label-agencias": Briefcase
-} as const;
-
-const orderedSolutionSlugs = [
-  "sites-institucionais",
-  "plataformas-web",
-  "integracoes-crm-erp",
-  "governanca-seguranca",
-  "white-label-agencias"
-] as const;
 
 const mainLinks = [
   { key: "home", href: "/" },
@@ -49,9 +26,6 @@ export function MegaMenuModal({
   const locale = useLocale() as AppLocale;
   const t = useTranslations("Menu");
   const services = getServices(locale);
-  const orderedSolutions = orderedSolutionSlugs
-    .map((slug) => services.find((service) => service.slug === slug))
-    .filter((service): service is NonNullable<typeof service> => Boolean(service));
 
   return (
     <AnimatePresence>
@@ -104,31 +78,27 @@ export function MegaMenuModal({
                 <p className="mb-6 hidden text-[10px] font-black uppercase tracking-widest text-zinc-500 md:block">
                   {t("solutions")}
                 </p>
-                <div className="flex flex-col gap-6 md:gap-5">
-                  {orderedSolutions.map((service) => {
-                    const Icon = solutionIcons[service.slug as keyof typeof solutionIcons];
-
-                    return (
-                      <Link
-                        key={service.slug}
-                        href={`/solucoes/${service.slug}`}
-                        onClick={onClose}
-                        className="group flex items-start gap-4 transition-transform hover:translate-x-1"
-                      >
-                        <div className="mt-0.5 shrink-0 rounded-xl bg-blue-50 p-3 transition-colors group-hover:bg-blue-100 md:p-2.5">
-                          <Icon className="h-5 w-5 text-unti-blue" />
-                        </div>
-                        <div>
-                          <h4 className="text-base font-bold text-zinc-900 transition-colors group-hover:text-unti-blue md:text-sm">
-                            {service.title}
-                          </h4>
-                          <p className="mt-0.5 text-sm leading-snug text-zinc-500 md:text-xs">
-                            {service.shortDescription}
-                          </p>
-                        </div>
-                      </Link>
-                    );
-                  })}
+                <div className="grid gap-4 md:grid-cols-2">
+                  {services.map((service) => (
+                    <Link
+                      key={service.slug}
+                      href={`/solucoes/${service.slug}`}
+                      onClick={onClose}
+                      className="group flex items-start gap-3 rounded-2xl border border-zinc-100 bg-white p-3 transition-all hover:-translate-y-0.5 hover:border-blue-100 hover:shadow-md"
+                    >
+                      <div className="mt-0.5 shrink-0 rounded-xl bg-blue-50 p-2.5 transition-colors group-hover:bg-blue-100">
+                        <Briefcase className="h-4 w-4 text-unti-blue" />
+                      </div>
+                      <div>
+                        <h4 className="text-sm font-bold text-zinc-900 transition-colors group-hover:text-unti-blue">
+                          {service.title}
+                        </h4>
+                        <p className="mt-1 line-clamp-2 text-xs leading-snug text-zinc-500">
+                          {service.shortDescription}
+                        </p>
+                      </div>
+                    </Link>
+                  ))}
                 </div>
               </div>
 
