@@ -6,276 +6,306 @@ import { getServices } from "@/data/services";
 import { buildMetadata } from "@/lib/metadata";
 import { isLocale, type AppLocale } from "@/lib/i18n";
 
-const lpCopy: Record<
-  AppLocale,
-  {
-    eyebrow: string;
-    title: string;
-    description: string;
-    primaryCta: string;
-    secondaryCta: string;
-    proofLabel: string;
-    whiteLabelBadge: string;
-    whiteLabelTitle: string;
-    whiteLabelDescription: string;
-    whiteLabelBullets: string[];
-    servicesEyebrow: string;
-    servicesTitle: string;
-    servicesDescription: string;
-    processEyebrow: string;
-    processTitle: string;
-    process: { title: string; description: string }[];
-    whyEyebrow: string;
-    whyTitle: string;
-    whyItems: { title: string; description: string }[];
-    faqEyebrow: string;
-    faqTitle: string;
-    faqs: { question: string; answer: string }[];
-    finalTitle: string;
-    finalDescription: string;
-    seoTitle: string;
-    seoDescription: string;
-  }
-> = {
+type LpCopy = {
+  eyebrow: string;
+  title: string;
+  description: string;
+  primaryCta: string;
+  secondaryCta: string;
+  proofLabel: string;
+  heroImageAlt: string;
+  coreEyebrow: string;
+  coreTitle: string;
+  coreDescription: string;
+  coreImageAlt: string;
+  coreBullets: string[];
+  metrics: { value: string; label: string }[];
+  servicesEyebrow: string;
+  servicesTitle: string;
+  servicesDescription: string;
+  processEyebrow: string;
+  processTitle: string;
+  process: { title: string; description: string }[];
+  whyEyebrow: string;
+  whyTitle: string;
+  whyItems: { title: string; description: string }[];
+  faqEyebrow: string;
+  faqTitle: string;
+  faqs: { question: string; answer: string }[];
+  finalTitle: string;
+  finalDescription: string;
+  seoTitle: string;
+  seoDescription: string;
+};
+
+const heroImage =
+  "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1400&q=80";
+const coreImage =
+  "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=80";
+const processImage =
+  "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1400&q=80";
+
+const lpCopy: Record<AppLocale, LpCopy> = {
   pt: {
     eyebrow: "White label técnico para empresas e agências",
-    title: "Um squad técnico sob sua marca para entregar sites, plataformas e integrações com padrão internacional.",
+    title: "Equipe técnica sob sua marca para entregar mais, melhor e com previsibilidade.",
     description:
-      "A UNTI Digital atua como parceiro técnico de execução para operações que precisam vender mais, entregar com qualidade e escalar sem montar uma equipe fixa grande.",
+      "A UNTI Digital atua como extensão sênior da sua operação para sites, plataformas, integrações e sustentação técnica, mantendo confidencialidade e padrão profissional de entrega.",
     primaryCta: "Agendar diagnóstico",
-    secondaryCta: "Ver serviços",
+    secondaryCta: "Conhecer o modelo",
     proofLabel: "Marcas e operações que confiam em execução técnica consistente",
-    whiteLabelBadge: "Serviço em destaque",
-    whiteLabelTitle: "White label técnico para ampliar sua capacidade de entrega",
-    whiteLabelDescription:
-      "Entramos como uma extensão técnica do seu time, mantendo confidencialidade, organização de escopo e execução sênior. Ideal para empresas e agências que precisam entregar mais sem perder controle, qualidade ou previsibilidade.",
-    whiteLabelBullets: [
-      "Execução sob sua marca, sem exposição da operação técnica",
-      "Sites, plataformas, integrações e melhorias contínuas em uma única frente",
-      "Processo com checkpoints, documentação e comunicação objetiva",
+    heroImageAlt: "Equipe técnica colaborando em planejamento digital",
+    coreEyebrow: "Oferta principal",
+    coreTitle: "White label técnico para ampliar a capacidade de entrega sem aumentar a estrutura fixa.",
+    coreDescription:
+      "Entramos nos bastidores como squad técnico para organizar escopo, produzir com qualidade e manter o relacionamento comercial sob a sua marca. A operação ganha força sem perder controle, sigilo ou ritmo.",
+    coreImageAlt: "Reunião de estratégia e execução técnica",
+    coreBullets: [
+      "Atuação confidencial sob a marca do cliente ou da agência",
+      "Entrega de sites, plataformas, integrações e melhorias contínuas",
+      "Comunicação objetiva, checkpoints e documentação de apoio",
       "Capacidade sob demanda para projetos complexos e recorrentes"
     ],
-    servicesEyebrow: "Serviços da UNTI",
-    servicesTitle: "O white label é o centro, mas a entrega cobre toda a operação digital.",
+    metrics: [
+      { value: "01", label: "squad técnico plugado à sua operação" },
+      { value: "04", label: "frentes digitais cobertas em um único parceiro" },
+      { value: "100%", label: "foco em entrega discreta e orientada a resultado" }
+    ],
+    servicesEyebrow: "Serviços integrados",
+    servicesTitle: "O white label é o centro. Os serviços completam a entrega digital.",
     servicesDescription:
-      "A LP apresenta todos os serviços do site, com o white label técnico como oferta principal e os demais como frentes complementares de execução.",
-    processEyebrow: "Como funciona",
-    processTitle: "Um processo direto para começar rápido e entregar com segurança.",
+      "A UNTI combina execução técnica, visão de produto e sustentação para cobrir as principais necessidades digitais de empresas e agências.",
+    processEyebrow: "Modelo de trabalho",
+    processTitle: "Um fluxo claro para iniciar rápido e manter a entrega sob controle.",
     process: [
       {
-        title: "Diagnóstico técnico e comercial",
-        description: "Mapeamos escopo, urgência, stack, gargalos e oportunidades de entrega."
+        title: "Diagnóstico",
+        description: "Entendemos escopo, stack, prazos, riscos e prioridades comerciais."
       },
       {
-        title: "Plano de execução white label",
-        description: "Definimos responsabilidades, checkpoints, prioridades e padrão de comunicação."
+        title: "Plano de entrega",
+        description: "Definimos responsabilidades, etapas, checkpoints e padrão de comunicação."
       },
       {
-        title: "Implementação com squad sênior",
-        description: "Executamos sites, plataformas, integrações e correções com previsibilidade."
+        title: "Execução",
+        description: "Implementamos sites, plataformas, integrações e correções com time sênior."
       },
       {
-        title: "Evolução contínua",
-        description: "Mantemos melhorias, suporte e novas entregas conforme a demanda cresce."
+        title: "Evolução",
+        description: "Mantemos suporte, melhorias e novas entregas conforme a demanda cresce."
       }
     ],
     whyEyebrow: "Por que UNTI",
-    whyTitle: "Uma parceira técnica para entregar mais sem aumentar sua complexidade interna.",
+    whyTitle: "Entrega técnica com postura de parceiro, não de fornecedor genérico.",
     whyItems: [
       {
-        title: "Confidencialidade operacional",
-        description: "A entrega pode acontecer sob a marca do cliente ou da agência, preservando a relação comercial."
+        title: "Confidencialidade real",
+        description: "A UNTI pode operar nos bastidores, preservando a marca, o relacionamento e a estratégia comercial."
       },
       {
-        title: "Engenharia orientada a negócio",
-        description: "Não entregamos apenas telas: estruturamos performance, conversão, integrações e operação."
+        title: "Padrão sênior de execução",
+        description: "Arquitetura, performance, responsividade, integrações e documentação entram no mesmo fluxo de entrega."
       },
       {
-        title: "Ritmo de produção escalável",
-        description: "Apoio sob demanda para absorver picos, projetos complexos e recorrência técnica."
+        title: "Escala com controle",
+        description: "A operação ganha capacidade sem contratar às pressas, sem inflar equipe e sem perder governança."
       }
     ],
-    faqEyebrow: "FAQ",
-    faqTitle: "Perguntas comuns antes de iniciar uma parceria white label.",
+    faqEyebrow: "Dúvidas frequentes",
+    faqTitle: "Antes de iniciar uma parceria white label.",
     faqs: [
       {
         question: "A UNTI aparece para o cliente final?",
-        answer: "Somente se fizer sentido para a estratégia. O padrão white label permite atuação discreta, sob a sua marca."
+        answer: "Somente quando isso fizer sentido. O modelo white label permite atuação discreta sob a sua marca."
       },
       {
         question: "Vocês atendem empresas americanas?",
-        answer: "Sim. A página foi pensada para comunicação internacional, com entrega remota, documentação e alinhamento objetivo."
+        answer: "Sim. O atendimento pode ser remoto, com comunicação objetiva, documentação e alinhamentos por etapa."
       },
       {
-        question: "Quais serviços podem entrar no white label?",
+        question: "Quais entregas podem entrar no modelo?",
         answer: "Sites, plataformas web, integrações CRM/ERP, governança, segurança, sustentação técnica e melhorias contínuas."
       }
     ],
-    finalTitle: "Quer ampliar sua entrega técnica sem inflar a operação?",
-    finalDescription: "Vamos mapear onde a UNTI pode entrar como squad white label para acelerar sua próxima entrega.",
+    finalTitle: "Sua operação precisa entregar mais sem aumentar complexidade?",
+    finalDescription: "Vamos mapear como a UNTI pode atuar como squad técnico white label no próximo ciclo de entrega.",
     seoTitle: "White label técnico para empresas e agências | UNTI Digital",
     seoDescription:
-      "Landing page da UNTI Digital para white label técnico, sites, plataformas, integrações CRM/ERP e governança digital."
+      "White label técnico da UNTI Digital para sites, plataformas, integrações CRM/ERP, governança e sustentação digital."
   },
   en: {
     eyebrow: "Technical white-label for US companies and agencies",
-    title: "A senior technical squad under your brand to ship websites, platforms, and integrations faster.",
+    title: "A senior technical team under your brand, built to ship with confidence.",
     description:
-      "UNTI Digital works as a discreet technical execution partner for US companies and agencies that need reliable delivery capacity without building a large in-house team.",
+      "UNTI Digital works as a discreet technical extension for websites, custom platforms, CRM/ERP integrations, and ongoing digital operations without forcing you to build a large in-house team.",
     primaryCta: "Book a technical diagnosis",
-    secondaryCta: "Explore services",
+    secondaryCta: "See the model",
     proofLabel: "Brands and operations that trust consistent technical execution",
-    whiteLabelBadge: "Featured service",
-    whiteLabelTitle: "Technical white-label delivery to expand your execution capacity",
-    whiteLabelDescription:
-      "We plug into your operation as a senior technical squad, keeping the commercial relationship under your brand while bringing structure, documentation, and predictable delivery across digital projects.",
-    whiteLabelBullets: [
-      "Execution under your brand with discreet technical involvement",
-      "Websites, platforms, CRM/ERP integrations, and continuous improvements",
-      "Clear checkpoints, documentation, and senior communication",
+    heroImageAlt: "Technical team collaborating on digital planning",
+    coreEyebrow: "Core offer",
+    coreTitle: "Technical white-label delivery to expand capacity without expanding fixed structure.",
+    coreDescription:
+      "We work behind the scenes as your technical squad to organize scope, produce with quality, and keep the commercial relationship under your brand. Your operation gains delivery power without losing control, confidentiality, or pace.",
+    coreImageAlt: "Business and technical strategy meeting",
+    coreBullets: [
+      "Confidential delivery under your company or agency brand",
+      "Websites, custom platforms, integrations, and continuous improvements",
+      "Clear communication, checkpoints, and supporting documentation",
       "On-demand capacity for complex projects and recurring delivery"
     ],
-    servicesEyebrow: "UNTI services",
-    servicesTitle: "White-label is the core offer. The full delivery covers your entire digital operation.",
+    metrics: [
+      { value: "01", label: "technical squad plugged into your operation" },
+      { value: "04", label: "digital delivery fronts covered by one partner" },
+      { value: "100%", label: "focused on discreet execution and business outcomes" }
+    ],
+    servicesEyebrow: "Integrated services",
+    servicesTitle: "White-label is the center. The services complete the digital delivery.",
     servicesDescription:
-      "This landing page positions technical white-label as the main direction for UNTI while presenting the services already offered across the website.",
-    processEyebrow: "How it works",
-    processTitle: "A direct process to start quickly and deliver with confidence.",
+      "UNTI combines technical execution, product thinking, and ongoing support to cover the main digital needs of companies and agencies.",
+    processEyebrow: "Working model",
+    processTitle: "A clear flow to start quickly and keep delivery under control.",
     process: [
       {
-        title: "Technical and commercial diagnosis",
-        description: "We map scope, urgency, stack, bottlenecks, and delivery opportunities."
+        title: "Diagnosis",
+        description: "We understand scope, stack, timeline, risks, and commercial priorities."
       },
       {
-        title: "White-label execution plan",
-        description: "We define roles, checkpoints, priorities, and communication standards."
+        title: "Delivery plan",
+        description: "We define responsibilities, stages, checkpoints, and communication standards."
       },
       {
-        title: "Senior squad implementation",
-        description: "We execute websites, platforms, integrations, and improvements with predictability."
+        title: "Execution",
+        description: "We implement websites, platforms, integrations, and improvements with a senior team."
       },
       {
-        title: "Continuous evolution",
-        description: "We keep improving, supporting, and shipping as demand grows."
+        title: "Evolution",
+        description: "We keep supporting, improving, and shipping as demand grows."
       }
     ],
     whyEyebrow: "Why UNTI",
-    whyTitle: "A technical partner to increase delivery capacity without increasing internal complexity.",
+    whyTitle: "Technical delivery with a partner mindset, not a generic vendor approach.",
     whyItems: [
       {
-        title: "Operational confidentiality",
-        description: "Delivery can happen under your brand, preserving your commercial relationship with the end client."
+        title: "Real confidentiality",
+        description: "UNTI can operate behind the scenes, preserving your brand, client relationship, and commercial strategy."
       },
       {
-        title: "Business-oriented engineering",
-        description: "We do not just build screens. We structure performance, conversion, integrations, and operations."
+        title: "Senior execution standard",
+        description: "Architecture, performance, responsiveness, integrations, and documentation stay inside the same delivery flow."
       },
       {
-        title: "Scalable production rhythm",
-        description: "On-demand technical capacity for peaks, complex projects, and recurring delivery."
+        title: "Scale with control",
+        description: "Your operation gains capacity without rushed hiring, bloated teams, or loss of governance."
       }
     ],
     faqEyebrow: "FAQ",
-    faqTitle: "Common questions before starting a white-label partnership.",
+    faqTitle: "Before starting a white-label partnership.",
     faqs: [
       {
         question: "Does UNTI appear to the end client?",
-        answer: "Only if it supports the strategy. The white-label model allows discreet delivery under your brand."
+        answer: "Only when it makes sense. The white-label model allows discreet delivery under your brand."
       },
       {
         question: "Do you work with US companies?",
-        answer: "Yes. This page is designed for international communication, remote delivery, documentation, and clear alignment."
+        answer: "Yes. Delivery can be remote, with objective communication, documentation, and stage-based alignment."
       },
       {
         question: "Which services can be delivered white-label?",
-        answer: "Websites, custom platforms, CRM/ERP integrations, governance, security, technical support, and continuous improvements."
+        answer: "Websites, custom web platforms, CRM/ERP integrations, governance, security, technical support, and continuous improvements."
       }
     ],
-    finalTitle: "Need more technical delivery capacity without growing your internal team?",
-    finalDescription: "Let’s map where UNTI can plug in as your white-label technical squad for the next delivery cycle.",
+    finalTitle: "Need to ship more without increasing operational complexity?",
+    finalDescription: "Let’s map how UNTI can work as your white-label technical squad for the next delivery cycle.",
     seoTitle: "Technical white-label for US companies and agencies | UNTI Digital",
     seoDescription:
-      "UNTI Digital provides technical white-label delivery for US companies and agencies: websites, platforms, CRM/ERP integrations, and digital governance."
+      "UNTI Digital provides technical white-label delivery for websites, custom platforms, CRM/ERP integrations, governance, and digital operations."
   },
   es: {
     eyebrow: "White label técnico para empresas y agencias",
-    title: "Un squad técnico bajo tu marca para entregar sitios, plataformas e integraciones con más velocidad.",
+    title: "Equipo técnico bajo tu marca para entregar más, mejor y con previsibilidad.",
     description:
-      "UNTI Digital actúa como socio técnico discreto para operaciones que necesitan ampliar capacidad de entrega sin construir un equipo interno grande.",
+      "UNTI Digital actúa como extensión técnica senior para sitios, plataformas, integraciones y operación digital continua, manteniendo confidencialidad y estándar profesional.",
     primaryCta: "Agendar diagnóstico",
-    secondaryCta: "Ver servicios",
+    secondaryCta: "Ver el modelo",
     proofLabel: "Marcas y operaciones que confían en ejecución técnica consistente",
-    whiteLabelBadge: "Servicio destacado",
-    whiteLabelTitle: "White label técnico para ampliar tu capacidad de ejecución",
-    whiteLabelDescription:
-      "Nos integramos a tu operación como un squad técnico senior, preservando la relación comercial bajo tu marca y aportando estructura, documentación y previsibilidad.",
-    whiteLabelBullets: [
-      "Ejecución bajo tu marca con actuación técnica discreta",
-      "Sitios, plataformas, integraciones CRM/ERP y mejoras continuas",
-      "Checkpoints claros, documentación y comunicación senior",
+    heroImageAlt: "Equipo técnico colaborando en planificación digital",
+    coreEyebrow: "Oferta central",
+    coreTitle: "White label técnico para ampliar capacidad sin aumentar estructura fija.",
+    coreDescription:
+      "Trabajamos en segundo plano como squad técnico para organizar alcance, producir con calidad y mantener la relación comercial bajo tu marca. La operación gana fuerza sin perder control, confidencialidad ni ritmo.",
+    coreImageAlt: "Reunión de estrategia técnica y comercial",
+    coreBullets: [
+      "Entrega confidencial bajo la marca de la empresa o agencia",
+      "Sitios, plataformas, integraciones y mejoras continuas",
+      "Comunicación clara, checkpoints y documentación de apoyo",
       "Capacidad bajo demanda para proyectos complejos y recurrentes"
     ],
-    servicesEyebrow: "Servicios de UNTI",
-    servicesTitle: "El white label es la oferta central. La entrega completa cubre toda la operación digital.",
+    metrics: [
+      { value: "01", label: "squad técnico conectado a tu operación" },
+      { value: "04", label: "frentes digitales cubiertos por un solo socio" },
+      { value: "100%", label: "enfoque en ejecución discreta y resultados" }
+    ],
+    servicesEyebrow: "Servicios integrados",
+    servicesTitle: "El white label es el centro. Los servicios completan la entrega digital.",
     servicesDescription:
-      "La landing page posiciona white label técnico como dirección principal de UNTI y presenta los servicios ya ofrecidos en el sitio.",
-    processEyebrow: "Cómo funciona",
-    processTitle: "Un proceso directo para empezar rápido y entregar con seguridad.",
+      "UNTI combina ejecución técnica, visión de producto y soporte continuo para cubrir las principales necesidades digitales de empresas y agencias.",
+    processEyebrow: "Modelo de trabajo",
+    processTitle: "Un flujo claro para empezar rápido y mantener la entrega bajo control.",
     process: [
       {
-        title: "Diagnóstico técnico y comercial",
-        description: "Mapeamos alcance, urgencia, stack, cuellos de botella y oportunidades."
+        title: "Diagnóstico",
+        description: "Entendemos alcance, stack, plazos, riesgos y prioridades comerciales."
       },
       {
-        title: "Plan de ejecución white label",
-        description: "Definimos responsabilidades, checkpoints, prioridades y comunicación."
+        title: "Plan de entrega",
+        description: "Definimos responsabilidades, etapas, checkpoints y comunicación."
       },
       {
-        title: "Implementación con squad senior",
-        description: "Ejecutamos sitios, plataformas, integraciones y mejoras con previsibilidad."
+        title: "Ejecución",
+        description: "Implementamos sitios, plataformas, integraciones y mejoras con equipo senior."
       },
       {
-        title: "Evolución continua",
-        description: "Mantenemos mejoras, soporte y nuevas entregas a medida que crece la demanda."
+        title: "Evolución",
+        description: "Mantenemos soporte, mejoras y nuevas entregas conforme crece la demanda."
       }
     ],
     whyEyebrow: "Por qué UNTI",
-    whyTitle: "Un socio técnico para entregar más sin aumentar la complejidad interna.",
+    whyTitle: "Entrega técnica con postura de socio, no de proveedor genérico.",
     whyItems: [
       {
-        title: "Confidencialidad operativa",
-        description: "La entrega puede ocurrir bajo tu marca, preservando la relación comercial con el cliente final."
+        title: "Confidencialidad real",
+        description: "UNTI puede operar en segundo plano, preservando tu marca, relación comercial y estrategia."
       },
       {
-        title: "Ingeniería orientada a negocio",
-        description: "No solo construimos pantallas: estructuramos rendimiento, conversión, integraciones y operación."
+        title: "Estándar senior de ejecución",
+        description: "Arquitectura, rendimiento, responsividad, integraciones y documentación dentro del mismo flujo."
       },
       {
-        title: "Ritmo de producción escalable",
-        description: "Capacidad técnica bajo demanda para picos, proyectos complejos y recurrencia."
+        title: "Escala con control",
+        description: "La operación gana capacidad sin contrataciones urgentes, equipos inflados o pérdida de gobernanza."
       }
     ],
     faqEyebrow: "FAQ",
-    faqTitle: "Preguntas comunes antes de iniciar una alianza white label.",
+    faqTitle: "Antes de iniciar una alianza white label.",
     faqs: [
       {
         question: "¿UNTI aparece para el cliente final?",
-        answer: "Solo si tiene sentido para la estrategia. El modelo white label permite entrega discreta bajo tu marca."
+        answer: "Solo cuando tiene sentido. El modelo white label permite entrega discreta bajo tu marca."
       },
       {
         question: "¿Atienden empresas de Estados Unidos?",
-        answer: "Sí. La página está pensada para comunicación internacional, entrega remota, documentación y alineación clara."
+        answer: "Sí. La entrega puede ser remota, con comunicación objetiva, documentación y alineación por etapas."
       },
       {
-        question: "¿Qué servicios pueden entrar en white label?",
-        answer: "Sitios, plataformas, integraciones CRM/ERP, gobernanza, seguridad, soporte técnico y mejoras continuas."
+        question: "¿Qué servicios pueden entrar en el modelo?",
+        answer: "Sitios, plataformas web, integraciones CRM/ERP, gobernanza, seguridad, soporte técnico y mejoras continuas."
       }
     ],
-    finalTitle: "¿Necesitas más capacidad técnica sin aumentar tu equipo interno?",
-    finalDescription: "Mapeemos dónde UNTI puede entrar como squad white label en tu próximo ciclo de entrega.",
+    finalTitle: "¿Tu operación necesita entregar más sin aumentar complejidad?",
+    finalDescription: "Mapeemos cómo UNTI puede actuar como squad técnico white label en el próximo ciclo de entrega.",
     seoTitle: "White label técnico para empresas y agencias | UNTI Digital",
     seoDescription:
-      "UNTI Digital ofrece white label técnico para sitios, plataformas, integraciones CRM/ERP y gobernanza digital."
+      "White label técnico de UNTI Digital para sitios, plataformas, integraciones CRM/ERP, gobernanza y operación digital."
   }
 };
 
@@ -300,56 +330,62 @@ export default function LpServicesPage({ params: { locale } }: { params: { local
 
   return (
     <div className="bg-white text-zinc-950">
-      <section className="relative overflow-hidden bg-[radial-gradient(circle_at_top_left,rgba(57,108,255,0.18),transparent_36%),linear-gradient(135deg,#f8fafc_0%,#ffffff_48%,#eef4ff_100%)] py-20 md:py-28">
+      <section className="relative overflow-hidden bg-white py-20 md:py-28">
         <Container>
-          <div className="grid items-center gap-12 lg:grid-cols-[1.06fr_0.94fr]">
-            <div>
+          <div className="grid items-center gap-12 lg:grid-cols-[1fr_0.95fr]">
+            <div className="motion-safe:animate-fade-in-up">
               <p className="text-xs font-bold uppercase tracking-[0.28em] text-unti-blue">{copy.eyebrow}</p>
-              <h1 className="mt-5 text-4xl font-black leading-[1.02] tracking-[-0.05em] text-zinc-950 md:text-6xl">
+              <h1 className="mt-5 text-4xl font-black leading-[1.02] tracking-[-0.045em] text-zinc-950 md:text-6xl">
                 {copy.title}
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-zinc-600 md:text-xl">{copy.description}</p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <Link
                   href="/contato"
-                  className="inline-flex h-14 items-center justify-center rounded-2xl bg-unti-blue px-7 text-sm font-black uppercase tracking-[0.18em] text-white no-underline shadow-[0_18px_46px_rgba(57,108,255,0.32)] transition hover:-translate-y-0.5 hover:bg-blue-700 hover:no-underline"
+                  className="inline-flex h-14 items-center justify-center rounded-2xl bg-unti-blue px-7 text-sm font-black uppercase tracking-[0.16em] text-white no-underline shadow-[0_18px_42px_rgba(57,108,255,0.28)] transition duration-300 hover:-translate-y-0.5 hover:bg-blue-700 hover:no-underline"
                 >
                   {copy.primaryCta}
                 </Link>
                 <a
-                  href="#services"
-                  className="inline-flex h-14 items-center justify-center rounded-2xl border border-zinc-300 bg-white px-7 text-sm font-black uppercase tracking-[0.18em] text-zinc-950 no-underline transition hover:-translate-y-0.5 hover:border-unti-blue hover:text-unti-blue hover:no-underline"
+                  href="#white-label"
+                  className="inline-flex h-14 items-center justify-center rounded-2xl border border-zinc-300 bg-white px-7 text-sm font-black uppercase tracking-[0.16em] text-zinc-950 no-underline transition duration-300 hover:-translate-y-0.5 hover:border-unti-blue hover:text-unti-blue hover:no-underline"
                 >
                   {copy.secondaryCta}
                 </a>
               </div>
             </div>
 
-            <div className="rounded-[36px] border border-white bg-white/85 p-6 shadow-[0_28px_90px_rgba(15,23,42,0.14)] backdrop-blur">
-              <p className="inline-flex rounded-full bg-blue-50 px-4 py-2 text-xs font-black uppercase tracking-[0.2em] text-unti-blue">
-                {copy.whiteLabelBadge}
-              </p>
-              <h2 className="mt-5 text-3xl font-black leading-tight text-zinc-950">{whiteLabelService.title}</h2>
-              <p className="mt-4 text-zinc-600">{whiteLabelService.shortDescription}</p>
-              <div className="mt-6 grid gap-3">
-                {copy.whiteLabelBullets.map((bullet) => (
-                  <div key={bullet} className="flex gap-3 rounded-2xl border border-zinc-100 bg-zinc-50 p-4">
-                    <span className="mt-1 h-2.5 w-2.5 flex-shrink-0 rounded-full bg-unti-blue" />
-                    <p className="text-sm font-medium leading-relaxed text-zinc-700">{bullet}</p>
-                  </div>
-                ))}
+            <div className="motion-safe:animate-fade-in-up">
+              <div className="group relative overflow-hidden rounded-[36px] border border-zinc-200 bg-zinc-50 p-3 shadow-[0_28px_80px_rgba(15,23,42,0.12)] transition duration-500 hover:-translate-y-1 hover:shadow-[0_34px_90px_rgba(15,23,42,0.16)]">
+                <div className="relative h-[420px] overflow-hidden rounded-[28px] bg-zinc-100">
+                  <Image
+                    src={heroImage}
+                    alt={copy.heroImageAlt}
+                    fill
+                    priority
+                    sizes="(max-width: 1024px) 100vw, 560px"
+                    className="object-cover transition duration-700 group-hover:scale-105"
+                  />
+                </div>
+                <div className="absolute bottom-7 left-7 right-7 rounded-[24px] border border-white/70 bg-white/90 p-5 shadow-xl backdrop-blur">
+                  <p className="text-xs font-bold uppercase tracking-[0.22em] text-unti-blue">{copy.coreEyebrow}</p>
+                  <p className="mt-2 text-lg font-black leading-snug text-zinc-950">{whiteLabelService.title}</p>
+                </div>
               </div>
             </div>
           </div>
         </Container>
       </section>
 
-      <section className="border-y border-zinc-100 bg-white py-10">
+      <section className="border-y border-zinc-100 bg-zinc-50 py-10">
         <Container>
           <p className="text-center text-xs font-bold uppercase tracking-[0.24em] text-zinc-500">{copy.proofLabel}</p>
           <div className="mt-8 grid grid-cols-2 items-center gap-4 md:grid-cols-5">
             {visibleClients.map((client) => (
-              <div key={client.id} className="relative h-20 rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm">
+              <div
+                key={client.id}
+                className="relative h-20 rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+              >
                 <Image src={client.logo} alt={client.name} fill sizes="160px" className="p-4 object-contain" />
               </div>
             ))}
@@ -357,22 +393,67 @@ export default function LpServicesPage({ params: { locale } }: { params: { local
         </Container>
       </section>
 
-      <section id="services" className="bg-zinc-950 py-20 text-white md:py-24">
+      <section id="white-label" className="bg-white py-20 md:py-24">
+        <Container>
+          <div className="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+            <div className="relative overflow-hidden rounded-[34px] border border-zinc-200 bg-zinc-50 p-3 shadow-[0_24px_70px_rgba(15,23,42,0.1)]">
+              <div className="relative h-[360px] overflow-hidden rounded-[26px] bg-zinc-100">
+                <Image
+                  src={coreImage}
+                  alt={copy.coreImageAlt}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 500px"
+                  className="object-cover"
+                />
+              </div>
+            </div>
+
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.26em] text-unti-blue">{copy.coreEyebrow}</p>
+              <h2 className="mt-4 text-3xl font-black leading-tight tracking-[-0.035em] text-zinc-950 md:text-5xl">
+                {copy.coreTitle}
+              </h2>
+              <p className="mt-5 text-lg leading-relaxed text-zinc-600">{copy.coreDescription}</p>
+              <div className="mt-8 grid gap-3">
+                {copy.coreBullets.map((bullet) => (
+                  <div key={bullet} className="flex gap-3 rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm">
+                    <span className="mt-1 h-2.5 w-2.5 flex-shrink-0 rounded-full bg-unti-blue" />
+                    <p className="text-sm font-medium leading-relaxed text-zinc-700">{bullet}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-14 grid gap-4 md:grid-cols-3">
+            {copy.metrics.map((metric) => (
+              <article key={metric.label} className="rounded-[28px] border border-zinc-200 bg-zinc-50 p-7 transition duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-xl">
+                <p className="text-4xl font-black text-unti-blue">{metric.value}</p>
+                <p className="mt-3 text-sm font-semibold leading-relaxed text-zinc-600">{metric.label}</p>
+              </article>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section id="services" className="bg-zinc-50 py-20 md:py-24">
         <Container>
           <div className="max-w-3xl">
-            <p className="text-xs font-bold uppercase tracking-[0.26em] text-blue-300">{copy.servicesEyebrow}</p>
-            <h2 className="mt-4 text-3xl font-black leading-tight text-white md:text-5xl">{copy.servicesTitle}</h2>
-            <p className="mt-5 text-lg text-zinc-300">{copy.servicesDescription}</p>
+            <p className="text-xs font-bold uppercase tracking-[0.26em] text-unti-blue">{copy.servicesEyebrow}</p>
+            <h2 className="mt-4 text-3xl font-black leading-tight tracking-[-0.035em] text-zinc-950 md:text-5xl">
+              {copy.servicesTitle}
+            </h2>
+            <p className="mt-5 text-lg leading-relaxed text-zinc-600">{copy.servicesDescription}</p>
           </div>
 
           <div className="mt-12 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-            <article className="rounded-[32px] border border-blue-400/30 bg-white p-8 text-zinc-950 shadow-[0_24px_70px_rgba(57,108,255,0.22)]">
-              <p className="text-xs font-black uppercase tracking-[0.24em] text-unti-blue">{copy.whiteLabelBadge}</p>
-              <h3 className="mt-4 text-3xl font-black">{copy.whiteLabelTitle}</h3>
-              <p className="mt-4 text-zinc-600">{copy.whiteLabelDescription}</p>
+            <article className="rounded-[32px] border border-unti-blue/20 bg-white p-8 shadow-[0_24px_70px_rgba(57,108,255,0.14)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_30px_80px_rgba(57,108,255,0.18)]">
+              <p className="text-xs font-black uppercase tracking-[0.24em] text-unti-blue">{copy.coreEyebrow}</p>
+              <h3 className="mt-4 text-3xl font-black tracking-[-0.025em] text-zinc-950">{whiteLabelService.title}</h3>
+              <p className="mt-4 text-zinc-600">{whiteLabelService.fullDescription}</p>
               <div className="mt-7 grid gap-3 sm:grid-cols-2">
                 {whiteLabelService.deliverables.slice(0, 4).map((item) => (
-                  <div key={item} className="rounded-2xl bg-blue-50 p-4 text-sm font-semibold text-zinc-800">
+                  <div key={item} className="rounded-2xl border border-blue-100 bg-blue-50 p-4 text-sm font-semibold text-zinc-800">
                     {item}
                   </div>
                 ))}
@@ -381,9 +462,9 @@ export default function LpServicesPage({ params: { locale } }: { params: { local
 
             <div className="grid gap-4">
               {supportingServices.map((service) => (
-                <article key={service.slug} className="rounded-[28px] border border-white/10 bg-white/5 p-6">
-                  <h3 className="text-xl font-black text-white">{service.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-zinc-300">{service.shortDescription}</p>
+                <article key={service.slug} className="rounded-[28px] border border-zinc-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+                  <h3 className="text-xl font-black text-zinc-950">{service.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-zinc-600">{service.shortDescription}</p>
                 </article>
               ))}
             </div>
@@ -393,33 +474,47 @@ export default function LpServicesPage({ params: { locale } }: { params: { local
 
       <section className="bg-white py-20 md:py-24">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr]">
+          <div className="grid items-center gap-12 lg:grid-cols-[0.95fr_1.05fr]">
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.26em] text-unti-blue">{copy.processEyebrow}</p>
-              <h2 className="mt-4 text-3xl font-black leading-tight text-zinc-950 md:text-5xl">{copy.processTitle}</h2>
+              <h2 className="mt-4 text-3xl font-black leading-tight tracking-[-0.035em] text-zinc-950 md:text-5xl">
+                {copy.processTitle}
+              </h2>
+              <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                {copy.process.map((step, index) => (
+                  <article key={step.title} className="rounded-[28px] border border-zinc-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+                    <span className="text-sm font-black text-unti-blue">0{index + 1}</span>
+                    <h3 className="mt-4 text-xl font-black text-zinc-950">{step.title}</h3>
+                    <p className="mt-3 text-sm leading-relaxed text-zinc-600">{step.description}</p>
+                  </article>
+                ))}
+              </div>
             </div>
-            <div className="grid gap-4 sm:grid-cols-2">
-              {copy.process.map((step, index) => (
-                <article key={step.title} className="rounded-[28px] border border-zinc-200 bg-zinc-50 p-6">
-                  <span className="text-sm font-black text-unti-blue">0{index + 1}</span>
-                  <h3 className="mt-4 text-xl font-black text-zinc-950">{step.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-zinc-600">{step.description}</p>
-                </article>
-              ))}
+
+            <div className="relative overflow-hidden rounded-[34px] border border-zinc-200 bg-zinc-50 p-3 shadow-[0_24px_70px_rgba(15,23,42,0.1)]">
+              <div className="relative h-[460px] overflow-hidden rounded-[26px] bg-zinc-100">
+                <Image
+                  src={processImage}
+                  alt={copy.processTitle}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 520px"
+                  className="object-cover"
+                />
+              </div>
             </div>
           </div>
         </Container>
       </section>
 
-      <section className="bg-blue-50 py-20 md:py-24">
+      <section className="bg-zinc-50 py-20 md:py-24">
         <Container>
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-xs font-bold uppercase tracking-[0.26em] text-unti-blue">{copy.whyEyebrow}</p>
-            <h2 className="mt-4 text-3xl font-black leading-tight text-zinc-950 md:text-5xl">{copy.whyTitle}</h2>
+            <h2 className="mt-4 text-3xl font-black leading-tight tracking-[-0.035em] text-zinc-950 md:text-5xl">{copy.whyTitle}</h2>
           </div>
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {copy.whyItems.map((item) => (
-              <article key={item.title} className="rounded-[30px] border border-blue-100 bg-white p-7 shadow-sm">
+              <article key={item.title} className="rounded-[30px] border border-zinc-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
                 <h3 className="text-xl font-black text-zinc-950">{item.title}</h3>
                 <p className="mt-4 text-sm leading-relaxed text-zinc-600">{item.description}</p>
               </article>
@@ -433,11 +528,11 @@ export default function LpServicesPage({ params: { locale } }: { params: { local
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.26em] text-unti-blue">{copy.faqEyebrow}</p>
-              <h2 className="mt-4 text-3xl font-black leading-tight text-zinc-950 md:text-5xl">{copy.faqTitle}</h2>
+              <h2 className="mt-4 text-3xl font-black leading-tight tracking-[-0.035em] text-zinc-950 md:text-5xl">{copy.faqTitle}</h2>
             </div>
             <div className="grid gap-4">
               {copy.faqs.map((faq) => (
-                <article key={faq.question} className="rounded-[28px] border border-zinc-200 bg-white p-6 shadow-sm">
+                <article key={faq.question} className="rounded-[28px] border border-zinc-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
                   <h3 className="text-lg font-black text-zinc-950">{faq.question}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-zinc-600">{faq.answer}</p>
                 </article>
@@ -447,14 +542,14 @@ export default function LpServicesPage({ params: { locale } }: { params: { local
         </Container>
       </section>
 
-      <section className="bg-zinc-950 py-20 text-white md:py-24">
+      <section className="border-t border-zinc-100 bg-white py-20 md:py-24">
         <Container>
-          <div className="mx-auto max-w-4xl text-center">
-            <h2 className="text-3xl font-black leading-tight text-white md:text-5xl">{copy.finalTitle}</h2>
-            <p className="mx-auto mt-5 max-w-2xl text-lg text-zinc-300">{copy.finalDescription}</p>
+          <div className="mx-auto max-w-4xl rounded-[36px] border border-zinc-200 bg-zinc-50 p-8 text-center shadow-[0_24px_70px_rgba(15,23,42,0.08)] md:p-12">
+            <h2 className="text-3xl font-black leading-tight tracking-[-0.035em] text-zinc-950 md:text-5xl">{copy.finalTitle}</h2>
+            <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-zinc-600">{copy.finalDescription}</p>
             <Link
               href="/contato"
-              className="mt-9 inline-flex h-14 items-center justify-center rounded-2xl bg-unti-blue px-8 text-sm font-black uppercase tracking-[0.18em] text-white no-underline shadow-[0_18px_46px_rgba(57,108,255,0.32)] transition hover:-translate-y-0.5 hover:bg-blue-700 hover:no-underline"
+              className="mt-9 inline-flex h-14 items-center justify-center rounded-2xl bg-unti-blue px-8 text-sm font-black uppercase tracking-[0.16em] text-white no-underline shadow-[0_18px_42px_rgba(57,108,255,0.28)] transition duration-300 hover:-translate-y-0.5 hover:bg-blue-700 hover:no-underline"
             >
               {copy.primaryCta}
             </Link>
