@@ -9,10 +9,10 @@ import { useLocale, useTranslations } from "next-intl";
 import { getServices } from "@/data/services";
 
 const featuredSolutionSlugs = [
-  "sites-institucionais",
-  "plataformas-web",
-  "integracoes-crm-erp",
-  "governanca-seguranca"
+  "desenvolvimento-web",
+  "implementacao-setor-tecnologia",
+  "desenvolvimento-aplicacoes-aplicativos",
+  "servicos-sob-demanda"
 ] as const;
 
 const mainLinks = [
@@ -25,9 +25,9 @@ const mainLinks = [
 ] as const;
 
 const subLinks = [
-  { key: "forCompanies", href: "/solucoes/empresas" },
-  { key: "forAgencies", href: "/solucoes/white-label-agencias" },
-  { key: "apiIntegrations", href: "/solucoes/integracoes-crm-erp" },
+  { key: "forCompanies", href: "/solucoes/implementacao-setor-tecnologia" },
+  { key: "forAgencies", href: "/solucoes/servicos-sob-demanda" },
+  { key: "apiIntegrations", href: "/solucoes/integracao" },
   { key: "privacyPolicy", href: "/privacidade" },
   { key: "businessPolicy", href: "/politica-empresarial" }
 ] as const;
